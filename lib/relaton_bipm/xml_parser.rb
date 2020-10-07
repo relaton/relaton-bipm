@@ -38,7 +38,7 @@ module RelatonBipm
       # @return [Array<RelatonBib::FormattedString>]
       def fetch_titles(item)
         item.xpath("./title").map do |t|
-          RelatonBib::FormattedString.new(
+          RelatonBib::TypedTitleString.new(
             content: t.text, language: t[:language], script: t[:script],
             format: t[:format]
           )
