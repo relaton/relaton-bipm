@@ -2,8 +2,8 @@
 == {blank}
 id:: Draft-Agenda-NMI-Dir-Meeting-2017-v10
 fetched:: 2020-09-10
-content:: 19th Meeting of the Directors of NMIs and Member State Representatives
-format:: text/plain
+title.content:: 19th Meeting of the Directors of NMIs and Member State Representatives
+title.format:: text/plain
 type:: standard
 docid.type:: BIPM
 docid.id:: 2017-09-04-Draft-Agenda-NMI-Dir-Meeting-2017-v10

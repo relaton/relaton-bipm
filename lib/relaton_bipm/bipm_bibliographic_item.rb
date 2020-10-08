@@ -31,11 +31,13 @@ module RelatonBipm
       super
     end
 
-    # @param builder [Nokogiri::XML::Builder]
-    # @param bibdata [TrueClasss, FalseClass, NilClass]
-    def to_xml(builer = nil, **opts) # rubocop:disable Metrics/AbcSize, Metrics/CyclomaticComplexity, Metrics/MethodLength, Metrics/PerceivedComplexity
-      opts[:ext] = !commentperiod.nil?
-      super do |b|
+    # @param opts [Hash]
+    # @option opts [Nokogiri::XML::Builder] :builder XML builder
+    # @option opts [Boolean] :bibdata
+    # @option opts [String] :lang language
+    # @return [String] XML
+    def to_xml(**opts) # rubocop:disable Metrics/AbcSize, Metrics/CyclomaticComplexity, Metrics/MethodLength, Metrics/PerceivedComplexity
+      super ext: !commentperiod.nil?, **opts do |b|
         if opts[:bibdata] && (doctype || editorialgroup&.presence? ||
                               ics.any? || commentperiod)
           b.ext do

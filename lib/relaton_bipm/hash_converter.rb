@@ -26,12 +26,14 @@ module RelatonBipm
 
       # @param ret [Hash]
       def title_hash_to_bib(ret)
-        ret[:title] &&= array(ret[:title]).map do |t|
-          if t.is_a? Hash
-            RelatonBib::FormattedString.new t
-          else
-            RelatonBib::FormattedString.new content: t
-          end
+        ret[:title] &&= array(ret[:title]).reduce(
+          RelatonBib::TypedTitleStringCollection.new
+        ) do |m, t|
+          m << if t.is_a? Hash
+                 RelatonBib::TypedTitleString.new(t)
+               else
+                 RelatonBib::TypedTitleString.new(content: t)
+               end
         end
       end
 
