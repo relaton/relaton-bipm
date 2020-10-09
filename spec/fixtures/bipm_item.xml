@@ -108,7 +108,9 @@
   <script>Latn</script>
   <abstract format="text/plain" language="en" script="Latn">The agenda for the first day addresses current issues relating to the BIPM and CIPM and also includes advanced information about plans for the 26th CGPM in 2018.</abstract>
   <abstract format="text/plain" language="fr" script="Latn">Conférence générale des poids et mesures</abstract>
-  <status>in-force</status>
+  <status>
+    <stage>in-force</stage>
+  </status>
   <copyright>
     <from>2014</from>
     <to>2020</to>
@@ -121,7 +123,7 @@
     </owner>
     <scope>Scope</scope>
   </copyright>
-  <relation type="supersedes">
+  <relation type="obsoletes">
     <bibitem>
       <formattedref format="text/plain">ISO 19115:2003</formattedref>
     </bibitem>
@@ -147,8 +149,8 @@
       </sourceLocality>
     </sourceLocalityStack>
   </relation>
-  <relation type="supersededBy">
-    <description format="text/plain">supersedes</description>
+  <relation type="obsoletedBy">
+    <description format="text/plain">Obsoleted by</description>
     <bibitem type="standard">
       <formattedref format="text/plain">ISO 19115:2003/Cor 1:2006</formattedref>
     </bibitem>
@@ -213,23 +215,18 @@
   <ext>
     <doctype>brochure</doctype>
     <editorialgroup>
-      <technical-committee number="1" type="Type">Editorial group</technical-committee>
+      <committee>CGPM</committee>
+      <workgroup>Work group</workgroup>
     </editorialgroup>
-    <ics>
-      <code>01</code>
-      <text>First</text>
-    </ics>
-    <project-group>
-      <committee>cgpm</committee>
-      <workgroup format="text/plain" language="en" script="Latn">General Conference on Weights and Measures</workgroup>
-    </project-group>
-    <project-group>
-      <committee>cipm</committee>
-      <workgroup format="text/plain">International Committee for Weights and Measures</workgroup>
-    </project-group>
-    <commentperiod>
+    <comment-period>
       <from>2011-01-01</from>
       <to>2011-12-31</to>
-    </commentperiod>
+    </comment-period>
+    <si-aspect>A_e_deltanu</si-aspect>
+    <structuredidentifier>
+      <docnumber>si-brochure</docnumber>
+      <part>1</part>
+      <appendix>A</appendix>
+    </structuredidentifier>
   </ext>
 </bibdata>

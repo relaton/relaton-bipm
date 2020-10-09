@@ -1,3 +1,5 @@
+require "jing"
+
 RSpec.describe RelatonBipm::BipmBibliography do
   it "raise ReauestError" do
     expect(Net::HTTP).to receive(:get_response).and_raise SocketError
@@ -13,9 +15,18 @@ RSpec.describe RelatonBipm::BipmBibliography do
       RelatonBipm::BipmBibliographicItem.new bib_hash
     end
 
+    it "returns XML" do
+      file = "spec/fixtures/bipm_item.xml"
+      xml = subject.to_xml bibdata: true
+      expect(xml).to be_equivalent_to File.read(file, encoding: "UTF-8")
+      schema = Jing.new "spec/fixtures/isobib.rng"
+      errors = schema.validate file
+      expect(errors).to eq []
+    end
+
     it "returns Hash" do
       hash = subject.to_hash
-      file = "spec/fixtures/iho.yaml"
+      file = "spec/fixtures/bipm.yaml"
       File.write file, hash.to_yaml, encoding: "UTF-8" unless File.exist? file
       expect(hash).to eq YAML.load_file file
     end

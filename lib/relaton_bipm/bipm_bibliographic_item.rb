@@ -8,26 +8,35 @@ module RelatonBipm
 
     STATUSES = %w[draft-proposal draft-development in-force retired].freeze
 
-    # @return [Array<RelatonBipm::BipmProjectTeam>]
-    attr_reader :project_group
+    SI_ASPECTS = %w[
+      A_e_deltanu A_e cd_Kcd_h_deltanu cd_Kcd full K_k_deltanu K_k
+      kg_h_c_deltanu kg_h m_c_deltanu m_c mol_NA s_deltanu
+    ].freeze
 
-    # @return [RelatonIho::CommentPeriod, NilClass]
-    attr_reader :commentperiod
+    # @return [RelatonBipm::CommentPeriod, NilClass]
+    attr_reader :comment_period
 
-    # @param project_group [Array<RelatonBipm::ProjectTeam>]
-    # @param title [Array<RelatonBib::FormattedString>]
-    # @param date [Array<RelatonBipm::BibliographicDate>]
+    # @return [String]
+    attr_reader :si_aspect
+
     # @param relation [Array<RelatonBipm::DocumentRelation>]
-    # @param docstatus [RelatonBipm::DocumentStatus, nil]
-    # @param commentperiod [RelatonBipm::CommentPeriod, NilClass]
-    def initialize(**args)
-      if args[:docstatus] && !STATUSES.include?(args[:docstatus].status)
+    # @param editorialgroup [RelatonBipm::EditorialGroup]
+    # @param comment_period [RelatonBipm::CommentPeriod, NilClass]
+    # @param si_aspect [String]
+    # @param structuredidentifier [RelatonBipm::StructuredIdentifier]
+    def initialize(**args) # rubocop:disable Metrics/AbcSize,Metrics/MethodLength
+      if args[:docstatus] && !STATUSES.include?(args[:docstatus].stage)
         warn "[relaton-bipm] Warning: invalid docstatus #{args[:docstatus]}. "\
         "It should be one of: #{STATUSES}"
       end
-      @project_group = args.delete(:project_group) || []
-      # @status = args.delete :docstatus
-      @commentperiod = args.delete :commentperiod
+
+      if args[:si_aspect] && !SI_ASPECTS.include?(args[:si_aspect])
+        warn "[relaton-bipm] Warning: invalid si_aspect #{args[:si_aspect]}. "\
+        "It should be one of: #{SI_ASPECTS}"
+      end
+
+      @comment_period = args.delete :comment_period
+      @si_aspect = args.delete :si_aspect
       super
     end
 
@@ -37,15 +46,16 @@ module RelatonBipm
     # @option opts [String] :lang language
     # @return [String] XML
     def to_xml(**opts) # rubocop:disable Metrics/AbcSize, Metrics/CyclomaticComplexity, Metrics/MethodLength, Metrics/PerceivedComplexity
-      super ext: !commentperiod.nil?, **opts do |b|
+      super ext: !comment_period.nil?, **opts do |b|
         if opts[:bibdata] && (doctype || editorialgroup&.presence? ||
-                              ics.any? || commentperiod)
+                              si_aspect || comment_period ||
+                              structuredidentifier)
           b.ext do
             b.doctype doctype if doctype
             editorialgroup&.to_xml b
-            ics.each { |i| i.to_xml b }
-            project_group.each { |pg| pg.to_xml b }
-            commentperiod&.to_xml b
+            comment_period&.to_xml b
+            b.send "si-aspect", si_aspect if si_aspect
+            structuredidentifier&.to_xml b
           end
         end
       end
@@ -54,17 +64,18 @@ module RelatonBipm
     # @return [Hash]
     def to_hash
       hash = super
-      hash["project_group"] = single_element_array project_group
-      hash["commentperiod"] = commentperiod.to_hash if commentperiod
+      hash["comment_period"] = comment_period.to_hash if comment_period
+      hash["si_aspect"] = si_aspect if si_aspect
       hash
     end
 
     # @param prefix [String]
     # @return [String]
     def to_asciibib(prefix = "")
+      pref = prefix.empty? ? prefix : prefix + "."
       out = super
-      project_group.each { |p| out += p.to_asciibib prefix, project_group.size }
-      out += commentperiod.to_asciibib prefix if commentperiod
+      out += comment_period.to_asciibib prefix if comment_period
+      out += "#{pref}.si_aspect:: #{si_aspect}\n" if si_aspect
       out
     end
   end

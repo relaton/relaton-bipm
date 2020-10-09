@@ -126,7 +126,9 @@ abstract:
   language: fr
   script: Latn
   format: text/plain
-docstatus: in-force
+docstatus:
+  stage:
+    value: in-force
 copyright:
   owner:
     name: International Organization for Standardization
@@ -136,12 +138,11 @@ copyright:
   to: '2020'
   scope: Scope
 relation:
-- type: supersedes
+- type: obsoletes
   bibitem:
     formattedref:
       content: ISO 19115:2003
       format: text/plain
-    project_group:
   locality:
   - locality_stack:
       type: section
@@ -157,15 +158,14 @@ relation:
       reference_from: '2'
     - type: chapter
       reference_from: '3'
-- type: supersededBy
+- type: obsoletedBy
   bibitem:
     type: standard
     formattedref:
       content: ISO 19115:2003/Cor 1:2006
       format: text/plain
-    project_group:
   description:
-    content: supersedes
+    content: Obsoleted by
     format: text/plain
 series:
 - type: main
@@ -243,39 +243,13 @@ keyword:
 license: License
 doctype: brochure
 editorialgroup:
-  content: Editorial group
-  number: 1
-  type: Type
-ics:
-  code: '01'
-  text: First
+  committee: CGPM
+  workgroup: Work group
 structuredidentifier:
-- docnumber: '123'
-  type: type 1
-  agency:
-  - agency 1
-  - agency 2
-  class: class 1
-  partnumber: '4'
-  edition: '1'
-  version: '2'
-  supplementtype: type 2
-  supplementnumber: '5'
-  language: en
-  year: '2020'
-- docnumber: '456'
-  agency: agency 3
-project_group:
-- committee: cgpm
-  workgroup:
-    content: General Conference on Weights and Measures
-    language: en
-    script: Latn
-    format: text/plain
-- committee: cipm
-  workgroup:
-    content: International Committee for Weights and Measures
-    format: text/plain
-commentperiod:
+  docnumber: si-brochure
+  part: '1'
+  appendix: A
+comment_period:
   from: '2011-01-01'
   to: '2011-12-31'
+si_aspect: A_e_deltanu

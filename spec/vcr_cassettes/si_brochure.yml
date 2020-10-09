@@ -1,0 +1,75 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://raw.githubusercontent.com/relaton/relaton-data-bipm/master/data/si-brochure.yaml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - raw.githubusercontent.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '326'
+      Content-Type:
+      - text/plain; charset=utf-8
+      Cache-Control:
+      - max-age=300
+      Content-Security-Policy:
+      - default-src 'none'; style-src 'unsafe-inline'; sandbox
+      Etag:
+      - W/"e2b4f6cd3079b7d35f466da5232ee669b70de15bd68a8e7645025e1a81b0d4a5"
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      X-Xss-Protection:
+      - 1; mode=block
+      Via:
+      - 1.1 varnish
+      - 1.1 varnish (Varnish/6.0)
+      X-Github-Request-Id:
+      - FC9C:F263:D070C5:DB64F0:5F8046DB
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Fri, 09 Oct 2020 11:17:47 GMT
+      X-Served-By:
+      - cache-hhn4040-HHN
+      X-Cache:
+      - MISS, MISS
+      X-Cache-Hits:
+      - 0, 0
+      X-Timer:
+      - S1602242267.317739,VS0,VE165
+      Vary:
+      - Authorization,Accept-Encoding, Accept-Encoding
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Fastly-Request-Id:
+      - ebae6b2f4c625e441dc8bedee3f5e7783e3695de
+      Expires:
+      - Fri, 09 Oct 2020 11:22:47 GMT
+      Source-Age:
+      - '0'
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        dGl0bGU6CiAgLSBsYW5ndWFnZTogZW4KICAgIHNjcmlwdDogTGF0bgogICAgY29udGVudDogVGhlIEludGVybmF0aW9uYWwgU3lzdGVtIG9mIFVuaXRzIChTSSkKICAtIGxhbmd1YWdlOiBmcgogICAgc2NyaXB0OiBMYXRuCiAgICBjb250ZW50OiBMZSBTeXN0w6htZSBpbnRlcm5hdGlvbmFsIGTigJl1bml0w6lzIChTSSkKdHlwZTogc3RhbmRhcmQKZG9jaWQ6CiAgdHlwZTogQklQTQogIGlkOiBzaS1icm9jaHVyZQplZGl0aW9uOiA5CmRhdGU6CiAgLSB0eXBlOiB1cGRhdGVkCiAgICB2YWx1ZTogJzIwMTktMDUtMjAnCmFic3RyYWN0OgogIC0gY29udGVudDogVGhlIEJJUE0gYW5kIHRoZSBNZXRyZSBDb252ZW50aW9uCiAgICBsYW5ndWFnZTogZW4KICAgIHNjcmlwdDogTGF0bgogIC0gY29udGVudDogTGUgQklQTSBldCBsYSBDb252ZW50aW9uIGR1IE3DqHRyZQogICAgbGFuZ3VhZ2U6IGZyCiAgICBzY3JpcHQ6IExhdG4KY29weXJpZ2h0OgogIG93bmVyOgogICAgbmFtZTogQnVyZWF1IEludGVybmF0aW9uYWwgZGVzIHBvbmRzIGV0IG1lc3VyZXMKICAgIGFiYnJldmlhdGlvbjogQklQTQogIGZyb206ICcyMDE5Jwpkb2N0eXBlOiBicm9jaHVyZQ==
+  recorded_at: Fri, 09 Oct 2020 11:17:47 GMT
+recorded_with: VCR 6.0.0

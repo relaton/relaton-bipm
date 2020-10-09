@@ -1,6 +1,7 @@
 require "relaton_bib"
 require "relaton_bipm/version"
-require "relaton_bipm/project_team"
+require "relaton_bipm/editorial_group"
+require "relaton_bipm/structured_identifier"
 require "relaton_bipm/bibliographic_date"
 require "relaton_bipm/document_relation"
 require "relaton_bipm/comment_periond"

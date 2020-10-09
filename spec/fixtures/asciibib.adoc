@@ -18,7 +18,7 @@ biblionote::
 biblionote.content:: note
 biblionote::
 biblionote.content:: An note
-docstatus:: in-force
+docstatus.stage:: in-force
 date::
 date.type:: issued
 date.on:: 2014-01-01
@@ -147,11 +147,11 @@ contributor.organization.name.content:: Institution
 contributor.role.description.content:: sponsor
 contributor.role.type:: distributor
 relation::
-relation.type:: supersedes
+relation.type:: obsoletes
 relation.bibitem.formattedref:: ISO 19115:2003
 relation::
-relation.type:: supersededBy
-relation.desctiption.content:: supersedes
+relation.type:: obsoletedBy
+relation.desctiption.content:: Obsoleted by
 relation.desctiption.format:: text/plain
 relation.bibitem.type:: standard
 relation.bibitem.formattedref:: ISO 19115:2003/Cor 1:2006
@@ -195,36 +195,11 @@ keyword::
 keyword.content:: Keyword
 keyword::
 keyword.content:: Key Word
-editorialgroup.technical_committee.content:: Editorial group
-editorialgroup.technical_committee.number:: 1
-editorialgroup.technical_committee.type:: Type
-ics.code:: 01
-ics.text:: First
-structured_identifier::
-structured_identifier.docnumber:: 123
-structured_identifier.agency:: agency 1
-structured_identifier.agency:: agency 2
-structured_identifier.type:: type 1
-structured_identifier.class:: class 1
-structured_identifier.partnumber:: 4
-structured_identifier.edition:: 1
-structured_identifier.version:: 2
-structured_identifier.supplementtype:: type 2
-structured_identifier.supplementnumber:: 5
-structured_identifier.language:: en
-structured_identifier.year:: 2020
-structured_identifier::
-structured_identifier.docnumber:: 456
-structured_identifier.agency:: agency 3
-project_group::
-project_group.committee:: cgpm
-content:: General Conference on Weights and Measures
-language:: en
-script:: Latn
-format:: text/plain
-project_group::
-project_group.committee:: cipm
-content:: International Committee for Weights and Measures
-format:: text/plain
+editorialgroup.committee:: CGPM
+editorialgroup.workgroup:: Work group
+structuredidentifier.docnumber:: si-brochure
+structuredidentifier.part:: 1
+structuredidentifier.appendix:: A
 commentperiod.from:: 2011-01-01
 commentperiod.to:: 2011-12-31
+.si_aspect:: A_e_deltanu

@@ -38,9 +38,10 @@ Gem::Specification.new do |spec| # rubocop:disable Metrics/BlockLength
   spec.add_development_dependency "pry-byebug"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "ruby-debug-ide"
+  spec.add_development_dependency "ruby-jing"
   spec.add_development_dependency "simplecov"
   spec.add_development_dependency "vcr"
   spec.add_development_dependency "webmock"
 
-  spec.add_dependency "relaton-bib", "~> 1.5.pre"
+  spec.add_dependency "relaton-bib", "~> 1.5.0"
 end

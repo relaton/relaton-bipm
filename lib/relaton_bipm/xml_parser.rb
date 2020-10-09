@@ -11,8 +11,8 @@ module RelatonBipm
         ext = item.at "./ext"
         return data unless ext
 
-        data[:project_group] = fetch_project_group ext
-        data[:commentperiod] = fetch_commentperiond ext
+        data[:comment_period] = fetch_commentperiond ext
+        data[:si_aspect] = ext.at("si-aspect")&.text
         data
       end
 
@@ -20,18 +20,6 @@ module RelatonBipm
       # @return [RelatonBipm::BipmBibliographicItem]
       def bib_item(item_hash)
         BipmBibliographicItem.new item_hash
-      end
-
-      def fetch_project_group(ext)
-        ext.xpath("./project-group").map do |pg|
-          wg = pg.at "workgroup"
-          workgroup = RelatonBib::FormattedString.new(
-            content: wg.text, language: wg[:language], script: wg[:script],
-            format: wg[:format]
-          )
-          ProjectTeam.new(committee: pg.at("committee").text,
-                          workgroup: workgroup)
-        end
       end
 
       # @param item [Nokogiri::XML::Element]
@@ -60,26 +48,38 @@ module RelatonBipm
 
       # @param item [Nokogiri::XML::Element]
       # @param klass [RelatonBipm::DocumentRelation.class]
-      # @return [Array<RelatonBib::DocumentRelation>]
+      # @return [Array<RelatonBipm::DocumentRelation>]
       def fetch_relations(item, klass = DocumentRelation)
         super
       end
 
-      # @param item [Nokogiri::XML::Element]
-      # @return [RelatonBipm::DocumentStatus]
-      def fetch_status(item)
-        status = item.at("./status")
-        return unless status
+      # @param ext [Nokogiri::XML::Element]
+      # @return [RelatonBipm::CommentPeriod, nil]
+      def fetch_commentperiond(ext)
+        return unless ext && (cp = ext.at "comment-period")
 
-        DocumentStatus.new status.text
+        CommentPeriond.new from: cp.at("from")&.text, to: cp.at("to")&.text
       end
 
       # @param ext [Nokogiri::XML::Element]
-      # @return [RelatonIho::CommentPeriod, nil]
-      def fetch_commentperiond(ext)
-        return unless ext && (cp = ext.at "commentperiod")
+      # @return [RelatonBipm::EditorialGroup, nil]
+      def fetch_editorialgroup(ext)
+        return unless ext && (eg = ext.at "editorialgroup")
 
-        CommentPeriond.new from: cp.at("from")&.text, to: cp.at("to")&.text
+        cm = eg.xpath("committee").map &:text
+        wg = eg.xpath("workgroup").map &:text
+        EditorialGroup.new committee: cm, workgroup: wg
+      end
+
+      # @param ext [Nokogiri::XML::Element]
+      # @return [RelatonBipm::StructuredIdentifier]
+      def fetch_structuredidentifier(ext)
+        return unless ext && (sid = ext.at("structuredidentifier"))
+
+        StructuredIdentifier.new(
+          docnumber: sid.at("docnumber").text, part: sid.at("part")&.text,
+          appendix: sid.at("appendix")&.text
+        )
       end
     end
   end

@@ -11,7 +11,7 @@ module RelatonBipm
         ret = super
         return if ret.nil?
 
-        project_group_hash_to_bib ret
+        # project_group_hash_to_bib ret
         commentperiod_hash_to_bib ret
         ret
       end
@@ -38,22 +38,17 @@ module RelatonBipm
       end
 
       # @param ret [Hash]
-      def docstatus_hash_to_bib(ret)
-        ret[:docstatus] &&= DocumentStatus.new ret[:docstatus]
-      end
-
-      # @param ret [Hash]
       def commentperiod_hash_to_bib(ret)
-        ret[:commentperiod] &&= CommentPeriond.new(ret[:commentperiod])
+        ret[:comment_period] &&= CommentPeriond.new(ret[:comment_period])
       end
 
       # @param ret [Hash]
-      def project_group_hash_to_bib(ret)
-        ret[:project_group] &&= array(ret[:project_group]).map do |pg|
-          wg = RelatonBib::FormattedString.new pg[:workgroup]
-          ProjectTeam.new(committee: pg[:committee], workgroup: wg)
-        end
-      end
+      # def project_group_hash_to_bib(ret)
+      #   ret[:project_group] &&= array(ret[:project_group]).map do |pg|
+      #     wg = RelatonBib::FormattedString.new pg[:workgroup]
+      #     ProjectTeam.new(committee: pg[:committee], workgroup: wg)
+      #   end
+      # end
 
       # @param ret [Hash]
       def dates_hash_to_bib(ret)
@@ -69,6 +64,18 @@ module RelatonBipm
         ret[:relation] &&= ret[:relation].map do |r|
           RelatonBipm::DocumentRelation.new r
         end
+      end
+
+      # @param ret [Hash]
+      def editorialgroup_hash_to_bib(ret)
+        ret[:editorialgroup] &&= EditorialGroup.new ret[:editorialgroup]
+      end
+
+      # @param ret [Hash]
+      def structuredidentifier_hash_to_bib(ret)
+        ret[:structuredidentifier] &&= StructuredIdentifier.new(
+          **ret[:structuredidentifier]
+        )
       end
     end
   end

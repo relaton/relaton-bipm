@@ -15,7 +15,7 @@ module RelatonBipm
 
     # @param builder [Nokogiri::XML::builder]
     def to_xml(builder)
-      builder.commentperiod do
+      builder.send "comment-period" do
         builder.from from.to_s
         builder.to to.to_s if to
       end
