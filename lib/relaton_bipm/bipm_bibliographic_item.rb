@@ -26,12 +26,12 @@ module RelatonBipm
     # @param structuredidentifier [RelatonBipm::StructuredIdentifier]
     def initialize(**args) # rubocop:disable Metrics/AbcSize,Metrics/MethodLength
       if args[:docstatus] && !STATUSES.include?(args[:docstatus].stage)
-        warn "[relaton-bipm] Warning: invalid docstatus #{args[:docstatus]}. "\
+        warn "[relaton-bipm] Warning: invalid docstatus: #{args[:docstatus]}. "\
         "It should be one of: #{STATUSES}"
       end
 
       if args[:si_aspect] && !SI_ASPECTS.include?(args[:si_aspect])
-        warn "[relaton-bipm] Warning: invalid si_aspect #{args[:si_aspect]}. "\
+        warn "[relaton-bipm] Warning: invalid si_aspect: #{args[:si_aspect]}. "\
         "It should be one of: #{SI_ASPECTS}"
       end
 
