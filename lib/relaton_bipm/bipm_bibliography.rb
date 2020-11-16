@@ -10,7 +10,7 @@ module RelatonBipm
       # @return [RelatonBipm::BipmBibliographicItem]
       def search(text, _year = nil, _opts = {}) # rubocop:disable Metrics/MethodLength, Metrics/AbcSize
         warn "[relaton-bipm] (\"#{text}\") fetching..."
-        ref = text.sub(/^BIPM\s/, "").downcase # .sub /^([[:alpha:]]+)(\d+)/, '\1-\2'
+        ref = text.sub(/^BIPM\s/, "").downcase.split(" ").join "-"
         uri = URI("#{ENDPOINT}#{ref}.yaml")
         resp = Net::HTTP.get_response uri
         return unless resp.code == "200"
