@@ -68,7 +68,13 @@ module RelatonBipm
 
       # @param ret [Hash]
       def editorialgroup_hash_to_bib(ret)
-        ret[:editorialgroup] &&= EditorialGroup.new ret[:editorialgroup]
+        return unless ret[:editorialgroup]
+
+        cmt = ret[:editorialgroup][:committee].map { |c| Committee.new c }
+        wg = array(ret[:editorialgroup][:workgroup]).map do |w|
+          w.is_a?(Hash) ? WorkGroup.new(w) : WorkGroup.new(content: w)
+        end
+        ret[:editorialgroup] = EditorialGroup.new committee: cmt, workgroup: wg
       end
 
       # @param ret [Hash]

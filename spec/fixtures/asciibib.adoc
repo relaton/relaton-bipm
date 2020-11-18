@@ -14,9 +14,9 @@ language:: fr
 script:: Latn
 version.revision_date:: 2019-04-01
 version.draft:: draft
+biblionote:: note
 biblionote::
-biblionote.content:: note
-biblionote::
+biblionote.type:: annote
 biblionote.content:: An note
 docstatus.stage:: in-force
 date::
@@ -38,8 +38,8 @@ abstract.content:: Conférence générale des poids et mesures
 abstract.language:: fr
 abstract.script:: Latn
 abstract.format:: text/plain
-copyright.owner.name.content:: International Organization for Standardization
-copyright.owner.abbreviation.content:: ISO
+copyright.owner.name:: International Organization for Standardization
+copyright.owner.abbreviation:: ISO
 copyright.owner.url:: www.iso.org
 copyright.role.type:: publisher
 copyright.from:: 2014
@@ -85,17 +85,17 @@ validity.begins:: 2010-10-10 12:21
 validity.ends:: 2011-02-03 18:30
 validity.revision:: 2011-03-04 09:00
 contributor::
-contributor.organization.name.content:: International Organization for Standardization
-contributor.organization.abbreviation.content:: ISO
-contributor.organization.subdivision.content:: division
+contributor.organization.name:: International Organization for Standardization
+contributor.organization.abbreviation:: ISO
+contributor.organization.subdivision:: division
 contributor.organization.url:: www.iso.org
-contributor.role.description.content:: Publisher role
+contributor.role.description:: Publisher role
 contributor.role.type:: publisher
 contributor::
 contributor.person.name.completename.content:: A. Bierman
 contributor.person.name.completename.language:: en
-contributor.person.affiliation.organization.name.content:: IETF
-contributor.person.affiliation.organization.abbreviation.content:: IETF
+contributor.person.affiliation.organization.name:: IETF
+contributor.person.affiliation.organization.abbreviation:: IETF
 contributor.person.affiliation.organization.identifier.type:: uri
 contributor.person.affiliation.organization.identifier.value:: www.ietf.org
 contributor.person.address.street:: Street
@@ -107,15 +107,15 @@ contributor.person.contact.type:: phone
 contributor.person.contact.value:: 223322
 contributor.role.type:: author
 contributor::
-contributor.organization.name.content:: IETF
-contributor.organization.abbreviation.content:: IETF
+contributor.organization.name:: IETF
+contributor.organization.abbreviation:: IETF
 contributor.organization.identifier.type:: uri
 contributor.organization.identifier.value:: www.ietf.org
 contributor::
-contributor.role.description.content:: Publisher description
+contributor.role.description:: Publisher description
 contributor.role.type:: publisher
 contributor::
-contributor.role.description.content:: Editor description
+contributor.role.description:: Editor description
 contributor.role.type:: editor
 contributor::
 contributor.person.name.forename.content:: Forename
@@ -130,8 +130,8 @@ contributor.person.name.prefix.content:: Prefix
 contributor.person.name.prefix.language:: en
 contributor.person.affiliation.description.content:: Description
 contributor.person.affiliation.description.language:: en
-contributor.person.affiliation.organization.name.content:: IETF
-contributor.person.affiliation.organization.abbreviation.content:: IETF
+contributor.person.affiliation.organization.name:: IETF
+contributor.person.affiliation.organization.abbreviation:: IETF
 contributor.person.type:: uri
 contributor.person.value:: www.person.com
 contributor.person.address.street:: Street
@@ -143,8 +143,8 @@ contributor.person.contact.type:: phone
 contributor.person.contact.value:: 223322
 contributor.role.type:: author
 contributor::
-contributor.organization.name.content:: Institution
-contributor.role.description.content:: sponsor
+contributor.organization.name:: Institution
+contributor.role.description:: sponsor
 contributor.role.type:: distributor
 relation::
 relation.type:: obsoletes
@@ -164,7 +164,7 @@ series.title.script:: Latn
 series.title.format:: text/plain
 series.place:: Serie's place
 series.organization:: Serie's organization
-series.abbreviation.content:: ABVR
+series.abbreviation:: ABVR
 series.from:: 2009-02-01
 series.to:: 2010-12-20
 series.number:: serie1234
@@ -191,15 +191,20 @@ series.title.variant.language:: fr
 series.title.variant.script:: Latn
 series.title.format:: text/plain
 doctype:: brochure
-keyword::
-keyword.content:: Keyword
-keyword::
-keyword.content:: Key Word
-editorialgroup.committee:: CGPM
+keyword:: Keyword
+keyword:: Key Word
+editorialgroup.committee.acronym:: CGPM
+editorialgroup.committee.content:: General Conference on Weights and Measures
+editorialgroup.committee.language:: en
+editorialgroup.committee.script:: Latn
 editorialgroup.workgroup:: Work group
+editorialgroup.workgroup::
+editorialgroup.workgroup.acronym:: ACRN
+editorialgroup.workgroup.content:: Workgroup
 structuredidentifier.docnumber:: si-brochure
 structuredidentifier.part:: 1
 structuredidentifier.appendix:: A
 commentperiod.from:: 2011-01-01
 commentperiod.to:: 2011-12-31
-.si_aspect:: A_e_deltanu
+si_aspect:: A_e_deltanu
+meeting_note:: Meeting noteh

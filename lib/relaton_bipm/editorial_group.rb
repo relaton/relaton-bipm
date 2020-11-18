@@ -2,21 +2,12 @@ module RelatonBipm
   class EditorialGroup
     include RelatonBib
 
-    COMMITTEES = %w[CGPM CIPM BIPM CCAUV CCEM CCL CCM CCPR CCQM CCRI CCT CCTF
-                    CCU CCL-CCT JCGM JCRB JCTLM INetQI].freeze
-
     # @return [Array<String>]
     attr_reader :committee, :workgroup
 
-    # @param committee [Array<String>]
-    # @param workgroup [Array<String>]
-    def initialize(committee:, workgroup:)
-      committee.each do |c|
-        unless COMMITTEES.include? c
-          warn "[relaton-bipm] invalid committee: #{c}"
-        end
-      end
-
+    # @param committee [Array<RelatonBipm::Committee>]
+    # @param workgroup [Array<RelatonBipm::WorkGroup>]
+    def initialize(committee:, workgroup: [])
       @committee = committee
       @workgroup = workgroup
     end
@@ -24,19 +15,19 @@ module RelatonBipm
     # @param builder [Nokogiri::XML::Builder]
     def to_xml(builder)
       builder.editorialgroup do |b|
-        committee.each { |c| b.committee c }
-        workgroup.each { |c| b.workgroup c }
+        committee.each { |c| c.to_xml b }
+        workgroup.each { |c| c.to_xml b }
       end
     end
 
     # @param prefix [String]
     # @return [String]
-    def to_asciibib(prefix = "")
+    def to_asciibib(prefix = "") # rubocop:disable Metrics/AbcSize
       pref = prefix.empty? ? prefix : prefix + "."
       pref += "editorialgroup"
       out = ""
-      committee.each { |c| out += "#{pref}.committee:: #{c}\n" }
-      workgroup.each { |w| out += "#{pref}.workgroup:: #{w}\n" }
+      committee.each { |c| out += c.to_asciibib pref, committee.size }
+      workgroup.each { |w| out += w.to_asciibib pref, workgroup.size }
       out
     end
 

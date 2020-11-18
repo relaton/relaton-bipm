@@ -243,8 +243,15 @@ keyword:
 license: License
 doctype: brochure
 editorialgroup:
-  committee: CGPM
-  workgroup: Work group
+  committee:
+    acronym: CGPM
+    content: General Conference on Weights and Measures
+    language: en
+    script: Latn
+  workgroup:
+  - Work group
+  - content: Workgroup
+    acronym: ACRN
 structuredidentifier:
   docnumber: si-brochure
   part: '1'
@@ -253,3 +260,4 @@ comment_period:
   from: '2011-01-01'
   to: '2011-12-31'
 si_aspect: A_e_deltanu
+meeting-note: Meeting note

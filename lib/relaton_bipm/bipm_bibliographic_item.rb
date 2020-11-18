@@ -13,16 +13,17 @@ module RelatonBipm
       kg_h_c_deltanu kg_h m_c_deltanu m_c mol_NA s_deltanu
     ].freeze
 
-    # @return [RelatonBipm::CommentPeriod, NilClass]
+    # @return [RelatonBipm::CommentPeriod, nil]
     attr_reader :comment_period
 
-    # @return [String]
-    attr_reader :si_aspect
+    # @return [String, nil]
+    attr_reader :si_aspect, :meeting_note
 
     # @param relation [Array<RelatonBipm::DocumentRelation>]
     # @param editorialgroup [RelatonBipm::EditorialGroup]
-    # @param comment_period [RelatonBipm::CommentPeriod, NilClass]
-    # @param si_aspect [String]
+    # @param comment_period [RelatonBipm::CommentPeriod, nil]
+    # @param si_aspect [String, nil]
+    # @param meeting_note [String, nil]
     # @param structuredidentifier [RelatonBipm::StructuredIdentifier]
     def initialize(**args) # rubocop:disable Metrics/AbcSize,Metrics/MethodLength
       if args[:docstatus] && !STATUSES.include?(args[:docstatus].stage)
@@ -37,6 +38,7 @@ module RelatonBipm
 
       @comment_period = args.delete :comment_period
       @si_aspect = args.delete :si_aspect
+      @meeting_note = args[:meeting_note]
       super
     end
 
@@ -55,6 +57,7 @@ module RelatonBipm
             editorialgroup&.to_xml b
             comment_period&.to_xml b
             b.send "si-aspect", si_aspect if si_aspect
+            b.send "meeting-note", meeting_note if meeting_note
             structuredidentifier&.to_xml b
           end
         end
@@ -66,6 +69,7 @@ module RelatonBipm
       hash = super
       hash["comment_period"] = comment_period.to_hash if comment_period
       hash["si_aspect"] = si_aspect if si_aspect
+      hash["meeting-note"] = meeting_note if meeting_note
       hash
     end
 
@@ -75,7 +79,8 @@ module RelatonBipm
       pref = prefix.empty? ? prefix : prefix + "."
       out = super
       out += comment_period.to_asciibib prefix if comment_period
-      out += "#{pref}.si_aspect:: #{si_aspect}\n" if si_aspect
+      out += "#{pref}si_aspect:: #{si_aspect}\n" if si_aspect
+      out += "#{pref}meeting_note:: #{meeting_note}\h" if meeting_note
       out
     end
   end

@@ -215,14 +215,16 @@
   <ext>
     <doctype>brochure</doctype>
     <editorialgroup>
-      <committee>CGPM</committee>
+      <committee acronym="CGPM" language="en" script="Latn">General Conference on Weights and Measures</committee>
       <workgroup>Work group</workgroup>
+      <workgroup acronym="ACRN">Workgroup</workgroup>
     </editorialgroup>
     <comment-period>
       <from>2011-01-01</from>
       <to>2011-12-31</to>
     </comment-period>
     <si-aspect>A_e_deltanu</si-aspect>
+    <meeting-note>Meeting note</meeting-note>
     <structuredidentifier>
       <docnumber>si-brochure</docnumber>
       <part>1</part>

@@ -13,6 +13,7 @@ module RelatonBipm
 
         data[:comment_period] = fetch_commentperiond ext
         data[:si_aspect] = ext.at("si-aspect")&.text
+        data[:meeting_note] = ext.at("meeting-note")&.text
         data
       end
 
@@ -63,11 +64,16 @@ module RelatonBipm
 
       # @param ext [Nokogiri::XML::Element]
       # @return [RelatonBipm::EditorialGroup, nil]
-      def fetch_editorialgroup(ext)
+      def fetch_editorialgroup(ext) # rubocop:disable Metrics/AbcSize
         return unless ext && (eg = ext.at "editorialgroup")
 
-        cm = eg.xpath("committee").map &:text
-        wg = eg.xpath("workgroup").map &:text
+        cm = eg.xpath("committee").map do |c|
+          cnt = RelatonBib::LocalizedString.new c.text, c[:language], c[:script]
+          Committee.new acronym: c[:acronym], content: cnt
+        end
+        wg = eg.xpath("workgroup").map do |w|
+          WorkGroup.new content: w.text, acronym: w[:acronym]
+        end
         EditorialGroup.new committee: cm, workgroup: wg
       end
 

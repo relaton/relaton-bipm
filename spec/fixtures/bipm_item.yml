@@ -256,9 +256,11 @@ validity:
 
 editorialgroup:
   committee:
-    - CGPM
+    - acronym: CGPM
   workgroup:
     - Work group
+    - acronym: ACRN
+      content: Workgroup
 
 structuredidentifier:
   docnumber: si-brochure
@@ -266,6 +268,7 @@ structuredidentifier:
   appendix: A
 
 si_aspect: A_e_deltanu
+meeting_note: Meeting note
 
 comment_period:
   from: '2011-01-01'
