@@ -7,7 +7,7 @@ module RelatonBipm
     attr_reader :content
 
     # @param acronym [String]
-    # @param content [RelatonBib::LocalisedString, nil]
+    # @param content [RelatonBib::LocalisedString, String, nil]
     def initialize(acronym:, content: nil)
       acronyms = YAML.load_file File.join(__dir__, "acronyms.yaml")
       unless acronyms[acronym]
@@ -16,11 +16,7 @@ module RelatonBipm
       end
 
       @acronym = acronym
-      return unless acronyms[acronym]
-
-      @content = content || RelatonBib::LocalizedString.new(
-        acronyms[acronym]["en"].to_s, "en", "Latn"
-      )
+      @content = localized_content content, acronyms[acronym]
     end
 
     # @param builder [Nokogiri::XML::Builder]
@@ -42,7 +38,23 @@ module RelatonBipm
     # @return [Hash]
     def to_hash
       hash = { "acronym" => acronym }
-      hash.merge content.to_hash
+      cnt = content.to_hash
+      if cnt.is_a? Array then hash["variants"] = cnt
+      elsif cnt.is_a? Hash then hash.merge! cnt
+      else hash["content"] = cnt
+      end
+      hash
+    end
+
+    private
+
+    def localized_content(cnt, acr)
+      if cnt.is_a? String
+        RelatonBib::LocalizedString.new cnt
+      elsif (cnt.nil? || cnt.empty?) && acr && acr["en"]
+        RelatonBib::LocalizedString.new(acr["en"], "en", "Latn")
+      else cnt
+      end
     end
   end
 end

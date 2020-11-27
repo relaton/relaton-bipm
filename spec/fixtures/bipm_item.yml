@@ -36,7 +36,8 @@ date:
   - type: issued
     value: "2014-01-01"
   - type: effective
-    value: "2014-04-01"
+    from: "2014-04-01"
+    to: "2015-12-31"
   - type: supreseded
     value: "2015-05-20"
 
@@ -257,6 +258,12 @@ validity:
 editorialgroup:
   committee:
     - acronym: CGPM
+      variants:
+        - language: en
+        - language: fr
+    - acronym: CCU
+    - acronym: JCGM
+      content: Joint Committee for Guides in Metrology
   workgroup:
     - Work group
     - acronym: ACRN

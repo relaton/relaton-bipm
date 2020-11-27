@@ -15,7 +15,8 @@ date:
 - type: issued
   value: '2014-01-01'
 - type: effective
-  value: '2014-04-01'
+  from: '2014-04-01'
+  to: '2015-12-31'
 - type: supreseded
   value: '2015-05-20'
 contributor:
@@ -244,10 +245,18 @@ license: License
 doctype: brochure
 editorialgroup:
   committee:
-    acronym: CGPM
-    content: General Conference on Weights and Measures
+  - acronym: CGPM
+    variants:
+    - content: General Conference on Weights and Measures
+      language: en
+    - content: Conférence générale des poids et mesures
+      language: fr
+  - acronym: CCU
+    content: Consultative Committee for Units
     language: en
     script: Latn
+  - acronym: JCGM
+    content: Joint Committee for Guides in Metrology
   workgroup:
   - Work group
   - content: Workgroup

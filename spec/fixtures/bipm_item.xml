@@ -8,7 +8,8 @@
     <on>2014-01-01</on>
   </date>
   <date type="effective">
-    <on>2014-04-01</on>
+    <from>2014-04-01</from>
+    <to>2015-12-31</to>
   </date>
   <date type="supreseded">
     <on>2015-05-20</on>
@@ -215,7 +216,12 @@
   <ext>
     <doctype>brochure</doctype>
     <editorialgroup>
-      <committee acronym="CGPM" language="en" script="Latn">General Conference on Weights and Measures</committee>
+      <committee acronym="CGPM">
+        <variant language="en">General Conference on Weights and Measures</variant>
+        <variant language="fr">Conférence générale des poids et mesures</variant>
+      </committee>
+      <committee acronym="CCU" language="en" script="Latn">Consultative Committee for Units</committee>
+      <committee acronym="JCGM">Joint Committee for Guides in Metrology</committee>
       <workgroup>Work group</workgroup>
       <workgroup acronym="ACRN">Workgroup</workgroup>
     </editorialgroup>

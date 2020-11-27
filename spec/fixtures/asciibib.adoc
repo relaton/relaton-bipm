@@ -24,7 +24,8 @@ date.type:: issued
 date.on:: 2014-01-01
 date::
 date.type:: effective
-date.on:: 2014-04-01
+date.from:: 2014-04-01
+date.to:: 2015-12-31
 date::
 date.type:: supreseded
 date.on:: 2015-05-20
@@ -193,10 +194,22 @@ series.title.format:: text/plain
 doctype:: brochure
 keyword:: Keyword
 keyword:: Key Word
+editorialgroup.committee::
 editorialgroup.committee.acronym:: CGPM
-editorialgroup.committee.content:: General Conference on Weights and Measures
+editorialgroup.committee.variant::
+editorialgroup.committee.variant.content:: General Conference on Weights and Measures
+editorialgroup.committee.variant.language:: en
+editorialgroup.committee.variant::
+editorialgroup.committee.variant.content:: Conférence générale des poids et mesures
+editorialgroup.committee.variant.language:: fr
+editorialgroup.committee::
+editorialgroup.committee.acronym:: CCU
+editorialgroup.committee.content:: Consultative Committee for Units
 editorialgroup.committee.language:: en
 editorialgroup.committee.script:: Latn
+editorialgroup.committee::
+editorialgroup.committee.acronym:: JCGM
+editorialgroup.committee:: Joint Committee for Guides in Metrology
 editorialgroup.workgroup:: Work group
 editorialgroup.workgroup::
 editorialgroup.workgroup.acronym:: ACRN

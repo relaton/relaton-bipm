@@ -2,6 +2,8 @@ require "yaml"
 
 module RelatonBipm
   class HashConverter < RelatonBib::HashConverter
+    @@acronyms = nil
+
     class << self
       # @override RelatonIsoBib::HashConverter.hash_to_bib
       # @param args [Hash]
@@ -67,14 +69,32 @@ module RelatonBipm
       end
 
       # @param ret [Hash]
-      def editorialgroup_hash_to_bib(ret)
+      def editorialgroup_hash_to_bib(ret) # rubocop:disable Metrics/AbcSize
         return unless ret[:editorialgroup]
 
-        cmt = ret[:editorialgroup][:committee].map { |c| Committee.new c }
+        cmt = ret[:editorialgroup][:committee].map do |c|
+          if (vars = committee_variants c).any?
+            content = RelatonBib::LocalizedString.new vars
+            Committee.new acronym: c[:acronym], content: content
+          else
+            Committee.new c
+          end
+        end
         wg = array(ret[:editorialgroup][:workgroup]).map do |w|
           w.is_a?(Hash) ? WorkGroup.new(w) : WorkGroup.new(content: w)
         end
         ret[:editorialgroup] = EditorialGroup.new committee: cmt, workgroup: wg
+      end
+
+      def committee_variants(cmt)
+        array(cmt[:variants]).each_with_object([]) do |v, a|
+          c = v[:content] || (ac = acronyms[cmt[:acronym]]) && ac[v[:language]]
+          a << RelatonBib::LocalizedString.new(c, v[:language], v[:script]) if c
+        end
+      end
+
+      def acronyms
+        @@acronyms ||= YAML.load_file File.join __dir__, "acronyms.yaml"
       end
 
       # @param ret [Hash]

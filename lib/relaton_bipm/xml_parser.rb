@@ -64,11 +64,16 @@ module RelatonBipm
 
       # @param ext [Nokogiri::XML::Element]
       # @return [RelatonBipm::EditorialGroup, nil]
-      def fetch_editorialgroup(ext) # rubocop:disable Metrics/AbcSize
+      def fetch_editorialgroup(ext) # rubocop:disable Metrics/AbcSize,Metrics/MethodLength
         return unless ext && (eg = ext.at "editorialgroup")
 
         cm = eg.xpath("committee").map do |c|
-          cnt = RelatonBib::LocalizedString.new c.text, c[:language], c[:script]
+          vars = variants c
+          cnt = if vars.any?
+                  RelatonBib::LocalizedString.new vars
+                else
+                  RelatonBib::LocalizedString.new c.text, c[:language], c[:script]
+                end
           Committee.new acronym: c[:acronym], content: cnt
         end
         wg = eg.xpath("workgroup").map do |w|
@@ -77,13 +82,23 @@ module RelatonBipm
         EditorialGroup.new committee: cm, workgroup: wg
       end
 
+      # @TODO remove this method before next (1.7.0) relaton release
+      #   it's in the relaton-bib but hasn't released yet
+      # @param title [Nokogiri::XML::Element]
+      # @return [Array<RelatonBib::LocalizedString>]
+      def variants(elm)
+        elm.xpath("variant").map do |v|
+          RelatonBib::LocalizedString.new v.text, v[:language], v[:script]
+        end
+      end
+
       # @param ext [Nokogiri::XML::Element]
       # @return [RelatonBipm::StructuredIdentifier]
       def fetch_structuredidentifier(ext)
         return unless ext && (sid = ext.at("structuredidentifier"))
 
         StructuredIdentifier.new(
-          docnumber: sid.at("docnumber").text, part: sid.at("part")&.text,
+          docnumber: sid.at("docnumber")&.text, part: sid.at("part")&.text,
           appendix: sid.at("appendix")&.text
         )
       end
