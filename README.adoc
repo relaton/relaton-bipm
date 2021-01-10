@@ -1,0 +1,145 @@
+= RelatonBipm: retrieve BIPM Standards for bibliographic use using the BibliographicItem model
+
+image:https://img.shields.io/gem/v/relaton-bipm.svg["Gem Version", link="https://rubygems.org/gems/relaton-bipm"]
+image:https://github.com/relaton/relaton-bipm/workflows/macos/badge.svg["Build Status (macOS)", link="https://github.com/relaton/relaton-bipm/actions?workflow=macos"]
+image:https://github.com/relaton/relaton-bipm/workflows/windows/badge.svg["Build Status (Windows)", link="https://github.com/relaton/relaton-bipm/actions?workflow=windows"]
+image:https://github.com/relaton/relaton-bipm/workflows/ubuntu/badge.svg["Build Status (Ubuntu)", link="https://github.com/relaton/relaton-bipm/actions?workflow=ubuntu"]
+image:https://codeclimate.com/github/relaton/relaton-bipm/badges/gpa.svg["Code Climate", link="https://codeclimate.com/github/relaton/relaton-bipm"]
+image:https://img.shields.io/github/issues-pr-raw/relaton/relaton-bipm.svg["Pull Requests", link="https://github.com/relaton/relaton-bipm/pulls"]
+image:https://img.shields.io/github/commits-since/relaton/relaton-bipm/latest.svg["Commits since latest",link="https://github.com/relaton/relaton-bipm/releases"]
+
+RelatonIec is a Ruby gem that implements the https://github.com/metanorma/metanorma-model-iso#iso-bibliographic-item[IsoBibliographicItem model].
+
+You can use it to retrieve metadata of BIPM Standards from https://www.bipm.org, and access such metadata through the `BipmBibliographicItem` object.
+
+== Installation
+
+Add this line to your application's Gemfile:
+
+[source,ruby]
+----
+gem 'relaton-bipm'
+----
+
+And then execute:
+
+    $ bundle install
+
+Or install it yourself as:
+
+    $ gem install relaton-bipm
+
+== Usage
+
+=== Search for a standard using keywords
+
+[source,ruby]
+----
+require 'relaton_bipm'
+=> true
+
+item = RelatonBipm::BipmBibliography.get "BIPM si-brochure"
+[relaton-bipm] ("BIPM si-brochure") fetching...
+[relaton-bipm] ("BIPM si-brochure") found si-brochure
+=> #<RelatonBipm::BipmBibliographicItem:0x007ffb83982fe8
+...
+----
+
+=== XML serialization
+
+[source,ruby]
+----
+item.to_xml
+=> "<bibitem id="si-brochure" type="standard">
+      <fetched>2021-01-10</fetched>
+      <title format="text/plain" language="en" script="Latn">The International System of Units (SI)</title>
+      <title format="text/plain" language="fr" script="Latn">Le Système international d’unités (SI)</title>
+      <docidentifier type="BIPM">si-brochure</docidentifier>
+      <date type="updated">
+        <on>2019-05-20</on>
+      </date>
+      <edition>9</edition>
+      <abstract format="text/plain" language="en" script="Latn">The BIPM and the Metre Convention</abstract>
+      <abstract format="text/plain" language="fr" script="Latn">Le BIPM et la Convention du Mètre</abstract>
+      <copyright>
+        <from>2019</from>
+        <owner>
+          <organization>
+            <name>Bureau International des ponds et mesures</name>
+            <abbreviation>BIPM</abbreviation>
+          </organization>
+        </owner>
+      </copyright>
+    </bibitem>"
+----
+
+With argument `bibdata: true` it ouputs XML wrapped by `bibdata` element and adds flavour `ext` element.
+
+[source,ruby]
+----
+item.to_xml bibdata: true
+=> "<bibdata type="standard">
+      <fetched>2021-01-10</fetched>
+      <title format="text/plain" language="en" script="Latn">The International System of Units (SI)</title>
+      <title format="text/plain" language="fr" script="Latn">Le Système international d’unités (SI)</title>
+      <docidentifier type="BIPM">si-brochure</docidentifier>
+      <date type="updated">
+        <on>2019-05-20</on>
+      </date>
+      <edition>9</edition>
+      <abstract format="text/plain" language="en" script="Latn">The BIPM and the Metre Convention</abstract>
+      <abstract format="text/plain" language="fr" script="Latn">Le BIPM et la Convention du Mètre</abstract>
+      <copyright>
+        <from>2019</from>
+        <owner>
+          <organization>
+            <name>Bureau International des ponds et mesures</name>
+            <abbreviation>BIPM</abbreviation>
+          </organization>
+        </owner>
+      </copyright>
+      <ext>
+        <doctype>brochure</doctype>
+      </ext>
+    </bibdata>"
+----
+
+=== Create bibliographic item from XML
+
+[source,ruby]
+----
+RelatonBipm::XMLParser.from_xml File.read('spec/fixtures/bipm_item.xml')
+=> #<RelatonBipm::BipmBibliographicItem:0x007ffb83827a90
+...
+----
+
+=== Create bibliographic item from YAML
+[source,ruby]
+----
+hash = YAML.load_file 'spec/fixtures/bipm_item.yml'
+=> {"id"=>"Draft-Agenda-NMI-Dir-Meeting-2017-v10",
+...
+
+bib_hash = RelatonBipm::HashConverter.hash_to_bib hash
+=> {:id=>"Draft-Agenda-NMI-Dir-Meeting-2017-v10",
+...
+
+RelatonBipm::BipmBibliographicItem.new bib_hash
+=> #<RelatonBipm::BipmBibliographicItem:0x007ffb668755a0
+...
+----
+
+== Development
+
+After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+
+To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+
+== Contributing
+
+Bug reports and pull requests are welcome on GitHub at https://github.com/relaton/relaton-bipm.
+
+
+== License
+
+The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
