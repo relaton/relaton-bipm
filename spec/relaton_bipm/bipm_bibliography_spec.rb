@@ -2,7 +2,10 @@ require "jing"
 
 RSpec.describe RelatonBipm::BipmBibliography do
   it "raise ReauestError" do
-    expect(Net::HTTP).to receive(:get_response).and_raise SocketError
+    agent = double(:agent)
+    expect(agent).to receive(:get).and_raise Mechanize::ResponseCodeError.new(Mechanize::Page.new)
+    expect(agent).to receive(:request_headers=)
+    expect(Mechanize).to receive(:new).and_return agent
     expect do
       RelatonBipm::BipmBibliography.search "ref"
     end.to raise_error RelatonBib::RequestError
@@ -12,7 +15,7 @@ RSpec.describe RelatonBipm::BipmBibliography do
     subject do
       hash = YAML.load_file "spec/fixtures/bipm_item.yml"
       bib_hash = RelatonBipm::HashConverter.hash_to_bib hash
-      RelatonBipm::BipmBibliographicItem.new bib_hash
+      RelatonBipm::BipmBibliographicItem.new **bib_hash
     end
 
     it "returns XML" do

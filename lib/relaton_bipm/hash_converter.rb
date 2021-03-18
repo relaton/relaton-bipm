@@ -23,7 +23,7 @@ module RelatonBipm
       # @param item_hash [Hash]
       # @return [RelatonBib::BibliographicItem]
       def bib_item(item_hash)
-        BipmBibliographicItem.new item_hash
+        BipmBibliographicItem.new **item_hash
       end
 
       # @param ret [Hash]
@@ -32,7 +32,7 @@ module RelatonBipm
           RelatonBib::TypedTitleStringCollection.new
         ) do |m, t|
           m << if t.is_a? Hash
-                 RelatonBib::TypedTitleString.new(t)
+                 RelatonBib::TypedTitleString.new(**t)
                else
                  RelatonBib::TypedTitleString.new(content: t)
                end
@@ -41,7 +41,7 @@ module RelatonBipm
 
       # @param ret [Hash]
       def commentperiod_hash_to_bib(ret)
-        ret[:comment_period] &&= CommentPeriond.new(ret[:comment_period])
+        ret[:comment_period] &&= CommentPeriond.new(**ret[:comment_period])
       end
 
       # @param ret [Hash]
@@ -56,7 +56,7 @@ module RelatonBipm
       def dates_hash_to_bib(ret)
         super
         ret[:date] &&= ret[:date].map do |d|
-          BibliographicDate.new d
+          BibliographicDate.new **d
         end
       end
 
@@ -64,12 +64,12 @@ module RelatonBipm
       def relations_hash_to_bib(ret)
         super
         ret[:relation] &&= ret[:relation].map do |r|
-          RelatonBipm::DocumentRelation.new r
+          RelatonBipm::DocumentRelation.new **r
         end
       end
 
       # @param ret [Hash]
-      def editorialgroup_hash_to_bib(ret) # rubocop:disable Metrics/AbcSize
+      def editorialgroup_hash_to_bib(ret) # rubocop:disable Metrics/AbcSize,Metrics/MethodLength
         return unless ret[:editorialgroup]
 
         cmt = ret[:editorialgroup][:committee].map do |c|
@@ -77,11 +77,11 @@ module RelatonBipm
             content = RelatonBib::LocalizedString.new vars
             Committee.new acronym: c[:acronym], content: content
           else
-            Committee.new c
+            Committee.new **c
           end
         end
         wg = array(ret[:editorialgroup][:workgroup]).map do |w|
-          w.is_a?(Hash) ? WorkGroup.new(w) : WorkGroup.new(content: w)
+          w.is_a?(Hash) ? WorkGroup.new(**w) : WorkGroup.new(content: w)
         end
         ret[:editorialgroup] = EditorialGroup.new committee: cmt, workgroup: wg
       end

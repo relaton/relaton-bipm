@@ -1,8 +1,8 @@
 <bibdata type="standard">
-  <fetched>2021-01-09</fetched>
+  <fetched>2021-01-13</fetched>
   <title type="title-main" format="text/plain" language="en" script="Latn">Decade Designs for Weighings of Non-uniform Variance</title>
   <title type="main" format="text/plain" language="en" script="Latn">Decade Designs for Weighings of Non-uniform Variance</title>
-  <uri type="src">/article/10.1088/0026-1394/29/6/001</uri>
+  <uri type="src">https://iopscience.iop.org/article/10.1088/0026-1394/29/6/001</uri>
   <uri type="doi">https://doi.org/10.1088/0026-1394/29/6/001</uri>
   <docidentifier type="BIPM">Metrologia 29 6 373</docidentifier>
   <date type="published">
@@ -27,6 +27,15 @@
   <language>en</language>
   <script>Latn</script>
   <abstract format="text/plain" language="en" script="Latn">The selection of an efficient weighing design is a common problem in mass metrology. The calibration of a set of nominally equal masses in terms of one or more reference masses of the same value does not normally present any difficulty, but designs for extending the calibration of a kilogram mass to multiples and submultiples of the unit are more complex. A selection rule that is very widely used is that the design matrix be orthogonal. However, orthogonality is advantageous only when all the weighings in the design have the same variance. In accurate work this is generally not the case, as the variance of balances is load-dependent and furthermore it is often necessary to use more than one balance. Designs which make better use of weighings of non-uniform variance have been studied, and a practical approach to the construction of such designs is given.</abstract>
+  <series>
+    <title type="main" format="text/plain" language="en" script="Latn">Metrologia</title>
+  </series>
+  <extent type="volume">
+    <referenceFrom>29</referenceFrom>
+  </extent>
+  <extent type="issue">
+    <referenceFrom>6</referenceFrom>
+  </extent>
   <extent type="page">
     <referenceFrom>373</referenceFrom>
     <referenceTo>377</referenceTo>

@@ -33,11 +33,11 @@ Gem::Specification.new do |spec| # rubocop:disable Metrics/BlockLength
   spec.require_paths = ["lib"]
 
   spec.add_development_dependency "byebug"
-  spec.add_development_dependency "debase"
+  # spec.add_development_dependency "debase"
   spec.add_development_dependency "equivalent-xml", "~> 0.6"
   spec.add_development_dependency "pry-byebug"
   spec.add_development_dependency "rake", "~> 10.0"
-  spec.add_development_dependency "ruby-debug-ide"
+  # spec.add_development_dependency "ruby-debug-ide"
   spec.add_development_dependency "ruby-jing"
   spec.add_development_dependency "simplecov"
   spec.add_development_dependency "vcr"
@@ -45,4 +45,5 @@ Gem::Specification.new do |spec| # rubocop:disable Metrics/BlockLength
 
   spec.add_dependency "mechanize", "~> 2.7.6"
   spec.add_dependency "relaton-bib", "~> 1.7.0"
+  spec.add_dependency "serrano", "~> 1.0"
 end

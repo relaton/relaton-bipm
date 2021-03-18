@@ -8,13 +8,25 @@ http_interactions:
       string: ''
     headers:
       Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      - gzip, deflate, br
       Accept:
-      - "*/*"
+      - text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
       User-Agent:
-      - Ruby
+      - Mozilla/5.0 (Windows NT 6.1; Trident/7.0; rv:11.0) like Gecko
+      Accept-Charset:
+      - ISO-8859-1,utf-8;q=0.7,*;q=0.7
+      Accept-Language:
+      - en-US,en;q=0.9,ru-RU;q=0.8,ru;q=0.7
       Host:
       - raw.githubusercontent.com
+      Cache-Control:
+      - max-age=0
+      Upgrade-Insecure-Requests:
+      - '1'
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '300'
   response:
     status:
       code: 200
@@ -23,13 +35,13 @@ http_interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '328'
-      Content-Type:
-      - text/plain; charset=utf-8
+      - '322'
       Cache-Control:
       - max-age=300
       Content-Security-Policy:
       - default-src 'none'; style-src 'unsafe-inline'; sandbox
+      Content-Type:
+      - text/plain; charset=utf-8
       Etag:
       - W/"362e243e9d93c9a576b71090feff02750c21e611ef39ee4c06383499946c2916"
       Strict-Transport-Security:
@@ -40,35 +52,37 @@ http_interactions:
       - deny
       X-Xss-Protection:
       - 1; mode=block
-      Via:
-      - 1.1 varnish (Varnish/6.0), 1.1 varnish
       X-Github-Request-Id:
-      - FB24:12063:F62D5:100BE2:5FF8ED76
+      - AFBA:2613:1017C5F:11A26DD:6053414B
+      Content-Encoding:
+      - gzip
       Accept-Ranges:
       - bytes
       Date:
-      - Fri, 08 Jan 2021 23:40:38 GMT
+      - Thu, 18 Mar 2021 12:02:19 GMT
+      Via:
+      - 1.1 varnish
       X-Served-By:
-      - cache-hhn4029-HHN
+      - cache-vie21644-VIE
       X-Cache:
-      - MISS, MISS
+      - MISS
       X-Cache-Hits:
-      - 0, 0
+      - '0'
       X-Timer:
-      - S1610149239.652694,VS0,VE182
+      - S1616068940.652375,VS0,VE208
       Vary:
-      - Authorization,Accept-Encoding, Accept-Encoding
+      - Authorization,Accept-Encoding
       Access-Control-Allow-Origin:
       - "*"
       X-Fastly-Request-Id:
-      - 97074cdb85cad812bf0db29eb3361196ec79b476
+      - 28ce28720f334e91b9ad775e13d5097771394a2e
       Expires:
-      - Fri, 08 Jan 2021 23:45:38 GMT
+      - Thu, 18 Mar 2021 12:07:19 GMT
       Source-Age:
       - '0'
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        dGl0bGU6CiAgLSBsYW5ndWFnZTogZW4KICAgIHNjcmlwdDogTGF0bgogICAgY29udGVudDogVGhlIEludGVybmF0aW9uYWwgU3lzdGVtIG9mIFVuaXRzIChTSSkKICAtIGxhbmd1YWdlOiBmcgogICAgc2NyaXB0OiBMYXRuCiAgICBjb250ZW50OiBMZSBTeXN0w6htZSBpbnRlcm5hdGlvbmFsIGTigJl1bml0w6lzIChTSSkKdHlwZTogc3RhbmRhcmQKZG9jaWQ6CiAgdHlwZTogQklQTQogIGlkOiBzaS1icm9jaHVyZQplZGl0aW9uOiAnOScKZGF0ZToKICAtIHR5cGU6IHVwZGF0ZWQKICAgIHZhbHVlOiAnMjAxOS0wNS0yMCcKYWJzdHJhY3Q6CiAgLSBjb250ZW50OiBUaGUgQklQTSBhbmQgdGhlIE1ldHJlIENvbnZlbnRpb24KICAgIGxhbmd1YWdlOiBlbgogICAgc2NyaXB0OiBMYXRuCiAgLSBjb250ZW50OiBMZSBCSVBNIGV0IGxhIENvbnZlbnRpb24gZHUgTcOodHJlCiAgICBsYW5ndWFnZTogZnIKICAgIHNjcmlwdDogTGF0bgpjb3B5cmlnaHQ6CiAgb3duZXI6CiAgICBuYW1lOiBCdXJlYXUgSW50ZXJuYXRpb25hbCBkZXMgcG9uZHMgZXQgbWVzdXJlcwogICAgYWJicmV2aWF0aW9uOiBCSVBNCiAgZnJvbTogJzIwMTknCmRvY3R5cGU6IGJyb2NodXJl
-  recorded_at: Fri, 08 Jan 2021 23:40:38 GMT
+        H4sIAAAAAAAAA4WRQWrDMBBF9z7F7NwuDGmgi3jZrgIJFNIeYCxNEoEtGWmUkl2v0Ruk58hNepKOZBdqU8hO+tK8GT2x4ZbqAqCCFu0h4oFqICsBQFDe9FzDBnkIlLNMVpLXI8Fa1t4iG2exhd05MHXg9vBmDQe4263vZ9S9v0HdUMZcLx2BmdD198dnFO71ayTzuRdiYLQavS60U0anVwz50/plKxuJIJiq8U4do6eCtEm8GspVWWjk8d1DTexTovNEJ2yjROVy8bCqFo/VclEW2AT2qHiomZhI7UAmAZbNltgTPDt7knPploG31FYTCZlHLFV/OKAjbK8Xgc+I/2lVrj97czjmad27JV/nSxa7pEdkYJx9oKYAvbM6pM4dBbkTcg02jaeTwUHdqHbvXTcKKpP9weGv6R/tLheDVQIAAA==
+  recorded_at: Thu, 18 Mar 2021 12:02:19 GMT
 recorded_with: VCR 6.0.0

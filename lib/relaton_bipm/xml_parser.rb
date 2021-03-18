@@ -20,7 +20,7 @@ module RelatonBipm
       # @param item_hash [Hash]
       # @return [RelatonBipm::BipmBibliographicItem]
       def bib_item(item_hash)
-        BipmBibliographicItem.new item_hash
+        BipmBibliographicItem.new **item_hash
       end
 
       # @param item [Nokogiri::XML::Element]

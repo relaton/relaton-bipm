@@ -1,0 +1,365 @@
+<bibdata type="standard">
+  <fetched>2021-01-20</fetched>
+  <title type="title-main" format="text/plain" language="en" script="Latn">PROCEEDINGS OF THE NEW DEVELOPMENTS AND APPLICATIONS IN OPTICAL RADIOMETRY IV (NEWRAD '92) CONFERENCE 5–7 October 1992, Baltimore, Maryland, USA</title>
+  <title type="main" format="text/plain" language="en" script="Latn">PROCEEDINGS OF THE NEW DEVELOPMENTS AND APPLICATIONS IN OPTICAL RADIOMETRY IV (NEWRAD '92) CONFERENCE 5–7 October 1992, Baltimore, Maryland, USA</title>
+  <uri type="src">https://iopscience.iop.org/issue/0026-1394/30/4</uri>
+  <docidentifier type="BIPM">Metrologia 30 4</docidentifier>
+  <date type="published">
+    <on>1993-01</on>
+  </date>
+  <language>en</language>
+  <script>Latn</script>
+  <relation type="partOf">
+    <bibitem>
+      <title type="title-main" format="text/plain" language="en" script="Latn">New Developments and Applications in Optical Radiometry IV</title>
+      <title type="main" format="text/plain" language="en" script="Latn">New Developments and Applications in Optical Radiometry IV</title>
+      <uri type="src">https://iopscience.iop.org/article/10.1088/0026-1394/30/4/E01</uri>
+      <docidentifier type="BIPM">Metrologia 30 4 205</docidentifier>
+    </bibitem>
+  </relation>
+  <relation type="partOf">
+    <bibitem>
+      <title type="title-main" format="text/plain" language="en" script="Latn">An Anecdotal Review of NASA Earth Observing Satellite Remote Sensors and Radiometric Calibration Methods</title>
+      <title type="main" format="text/plain" language="en" script="Latn">An Anecdotal Review of NASA Earth Observing Satellite Remote Sensors and Radiometric Calibration Methods</title>
+      <uri type="src">https://iopscience.iop.org/article/10.1088/0026-1394/30/4/001</uri>
+      <docidentifier type="BIPM">Metrologia 30 4 207</docidentifier>
+    </bibitem>
+  </relation>
+  <relation type="partOf">
+    <bibitem>
+      <title type="title-main" format="text/plain" language="en" script="Latn">Calibration Plans for the Multi-angle Imaging SpectroRadiometer (MISR)</title>
+      <title type="main" format="text/plain" language="en" script="Latn">Calibration Plans for the Multi-angle Imaging SpectroRadiometer (MISR)</title>
+      <uri type="src">https://iopscience.iop.org/article/10.1088/0026-1394/30/4/002</uri>
+      <docidentifier type="BIPM">Metrologia 30 4 213</docidentifier>
+    </bibitem>
+  </relation>
+  <relation type="partOf">
+    <bibitem>
+      <title type="title-main" format="text/plain" language="en" script="Latn">Clouds and the Earth's Radiant Energy System (CERES): Long-wave Calibration Plan and Radiometric Test Model (RTM) Calibration Results</title>
+      <title type="main" format="text/plain" language="en" script="Latn">Clouds and the Earth's Radiant Energy System (CERES): Long-wave Calibration Plan and Radiometric Test Model (RTM) Calibration Results</title>
+      <uri type="src">https://iopscience.iop.org/article/10.1088/0026-1394/30/4/003</uri>
+      <docidentifier type="BIPM">Metrologia 30 4 223</docidentifier>
+    </bibitem>
+  </relation>
+  <relation type="partOf">
+    <bibitem>
+      <title type="title-main" format="text/plain" language="en" script="Latn">Radiometric Calibration of the EOS ASTER Instrument</title>
+      <title type="main" format="text/plain" language="en" script="Latn">Radiometric Calibration of the EOS ASTER Instrument</title>
+      <uri type="src">https://iopscience.iop.org/article/10.1088/0026-1394/30/4/004</uri>
+      <docidentifier type="BIPM">Metrologia 30 4 231</docidentifier>
+    </bibitem>
+  </relation>
+  <relation type="partOf">
+    <bibitem>
+      <title type="title-main" format="text/plain" language="en" script="Latn">Calibration and Radiometric Stability of the Shuttle Solar Backscatter Ultraviolet (SSBUV) Experiment</title>
+      <title type="main" format="text/plain" language="en" script="Latn">Calibration and Radiometric Stability of the Shuttle Solar Backscatter Ultraviolet (SSBUV) Experiment</title>
+      <uri type="src">https://iopscience.iop.org/article/10.1088/0026-1394/30/4/005</uri>
+      <docidentifier type="BIPM">Metrologia 30 4 243</docidentifier>
+    </bibitem>
+  </relation>
+  <relation type="partOf">
+    <bibitem>
+      <title type="title-main" format="text/plain" language="en" script="Latn">An Iodine Standard Lamp</title>
+      <title type="main" format="text/plain" language="en" script="Latn">An Iodine Standard Lamp</title>
+      <uri type="src">https://iopscience.iop.org/article/10.1088/0026-1394/30/4/006</uri>
+      <docidentifier type="BIPM">Metrologia 30 4 249</docidentifier>
+    </bibitem>
+  </relation>
+  <relation type="partOf">
+    <bibitem>
+      <title type="title-main" format="text/plain" language="en" script="Latn">Performance of Various Diffuser Materials in the Absolute Radiometric Calibration of the SBUV-2</title>
+      <title type="main" format="text/plain" language="en" script="Latn">Performance of Various Diffuser Materials in the Absolute Radiometric Calibration of the SBUV-2</title>
+      <uri type="src">https://iopscience.iop.org/article/10.1088/0026-1394/30/4/007</uri>
+      <docidentifier type="BIPM">Metrologia 30 4 255</docidentifier>
+    </bibitem>
+  </relation>
+  <relation type="partOf">
+    <bibitem>
+      <title type="title-main" format="text/plain" language="en" script="Latn">Comparison of Spectral Radiance Calibrations of SBUV-2 Satellite Ozone Monitoring Instruments Using Integrating Sphere and Flat-Plate Diffuser Techniques</title>
+      <title type="main" format="text/plain" language="en" script="Latn">Comparison of Spectral Radiance Calibrations of SBUV-2 Satellite Ozone Monitoring Instruments Using Integrating Sphere and Flat-Plate Diffuser Techniques</title>
+      <uri type="src">https://iopscience.iop.org/article/10.1088/0026-1394/30/4/008</uri>
+      <docidentifier type="BIPM">Metrologia 30 4 259</docidentifier>
+    </bibitem>
+  </relation>
+  <relation type="partOf">
+    <bibitem>
+      <title type="title-main" format="text/plain" language="en" script="Latn">An Ambient Background Transfer Standard Radiometer</title>
+      <title type="main" format="text/plain" language="en" script="Latn">An Ambient Background Transfer Standard Radiometer</title>
+      <uri type="src">https://iopscience.iop.org/article/10.1088/0026-1394/30/4/009</uri>
+      <docidentifier type="BIPM">Metrologia 30 4 265</docidentifier>
+    </bibitem>
+  </relation>
+  <relation type="partOf">
+    <bibitem>
+      <title type="title-main" format="text/plain" language="en" script="Latn">A Comparative Study of Solar Total Irradiance Measured by Active-cavity Radiometers</title>
+      <title type="main" format="text/plain" language="en" script="Latn">A Comparative Study of Solar Total Irradiance Measured by Active-cavity Radiometers</title>
+      <uri type="src">https://iopscience.iop.org/article/10.1088/0026-1394/30/4/010</uri>
+      <docidentifier type="BIPM">Metrologia 30 4 271</docidentifier>
+    </bibitem>
+  </relation>
+  <relation type="partOf">
+    <bibitem>
+      <title type="title-main" format="text/plain" language="en" script="Latn">SOURCE: The Solar Ultraviolet Radiation and Correlative Emissions Mission</title>
+      <title type="main" format="text/plain" language="en" script="Latn">SOURCE: The Solar Ultraviolet Radiation and Correlative Emissions Mission</title>
+      <uri type="src">https://iopscience.iop.org/article/10.1088/0026-1394/30/4/011</uri>
+      <docidentifier type="BIPM">Metrologia 30 4 275</docidentifier>
+    </bibitem>
+  </relation>
+  <relation type="partOf">
+    <bibitem>
+      <title type="title-main" format="text/plain" language="en" script="Latn">Application of Cryogenic Electrical Substitution Radiometers in the Calibration of Solar-Terrestrial Remote Sensing Instruments</title>
+      <title type="main" format="text/plain" language="en" script="Latn">Application of Cryogenic Electrical Substitution Radiometers in the Calibration of Solar-Terrestrial Remote Sensing Instruments</title>
+      <uri type="src">https://iopscience.iop.org/article/10.1088/0026-1394/30/4/012</uri>
+      <docidentifier type="BIPM">Metrologia 30 4 279</docidentifier>
+    </bibitem>
+  </relation>
+  <relation type="partOf">
+    <bibitem>
+      <title type="title-main" format="text/plain" language="en" script="Latn">Comparison of the NIST high Accuracy Cryogenic Radiometer and the NIST scale of Detector Spectral Response</title>
+      <title type="main" format="text/plain" language="en" script="Latn">Comparison of the NIST high Accuracy Cryogenic Radiometer and the NIST scale of Detector Spectral Response</title>
+      <uri type="src">https://iopscience.iop.org/article/10.1088/0026-1394/30/4/013</uri>
+      <docidentifier type="BIPM">Metrologia 30 4 285</docidentifier>
+    </bibitem>
+  </relation>
+  <relation type="partOf">
+    <bibitem>
+      <title type="title-main" format="text/plain" language="en" script="Latn">Present State of the PTB Primary Standard for Radiant Power Based on Cryogenic Radiometry</title>
+      <title type="main" format="text/plain" language="en" script="Latn">Present State of the PTB Primary Standard for Radiant Power Based on Cryogenic Radiometry</title>
+      <uri type="src">https://iopscience.iop.org/article/10.1088/0026-1394/30/4/014</uri>
+      <docidentifier type="BIPM">Metrologia 30 4 291</docidentifier>
+    </bibitem>
+  </relation>
+  <relation type="partOf">
+    <bibitem>
+      <title type="title-main" format="text/plain" language="en" script="Latn">Characterization of Photodiodes in the UV and Visible Spectral Region Based on Cryogenic Radiometry</title>
+      <title type="main" format="text/plain" language="en" script="Latn">Characterization of Photodiodes in the UV and Visible Spectral Region Based on Cryogenic Radiometry</title>
+      <uri type="src">https://iopscience.iop.org/article/10.1088/0026-1394/30/4/015</uri>
+      <docidentifier type="BIPM">Metrologia 30 4 297</docidentifier>
+    </bibitem>
+  </relation>
+  <relation type="partOf">
+    <bibitem>
+      <title type="title-main" format="text/plain" language="en" script="Latn">Cryogenic Solar Absolute Radiometer (CSAR)</title>
+      <title type="main" format="text/plain" language="en" script="Latn">Cryogenic Solar Absolute Radiometer (CSAR)</title>
+      <uri type="src">https://iopscience.iop.org/article/10.1088/0026-1394/30/4/016</uri>
+      <docidentifier type="BIPM">Metrologia 30 4 305</docidentifier>
+    </bibitem>
+  </relation>
+  <relation type="partOf">
+    <bibitem>
+      <title type="title-main" format="text/plain" language="en" script="Latn">A Method of Realizing Spectral Irradiance Based on an Absolute Cryogenic Radiometer</title>
+      <title type="main" format="text/plain" language="en" script="Latn">A Method of Realizing Spectral Irradiance Based on an Absolute Cryogenic Radiometer</title>
+      <uri type="src">https://iopscience.iop.org/article/10.1088/0026-1394/30/4/017</uri>
+      <docidentifier type="BIPM">Metrologia 30 4 309</docidentifier>
+    </bibitem>
+  </relation>
+  <relation type="partOf">
+    <bibitem>
+      <title type="title-main" format="text/plain" language="en" script="Latn">Characterization of a High Sensitivity Composite Silicon Bolometer</title>
+      <title type="main" format="text/plain" language="en" script="Latn">Characterization of a High Sensitivity Composite Silicon Bolometer</title>
+      <uri type="src">https://iopscience.iop.org/article/10.1088/0026-1394/30/4/018</uri>
+      <docidentifier type="BIPM">Metrologia 30 4 317</docidentifier>
+    </bibitem>
+  </relation>
+  <relation type="partOf">
+    <bibitem>
+      <title type="title-main" format="text/plain" language="en" script="Latn">Improved Near-Infrared Detectors</title>
+      <title type="main" format="text/plain" language="en" script="Latn">Improved Near-Infrared Detectors</title>
+      <uri type="src">https://iopscience.iop.org/article/10.1088/0026-1394/30/4/019</uri>
+      <docidentifier type="BIPM">Metrologia 30 4 321</docidentifier>
+    </bibitem>
+  </relation>
+  <relation type="partOf">
+    <bibitem>
+      <title type="title-main" format="text/plain" language="en" script="Latn">Alternative Configurations for Trap Detectors</title>
+      <title type="main" format="text/plain" language="en" script="Latn">Alternative Configurations for Trap Detectors</title>
+      <uri type="src">https://iopscience.iop.org/article/10.1088/0026-1394/30/4/020</uri>
+      <docidentifier type="BIPM">Metrologia 30 4 327</docidentifier>
+    </bibitem>
+  </relation>
+  <relation type="partOf">
+    <bibitem>
+      <title type="title-main" format="text/plain" language="en" script="Latn">The Application of an Optical Biasing Method to Determine Temperature-dependent Nonlinearity of Photovoltaic Ge Detectors</title>
+      <title type="main" format="text/plain" language="en" script="Latn">The Application of an Optical Biasing Method to Determine Temperature-dependent Nonlinearity of Photovoltaic Ge Detectors</title>
+      <uri type="src">https://iopscience.iop.org/article/10.1088/0026-1394/30/4/021</uri>
+      <docidentifier type="BIPM">Metrologia 30 4 335</docidentifier>
+    </bibitem>
+  </relation>
+  <relation type="partOf">
+    <bibitem>
+      <title type="title-main" format="text/plain" language="en" script="Latn">Intercomparison between the NIST LBIR Absolute Cryogenic Radiometer and an Optical Trap Detector</title>
+      <title type="main" format="text/plain" language="en" script="Latn">Intercomparison between the NIST LBIR Absolute Cryogenic Radiometer and an Optical Trap Detector</title>
+      <uri type="src">https://iopscience.iop.org/article/10.1088/0026-1394/30/4/022</uri>
+      <docidentifier type="BIPM">Metrologia 30 4 341</docidentifier>
+    </bibitem>
+  </relation>
+  <relation type="partOf">
+    <bibitem>
+      <title type="title-main" format="text/plain" language="en" script="Latn">A Physical Basis for the Extrapolation of Silicon Photodiode Quantum Efficiency into the Ultraviolet</title>
+      <title type="main" format="text/plain" language="en" script="Latn">A Physical Basis for the Extrapolation of Silicon Photodiode Quantum Efficiency into the Ultraviolet</title>
+      <uri type="src">https://iopscience.iop.org/article/10.1088/0026-1394/30/4/023</uri>
+      <docidentifier type="BIPM">Metrologia 30 4 345</docidentifier>
+    </bibitem>
+  </relation>
+  <relation type="partOf">
+    <bibitem>
+      <title type="title-main" format="text/plain" language="en" script="Latn">Fatigue Effects in Germanium Photodetectors</title>
+      <title type="main" format="text/plain" language="en" script="Latn">Fatigue Effects in Germanium Photodetectors</title>
+      <uri type="src">https://iopscience.iop.org/article/10.1088/0026-1394/30/4/024</uri>
+      <docidentifier type="BIPM">Metrologia 30 4 351</docidentifier>
+    </bibitem>
+  </relation>
+  <relation type="partOf">
+    <bibitem>
+      <title type="title-main" format="text/plain" language="en" script="Latn">Automated Absolute and Relative Spectral Linearity Measurements on Photovoltaic Detectors</title>
+      <title type="main" format="text/plain" language="en" script="Latn">Automated Absolute and Relative Spectral Linearity Measurements on Photovoltaic Detectors</title>
+      <uri type="src">https://iopscience.iop.org/article/10.1088/0026-1394/30/4/025</uri>
+      <docidentifier type="BIPM">Metrologia 30 4 355</docidentifier>
+    </bibitem>
+  </relation>
+  <relation type="partOf">
+    <bibitem>
+      <title type="title-main" format="text/plain" language="en" script="Latn">Uniformity of Quantum Efficiency of Single and Trap-configured Silicon Photodiodes</title>
+      <title type="main" format="text/plain" language="en" script="Latn">Uniformity of Quantum Efficiency of Single and Trap-configured Silicon Photodiodes</title>
+      <uri type="src">https://iopscience.iop.org/article/10.1088/0026-1394/30/4/026</uri>
+      <docidentifier type="BIPM">Metrologia 30 4 361</docidentifier>
+    </bibitem>
+  </relation>
+  <relation type="partOf">
+    <bibitem>
+      <title type="title-main" format="text/plain" language="en" script="Latn">Characterization of Two Bolometric Absolute Radiometers</title>
+      <title type="main" format="text/plain" language="en" script="Latn">Characterization of Two Bolometric Absolute Radiometers</title>
+      <uri type="src">https://iopscience.iop.org/article/10.1088/0026-1394/30/4/027</uri>
+      <docidentifier type="BIPM">Metrologia 30 4 365</docidentifier>
+    </bibitem>
+  </relation>
+  <relation type="partOf">
+    <bibitem>
+      <title type="title-main" format="text/plain" language="en" script="Latn">Absolute Measurement of Quantum Efficiency Based on Parametric Down-conversion Effect</title>
+      <title type="main" format="text/plain" language="en" script="Latn">Absolute Measurement of Quantum Efficiency Based on Parametric Down-conversion Effect</title>
+      <uri type="src">https://iopscience.iop.org/article/10.1088/0026-1394/30/4/028</uri>
+      <docidentifier type="BIPM">Metrologia 30 4 367</docidentifier>
+    </bibitem>
+  </relation>
+  <relation type="partOf">
+    <bibitem>
+      <title type="title-main" format="text/plain" language="en" script="Latn">Low Temperature Black Body for Temperatures from 80 K to 300 K</title>
+      <title type="main" format="text/plain" language="en" script="Latn">Low Temperature Black Body for Temperatures from 80 K to 300 K</title>
+      <uri type="src">https://iopscience.iop.org/article/10.1088/0026-1394/30/4/029</uri>
+      <docidentifier type="BIPM">Metrologia 30 4 369</docidentifier>
+    </bibitem>
+  </relation>
+  <relation type="partOf">
+    <bibitem>
+      <title type="title-main" format="text/plain" language="en" script="Latn">Getting Intense on Intensity</title>
+      <title type="main" format="text/plain" language="en" script="Latn">Getting Intense on Intensity</title>
+      <uri type="src">https://iopscience.iop.org/article/10.1088/0026-1394/30/4/030</uri>
+      <docidentifier type="BIPM">Metrologia 30 4 371</docidentifier>
+    </bibitem>
+  </relation>
+  <relation type="partOf">
+    <bibitem>
+      <title type="title-main" format="text/plain" language="en" script="Latn">Recommendations for Future Work in Air UV Spectral Radiometry: Results of a Report to the CCPR</title>
+      <title type="main" format="text/plain" language="en" script="Latn">Recommendations for Future Work in Air UV Spectral Radiometry: Results of a Report to the CCPR</title>
+      <uri type="src">https://iopscience.iop.org/article/10.1088/0026-1394/30/4/031</uri>
+      <docidentifier type="BIPM">Metrologia 30 4 373</docidentifier>
+    </bibitem>
+  </relation>
+  <relation type="partOf">
+    <bibitem>
+      <title type="title-main" format="text/plain" language="en" script="Latn">Preliminary Results from the SOVA Experiment on Board the European Retrievable Carrier (EURECA)</title>
+      <title type="main" format="text/plain" language="en" script="Latn">Preliminary Results from the SOVA Experiment on Board the European Retrievable Carrier (EURECA)</title>
+      <uri type="src">https://iopscience.iop.org/article/10.1088/0026-1394/30/4/032</uri>
+      <docidentifier type="BIPM">Metrologia 30 4 375</docidentifier>
+    </bibitem>
+  </relation>
+  <relation type="partOf">
+    <bibitem>
+      <title type="title-main" format="text/plain" language="en" script="Latn">Hollow Cathode Transfer Standards for the Radiometric Calibration of VUV Telescopes of the Solar and Heliospheric Observatory (SOHO)</title>
+      <title type="main" format="text/plain" language="en" script="Latn">Hollow Cathode Transfer Standards for the Radiometric Calibration of VUV Telescopes of the Solar and Heliospheric Observatory (SOHO)</title>
+      <uri type="src">https://iopscience.iop.org/article/10.1088/0026-1394/30/4/033</uri>
+      <docidentifier type="BIPM">Metrologia 30 4 381</docidentifier>
+    </bibitem>
+  </relation>
+  <relation type="partOf">
+    <bibitem>
+      <title type="title-main" format="text/plain" language="en" script="Latn">In-flight Evaluations of Tungsten Calibration Lamps Using Shortwave Thermistor Bolometers and Active-cavity Radiometers</title>
+      <title type="main" format="text/plain" language="en" script="Latn">In-flight Evaluations of Tungsten Calibration Lamps Using Shortwave Thermistor Bolometers and Active-cavity Radiometers</title>
+      <uri type="src">https://iopscience.iop.org/article/10.1088/0026-1394/30/4/034</uri>
+      <docidentifier type="BIPM">Metrologia 30 4 389</docidentifier>
+    </bibitem>
+  </relation>
+  <relation type="partOf">
+    <bibitem>
+      <title type="title-main" format="text/plain" language="en" script="Latn">Using the Voyager Spacecraft for Solar EUV Spectral Radiometry</title>
+      <title type="main" format="text/plain" language="en" script="Latn">Using the Voyager Spacecraft for Solar EUV Spectral Radiometry</title>
+      <uri type="src">https://iopscience.iop.org/article/10.1088/0026-1394/30/4/035</uri>
+      <docidentifier type="BIPM">Metrologia 30 4 397</docidentifier>
+    </bibitem>
+  </relation>
+  <relation type="partOf">
+    <bibitem>
+      <title type="title-main" format="text/plain" language="en" script="Latn">Network and Traceability of the Radiometric and Photometric Standards at the PTB</title>
+      <title type="main" format="text/plain" language="en" script="Latn">Network and Traceability of the Radiometric and Photometric Standards at the PTB</title>
+      <uri type="src">https://iopscience.iop.org/article/10.1088/0026-1394/30/4/036</uri>
+      <docidentifier type="BIPM">Metrologia 30 4 403</docidentifier>
+    </bibitem>
+  </relation>
+  <relation type="partOf">
+    <bibitem>
+      <title type="title-main" format="text/plain" language="en" script="Latn">Atmospheric Optical Calibration System for Outdoor Testing of Photovoltaic Devices</title>
+      <title type="main" format="text/plain" language="en" script="Latn">Atmospheric Optical Calibration System for Outdoor Testing of Photovoltaic Devices</title>
+      <uri type="src">https://iopscience.iop.org/article/10.1088/0026-1394/30/4/037</uri>
+      <docidentifier type="BIPM">Metrologia 30 4 409</docidentifier>
+    </bibitem>
+  </relation>
+  <relation type="partOf">
+    <bibitem>
+      <title type="title-main" format="text/plain" language="en" script="Latn">Partial Coherence and Practical Radiometry</title>
+      <title type="main" format="text/plain" language="en" script="Latn">Partial Coherence and Practical Radiometry</title>
+      <uri type="src">https://iopscience.iop.org/article/10.1088/0026-1394/30/4/038</uri>
+      <docidentifier type="BIPM">Metrologia 30 4 419</docidentifier>
+    </bibitem>
+  </relation>
+  <relation type="partOf">
+    <bibitem>
+      <title type="title-main" format="text/plain" language="en" script="Latn">Improved Spectral Responsivity Scales at the NPL, 400 nm to 20 μm</title>
+      <title type="main" format="text/plain" language="en" script="Latn">Improved Spectral Responsivity Scales at the NPL, 400 nm to 20 μm</title>
+      <uri type="src">https://iopscience.iop.org/article/10.1088/0026-1394/30/4/039</uri>
+      <docidentifier type="BIPM">Metrologia 30 4 425</docidentifier>
+    </bibitem>
+  </relation>
+  <relation type="partOf">
+    <bibitem>
+      <title type="title-main" format="text/plain" language="en" script="Latn">Standard of Specular Reflectance at Glancing Incidence for the Infrared Region</title>
+      <title type="main" format="text/plain" language="en" script="Latn">Standard of Specular Reflectance at Glancing Incidence for the Infrared Region</title>
+      <uri type="src">https://iopscience.iop.org/article/10.1088/0026-1394/30/4/040</uri>
+      <docidentifier type="BIPM">Metrologia 30 4 433</docidentifier>
+    </bibitem>
+  </relation>
+  <relation type="partOf">
+    <bibitem>
+      <title type="title-main" format="text/plain" language="en" script="Latn">Present State of the Comparison between Radiometric Scales Based on Three Primary Standards</title>
+      <title type="main" format="text/plain" language="en" script="Latn">Present State of the Comparison between Radiometric Scales Based on Three Primary Standards</title>
+      <uri type="src">https://iopscience.iop.org/article/10.1088/0026-1394/30/4/041</uri>
+      <docidentifier type="BIPM">Metrologia 30 4 439</docidentifier>
+    </bibitem>
+  </relation>
+  <relation type="partOf">
+    <bibitem>
+      <title type="title-main" format="text/plain" language="en" script="Latn">Conference on Precision Electromagetic Measurements, Boulder, Colorado, USA, 27 June–1 July 1994</title>
+      <title type="main" format="text/plain" language="en" script="Latn">Conference on Precision Electromagetic Measurements, Boulder, Colorado, USA, 27 June–1 July 1994</title>
+      <uri type="src">https://iopscience.iop.org/article/10.1088/0026-1394/30/4/042</uri>
+      <docidentifier type="BIPM">Metrologia 30 4 451</docidentifier>
+    </bibitem>
+  </relation>
+  <series>
+    <title type="main" format="text/plain" language="en" script="Latn">Metrologia</title>
+  </series>
+  <extent type="volume">
+    <referenceFrom>30</referenceFrom>
+  </extent>
+  <extent type="issue">
+    <referenceFrom>4</referenceFrom>
+  </extent>
+</bibdata>

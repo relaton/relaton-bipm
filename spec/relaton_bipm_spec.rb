@@ -28,15 +28,65 @@ RSpec.describe RelatonBipm do
       end
     end
 
-    it "Metrologia" do
-      VCR.use_cassette "metrologia_29_6_373" do
-        file = "spec/fixtures/metrologia_29_6_373.xml"
-        result = RelatonBipm::BipmBibliography.get "BIPM Metrologia 29 6 373"
-        xml = result.to_xml bibdata: true
-        File.write file, xml, encoding: "UTF-8" unless File.exist? file
-        expect(xml).to be_equivalent_to File.read(file, encoding: "UTF-8").sub(
-          /(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s
-        )
+    context "Metrologia" do
+      it "journal" do
+        VCR.use_cassette "metrologia" do
+          file = "spec/fixtures/metrologia.xml"
+          result = RelatonBipm::BipmBibliography.get "BIPM Metrologia"
+          xml = result.to_xml bibdata: true
+          File.write file, xml, encoding: "UTF-8" unless File.exist? file
+          expect(xml).to be_equivalent_to File.read(file, encoding: "UTF-8").sub(
+            /(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s
+          )
+        end
+      end
+
+      it "volume" do
+        VCR.use_cassette "metrologia_30" do
+          file = "spec/fixtures/metrologia_30.xml"
+          result = RelatonBipm::BipmBibliography.get "BIPM Metrologia 30"
+          xml = result.to_xml bibdata: true
+          File.write file, xml, encoding: "UTF-8" unless File.exist? file
+          expect(xml).to be_equivalent_to File.read(file, encoding: "UTF-8").sub(
+            /(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s
+          )
+        end
+      end
+
+      it "issue" do
+        VCR.use_cassette "metrologia_29_6" do
+          file = "spec/fixtures/metrologia_29_6.xml"
+          result = RelatonBipm::BipmBibliography.get "BIPM Metrologia 29 6"
+          xml = result.to_xml bibdata: true
+          File.write file, xml, encoding: "UTF-8" unless File.exist? file
+          expect(xml).to be_equivalent_to File.read(file, encoding: "UTF-8").sub(
+            /(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s
+          )
+        end
+      end
+
+      it "issue with title" do
+        VCR.use_cassette "metrologia_30_4" do
+          file = "spec/fixtures/metrologia_30_4.xml"
+          result = RelatonBipm::BipmBibliography.get "BIPM Metrologia 30 4"
+          xml = result.to_xml bibdata: true
+          File.write file, xml, encoding: "UTF-8" unless File.exist? file
+          expect(xml).to be_equivalent_to File.read(file, encoding: "UTF-8").sub(
+            /(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s
+          )
+        end
+      end
+
+      it "article" do
+        VCR.use_cassette "metrologia_29_6_373" do
+          file = "spec/fixtures/metrologia_29_6_373.xml"
+          result = RelatonBipm::BipmBibliography.get "BIPM Metrologia 29 6 373"
+          xml = result.to_xml bibdata: true
+          File.write file, xml, encoding: "UTF-8" unless File.exist? file
+          expect(xml).to be_equivalent_to File.read(file, encoding: "UTF-8").sub(
+            /(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s
+          )
+        end
       end
     end
   end
