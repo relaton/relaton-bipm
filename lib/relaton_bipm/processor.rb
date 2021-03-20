@@ -28,8 +28,7 @@ module RelatonBipm
     # @param hash [Hash]
     # @return [RelatonBipm::BipmBibliographicItem]
     def hash_to_bib(hash)
-      item_hash = ::RelatonBipm::HashConverter.hash_to_bib(hash)
-      ::RelatonBipm::BipmBibliographicItem.new item_hash
+      ::RelatonBipm::BipmBibliographicItem.from_hash hash
     end
 
     # Returns hash of XML grammar

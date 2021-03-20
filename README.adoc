@@ -128,11 +128,7 @@ hash = YAML.load_file 'spec/fixtures/bipm_item.yml'
 => {"id"=>"Draft-Agenda-NMI-Dir-Meeting-2017-v10",
 ...
 
-bib_hash = RelatonBipm::HashConverter.hash_to_bib hash
-=> {:id=>"Draft-Agenda-NMI-Dir-Meeting-2017-v10",
-...
-
-RelatonBipm::BipmBibliographicItem.new bib_hash
+RelatonBipm::BipmBibliographicItem.from_hash hash
 => #<RelatonBipm::BipmBibliographicItem:0x007ffb668755a0
 ...
 ----
