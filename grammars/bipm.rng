@@ -47,6 +47,11 @@
             <data type="boolean"/>
           </attribute>
         </optional>
+        <optional>
+          <attribute name="nopage">
+            <data type="boolean"/>
+          </attribute>
+        </optional>
         <text/>
       </element>
     </define>
@@ -336,9 +341,14 @@
         <ref name="termdocsource"/>
       </zeroOrMore>
       <optional>
+        <ref name="misccontainer"/>
+      </optional>
+      <optional>
         <ref name="boilerplate"/>
       </optional>
-      <ref name="preface"/>
+      <optional>
+        <ref name="preface"/>
+      </optional>
       <oneOrMore>
         <ref name="sections"/>
       </oneOrMore>
@@ -348,6 +358,9 @@
       <optional>
         <ref name="bibliography"/>
       </optional>
+      <zeroOrMore>
+        <ref name="indexsect"/>
+      </zeroOrMore>
     </element>
   </define>
 </grammar>
