@@ -12,7 +12,7 @@ http_interactions:
       Accept:
       - text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
       User-Agent:
-      - Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; .NET CLR 1.1.4322)
+      - Mozilla/5.0 CK={} (Windows NT 6.1; WOW64; Trident/7.0; rv:11.0) like Gecko
       Accept-Charset:
       - ISO-8859-1,utf-8;q=0.7,*;q=0.7
       Accept-Language:
@@ -35,7 +35,7 @@ http_interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '597'
+      - '322'
       Cache-Control:
       - max-age=300
       Content-Security-Policy:
@@ -43,7 +43,7 @@ http_interactions:
       Content-Type:
       - text/plain; charset=utf-8
       Etag:
-      - '"9f6f9d6e735aae9653815445170ebb3ec4b247bc4a226103c55d08f6cae74970"'
+      - W/"362e243e9d93c9a576b71090feff02750c21e611ef39ee4c06383499946c2916"
       Strict-Transport-Security:
       - max-age=31536000
       X-Content-Type-Options:
@@ -53,34 +53,36 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Github-Request-Id:
-      - 1A48:B118:F5C494:1022D82:609E4B58
+      - 648A:1B9A:1BCD5B1:1D07742:60B51A21
+      Content-Encoding:
+      - gzip
       Accept-Ranges:
       - bytes
       Date:
-      - Fri, 14 May 2021 10:05:12 GMT
+      - Mon, 31 May 2021 17:17:22 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-hhn4046-HHN
+      - cache-hhn4023-HHN
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1620986713.639937,VS0,VE180
+      - S1622481442.967090,VS0,VE187
       Vary:
       - Authorization,Accept-Encoding
       Access-Control-Allow-Origin:
       - "*"
       X-Fastly-Request-Id:
-      - f759e7c588360cd119cf7288585893763b5b2453
+      - c8be1e3fd3fe1abf010a6df5bb4f1a360cce31c4
       Expires:
-      - Fri, 14 May 2021 10:10:12 GMT
+      - Mon, 31 May 2021 17:22:22 GMT
       Source-Age:
       - '0'
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        dGl0bGU6CiAgLSBsYW5ndWFnZTogZW4KICAgIHNjcmlwdDogTGF0bgogICAgY29udGVudDogVGhlIEludGVybmF0aW9uYWwgU3lzdGVtIG9mIFVuaXRzIChTSSkKICAtIGxhbmd1YWdlOiBmcgogICAgc2NyaXB0OiBMYXRuCiAgICBjb250ZW50OiBMZSBTeXN0w6htZSBpbnRlcm5hdGlvbmFsIGTigJl1bml0w6lzIChTSSkKdHlwZTogc3RhbmRhcmQKZG9jaWQ6CiAgdHlwZTogQklQTQogIGlkOiBzaS1icm9jaHVyZQplZGl0aW9uOiAnOScKZGF0ZToKICAtIHR5cGU6IHVwZGF0ZWQKICAgIHZhbHVlOiAnMjAxOS0wNS0yMCcKYWJzdHJhY3Q6CiAgLSBjb250ZW50OiBUaGUgQklQTSBhbmQgdGhlIE1ldHJlIENvbnZlbnRpb24KICAgIGxhbmd1YWdlOiBlbgogICAgc2NyaXB0OiBMYXRuCiAgLSBjb250ZW50OiBMZSBCSVBNIGV0IGxhIENvbnZlbnRpb24gZHUgTcOodHJlCiAgICBsYW5ndWFnZTogZnIKICAgIHNjcmlwdDogTGF0bgpjb3B5cmlnaHQ6CiAgb3duZXI6CiAgICBuYW1lOiBCdXJlYXUgSW50ZXJuYXRpb25hbCBkZXMgcG9uZHMgZXQgbWVzdXJlcwogICAgYWJicmV2aWF0aW9uOiBCSVBNCiAgZnJvbTogJzIwMTknCmRvY3R5cGU6IGJyb2NodXJl
-  recorded_at: Fri, 14 May 2021 10:05:13 GMT
+        H4sIAAAAAAAAA4WRQWrDMBBF9z7F7NwuDGmgi3jZrgIJFNIeYCxNEoEtGWmUkl2v0Ruk58hNepKOZBdqU8hO+tK8GT2x4ZbqAqCCFu0h4oFqICsBQFDe9FzDBnkIlLNMVpLXI8Fa1t4iG2exhd05MHXg9vBmDQe4263vZ9S9v0HdUMZcLx2BmdD198dnFO71ayTzuRdiYLQavS60U0anVwz50/plKxuJIJiq8U4do6eCtEm8GspVWWjk8d1DTexTovNEJ2yjROVy8bCqFo/VclEW2AT2qHiomZhI7UAmAZbNltgTPDt7knPploG31FYTCZlHLFV/OKAjbK8Xgc+I/2lVrj97czjmad27JV/nSxa7pEdkYJx9oKYAvbM6pM4dBbkTcg02jaeTwUHdqHbvXTcKKpP9weGv6R/tLheDVQIAAA==
+  recorded_at: Mon, 31 May 2021 17:17:21 GMT
 recorded_with: VCR 6.0.0

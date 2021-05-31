@@ -234,10 +234,10 @@ module RelatonBipm
       # @param agent [Mechanize]
       # @return [RelatonBipm::BipmBibliographicItem]
       def get_article(path, vol, ish, agent) # rubocop:disable Metrics/AbcSize
-        url = URI IOP_DOMAIN + path
-        rsp = agent.get url
+        rsp = agent.get path
+        url = rsp.uri
         bib = rsp.link_with(text: "BibTeX").href
-        rsp = agent.get URI IOP_DOMAIN + bib
+        rsp = agent.get bib
         bt = BibTeX.parse(rsp.body).first
         bibitem(docid: btdocid(bt), title: titles(bt.title.to_s), abstract: btabstract(bt), doctype: bt.type.to_s,
                 link: btlink(bt, url), date: btdate(bt), contributor: btcontrib(bt), series: series,
