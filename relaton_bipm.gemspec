@@ -12,7 +12,7 @@ Gem::Specification.new do |spec| # rubocop:disable Metrics/BlockLength
                        "bibliographic use using the BibliographicItem model"
   spec.homepage      = "https://github.com/relaton/relaton-bipm"
   spec.license       = "BSD-2-Clause"
-  spec.required_ruby_version = Gem::Requirement.new(">= 2.4.0")
+  spec.required_ruby_version = Gem::Requirement.new(">= 2.5.0")
 
   # spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
 
@@ -43,7 +43,7 @@ Gem::Specification.new do |spec| # rubocop:disable Metrics/BlockLength
   spec.add_development_dependency "vcr"
   spec.add_development_dependency "webmock"
 
-  spec.add_dependency "mechanize", "~> 2.7.0"
+  spec.add_dependency "mechanize", "~> 2.8.0"
   spec.add_dependency "relaton-bib", "~> 1.8.0"
   spec.add_dependency "serrano", "~> 1.0"
 end
