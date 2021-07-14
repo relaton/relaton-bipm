@@ -23,7 +23,7 @@ module RelatonBipm
     # @param prefix [String]
     # @return [String]
     def to_asciibib(prefix = "") # rubocop:disable Metrics/AbcSize
-      pref = prefix.empty? ? prefix : prefix + "."
+      pref = prefix.empty? ? prefix : "#{prefix}."
       pref += "editorialgroup"
       out = ""
       committee.each { |c| out += c.to_asciibib pref, committee.size }

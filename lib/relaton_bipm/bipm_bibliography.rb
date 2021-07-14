@@ -4,38 +4,11 @@ module RelatonBipm
   class BipmBibliography
     GH_ENDPOINT = "https://raw.githubusercontent.com/relaton/relaton-data-bipm/master/data/".freeze
     IOP_DOMAIN = "https://iopscience.iop.org".freeze
-    USERAGENTS = [
-      "Mozilla/5.0 CK={} (Windows NT 6.1; WOW64; Trident/7.0; rv:11.0) like Gecko",
-      "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36",
-      "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 1.1.4322)",
-      "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1)",
-      "Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv:11.0) like Gecko",
-      "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0; KTXN)",
-      "Mozilla/5.0 (Windows NT 5.1; rv:7.0.1) Gecko/20100101 Firefox/7.0.1",
-      "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)",
-      "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0",
-      "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:40.0) Gecko/20100101 Firefox/40.1",
-      "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.157 Safari/537.36",
-      "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0)",
-      "Mozilla/5.0 (Windows NT 10.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36",
-      "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/605.1.15 (KHTML, like Gecko)",
-      "Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko",
-      "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0",
-      "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 1.1.4322; .NET CLR 2.0.50727)",
-      "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/605.1.15 (KHTML, like Gecko)",
-      "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; .NET CLR 1.1.4322)",
-      "Mozilla/5.0 (Windows NT 6.1; Trident/7.0; rv:11.0) like Gecko",
-      "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.0)",
-      "Mozilla/5.0 (Linux; U; Android 2.2) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1",
-      "Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.71 Safari/537.36",
-      "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.83 Safari/537.1",
-      "Mozilla/4.0 (compatible; MSIE 9.0; Windows NT 6.1)",
-    ].freeze
 
     class << self
       # @param text [String]
       # @return [RelatonBipm::BipmBibliographicItem]
-      def search(text, _year = nil, _opts = {})
+      def search(text, _year = nil, _opts = {}) # rubocop:disable Metrics/AbcSize
         warn "[relaton-bipm] (\"#{text}\") fetching..."
         ref = text.sub(/^BIPM\s/, "")
         item = ref.match?(/^Metrologia/i) ? get_metrologia(ref, magent) : get_bipm(ref, magent)
@@ -48,7 +21,7 @@ module RelatonBipm
       end
 
       # @return [Mechanize]
-      def magent
+      def magent # rubocop:disable Metrics/MethodLength
         a = Mechanize.new
         a.request_headers = {
           "Accept" => "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,"\
@@ -57,8 +30,8 @@ module RelatonBipm
           "Accept-Language" => "en-US,en;q=0.9,ru-RU;q=0.8,ru;q=0.7",
           "Cache-Control" => "max-age=0",
           "Upgrade-Insecure-Requests" => "1",
-          "User-Agent" => USERAGENTS.shuffle.first,
         }
+        a.user_agent_alias = Mechanize::AGENT_ALIASES.map(&:first).shuffle.first
         a
       end
 
@@ -66,12 +39,12 @@ module RelatonBipm
       # @param agent [Mechanize]
       # @return [RelatonBipm::BipmBibliographicItem]
       def get_bipm(ref, agent)
-        url = "#{GH_ENDPOINT}#{ref.downcase.split(' ').join '-'}.yaml"
+        url = "#{GH_ENDPOINT}#{ref.downcase.split.join '-'}.yaml"
         resp = agent.get url
         return unless resp.code == "200"
 
         bib_hash = HashConverter.hash_to_bib YAML.safe_load(resp.body, [Date])
-        BipmBibliographicItem.new **bib_hash
+        BipmBibliographicItem.new(**bib_hash)
       end
 
       # @param ref [String]
@@ -79,7 +52,7 @@ module RelatonBipm
       # @return [RelatonBipm::BipmBibliographicItem]
       def get_metrologia(ref, agent)
         agent.redirect_ok = false
-        ref_arr = ref.split(" ")
+        ref_arr = ref.split
         case ref_arr.size
         when 1 then get_journal agent
         when 2 then get_volume ref_arr[1], agent
@@ -91,7 +64,7 @@ module RelatonBipm
       # @param agent [Mechanize]
       # @return [RelatonBipm::BipmBibliographicItem]
       def get_journal(agent)
-        url = IOP_DOMAIN + "/journal/0026-1394"
+        url = "#{IOP_DOMAIN}/journal/0026-1394"
         rsp = agent.get url
         rel = rsp.xpath('//select[@id="allVolumesSelector"]/option').map do |v|
           { type: "partOf", bibitem: journal_rel(v) }
@@ -129,7 +102,7 @@ module RelatonBipm
         docid = doc_id [vol, ish]
         t = elm.at "p"
         title_fref = t ? { title: titles(t.text) } : { formattedref: fref(docid.id) }
-        BipmBibliographicItem.new **title_fref, docid: [docid], link: blink(url)
+        BipmBibliographicItem.new(**title_fref, docid: [docid], link: blink(url))
       end
 
       # @param title [String]
@@ -248,7 +221,7 @@ module RelatonBipm
       # @return [RelatonBipm::BipmBibliographicItem]
       def bibitem(**args)
         BipmBibliographicItem.new(
-          fetched: Date.today.to_s, type: "standard", language: ["en"], script: ["Latn"], **args
+          fetched: Date.today.to_s, type: "standard", language: ["en"], script: ["Latn"], **args,
         )
       end
 
@@ -291,7 +264,7 @@ module RelatonBipm
       # @return [Array<Hash>]
       def btcontrib(bibtex)
         surname, initial = bibtex.author.split ", "
-        initial = initial.split(" ").map { |i| RelatonBib::LocalizedString.new i, "en", "Latn" }
+        initial = initial.split.map { |i| RelatonBib::LocalizedString.new i, "en", "Latn" }
         surname = RelatonBib::LocalizedString.new surname, "en", "Latn"
         name = RelatonBib::FullName.new surname: surname, initial: initial
         author = RelatonBib::Person.new name: name

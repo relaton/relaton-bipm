@@ -23,14 +23,13 @@ module RelatonBipm
       # @param item_hash [Hash]
       # @return [RelatonBib::BibliographicItem]
       def bib_item(item_hash)
-        BipmBibliographicItem.new **item_hash
+        BipmBibliographicItem.new(**item_hash)
       end
 
       # @param ret [Hash]
       def title_hash_to_bib(ret)
-        ret[:title] &&= array(ret[:title]).reduce(
-          RelatonBib::TypedTitleStringCollection.new
-        ) do |m, t|
+        ret[:title] &&= array(ret[:title])
+          .reduce(RelatonBib::TypedTitleStringCollection.new) do |m, t|
           m << if t.is_a? Hash
                  RelatonBib::TypedTitleString.new(**t)
                else
@@ -55,16 +54,14 @@ module RelatonBipm
       # @param ret [Hash]
       def dates_hash_to_bib(ret)
         super
-        ret[:date] &&= ret[:date].map do |d|
-          BibliographicDate.new **d
-        end
+        ret[:date] &&= ret[:date].map { |d| BibliographicDate.new(**d) }
       end
 
       # @param ret [Hash]
       def relations_hash_to_bib(ret)
         super
         ret[:relation] &&= ret[:relation].map do |r|
-          RelatonBipm::DocumentRelation.new **r
+          RelatonBipm::DocumentRelation.new(**r)
         end
       end
 
@@ -77,7 +74,7 @@ module RelatonBipm
             content = RelatonBib::LocalizedString.new vars
             Committee.new acronym: c[:acronym], content: content
           else
-            Committee.new **c
+            Committee.new(**c)
           end
         end
         wg = array(ret[:editorialgroup][:workgroup]).map do |w|
@@ -100,7 +97,7 @@ module RelatonBipm
       # @param ret [Hash]
       def structuredidentifier_hash_to_bib(ret)
         ret[:structuredidentifier] &&= StructuredIdentifier.new(
-          **ret[:structuredidentifier]
+          **ret[:structuredidentifier],
         )
       end
     end

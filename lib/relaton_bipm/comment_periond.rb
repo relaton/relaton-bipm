@@ -31,7 +31,7 @@ module RelatonBipm
     # @param prefix [String]
     # @return [String]
     def to_asciibib(prefix)
-      pref = prefix.empty? ? prefix : prefix + "."
+      pref = prefix.empty? ? prefix : "#{prefix}."
       pref += "commentperiod"
       out = "#{pref}.from:: #{from}\n"
       out += "#{pref}.to:: #{to}\n" if to

@@ -46,7 +46,7 @@ module RelatonBipm
     # @return [RelatonBipm::BipmBibliographicItem]
     def self.from_hash(hash)
       item_hash = ::RelatonBipm::HashConverter.hash_to_bib(hash)
-      new **item_hash
+      new(**item_hash)
     end
 
     # @param opts [Hash]
@@ -83,7 +83,7 @@ module RelatonBipm
     # @param prefix [String]
     # @return [String]
     def to_asciibib(prefix = "")
-      pref = prefix.empty? ? prefix : prefix + "."
+      pref = prefix.empty? ? prefix : "#{prefix}."
       out = super
       out += comment_period.to_asciibib prefix if comment_period
       out += "#{pref}si_aspect:: #{si_aspect}\n" if si_aspect

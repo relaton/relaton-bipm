@@ -12,7 +12,8 @@ http_interactions:
       Accept:
       - text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
       User-Agent:
-      - Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0; KTXN)
+      - Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 1.1.4322;
+        .NET CLR 2.0.50727)
       Accept-Charset:
       - ISO-8859-1,utf-8;q=0.7,*;q=0.7
       Accept-Language:
@@ -35,7 +36,7 @@ http_interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '322'
+      - '597'
       Cache-Control:
       - max-age=300
       Content-Security-Policy:
@@ -43,7 +44,7 @@ http_interactions:
       Content-Type:
       - text/plain; charset=utf-8
       Etag:
-      - W/"362e243e9d93c9a576b71090feff02750c21e611ef39ee4c06383499946c2916"
+      - '"9f6f9d6e735aae9653815445170ebb3ec4b247bc4a226103c55d08f6cae74970"'
       Strict-Transport-Security:
       - max-age=31536000
       X-Content-Type-Options:
@@ -53,36 +54,34 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Github-Request-Id:
-      - 3310:69A0:F321D7:10CA456:60DDE5BD
-      Content-Encoding:
-      - gzip
+      - 7EB0:28A5:4AF3D0:4EAB4A:60EEE88E
       Accept-Ranges:
       - bytes
       Date:
-      - Thu, 01 Jul 2021 15:56:45 GMT
+      - Wed, 14 Jul 2021 13:37:18 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-muc13953-MUC
+      - cache-muc13958-MUC
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1625155005.313358,VS0,VE174
+      - S1626269838.464521,VS0,VE284
       Vary:
       - Authorization,Accept-Encoding
       Access-Control-Allow-Origin:
       - "*"
       X-Fastly-Request-Id:
-      - 329169bd59047f791220938ba49ec45b6a78879c
+      - 803443ad30351ca5cdfa8a5b897d73309ad5d5a7
       Expires:
-      - Thu, 01 Jul 2021 16:01:45 GMT
+      - Wed, 14 Jul 2021 13:42:18 GMT
       Source-Age:
       - '0'
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        H4sIAAAAAAAAA4WRQWrDMBBF9z7F7NwuDGmgi3jZrgIJFNIeYCxNEoEtGWmUkl2v0Ruk58hNepKOZBdqU8hO+tK8GT2x4ZbqAqCCFu0h4oFqICsBQFDe9FzDBnkIlLNMVpLXI8Fa1t4iG2exhd05MHXg9vBmDQe4263vZ9S9v0HdUMZcLx2BmdD198dnFO71ayTzuRdiYLQavS60U0anVwz50/plKxuJIJiq8U4do6eCtEm8GspVWWjk8d1DTexTovNEJ2yjROVy8bCqFo/VclEW2AT2qHiomZhI7UAmAZbNltgTPDt7knPploG31FYTCZlHLFV/OKAjbK8Xgc+I/2lVrj97czjmad27JV/nSxa7pEdkYJx9oKYAvbM6pM4dBbkTcg02jaeTwUHdqHbvXTcKKpP9weGv6R/tLheDVQIAAA==
-  recorded_at: Thu, 01 Jul 2021 15:56:45 GMT
+        dGl0bGU6CiAgLSBsYW5ndWFnZTogZW4KICAgIHNjcmlwdDogTGF0bgogICAgY29udGVudDogVGhlIEludGVybmF0aW9uYWwgU3lzdGVtIG9mIFVuaXRzIChTSSkKICAtIGxhbmd1YWdlOiBmcgogICAgc2NyaXB0OiBMYXRuCiAgICBjb250ZW50OiBMZSBTeXN0w6htZSBpbnRlcm5hdGlvbmFsIGTigJl1bml0w6lzIChTSSkKdHlwZTogc3RhbmRhcmQKZG9jaWQ6CiAgdHlwZTogQklQTQogIGlkOiBzaS1icm9jaHVyZQplZGl0aW9uOiAnOScKZGF0ZToKICAtIHR5cGU6IHVwZGF0ZWQKICAgIHZhbHVlOiAnMjAxOS0wNS0yMCcKYWJzdHJhY3Q6CiAgLSBjb250ZW50OiBUaGUgQklQTSBhbmQgdGhlIE1ldHJlIENvbnZlbnRpb24KICAgIGxhbmd1YWdlOiBlbgogICAgc2NyaXB0OiBMYXRuCiAgLSBjb250ZW50OiBMZSBCSVBNIGV0IGxhIENvbnZlbnRpb24gZHUgTcOodHJlCiAgICBsYW5ndWFnZTogZnIKICAgIHNjcmlwdDogTGF0bgpjb3B5cmlnaHQ6CiAgb3duZXI6CiAgICBuYW1lOiBCdXJlYXUgSW50ZXJuYXRpb25hbCBkZXMgcG9uZHMgZXQgbWVzdXJlcwogICAgYWJicmV2aWF0aW9uOiBCSVBNCiAgZnJvbTogJzIwMTknCmRvY3R5cGU6IGJyb2NodXJl
+  recorded_at: Wed, 14 Jul 2021 13:37:18 GMT
 recorded_with: VCR 6.0.0

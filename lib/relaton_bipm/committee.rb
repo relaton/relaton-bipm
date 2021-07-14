@@ -28,7 +28,7 @@ module RelatonBipm
     # @param count [Integer]
     # @return [String]
     def to_asciibib(prefix, count = 1)
-      pref = prefix.empty? ? prefix : prefix + "."
+      pref = prefix.empty? ? prefix : "#{prefix}."
       pref += "committee"
       out = count > 1 ? "#{pref}::\n" : ""
       out += "#{pref}.acronym:: #{acronym}\n"
@@ -39,8 +39,9 @@ module RelatonBipm
     def to_hash
       hash = { "acronym" => acronym }
       cnt = content.to_hash
-      if cnt.is_a? Array then hash["variants"] = cnt
-      elsif cnt.is_a? Hash then hash.merge! cnt
+      case cnt
+      when Array then hash["variants"] = cnt
+      when Hash then hash.merge! cnt
       else hash["content"] = cnt
       end
       hash
