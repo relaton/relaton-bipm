@@ -24,8 +24,9 @@ module RelatonBipm
       def magent # rubocop:disable Metrics/MethodLength
         a = Mechanize.new
         a.request_headers = {
-          "Accept" => "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,"\
-            "*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
+          "Accept" => "text/html,application/xhtml+xml,application/xml;q=0.9,"\
+                      "image/avif,image/webp,image/apng,"\
+                      "*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
           "Accept-Encoding" => "gzip, deflate, br",
           "Accept-Language" => "en-US,en;q=0.9,ru-RU;q=0.8,ru;q=0.7",
           "Cache-Control" => "max-age=0",
@@ -39,7 +40,7 @@ module RelatonBipm
       # @param agent [Mechanize]
       # @return [RelatonBipm::BipmBibliographicItem]
       def get_bipm(ref, agent)
-        url = "#{GH_ENDPOINT}#{ref.downcase.split.join '-'}.yaml"
+        url = "#{GH_ENDPOINT}#{ref.upcase.split.join '-'}.yaml"
         resp = agent.get url
         return unless resp.code == "200"
 

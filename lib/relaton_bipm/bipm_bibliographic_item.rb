@@ -28,12 +28,12 @@ module RelatonBipm
     def initialize(**args) # rubocop:disable Metrics/AbcSize,Metrics/MethodLength
       if args[:docstatus] && !STATUSES.include?(args[:docstatus].stage.value)
         warn "[relaton-bipm] Warning: invalid docstatus: #{args[:docstatus].stage.value}. "\
-        "It should be one of: #{STATUSES}"
+             "It should be one of: #{STATUSES}"
       end
 
       if args[:si_aspect] && !SI_ASPECTS.include?(args[:si_aspect])
         warn "[relaton-bipm] Warning: invalid si_aspect: #{args[:si_aspect]}. "\
-        "It should be one of: #{SI_ASPECTS}"
+             "It should be one of: #{SI_ASPECTS}"
       end
 
       @comment_period = args.delete :comment_period
