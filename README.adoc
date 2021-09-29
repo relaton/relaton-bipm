@@ -51,6 +51,20 @@ RelatonBipm::BipmBibliography.get "BIPM Metrologia 29 6 373"
 [relaton-bipm] ("BIPM Metrologia 29 6 373") found Metrologia 29 6 373
 => #<RelatonBipm::BipmBibliographicItem:0x007f8857f94d40
 ...
+
+# get CGPM resolutions
+RelatonBipm::BipmBibliography.get "BIPM CGPM01 1"
+[relaton-bipm] ("BIPM CGPM01 1") fetching...
+[relaton-bipm] ("BIPM CGPM01 1") found CGPM01-1
+=> #<RelatonBipm::BipmBibliographicItem:0x00007f9e92817968
+...
+
+# get CIPM resolutions
+RelatonBipm::BipmBibliography.get "BIPM CIPM101 1"
+[relaton-bipm] ("BIPM CIPM101 1") fetching...
+[relaton-bipm] ("BIPM CIPM101 1") found CIPM101-1
+=> #<RelatonBipm::BipmBibliographicItem:0x00007f9e9293d658
+...
 ----
 
 === XML serialization
