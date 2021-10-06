@@ -46,7 +46,7 @@ item = RelatonBipm::BipmBibliography.get "BIPM si-brochure"
 ...
 
 # get BIPM Metrologia article
-RelatonBipm::BipmBibliography.get "BIPM Metrologia 29 6 373"
+bib = RelatonBipm::BipmBibliography.get "BIPM Metrologia 29 6 373"
 [relaton-bipm] ("BIPM Metrologia 29 6 373") fetching...
 [relaton-bipm] ("BIPM Metrologia 29 6 373") found Metrologia 29 6 373
 => #<RelatonBipm::BipmBibliographicItem:0x007f8857f94d40
@@ -104,6 +104,7 @@ item.to_xml bibdata: true
       <fetched>2021-01-10</fetched>
       <title format="text/plain" language="en" script="Latn">The International System of Units (SI)</title>
       <title format="text/plain" language="fr" script="Latn">Le Système international d’unités (SI)</title>
+      <uri type="src">https://www.bipm.org/en/publications/si-brochure</uri>
       <docidentifier type="BIPM">si-brochure</docidentifier>
       <date type="updated">
         <on>2019-05-20</on>
@@ -124,6 +125,17 @@ item.to_xml bibdata: true
         <doctype>brochure</doctype>
       </ext>
     </bibdata>"
+----
+
+=== Typed links
+
+Each BIPM documents has `src` type link and optional `doi` type link.
+
+[source,ruby]
+----
+bib.link
+=> [#<RelatonBib::TypedUri:0x00007fa6d6a51728 @content=#<Addressable::URI:0xc29c URI:https://iopscience.iop.org/article/10.1088/0026-1394/29/6/001>, @type="src">,
+ #<RelatonBib::TypedUri:0x00007fa6d6a29250 @content=#<Addressable::URI:0xc2b0 URI:https://doi.org/10.1088/0026-1394/29/6/001>, @type="doi">]
 ----
 
 === Create bibliographic item from XML
