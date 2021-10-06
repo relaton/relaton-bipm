@@ -129,7 +129,7 @@ item.to_xml bibdata: true
 
 === Typed links
 
-Each BIPM documents has `src` type link and optional `doi` type link.
+Each BIPM document has `src` type link and optional `doi` type link.
 
 [source,ruby]
 ----
