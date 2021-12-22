@@ -12,7 +12,8 @@ http_interactions:
       Accept:
       - text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
       User-Agent:
-      - Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.4) Gecko/20030624
+      - Mozilla/5.0 (iPad; CPU OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML,
+        like Gecko) Version/9.0 Mobile/13B143 Safari/601.1
       Accept-Charset:
       - ISO-8859-1,utf-8;q=0.7,*;q=0.7
       Accept-Language:
@@ -53,36 +54,36 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Github-Request-Id:
-      - D846:F1A0:91AD2C:98A550:615D7A26
+      - 9FFE:13DE3:B241E:12214E:61C32168
       Content-Encoding:
       - gzip
       Accept-Ranges:
       - bytes
       Date:
-      - Wed, 06 Oct 2021 10:27:50 GMT
+      - Wed, 22 Dec 2021 13:00:25 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-muc13972-MUC
+      - cache-sof1510027-SOF
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1633516070.327796,VS0,VE150
+      - S1640178025.839761,VS0,VE220
       Vary:
       - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
       - "*"
       X-Fastly-Request-Id:
-      - d1ef15f111c571813fc6ad77348435e9010cc418
+      - 9d4dbb438563e0e5ae30b20e6b5ba7af2d1a346b
       Expires:
-      - Wed, 06 Oct 2021 10:32:50 GMT
+      - Wed, 22 Dec 2021 13:05:25 GMT
       Source-Age:
       - '0'
     body:
       encoding: ASCII-8BIT
       string: !binary |-
         H4sIAAAAAAAAA41Sy4rbQBC8z1c05OCTPKskB69gL8khLMRgyBeMNC272Xkx07Pe5IvyH/mx9MixsSCQIBBUqaerpkpd1ymyA3z+ctg/9F2vmNjhoDqYYmAMPMA3EyamGCDOwCcEEj4H0yjjIOXIkb8nLNfvHjkjmGAX9EIuHrPxCsCZcKzmiANgEFimTEn2fzXc4ByzNwIZ31gnZyj81YQVoTvNezP1DWwF/+tn00du4KrucaU/5//SdxReVlGcmFMZtD6fz9uRkt/GfNQYdEtP21H38siqZm2Akqd/nq1Mrugpeh+DTna+bGqvfivwXRK7Tx8+3nbaSMrGSRoTatXbdeLT82GvrGEcblSqo6NyQivMq3FVqE2/2z12D4/d+91GNYuZxsoxt0PiywT6sWTaMEAwvm2uGU2FZxm+td/aOESypeW9xyIjZTlixjHjK12WXEw1umY3wH0Cwubo7kxmJecW/2uTt/IkU2y/hnS4alBiuVxXLERXm7AqnOvEYsqSlRJoJlyuKLOh+lHAnwCFSyZz09yo3+bSSScUAwAA
-  recorded_at: Wed, 06 Oct 2021 10:27:50 GMT
+  recorded_at: Wed, 22 Dec 2021 13:00:24 GMT
 recorded_with: VCR 6.0.0
