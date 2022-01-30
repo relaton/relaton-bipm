@@ -17,6 +17,13 @@
           </data>
         </attribute>
         <optional>
+          <attribute name="to">
+            <data type="string">
+              <param name="pattern">\i\c*|\c+#\c+</param>
+            </data>
+          </attribute>
+        </optional>
+        <optional>
           <attribute name="type">
             <ref name="ReferenceFormat"/>
           </attribute>
@@ -93,14 +100,9 @@
       </optional>
       <group>
         <choice>
-          <group>
-            <zeroOrMore>
-              <ref name="BasicBlock"/>
-            </zeroOrMore>
-            <zeroOrMore>
-              <ref name="note"/>
-            </zeroOrMore>
-          </group>
+          <zeroOrMore>
+            <ref name="BasicBlock"/>
+          </zeroOrMore>
           <ref name="amend"/>
         </choice>
         <zeroOrMore>
@@ -108,6 +110,7 @@
             <ref name="clause-subsection"/>
             <ref name="terms"/>
             <ref name="definitions"/>
+            <ref name="floating-title"/>
           </choice>
         </zeroOrMore>
       </group>
@@ -146,20 +149,16 @@
         <ref name="section-title"/>
       </optional>
       <group>
-        <group>
-          <zeroOrMore>
-            <ref name="BasicBlock"/>
-          </zeroOrMore>
-          <zeroOrMore>
-            <ref name="note"/>
-          </zeroOrMore>
-        </group>
+        <zeroOrMore>
+          <ref name="BasicBlock"/>
+        </zeroOrMore>
         <zeroOrMore>
           <choice>
             <ref name="annex-subsection"/>
             <ref name="terms"/>
             <ref name="definitions"/>
             <ref name="references"/>
+            <ref name="floating-title"/>
           </choice>
         </zeroOrMore>
       </group>
@@ -177,6 +176,14 @@
         <optional>
           <attribute name="keep-lines-together">
             <data type="boolean"/>
+          </attribute>
+        </optional>
+        <optional>
+          <attribute name="tag"/>
+        </optional>
+        <optional>
+          <attribute name="multilingual-rendering">
+            <ref name="MultilingualRenderingType"/>
           </attribute>
         </optional>
         <attribute name="type">
@@ -307,7 +314,7 @@
           <value>CCT</value>
           <value>CCTF</value>
           <value>CCU</value>
-          <value>CCL-CCTF</value>
+          <value>CCL-CCTF-WGFS</value>
           <value>JCGM</value>
           <value>JCRB</value>
           <value>JCTLM</value>

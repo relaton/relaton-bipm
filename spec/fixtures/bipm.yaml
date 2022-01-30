@@ -1,14 +1,14 @@
 ---
 id: Draft-Agenda-NMI-Dir-Meeting-2017-v10
 title:
-  content: 19th Meeting of the Directors of NMIs and Member State Representatives
+- content: 19th Meeting of the Directors of NMIs and Member State Representatives
   format: text/plain
 link:
-  content: http://www.bipm.org/cc/PARTNERS/Allowed/2017_October/2017-09-04-Draft-Agenda-NMI-Dir-Meeting-2017-v10.pdf
+- content: http://www.bipm.org/cc/PARTNERS/Allowed/2017_October/2017-09-04-Draft-Agenda-NMI-Dir-Meeting-2017-v10.pdf
   type: obp
 type: standard
 docid:
-  id: 2017-09-04-Draft-Agenda-NMI-Dir-Meeting-2017-v10
+- id: 2017-09-04-Draft-Agenda-NMI-Dir-Meeting-2017-v10
   type: BIPM
 docnumber: Draft-Agenda-NMI-Dir-Meeting-2017-v10
 date:
@@ -21,24 +21,29 @@ date:
   value: '2015-05-20'
 contributor:
 - organization:
-    name: International Organization for Standardization
+    name:
+    - International Organization for Standardization
     abbreviation: ISO
-    subdivision: division
+    subdivision:
+    - division
     url: www.iso.org
   role:
-    description: Publisher role
+  - description:
+    - Publisher role
     type: publisher
 - person:
     name:
       completename:
         content: A. Bierman
-        language: en
+        language:
+        - en
     affiliation:
-      organization:
-        name: IETF
+    - organization:
+        name:
+        - IETF
         abbreviation: IETF
         identifier:
-          type: uri
+        - type: uri
           id: www.ietf.org
     contact:
     - street:
@@ -49,44 +54,55 @@ contributor:
       postcode: '123456'
     - type: phone
       value: '223322'
-  role: author
+  role:
+  - author
 - organization:
-    name: IETF
+    name:
+    - IETF
     abbreviation: IETF
     identifier:
-      type: uri
+    - type: uri
       id: www.ietf.org
   role:
-  - description: Publisher description
+  - description:
+    - Publisher description
     type: publisher
-  - description: Editor description
+  - description:
+    - Editor description
     type: editor
 - person:
     name:
       forename:
-        content: Forename
-        language: en
+      - content: Forename
+        language:
+        - en
       initial:
-        content: A.
-        language: en
+      - content: A.
+        language:
+        - en
       surname:
         content: Bierman
-        language: en
+        language:
+        - en
       addition:
-        content: Addition
-        language: en
+      - content: Addition
+        language:
+        - en
       prefix:
-        content: Prefix
-        language: en
+      - content: Prefix
+        language:
+        - en
     affiliation:
-      organization:
-        name: IETF
+    - organization:
+        name:
+        - IETF
         abbreviation: IETF
       description:
-        content: Description
-        language: en
+      - content: Description
+        language:
+        - en
     identifier:
-      type: uri
+    - type: uri
       id: www.person.com
     contact:
     - street:
@@ -97,16 +113,20 @@ contributor:
       postcode: '123456'
     - type: phone
       value: '223322'
-  role: author
-- organization:
-    name: Institution
   role:
-    description: sponsor
+  - author
+- organization:
+    name:
+    - Institution
+  role:
+  - description:
+    - sponsor
     type: distributor
 edition: '1'
 version:
   revision_date: '2019-04-01'
-  draft: draft
+  draft:
+  - draft
 revdate: '2019-04-01'
 biblionote:
 - note
@@ -115,24 +135,30 @@ biblionote:
 language:
 - en
 - fr
-script: Latn
+script:
+- Latn
 abstract:
 - content: The agenda for the first day addresses current issues relating to the BIPM
     and CIPM and also includes advanced information about plans for the 26th CGPM
     in 2018.
-  language: en
-  script: Latn
+  language:
+  - en
+  script:
+  - Latn
   format: text/plain
 - content: Conférence générale des poids et mesures
-  language: fr
-  script: Latn
+  language:
+  - fr
+  script:
+  - Latn
   format: text/plain
 docstatus:
   stage:
     value: in-force
 copyright:
-  owner:
-    name: International Organization for Standardization
+- owner:
+  - name:
+    - International Organization for Standardization
     abbreviation: ISO
     url: www.iso.org
   from: '2014'
@@ -146,7 +172,7 @@ relation:
       format: text/plain
   locality:
   - locality_stack:
-      type: section
+    - type: section
       reference_from: Reference from
   - locality_stack:
     - type: chapter
@@ -154,7 +180,7 @@ relation:
     - type: page
       reference_from: '2'
   source_locality:
-    source_locality_stack:
+  - source_locality_stack:
     - type: volume
       reference_from: '2'
     - type: chapter
@@ -173,8 +199,10 @@ series:
   title:
     type: original
     content: ISO/IEC FDIS 10118-3
-    language: en
-    script: Latn
+    language:
+    - en
+    script:
+    - Latn
     format: text/plain
   place: Serie's place
   organization: Serie's organization
@@ -186,8 +214,10 @@ series:
 - type: alt
   formattedref:
     content: serieref
-    language: en
-    script: Latn
+    language:
+    - en
+    script:
+    - Latn
     format: text/plain
 - type: alt
   title:
@@ -197,11 +227,15 @@ series:
 - title:
     content:
     - content: Series
-      language: en
-      script: Latn
+      language:
+      - en
+      script:
+      - Latn
     - content: Séries
-      language: fr
-      script: Latn
+      language:
+      - fr
+      script:
+      - Latn
     format: text/plain
 medium:
   form: medium form
@@ -241,20 +275,25 @@ fetched: '2020-09-10'
 keyword:
 - Keyword
 - Key Word
-license: License
+license:
+- License
 doctype: brochure
 editorialgroup:
   committee:
   - acronym: CGPM
     variants:
     - content: General Conference on Weights and Measures
-      language: en
+      language:
+      - en
     - content: Conférence générale des poids et mesures
-      language: fr
+      language:
+      - fr
   - acronym: CCU
     content: Consultative Committee for Units
-    language: en
-    script: Latn
+    language:
+    - en
+    script:
+    - Latn
   - acronym: JCGM
     content: Joint Committee for Guides in Metrology
   workgroup:
