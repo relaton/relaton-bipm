@@ -188,7 +188,7 @@ module RelatonBipm
       # @return [RelatonBib::DocumentIdentifier]
       def doc_id(args)
         id = args.clone.unshift "Metrologia"
-        RelatonBib::DocumentIdentifier.new(type: "BIPM", id: id.join(" "))
+        RelatonBib::DocumentIdentifier.new(type: "BIPM", id: id.join(" "), primary: true)
       end
 
       # @param vol [String]

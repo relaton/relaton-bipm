@@ -44,6 +44,6 @@ Gem::Specification.new do |spec| # rubocop:disable Metrics/BlockLength
   spec.add_development_dependency "webmock"
 
   spec.add_dependency "mechanize", "~> 2.8.0"
-  spec.add_dependency "relaton-bib", "~> 1.10.0"
+  spec.add_dependency "relaton-bib", "~> 1.10.1"
   spec.add_dependency "serrano", "~> 1.0"
 end
