@@ -1,0 +1,88 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://raw.githubusercontent.com/relaton/relaton-data-bipm/master/data/PV-101(I).yaml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip, deflate, br
+      Accept:
+      - text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+      User-Agent:
+      - Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.4) Gecko/20030624
+      Accept-Charset:
+      - ISO-8859-1,utf-8;q=0.7,*;q=0.7
+      Accept-Language:
+      - en-US,en;q=0.9,ru-RU;q=0.8,ru;q=0.7
+      Host:
+      - raw.githubusercontent.com
+      Cache-Control:
+      - max-age=0
+      Upgrade-Insecure-Requests:
+      - '1'
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '300'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '395'
+      Cache-Control:
+      - max-age=300
+      Content-Security-Policy:
+      - default-src 'none'; style-src 'unsafe-inline'; sandbox
+      Content-Type:
+      - text/plain; charset=utf-8
+      Etag:
+      - W/"90f44f63c8269e794531f7a6eafcf707fe46092841779dd6e622b2d4fae445df"
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Github-Request-Id:
+      - F4CE:1011:5DE1A2:618166:62053DE2
+      Content-Encoding:
+      - gzip
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Thu, 10 Feb 2022 16:31:30 GMT
+      Via:
+      - 1.1 varnish
+      X-Served-By:
+      - cache-sof1510055-SOF
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      X-Timer:
+      - S1644510691.706748,VS0,VE194
+      Vary:
+      - Authorization,Accept-Encoding,Origin
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Fastly-Request-Id:
+      - 6862239a02ba054d66c81cbbf8078ea6b22b7a93
+      Expires:
+      - Thu, 10 Feb 2022 16:36:30 GMT
+      Source-Age:
+      - '0'
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA41Sy07kQAy85yt8Aw5NZjisUI5wGgmkSEhcUSftmbHoR+R2M8Af8R382Dovsaw4IEVK2qlylcttjKnINXCza+/bx+1me767qITEY1MZ6FMUjNKA/sgCAVEoHiDtQY4It8qB8wfMmVIE5QF4Gw/FHpQMYACjvnLPNMhcuLMylvaJg9Wugq9SD95S/E8LgT8/ShzburLotJaF8CeZPf9axlN8/jbYUWTITV2fTqfLjoZwmfhQY6z7FAKJIOa6J32GUKsv87Q1V5vtlTaXtwEbyNxXLvWaoDZdc4T2EZYkV9xY1sPAFCy/qSUuWDkrU8ozZCidp3xEp7gX64uWzkYts/ljNtdn1WiZqSuSeCSpTxvp3YqGNE4NEG3A+cvATWG0BXZKiRPEenCYoU3kMqDAPWaF5Aluu47xheZWq1WAwr6Bf3PRKie/hL7a5Uq50yTf7X6taLoH05bWHS0b0uDm0Zd7VWWNpRf15cjpdmhPyKOaAmMJnR7WXP8C5+wKm7cCAAA=
+  recorded_at: Thu, 10 Feb 2022 16:31:30 GMT
+recorded_with: VCR 6.0.0

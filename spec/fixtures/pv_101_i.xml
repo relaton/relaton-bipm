@@ -1,0 +1,27 @@
+<bibdata>
+  <fetched>2022-02-10</fetched>
+  <title format="text/plain" language="en" script="Latn">101st meeting of the CIPM (Session I)</title>
+  <title format="text/plain" language="fr" script="Latn">101e réunion du CIPM (Partie I)</title>
+  <uri type="src">https://www.bipm.org/en/committees/ci/cipm/101-_1-2012</uri>
+  <docidentifier type="BIPM" primary="true">BIPM PV 101(I)</docidentifier>
+  <date type="published">
+    <on>2012-06-08</on>
+  </date>
+  <contributor>
+    <role type="publisher"/>
+    <organization>
+      <name>Bureau Intrnational des Poids et Mesures</name>
+      <abbreviation>BIPM</abbreviation>
+      <uri>www.bipm.org</uri>
+    </organization>
+  </contributor>
+  <language>en</language>
+  <language>fr</language>
+  <script>Latn</script>
+  <ext>
+    <doctype>meeting</doctype>
+    <structuredidentifier>
+      <docnumber>101(I)</docnumber>
+    </structuredidentifier>
+  </ext>
+</bibdata>
