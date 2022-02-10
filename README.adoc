@@ -53,17 +53,17 @@ bib = RelatonBipm::BipmBibliography.get "BIPM Metrologia 29 6 373"
 ...
 
 # get CGPM resolutions
-RelatonBipm::BipmBibliography.get "BIPM CGPM01 1"
-[relaton-bipm] ("BIPM CGPM01 1") fetching...
-[relaton-bipm] ("BIPM CGPM01 1") found CGPM01-1
-=> #<RelatonBipm::BipmBibliographicItem:0x00007f9e92817968
+RelatonBipm::BipmBibliography.get "BIPM CR 01"
+[relaton-bipm] ("BIPM CR 01") fetching...
+[relaton-bipm] ("BIPM CR 01") found BIPM CR 01
+=> #<RelatonBipm::BipmBibliographicItem:0x00007fd4f7cba038
 ...
 
 # get CIPM resolutions
-RelatonBipm::BipmBibliography.get "BIPM CIPM101 1"
-[relaton-bipm] ("BIPM CIPM101 1") fetching...
-[relaton-bipm] ("BIPM CIPM101 1") found CIPM101-1
-=> #<RelatonBipm::BipmBibliographicItem:0x00007f9e9293d658
+RelatonBipm::BipmBibliography.get "BIPM PV 101(I)"
+[relaton-bipm] ("BIPM PV 101(I)") fetching...
+[relaton-bipm] ("BIPM PV 101(I)") found BIPM PV 101(I)
+=> #<RelatonBipm::BipmBibliographicItem:0x00007fd5072301c0
 ...
 ----
 

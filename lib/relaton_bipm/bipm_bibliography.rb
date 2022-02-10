@@ -42,6 +42,7 @@ module RelatonBipm
       def get_bipm(ref, agent)
         url = "#{GH_ENDPOINT}#{ref.upcase.split.join '-'}.yaml"
         resp = agent.get url
+        check_response resp
         return unless resp.code == "200"
 
         bib_hash = HashConverter.hash_to_bib YAML.safe_load(resp.body, [Date])
@@ -67,6 +68,7 @@ module RelatonBipm
       def get_journal(agent)
         url = "#{IOP_DOMAIN}/journal/0026-1394"
         rsp = agent.get url
+        check_response rsp
         rel = rsp.xpath('//select[@id="allVolumesSelector"]/option').map do |v|
           { type: "partOf", bibitem: journal_rel(v) }
         end
@@ -88,6 +90,7 @@ module RelatonBipm
       def get_volume(vol, agent)
         url = "#{IOP_DOMAIN}/volume/0026-1394/#{vol}"
         rsp = agent.get url
+        check_response rsp
         rel = rsp.xpath('//li[@itemprop="hasPart"]').map do |i|
           { type: "partOf", bibitem: volume_rel(i, vol) }
         end
@@ -116,9 +119,10 @@ module RelatonBipm
       # @param ish [String]
       # @param agent [Mechanize]
       # @return [RelatonBipm::BipmBibliographicItem]
-      def get_issue(vol, ish, agent) # rubocop:disable Metrics/AbcSize
+      def get_issue(vol, ish, agent) # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
         url = issue_url vol, ish
         rsp = agent.get url
+        check_response rsp
         rel = rsp.xpath('//div[@class="art-list-item-body"]').map do |a|
           { type: "partOf", bibitem: issue_rel(a, vol, ish) }
         end
@@ -199,6 +203,7 @@ module RelatonBipm
       def get_article_from_issue(vol, ish, art, agent)
         url = issue_url vol, ish
         rsp = agent.get url
+        check_response rsp
         get_article rsp.at("//div[@class='indexer'][.='#{art}']/../div/a")[:href], vol, ish, agent
       end
 
@@ -209,9 +214,11 @@ module RelatonBipm
       # @return [RelatonBipm::BipmBibliographicItem]
       def get_article(path, vol, ish, agent) # rubocop:disable Metrics/AbcSize
         rsp = agent.get path
+        check_response rsp
         url = rsp.uri
         bib = rsp.link_with(text: "BibTeX").href
         rsp = agent.get bib
+        check_response rsp
         bt = BibTeX.parse(rsp.body).first
         bibitem(docid: btdocid(bt), title: titles(bt.title.to_s), abstract: btabstract(bt), doctype: bt.type.to_s,
                 link: btlink(bt, url), date: btdate(bt), contributor: btcontrib(bt), series: series,
@@ -292,6 +299,26 @@ module RelatonBipm
       # @return [RelatonBipm::BipmBibliographicItem]
       def get(ref, year = nil, opts = {})
         search(ref, year, opts)
+      end
+
+      private
+
+      #
+      # Check HTTP response. Warn and rise error if response is not 200
+      #   or redirect to CAPTCHA.
+      #
+      # @param [Mechanize] rsp response
+      #
+      # @raise [RelatonBib::RequestError] if response is not 200
+      #
+      def check_response(rsp) # rubocop:disable Metrics/AbcSize
+        if rsp.code == "302"
+          warn "[relaton-bipm] #{rsp.uri} is redirected to #{rsp.header['location']}"
+          raise RelatonBib::RequestError, "redirected to #{rsp.header['location']}"
+        elsif rsp.code != "200"
+          warn "[read_bipm] can't acces #{rsp.uri} #{rsp.code}"
+          raise RelatonBib::RequestError, "can't acces #{rsp.uri} #{rsp.code}"
+        end
       end
     end
   end

@@ -10,17 +10,28 @@ RSpec.describe RelatonBipm do
   end
 
   it "search a code" do
-    VCR.use_cassette "cgpm01_1" do
-      result = RelatonBipm::BipmBibliography.search "BIPM CGPM01 1"
+    VCR.use_cassette "cr_01" do
+      result = RelatonBipm::BipmBibliography.search "BIPM CR 01"
       expect(result).to be_instance_of RelatonBipm::BipmBibliographicItem
     end
   end
 
   context "get document" do
     it "CGPM" do
-      VCR.use_cassette "cgpm01_1" do
-        file = "spec/fixtures/cgpm01_1.xml"
-        result = RelatonBipm::BipmBibliography.get "BIPM CGPM01 1"
+      VCR.use_cassette "cr_01" do
+        file = "spec/fixtures/cr_01.xml"
+        result = RelatonBipm::BipmBibliography.get "BIPM CR 01"
+        xml = result.to_xml bibdata: true
+        File.write file, xml, encoding: "UTF-8" unless File.exist? file
+        expect(xml).to be_equivalent_to File.read(file, encoding: "UTF-8")
+          .gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
+      end
+    end
+
+    it "CIMP" do
+      VCR.use_cassette "pv_101_i" do
+        file = "spec/fixtures/pv_101_i.xml"
+        result = RelatonBipm::BipmBibliography.get "BIPM PV 101(I)"
         xml = result.to_xml bibdata: true
         File.write file, xml, encoding: "UTF-8" unless File.exist? file
         expect(xml).to be_equivalent_to File.read(file, encoding: "UTF-8")
