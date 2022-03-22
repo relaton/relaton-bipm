@@ -8,7 +8,7 @@ image:https://codeclimate.com/github/relaton/relaton-bipm/badges/gpa.svg["Code C
 image:https://img.shields.io/github/issues-pr-raw/relaton/relaton-bipm.svg["Pull Requests", link="https://github.com/relaton/relaton-bipm/pulls"]
 image:https://img.shields.io/github/commits-since/relaton/relaton-bipm/latest.svg["Commits since latest",link="https://github.com/relaton/relaton-bipm/releases"]
 
-RelatonIec is a Ruby gem that implements the https://github.com/metanorma/metanorma-model-iso#iso-bibliographic-item[IsoBibliographicItem model].
+RelatonBipm is a Ruby gem that implements the https://github.com/metanorma/metanorma-model-iso#iso-bibliographic-item[IsoBibliographicItem model].
 
 You can use it to retrieve metadata of BIPM Standards from https://www.bipm.org, and access such metadata through the `BipmBibliographicItem` object.
 

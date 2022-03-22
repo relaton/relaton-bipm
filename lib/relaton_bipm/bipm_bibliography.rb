@@ -39,13 +39,18 @@ module RelatonBipm
       # @param ref [String]
       # @param agent [Mechanize]
       # @return [RelatonBipm::BipmBibliographicItem]
-      def get_bipm(ref, agent)
+      def get_bipm(ref, agent) # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
         url = "#{GH_ENDPOINT}#{ref.upcase.split.join '-'}.yaml"
         resp = agent.get url
         check_response resp
         return unless resp.code == "200"
 
-        bib_hash = HashConverter.hash_to_bib YAML.safe_load(resp.body, [Date])
+        yaml = if Gem::Version.new(Psych::VERSION) >= Gem::Version.new("3.1.0.pre1")
+                 YAML.safe_load(resp.body, permitted_classes: [Date])
+               else
+                 YAML.safe_load(resp.body, [Date])
+               end
+        bib_hash = HashConverter.hash_to_bib yaml
         BipmBibliographicItem.new(**bib_hash)
       end
 
