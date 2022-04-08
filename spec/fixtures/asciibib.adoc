@@ -57,20 +57,20 @@ place::
 place.name:: Geneva
 place.uri:: geneva.place
 place.region:: Switzelznd
-extent::
-extent.type:: section
-extent.reference_from:: Reference from
-extent.reference_to:: Reference to
-extent::
-extent.type:: chapter
-extent.reference_from:: 4
-extent::
-extent.type:: page
-extent.reference_from:: 10
-extent.reference_to:: 20
-extent::
-extent.type:: volume
-extent.reference_from:: 1
+extent.locality::
+extent.locality.type:: section
+extent.locality.reference_from:: Reference from
+extent.locality.reference_to:: Reference to
+extent.locality::
+extent.locality.type:: chapter
+extent.locality.reference_from:: 4
+extent.locality::
+extent.locality.type:: page
+extent.locality.reference_from:: 10
+extent.locality.reference_to:: 20
+extent.locality::
+extent.locality.type:: volume
+extent.locality.reference_from:: 1
 accesslocation:: accesslocation1
 accesslocation:: accesslocation2
 classification::

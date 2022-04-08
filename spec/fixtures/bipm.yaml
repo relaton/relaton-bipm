@@ -172,13 +172,16 @@ relation:
       format: text/plain
   locality:
   - locality_stack:
-    - type: section
-      reference_from: Reference from
+    - locality:
+        type: section
+        reference_from: Reference from
   - locality_stack:
-    - type: chapter
-      reference_from: '1'
-    - type: page
-      reference_from: '2'
+    - locality:
+        type: chapter
+        reference_from: '1'
+    - locality:
+        type: page
+        reference_from: '2'
   source_locality:
   - source_locality_stack:
     - type: volume
@@ -247,16 +250,20 @@ place:
   uri: geneva.place
   region: Switzelznd
 extent:
-- type: section
-  reference_from: Reference from
-  reference_to: Reference to
-- type: chapter
-  reference_from: '4'
-- type: page
-  reference_from: '10'
-  reference_to: '20'
-- type: volume
-  reference_from: '1'
+- locality:
+    type: section
+    reference_from: Reference from
+    reference_to: Reference to
+- locality:
+    type: chapter
+    reference_from: '4'
+- locality:
+    type: page
+    reference_from: '10'
+    reference_to: '20'
+- locality:
+    type: volume
+    reference_from: '1'
 accesslocation:
 - accesslocation1
 - accesslocation2
