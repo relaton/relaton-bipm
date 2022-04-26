@@ -216,9 +216,10 @@ medium:
 
 place:
   - bib place
-  - name: Geneva
-    uri: geneva.place
-    region: Switzelznd
+  - city: Geneva
+    country:
+      - name: Switzeland
+        iso: CH
 
 extent:
   - locality:

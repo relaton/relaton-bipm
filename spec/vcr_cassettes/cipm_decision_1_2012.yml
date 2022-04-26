@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://raw.githubusercontent.com/relaton/relaton-data-bipm/master/data/CIPM-DECISION-1-2012.yaml
+    uri: https://raw.githubusercontent.com/relaton/relaton-data-bipm/master/data/cipm/decision/1-2012.yaml
     body:
       encoding: US-ASCII
       string: ''
@@ -12,7 +12,8 @@ http_interactions:
       Accept:
       - text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
       User-Agent:
-      - Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:94.0) Gecko/20100101 Firefox/94.0
+      - Mozilla/5.0 (compatible; MSIE 8.0; Windows NT 5.1; Trident/4.0; .NET CLR 1.1.4322;
+        .NET CLR 2.0.50727)
       Accept-Charset:
       - ISO-8859-1,utf-8;q=0.7,*;q=0.7
       Accept-Language:
@@ -35,7 +36,7 @@ http_interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '392'
+      - '395'
       Cache-Control:
       - max-age=300
       Content-Security-Policy:
@@ -43,7 +44,7 @@ http_interactions:
       Content-Type:
       - text/plain; charset=utf-8
       Etag:
-      - W/"86ac14bbd8a628b04183778bf0058286edc2673d9df46a11da67b1d757d6f9b2"
+      - W/"ab5fcc387e4c305c41cd19b1eb36991f9e493e2179f0db8578af18616e09728b"
       Strict-Transport-Security:
       - max-age=31536000
       X-Content-Type-Options:
@@ -53,38 +54,36 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Github-Request-Id:
-      - 5428:3A69:1A6234:1B36C7:62502B86
+      - 9C6C:4B73:19697E:1ACF82:62604B8D
       Content-Encoding:
       - gzip
-      Fastly-Original-Body-Size:
-      - '764'
       Accept-Ranges:
       - bytes
       Date:
-      - Fri, 08 Apr 2022 12:33:10 GMT
+      - Wed, 20 Apr 2022 18:06:06 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-vie6353-VIE
+      - cache-vie6328-VIE
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1649421190.114824,VS0,VE156
+      - S1650477966.801313,VS0,VE241
       Vary:
       - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
       - "*"
       X-Fastly-Request-Id:
-      - 6eeaa0be074e5e19b87a5ef0b58879e4264d02be
+      - ed978f18d3009c1142bf202988b0094dca68ff46
       Expires:
-      - Fri, 08 Apr 2022 12:38:10 GMT
+      - Wed, 20 Apr 2022 18:11:06 GMT
       Source-Age:
       - '0'
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        H4sIAAAAAAAAA41SwU7sMAy89yt8KxxCtxwQ6pHHBQkk/gCljXexXppUjsMCf8R38GM47RZ2D0hIrdq64/HMOMaYilwHN3ePD//0vsWBEsXQnl1u2svzSkg8dpWBIQbBIB2sCCjwpt20poUDGMDbsMt2px0ABjDoIw1MkyyFeyultI08WqUSfJVm8pbCyYDPjz9P2PKfJ3gK/0+MPItMqWua/X5/0dM0XkTeNRiaIY4jiSCmZiC9pnHW8NSaokHJ5W3CDhIPx2x1/f3HRapcHDRWBazhzmZ+wjtytDQVjH5MTKPlN1XOGQtLyGOP3P3W7qzM61lIptx7Ss/olOnF+qyluuDM5spsruuqqGXqs0QuTWrYBnq3opQlPoBgR1zeDNxkRpvhTg1ymDHWg8MEj5FcAhR4wKSYNONt3zO+0MK1ugHI7Ds4TlirHP1hfaterrR3tnKq92fZ82Ga971u+7BrjWjxrkKiz2V8lTS8QVSaI6fLoS1pgjrwKM66rasvu8hru/wCAAA=
-  recorded_at: Fri, 08 Apr 2022 12:33:10 GMT
+        H4sIAAAAAAAAA41SS27bMBDd8xSzU7pgZGVRFFqm3QRogNygoMSxMyhFCsNhnPRGPUcv1iFlN/aiQAABkqg3b95H1lpDfoSvD0+P9hvOlClFO9i73XBnhCTgaCzMKQpGGeGMaPh+2A12gJuK/WQAgouH4g46AWABo97yzLTKdvDdST3aJ16cUgm+Sr8GR/FqwZ/fH96w5w9vCBR/Xhl5Flnz2PfH4/F2onW5TXzoMfZzWhYSQcz9THqtS9Pw45QIgLytOELm+ZKt6/598YmMT7NmqoCa7L36aGbew7twtA1VjL6sTIvjN1XOBStLLMuEPP5v3Dtp9Wwka5kC5Wf0yvTiQtGjruLs7rPdfelMVcs0FUlch9Swi/TLiVLW+ACiW3B7snBfGF2BBzXIsWFcAI8ZnhL5DCjwiFkxueHdNDG+0MZ1dgNQOIxwmbCecgqn+s562ehss3Kt973s9jO1vs9tn7rWiDbvKiSFUtebrOHNotI8eS2H9qQJ6sKLOLuhM38B8TH1DPkCAAA=
+  recorded_at: Wed, 20 Apr 2022 18:06:06 GMT
 recorded_with: VCR 6.1.0

@@ -10,17 +10,17 @@ RSpec.describe RelatonBipm do
   end
 
   it "search a code" do
-    VCR.use_cassette "cctf_meeting_5" do
-      result = RelatonBipm::BipmBibliography.search "BIPM CCTF Meeting 5"
+    VCR.use_cassette "cctf_recommendation_5" do
+      result = RelatonBipm::BipmBibliography.search "BIPM CCTF Recommendation 5"
       expect(result).to be_instance_of RelatonBipm::BipmBibliographicItem
     end
   end
 
   context "get document" do
     it "CGPM" do
-      VCR.use_cassette "cgpm_meeting_1" do
-        file = "spec/fixtures/cgpm_meeting_1.xml"
-        result = RelatonBipm::BipmBibliography.get "BIPM CGPM Meeting 1"
+      VCR.use_cassette "cgpm_resolution_1" do
+        file = "spec/fixtures/cgpm_resolution_1.xml"
+        result = RelatonBipm::BipmBibliography.get "BIPM CGPM Resolution 1"
         xml = result.to_xml bibdata: true
         File.write file, xml, encoding: "UTF-8" unless File.exist? file
         expect(xml).to be_equivalent_to File.read(file, encoding: "UTF-8")
@@ -31,7 +31,7 @@ RSpec.describe RelatonBipm do
     it "CIMP" do
       VCR.use_cassette "cipm_decision_1_2012" do
         file = "spec/fixtures/cipm_decision_1_2012.xml"
-        result = RelatonBipm::BipmBibliography.get "BIPM CIPM Decision 1 (2012)"
+        result = RelatonBipm::BipmBibliography.get "BIPM CIPM Decision 1-2012"
         xml = result.to_xml(bibdata: true).gsub(/<fetched>\d{4}-\d{2}-\d{2}<\/fetched>/, "")
         File.write file, xml, encoding: "UTF-8" unless File.exist? file
         expect(xml).to be_equivalent_to File.read(file, encoding: "UTF-8")

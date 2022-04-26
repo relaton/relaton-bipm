@@ -185,7 +185,10 @@
     <scale>medium scale</scale>
   </medium>
   <place>bib place</place>
-  <place uri="geneva.place" region="Switzelznd">Geneva</place>
+  <place>
+    <city>Geneva</city>
+    <country iso="CH">Switzeland</country>
+  </place>
   <extent>
     <locality type="section">
       <referenceFrom>Reference from</referenceFrom>

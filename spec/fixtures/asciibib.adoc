@@ -54,9 +54,9 @@ medium.scale:: medium scale
 place::
 place.name:: bib place
 place::
-place.name:: Geneva
-place.uri:: geneva.place
-place.region:: Switzelznd
+place.city:: Geneva
+place.country.name:: Switzeland
+place.country.iso:: CH
 extent.locality::
 extent.locality.type:: section
 extent.locality.reference_from:: Reference from
