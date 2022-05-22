@@ -7,7 +7,7 @@ module RelatonBipm
     def initialize
       @short = :relaton_bipm
       @prefix = "BIPM"
-      @defaultprefix = %r{^BIPM\s}
+      @defaultprefix = %r{^(?:BIPM|CCTF|CGPM|CIPM)\s}
       @idtype = "BIPM"
     end
 

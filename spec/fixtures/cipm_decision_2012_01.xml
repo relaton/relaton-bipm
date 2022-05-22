@@ -4,8 +4,8 @@
   <title format="text/plain" language="fr" script="Latn">Décision CIPM/101-1 (2012)</title>
   <uri type="src">https://www.bipm.org/en/committees/ci/cipm/101-_1-2012</uri>
   <uri type="doi"/>
-  <docidentifier type="BIPM" primary="true">BIPM CIPM Decision 1 (2012)</docidentifier>
-  <docnumber>CIPM Decision 1 (2012)</docnumber>
+  <docidentifier type="BIPM" primary="true">CIPM Decision 01 (2012)</docidentifier>
+  <docnumber>CIPM Decision 01 (2012)</docnumber>
   <date type="published">
     <on>2012-06-08</on>
   </date>
@@ -23,7 +23,7 @@
   <ext>
     <doctype>resolution</doctype>
     <structuredidentifier>
-      <docnumber>1</docnumber>
+      <docnumber>01</docnumber>
     </structuredidentifier>
   </ext>
 </bibdata>

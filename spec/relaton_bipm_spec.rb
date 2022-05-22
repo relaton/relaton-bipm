@@ -20,7 +20,7 @@ RSpec.describe RelatonBipm do
     it "CGPM" do
       VCR.use_cassette "cgpm_resolution_1" do
         file = "spec/fixtures/cgpm_resolution_1.xml"
-        result = RelatonBipm::BipmBibliography.get "BIPM CGPM Resolution 1"
+        result = RelatonBipm::BipmBibliography.get "CGPM Resolution 1"
         xml = result.to_xml bibdata: true
         File.write file, xml, encoding: "UTF-8" unless File.exist? file
         expect(xml).to be_equivalent_to File.read(file, encoding: "UTF-8")
@@ -28,10 +28,21 @@ RSpec.describe RelatonBipm do
       end
     end
 
-    it "CIMP" do
-      VCR.use_cassette "cipm_decision_1_2012" do
-        file = "spec/fixtures/cipm_decision_1_2012.xml"
-        result = RelatonBipm::BipmBibliography.get "BIPM CIPM Decision 1-2012"
+    it "CIPM" do
+      VCR.use_cassette "cipm_decision_2012_01" do
+        file = "spec/fixtures/cipm_decision_2012_01.xml"
+        result = RelatonBipm::BipmBibliography.get "CIPM Decision 2012-01"
+        xml = result.to_xml(bibdata: true).gsub(/<fetched>\d{4}-\d{2}-\d{2}<\/fetched>/, "")
+        File.write file, xml, encoding: "UTF-8" unless File.exist? file
+        expect(xml).to be_equivalent_to File.read(file, encoding: "UTF-8")
+          .gsub(/<fetched>\d{4}-\d{2}-\d{2}<\/fetched>/, "")
+      end
+    end
+
+    it "CIPM with year in parenthesis" do
+      VCR.use_cassette "cipm_decision_2012_01" do
+        file = "spec/fixtures/cipm_decision_2012_01.xml"
+        result = RelatonBipm::BipmBibliography.get "CIPM Decision 01 (2012)"
         xml = result.to_xml(bibdata: true).gsub(/<fetched>\d{4}-\d{2}-\d{2}<\/fetched>/, "")
         File.write file, xml, encoding: "UTF-8" unless File.exist? file
         expect(xml).to be_equivalent_to File.read(file, encoding: "UTF-8")
