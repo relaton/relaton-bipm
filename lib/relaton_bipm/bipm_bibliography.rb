@@ -40,8 +40,10 @@ module RelatonBipm
       # @param agent [Mechanize]
       # @return [RelatonBipm::BipmBibliographicItem]
       def get_bipm(ref, agent) # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
-        rf = ref.sub(/(\d{2})\s\((\d{4})\)/, "\\2-\\1").sub(/\((\d{4})\)/, "\\1")
-        url = "#{GH_ENDPOINT}#{rf.downcase.split.join '/'}.yaml"
+        rf = ref.sub(/(\d{1,2})\s\((\d{4})\)/) { "#{$2}-#{$1.rjust(2, '0')}" }.sub(/\((\d{4})\)/, "\\1")
+        path_parts = rf.split.map &:downcase
+        path_parts.insert(1, "meetings") unless path_parts[1] == "meetings"
+        url = "#{GH_ENDPOINT}#{path_parts.join '/'}.yaml"
         resp = agent.get url
         check_response resp
         return unless resp.code == "200"

@@ -53,42 +53,43 @@ bib = RelatonBipm::BipmBibliography.get "BIPM Metrologia 29 6 373"
 ...
 
 # get CGPM resolutions
-RelatonBipm::BipmBibliography.get "CGPM Resolution 1"
-[relaton-bipm] ("CGPM Resolution 1") fetching...
-[relaton-bipm] ("CGPM Resolution 1") found CGPM Resolution 1
+RelatonBipm::BipmBibliography.get "CGPM Meetings 1"
+[relaton-bipm] ("CGPM Meetings 1") fetching...
+[relaton-bipm] ("CGPM Meetings 1") found CGPM Meetings 1
 => #<RelatonBipm::BipmBibliographicItem:0x00007fd4f7cba038
 ...
 
-# get CIPM decision
-RelatonBipm::BipmBibliography.get "CIPM Decision 101-1"
-[relaton-bipm] ("CIPM Decision 101-1") fetching...
-[relaton-bipm] ("CIPM Decision 101-1") found CIPM Decision 101-1
-=> #<RelatonBipm::BipmBibliographicItem:0x00007fed16dfcfe0
+# get CGPM resolutions
+RelatonBipm::BipmBibliography.get "CGPM Resolution 1889-00"
+[relaton-bipm] ("CGPM Resolution 1889-00") fetching...
+[relaton-bipm] ("CGPM Resolution 1889-00") found CGPM Resolution 0 (1889)
+=> #<RelatonBipm::BipmBibliographicItem:0x00007ff0d1ffae50
 ...
 
-RelatonBipm::BipmBibliography.get "CIPM Decision 01 (2012)"
-[relaton-bipm] ("CIPM Decision 01 (2012)") fetching...
-[relaton-bipm] ("CIPM Decision 01 (2012)") found CIPM Decision 01 (2012)
+# get CIPM decision
+RelatonBipm::BipmBibliography.get "CIPM Decision 2012-01"
+[relaton-bipm] ("CIPM Decision 2012-01") fetching...
+[relaton-bipm] ("CIPM Decision 2012-01") found CIPM Decision 1 (2012)
+=> #<RelatonBipm::BipmBibliographicItem:0x00007ff0f10dc548
+...
+
+RelatonBipm::BipmBibliography.get "CIPM Decision 1 (2012)"
+[relaton-bipm] ("CIPM Decision 1 (2012)") fetching...
+[relaton-bipm] ("CIPM Decision 1 (2012)") found CIPM Decision 1 (2012)
 => #<RelatonBipm::BipmBibliographicItem:0x00007fb6b9bbec08
 ...
 
-RelatonBipm::BipmBibliography.get "CIPM Decision 2012-01"
-[relaton-bipm] ("CIPM Decision 2012-01") fetching...
-[relaton-bipm] ("CIPM Decision 2012-01") found CIPM Decision 01 (2012)
-=> #<RelatonBipm::BipmBibliographicItem:0x00007fb6d98ddd98
+# get CIPM recommendation
+RelatonBipm::BipmBibliography.get "CIPM Recommendation (1948)"
+[relaton-bipm] ("CIPM Recommendation (1948)") fetching...
+[relaton-bipm] ("CIPM Recommendation (1948)") found CIPM Recommendation (1948)
+=> #<RelatonBipm::BipmBibliographicItem:0x00007ff0a18a6aa8
 ...
 
-# get CIPM resolution
-RelatonBipm::BipmBibliography.get "CIPM Resolution (1948)"
-[relaton-bipm] ("CIPM Resolution (1948)") fetching...
-[relaton-bipm] ("CIPM Resolution (1948)") found CIPM Resolution (1948)
-=> #<RelatonBipm::BipmBibliographicItem:0x00007fb6bb1c4a98
-...
-
-RelatonBipm::BipmBibliography.get "CIPM Resolution 1948"
-[relaton-bipm] ("CIPM Resolution 1948") fetching...
-[relaton-bipm] ("CIPM Resolution 1948") found CIPM Resolution (1948)
-=> #<RelatonBipm::BipmBibliographicItem:0x00007fb6b9be5510
+RelatonBipm::BipmBibliography.get "CIPM Recommendation 1948"
+[relaton-bipm] ("CIPM Recommendation 1948") fetching...
+[relaton-bipm] ("CIPM Recommendation 1948") found CIPM Recommendation (1948)
+=> #<RelatonBipm::BipmBibliographicItem:0x00007ff0f1164150
 ...
 ----
 

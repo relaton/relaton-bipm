@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://raw.githubusercontent.com/relaton/relaton-data-bipm/master/data/cctf/recommendation/5.yaml
+    uri: https://raw.githubusercontent.com/relaton/relaton-data-bipm/master/data/cgpm/meetings/1.yaml
     body:
       encoding: US-ASCII
       string: ''
@@ -12,7 +12,7 @@ http_interactions:
       Accept:
       - text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
       User-Agent:
-      - Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:94.0) Gecko/20100101 Firefox/94.0
+      - Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:43.0) Gecko/20100101 Firefox/43.0
       Accept-Charset:
       - ISO-8859-1,utf-8;q=0.7,*;q=0.7
       Accept-Language:
@@ -43,7 +43,7 @@ http_interactions:
       Content-Type:
       - text/plain; charset=utf-8
       Etag:
-      - W/"d636090678e1c2731ed13493cf37813454cf032a1fc7245ac9086d8f1fba19cc"
+      - W/"434eab56ac9ae0f81d39e8fbcb9e025474e35087063153ee7be24a62107e5d6b"
       Strict-Transport-Security:
       - max-age=31536000
       X-Content-Type-Options:
@@ -53,36 +53,36 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Github-Request-Id:
-      - 2FB8:AA86:31D04C:3A0C9C:628A2111
+      - 2C7A:15B9:C76A1:D0A80:62960263
       Content-Encoding:
       - gzip
       Accept-Ranges:
       - bytes
       Date:
-      - Sun, 22 May 2022 11:41:50 GMT
+      - Tue, 31 May 2022 11:56:19 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-sof1510053-SOF
+      - cache-vie6359-VIE
       X-Cache:
-      - HIT
+      - MISS
       X-Cache-Hits:
-      - '1'
+      - '0'
       X-Timer:
-      - S1653219711.613421,VS0,VE0
+      - S1653998179.081668,VS0,VE172
       Vary:
       - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
       - "*"
       X-Fastly-Request-Id:
-      - f94e7ce71c838fa06be9d8dcbf4132309e1b5b68
+      - e7135c2cc947bf6285b05f8aed3a2a1633a871cc
       Expires:
-      - Sun, 22 May 2022 11:46:50 GMT
+      - Tue, 31 May 2022 12:01:19 GMT
       Source-Age:
-      - '109'
+      - '0'
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        H4sIAAAAAAAAA6VSzUrDQBC+71PMrac19RDFHFWEgoWivsAmmbSDm90wO9uqT+8ksdoeBEEIZDLMfPP9xFprqK3g7u7lwT5hE/seQ+uEYrClERKPlbHQxCAYpIJSdtAjCoUtxA5kh9PqWASt7p8NgHdhm91WFwEsYNBXapgGmRuPTsZWF7l3iij4JsXgHYX/3en4z3c8hdczVTuRIVVFcTgcLmoa+ovI2wJDMdpBIoipaBp9pCtKe3lzvVRceR+wgsSNaWOjFire0Ug4NxLK7/Hb1WatHwNT7/hdSXHGcT/kvkb+bVuLKYUZY8i1p7TDVoH2zmdtLUZOdnml3BZmVMVUZ4k8LqkUF+hjwhqNAQiux7mycJsZXYaVGsFhmnEeWkywidQmQIE1Jp1J07yra8Y9zVhHMQCZfQWn3mmXo/8K5siXje5OUs75/sQ4/SxTksccv1JUh2bt59aYpP41ovRaajVI6khN1KMnji7KhfkE1ENnhuUCAAA=
-  recorded_at: Sun, 22 May 2022 11:41:50 GMT
+        H4sIAAAAAAAAA41SS07DMBDd+xSz68qEsCpZwgJVAokrOMk0HeFPNB5T4Eacg4sxSRqgggWSpVijNy/vY2utob6B27vHB/uAKBSHbGsjJB4bY6FLUTBKA3UWCAsA0h7kgPOSAfAuDsUNCgewgFE/uWMaZRncO5lG+8TBKY/gi1SjdxTP2BH4471EShF6VMq/yff8b3JP8enMwEFkzE1VHY/Hi5bGcJF4qDBWXQqBRBBz1Q16xlDVtt5ur5VXXkdsIHNn+tRpTsq3pgVrWlB/AW92s+aRKTh+VTlccNqMJbTIv/d6J3PIy/ZYWk/5gL1SPDtfdLSZdNjLa3u13ZjJCVNbJPG0pPJdpDcnmtkUBkB0AZebhZvC6Ars1DzHGeO8JpvhMVGfAUV1ZMXkGe/alvGZFq7VBkBh38DPvHTKyZ/KWPWy0d3Zyrne7+rmVzG3t3Z3ak6zWbyfXlY2WTPrRIX11GtttCcNTn/3I8VNvTGfELWbjbgCAAA=
+  recorded_at: Tue, 31 May 2022 11:56:19 GMT
 recorded_with: VCR 6.1.0
