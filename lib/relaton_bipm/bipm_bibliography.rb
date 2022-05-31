@@ -40,7 +40,9 @@ module RelatonBipm
       # @param agent [Mechanize]
       # @return [RelatonBipm::BipmBibliographicItem]
       def get_bipm(ref, agent) # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
-        rf = ref.sub(/(\d{1,2})\s\((\d{4})\)/) { "#{$2}-#{$1.rjust(2, '0')}" }.sub(/\((\d{4})\)/, "\\1")
+        rf = ref.sub(/(?:(\d{1,2})\s)?\(?(\d{4})(?!-)\)?/) do
+          "#{$2}-#{$1.to_s.rjust(2, '0')}"
+        end
         path_parts = rf.split.map &:downcase
         path_parts.insert(1, "meetings") unless path_parts[1] == "meetings"
         url = "#{GH_ENDPOINT}#{path_parts.join '/'}.yaml"

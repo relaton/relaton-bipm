@@ -52,7 +52,7 @@ bib = RelatonBipm::BipmBibliography.get "BIPM Metrologia 29 6 373"
 => #<RelatonBipm::BipmBibliographicItem:0x007f8857f94d40
 ...
 
-# get CGPM resolutions
+# get CGPM meetings
 RelatonBipm::BipmBibliography.get "CGPM Meetings 1"
 [relaton-bipm] ("CGPM Meetings 1") fetching...
 [relaton-bipm] ("CGPM Meetings 1") found CGPM Meetings 1
@@ -62,7 +62,19 @@ RelatonBipm::BipmBibliography.get "CGPM Meetings 1"
 # get CGPM resolutions
 RelatonBipm::BipmBibliography.get "CGPM Resolution 1889-00"
 [relaton-bipm] ("CGPM Resolution 1889-00") fetching...
-[relaton-bipm] ("CGPM Resolution 1889-00") found CGPM Resolution 0 (1889)
+[relaton-bipm] ("CGPM Resolution 1889-00") found CGPM Resolution (1889)
+=> #<RelatonBipm::BipmBibliographicItem:0x00007ff0d1ffae50
+...
+
+RelatonBipm::BipmBibliography.get "CGPM Resolution (1889)"
+[relaton-bipm] ("CGPM Resolution (1889)") fetching...
+[relaton-bipm] ("CGPM Resolution (1889)") found CGPM Resolution (1889)
+=> #<RelatonBipm::BipmBibliographicItem:0x00007ff0d1ffae50
+...
+
+RelatonBipm::BipmBibliography.get "CGPM Resolution 1889"
+[relaton-bipm] ("CGPM Resolution 1889") fetching...
+[relaton-bipm] ("CGPM Resolution 1889") found CGPM Resolution (1889)
 => #<RelatonBipm::BipmBibliographicItem:0x00007ff0d1ffae50
 ...
 
