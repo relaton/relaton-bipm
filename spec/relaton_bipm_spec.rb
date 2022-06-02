@@ -72,6 +72,17 @@ RSpec.describe RelatonBipm do
       end
     end
 
+    it "using French reference" do
+      VCR.use_cassette "cipm_decision_2012_01" do
+        file = "spec/fixtures/cipm_decision_2012_01.xml"
+        result = RelatonBipm::BipmBibliography.get "CIPM Décision 2012-01"
+        xml = result.to_xml(bibdata: true).gsub(/<fetched>\d{4}-\d{2}-\d{2}<\/fetched>/, "")
+        File.write file, xml, encoding: "UTF-8" unless File.exist? file
+        expect(xml).to be_equivalent_to File.read(file, encoding: "UTF-8")
+          .gsub(/<fetched>\d{4}-\d{2}-\d{2}<\/fetched>/, "")
+      end
+    end
+
     context "Metrologia" do
       it "journal" do
         VCR.use_cassette "metrologia" do
