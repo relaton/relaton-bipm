@@ -7,7 +7,7 @@ module RelatonBipm
     TYPES = {
       "Déclaration" => "Declaration",
       "Réunions" => "Meetings",
-      "Recommandation" => "Recommandation",
+      "Recommandation" => "Recommendation",
       "Résolution" => "Resolution",
       "Décision" => "Decision",
     }.freeze
