@@ -17,6 +17,13 @@ RSpec.describe RelatonBipm do
   end
 
   context "get document" do
+    it "CCTF Recommendation" do
+      VCR.use_cassette "cctf_recommendation_1970_02" do
+        result = RelatonBipm::BipmBibliography.get "CCTF Recommendation 1970-02"
+        result
+      end
+    end
+
     it "CGPM meetings" do
       VCR.use_cassette "cgpm_meetings_1" do
         file = "spec/fixtures/cgpm_meetings_1.xml"
