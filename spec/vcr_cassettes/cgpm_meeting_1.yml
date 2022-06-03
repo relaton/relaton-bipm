@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://raw.githubusercontent.com/relaton/relaton-data-bipm/master/data/cgpm/meetings/1.yaml
+    uri: https://raw.githubusercontent.com/relaton/relaton-data-bipm/master/data/cgpm/meeting/1.yaml
     body:
       encoding: US-ASCII
       string: ''
@@ -12,7 +12,8 @@ http_interactions:
       Accept:
       - text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
       User-Agent:
-      - Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:43.0) Gecko/20100101 Firefox/43.0
+      - Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; .NET CLR 1.1.4322; .NET
+        CLR 2.0.50727)
       Accept-Charset:
       - ISO-8859-1,utf-8;q=0.7,*;q=0.7
       Accept-Language:
@@ -43,7 +44,7 @@ http_interactions:
       Content-Type:
       - text/plain; charset=utf-8
       Etag:
-      - W/"434eab56ac9ae0f81d39e8fbcb9e025474e35087063153ee7be24a62107e5d6b"
+      - W/"9c43ffad22538afa4bc8ca617afceab9b5a62e8b99b09156e0374d5752752e88"
       Strict-Transport-Security:
       - max-age=31536000
       X-Content-Type-Options:
@@ -53,36 +54,36 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Github-Request-Id:
-      - 2C7A:15B9:C76A1:D0A80:62960263
+      - DFBC:B133:B3FB3C:C0384F:6299F720
       Content-Encoding:
       - gzip
       Accept-Ranges:
       - bytes
       Date:
-      - Tue, 31 May 2022 11:56:19 GMT
+      - Fri, 03 Jun 2022 11:57:20 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-vie6359-VIE
+      - cache-vie6357-VIE
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1653998179.081668,VS0,VE172
+      - S1654257440.396838,VS0,VE166
       Vary:
       - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
       - "*"
       X-Fastly-Request-Id:
-      - e7135c2cc947bf6285b05f8aed3a2a1633a871cc
+      - 43ab3bc6ab1b7c82c59fb18cd80e8c892f303ef5
       Expires:
-      - Tue, 31 May 2022 12:01:19 GMT
+      - Fri, 03 Jun 2022 12:02:20 GMT
       Source-Age:
       - '0'
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        H4sIAAAAAAAAA41SS07DMBDd+xSz68qEsCpZwgJVAokrOMk0HeFPNB5T4Eacg4sxSRqgggWSpVijNy/vY2utob6B27vHB/uAKBSHbGsjJB4bY6FLUTBKA3UWCAsA0h7kgPOSAfAuDsUNCgewgFE/uWMaZRncO5lG+8TBKY/gi1SjdxTP2BH4471EShF6VMq/yff8b3JP8enMwEFkzE1VHY/Hi5bGcJF4qDBWXQqBRBBz1Q16xlDVtt5ur5VXXkdsIHNn+tRpTsq3pgVrWlB/AW92s+aRKTh+VTlccNqMJbTIv/d6J3PIy/ZYWk/5gL1SPDtfdLSZdNjLa3u13ZjJCVNbJPG0pPJdpDcnmtkUBkB0AZebhZvC6Ars1DzHGeO8JpvhMVGfAUV1ZMXkGe/alvGZFq7VBkBh38DPvHTKyZ/KWPWy0d3Zyrne7+rmVzG3t3Z3ak6zWbyfXlY2WTPrRIX11GtttCcNTn/3I8VNvTGfELWbjbgCAAA=
-  recorded_at: Tue, 31 May 2022 11:56:19 GMT
+        H4sIAAAAAAAAA41SS07DMBDd+xSz68qEsCpZwgJVAqlXcJJpOsKfaDymlBtxDi7GJGmBChZIkRJN5j2/j621hvoG7h+2T/YJUSgOtjZC4rExFroUBaM0UGeBsPyHtAPZ44wxAN7FobhB1wEsYNRX7phGWQaPTqbRLnFwyiP4KtXoHcULdgT+eC+RUoQelfJv8h3/m9xTfL4wsBcZc1NVh8PhqqUxXCUeKoxVl0IgEcRcdYM+Y6hqW6/Xt8orxxEbyNyZPnUak/Kdw4JTWFB/7d1tZskjU3B8VDVccALGElrkX7DeyRzxAh5L6ynvsVeGF+eLjlaTCnt9a2/WKzP5YGqLJJ5AKt5FenOiiU1RAEQXcPmycFcYXYGNWuc47zivuWbYJuozoKiMrDt53ndty/hCC9fZBUBh38DPtHTKyZ+qOOtlo9jZyqXe7+LmOzF3d27u1JtGs3g/3SuTNbFOVFdPvXZGO9LY9LQfGa7qlfkENkgi6bQCAAA=
+  recorded_at: Fri, 03 Jun 2022 11:57:20 GMT
 recorded_with: VCR 6.1.0

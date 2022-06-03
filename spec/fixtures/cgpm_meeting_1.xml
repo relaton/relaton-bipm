@@ -1,10 +1,10 @@
 <bibdata>
-  <fetched>2022-05-31</fetched>
+  <fetched>2022-06-03</fetched>
   <title format="text/plain" language="en" script="Latn">1st meeting of the CGPM</title>
   <title format="text/plain" language="fr" script="Latn">1e réunion de la CGPM</title>
   <uri type="src">https://www.bipm.org/en/committees/cg/cgpm/1-1889</uri>
-  <docidentifier type="BIPM" primary="true">CGPM Meetings 1</docidentifier>
-  <docnumber>CGPM Meetings 1</docnumber>
+  <docidentifier type="BIPM" primary="true">CGPM Meeting 1</docidentifier>
+  <docnumber>CGPM Meeting 1</docnumber>
   <date type="published">
     <on>1889-09-28</on>
   </date>
@@ -20,7 +20,7 @@
   <language>fr</language>
   <script>Latn</script>
   <ext>
-    <doctype>meetings</doctype>
+    <doctype>meeting</doctype>
     <structuredidentifier>
       <docnumber>1</docnumber>
     </structuredidentifier>

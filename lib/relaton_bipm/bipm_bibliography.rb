@@ -4,12 +4,13 @@ module RelatonBipm
   class BipmBibliography
     GH_ENDPOINT = "https://raw.githubusercontent.com/relaton/relaton-data-bipm/master/data/".freeze
     IOP_DOMAIN = "https://iopscience.iop.org".freeze
-    TYPES = {
+    SUBSTITUTES = {
       "Déclaration" => "Declaration",
-      "Réunions" => "Meetings",
+      "Réunion" => "Meeting",
       "Recommandation" => "Recommendation",
       "Résolution" => "Resolution",
       "Décision" => "Decision",
+      "CCDS" => "CCTF",
     }.freeze
 
     class << self
@@ -50,9 +51,9 @@ module RelatonBipm
         rf = ref.sub(/(?:(\d{1,2})\s)?\(?(\d{4})(?!-)\)?/) do
           "#{$2}-#{$1.to_s.rjust(2, '0')}"
         end
-        TYPES.each { |fr, en| rf.sub! fr, en }
+        SUBSTITUTES.each { |fr, en| rf.sub! fr, en }
         path_parts = rf.split.map &:downcase
-        path_parts.insert(1, "meetings") unless path_parts[1] == "meetings"
+        path_parts.insert(1, "meeting") unless path_parts[1] == "meeting"
         url = "#{GH_ENDPOINT}#{path_parts.join '/'}.yaml"
         resp = agent.get url
         check_response resp

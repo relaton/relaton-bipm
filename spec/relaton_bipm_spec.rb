@@ -10,8 +10,8 @@ RSpec.describe RelatonBipm do
   end
 
   it "search a code" do
-    VCR.use_cassette "cctf_meetings_5" do
-      result = RelatonBipm::BipmBibliography.search "BIPM CCTF Meetings 5"
+    VCR.use_cassette "cctf_meeting_5" do
+      result = RelatonBipm::BipmBibliography.search "BIPM CCTF Meeting 5"
       expect(result).to be_instance_of RelatonBipm::BipmBibliographicItem
     end
   end
@@ -19,15 +19,30 @@ RSpec.describe RelatonBipm do
   context "get document" do
     it "CCTF Recommendation" do
       VCR.use_cassette "cctf_recommendation_1970_02" do
+        file = "spec/fixtures/cctf_recommendation_1970_02.xml"
         result = RelatonBipm::BipmBibliography.get "CCTF Recommendation 1970-02"
-        result
+        xml = result.to_xml bibdata: true
+        File.write file, xml, encoding: "UTF-8" unless File.exist? file
+        expect(xml).to be_equivalent_to File.read(file, encoding: "UTF-8")
+          .gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
+      end
+    end
+
+    it "CCDS Recommendation" do
+      VCR.use_cassette "cctf_recommendation_1970_02" do
+        file = "spec/fixtures/cctf_recommendation_1970_02.xml"
+        result = RelatonBipm::BipmBibliography.get "CCDS Recommendation 1970-02"
+        xml = result.to_xml bibdata: true
+        # File.write file, xml, encoding: "UTF-8" unless File.exist? file
+        expect(xml).to be_equivalent_to File.read(file, encoding: "UTF-8")
+          .gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
       end
     end
 
     it "CGPM meetings" do
-      VCR.use_cassette "cgpm_meetings_1" do
-        file = "spec/fixtures/cgpm_meetings_1.xml"
-        result = RelatonBipm::BipmBibliography.get "CGPM Meetings 1"
+      VCR.use_cassette "cgpm_meeting_1" do
+        file = "spec/fixtures/cgpm_meeting_1.xml"
+        result = RelatonBipm::BipmBibliography.get "CGPM Meeting 1"
         xml = result.to_xml bibdata: true
         File.write file, xml, encoding: "UTF-8" unless File.exist? file
         expect(xml).to be_equivalent_to File.read(file, encoding: "UTF-8")
