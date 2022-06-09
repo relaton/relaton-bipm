@@ -63,8 +63,8 @@ module RelatonBipm
             b.doctype doctype if doctype
             editorialgroup&.to_xml b
             comment_period&.to_xml b
-            b.send "si-aspect", si_aspect if si_aspect
-            b.send "meeting-note", meeting_note if meeting_note
+            b.send :"si-aspect", si_aspect if si_aspect
+            b.send :"meeting-note", meeting_note if meeting_note
             structuredidentifier&.to_xml b
           end
         end
@@ -76,7 +76,7 @@ module RelatonBipm
       hash = super
       hash["comment_period"] = comment_period.to_hash if comment_period
       hash["si_aspect"] = si_aspect if si_aspect
-      hash["meeting-note"] = meeting_note if meeting_note
+      hash["meeting_note"] = meeting_note if meeting_note
       hash
     end
 

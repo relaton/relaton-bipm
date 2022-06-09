@@ -10,6 +10,9 @@ RSpec.describe RelatonBipm::BipmBibliography do
     end
 
     it "fetch from GitHub" do
+      index = double "index"
+      expect(index).to receive(:search).and_return "data/doc.yaml"
+      expect(RelatonBipm::Index).to receive(:new).and_return index
       expect(agent).to receive(:get).and_raise Mechanize::ResponseCodeError.new(Mechanize::Page.new)
       expect(Mechanize).to receive(:new).and_return agent
       expect do

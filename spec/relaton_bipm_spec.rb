@@ -9,6 +9,14 @@ RSpec.describe RelatonBipm do
     expect(hash.size).to eq 32
   end
 
+  it "parse YAML with an old version of Psych" do
+    method = double "params"
+    expect(method).to receive(:parameters).and_return [%i[req yaml]]
+    expect(YAML).to receive(:method).with(:safe_load).and_return method
+    expect(YAML).to receive(:safe_load).with(kind_of(String), []).and_return({})
+    RelatonBipm.parse_yaml "key: value"
+  end
+
   it "search a code" do
     VCR.use_cassette "cctf_meeting_5" do
       result = RelatonBipm::BipmBibliography.search "BIPM CCTF Meeting 5"
@@ -21,6 +29,17 @@ RSpec.describe RelatonBipm do
       VCR.use_cassette "cctf_recommendation_1970_02" do
         file = "spec/fixtures/cctf_recommendation_1970_02.xml"
         result = RelatonBipm::BipmBibliography.get "CCTF Recommendation 1970-02"
+        xml = result.to_xml bibdata: true
+        File.write file, xml, encoding: "UTF-8" unless File.exist? file
+        expect(xml).to be_equivalent_to File.read(file, encoding: "UTF-8")
+          .gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
+      end
+    end
+
+    it "CCTF Recommendation" do
+      VCR.use_cassette "cctf_recommendation_1970_02" do
+        file = "spec/fixtures/cctf_recommendation_1970_02.xml"
+        result = RelatonBipm::BipmBibliography.get "CCTF Recommendation 5-02"
         xml = result.to_xml bibdata: true
         File.write file, xml, encoding: "UTF-8" unless File.exist? file
         expect(xml).to be_equivalent_to File.read(file, encoding: "UTF-8")

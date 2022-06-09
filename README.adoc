@@ -33,6 +33,61 @@ Or install it yourself as:
 
 === Search for a standard using keywords
 
+==== References for Si-Brochure documents
+
+`BIPM {DOCUMENT_NAME}`
+
+Allowed document names are:
+
+- guide-ccem-ampere-realization
+- guide-ccl-metre-realization-1
+- guide-ccl-metre-realization-2
+- guide-ccl-metre-realization-3
+- guide-ccm-kilogram-calibration
+- guide-ccm-kilogram-dissemination
+- mep-ampere-definition
+- mep-candela-definition
+- mep-candela-rapport
+- mep-kelvin-absolute-uncertainty
+- mep-kelvin-absolute
+- mep-kelvin-definition
+- mep-kelvin-lt-johnson-noise
+- mep-kelvin-relative
+- mep-kilogram-definition
+- mep-metre-definition
+- mep-mole-definition
+- mep-second-definition
+- si-brochure
+- sib-a4
+
+==== Reference structire for Metrologia documents
+
+`BIPM Metrologia {JOURNAL} {VOLUME} {ISSUE} {ARTICLE}`
+
+- `{JOURNAL}` - number of journal, required
+- `{VOLUME}` - number of volume, optional
+- `{ISSUE}` - number of issue, optional
+- `{ARTICLE}` - number of article, optional
+
+==== Reference structures for CCTF (CCDS), CGMP, CIPM documents
+
+- `{BODY} {TYPE} {YEAR}-{2_DIGITS_NUMBER}`
+- `{BODY} {TYPE} {NUMBER} ({YEAR})` or `{BODY} {TYPE} {NUMBER} {YEAR}`
+- `{BODY} {TYPE} {MEETING_NUMBER}-{2_DIGITS_NUMBER}`
+- `{BODY} {TYPE} ({YEAR})` or `{BODY} {TYPE} {YEAR}` - in case only one Resolution/Decision/Declaration/Recommendation is available for the year
+- `{BODY} Meeting {MEETING_NUMBER}` or French version `{BODY} Réunion {MEETING_NUMBER}`
+
+The parts of the structures:
+
+- `{BODY}` - could be `CCTF` (or old named `CCDS`), CGMP, or CIMP
+- `{TYPE}` - could be English word: `Resolution`, `Decision`, `Declaration`, `Recommendation`; or French word: `Résolution`, `Décision`, `Déclaration`, `Recommandation`
+- `{YEAR}` - year of Resolution/Decision/Declaration/Recommendation
+- `{NUMBER}` - number of Resolution/Decision/Declaration/Recommendation
+- `{2_DIGITS_NUMBER}` - two digits number of Resolution/Decision/Declaration/Recommendatio with lead zero if needs
+- `{MEETING_NUMBER}` - number of mieeting
+
+==== Examples
+
 [source,ruby]
 ----
 require 'relaton_bipm'
@@ -78,7 +133,7 @@ RelatonBipm::BipmBibliography.get "CGPM Resolution 1889"
 => #<RelatonBipm::BipmBibliographicItem:0x00007ff0d1ffae50
 ...
 
-# get CIPM decision
+# get CIPM decision by year and decision number
 RelatonBipm::BipmBibliography.get "CIPM Decision 2012-01"
 [relaton-bipm] ("CIPM Decision 2012-01") fetching...
 [relaton-bipm] ("CIPM Decision 2012-01") found CIPM Decision 1 (2012)
@@ -89,6 +144,13 @@ RelatonBipm::BipmBibliography.get "CIPM Decision 1 (2012)"
 [relaton-bipm] ("CIPM Decision 1 (2012)") fetching...
 [relaton-bipm] ("CIPM Decision 1 (2012)") found CIPM Decision 1 (2012)
 => #<RelatonBipm::BipmBibliographicItem:0x00007fb6b9bbec08
+...
+
+# get CIPM decision by meeting number and decision number
+RelatonBipm::BipmBibliography.get "CIPM Decision 101-01"
+[relaton-bipm] ("CIPM Decision 101-01") fetching...
+[relaton-bipm] ("CIPM Decision 101-01") found CIPM Decision 1 (2012)
+=> #<RelatonBipm::BipmBibliographicItem:0x00007f9ef2acc400
 ...
 
 # get CIPM recommendation

@@ -316,4 +316,4 @@ comment_period:
   from: '2011-01-01'
   to: '2011-12-31'
 si_aspect: A_e_deltanu
-meeting-note: Meeting note
+meeting_note: Meeting note

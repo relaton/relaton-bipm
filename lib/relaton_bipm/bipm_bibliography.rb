@@ -2,7 +2,7 @@ require "mechanize"
 
 module RelatonBipm
   class BipmBibliography
-    GH_ENDPOINT = "https://raw.githubusercontent.com/relaton/relaton-data-bipm/master/data/".freeze
+    GH_ENDPOINT = "https://raw.githubusercontent.com/relaton/relaton-data-bipm/master/".freeze
     IOP_DOMAIN = "https://iopscience.iop.org".freeze
     SUBSTITUTES = {
       "Déclaration" => "Declaration",
@@ -52,18 +52,15 @@ module RelatonBipm
           "#{$2}-#{$1.to_s.rjust(2, '0')}"
         end
         SUBSTITUTES.each { |fr, en| rf.sub! fr, en }
-        path_parts = rf.split.map &:downcase
-        path_parts.insert(1, "meeting") unless path_parts[1] == "meeting"
-        url = "#{GH_ENDPOINT}#{path_parts.join '/'}.yaml"
+        path = Index.new.search rf
+        return unless path
+
+        url = "#{GH_ENDPOINT}#{path}"
         resp = agent.get url
         check_response resp
         return unless resp.code == "200"
 
-        yaml = if Gem::Version.new(Psych::VERSION) >= Gem::Version.new("3.1.0.pre1")
-                 YAML.safe_load(resp.body, permitted_classes: [Date])
-               else
-                 YAML.safe_load(resp.body, [Date])
-               end
+        yaml = RelatonBipm.parse_yaml resp.body, [Date]
         bib_hash = HashConverter.hash_to_bib yaml
         BipmBibliographicItem.new(**bib_hash)
       end
