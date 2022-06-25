@@ -14,6 +14,7 @@ require "relaton_bipm/bipm_bibliography"
 require "relaton_bipm/hash_converter"
 require "relaton_bipm/xml_parser"
 require "relaton_bipm/index"
+require "relaton_bipm/data_fetcher"
 
 module RelatonBipm
   class Error < StandardError; end
@@ -25,22 +26,6 @@ module RelatonBipm
     grammars_path = File.join gem_path, "grammars", "*"
     grammars = Dir[grammars_path].sort.map { |gp| File.read gp }.join
     Digest::MD5.hexdigest grammars
-  end
-
-  #
-  # Parse yaml content
-  #
-  # @param [String] yaml content
-  #
-  # @return [Hash] data
-  #
-  def parse_yaml(yaml, classes = [])
-    # Newer versions of Psych uses the `permitted_classes:` parameter
-    if YAML.method(:safe_load).parameters.map(&:last).include? :permitted_classes
-      YAML.safe_load(yaml, permitted_classes: classes)
-    else
-      YAML.safe_load(yaml, classes)
-    end
   end
 
   extend self

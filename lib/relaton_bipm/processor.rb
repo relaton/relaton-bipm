@@ -9,6 +9,7 @@ module RelatonBipm
       @prefix = "BIPM"
       @defaultprefix = %r{^(?:BIPM|CCTF|CCDS|CGPM|CIPM)(?!\w)}
       @idtype = "BIPM"
+      @datasets = %w[bipm-data-outcomes si-brochure]
     end
 
     # @param code [String]
@@ -17,6 +18,19 @@ module RelatonBipm
     # @return [RelatonBipm::BipmBibliographicItem]
     def get(code, date, opts)
       ::RelatonBipm::BipmBibliography.get(code, date, opts)
+    end
+
+    #
+    # Fetch all the documents from https://github.com/metanorma/bipm-data-outcomes
+    #   or https://github.com/metanorma/bipm-si-brochure
+    #
+    # @param [String] source source name
+    # @param [Hash] opts
+    # @option opts [String] :output directory to output documents
+    # @option opts [String] :format
+    #
+    def fetch_data(source, opts)
+      DataFetcher.fetch(source, **opts)
     end
 
     # @param xml [String]

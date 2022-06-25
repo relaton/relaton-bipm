@@ -9,14 +9,6 @@ RSpec.describe RelatonBipm do
     expect(hash.size).to eq 32
   end
 
-  it "parse YAML with an old version of Psych" do
-    method = double "params"
-    expect(method).to receive(:parameters).and_return [%i[req yaml]]
-    expect(YAML).to receive(:method).with(:safe_load).and_return method
-    expect(YAML).to receive(:safe_load).with(kind_of(String), []).and_return({})
-    RelatonBipm.parse_yaml "key: value"
-  end
-
   it "search a code" do
     VCR.use_cassette "cctf_meeting_5" do
       result = RelatonBipm::BipmBibliography.search "BIPM CCTF Meeting 5"

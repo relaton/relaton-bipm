@@ -41,7 +41,7 @@ module RelatonBipm
     def read_index_file
       return if !File.exist?(path) || File.ctime(path).to_date < Date.today
 
-      @index = RelatonBipm.parse_yaml File.read(path, encoding: "UTF-8")
+      @index = RelatonBib.parse_yaml File.read(path, encoding: "UTF-8")
     end
 
     #
@@ -61,7 +61,7 @@ module RelatonBipm
     def get_index_from_gh # rubocop:disable Metrics/MethodLength, Metrics/AbcSize
       resp = Zip::InputStream.new URI("#{BipmBibliography::GH_ENDPOINT}index.zip").open
       zip = resp.get_next_entry
-      @index = RelatonBipm.parse_yaml zip.get_input_stream.read
+      @index = RelatonBib.parse_yaml zip.get_input_stream.read
       save_index_file
     end
   end

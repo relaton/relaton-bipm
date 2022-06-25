@@ -8,7 +8,7 @@ type:: standard
 docid.type:: BIPM
 docid.id:: 2017-09-04-Draft-Agenda-NMI-Dir-Meeting-2017-v10
 docnumber:: Draft-Agenda-NMI-Dir-Meeting-2017-v10
-edition:: 1
+edition.content:: 1
 language:: en
 language:: fr
 script:: Latn
@@ -176,6 +176,8 @@ series.formattedref.content:: serieref
 series.formattedref.language:: en
 series.formattedref.script:: Latn
 series.formattedref.format:: text/plain
+series.title.content:: Series Title
+series.title.format:: text/plain
 series::
 series.type:: alt
 series.title.content:: Journal

@@ -2,6 +2,7 @@ describe RelatonBipm::Index do
   it "create from GitHub repo" do
     VCR.use_cassette "index" do
       expect(File).to receive(:exist?).with(/index\.yaml/).and_return false
+      allow(File).to receive(:exist?).and_call_original
       expect(File).to receive(:write).with(/index\.yaml/, kind_of(String), encoding: "UTF-8")
       expect(subject.instance_variable_get(:@index)).to be_instance_of Hash
     end

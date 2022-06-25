@@ -196,6 +196,8 @@ series:
       content: serieref
       language: en
       script: Latn
+    title:
+      content: Series Title
   - type: alt
     title:
       content: Journal

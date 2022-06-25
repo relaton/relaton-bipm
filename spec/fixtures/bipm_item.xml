@@ -168,6 +168,7 @@
   </series>
   <series type="alt">
     <formattedref format="text/plain" language="en" script="Latn">serieref</formattedref>
+    <title format="text/plain">Series Title</title>
   </series>
   <series type="alt">
     <title format="text/plain">Journal</title>

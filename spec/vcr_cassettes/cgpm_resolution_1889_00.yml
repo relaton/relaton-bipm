@@ -12,8 +12,8 @@ http_interactions:
       Accept:
       - text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
       User-Agent:
-      - Mozilla/5.0 (Windows; U; Windows NT 5.0; en-US; rv:1.4b) Gecko/20030516 Mozilla
-        Firebird/0.6
+      - Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_2) AppleWebKit/601.3.9 (KHTML,
+        like Gecko) Version/9.0.2 Safari/601.3.9
       Accept-Charset:
       - ISO-8859-1,utf-8;q=0.7,*;q=0.7
       Accept-Language:
@@ -54,36 +54,36 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Github-Request-Id:
-      - 89E2:B132:E1ADCD:FDFE00:629F6A4E
+      - 2BC4:B485:19FD89:2424D1:62ADF251
       Content-Encoding:
       - gzip
       Accept-Ranges:
       - bytes
       Date:
-      - Tue, 07 Jun 2022 15:10:06 GMT
+      - Sat, 18 Jun 2022 15:42:09 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-vie6361-VIE
+      - cache-sof1510040-SOF
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1654614606.022408,VS0,VE190
+      - S1655566929.310124,VS0,VE199
       Vary:
       - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
       - "*"
       X-Fastly-Request-Id:
-      - d7d04b2dc505bcc3bbb8406499bd823a03f9c91a
+      - fbfbb0609763bb3b9039ac673162a1ad03154625
       Expires:
-      - Tue, 07 Jun 2022 15:15:06 GMT
+      - Sat, 18 Jun 2022 15:47:09 GMT
       Source-Age:
       - '0'
     body:
       encoding: ASCII-8BIT
       string: !binary |-
         H4sIAAAAAAAAA71TS27bMBDd6xSzc7ugKKlqYmmZLooANWC0J6DEkUxEJAV+4rgn6j16sQ5lO7bRFGg3BQSJnBnOe3yaxxjLlGzh0+fthn1Fb6cYlDWsXK+bLKgwYZsx6K0JaEIL34TpUx7sAGGHoCjujEghMcHsbLDhMKM/5zUGhyCMXHZParKjEzoDmIQZoxipOwADNPTxvVNzOAa+iJBCg3VaEGzAl8DnSSjzJhlJgFfY16TiC8gI+uePxAND2pxZaPyNx+D+msekzNONNLsQZt9yvt/v807NOrdu5Gh4b7VWISB63o/0zJqXi7zcXeQmjMS9Be/6t5o6sc9HFXaxix7dKZ1Ta04KC5Po8QTKpAiC2RgoRYCamB4hNWJQZvSMGJ3WrCjzg57+H/Tg/hH6Rkpp+6gp7XlVlNUdL+8/lHWzXvM0umU+y4GL7q65byrBKvyIrCrqgpW1pFdZ39Vd39Rl3b9i0oGMetLwE/TZAnCxALxLP+n9a/3D43ZDm9kpLdyBZsFFTA1M1B26Px4nVRYLnUBjNym/Q0mdnsUUKbRKdaxoWLVeZUkCp7oYrEuH6N7CqO/LKKeBBDBC43HF4CE6FBEebzyYvLC1Svo07Rv0VOOXetF1Dp/Vsdf5NgDRTS1cC01RZ6eTIc58XUZnl6vc8r3YZzHx4qCzf07uIYmOd7+Me+ZJvD4QNakk/VI1KFKQAK/kXBWr7BdjKIkhnQQAAA==
-  recorded_at: Tue, 07 Jun 2022 15:10:06 GMT
+  recorded_at: Sat, 18 Jun 2022 15:42:09 GMT
 recorded_with: VCR 6.1.0

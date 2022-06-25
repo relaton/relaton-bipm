@@ -122,11 +122,11 @@ contributor:
   - description:
     - sponsor
     type: distributor
-edition: '1'
+edition:
+  content: '1'
 version:
-  revision_date: '2019-04-01'
-  draft:
-  - draft
+- revision_date: '2019-04-01'
+  draft: draft
 revdate: '2019-04-01'
 biblionote:
 - note
@@ -221,6 +221,9 @@ series:
     - en
     script:
     - Latn
+    format: text/plain
+  title:
+    content: Series Title
     format: text/plain
 - type: alt
   title:

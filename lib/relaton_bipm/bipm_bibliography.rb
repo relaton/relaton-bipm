@@ -4,13 +4,12 @@ module RelatonBipm
   class BipmBibliography
     GH_ENDPOINT = "https://raw.githubusercontent.com/relaton/relaton-data-bipm/master/".freeze
     IOP_DOMAIN = "https://iopscience.iop.org".freeze
-    SUBSTITUTES = {
+    TRANSLATIONS = {
       "Déclaration" => "Declaration",
       "Réunion" => "Meeting",
       "Recommandation" => "Recommendation",
       "Résolution" => "Resolution",
       "Décision" => "Decision",
-      "CCDS" => "CCTF",
     }.freeze
 
     class << self
@@ -51,7 +50,8 @@ module RelatonBipm
         rf = ref.sub(/(?:(\d{1,2})\s)?\(?(\d{4})(?!-)\)?/) do
           "#{$2}-#{$1.to_s.rjust(2, '0')}"
         end
-        SUBSTITUTES.each { |fr, en| rf.sub! fr, en }
+        rf.sub!("CCDS", "CCTF")
+        TRANSLATIONS.each { |fr, en| rf.sub! fr, en }
         path = Index.new.search rf
         return unless path
 
@@ -60,7 +60,7 @@ module RelatonBipm
         check_response resp
         return unless resp.code == "200"
 
-        yaml = RelatonBipm.parse_yaml resp.body, [Date]
+        yaml = RelatonBib.parse_yaml resp.body, [Date]
         bib_hash = HashConverter.hash_to_bib yaml
         BipmBibliographicItem.new(**bib_hash)
       end
