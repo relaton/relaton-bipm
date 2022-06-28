@@ -10,6 +10,8 @@ RSpec.describe RelatonBipm do
   end
 
   it "search a code" do
+    expect(File).to receive(:exist?).with(/index\.yaml/).and_return false
+    allow(File).to receive(:exist?).and_call_original
     VCR.use_cassette "cctf_meeting_5" do
       result = RelatonBipm::BipmBibliography.search "BIPM CCTF Meeting 5"
       expect(result).to be_instance_of RelatonBipm::BipmBibliographicItem
