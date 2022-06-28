@@ -28,7 +28,7 @@ module RelatonBipm
 
       # @param ret [Hash]
       def title_hash_to_bib(ret)
-        ret[:title] &&= array(ret[:title])
+        ret[:title] &&= RelatonBib.array(ret[:title])
           .reduce(RelatonBib::TypedTitleStringCollection.new) do |m, t|
           m << if t.is_a? Hash
                  RelatonBib::TypedTitleString.new(**t)
@@ -45,7 +45,7 @@ module RelatonBipm
 
       # @param ret [Hash]
       # def project_group_hash_to_bib(ret)
-      #   ret[:project_group] &&= array(ret[:project_group]).map do |pg|
+      #   ret[:project_group] &&= RelatonBib.array(ret[:project_group]).map do |pg|
       #     wg = RelatonBib::FormattedString.new pg[:workgroup]
       #     ProjectTeam.new(committee: pg[:committee], workgroup: wg)
       #   end
@@ -77,14 +77,14 @@ module RelatonBipm
             Committee.new(**c)
           end
         end
-        wg = array(ret[:editorialgroup][:workgroup]).map do |w|
+        wg = RelatonBib.array(ret[:editorialgroup][:workgroup]).map do |w|
           w.is_a?(Hash) ? WorkGroup.new(**w) : WorkGroup.new(content: w)
         end
         ret[:editorialgroup] = EditorialGroup.new committee: cmt, workgroup: wg
       end
 
       def committee_variants(cmt)
-        array(cmt[:variants]).each_with_object([]) do |v, a|
+        RelatonBib.array(cmt[:variants]).each_with_object([]) do |v, a|
           c = v[:content] || (ac = acronyms[cmt[:acronym]]) && ac[v[:language]]
           a << RelatonBib::LocalizedString.new(c, v[:language], v[:script]) if c
         end

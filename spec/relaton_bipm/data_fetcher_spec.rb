@@ -116,8 +116,8 @@ describe RelatonBipm::DataFetcher do
           dir: "data/cipm/meeting", src: kind_of(Array), num: /\d+/
         ).twice
 
-        subject.fetch_meeting "spec/fixtures/cipm/meetings-en/meeting-101(I).yml", "CIPM", "meeting", "data/cipm/meeting"
-        subject.fetch_meeting "spec/fixtures/cipm/meetings-en/meeting-101(II).yml", "CIPM", "meeting", "data/cipm/meeting"
+        subject.fetch_meeting "spec/fixtures/cipm/meetings-en/meeting-101-1.yml", "CIPM", "meeting", "data/cipm/meeting"
+        subject.fetch_meeting "spec/fixtures/cipm/meetings-en/meeting-101-2.yml", "CIPM", "meeting", "data/cipm/meeting"
         expect(subject.instance_variable_get(:@index)).to eq(
           {
             ["CIPM Meeting 101"] => "data/cipm/meeting/101.yaml",
@@ -165,8 +165,8 @@ describe RelatonBipm::DataFetcher do
           expect(hash).to eq yaml
         end.exactly(40).times
 
-        en = YAML.load_file "spec/fixtures/cipm/meetings-en/meeting-101(I).yml"
-        fr = YAML.load_file "spec/fixtures/cipm/meetings-fr/meeting-101(I).yml"
+        en = YAML.load_file "spec/fixtures/cipm/meetings-en/meeting-101-1.yml"
+        fr = YAML.load_file "spec/fixtures/cipm/meetings-fr/meeting-101-1.yml"
         src = [{ type: "src", content: "http://www.bipm.org/publications/cipm/meeting-01.html" }]
 
         subject.fetch_resolution(

@@ -137,9 +137,9 @@ module RelatonBipm
       fr_file = en_file.sub "en", "fr"
       fr = RelatonBib.parse_yaml File.read(fr_file, encoding: "UTF-8"), [Date]
       fr_md = fr["metadata"]
-      gh_src = "https://raw.githubusercontent.com/metanorma/"
-      src_en = gh_src + en_file.split("/")[1..].insert(1, "main").join("/")
-      src_fr = gh_src + fr_file.split("/")[1..].insert(1, "main").join("/")
+      gh_src = "https://raw.githubusercontent.com/metanorma/bipm-data-outcomes/"
+      src_en = gh_src + en_file.split("/")[-3..].unshift("main").join("/")
+      src_fr = gh_src + fr_file.split("/")[-3..].unshift("main").join("/")
       src = [{ type: "src", content: src_en }, { type: "src", content: src_fr }]
 
       /^(?<num>\d+)(?:-_(?<part>\d+))?-\d{4}$/ =~ en_md["url"].split("/").last
@@ -189,8 +189,11 @@ module RelatonBipm
       args[:en]["resolutions"].each.with_index do |r, i| # rubocop:disable Metrics/BlockLength
         hash = { fetched: Date.today.to_s, title: [], doctype: r["type"] }
         hash[:title] << title(r["title"], "en") if r["title"]
-        fr_title = args[:fr]["resolutions"][i]["title"]
-        hash[:title] << title(fr_title, "fr") if fr_title
+        fr_resolution = args[:fr]["resolutions"].fetch(i, nil)
+        if fr_resolution
+          fr_title = fr_resolution["title"]
+          hash[:title] << title(fr_title, "fr") if fr_title
+        end
         date = r["dates"].first.to_s
         hash[:date] = [{ type: "published", on: date }]
         num = r["identifier"].to_s.split("-").last
@@ -278,7 +281,7 @@ module RelatonBipm
       hash[:id] = args[:id].gsub " ", "-"
       hash[:docnumber] = args[:id]
       hash[:link] = [{ type: "src", content: args[:en]["url"] }]
-      hash[:link] << { type: "pdf", content: args[:pdf] } if args[:pdf]
+      RelatonBib.array(args[:pdf]).each { |pdf| hash[:link] << { type: "pdf", content: pdf } }
       hash[:link] += args[:src] if args[:src]&.any?
       hash[:language] = %w[en fr]
       hash[:script] = ["Latn"]

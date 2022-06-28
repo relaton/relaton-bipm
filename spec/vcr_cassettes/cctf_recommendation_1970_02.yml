@@ -12,7 +12,8 @@ http_interactions:
       Accept:
       - text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
       User-Agent:
-      - Mozilla/5.0 (Macintosh; U; PPC Mac OS X Mach-O; en-US; rv:1.4a) Gecko/20030401
+      - Mozilla/5.0 (iPad; CPU OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML,
+        like Gecko) Version/9.0 Mobile/13B143 Safari/601.1
       Accept-Charset:
       - ISO-8859-1,utf-8;q=0.7,*;q=0.7
       Accept-Language:
@@ -35,7 +36,7 @@ http_interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '537'
+      - '560'
       Cache-Control:
       - max-age=300
       Content-Security-Policy:
@@ -43,7 +44,7 @@ http_interactions:
       Content-Type:
       - text/plain; charset=utf-8
       Etag:
-      - W/"a50872367becd8c006f74f9173579fe0d6242e7505da8febbbfbdb7ba86169b9"
+      - W/"0c9584fbf6470d1008fa65b50fe129a4fa2543792ed6e1dc56897fadae4b5c78"
       Strict-Transport-Security:
       - max-age=31536000
       X-Content-Type-Options:
@@ -53,36 +54,36 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Github-Request-Id:
-      - 3DC6:FCFB:83502:100F85:62ADF250
+      - 92C4:1377E:134AD81:14BD690:62BAC9F5
       Content-Encoding:
       - gzip
       Accept-Ranges:
       - bytes
       Date:
-      - Sat, 18 Jun 2022 15:42:08 GMT
+      - Tue, 28 Jun 2022 09:29:25 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-sof1510073-SOF
+      - cache-vie6341-VIE
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1655566928.132348,VS0,VE185
+      - S1656408565.027098,VS0,VE331
       Vary:
       - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
       - "*"
       X-Fastly-Request-Id:
-      - 69e50f539f642ace11472da7f9c80f1e953c1c6d
+      - d77b6fc5b2f467cc3c3829cc10b550f253c09fbd
       Expires:
-      - Sat, 18 Jun 2022 15:47:08 GMT
+      - Tue, 28 Jun 2022 09:34:25 GMT
       Source-Age:
       - '0'
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        H4sIAAAAAAAAA71TwY7TMBC95yvmVji4bkOTtrntdoVUiZVWsD/gJJPWIraDPd5S/ojv4MeYJO3uRiABF6RIsccz742f5wkhEl0XsNs9vhcfsXLGoK0VaWfFcrteiEWakKYWi0RA5SyhpQLusNFW90ngGni82ScArbKHqA6cCCAALf9C5XVHY+CDoj7UOG8UIxB+Jdm1StsJ7o/vz8B1hEc0XYAbckZ/iQh7zvJ26E21vzA2/q8ZW20/T+5zJOpCIeXpdJqXujNz5w8Srezl0ESIQVYVf9TIbJBFegyujYNMKZPQucMCgq9+h+rVaX7QdIxlDOgvx3PGlgZJ2b4/2bMK1l0JF4mPmNFwqyOnQSRtD0FwS5e1yOZn0/4/5sb/G/NEydpVkceKgkwXyzSX+bttvsmzldzt7j5l865u5Kps0mylSrFJm1ys1SoVm+V2I9Z5WlZpndXL5kVnLkgYk+eWqa/TC9PphRTe9C/19rnqdv9wz5vOa6P8mQfCR+xhbDQl+j+A8H6wwKWBWLY6HLFmvCfVRg7NRrfkPB6zpJfD6zKS830Ra6Cs/jZA9rMJYJXBcSXgNnpUcTrdUGOAB6frAEhwj4FzwpCvytLjkx6xrncCiL4t4LXoHPWuvXjj2q9PuHa4yrTfFycNzh3MdLXSxUgs1Hh3P1EoCSxjRdxerWt+Yt1o1pJJXwk7S2fJT2QHpbdoBAAA
-  recorded_at: Sat, 18 Jun 2022 15:42:08 GMT
+        H4sIAAAAAAAAA7VU246bMBB95yvmLe2D48QNJOFtN6tKkbrSqt0fMDBOrGJDfdk0/aN+R3+sAyTZoF2pN1VCAoaZMzPH58AYS3SVw2bz+J59xLIxBm0lg24sm6+XMzYTSdChxjxhUDY2oA053KHSVndJ0Ch4vNkmALW0uyh3lAjAAC3dfOl0G4bABxm6kGqckYQQ8GvgbS21HeH++H4BriI8omk93ITG6C8RYUtZzvazyfpFR+V+u2Ot7efRPvsQWp9zfjgcpoVuzbRxO46Wd3ToEBA9L0u6guJpTwt36Js69jQJahKOLebgXfkaqpOH6U6HfSyiR3f6PCVsbjBI2803YBsajmIYtN15hpdnlk6Ppv5PbZT7szYjjqqmjCSY4LmYzUXGs3frbJWlC77Z3H1Kp22l+KJQIl3Igq2EythSLgRbzdcrtsxEUYoqrebqmUEqSAiTFEmtz7qEsS5BwJvuDN5eqm63D/f00jptpDvSUbuI/1x/pa+RmgddvUCXf49+rdwBnSiw0RTofrEAvffGPJEXi1r7PVYE9yTrSKHJ4OGMRDtJuqN0uoihcV0RnZ+0+lsP2TkGwEqDwxOD2+hQxrHnoEIPD42uPGCAe/SU4/t8WRQOn/SAdd4YILo6h2vBUNQ19cmx53ldQrX9KuN5n/3d/096i58NfrK3wlDSwlQoZkJ0hWI56egbGHEj3hJP1JeBhq50RaLVShPDNMoV3RMxSX4CFdg4TBQFAAA=
+  recorded_at: Tue, 28 Jun 2022 09:29:25 GMT
 recorded_with: VCR 6.1.0
