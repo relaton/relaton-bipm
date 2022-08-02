@@ -9,7 +9,7 @@ module RelatonBipm
       @prefix = "BIPM"
       @defaultprefix = %r{^(?:BIPM|CCTF|CCDS|CGPM|CIPM)(?!\w)}
       @idtype = "BIPM"
-      @datasets = %w[bipm-data-outcomes si-brochure]
+      @datasets = %w[bipm-data-outcomes bipm-si-brochure]
     end
 
     # @param code [String]
