@@ -57,6 +57,11 @@ module RelatonBipm
     # Parse SI brochure and write them to YAML files
     #
     def parse_si_brochure # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
+      puts "Parsing SI brochure..."
+      puts "Ls #{Dir['*']}"
+      puts "Ls #{Dir['bipm-si-brochure/*']}"
+      puts "Ls #{Dir['bipm-si-brochure/site/*']}"
+      puts "Ls #{Dir['bipm-si-brochure/site/documents/*']}"
       Dir["bipm-si-brochure/site/documents/*.rxl"].each do |f|
         puts "Parsing #{f}"
         docstd = Nokogiri::XML File.read f
