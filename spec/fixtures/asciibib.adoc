@@ -104,18 +104,17 @@ contributor.person.address.city:: City
 contributor.person.address.state:: State
 contributor.person.address.country:: Country
 contributor.person.address.postcode:: 123456
-contributor.person.contact.type:: phone
-contributor.person.contact.value:: 223322
+contributor.person.contact.phone:: 223322
 contributor.role.type:: author
 contributor::
 contributor.organization.name:: IETF
 contributor.organization.abbreviation:: IETF
 contributor.organization.identifier.type:: uri
 contributor.organization.identifier.value:: www.ietf.org
-contributor::
+contributor.role::
 contributor.role.description:: Publisher description
 contributor.role.type:: publisher
-contributor::
+contributor.role::
 contributor.role.description:: Editor description
 contributor.role.type:: editor
 contributor::
@@ -140,8 +139,7 @@ contributor.person.address.city:: City
 contributor.person.address.state:: State
 contributor.person.address.country:: Country
 contributor.person.address.postcode:: 123456
-contributor.person.contact.type:: phone
-contributor.person.contact.value:: 223322
+contributor.person.contact.phone:: 223322
 contributor.role.type:: author
 contributor::
 contributor.organization.name:: Institution

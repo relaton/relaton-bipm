@@ -1,10 +1,10 @@
 <bibdata>
-  <fetched>2022-06-27</fetched>
+  <fetched>2022-07-19</fetched>
   <title format="text/plain" language="en" script="Latn">Sanction of the international prototypes of the metre and the kilogram</title>
   <title format="text/plain" language="fr" script="Latn">Sanction des prototypes internationaux du mètre et du kilogramme</title>
   <uri type="src">https://www.bipm.org/en/committees/cg/cgpm/1-1889/resolution-</uri>
-  <uri type="src">https://raw.githubusercontent.com/metanorma/cgpm/main/meetings-en/meeting-01.yml</uri>
-  <uri type="src">https://raw.githubusercontent.com/metanorma/cgpm/main/meetings-fr/meeting-01.yml</uri>
+  <uri type="src">https://raw.githubusercontent.com/metanorma/bipm-data-outcomes/main/cgpm/meetings-en/meeting-01.yml</uri>
+  <uri type="src">https://raw.githubusercontent.com/metanorma/bipm-data-outcomes/main/cgpm/meetings-fr/meeting-01.yml</uri>
   <uri type="pdf">https://www.bipm.org/documents/20126/17314988/CGPM1.pdf/ab69792a-2e5e-2040-14d0-11464bc9414c</uri>
   <docidentifier type="BIPM" primary="true">CGPM Resolution (1889)</docidentifier>
   <docidentifier type="BIPM" primary="true" language="en" script="Latn">CGPM Resolution (1889)</docidentifier>

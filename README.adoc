@@ -263,7 +263,7 @@ RelatonBipm::BipmBibliographicItem.from_hash hash
 
 This gem uses following datasets as data sources:
 - `bipm-data-outcomes` - looking for local directory with the repository https://github.com/metanorma/bipm-data-outcomes
-- `si-brochute` - looking for local directory with the repository https://github.com/metanorma/bipm-si-brochure
+- `bipm-si-brochute` - looking for local directory with the repository https://github.com/metanorma/bipm-si-brochure
 
 The method `RelatonBipm::DataFetcher.fetch(sourece, output: "data", format: "yaml")` fetches all the documents from the datast and save them to the `./data` folder in YAML format.
 Arguments:
@@ -280,7 +280,7 @@ Stopped at: 2022-06-23 09:36:58 +0200
 Done in: 2 sec.
 => nil
 
-RelatonBipm::DataFetcher.fetch "si-brochure"
+RelatonBipm::DataFetcher.fetch "bipm-si-brochure"
 Started at: 2022-06-23 09:37:12 +0200
 Stopped at: 2022-06-23 09:37:12 +0200
 Done in: 0 sec.

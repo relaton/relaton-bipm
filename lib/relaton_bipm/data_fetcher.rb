@@ -25,7 +25,7 @@ module RelatonBipm
     def self.fetch(source, output: "data", format: "yaml")
       t1 = Time.now
       puts "Started at: #{t1}"
-      FileUtils.mkdir_p output unless Dir.exist? output
+      FileUtils.mkdir_p output
       new(output, format).fetch(source)
       t2 = Time.now
       puts "Stopped at: #{t2}"
@@ -40,7 +40,7 @@ module RelatonBipm
     def fetch(source)
       case source
       when "bipm-data-outcomes" then parse_bipm_data_outcomes
-      when "si-brochure" then parse_si_brochure
+      when "bipm-si-brochure" then parse_si_brochure
       end
       File.write @index_path, @index.to_yaml, encoding: "UTF-8"
     end

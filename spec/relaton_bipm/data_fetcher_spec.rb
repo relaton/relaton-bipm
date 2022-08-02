@@ -1,6 +1,6 @@
 describe RelatonBipm::DataFetcher do
   it "call new and fetch" do
-    expect(Dir).to receive(:exist?).with("data").and_return false
+    # expect(Dir).to receive(:exist?).with("data").and_return false
     expect(FileUtils).to receive(:mkdir_p).with("data")
     fetcher = double("fetcher")
     expect(fetcher).to receive(:fetch).with "bipm-data-outcomes"
@@ -38,9 +38,9 @@ describe RelatonBipm::DataFetcher do
         subject.fetch "bipm-data-outcomes"
       end
 
-      it "si-brochure" do
+      it "bipm-si-brochure" do
         expect(subject).to receive(:parse_si_brochure)
-        subject.fetch "si-brochure"
+        subject.fetch "bipm-si-brochure"
       end
     end
 
