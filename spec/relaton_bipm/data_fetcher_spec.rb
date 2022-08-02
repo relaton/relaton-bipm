@@ -57,10 +57,8 @@ describe RelatonBipm::DataFetcher do
     end
 
     it "#fetch_type" do
-      expect(Dir).to receive(:exist?).with("data/cgpm").and_return false
-      expect(Dir).to receive(:mkdir).with("data/cgpm")
-      expect(Dir).to receive(:exist?).with("data/cgpm/meeting").and_return false
-      expect(Dir).to receive(:mkdir).with("data/cgpm/meeting")
+      expect(FileUtils).to receive(:mkdir_p).with("data/cgpm")
+      expect(FileUtils).to receive(:mkdir_p).with("data/cgpm/meeting")
       expect(Dir).to receive(:[]).with("cgpm/meetings-en/*.{yml,yaml}").and_return ["cgpm/meetings-en/1.yml"]
       expect(subject).to receive(:fetch_meeting).with("cgpm/meetings-en/1.yml", "CGPM", "meeting", "data/cgpm/meeting")
       subject.fetch_type("cgpm/meetings-en", "CGPM")
@@ -130,8 +128,7 @@ describe RelatonBipm::DataFetcher do
 
     context "#fetch_resolution" do
       it "one resolution" do
-        expect(Dir).to receive(:exist?).with("data/cgpm/meeting/resolution").and_return false
-        expect(Dir).to receive(:mkdir).with("data/cgpm/meeting/resolution")
+        expect(FileUtils).to receive(:mkdir_p).with("data/cgpm/meeting/resolution")
         expect(subject).to receive(:write_file) do |path, item|
           expect(path).to eq "data/cgpm/meeting/resolution/1889-00.yaml"
           hash = item.to_hash
@@ -152,9 +149,7 @@ describe RelatonBipm::DataFetcher do
       end
 
       it "multiple resolutions" do
-        expect(Dir).to receive(:exist?).with("data/cipm/meeting/decision").and_return false
-        expect(Dir).to receive(:exist?).with("data/cipm/meeting/decision").and_return(true).exactly(39).times
-        expect(Dir).to receive(:mkdir).with("data/cipm/meeting/decision")
+        expect(FileUtils).to receive(:mkdir_p).with("data/cipm/meeting/decision").exactly(40).times
         expect(subject).to receive(:write_file) do |path, item|
           expect(path).to match(/data\/cipm\/meeting\/decision\/\d{4}-\d{2}\.yaml/)
           hash = item.to_hash

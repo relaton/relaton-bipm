@@ -58,6 +58,7 @@ module RelatonBipm
     #
     def parse_si_brochure # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
       Dir["bipm-si-brochure/site/documents/*.rxl"].each do |f|
+        puts "Parsing #{f}"
         docstd = Nokogiri::XML File.read f
         doc = docstd.at "/bibdata"
         hash1 = RelatonBipm::XMLParser.from_xml(doc.to_xml).to_hash
@@ -75,6 +76,7 @@ module RelatonBipm
                end
         item = RelatonBipm::BipmBibliographicItem.from_hash(**hash)
         write_file outfile, item, warn_duplicate: warn_duplicate
+        puts "Saved to #{outfile}"
       end
     end
 
@@ -117,9 +119,9 @@ module RelatonBipm
     def fetch_type(dir, body) # rubocop:disable Metrics/AbcSize
       type = dir.split("/").last.split("-").first.sub(/s$/, "")
       body_dir = File.join @output, body.downcase
-      Dir.mkdir body_dir unless Dir.exist? body_dir
+      FileUtils.mkdir_p body_dir
       outdir = File.join body_dir, type.downcase
-      Dir.mkdir outdir unless Dir.exist? outdir
+      FileUtils.mkdir_p outdir
       Dir[File.join(dir, "*.{yml,yaml}")].each { |en_file| fetch_meeting en_file, body, type, outdir }
     end
 
@@ -228,7 +230,7 @@ module RelatonBipm
         file += "-#{num_justed}" if num.size < 4
         file += ".yaml"
         out_dir = File.join args[:dir], r["type"].downcase
-        Dir.mkdir out_dir unless Dir.exist? out_dir
+        FileUtils.mkdir_p out_dir
         path = File.join out_dir, file
         write_file path, item
         @index[["#{args[:body]} #{type} #{year}-#{num_justed}", "#{args[:body]} #{type} #{args[:num]}-#{num_justed}"]] = path
