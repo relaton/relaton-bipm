@@ -22,14 +22,15 @@ date:
 contributor:
 - organization:
     name:
-    - International Organization for Standardization
-    abbreviation: ISO
+    - content: International Organization for Standardization
+    abbreviation:
+      content: ISO
     subdivision:
-    - division
+    - content: division
     url: www.iso.org
   role:
   - description:
-    - Publisher role
+    - content: Publisher role
     type: publisher
 - person:
     name:
@@ -40,8 +41,9 @@ contributor:
     affiliation:
     - organization:
         name:
-        - IETF
-        abbreviation: IETF
+        - content: IETF
+        abbreviation:
+          content: IETF
         identifier:
         - type: uri
           id: www.ietf.org
@@ -58,28 +60,28 @@ contributor:
   - author
 - organization:
     name:
-    - IETF
-    abbreviation: IETF
+    - content: IETF
+    abbreviation:
+      content: IETF
     identifier:
     - type: uri
       id: www.ietf.org
   role:
   - description:
-    - Publisher description
+    - content: Publisher description
     type: publisher
   - description:
-    - Editor description
+    - content: Editor description
     type: editor
 - person:
     name:
-      forename:
-      - content: Forename
-        language:
-        - en
-      initial:
-      - content: A.
-        language:
-        - en
+      given:
+        forename:
+        - content:
+          initial: A.
+        - content: Forename
+          language:
+          - en
       surname:
         content: Bierman
         language:
@@ -95,8 +97,9 @@ contributor:
     affiliation:
     - organization:
         name:
-        - IETF
-        abbreviation: IETF
+        - content: IETF
+        abbreviation:
+          content: IETF
       description:
       - content: Description
         language:
@@ -117,10 +120,10 @@ contributor:
   - author
 - organization:
     name:
-    - Institution
+    - content: Institution
   role:
   - description:
-    - sponsor
+    - content: sponsor
     type: distributor
 edition:
   content: '1'
@@ -129,7 +132,7 @@ version:
   draft: draft
 revdate: '2019-04-01'
 biblionote:
-- note
+- content: note
 - content: An note
   type: annote
 language:
@@ -158,8 +161,9 @@ docstatus:
 copyright:
 - owner:
   - name:
-    - International Organization for Standardization
-    abbreviation: ISO
+    - content: International Organization for Standardization
+    abbreviation:
+      content: ISO
     url: www.iso.org
   from: '2014'
   to: '2020'
@@ -200,16 +204,17 @@ relation:
 series:
 - type: main
   title:
-    type: original
     content: ISO/IEC FDIS 10118-3
     language:
     - en
     script:
     - Latn
     format: text/plain
+    type: original
   place: Serie's place
   organization: Serie's organization
-  abbreviation: ABVR
+  abbreviation:
+    content: ABVR
   from: '2009-02-01'
   to: '2010-12-20'
   number: serie1234
@@ -284,8 +289,8 @@ validity:
   revision: 2011-03-04 09:00
 fetched: '2020-09-10'
 keyword:
-- Keyword
-- Key Word
+- content: Keyword
+- content: Key Word
 license:
 - License
 doctype: brochure

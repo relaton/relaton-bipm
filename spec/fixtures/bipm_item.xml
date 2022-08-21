@@ -66,8 +66,8 @@
     <person>
       <name>
         <prefix language="en">Prefix</prefix>
+        <forename initial="A."/>
         <forename language="en">Forename</forename>
-        <initial language="en">A.</initial>
         <surname language="en">Bierman</surname>
         <addition language="en">Addition</addition>
       </name>

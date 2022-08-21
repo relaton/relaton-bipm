@@ -39,8 +39,9 @@ date:
 contributor:
 - organization:
     name:
-    - Bureau International des Poids et Mesures
-    abbreviation: BIPM
+    - content: Bureau International des Poids et Mesures
+    abbreviation:
+      content: BIPM
     url: www.bipm.org
   role:
   - publisher
@@ -50,7 +51,7 @@ language:
 - fr
 script:
 - Latn
-fetched: '2022-06-22'
+fetched: '2022-08-18'
 doctype: decision
 structuredidentifier:
   docnumber: '30'

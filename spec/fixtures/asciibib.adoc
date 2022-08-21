@@ -118,10 +118,11 @@ contributor.role::
 contributor.role.description:: Editor description
 contributor.role.type:: editor
 contributor::
-contributor.person.name.forename.content:: Forename
-contributor.person.name.forename.language:: en
-contributor.person.name.initial.content:: A.
-contributor.person.name.initial.language:: en
+contributor.person.given.forename::
+contributor.person.given.forename.initial:: A.
+contributor.person.given.forename::
+contributor.person.given.forename.content:: Forename
+contributor.person.given.forename.language:: en
 contributor.person.name.surname.content:: Bierman
 contributor.person.name.surname.language:: en
 contributor.person.name.addition.content:: Addition

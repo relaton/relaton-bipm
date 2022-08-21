@@ -95,14 +95,14 @@ contributor:
         description: Editor description
   - person:
       name:
-        initial:
-          content: A.
-          language: en
+        given:
+          forename:
+          - initial: A.
+            language: en
+          - content: Forename
+            language: en
         surname:
           content: Bierman
-          language: en
-        forename:
-          content: Forename
           language: en
         addition:
           content: Addition
