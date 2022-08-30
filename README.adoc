@@ -62,12 +62,12 @@ Allowed document names are:
 
 ==== Reference structire for Metrologia documents
 
-`BIPM Metrologia {JOURNAL} {VOLUME} {ISSUE} {ARTICLE}`
+`BIPM Metrologia {JOURNAL} {VOLUME} {ISSUE} {PAGE}`
 
 - `{JOURNAL}` - number of journal, required
 - `{VOLUME}` - number of volume, optional
 - `{ISSUE}` - number of issue, optional
-- `{ARTICLE}` - number of article, optional
+- `{PAGE}` - number of page, optional
 
 ==== Reference structures for CCTF (CCDS), CGMP, CIPM documents
 
@@ -100,7 +100,7 @@ item = RelatonBipm::BipmBibliography.get "BIPM si-brochure"
 => #<RelatonBipm::BipmBibliographicItem:0x007ffb83982fe8
 ...
 
-# get BIPM Metrologia article
+# get BIPM Metrologia page
 bib = RelatonBipm::BipmBibliography.get "BIPM Metrologia 29 6 373"
 [relaton-bipm] ("BIPM Metrologia 29 6 373") fetching...
 [relaton-bipm] ("BIPM Metrologia 29 6 373") found Metrologia 29 6 373

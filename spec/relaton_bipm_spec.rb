@@ -186,6 +186,18 @@ RSpec.describe RelatonBipm do
             .sub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
         end
       end
+
+      it "wrong page", vcr: "metrologia_34_3_9" do
+        expect do
+          result = RelatonBipm::BipmBibliography.get "BIPM Metrologia 34 3 9"
+          expect(result).to be_nil
+        end.to output(
+          %r{
+            \[relaton-bipm\]\sPage\s9\snot\sfound\sin\s"BIPM\sMetrologia\s34\s3"\sissue\.\n
+            \[relaton-bipm\]\sAvailabe\spages\sin\sthe\sissue\sare:\s\(201,\s211,\s215,\s235,\s241,\s245,\s251,\s257,\s261,\s291,\s293,\s295\)
+          }x,
+        ).to_stderr
+      end
     end
   end
 end

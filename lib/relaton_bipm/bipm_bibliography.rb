@@ -15,11 +15,14 @@ module RelatonBipm
     class << self
       # @param text [String]
       # @return [RelatonBipm::BipmBibliographicItem]
-      def search(text, _year = nil, _opts = {}) # rubocop:disable Metrics/AbcSize
+      def search(text, _year = nil, _opts = {}) # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
         warn "[relaton-bipm] (\"#{text}\") fetching..."
         ref = text.sub(/^BIPM\s/, "")
         item = ref.match?(/^Metrologia/i) ? get_metrologia(ref, magent) : get_bipm(ref, magent)
-        return unless item
+        unless item
+          warn "[relaton-bipm] (\"#{text}\") not found."
+          return
+        end
 
         warn("[relaton-bipm] (\"#{text}\") found #{item.docidentifier[0].id}")
         item
@@ -216,11 +219,19 @@ module RelatonBipm
       # @param art [String]
       # @param agent [Mechanize]
       # @return [RelatonBipm::BipmBibliographicItem]
-      def get_article_from_issue(vol, ish, art, agent)
+      def get_article_from_issue(vol, ish, art, agent) # rubocop:disable Metrics/MethodLength
         url = issue_url vol, ish
         rsp = agent.get url
         check_response rsp
-        get_article rsp.at("//div[@class='indexer'][.='#{art}']/../div/a")[:href], vol, ish, agent
+        link = rsp.at("//div[@class='indexer'][.='#{art}']/../div/a")
+        unless link
+          arts = rsp.xpath("//div[@class='indexer']").map(&:text)
+          warn "[relaton-bipm] Page #{art} not found in \"BIPM Metrologia #{vol} #{ish}\" issue."
+          warn "[relaton-bipm] Availabe pages in the issue are: (#{arts.join(', ')})"
+          return
+        end
+
+        get_article link[:href], vol, ish, agent
       end
 
       # @param path [String]
@@ -329,11 +340,13 @@ module RelatonBipm
       #
       def check_response(rsp) # rubocop:disable Metrics/AbcSize
         if rsp.code == "302"
+          warn "[relaton-bipm] This source employs anti-DDoS measures that unfortunately affects automated requests."
+          warn "[relaton-bipm] Please visit this link in your browser to resolve the CAPTCHA, then retry: #{rsp.uri}"
           warn "[relaton-bipm] #{rsp.uri} is redirected to #{rsp.header['location']}"
-          raise RelatonBib::RequestError, "redirected to #{rsp.header['location']}"
+          raise RelatonBib::RequestError, "cannot access #{rsp.uri}"
         elsif rsp.code != "200"
           warn "[read_bipm] can't acces #{rsp.uri} #{rsp.code}"
-          raise RelatonBib::RequestError, "can't acces #{rsp.uri} #{rsp.code}"
+          raise RelatonBib::RequestError, "cannot acces #{rsp.uri} #{rsp.code}"
         end
       end
     end

@@ -77,7 +77,8 @@ contributor:
     name:
       given:
         forename:
-        - content:
+        - language:
+          - en
           initial: A.
         - content: Forename
           language:
