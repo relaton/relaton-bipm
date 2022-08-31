@@ -39,26 +39,25 @@ Or install it yourself as:
 
 Allowed document names are:
 
-- guide-ccem-ampere-realization
-- guide-ccl-metre-realization-1
-- guide-ccl-metre-realization-2
-- guide-ccl-metre-realization-3
-- guide-ccm-kilogram-calibration
-- guide-ccm-kilogram-dissemination
-- mep-ampere-definition
-- mep-candela-definition
-- mep-candela-rapport
-- mep-kelvin-absolute-uncertainty
-- mep-kelvin-absolute
-- mep-kelvin-definition
-- mep-kelvin-lt-johnson-noise
-- mep-kelvin-relative
-- mep-kilogram-definition
-- mep-metre-definition
-- mep-mole-definition
-- mep-second-definition
-- si-brochure
-- sib-a4
+- CCEM-GD-RSI-1
+- CCL-GD-MeP-1
+- CCL-GD-MeP-2
+- CCL-GD-MeP-3
+- CCM-GD-RSI-1
+- CCM-GD-RSI-2
+- SI MEP A1
+- SI MEP Cd1
+- Rapport BIPM-2019/05
+- SI MEP KUPRTM
+- SI MEP KAPRT
+- SI MEP K1
+- SI MEP KLJNT
+- SI MEP KRPRT
+- SI MEP Kg1
+- SI MEP M1
+- SI MEP Mol1
+- SI MEP S1
+- SI Brochure
 
 ==== Reference structire for Metrologia documents
 
@@ -94,9 +93,9 @@ require 'relaton_bipm'
 => true
 
 # get BIPM brochure
-item = RelatonBipm::BipmBibliography.get "BIPM si-brochure"
-[relaton-bipm] ("BIPM si-brochure") fetching...
-[relaton-bipm] ("BIPM si-brochure") found si-brochure
+item = RelatonBipm::BipmBibliography.get "BIPM SI Brochure"
+[relaton-bipm] ("BIPM SI Brochure") fetching...
+[relaton-bipm] ("BIPM SI Brochure") found BIPM SI Brochure
 => #<RelatonBipm::BipmBibliographicItem:0x007ffb83982fe8
 ...
 
@@ -172,11 +171,12 @@ RelatonBipm::BipmBibliography.get "CIPM Recommendation 1948"
 [source,ruby]
 ----
 item.to_xml
-=> "<bibitem id="si-brochure" type="standard">
+=> "<bibitem id="BIPMSIBrochure" type="standard">
       <fetched>2021-01-10</fetched>
       <title format="text/plain" language="en" script="Latn">The International System of Units (SI)</title>
       <title format="text/plain" language="fr" script="Latn">Le Système international d’unités (SI)</title>
-      <docidentifier type="BIPM">si-brochure</docidentifier>
+      <uri type="src">https://www.bipm.org/en/publications/si-brochure</uri>
+      <docidentifier type="BIPM">BIPM SI Brochure</docidentifier>
       <date type="updated">
         <on>2019-05-20</on>
       </date>
@@ -205,7 +205,7 @@ item.to_xml bibdata: true
       <title format="text/plain" language="en" script="Latn">The International System of Units (SI)</title>
       <title format="text/plain" language="fr" script="Latn">Le Système international d’unités (SI)</title>
       <uri type="src">https://www.bipm.org/en/publications/si-brochure</uri>
-      <docidentifier type="BIPM">si-brochure</docidentifier>
+      <docidentifier type="BIPM">BIPM SI Brochure</docidentifier>
       <date type="updated">
         <on>2019-05-20</on>
       </date>

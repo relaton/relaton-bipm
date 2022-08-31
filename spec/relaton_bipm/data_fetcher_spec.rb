@@ -233,7 +233,7 @@ describe RelatonBipm::DataFetcher do
       end
 
       subject.parse_si_brochure
-      expect(subject.instance_variable_get(:@index)).to eq ["Brochure"] => "data/si-brochure.yaml"
+      expect(subject.instance_variable_get(:@index)).to eq ["SI Brochure"] => "data/si-brochure.yaml"
     end
   end
 end

@@ -63,17 +63,20 @@ module RelatonBipm
       # puts "Ls #{Dir['bipm-si-brochure/site/*']}"
       # puts "Ls #{Dir['bipm-si-brochure/site/documents/*']}"
       Dir["bipm-si-brochure/site/documents/*.rxl"].each do |f|
+        next if f.include?("sib-a4")
+
         puts "Parsing #{f}"
         docstd = Nokogiri::XML File.read f
         doc = docstd.at "/bibdata"
         hash1 = RelatonBipm::XMLParser.from_xml(doc.to_xml).to_hash
+        fix_si_brochure_id hash1
         hash1["fetched"] = Date.today.to_s
-        hash1["docid"].detect { |id| id["type"] == "BIPM" }["primary"] = true
         outfile = File.join @output, File.basename(f).sub(/(?:-(?:en|fr))?\.rxl$/, ".yaml")
         @index[[hash1["docnumber"] || File.basename(outfile, ".yaml")]] = outfile
         hash = if File.exist? outfile
                  warn_duplicate = false
                  hash2 = YAML.load_file outfile
+                 fix_si_brochure_id hash2
                  deep_merge hash1, hash2
                else
                  warn_duplicate = true
@@ -83,6 +86,14 @@ module RelatonBipm
         write_file outfile, item, warn_duplicate: warn_duplicate
         puts "Saved to #{outfile}"
       end
+    end
+
+    def fix_si_brochure_id(hash)
+      hash["id"] = hash["id"].sub(/^BIPMBrochure$/, "BIPMSIBrochure")
+      hash["docnumber"] = hash["docnumber"].sub(/^Brochure$/i, "SI Brochure")
+      did = hash["docid"].detect { |id| id["type"] == "BIPM" }
+      did["primary"] = true
+      did["id"] = did["id"].sub(/^BIPM Brochure$/, "BIPM SI Brochure")
     end
 
     #

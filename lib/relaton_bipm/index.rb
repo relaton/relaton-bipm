@@ -28,7 +28,7 @@ module RelatonBipm
     def path
       @path ||= begin
         dir = File.join Dir.home, ".relaton", "bipm"
-        FileUtils.mkdir_p dir unless Dir.exist? dir
+        FileUtils.mkdir_p dir
         File.join dir, "index.yaml"
       end
     end
