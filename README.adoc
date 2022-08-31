@@ -58,6 +58,7 @@ Allowed document names are:
 - SI MEP Mol1
 - SI MEP S1
 - SI Brochure
+- SI Brochure, Appendix 4
 
 ==== Reference structire for Metrologia documents
 
