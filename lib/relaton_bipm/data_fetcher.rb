@@ -63,8 +63,6 @@ module RelatonBipm
       # puts "Ls #{Dir['bipm-si-brochure/site/*']}"
       # puts "Ls #{Dir['bipm-si-brochure/site/documents/*']}"
       Dir["bipm-si-brochure/site/documents/*.rxl"].each do |f|
-        next if f.include?("sib-a4")
-
         puts "Parsing #{f}"
         docstd = Nokogiri::XML File.read f
         doc = docstd.at "/bibdata"
@@ -88,12 +86,27 @@ module RelatonBipm
       end
     end
 
-    def fix_si_brochure_id(hash)
-      hash["id"] = hash["id"].sub(/^BIPMBrochure$/, "BIPMSIBrochure")
-      hash["docnumber"] = hash["docnumber"].sub(/^Brochure$/i, "SI Brochure")
+    #
+    # Update ID of SI brochure
+    #
+    # @param [Hash] hash hash of bibitem
+    #
+    # @return [void]
+    #
+    def fix_si_brochure_id(hash) # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
       did = hash["docid"].detect { |id| id["type"] == "BIPM" }
       did["primary"] = true
-      did["id"] = did["id"].sub(/^BIPM Brochure$/, "BIPM SI Brochure")
+      return unless did["id"] == "BIPM Brochure"
+
+      isbn = hash["docid"].detect { |id| id["type"] == "ISBN" }
+      num = if isbn && isbn["id"] == "978-92-822-2272-0"
+              "SI Brochure"
+            else
+              "SI Brochure, Appendix 4"
+            end
+      hash["id"] = hash["id"].sub(/(?<=^BIPM)Brochure$/i, num.gsub(/[,\s]/, ""))
+      hash["docnumber"] = hash["docnumber"].sub(/^Brochure$/i, num)
+      did["id"] = did["id"].sub(/(?<=^BIPM\s)Brochure$/i, num)
     end
 
     #

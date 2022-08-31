@@ -23,17 +23,6 @@ module RelatonBipm
         BipmBibliographicItem.new(**item_hash)
       end
 
-      # @param item [Nokogiri::XML::Element]
-      # @return [Array<RelatonBib::FormattedString>]
-      def fetch_titles(item)
-        item.xpath("./title").map do |t|
-          RelatonBib::TypedTitleString.new(
-            content: t.text, language: t[:language], script: t[:script],
-            format: t[:format]
-          )
-        end
-      end
-
       def fetch_dates(item) # rubocop:disable Metrics/AbcSize, Metrics/CyclomaticComplexity,Metrics/PerceivedComplexity
         item.xpath("./date").reduce([]) do |a, d|
           type = d[:type].to_s.empty? ? "published" : d[:type]

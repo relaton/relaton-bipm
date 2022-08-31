@@ -235,5 +235,18 @@ describe RelatonBipm::DataFetcher do
       subject.parse_si_brochure
       expect(subject.instance_variable_get(:@index)).to eq ["SI Brochure"] => "data/si-brochure.yaml"
     end
+
+    it "#fix_si_brochure_id" do
+      hash = {
+        "id" => "BIPMBrochure", "docnumber" => "Brochure",
+        "docid" => [{ "type" => "BIPM", "id" => "BIPM Brochure" }]
+      }
+      subject.fix_si_brochure_id hash
+      expect(hash["id"]).to eq "BIPMSIBrochureAppendix4"
+      expect(hash["docnumber"]).to eq "SI Brochure, Appendix 4"
+      expect(hash["docid"]).to eq(
+        [{ "type" => "BIPM", "id" => "BIPM SI Brochure, Appendix 4", "primary" => true }],
+      )
+    end
   end
 end

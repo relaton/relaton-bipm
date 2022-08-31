@@ -129,6 +129,11 @@ RSpec.describe RelatonBipm do
             .gsub(/<fetched>\d{4}-\d{2}-\d{2}<\/fetched>/, "")
         end
       end
+
+      it "SI Brochure", vcr: "si_brochure" do
+        result = RelatonBipm::BipmBibliography.get "BIPM SI Brochure"
+        expect(result.docidentifier[0].id).to eq "BIPM SI Brochure"
+      end
     end
 
     context "Metrologia" do
