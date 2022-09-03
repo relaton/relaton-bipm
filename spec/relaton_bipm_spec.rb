@@ -181,7 +181,7 @@ RSpec.describe RelatonBipm do
         end
       end
 
-      it "article" do
+      it "page" do
         VCR.use_cassette "metrologia_29_6_373" do
           file = "spec/fixtures/metrologia_29_6_373.xml"
           result = RelatonBipm::BipmBibliography.get "BIPM Metrologia 29 6 373"

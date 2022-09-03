@@ -239,7 +239,7 @@ module RelatonBipm
       # @param ish [String]
       # @param agent [Mechanize]
       # @return [RelatonBipm::BipmBibliographicItem]
-      def get_article(path, vol, ish, agent) # rubocop:disable Metrics/AbcSize
+      def get_article(path, vol, ish, agent) # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
         rsp = agent.get path
         check_response rsp
         url = rsp.uri
@@ -247,16 +247,19 @@ module RelatonBipm
         rsp = agent.get bib
         check_response rsp
         bt = BibTeX.parse(rsp.body).first
-        bibitem(docid: btdocid(bt), title: titles(bt.title.to_s), abstract: btabstract(bt), doctype: bt.type.to_s,
-                link: btlink(bt, url), date: btdate(bt), contributor: btcontrib(bt), series: series,
-                extent: btextent(vol, ish, bt))
+        bibitem(
+          docid: btdocid(bt), title: titles(bt.title.to_s), date: btdate(bt),
+          abstract: btabstract(bt), doctype: bt.type.to_s, series: series,
+          link: btlink(bt, url), contributor: btcontrib(bt),
+          extent: btextent(vol, ish, bt.pages.to_s)
+        )
       end
 
       # @param args [Hash]
       # @return [RelatonBipm::BipmBibliographicItem]
       def bibitem(**args)
         BipmBibliographicItem.new(
-          fetched: Date.today.to_s, type: "standard", language: ["en"], script: ["Latn"], **args,
+          fetched: Date.today.to_s, type: "article", language: ["en"], script: ["Latn"], **args,
         )
       end
 
@@ -269,7 +272,10 @@ module RelatonBipm
       # @return [Array<RelatonBib::DocumentIdentifier>]
       def btdocid(bibtex)
         id = "#{bibtex.journal} #{bibtex.volume} #{bibtex.number} #{bibtex.pages.match(/^\d+/)}"
-        [RelatonBib::DocumentIdentifier.new(type: "BIPM", id: id)]
+        [
+          RelatonBib::DocumentIdentifier.new(type: "BIPM", id: id, primary: true),
+          RelatonBib::DocumentIdentifier.new(type: "DOI", id: bibtex.doi),
+        ]
       end
 
       # @param bibtex [BibTeX::Entry]
@@ -309,14 +315,17 @@ module RelatonBipm
         ]
       end
 
-      # @param vol [String]
-      # @param ish [String]
-      # @param bibtex [BibTeX::Entry]
+      #
+      # @param vol [String] volume
+      # @param ish [String] issue
+      # @param pgs [String] pages
+      #
       # @return [Array<RelatonBib::BibItemLocality>]
-      def btextent(vol, ish = nil, bibtex = nil)
-        ext = [RelatonBib::BibItemLocality.new("volume", vol)]
-        ext << RelatonBib::BibItemLocality.new("issue", ish) if ish
-        ext << RelatonBib::BibItemLocality.new("page", *bibtex.pages.split("--")) if bibtex
+      #
+      def btextent(vol, ish = nil, pgs = nil)
+        ext = [RelatonBib::Locality.new("volume", vol)]
+        ext << RelatonBib::Locality.new("issue", ish) if ish
+        ext << RelatonBib::Locality.new("page", *pgs.split("--")) if pgs
         ext
       end
 
@@ -342,7 +351,7 @@ module RelatonBipm
         if rsp.code == "302"
           warn "[relaton-bipm] This source employs anti-DDoS measures that unfortunately affects automated requests."
           warn "[relaton-bipm] Please visit this link in your browser to resolve the CAPTCHA, then retry: #{rsp.uri}"
-          warn "[relaton-bipm] #{rsp.uri} is redirected to #{rsp.header['location']}"
+          # warn "[relaton-bipm] #{rsp.uri} is redirected to #{rsp.header['location']}"
           raise RelatonBib::RequestError, "cannot access #{rsp.uri}"
         elsif rsp.code != "200"
           warn "[read_bipm] can't acces #{rsp.uri} #{rsp.code}"

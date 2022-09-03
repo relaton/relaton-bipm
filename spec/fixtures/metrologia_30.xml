@@ -1,5 +1,5 @@
-<bibdata type="standard">
-  <fetched>2022-08-18</fetched>
+<bibdata type="article">
+  <fetched>2022-09-03</fetched>
   <formattedref format="text/plain" language="en" script="Latn">Metrologia 30</formattedref>
   <uri type="src">https://iopscience.iop.org/volume/0026-1394/30</uri>
   <docidentifier type="BIPM" primary="true">Metrologia 30</docidentifier>
@@ -55,7 +55,9 @@
   <series>
     <title type="main" format="text/plain" language="en" script="Latn">Metrologia</title>
   </series>
-  <extent type="volume">
-    <referenceFrom>30</referenceFrom>
+  <extent>
+    <locality type="volume">
+      <referenceFrom>30</referenceFrom>
+    </locality>
   </extent>
 </bibdata>

@@ -23,18 +23,18 @@ module RelatonBipm
         BipmBibliographicItem.new(**item_hash)
       end
 
-      def fetch_dates(item) # rubocop:disable Metrics/AbcSize, Metrics/CyclomaticComplexity,Metrics/PerceivedComplexity
-        item.xpath("./date").reduce([]) do |a, d|
-          type = d[:type].to_s.empty? ? "published" : d[:type]
-          if (on = d.at("on"))
-            a << BibliographicDate.new(type: type, on: on.text,
-                                       to: d.at("to")&.text)
-          elsif (from = d.at("from"))
-            a << BibliographicDate.new(type: type, from: from.text,
-                                       to: d.at("to")&.text)
-          end
-        end
-      end
+      # def fetch_dates(item) # rubocop:disable Metrics/AbcSize, Metrics/CyclomaticComplexity,Metrics/PerceivedComplexity
+      #   item.xpath("./date").reduce([]) do |a, d|
+      #     type = d[:type].to_s.empty? ? "published" : d[:type]
+      #     if (on = d.at("on"))
+      #       a << BibliographicDate.new(type: type, on: on.text,
+      #                                  to: d.at("to")&.text)
+      #     elsif (from = d.at("from"))
+      #       a << BibliographicDate.new(type: type, from: from.text,
+      #                                  to: d.at("to")&.text)
+      #     end
+      #   end
+      # end
 
       # @param item [Nokogiri::XML::Element]
       # @param klass [RelatonBipm::DocumentRelation.class]

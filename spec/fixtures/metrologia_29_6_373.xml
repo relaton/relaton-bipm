@@ -1,10 +1,11 @@
-<bibdata type="standard">
-  <fetched>2022-08-18</fetched>
+<bibdata type="article">
+  <fetched>2022-09-03</fetched>
   <title type="title-main" format="text/plain" language="en" script="Latn">Decade Designs for Weighings of Non-uniform Variance</title>
   <title type="main" format="text/plain" language="en" script="Latn">Decade Designs for Weighings of Non-uniform Variance</title>
   <uri type="src">https://iopscience.iop.org/article/10.1088/0026-1394/29/6/001</uri>
   <uri type="doi">https://doi.org/10.1088/0026-1394/29/6/001</uri>
-  <docidentifier type="BIPM">Metrologia 29 6 373</docidentifier>
+  <docidentifier type="BIPM" primary="true">Metrologia 29 6 373</docidentifier>
+  <docidentifier type="DOI">10.1088/0026-1394/29/6/001</docidentifier>
   <date type="published">
     <on>1993-01-01</on>
   </date>
@@ -28,15 +29,21 @@
   <series>
     <title type="main" format="text/plain" language="en" script="Latn">Metrologia</title>
   </series>
-  <extent type="volume">
-    <referenceFrom>29</referenceFrom>
+  <extent>
+    <locality type="volume">
+      <referenceFrom>29</referenceFrom>
+    </locality>
   </extent>
-  <extent type="issue">
-    <referenceFrom>6</referenceFrom>
+  <extent>
+    <locality type="issue">
+      <referenceFrom>6</referenceFrom>
+    </locality>
   </extent>
-  <extent type="page">
-    <referenceFrom>373</referenceFrom>
-    <referenceTo>377</referenceTo>
+  <extent>
+    <locality type="page">
+      <referenceFrom>373</referenceFrom>
+      <referenceTo>377</referenceTo>
+    </locality>
   </extent>
   <ext>
     <doctype>article</doctype>
