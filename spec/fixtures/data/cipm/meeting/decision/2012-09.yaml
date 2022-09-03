@@ -18,6 +18,7 @@ link:
   type: src
 - content: http://www.bipm.org/publications/cipm/meeting-01.html
   type: src
+type: proceedings
 docid:
 - id: CIPM Decision 9 (2012)
   type: BIPM
@@ -51,7 +52,7 @@ language:
 - fr
 script:
 - Latn
-fetched: '2022-08-18'
+fetched: '2022-09-03'
 doctype: decision
 structuredidentifier:
   docnumber: '9'
