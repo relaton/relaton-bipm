@@ -218,7 +218,10 @@ module RelatonBipm
     #
     def fetch_resolution(**args) # rubocop:disable Metrics/AbcSize, Metrics/MethodLength, Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity
       args[:en]["resolutions"].each.with_index do |r, i| # rubocop:disable Metrics/BlockLength
-        hash = { type: "proceedings", fetched: Date.today.to_s, title: [], doctype: r["type"] }
+        hash = {
+          type: "proceedings", fetched: Date.today.to_s, title: [],
+          doctype: r["type"], place: [RelatonBib::Place.new(city: "Paris")]
+        }
         hash[:title] << title(r["title"], "en") if r["title"]
         fr_resolution = args[:fr]["resolutions"].fetch(i, nil)
         if fr_resolution
@@ -301,7 +304,7 @@ module RelatonBipm
     #
     def bibitem(**args) # rubocop:disable Metrics/MethodLength, Metrics/AbcSize, Metrics/CyclomaticComplexity
       hash = { title: [], type: "proceedings", doctype: args[:type],
-               fetched: Date.today.to_s }
+               fetched: Date.today.to_s, place: [RelatonBib::Place.new(city: "Paris")] }
       hash[:title] << title(args[:en]["title"], "en") if args[:en]["title"]
       hash[:title] << title(args[:fr]["title"], "fr") if args[:fr]["title"]
       hash[:date] = [{ type: "published", on: args[:en]["date"] }]

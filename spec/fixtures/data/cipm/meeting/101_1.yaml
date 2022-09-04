@@ -108,12 +108,16 @@ relation:
     - fr
     script:
     - Latn
-    fetched: '2022-09-03'
+    place:
+    - city: Paris
+    fetched: '2022-09-04'
     doctype: meeting
     structuredidentifier:
       docnumber: '101'
       part: '1'
-fetched: '2022-09-03'
+place:
+- city: Paris
+fetched: '2022-09-04'
 doctype: meeting
 structuredidentifier:
   docnumber: '101'
