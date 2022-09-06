@@ -226,8 +226,8 @@ module RelatonBipm
         link = rsp.at("//div[@class='indexer'][.='#{art}']/../div/a")
         unless link
           arts = rsp.xpath("//div[@class='indexer']").map(&:text)
-          warn "[relaton-bipm] Page #{art} not found in \"BIPM Metrologia #{vol} #{ish}\" issue."
-          warn "[relaton-bipm] Availabe pages in the issue are: (#{arts.join(', ')})"
+          warn "[relaton-bipm] No article is available at the specified start page \"#{art}\" in issue \"BIPM Metrologia #{vol} #{ish}\"."
+          warn "[relaton-bipm] Available articles in the issue start at the following pages: (#{arts.join(', ')})"
           return
         end
 
