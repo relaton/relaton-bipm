@@ -72,7 +72,6 @@ describe RelatonBipm::DataFetcher do
           file = "spec/fixtures/#{path}"
           File.write file, hash.to_yaml, encoding: "UTF-8" unless File.exist? file
           yaml = YAML.load_file(file)
-          yaml["fetched"] = Date.today.to_s
           expect(hash).to eq yaml
         end
         expect(subject).to receive(:fetch_resolution).with(
@@ -135,7 +134,6 @@ describe RelatonBipm::DataFetcher do
           file = "spec/fixtures/#{path}"
           File.write file, hash.to_yaml, encoding: "UTF-8" unless File.exist? file
           yaml = YAML.load_file(file)
-          yaml["fetched"] = Date.today.to_s
           expect(hash).to eq yaml
         end
 
@@ -156,7 +154,6 @@ describe RelatonBipm::DataFetcher do
           file = "spec/fixtures/#{path}"
           File.write file, hash.to_yaml, encoding: "UTF-8" unless File.exist? file
           yaml = YAML.load_file(file)
-          yaml["fetched"] = Date.today.to_s
           expect(hash).to eq yaml
         end.exactly(40).times
 

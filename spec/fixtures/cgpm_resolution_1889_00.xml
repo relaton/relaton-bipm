@@ -1,5 +1,5 @@
-<bibdata>
-  <fetched>2022-07-19</fetched>
+<bibdata type="proceedings">
+  <fetched>2022-09-09</fetched>
   <title format="text/plain" language="en" script="Latn">Sanction of the international prototypes of the metre and the kilogram</title>
   <title format="text/plain" language="fr" script="Latn">Sanction des prototypes internationaux du mètre et du kilogramme</title>
   <uri type="src">https://www.bipm.org/en/committees/cg/cgpm/1-1889/resolution-</uri>
@@ -24,6 +24,9 @@
   <language>en</language>
   <language>fr</language>
   <script>Latn</script>
+  <place>
+    <city>Paris</city>
+  </place>
   <ext>
     <doctype>resolution</doctype>
     <structuredidentifier>

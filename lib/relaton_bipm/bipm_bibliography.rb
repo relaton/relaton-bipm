@@ -25,6 +25,7 @@ module RelatonBipm
         end
 
         warn("[relaton-bipm] (\"#{text}\") found #{item.docidentifier[0].id}")
+        item.fetched = Date.today.to_s
         item
       rescue Mechanize::ResponseCodeError => e
         raise RelatonBib::RequestError, e.message unless e.response_code == "404"
