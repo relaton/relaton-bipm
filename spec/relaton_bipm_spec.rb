@@ -192,8 +192,8 @@ RSpec.describe RelatonBipm do
           expect(result).to be_nil
         end.to output(
           %r{
-            \[relaton-bipm\]\sPage\s9\snot\sfound\sin\s"BIPM\sMetrologia\s34\s3"\sissue\.\n
-            \[relaton-bipm\]\sAvailabe\spages\sin\sthe\sissue\sare:\s\(201,\s211,\s215,\s235,\s241,\s245,\s251,\s257,\s261,\s291,\s293,\s295\)
+            \[relaton-bipm\]\sNo\sarticle\sis\savailable\sat\sthe\sspecified\sstart\spage\s"9"\sin\sissue\s"BIPM\sMetrologia\s34\s3"\.\n
+            \[relaton-bipm\]\sAvailable\sarticles\sin\sthe\sissue\sstart\sat\sthe\sfollowing\spages:\s\(201,\s211,\s215,\s235,\s241,\s245,\s251,\s257,\s261,\s291,\s293,\s295\)
           }x,
         ).to_stderr
       end
