@@ -177,7 +177,7 @@ module RelatonBipm
       file = "#{num}.yaml"
       path = File.join dir, file
       link = "https://raw.githubusercontent.com/relaton/relaton-data-bipm/master/#{path}"
-      hash = bibitem type: type, en: en_md, fr: fr_md, id: id, num: num, src: src, pdf: en["pdf"]
+      hash = bibitem body: body, type: type, en: en_md, fr: fr_md, id: id, num: num, src: src, pdf: en["pdf"]
       if @files.include?(path) && part
         add_part hash, part
         item = RelatonBipm::BipmBibliographicItem.new(**hash)
@@ -189,7 +189,7 @@ module RelatonBipm
       elsif part
         hash[:title].each { |t| t[:content] = t[:content].sub(/\s\(.+\)$/, "") }
         hash[:link] = [{ type: "src", content: link }]
-        h = bibitem type: type, en: en_md, fr: fr_md, id: id, num: num, src: src, pdf: en["pdf"]
+        h = bibitem body: body, type: type, en: en_md, fr: fr_md, id: id, num: num, src: src, pdf: en["pdf"]
         add_part h, part
         part_item = RelatonBipm::BipmBibliographicItem.new(**h)
         part_item_path = File.join dir, "#{num}-#{part}.yaml"
@@ -251,10 +251,7 @@ module RelatonBipm
         hash[:link] << { type: "pdf", content: r["reference"] } if r["reference"]
         hash[:language] = %w[en fr]
         hash[:script] = ["Latn"]
-        hash[:contributor] = [{
-          entity: { url: "www.bipm.org", name: "Bureau International des Poids et Mesures", abbreviation: "BIPM" },
-          role: [{ type: "publisher" }],
-        }]
+        hash[:contributor] = contributors date, args[:body]
         hash[:structuredidentifier] = RelatonBipm::StructuredIdentifier.new docnumber: num
         item = RelatonBipm::BipmBibliographicItem.new(**hash)
         file = year
@@ -266,6 +263,39 @@ module RelatonBipm
         write_file path, item
         @index[["#{args[:body]} #{type} #{year}-#{num_justed}", "#{args[:body]} #{type} #{args[:num]}-#{num_justed}"]] = path
       end
+    end
+
+    def contributors(date, body) # rubocop:disable Metrics/MethodLength
+      if body == "CCTF" && Date.parse(date).year < 1999
+        authors = [{
+          name: [
+            { content: "Consultative Committee for the Definition of the Second",
+              language: "en", script: "Latn" },
+            { content: "Comité Consultatif pour la Définition de la Seconde",
+              language: "fr", script: "Latn" },
+          ],
+          abbreviation: { content: "CCDS", language: ["en", "fr"], script: "Latn" },
+        }]
+      elsif body == "CCTF"
+        authors = [{
+          name: [
+            { content: "Consultative Committee for Time and Frequency",
+              language: "en", script: "Latn" },
+            { content: "Comité consultatif du temps et des fréquences",
+              language: "fr", script: "Latn" },
+          ],
+          abbreviation: { content: body, language: ["en", "fr"], script: "Latn" },
+        }]
+      else authors = []
+      end
+      authors.reduce(
+        [{ entity: {
+             url: "www.bipm.org",
+             name: "Bureau International des Poids et Mesures",
+             abbreviation: "BIPM",
+           },
+           role: [{ type: "publisher" }] }],
+      ) { |a, e| a << { entity: e, role: [{ type: "author" }] } }
     end
 
     def title(content, language)
@@ -319,10 +349,7 @@ module RelatonBipm
       hash[:link] += args[:src] if args[:src]&.any?
       hash[:language] = %w[en fr]
       hash[:script] = ["Latn"]
-      hash[:contributor] = [{
-        entity: { url: "www.bipm.org", name: "Bureau International des Poids et Mesures", abbreviation: "BIPM" },
-        role: [{ type: "publisher" }],
-      }]
+      hash[:contributor] = contributors args[:en]["date"], args[:body]
       hash[:structuredidentifier] = RelatonBipm::StructuredIdentifier.new docnumber: args[:num]
       hash
     end

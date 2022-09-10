@@ -64,6 +64,41 @@ describe RelatonBipm::DataFetcher do
       subject.fetch_type("cgpm/meetings-en", "CGPM")
     end
 
+    context "#contributors" do
+      shared_examples "contributors" do |date, body|
+        it do
+          contribs = subject.contributors date, body
+          expect(contribs.size).to eq 2
+          expect(contribs[0][:role]).to eq [{ type: "publisher" }]
+          expect(contribs[0][:entity][:abbreviation]).to eq "BIPM"
+          expect(contribs[0][:entity][:name]).to eq "Bureau International des Poids et Mesures"
+          expect(contribs[0][:entity][:url]).to eq "www.bipm.org"
+          if body == "CCTF"
+            if Date.parse(date).year < 1999
+              abbr = "CCDS"
+              en = "Consultative Committee for the Definition of the Second"
+              fr = "Comité Consultatif pour la Définition de la Seconde"
+            else
+              abbr = "CCTF"
+              en = "Consultative Committee for Time and Frequency"
+              fr = "Comité consultatif du temps et des fréquences"
+            end
+            expect(contribs[1][:role]).to eq [{ type: "author" }]
+            expect(contribs[1][:entity][:abbreviation]).to eq(
+              { content: abbr, language: ["en", "fr"], script: "Latn" },
+            )
+            expect(contribs[1][:entity][:name]).to eq(
+              [{ content: en, language: "en", script: "Latn" },
+               { content: fr, language: "fr", script: "Latn" }],
+            )
+          end
+        end
+      end
+
+      it_should_behave_like "contributors", "1998-11-11", "CCTF"
+      it_should_behave_like "contributors", "1999-11-11", "CCTF"
+    end
+
     context "#fetch_meeting" do
       it "no part" do
         expect(subject).to receive(:write_file) do |path, item|
