@@ -44,6 +44,7 @@ module RelatonBipm
           "Upgrade-Insecure-Requests" => "1",
         }
         a.user_agent_alias = Mechanize::AGENT_ALIASES.map(&:first).shuffle.first
+        # a.user_agent_alias = "Mac Safari"
         a
       end
 
@@ -241,6 +242,7 @@ module RelatonBipm
       # @param agent [Mechanize]
       # @return [RelatonBipm::BipmBibliographicItem]
       def get_article(path, vol, ish, agent) # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
+        agent.agent.allowed_error_codes = [403]
         rsp = agent.get path
         check_response rsp
         url = rsp.uri
@@ -305,15 +307,15 @@ module RelatonBipm
       # @param bibtex [BibTeX::Entry]
       # @return [Array<Hash>]
       def btcontrib(bibtex)
-        surname, initial = bibtex.author.split ", "
-        initial = initial.split.map { |i| RelatonBib::LocalizedString.new i, "en", "Latn" }
-        surname = RelatonBib::LocalizedString.new surname, "en", "Latn"
-        name = RelatonBib::FullName.new surname: surname, initial: initial
-        author = RelatonBib::Person.new name: name
-        [
-          { entity: { name: bibtex.publisher.to_s }, role: [{ type: "publisher" }] },
-          { entity: author, role: [{ type: "author" }] },
-        ]
+        contribs = [{
+          entity: { name: bibtex.publisher.to_s }, role: [{ type: "publisher" }]
+        }]
+        bibtex.author.split(" and ").inject(contribs) do |mem, name|
+          cname = RelatonBib::LocalizedString.new name, "en", "Latn"
+          name = RelatonBib::FullName.new completename: cname
+          author = RelatonBib::Person.new name: name
+          mem << { entity: author, role: [{ type: "author" }] }
+        end
       end
 
       #
@@ -354,7 +356,7 @@ module RelatonBipm
           warn "[relaton-bipm] Please visit this link in your browser to resolve the CAPTCHA, then retry: #{rsp.uri}"
           # warn "[relaton-bipm] #{rsp.uri} is redirected to #{rsp.header['location']}"
           raise RelatonBib::RequestError, "cannot access #{rsp.uri}"
-        elsif rsp.code != "200"
+        elsif rsp.code != "200" && rsp.code != "403"
           warn "[read_bipm] can't acces #{rsp.uri} #{rsp.code}"
           raise RelatonBib::RequestError, "cannot acces #{rsp.uri} #{rsp.code}"
         end

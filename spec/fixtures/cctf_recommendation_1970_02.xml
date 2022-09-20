@@ -1,5 +1,5 @@
 <bibdata type="proceedings">
-  <fetched>2022-09-09</fetched>
+  <fetched>2022-09-17</fetched>
   <title format="text/plain" language="en" script="Latn">Definition of TAI</title>
   <title format="text/plain" language="fr" script="Latn">Définition du Temps Atomique International</title>
   <uri type="src">https://www.bipm.org/en/committees/cc/cctf/5-1970/resolution-2</uri>
@@ -19,6 +19,14 @@
       <name>Bureau International des Poids et Mesures</name>
       <abbreviation>BIPM</abbreviation>
       <uri>www.bipm.org</uri>
+    </organization>
+  </contributor>
+  <contributor>
+    <role type="author"/>
+    <organization>
+      <name language="en" script="Latn">Consultative Committee for the Definition of the Second</name>
+      <name language="fr" script="Latn">Comité Consultatif pour la Définition de la Seconde</name>
+      <abbreviation language="en,fr" script="Latn">CCDS</abbreviation>
     </organization>
   </contributor>
   <language>en</language>

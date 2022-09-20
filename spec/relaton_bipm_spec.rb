@@ -197,6 +197,11 @@ RSpec.describe RelatonBipm do
           }x,
         ).to_stderr
       end
+
+      it "with 403 response code", vcr: "metrologia_50_4_385" do
+        result = RelatonBipm::BipmBibliography.get "BIPM Metrologia 50 4 385"
+        expect(result.docidentifier[0].id).to eq "Metrologia 50 4 385"
+      end
     end
   end
 end
