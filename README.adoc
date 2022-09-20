@@ -33,6 +33,14 @@ Or install it yourself as:
 
 === Search for a standard using keywords
 
+The Metrologia website employs anti-DDoS protection, which may cause the search to fail. If this happens, open provided link in a browser and solve the captcha.
+
+----
+[relaton-bipm] ("BIPM Metrologia 50 4 385") fetching...
+[relaton-bipm] This source employs anti-DDoS measures that unfortunately affects automated requests.
+[relaton-bipm] Please visit this link in your browser to resolve the CAPTCHA, then retry: https://iopscience.iop.org/article/10.1088/0026-1394/50/4/385
+----
+
 ==== References for Si-Brochure documents
 
 `BIPM {DOCUMENT_NAME}`
