@@ -202,6 +202,11 @@ RSpec.describe RelatonBipm do
         result = RelatonBipm::BipmBibliography.get "BIPM Metrologia 50 4 385"
         expect(result.docidentifier[0].id).to eq "Metrologia 50 4 385"
       end
+
+      it "without author", vcr: "metrologia_19_4_163" do
+        result = RelatonBipm::BipmBibliography.get "BIPM Metrologia 19 4 163"
+        expect(result.docidentifier[0].id).to eq "Metrologia 19 4 163"
+      end
     end
   end
 end

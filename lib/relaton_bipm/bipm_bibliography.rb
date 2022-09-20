@@ -310,6 +310,8 @@ module RelatonBipm
         contribs = [{
           entity: { name: bibtex.publisher.to_s }, role: [{ type: "publisher" }]
         }]
+        return contribs unless bibtex.author
+
         bibtex.author.split(" and ").inject(contribs) do |mem, name|
           cname = RelatonBib::LocalizedString.new name, "en", "Latn"
           name = RelatonBib::FullName.new completename: cname
