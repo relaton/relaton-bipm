@@ -1,5 +1,5 @@
 <bibdata type="article">
-  <fetched>2022-09-03</fetched>
+  <fetched>2022-09-21</fetched>
   <formattedref format="text/plain" language="en" script="Latn">Metrologia 30</formattedref>
   <uri type="src">https://iopscience.iop.org/volume/0026-1394/30</uri>
   <docidentifier type="BIPM" primary="true">Metrologia 30</docidentifier>
@@ -10,8 +10,8 @@
   <script>Latn</script>
   <relation type="partOf">
     <bibitem>
-      <title type="title-main" format="text/plain" language="en" script="Latn">PROCEEDINGS OF THE SECOND INTERNATIONAL SEMINAR ON PRESSURE METROLOGY FROM 1 kPa TO 1 GPa 2–4 June 1993, Laboratoire National d'Essais (LNE), Paris, France</title>
-      <title type="main" format="text/plain" language="en" script="Latn">PROCEEDINGS OF THE SECOND INTERNATIONAL SEMINAR ON PRESSURE METROLOGY FROM 1 kPa TO 1 GPa 2–4 June 1993, Laboratoire National d'Essais (LNE), Paris, France</title>
+      <title type="title-main" format="text/html" language="en" script="Latn">PROCEEDINGS OF THE SECOND INTERNATIONAL SEMINAR ON PRESSURE METROLOGY FROM 1 kPa TO 1 GPa 2–4 June 1993, Laboratoire National d'Essais (LNE), Paris, France</title>
+      <title type="main" format="text/html" language="en" script="Latn">PROCEEDINGS OF THE SECOND INTERNATIONAL SEMINAR ON PRESSURE METROLOGY FROM 1 kPa TO 1 GPa 2–4 June 1993, Laboratoire National d'Essais (LNE), Paris, France</title>
       <uri type="src">https://iopscience.iop.org/issue/0026-1394/30/6</uri>
       <docidentifier type="BIPM" primary="true">Metrologia 30 6</docidentifier>
     </bibitem>
@@ -25,8 +25,8 @@
   </relation>
   <relation type="partOf">
     <bibitem>
-      <title type="title-main" format="text/plain" language="en" script="Latn">PROCEEDINGS OF THE NEW DEVELOPMENTS AND APPLICATIONS IN OPTICAL RADIOMETRY IV (NEWRAD '92) CONFERENCE 5–7 October 1992, Baltimore, Maryland, USA</title>
-      <title type="main" format="text/plain" language="en" script="Latn">PROCEEDINGS OF THE NEW DEVELOPMENTS AND APPLICATIONS IN OPTICAL RADIOMETRY IV (NEWRAD '92) CONFERENCE 5–7 October 1992, Baltimore, Maryland, USA</title>
+      <title type="title-main" format="text/html" language="en" script="Latn">PROCEEDINGS OF THE NEW DEVELOPMENTS AND APPLICATIONS IN OPTICAL RADIOMETRY IV (NEWRAD '92) CONFERENCE 5–7 October 1992, Baltimore, Maryland, USA</title>
+      <title type="main" format="text/html" language="en" script="Latn">PROCEEDINGS OF THE NEW DEVELOPMENTS AND APPLICATIONS IN OPTICAL RADIOMETRY IV (NEWRAD '92) CONFERENCE 5–7 October 1992, Baltimore, Maryland, USA</title>
       <uri type="src">https://iopscience.iop.org/issue/0026-1394/30/4</uri>
       <docidentifier type="BIPM" primary="true">Metrologia 30 4</docidentifier>
     </bibitem>

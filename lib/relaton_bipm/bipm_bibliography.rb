@@ -133,7 +133,7 @@ module RelatonBipm
       # @param title [String]
       # @return [RelatonBib::TypedTitleStringCollection]
       def titles(title)
-        RelatonBib::TypedTitleString.from_string title, "en", "Latn"
+        RelatonBib::TypedTitleString.from_string title, "en", "Latn", "text/html"
       end
 
       # @param vol [String]
@@ -244,6 +244,7 @@ module RelatonBipm
       def get_article(path, vol, ish, agent) # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
         agent.agent.allowed_error_codes = [403]
         rsp = agent.get path
+        title = rsp.at("//h1[@itemprop='headline']").children.to_xml
         check_response rsp
         url = rsp.uri
         bib = rsp.link_with(text: "BibTeX").href
@@ -251,7 +252,7 @@ module RelatonBipm
         check_response rsp
         bt = BibTeX.parse(rsp.body).first
         bibitem(
-          docid: btdocid(bt), title: titles(bt.title.to_s), date: btdate(bt),
+          docid: btdocid(bt), title: titles(title), date: btdate(bt),
           abstract: btabstract(bt), doctype: bt.type.to_s, series: series,
           link: btlink(bt, url), contributor: btcontrib(bt),
           extent: btextent(vol, ish, bt.pages.to_s)
