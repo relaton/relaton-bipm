@@ -244,8 +244,8 @@ module RelatonBipm
       def get_article(path, vol, ish, agent) # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
         agent.agent.allowed_error_codes = [403]
         rsp = agent.get path
-        title = rsp.at("//h1[@itemprop='headline']").children.to_xml
         check_response rsp
+        title = rsp.at("//h1[@itemprop='headline']").children.to_xml
         url = rsp.uri
         bib = rsp.link_with(text: "BibTeX").href
         rsp = agent.get bib
