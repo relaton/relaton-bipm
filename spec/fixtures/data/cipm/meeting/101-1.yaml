@@ -48,6 +48,27 @@ contributor:
     url: www.bipm.org
   role:
   - publisher
+- organization:
+    name:
+    - content: International Committee for Weights and Measures
+      language:
+      - en
+      script:
+      - Latn
+    - content: Comité International des Poids et Mesures
+      language:
+      - fr
+      script:
+      - Latn
+    abbreviation:
+      content: CIPM
+      language:
+      - en
+      - fr
+      script:
+      - Latn
+  role:
+  - author
 revdate: '2012-06-08'
 language:
 - en
@@ -56,8 +77,8 @@ script:
 - Latn
 place:
 - city: Paris
-fetched: '2022-09-04'
 doctype: meeting
 structuredidentifier:
   docnumber: '101'
   part: '1'
+fetched: '2022-09-22'

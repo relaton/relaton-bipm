@@ -275,30 +275,21 @@ module RelatonBipm
       end
     end
 
+    #
+    # Create contributors
+    #
+    # @param [Strign] date date of publication
+    # @param [Strign] body organization abbreviation (CCTF, CIPM, CGPM)
+    #
+    # @return [Array<Hash>] contributors
+    #
     def contributors(date, body) # rubocop:disable Metrics/MethodLength
-      if body == "CCTF" && Date.parse(date).year < 1999
-        authors = [{
-          name: [
-            { content: "Consultative Committee for the Definition of the Second",
-              language: "en", script: "Latn" },
-            { content: "Comité Consultatif pour la Définition de la Seconde",
-              language: "fr", script: "Latn" },
-          ],
-          abbreviation: { content: "CCDS", language: ["en", "fr"], script: "Latn" },
-        }]
-      elsif body == "CCTF"
-        authors = [{
-          name: [
-            { content: "Consultative Committee for Time and Frequency",
-              language: "en", script: "Latn" },
-            { content: "Comité consultatif du temps et des fréquences",
-              language: "fr", script: "Latn" },
-          ],
-          abbreviation: { content: body, language: ["en", "fr"], script: "Latn" },
-        }]
-      else authors = []
-      end
-      authors.reduce(
+      case body
+      when "CCTF" then cctf_org date
+      when "CGPM" then cgpm_org
+      when "CIPM" then cipm_org
+      else []
+      end.reduce(
         [{ entity: {
              url: "www.bipm.org",
              name: "Bureau International des Poids et Mesures",
@@ -308,6 +299,76 @@ module RelatonBipm
       ) { |a, e| a << { entity: e, role: [{ type: "author" }] } }
     end
 
+    #
+    # Create CCTF organization
+    #
+    # @param [String] date date of meeting
+    #
+    # @return [Array<Hash>] CCTF organization
+    #
+    def cctf_org(date) # rubocop:disable Metrics/MethodLength
+      if Date.parse(date).year < 1999
+        nms = [
+          { content: "Consultative Committee for the Definition of the Second", language: "en" },
+          { content: "Comité Consultatif pour la Définition de la Seconde", language: "fr" },
+        ]
+        organization nms, "CCDS"
+      else
+        nms = [
+          { content: "Consultative Committee for Time and Frequency", language: "en" },
+          { content: "Comité consultatif du temps et des fréquences", language: "fr" },
+        ]
+        organization nms, "CCTF"
+      end
+    end
+
+    #
+    # Create organization
+    #
+    # @param [Array<Hash>] names organization names in different languages
+    # @param [String] abbr abbreviation
+    #
+    # @return [Array<Hash>] organization
+    #
+    def organization(names, abbr)
+      names.each { |ctrb| ctrb[:script] = "Latn" }
+      [{ name: names, abbreviation: { content: abbr, language: ["en", "fr"], script: "Latn" } }]
+    end
+
+    #
+    # Create CGPM organization
+    #
+    # @return [Array<Hash>] CGPM organization
+    #
+    def cgpm_org
+      nms = [
+        { content: "General Conference on Weights and Measures", language: "en" },
+        { content: "Conférence Générale des Poids et Mesures", language: "fr" },
+      ]
+      organization nms, "CGPM"
+    end
+
+    #
+    # Create CIPM organization
+    #
+    # @return [Array<Hash>] CIPM organization
+    #
+    def cipm_org
+      names = [
+        { content: "International Committee for Weights and Measures", language: "en" },
+        { content: "Comité International des Poids et Mesures", language: "fr" },
+      ]
+      organization names, "CIPM"
+    end
+
+    #
+    # Create a title
+    #
+    # @param [String] content title content
+    # @param [String] language language code (en, fr)
+    #
+    # @return [Hash] title
+    #
     def title(content, language)
       { content: content, language: language, script: "Latn" }
     end
