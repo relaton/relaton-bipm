@@ -121,10 +121,20 @@ module RelatonBipm
         if oldval.is_a?(Hash) && newval.is_a?(Hash)
           deep_merge(oldval, newval)
         elsif oldval.is_a?(Array) && newval.is_a?(Array)
-          oldval | newval
+          oldval.concat(newval).uniq { |i| downcase_all i }
+          # oldval | newval
         else
           newval || oldval
         end
+      end
+    end
+
+    def downcase_all(content)
+      case content
+      when Hash then content.transform_values { |v| downcase_all v }
+      when Array then content.map { |v| downcase_all v }
+      when String then content.downcase
+      else content
       end
     end
 

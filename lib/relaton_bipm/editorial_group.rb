@@ -2,8 +2,11 @@ module RelatonBipm
   class EditorialGroup
     include RelatonBib
 
-    # @return [Array<String>]
-    attr_reader :committee, :workgroup
+    # @return [Array<RelatonBipm::Committee>]
+    attr_reader :committee
+
+    # @return [Array<RelatonBipm::WorkGroup>]
+    attr_reader :workgroup
 
     # @param committee [Array<RelatonBipm::Committee>]
     # @param workgroup [Array<RelatonBipm::WorkGroup>]
@@ -33,10 +36,10 @@ module RelatonBipm
 
     # @return [Hash]
     def to_hash
-      {
-        "committee" => single_element_array(committee),
-        "workgroup" => single_element_array(workgroup),
-      }
+      hash = {}
+      hash["committee"] = single_element_array(committee) if committee.any?
+      hash["workgroup"] = single_element_array(workgroup) if workgroup.any?
+      hash
     end
 
     # @return [true]

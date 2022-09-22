@@ -253,10 +253,8 @@ describe RelatonBipm::DataFetcher do
               "spec/fixtures/#{path}"
             end
         hash = item.to_hash
-        hash["fetched"] = Date.today.to_s
         File.write p, hash.to_yaml, encoding: "UTF-8" unless File.exist? p
         yaml = YAML.load_file(p)
-        yaml["fetched"] = Date.today.to_s
         expect(hash).to eq yaml
       end.twice
 
