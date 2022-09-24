@@ -18,8 +18,12 @@ link:
   type: src
 - content: https://raw.githubusercontent.com/metanorma/bipm-data-outcomes/main/cipm/meetings-en/meeting-101-2.yml
   type: src
+  language: en
+  script: Latn
 - content: https://raw.githubusercontent.com/metanorma/bipm-data-outcomes/main/cipm/meetings-fr/meeting-101-2.yml
   type: src
+  language: fr
+  script: Latn
 type: proceedings
 docid:
 - id: CIPM Meeting 101-2
@@ -81,4 +85,4 @@ doctype: meeting
 structuredidentifier:
   docnumber: '101'
   part: '2'
-fetched: '2022-09-22'
+fetched: '2022-09-23'

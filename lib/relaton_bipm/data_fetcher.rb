@@ -180,7 +180,10 @@ module RelatonBipm
       gh_src = "https://raw.githubusercontent.com/metanorma/bipm-data-outcomes/"
       src_en = gh_src + en_file.split("/")[-3..].unshift("main").join("/")
       src_fr = gh_src + fr_file.split("/")[-3..].unshift("main").join("/")
-      src = [{ type: "src", content: src_en }, { type: "src", content: src_fr }]
+      src = [
+        { type: "src", content: src_en, language: "en", script: "Latn" },
+        { type: "src", content: src_fr, language: "fr", script: "Latn" },
+      ]
 
       /^(?<num>\d+)(?:-_(?<part>\d+))?-\d{4}$/ =~ en_md["url"].split("/").last
       id = "#{body} #{type.capitalize} #{num}"
