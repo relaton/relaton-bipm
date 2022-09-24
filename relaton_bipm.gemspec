@@ -42,7 +42,7 @@ Gem::Specification.new do |spec| # rubocop:disable Metrics/BlockLength
 
   spec.add_dependency "faraday", "~> 1.0"
   spec.add_dependency "mechanize", "~> 2.8.0"
-  spec.add_dependency "relaton-bib", "~> 1.13.0"
+  spec.add_dependency "relaton-bib", "~> 1.13.9"
   spec.add_dependency "rubyzip", "~> 2.3.0"
   spec.add_dependency "serrano", "~> 1.0"
 end
