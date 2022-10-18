@@ -201,7 +201,7 @@ module RelatonBipm
         path = File.join dir, "#{num}-#{part}.yaml"
       elsif part
         hash[:title].each { |t| t[:content] = t[:content].sub(/\s\(.+\)$/, "") }
-        hash[:link] = [{ type: "src", content: link }]
+        # hash[:link] = [{ type: "src", content: link }]
         h = bibitem body: body, type: type, en: en_md, fr: fr_md, id: id, num: num, src: src, pdf: en["pdf"]
         add_part h, part
         part_item = RelatonBipm::BipmBibliographicItem.new(**h)
@@ -235,11 +235,14 @@ module RelatonBipm
           doctype: r["type"], place: [RelatonBib::Place.new(city: "Paris")]
         }
         hash[:title] << title(r["title"], "en") if r["title"]
-        fr_resolution = args[:fr]["resolutions"].fetch(i, nil)
-        if fr_resolution
-          fr_title = fr_resolution["title"]
-          hash[:title] << title(fr_title, "fr") if fr_title
+        fr_r = args[:fr]["resolutions"].fetch(i, nil)
+        hash[:link] = [{ type: "citation", content: r["url"], language: "en", script: "Latn" }]
+        if fr_r
+          hash[:title] << title(fr_r["title"], "fr") if fr_r["title"]
+          hash[:link] << { type: "citation", content: fr_r["url"], language: "fr", script: "Latn" }
         end
+        hash[:link] += args[:src]
+        hash[:link] << { type: "pdf", content: r["reference"] } if r["reference"]
         date = r["dates"].first.to_s
         hash[:date] = [{ type: "published", on: date }]
         num = r["identifier"].to_s.split("-").last
@@ -260,8 +263,6 @@ module RelatonBipm
           id_fr(id),
         ]
         hash[:docnumber] = id
-        hash[:link] = [{ type: "src", content: r["url"] }] + args[:src]
-        hash[:link] << { type: "pdf", content: r["reference"] } if r["reference"]
         hash[:language] = %w[en fr]
         hash[:script] = ["Latn"]
         hash[:contributor] = contributors date, args[:body]
@@ -418,7 +419,10 @@ module RelatonBipm
       ]
       hash[:id] = args[:id].gsub " ", "-"
       hash[:docnumber] = args[:id]
-      hash[:link] = [{ type: "src", content: args[:en]["url"] }]
+      hash[:link] = [
+        { type: "citation", content: args[:en]["url"], language: "en", script: "Latn" },
+        { type: "citation", content: args[:fr]["url"], language: "fr", script: "Latn" },
+      ]
       RelatonBib.array(args[:pdf]).each { |pdf| hash[:link] << { type: "pdf", content: pdf } }
       hash[:link] += args[:src] if args[:src]&.any?
       hash[:language] = %w[en fr]
