@@ -124,10 +124,10 @@ RSpec.describe RelatonBipm do
         end
       end
 
-      # it "SI Brochure", vcr: "si_brochure" do
-      #   result = RelatonBipm::BipmBibliography.get "BIPM SI Brochure"
-      #   expect(result.docidentifier[0].id).to eq "BIPM SI Brochure"
-      # end
+      it "SI Brochure", vcr: "si_brochure" do
+        result = RelatonBipm::BipmBibliography.get "BIPM SI Brochure"
+        expect(result.docidentifier[0].id).to eq "BIPM SI Brochure"
+      end
     end
 
     context "Metrologia" do

@@ -1,20 +1,14 @@
 <bibdata type="article">
-  <fetched>2022-09-21</fetched>
+  <fetched>2022-10-28</fetched>
   <title type="title-main" format="text/html" language="en" script="Latn">Decade Designs for Weighings of Non-uniform Variance</title>
   <title type="main" format="text/html" language="en" script="Latn">Decade Designs for Weighings of Non-uniform Variance</title>
   <uri type="src">https://iopscience.iop.org/article/10.1088/0026-1394/29/6/001</uri>
-  <uri type="doi">https://doi.org/10.1088/0026-1394/29/6/001</uri>
+  <uri type="doi">https://dx.doi.org/10.1088/0026-1394/29/6/001</uri>
   <docidentifier type="BIPM" primary="true">Metrologia 29 6 373</docidentifier>
   <docidentifier type="DOI">10.1088/0026-1394/29/6/001</docidentifier>
   <date type="published">
     <on>1993-01-01</on>
   </date>
-  <contributor>
-    <role type="publisher"/>
-    <organization>
-      <name>{IOP} Publishing</name>
-    </organization>
-  </contributor>
   <contributor>
     <role type="author"/>
     <person>
@@ -42,7 +36,6 @@
   <extent>
     <locality type="page">
       <referenceFrom>373</referenceFrom>
-      <referenceTo>377</referenceTo>
     </locality>
   </extent>
   <ext>

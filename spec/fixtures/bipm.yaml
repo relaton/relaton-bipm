@@ -57,7 +57,7 @@ contributor:
         postcode: '123456'
     - phone: '223322'
   role:
-  - author
+  - type: author
 - organization:
     name:
     - content: IETF
@@ -118,7 +118,7 @@ contributor:
         postcode: '123456'
     - phone: '223322'
   role:
-  - author
+  - type: author
 - organization:
     name:
     - content: Institution

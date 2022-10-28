@@ -57,7 +57,7 @@ contributor:
       content: BIPM
     url: www.bipm.org
   role:
-  - publisher
+  - type: publisher
 - organization:
     name:
     - content: International Committee for Weights and Measures
@@ -78,7 +78,7 @@ contributor:
       script:
       - Latn
   role:
-  - author
+  - type: author
 revdate: '2012-06-08'
 language:
 - en
@@ -146,7 +146,7 @@ relation:
           content: BIPM
         url: www.bipm.org
       role:
-      - publisher
+      - type: publisher
     - organization:
         name:
         - content: International Committee for Weights and Measures
@@ -167,7 +167,7 @@ relation:
           script:
           - Latn
       role:
-      - author
+      - type: author
     revdate: '2012-06-08'
     language:
     - en
@@ -180,10 +180,10 @@ relation:
     structuredidentifier:
       docnumber: '101'
       part: '1'
-    fetched: '2022-10-18'
+    fetched: '2022-10-26'
 place:
 - city: Paris
 doctype: meeting
 structuredidentifier:
   docnumber: '101'
-fetched: '2022-10-18'
+fetched: '2022-10-26'

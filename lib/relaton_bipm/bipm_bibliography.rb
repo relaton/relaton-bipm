@@ -66,6 +66,7 @@ module RelatonBipm
         return unless resp.code == "200"
 
         yaml = RelatonBib.parse_yaml resp.body, [Date]
+        yaml["fetched"] = Date.today.to_s
         bib_hash = HashConverter.hash_to_bib yaml
         BipmBibliographicItem.new(**bib_hash)
       end
@@ -307,11 +308,13 @@ module RelatonBipm
 
       # @param bibtex [BibTeX::Entry]
       # @return [Array<Hash>]
-      def btcontrib(bibtex)
-        contribs = [{
-          entity: { name: bibtex.publisher.to_s }, role: [{ type: "publisher" }]
-        }]
-        return contribs unless bibtex.author
+      def btcontrib(bibtex) # rubocop:disable Metrics/MethodLength, Metrics/AbcSize
+        contribs = []
+        if bibtex.publisher && !bibtex.publisher.empty?
+          org = RelatonBib::Organization.new name: bibtex.publisher.to_s
+          contribs << { entity: org , role: [{ type: "publisher" }] }
+        end
+        return contribs unless bibtex.author && !bibtex.author.empty?
 
         bibtex.author.split(" and ").inject(contribs) do |mem, name|
           cname = RelatonBib::LocalizedString.new name, "en", "Latn"
