@@ -15,6 +15,8 @@ require "relaton_bipm/hash_converter"
 require "relaton_bipm/xml_parser"
 require "relaton_bipm/index"
 require "relaton_bipm/data_fetcher"
+require "relaton_bipm/data_outcomes_parser"
+require "relaton_bipm/bipm_si_brochure_parser"
 
 module RelatonBipm
   class Error < StandardError; end

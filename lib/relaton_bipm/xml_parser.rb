@@ -71,16 +71,6 @@ module RelatonBipm
         EditorialGroup.new committee: cm, workgroup: wg
       end
 
-      # @TODO remove this method before next (1.7.0) relaton release
-      #   it's in the relaton-bib but hasn't released yet
-      # @param title [Nokogiri::XML::Element]
-      # @return [Array<RelatonBib::LocalizedString>]
-      def variants(elm)
-        elm.xpath("variant").map do |v|
-          RelatonBib::LocalizedString.new v.text, v[:language], v[:script]
-        end
-      end
-
       # @param ext [Nokogiri::XML::Element]
       # @return [RelatonBipm::StructuredIdentifier]
       def fetch_structuredidentifier(ext)
@@ -91,6 +81,22 @@ module RelatonBipm
           appendix: sid.at("appendix")&.text
         )
       end
+
+      #
+      # Parse contacts from XML.
+      #
+      # @param [Nokogiri::XML::Element] contrib contributor element
+      #
+      # @return [Array<RelatonBib::Address, RelatonBib::Contact>] contacts
+      #
+      # def parse_contact(contrib)
+      #   contrib.xpath("formattedAddress").each_with_object(super) do |fa, conts|
+      #     city, country = fa.text.split(", ")
+      #     next unless city && country
+
+      #     conts << RelatonBib::Address.new(city: city, country: country)
+      #   end
+      # end
     end
   end
 end

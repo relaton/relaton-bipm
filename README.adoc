@@ -77,7 +77,7 @@ Allowed document names are:
 - `{ISSUE}` - number of issue, optional
 - `{PAGE}` - number of page, optional
 
-==== Reference structures for CCTF (CCDS), CGMP, CIPM documents
+==== Reference structures for CCTF (CCDS), CGPM, CIPM documents
 
 - `{BODY} {TYPE} {YEAR}-{2_DIGITS_NUMBER}`
 - `{BODY} {TYPE} {NUMBER} ({YEAR})` or `{BODY} {TYPE} {NUMBER} {YEAR}`
@@ -87,7 +87,7 @@ Allowed document names are:
 
 The parts of the structures:
 
-- `{BODY}` - could be `CCTF` (or old named `CCDS`), CGMP, or CIMP
+- `{BODY}` - could be `CCTF` (or old named `CCDS`), CGPM, or CIMP
 - `{TYPE}` - could be English word: `Resolution`, `Decision`, `Declaration`, `Recommendation`; or French word: `Résolution`, `Décision`, `Déclaration`, `Recommandation`
 - `{YEAR}` - year of Resolution/Decision/Declaration/Recommendation
 - `{NUMBER}` - number of Resolution/Decision/Declaration/Recommendation
