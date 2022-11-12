@@ -1,5 +1,12 @@
 module RelatonBipm
   class DataOutcomesParser
+    TYPEABBREV = {
+      "Resolution" => "RES",
+      "Recommendation" => "REC",
+      "Decision" => "DECN",
+      "Statement" => "DECL",
+    }.freeze
+
     #
     # Create data-outcomes parser
     #
@@ -22,7 +29,8 @@ module RelatonBipm
     # Parse BIPM meeting and write them to YAML files
     #
     def parse
-      source_path = File.join "bipm-data-outcomes", "{cctf,cgpm,cipm}"
+      dirs = "cctf,cgpm,cipm,ccauv,ccem,ccl,ccm,ccpr,ccqm,ccri,cct,ccu,jcgm,jcrb"
+      source_path = File.join "bipm-data-outcomes", "{#{dirs}}"
       Dir[source_path].each { |body_dir| fetch_body(body_dir) }
     end
 
@@ -74,10 +82,9 @@ module RelatonBipm
       ]
 
       /^(?<num>\d+)(?:-_(?<part>\d+))?-\d{4}$/ =~ en_md["url"].split("/").last
-      id = "#{body} #{type.capitalize} #{num}"
       file = "#{num}.yaml"
       path = File.join dir, file
-      hash = bibitem body: body, type: type, en: en_md, fr: fr_md, id: id, num: num, src: src, pdf: en["pdf"]
+      hash = bibitem body: body, type: type, en: en_md, fr: fr_md, num: num, src: src, pdf: en["pdf"]
       if @data_fetcher.files.include?(path) && part
         add_part hash, part
         item = RelatonBipm::BipmBibliographicItem.new(**hash)
@@ -88,19 +95,19 @@ module RelatonBipm
         path = File.join dir, "#{num}-#{part}.yaml"
       elsif part
         hash[:title].each { |t| t[:content] = t[:content].sub(/\s\(.+\)$/, "") }
-        h = bibitem body: body, type: type, en: en_md, fr: fr_md, id: id, num: num, src: src, pdf: en["pdf"]
+        h = bibitem body: body, type: type, en: en_md, fr: fr_md, num: num, src: src, pdf: en["pdf"]
         add_part h, part
         part_item = RelatonBipm::BipmBibliographicItem.new(**h)
         part_item_path = File.join dir, "#{num}-#{part}.yaml"
         @data_fetcher.write_file part_item_path, part_item
-        @data_fetcher.index[[h[:docnumber]]] = part_item_path
+        add_to_index part_item, part_item_path
         hash[:relation] = [RelatonBib::DocumentRelation.new(type: "partOf", bibitem: part_item)]
         item = RelatonBipm::BipmBibliographicItem.new(**hash)
       else
         item = RelatonBipm::BipmBibliographicItem.new(**hash)
       end
       @data_fetcher.write_file path, item
-      @data_fetcher.index[[hash[:docnumber]]] = path
+      add_to_index item, path
       fetch_resolution body: body, en: en, fr: fr, dir: dir, src: src, num: num
     end
 
@@ -131,38 +138,48 @@ module RelatonBipm
         hash[:link] << { type: "pdf", content: r["reference"] } if r["reference"]
         date = r["dates"].first.to_s
         hash[:date] = [{ type: "published", on: date }]
-        num = r["identifier"].to_s.split("-").last
+        num = r["identifier"].to_s # .split("-").last
         year = date.split("-").first
         num = "0" if num == year
         num_justed = num.rjust 2, "0"
         type = r["type"].capitalize
-        id = "#{args[:body]} #{type}"
-        hash[:id] = "#{args[:body]}-#{type}-#{year}"
-        if num.to_i.positive?
-          id += " #{num}"
-          hash[:id] += "-#{num_justed}"
-        end
-        id += " (#{year})"
-        hash[:docid] = [
-          make_docid(id: id, type: "BIPM", primary: true),
-          make_docid(id: id, type: "BIPM", primary: true, language: "en", script: "Latn"),
-          id_fr(id),
-        ]
-        hash[:docnumber] = id
+        docnum = create_docnum args[:body], type, num, date
+        hash[:id] = create_id(args[:body], type, num_justed, date)
+        hash[:docid] = create_docids docnum
+        hash[:docnumber] = docnum
         hash[:language] = %w[en fr]
         hash[:script] = ["Latn"]
         hash[:contributor] = contributors date, args[:body]
         hash[:structuredidentifier] = RelatonBipm::StructuredIdentifier.new docnumber: num
         item = RelatonBipm::BipmBibliographicItem.new(**hash)
         file = year
-        file += "-#{num_justed}" if num.size < 4
+        file += "-#{num_justed}" # if num.size < 4
         file += ".yaml"
         out_dir = File.join args[:dir], r["type"].downcase
         FileUtils.mkdir_p out_dir
         path = File.join out_dir, file
         @data_fetcher.write_file path, item
-        @data_fetcher.index[["#{args[:body]} #{type} #{year}-#{num_justed}", "#{args[:body]} #{type} #{args[:num]}-#{num_justed}"]] = path
+        add_to_index item, path
       end
+    end
+
+    #
+    # Add item to index
+    #
+    # @param [RelatonBipm::BipmBibliographicItem] item bibliographic item
+    # @param [String] path path to YAML file
+    #
+    def add_to_index(item, path) # rubocop:disable Metrics/AbcSize
+      key = [item.docnumber]
+      TYPEABBREV.each do |k, v|
+        if item.docnumber.include? k
+          key << item.docnumber.sub(k, v).sub(/(\(\d{4})(\))/, "\\1, EN\\2")
+          key << item.docnumber.sub(k, v).sub(/(\(\d{4})(\))/, "\\1, FR\\2")
+          break
+        end
+      end
+      key << item.docidentifier.detect { |i| i.language == "fr" }.id
+      @data_fetcher.index[key] = path
     end
 
     #
@@ -270,11 +287,13 @@ module RelatonBipm
     # @param [String] session number of meeting
     #
     def add_part(hash, part)
+      regex = /(\p{L}+\s(?:--\s\p{L}+\s|\w+\/)\d+)/
       hash[:id] += "-#{part}"
-      hash[:docnumber] += "-#{part}"
-      id = hash[:docid][0].instance_variable_get(:@id)
-      id += "-#{part}"
-      hash[:docid][0].instance_variable_set(:@id, id)
+      hash[:docnumber].sub!(regex) { |m| "#{m}-#{part}" }
+      hash[:docid].select { |id| id.type == "BIPM" }.each do |did|
+        id = did.instance_variable_get(:@id).sub!(regex) { "#{$1}-#{part}" }
+        did.instance_variable_set(:@id, id)
+      end
       hash[:structuredidentifier].instance_variable_set :@part, part
     end
 
@@ -293,24 +312,16 @@ module RelatonBipm
     # @return [Hash] Hash of BIPM meeting/resolution
     #
     def bibitem(**args) # rubocop:disable Metrics/MethodLength, Metrics/AbcSize, Metrics/CyclomaticComplexity
+      docnum = create_docnum args[:body], args[:type], args[:num], args[:en]["date"]
       hash = { title: [], type: "proceedings", doctype: args[:type],
                place: [RelatonBib::Place.new(city: "Paris")] }
       hash[:title] << title(args[:en]["title"], "en") if args[:en]["title"]
       hash[:title] << title(args[:fr]["title"], "fr") if args[:fr]["title"]
       hash[:date] = [{ type: "published", on: args[:en]["date"] }]
-      hash[:docid] = [
-        make_docid(id: args[:id], type: "BIPM", primary: true),
-        make_docid(id: args[:id], type: "BIPM", primary: true, language: "en", script: "Latn"),
-        id_fr(args[:id]),
-      ]
-      hash[:id] = args[:id].gsub " ", "-"
-      hash[:docnumber] = args[:id]
-      hash[:link] = [
-        { type: "citation", content: args[:en]["url"], language: "en", script: "Latn" },
-        { type: "citation", content: args[:fr]["url"], language: "fr", script: "Latn" },
-      ]
-      RelatonBib.array(args[:pdf]).each { |pdf| hash[:link] << { type: "pdf", content: pdf } }
-      hash[:link] += args[:src] if args[:src]&.any?
+      hash[:docid] = create_docids docnum
+      hash[:docnumber] = docnum # .sub(" --", "").sub(/\s\(\d{4}\)/, "")
+      hash[:id] = create_id(args[:body], args[:type], args[:num], args[:en]["date"])
+      hash[:link] = create_links(**args)
       hash[:language] = %w[en fr]
       hash[:script] = ["Latn"]
       hash[:contributor] = contributors args[:en]["date"], args[:body]
@@ -318,7 +329,104 @@ module RelatonBipm
       hash
     end
 
-    def id_fr(en_id)
+    #
+    # Create links
+    #
+    # @param [Hash] **args Hash of arguments
+    #
+    # @return [Array<Hash>] Array of links
+    #
+    def create_links(**args)
+      links = [
+        { type: "citation", content: args[:en]["url"], language: "en", script: "Latn" },
+        { type: "citation", content: args[:fr]["url"], language: "fr", script: "Latn" },
+      ]
+      RelatonBib.array(args[:pdf]).each { |pdf| links << { type: "pdf", content: pdf } }
+      links += args[:src] if args[:src]&.any?
+      links
+    end
+
+    #
+    # Creata a document number
+    #
+    # @param [<Type>] body <description>
+    # @param [<Type>] type <description>
+    # @param [<Type>] num <description>
+    # @param [<Type>] date <description>
+    #
+    # @return [<Type>] <description>
+    #
+    def create_docnum(body, type, num, date)
+      year = Date.parse(date).year
+      if special_id_case? body, type, year
+        id = "#{type.capitalize} #{body}"
+        id += "/#{num}" if num.to_i.positive?
+      else
+        id = "#{body} -- #{type.capitalize}"
+        id += " #{num}" if num.to_i.positive?
+      end
+      "#{id} (#{year})"
+    end
+
+    #
+    # Create ID
+    #
+    # @param [String] body body of meeting
+    # @param [String] type type of meeting
+    # @param [String, nil] num part number
+    # @param [String] date published date
+    #
+    # @return [String] ID
+    #
+    def create_id(body, type, num, date)
+      year = Date.parse(date).year
+      id = if special_id_case?(body, type, year)
+             "#{type.capitalize}-#{body}-#{year}"
+           else
+             "#{body}-#{type.capitalize}-#{year}"
+           end
+      id += "-#{num}" if num.to_i.positive?
+      id
+    end
+
+    #
+    # Check if ID is special case
+    #
+    # @param [String] body body of meeting
+    # @param [String] type type of meeting
+    # @param [String] year published year
+    #
+    # @return [Boolean] is special case
+    #
+    def special_id_case?(body, type, year)
+      (body == "CIPM" && type == "Decision" && year.to_i > 2011) ||
+        (body == "JCRB" && %w[recomendation resolution descision].include?(type))
+    end
+
+    #
+    # Create documetn IDs
+    #
+    # @param [String] en_id document ID in English
+    #
+    # @return [Array<RelatonBib::DocumentIdentifier>] document IDs
+    #
+    def create_docids(en_id)
+      id = en_id.clone
+      [
+        make_docid(id: id, type: "BIPM", primary: true),
+        make_docid(id: id.clone, type: "BIPM", primary: true, language: "en", script: "Latn"),
+        create_docid_fr(en_id),
+      ]
+    end
+
+    #
+    # Create French document ID
+    #
+    # @param [String] en_id English document ID
+    #
+    # @return [RelatonBib::DocumentIdentifier] french document ID
+    #
+    def create_docid_fr(en_id)
       tr = BipmBibliography::TRANSLATIONS.detect { |_, v| en_id.include? v }
       id = en_id.sub tr[1], tr[0]
       make_docid(id: id, type: "BIPM", primary: true, language: "fr", script: "Latn")

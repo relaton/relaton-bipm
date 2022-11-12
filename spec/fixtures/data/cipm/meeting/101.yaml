@@ -1,5 +1,5 @@
 ---
-id: CIPM-Meeting-101
+id: CIPM-Meeting-2012-101
 title:
 - content: 101st meeting of the CIPM
   language:
@@ -32,20 +32,20 @@ link:
   script: Latn
 type: proceedings
 docid:
-- id: CIPM Meeting 101
+- id: CIPM -- Meeting 101 (2012)
   type: BIPM
   primary: true
-- id: CIPM Meeting 101
+- id: CIPM -- Meeting 101 (2012)
   type: BIPM
   primary: true
   language: en
   script: Latn
-- id: CIPM Réunion 101
+- id: CIPM -- Réunion 101 (2012)
   type: BIPM
   primary: true
   language: fr
   script: Latn
-docnumber: CIPM Meeting 101
+docnumber: CIPM -- Meeting 101 (2012)
 date:
 - type: published
   value: '2012-06-08'
@@ -88,7 +88,7 @@ script:
 relation:
 - type: partOf
   bibitem:
-    id: CIPM-Meeting-101-1
+    id: CIPM-Meeting-2012-101-1
     title:
     - content: 101st meeting of the CIPM (Session I)
       language:
@@ -121,20 +121,20 @@ relation:
       script: Latn
     type: proceedings
     docid:
-    - id: CIPM Meeting 101-1
+    - id: CIPM -- Meeting 101-1 (2012)
       type: BIPM
       primary: true
-    - id: CIPM Meeting 101
+    - id: CIPM -- Meeting 101-1 (2012)
       type: BIPM
       primary: true
       language: en
       script: Latn
-    - id: CIPM Réunion 101
+    - id: CIPM -- Réunion 101-1 (2012)
       type: BIPM
       primary: true
       language: fr
       script: Latn
-    docnumber: CIPM Meeting 101-1
+    docnumber: CIPM -- Meeting 101-1 (2012)
     date:
     - type: published
       value: '2012-06-08'
@@ -176,14 +176,14 @@ relation:
     - Latn
     place:
     - city: Paris
-    fetched: '2022-10-26'
+    fetched: '2022-11-08'
     doctype: meeting
     structuredidentifier:
       docnumber: '101'
       part: '1'
 - type: partOf
   bibitem:
-    id: CIPM-Meeting-101-2
+    id: CIPM-Meeting-2012-101-2
     title:
     - content: 101st meeting of the CIPM (Session II)
       language:
@@ -216,20 +216,20 @@ relation:
       script: Latn
     type: proceedings
     docid:
-    - id: CIPM Meeting 101-2
+    - id: CIPM -- Meeting 101-2 (2012)
       type: BIPM
       primary: true
-    - id: CIPM Meeting 101
+    - id: CIPM -- Meeting 101-2 (2012)
       type: BIPM
       primary: true
       language: en
       script: Latn
-    - id: CIPM Réunion 101
+    - id: CIPM -- Réunion 101-2 (2012)
       type: BIPM
       primary: true
       language: fr
       script: Latn
-    docnumber: CIPM Meeting 101-2
+    docnumber: CIPM -- Meeting 101-2 (2012)
     date:
     - type: published
       value: '2012-10-19'
@@ -275,10 +275,10 @@ relation:
     structuredidentifier:
       docnumber: '101'
       part: '2'
-    fetched: '2022-10-26'
+    fetched: '2022-11-08'
 place:
 - city: Paris
-fetched: '2022-10-26'
+fetched: '2022-11-08'
 doctype: meeting
 structuredidentifier:
   docnumber: '101'

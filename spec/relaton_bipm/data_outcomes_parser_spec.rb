@@ -13,7 +13,9 @@ describe RelatonBipm::DataOutcomesParser do
     subject { described_class.new data_fetcher }
 
     it "#parse" do
-      expect(Dir).to receive(:[]).with("bipm-data-outcomes/{cctf,cgpm,cipm}").and_return ["bipm-data-outcomes/cgpm"]
+      expect(Dir).to receive(:[])
+        .with("bipm-data-outcomes/{cctf,cgpm,cipm,ccauv,ccem,ccl,ccm,ccpr,ccqm,ccri,cct,ccu,jcgm,jcrb}")
+        .and_return ["bipm-data-outcomes/cgpm"]
       expect(subject).to receive(:fetch_body).with("bipm-data-outcomes/cgpm")
       subject.parse
     end
@@ -120,9 +122,9 @@ describe RelatonBipm::DataOutcomesParser do
         subject.fetch_meeting "spec/fixtures/cipm/meetings-en/meeting-101-2.yml", "CIPM", "meeting", "data/cipm/meeting"
         expect(data_fetcher.index).to eq(
           {
-            ["CIPM Meeting 101"] => "data/cipm/meeting/101.yaml",
-            ["CIPM Meeting 101-1"] => "data/cipm/meeting/101-1.yaml",
-            ["CIPM Meeting 101-2"] => "data/cipm/meeting/101-2.yaml",
+            ["CIPM -- Meeting 101 (2012)", "CIPM -- Réunion 101 (2012)"] => "data/cipm/meeting/101.yaml",
+            ["CIPM -- Meeting 101-1 (2012)", "CIPM -- Réunion 101-1 (2012)"] => "data/cipm/meeting/101-1.yaml",
+            ["CIPM -- Meeting 101-2 (2012)", "CIPM -- Réunion 101-2 (2012)"] => "data/cipm/meeting/101-2.yaml",
           },
         )
       end
@@ -147,12 +149,22 @@ describe RelatonBipm::DataOutcomesParser do
         subject.fetch_resolution(
           body: "CGPM", en: en, fr: fr, dir: "data/cgpm/meeting", src: src, num: "1",
         )
+        expect(data_fetcher.index).to eq(
+          {
+            [
+              "CGPM -- Resolution (1889)",
+              "CGPM -- RES (1889, EN)",
+              "CGPM -- RES (1889, FR)",
+              "CGPM -- Résolution (1889)",
+            ] => "data/cgpm/meeting/resolution/1889-00.yaml",
+          },
+        )
       end
 
       it "multiple resolutions" do
         expect(FileUtils).to receive(:mkdir_p).with("data/cipm/meeting/decision").exactly(40).times
         expect(data_fetcher).to receive(:write_file) do |path, item|
-          expect(path).to match(/data\/cipm\/meeting\/decision\/\d{4}-\d{2}\.yaml/)
+          expect(path).to match(/data\/cipm\/meeting\/decision\/\d{4}-[\d-]{2,6}\.yaml/)
           hash = item.to_hash
           file = "spec/fixtures/#{path}"
           File.write file, hash.to_yaml, encoding: "UTF-8" unless File.exist? file
@@ -166,6 +178,16 @@ describe RelatonBipm::DataOutcomesParser do
 
         subject.fetch_resolution(
           body: "CIPM", en: en, fr: fr, dir: "data/cipm/meeting", src: src, num: "1",
+        )
+        expect(data_fetcher.index).to include(
+          {
+            [
+              "Decision CIPM/101-1 (2012)",
+              "DECN CIPM/101-1 (2012, EN)",
+              "DECN CIPM/101-1 (2012, FR)",
+              "Décision CIPM/101-1 (2012)",
+            ] => "data/cipm/meeting/decision/2012-101-1.yaml",
+          },
         )
       end
     end

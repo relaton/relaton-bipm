@@ -1,13 +1,13 @@
 ---
-id: CIPM-Meeting-2012-101-1
+id: Decision-CIPM-2012-101-16
 title:
-- content: 101st meeting of the CIPM (Session I)
+- content: Decision CIPM/101-16 (2012)
   language:
   - en
   script:
   - Latn
   format: text/plain
-- content: 101e réunion du CIPM (Partie I)
+- content: Décision CIPM/101-16 (2012)
   language:
   - fr
   script:
@@ -22,30 +22,24 @@ link:
   type: citation
   language: fr
   script: Latn
-- content: https://raw.githubusercontent.com/metanorma/bipm-data-outcomes/main/cipm/meetings-en/meeting-101-1.yml
+- content: http://www.bipm.org/publications/cipm/meeting-01.html
   type: src
-  language: en
-  script: Latn
-- content: https://raw.githubusercontent.com/metanorma/bipm-data-outcomes/main/cipm/meetings-fr/meeting-101-1.yml
-  type: src
-  language: fr
-  script: Latn
 type: proceedings
 docid:
-- id: CIPM -- Meeting 101-1 (2012)
+- id: Decision CIPM/101-16 (2012)
   type: BIPM
   primary: true
-- id: CIPM -- Meeting 101-1 (2012)
+- id: Decision CIPM/101-16 (2012)
   type: BIPM
   primary: true
   language: en
   script: Latn
-- id: CIPM -- Réunion 101-1 (2012)
+- id: Décision CIPM/101-16 (2012)
   type: BIPM
   primary: true
   language: fr
   script: Latn
-docnumber: CIPM -- Meeting 101-1 (2012)
+docnumber: Decision CIPM/101-16 (2012)
 date:
 - type: published
   value: '2012-06-08'
@@ -87,8 +81,6 @@ script:
 - Latn
 place:
 - city: Paris
-doctype: meeting
+doctype: decision
 structuredidentifier:
-  docnumber: '101'
-  part: '1'
-fetched: '2022-11-08'
+  docnumber: 101-16
