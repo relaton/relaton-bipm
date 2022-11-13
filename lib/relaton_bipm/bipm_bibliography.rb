@@ -52,12 +52,12 @@ module RelatonBipm
       # @param agent [Mechanize]
       # @return [RelatonBipm::BipmBibliographicItem]
       def get_bipm(ref, agent) # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
-        rf = ref.sub(/(?:(\d{1,2})\s)?\(?(\d{4})(?!-)\)?/) do
-          "#{$2}-#{$1.to_s.rjust(2, '0')}"
-        end
-        rf.sub!("CCDS", "CCTF")
-        TRANSLATIONS.each { |fr, en| rf.sub! fr, en }
-        path = Index.new.search rf
+        # rf = ref.sub(/(?:(\d{1,2})\s)?\(?(\d{4})(?!-)\)?/) do
+        #   "#{$2}-#{$1.to_s.rjust(2, '0')}"
+        # end
+        ref.sub!("CCDS", "CCTF")
+        # TRANSLATIONS.each { |fr, en| rf.sub! fr, en }
+        path = Index.new.search ref
         return unless path
 
         url = "#{GH_ENDPOINT}#{path}"

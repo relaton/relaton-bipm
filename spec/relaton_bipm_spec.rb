@@ -13,7 +13,7 @@ RSpec.describe RelatonBipm do
     expect(File).to receive(:exist?).with(/index\.yaml/).and_return false
     allow(File).to receive(:exist?).and_call_original
     VCR.use_cassette "cctf_meeting_5" do
-      result = RelatonBipm::BipmBibliography.search "BIPM CCTF Meeting 5"
+      result = RelatonBipm::BipmBibliography.search "BIPM CCTF -- Meeting 5 (1970)"
       expect(result).to be_instance_of RelatonBipm::BipmBibliographicItem
     end
   end
@@ -72,7 +72,7 @@ RSpec.describe RelatonBipm do
       it "CGPM resolution" do
         VCR.use_cassette "cgpm_resolution_1889_00" do
           file = "spec/fixtures/cgpm_resolution_1889_00.xml"
-          result = RelatonBipm::BipmBibliography.get "CGPM Resolution 1889-00"
+          result = RelatonBipm::BipmBibliography.get "CGPM -- Resolution (1889)"
           xml = result.to_xml(bibdata: true)
           File.write file, xml, encoding: "UTF-8" unless File.exist? file
           expect(xml).to be_equivalent_to File.read(file, encoding: "UTF-8")
@@ -83,7 +83,7 @@ RSpec.describe RelatonBipm do
       it "CGPM resolution" do
         VCR.use_cassette "cgpm_resolution_1889_00" do
           file = "spec/fixtures/cgpm_resolution_1889_00.xml"
-          result = RelatonBipm::BipmBibliography.get "CGPM Resolution 1889"
+          result = RelatonBipm::BipmBibliography.get "CGPM -- Resolution (1889)"
           xml = result.to_xml(bibdata: true)
           File.write file, xml, encoding: "UTF-8" unless File.exist? file
           expect(xml).to be_equivalent_to File.read(file, encoding: "UTF-8")
@@ -91,36 +91,38 @@ RSpec.describe RelatonBipm do
         end
       end
 
-      it "CIPM decision" do
-        VCR.use_cassette "cipm_decision_2012_01" do
-          file = "spec/fixtures/cipm_decision_2012_01.xml"
-          result = RelatonBipm::BipmBibliography.get "CIPM Decision 2012-01"
-          xml = result.to_xml(bibdata: true)
-          File.write file, xml, encoding: "UTF-8" unless File.exist? file
-          expect(xml).to be_equivalent_to File.read(file, encoding: "UTF-8")
-            .gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
+      context "CIPM decision" do
+        it "long notation EN" do
+          VCR.use_cassette "cipm_decision_2012_01" do
+            file = "spec/fixtures/cipm_decision_2012_01.xml"
+            result = RelatonBipm::BipmBibliography.get "BIPM Decision CIPM/101-1 (2012)"
+            xml = result.to_xml(bibdata: true)
+            File.write file, xml, encoding: "UTF-8" unless File.exist? file
+            expect(xml).to be_equivalent_to File.read(file, encoding: "UTF-8")
+              .gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
+          end
         end
-      end
 
-      it "CIPM with year in parenthesis" do
-        VCR.use_cassette "cipm_decision_2012_01" do
-          file = "spec/fixtures/cipm_decision_2012_01.xml"
-          result = RelatonBipm::BipmBibliography.get "CIPM Decision 1 (2012)"
-          xml = result.to_xml(bibdata: true)
-          File.write file, xml, encoding: "UTF-8" unless File.exist? file
-          expect(xml).to be_equivalent_to File.read(file, encoding: "UTF-8")
-            .sub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
+        it "short notation EN" do
+          VCR.use_cassette "cipm_decision_2012_01" do
+            file = "spec/fixtures/cipm_decision_2012_01.xml"
+            result = RelatonBipm::BipmBibliography.get "BIPM DECN CIPM/101-1 (2012, EN)"
+            xml = result.to_xml(bibdata: true)
+            File.write file, xml, encoding: "UTF-8" unless File.exist? file
+            expect(xml).to be_equivalent_to File.read(file, encoding: "UTF-8")
+              .sub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
+          end
         end
-      end
 
-      it "using French reference" do
-        VCR.use_cassette "cipm_decision_2012_01" do
-          file = "spec/fixtures/cipm_decision_2012_01.xml"
-          result = RelatonBipm::BipmBibliography.get "CIPM Décision 2012-01"
-          xml = result.to_xml(bibdata: true)
-          File.write file, xml, encoding: "UTF-8" unless File.exist? file
-          expect(xml).to be_equivalent_to File.read(file, encoding: "UTF-8")
-            .sub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
+        it "long notation FR" do
+          VCR.use_cassette "cipm_decision_2012_01" do
+            file = "spec/fixtures/cipm_decision_2012_01.xml"
+            result = RelatonBipm::BipmBibliography.get "BIPM Décision CIPM/101-1 (2012)"
+            xml = result.to_xml(bibdata: true)
+            File.write file, xml, encoding: "UTF-8" unless File.exist? file
+            expect(xml).to be_equivalent_to File.read(file, encoding: "UTF-8")
+              .sub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
+          end
         end
       end
 
