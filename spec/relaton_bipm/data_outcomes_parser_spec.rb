@@ -191,5 +191,13 @@ describe RelatonBipm::DataOutcomesParser do
         )
       end
     end
+
+    context "#resolution_title" do
+      it "don't create empty title" do
+        en_res = { "title" => "" }
+        fr_res = { "title" => "" }
+        expect(subject.resolution_title(en_res, fr_res)).to eq []
+      end
+    end
   end
 end

@@ -127,15 +127,9 @@ module RelatonBipm
           type: "proceedings", title: [],
           doctype: r["type"], place: [RelatonBib::Place.new(city: "Paris")]
         }
-        hash[:title] << title(r["title"], "en") if r["title"]
         fr_r = args[:fr]["resolutions"].fetch(i, nil)
-        hash[:link] = [{ type: "citation", content: r["url"], language: "en", script: "Latn" }]
-        if fr_r
-          hash[:title] << title(fr_r["title"], "fr") if fr_r["title"]
-          hash[:link] << { type: "citation", content: fr_r["url"], language: "fr", script: "Latn" }
-        end
-        hash[:link] += args[:src]
-        hash[:link] << { type: "pdf", content: r["reference"] } if r["reference"]
+        hash[:title] = resolution_title r, fr_r
+        hash[:link] = resolution_link r, fr_r, args[:src]
         date = r["dates"].first.to_s
         hash[:date] = [{ type: "published", on: date }]
         num = r["identifier"].to_s # .split("-").last
@@ -161,6 +155,40 @@ module RelatonBipm
         @data_fetcher.write_file path, item
         add_to_index item, path
       end
+    end
+
+    #
+    # Parse resolution titles
+    #
+    # @param [Hash] en_r english resolution
+    # @param [Hash] fr_r french resolution
+    #
+    # @return [Array<Hash>] titles
+    #
+    def resolution_title(en_r, fr_r)
+      title = []
+      title << create_title(en_r["title"], "en") if en_r["title"] && !en_r["title"].empty?
+      title << create_title(fr_r["title"], "fr") if fr_r && fr_r["title"] && !fr_r["title"].empty?
+      title
+    end
+
+    #
+    # Parse resolution links
+    #
+    # @param [Hash] en_r english resolution
+    # @param [Hash] fr_r french resolution
+    # @param [Array<Hash>] src data source links
+    #
+    # @return [Array<Hash>] links
+    #
+    def resolution_link(en_r, fr_r, src)
+      link = [{ type: "citation", content: en_r["url"], language: "en", script: "Latn" }]
+      if fr_r
+        link << { type: "citation", content: fr_r["url"], language: "fr", script: "Latn" }
+      end
+      link += src
+      link << { type: "pdf", content: en_r["reference"] } if en_r["reference"]
+      link
     end
 
     #
@@ -276,7 +304,7 @@ module RelatonBipm
     #
     # @return [Hash] title
     #
-    def title(content, language)
+    def create_title(content, language)
       { content: content, language: language, script: "Latn" }
     end
 
@@ -315,8 +343,8 @@ module RelatonBipm
       docnum = create_docnum args[:body], args[:type], args[:num], args[:en]["date"]
       hash = { title: [], type: "proceedings", doctype: args[:type],
                place: [RelatonBib::Place.new(city: "Paris")] }
-      hash[:title] << title(args[:en]["title"], "en") if args[:en]["title"]
-      hash[:title] << title(args[:fr]["title"], "fr") if args[:fr]["title"]
+      hash[:title] << create_title(args[:en]["title"], "en") if args[:en]["title"]
+      hash[:title] << create_title(args[:fr]["title"], "fr") if args[:fr]["title"]
       hash[:date] = [{ type: "published", on: args[:en]["date"] }]
       hash[:docid] = create_docids docnum
       hash[:docnumber] = docnum # .sub(" --", "").sub(/\s\(\d{4}\)/, "")
