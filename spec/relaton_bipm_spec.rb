@@ -25,10 +25,10 @@ RSpec.describe RelatonBipm do
         allow(File).to receive(:exist?).and_call_original
       end
 
-      it "CCTF Recommendation" do
+      it "CCTF Recommendation EN" do
         VCR.use_cassette "cctf_recommendation_1970_02" do
           file = "spec/fixtures/cctf_recommendation_1970_02.xml"
-          result = RelatonBipm::BipmBibliography.get "CCTF Recommendation 1970-02"
+          result = RelatonBipm::BipmBibliography.get "CCTF -- Recommendation 2 (1970)"
           xml = result.to_xml(bibdata: true)
           File.write file, xml, encoding: "UTF-8" unless File.exist? file
           expect(xml).to be_equivalent_to File.read(file, encoding: "UTF-8")
@@ -36,10 +36,10 @@ RSpec.describe RelatonBipm do
         end
       end
 
-      it "CCTF Recommendation" do
+      it "CCTF Recommendation short notation EN" do
         VCR.use_cassette "cctf_recommendation_1970_02" do
           file = "spec/fixtures/cctf_recommendation_1970_02.xml"
-          result = RelatonBipm::BipmBibliography.get "CCTF Recommendation 5-02"
+          result = RelatonBipm::BipmBibliography.get "CCTF -- REC 2 (1970, EN)"
           xml = result.to_xml(bibdata: true)
           File.write file, xml, encoding: "UTF-8" unless File.exist? file
           expect(xml).to be_equivalent_to File.read(file, encoding: "UTF-8")
@@ -50,7 +50,7 @@ RSpec.describe RelatonBipm do
       it "CCDS Recommendation" do
         VCR.use_cassette "cctf_recommendation_1970_02" do
           file = "spec/fixtures/cctf_recommendation_1970_02.xml"
-          result = RelatonBipm::BipmBibliography.get "CCDS Recommendation 1970-02"
+          result = RelatonBipm::BipmBibliography.get "CCDS -- Recommendation 2 (1970)"
           xml = result.to_xml(bibdata: true)
           File.write file, xml, encoding: "UTF-8" unless File.exist? file
           expect(xml).to be_equivalent_to File.read(file, encoding: "UTF-8")
@@ -61,7 +61,7 @@ RSpec.describe RelatonBipm do
       it "CGPM meetings" do
         VCR.use_cassette "cgpm_meeting_1" do
           file = "spec/fixtures/cgpm_meeting_1.xml"
-          result = RelatonBipm::BipmBibliography.get "CGPM Meeting 1"
+          result = RelatonBipm::BipmBibliography.get "CGPM -- Meeting 1 (1889)"
           xml = result.to_xml(bibdata: true)
           File.write file, xml, encoding: "UTF-8" unless File.exist? file
           expect(xml).to be_equivalent_to File.read(file, encoding: "UTF-8")
