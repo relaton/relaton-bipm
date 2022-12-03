@@ -1,4 +1,5 @@
 ---
+schema-version: v1.2.1
 id: CIPM-Meeting-2012-101
 title:
 - content: 101st meeting of the CIPM
@@ -176,7 +177,7 @@ relation:
     - Latn
     place:
     - city: Paris
-    fetched: '2022-11-08'
+    fetched: '2022-11-25'
     doctype: meeting
     structuredidentifier:
       docnumber: '101'
@@ -275,10 +276,12 @@ relation:
     structuredidentifier:
       docnumber: '101'
       part: '2'
-    fetched: '2022-11-08'
+    fetched: '2022-11-25'
 place:
 - city: Paris
-fetched: '2022-11-08'
+fetched: '2022-11-25'
 doctype: meeting
 structuredidentifier:
   docnumber: '101'
+ext:
+  schema-version: v1.0.0

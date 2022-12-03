@@ -42,6 +42,15 @@ module RelatonBipm
       super
     end
 
+    #
+    # Fetch flavour schema version
+    #
+    # @return [String] flavour schema versio
+    #
+    def ext_schema
+      @ext_schema ||= schema_versions["relaton-model-bipm"]
+    end
+
     # @param hash [Hash]
     # @return [RelatonBipm::BipmBibliographicItem]
     def self.from_hash(hash)
@@ -59,7 +68,7 @@ module RelatonBipm
         if opts[:bibdata] && (doctype || editorialgroup&.presence? ||
                               si_aspect || comment_period ||
                               structuredidentifier)
-          b.ext do
+          ext = b.ext do
             b.doctype doctype if doctype
             editorialgroup&.to_xml b
             comment_period&.to_xml b
@@ -67,12 +76,19 @@ module RelatonBipm
             b.send :"meeting-note", meeting_note if meeting_note
             structuredidentifier&.to_xml b
           end
+          ext["schema-version"] = ext_schema unless opts[:embedded]
         end
       end
     end
 
-    # @return [Hash]
-    def to_hash
+    #
+    # Rnder document as Hash
+    #
+    # @param embedded [Boolean] treu if embedded in another document
+    #
+    # @return [Hash] document as Hash
+    #
+    def to_hash(embedded: false)
       hash = super
       hash["comment_period"] = comment_period.to_hash if comment_period
       hash["si_aspect"] = si_aspect if si_aspect

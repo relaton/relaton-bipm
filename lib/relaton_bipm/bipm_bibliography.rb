@@ -66,7 +66,7 @@ module RelatonBipm
         return unless resp.code == "200"
 
         yaml = RelatonBib.parse_yaml resp.body, [Date]
-        yaml["fetched"] = Date.today.to_s
+        # yaml["fetched"] = Date.today.to_s
         bib_hash = HashConverter.hash_to_bib yaml
         BipmBibliographicItem.new(**bib_hash)
       end
@@ -264,7 +264,7 @@ module RelatonBipm
       # @return [RelatonBipm::BipmBibliographicItem]
       def bibitem(**args)
         BipmBibliographicItem.new(
-          fetched: Date.today.to_s, type: "article", language: ["en"], script: ["Latn"], **args,
+          type: "article", language: ["en"], script: ["Latn"], **args,
         )
       end
 

@@ -37,7 +37,7 @@ The Metrologia website employs anti-DDoS protection, which may cause the search 
 
 ----
 [relaton-bipm] ("BIPM Metrologia 50 4 385") fetching...
-[relaton-bipm] This source employs anti-DDoS measures that unfortunately affects automated requests.
+[relaton-bipm] This source employs anti-DDoS measures that unfortunately affect automated requests.
 [relaton-bipm] Please visit this link in your browser to resolve the CAPTCHA, then retry: https://iopscience.iop.org/article/10.1088/0026-1394/50/4/385
 ----
 
@@ -68,7 +68,7 @@ Allowed document names are:
 - SI Brochure
 - SI Brochure, Appendix 4
 
-==== Reference structire for Metrologia documents
+==== Reference structure for Metrologia documents
 
 `BIPM Metrologia {JOURNAL} {VOLUME} {ISSUE} {PAGE}`
 
@@ -79,20 +79,100 @@ Allowed document names are:
 
 ==== Reference structures for CCTF (CCDS), CGPM, CIPM documents
 
-- `{BODY} {TYPE} {YEAR}-{2_DIGITS_NUMBER}`
-- `{BODY} {TYPE} {NUMBER} ({YEAR})` or `{BODY} {TYPE} {NUMBER} {YEAR}`
-- `{BODY} {TYPE} {MEETING_NUMBER}-{2_DIGITS_NUMBER}`
-- `{BODY} {TYPE} ({YEAR})` or `{BODY} {TYPE} {YEAR}` - in case only one Resolution/Decision/Declaration/Recommendation is available for the year
-- `{BODY} Meeting {MEETING_NUMBER}` or French version `{BODY} Réunion {MEETING_NUMBER}`
+===== Basic pattern
 
-The parts of the structures:
+----
+Long: {group name} -- {type} {number} ({year})
+Short: {group name} -- {type-abbrev} {number} ({year}, {lang})
+----
 
-- `{BODY}` - could be `CCTF` (or old named `CCDS`), CGPM, or CIMP
-- `{TYPE}` - could be English word: `Resolution`, `Decision`, `Declaration`, `Recommendation`; or French word: `Résolution`, `Décision`, `Déclaration`, `Recommandation`
-- `{YEAR}` - year of Resolution/Decision/Declaration/Recommendation
-- `{NUMBER}` - number of Resolution/Decision/Declaration/Recommendation
-- `{2_DIGITS_NUMBER}` - two digits number of Resolution/Decision/Declaration/Recommendatio with lead zero if needs
-- `{MEETING_NUMBER}` - number of mieeting
+===== Special case pattern
+
+The basic pattern works fine for all, except for these 2 cases:
+
+- Decisions of the CIPM (since 2012)
+- Recommendations/Resolutions/Decisions of the JCRB
+
+Where the committee name is part of the outcome identifier. +
+Special cases:
+
+----
+Decision CIPM/111-10 (2022) / Décision CIPM/111-10 (2022)
+Recommendation JCRB/43-1 (2021) / Recommandation JCRB/43-1 (2021)
+----
+
+===== Single language version (English)
+
+`type` can be:
+
+- Resolution (RES)
+- Recommendation (REC)
+- Decision (DECN)
+- Statement (DECL)
+
+e.g.
+
+----
+CCTF -- Recommendation 2 (1970)
+CCTF -- REC 2 (1970, EN)
+----
+
+Special cases:
+
+----
+Decision CIPM/111-10 (2022)
+CIPM DECN CIPM/111-10 (2022, EN)
+Recommendation JCRB/43-1 (2021)
+JCRB REC JCRB/43-1 (2021, EN)
+----
+
+===== Single language version (French)
+
+`type` can be:
+
+- Résolution (RES)
+- Recommandation (REC)
+- Décision (DECN)
+- Déclaration (DECL)
+
+e.g.
+
+----
+CCTF -- Recommandation 2 (1970)
+CCTF -- REC 2 (1970, FR)
+----
+
+Special cases:
+
+----
+Décision CIPM/111-10 (2022)
+CIPM DECN CIPM/111-10 (2022, FR)
+Recommandation JCRB/43-1 (2021)
+JCRB REC JCRB/43-1 (2021, FR)
+----
+
+===== Dual language version (language independent version)
+
+`type` can be in their respective languages or the following abbreviations:
+
+- RES
+- REC
+- DECN
+- DECL
+
+----
+CCTF -- Recommandation 2 (1970) / Recommendation 2 (1970)
+CCTF REC 2 (1970)
+----
+
+Special cases:
+
+----
+Decision CIPM/110-10 (2022) / Décision CIPM/111-10 (2022)
+CIPM DECN CIPM/110-10 (2022)
+Recommendation JCRB/43-1 (2021) / Recommandation JCRB/43-1 (2021)
+JCRB REC JCRB/43-1 (2021)
+----
 
 ==== Examples
 
@@ -116,62 +196,55 @@ bib = RelatonBipm::BipmBibliography.get "BIPM Metrologia 29 6 373"
 ...
 
 # get CGPM meetings
-RelatonBipm::BipmBibliography.get "CGPM Meeting 1"
-[relaton-bipm] ("CGPM Meeting 1") fetching...
-[relaton-bipm] ("CGPM Meeting 1") found CGPM Meeting 1
-=> #<RelatonBipm::BipmBibliographicItem:0x00007fd4f7cba038
+RelatonBipm::BipmBibliography.get "CGPM -- Meeting 1 (1889)"
+[relaton-bipm] ("CGPM -- Meeting 1 (1889)") fetching...
+[relaton-bipm] ("CGPM -- Meeting 1 (1889)") found CGPM -- Meeting 1 (1889)
+=> #<RelatonBipm::BipmBibliographicItem:0x00007f7fd02aba28
 ...
 
 # get CGPM resolutions
-RelatonBipm::BipmBibliography.get "CGPM Resolution 1889-00"
-[relaton-bipm] ("CGPM Resolution 1889-00") fetching...
-[relaton-bipm] ("CGPM Resolution 1889-00") found CGPM Resolution (1889)
-=> #<RelatonBipm::BipmBibliographicItem:0x00007ff0d1ffae50
+ RelatonBipm::BipmBibliography.get "CGPM -- RES (1889, EN)"
+[relaton-bipm] ("CGPM -- RES (1889, EN)") fetching...
+[relaton-bipm] ("CGPM -- RES (1889, EN)") found CGPM -- Resolution (1889)
+=> #<RelatonBipm::BipmBibliographicItem:0x00007f80421f93d8
 ...
 
-RelatonBipm::BipmBibliography.get "CGPM Resolution (1889)"
-[relaton-bipm] ("CGPM Resolution (1889)") fetching...
-[relaton-bipm] ("CGPM Resolution (1889)") found CGPM Resolution (1889)
-=> #<RelatonBipm::BipmBibliographicItem:0x00007ff0d1ffae50
+RelatonBipm::BipmBibliography.get "CGPM -- Resolution (1889)"
+[relaton-bipm] ("CGPM -- Resolution (1889)") fetching...
+[relaton-bipm] ("CGPM -- Resolution (1889)") found CGPM -- Resolution (1889)
+=> #<RelatonBipm::BipmBibliographicItem:0x00007f8017f60c18
 ...
 
-RelatonBipm::BipmBibliography.get "CGPM Resolution 1889"
-[relaton-bipm] ("CGPM Resolution 1889") fetching...
-[relaton-bipm] ("CGPM Resolution 1889") found CGPM Resolution (1889)
-=> #<RelatonBipm::BipmBibliographicItem:0x00007ff0d1ffae50
+RelatonBipm::BipmBibliography.get "CGPM -- Résolution (1889)"
+[relaton-bipm] ("CGPM -- Résolution (1889)") fetching...
+[relaton-bipm] ("CGPM -- Résolution (1889)") found CGPM -- Resolution (1889)
+=> #<RelatonBipm::BipmBibliographicItem:0x00007f8017f492e8
 ...
 
 # get CIPM decision by year and decision number
-RelatonBipm::BipmBibliography.get "CIPM Decision 2012-01"
-[relaton-bipm] ("CIPM Decision 2012-01") fetching...
-[relaton-bipm] ("CIPM Decision 2012-01") found CIPM Decision 1 (2012)
-=> #<RelatonBipm::BipmBibliographicItem:0x00007ff0f10dc548
+RelatonBipm::BipmBibliography.get "BIPM Decision CIPM/101-1 (2012)"
+[relaton-bipm] ("BIPM Decision CIPM/101-1 (2012)") fetching...
+[relaton-bipm] ("BIPM Decision CIPM/101-1 (2012)") found Decision CIPM/101-1 (2012)
+=> #<RelatonBipm::BipmBibliographicItem:0x00007f8017f2bd88
 ...
 
-RelatonBipm::BipmBibliography.get "CIPM Decision 1 (2012)"
-[relaton-bipm] ("CIPM Decision 1 (2012)") fetching...
-[relaton-bipm] ("CIPM Decision 1 (2012)") found CIPM Decision 1 (2012)
-=> #<RelatonBipm::BipmBibliographicItem:0x00007fb6b9bbec08
-...
-
-# get CIPM decision by meeting number and decision number
-RelatonBipm::BipmBibliography.get "CIPM Decision 101-01"
-[relaton-bipm] ("CIPM Decision 101-01") fetching...
-[relaton-bipm] ("CIPM Decision 101-01") found CIPM Decision 1 (2012)
-=> #<RelatonBipm::BipmBibliographicItem:0x00007f9ef2acc400
+RelatonBipm::BipmBibliography.get "BIPM DECN CIPM/101-1 (2012, EN)"
+[relaton-bipm] ("BIPM DECN CIPM/101-1 (2012, EN)") fetching...
+[relaton-bipm] ("BIPM DECN CIPM/101-1 (2012, EN)") found Decision CIPM/101-1 (2012)
+=> #<RelatonBipm::BipmBibliographicItem:0x00007f8017f39438
 ...
 
 # get CIPM recommendation
-RelatonBipm::BipmBibliography.get "CIPM Recommendation (1948)"
-[relaton-bipm] ("CIPM Recommendation (1948)") fetching...
-[relaton-bipm] ("CIPM Recommendation (1948)") found CIPM Recommendation (1948)
-=> #<RelatonBipm::BipmBibliographicItem:0x00007ff0a18a6aa8
+RelatonBipm::BipmBibliography.get "CIPM -- Recommendation 1 (2005)"
+[relaton-bipm] ("CIPM -- Recommendation 1 (2005)") fetching...
+[relaton-bipm] ("CIPM -- Recommendation 1 (2005)") found CIPM -- Recommendation 1 (2005)
+=> #<RelatonBipm::BipmBibliographicItem:0x00007f8017f31da0
 ...
 
-RelatonBipm::BipmBibliography.get "CIPM Recommendation 1948"
-[relaton-bipm] ("CIPM Recommendation 1948") fetching...
-[relaton-bipm] ("CIPM Recommendation 1948") found CIPM Recommendation (1948)
-=> #<RelatonBipm::BipmBibliographicItem:0x00007ff0f1164150
+RelatonBipm::BipmBibliography.get "CIPM -- REC 1 (2005, FR)"
+[relaton-bipm] ("CIPM -- REC 1 (2005, FR)") fetching...
+[relaton-bipm] ("CIPM -- REC 1 (2005, FR)") found CIPM -- Recommendation 1 (2005)
+=> #<RelatonBipm::BipmBibliographicItem:0x00007f80422100d8
 ...
 ----
 
@@ -180,65 +253,40 @@ RelatonBipm::BipmBibliography.get "CIPM Recommendation 1948"
 [source,ruby]
 ----
 item.to_xml
-=> "<bibitem id="BIPMSIBrochure" type="standard">
-      <fetched>2021-01-10</fetched>
-      <title format="text/plain" language="en" script="Latn">The International System of Units (SI)</title>
-      <title format="text/plain" language="fr" script="Latn">Le Système international d’unités (SI)</title>
-      <uri type="src">https://www.bipm.org/en/publications/si-brochure</uri>
-      <docidentifier type="BIPM">BIPM SI Brochure</docidentifier>
-      <date type="updated">
-        <on>2019-05-20</on>
-      </date>
-      <edition>9</edition>
-      <abstract format="text/plain" language="en" script="Latn">The BIPM and the Metre Convention</abstract>
-      <abstract format="text/plain" language="fr" script="Latn">Le BIPM et la Convention du Mètre</abstract>
-      <copyright>
-        <from>2019</from>
-        <owner>
-          <organization>
-            <name>Bureau International des ponds et mesures</name>
-            <abbreviation>BIPM</abbreviation>
-          </organization>
-        </owner>
-      </copyright>
+=> "<bibitem id="BIPMSIBrochure" type="standard" schema-version="v1.2.1">
+      <fetched>2022-12-02</fetched>
+      <title type="main" format="text/plain" language="en">The International System of Units</title>
+      <title type="cover" format="text/plain" language="en">The International System of Units (SI)</title>
+      <title type="main" format="text/plain" language="fr">Le Système international d’unités</title>
+      <title type="cover" format="text/plain" language="fr">Le Système international d’unités (SI)</title>
+      <docidentifier type="BIPM" primary="true">BIPM SI Brochure</docidentifier>
+      ...
     </bibitem>"
 ----
 
-With argument `bibdata: true` it ouputs XML wrapped by `bibdata` element and adds flavour `ext` element.
+With argument `bibdata: true` it outputs XML wrapped by `bibdata` element and adds flavor `ext` element.
 
 [source,ruby]
 ----
 item.to_xml bibdata: true
-=> "<bibdata type="standard">
-      <fetched>2021-01-10</fetched>
-      <title format="text/plain" language="en" script="Latn">The International System of Units (SI)</title>
-      <title format="text/plain" language="fr" script="Latn">Le Système international d’unités (SI)</title>
-      <uri type="src">https://www.bipm.org/en/publications/si-brochure</uri>
-      <docidentifier type="BIPM">BIPM SI Brochure</docidentifier>
-      <date type="updated">
-        <on>2019-05-20</on>
-      </date>
-      <edition>9</edition>
-      <abstract format="text/plain" language="en" script="Latn">The BIPM and the Metre Convention</abstract>
-      <abstract format="text/plain" language="fr" script="Latn">Le BIPM et la Convention du Mètre</abstract>
-      <copyright>
-        <from>2019</from>
-        <owner>
-          <organization>
-            <name>Bureau International des ponds et mesures</name>
-            <abbreviation>BIPM</abbreviation>
-          </organization>
-        </owner>
-      </copyright>
-      <ext>
+=> "<bibdata type="standard" schema-version="v1.2.1">
+      <fetched>2022-12-02</fetched>
+      <title type="main" format="text/plain" language="en">The International System of Units</title>
+      <title type="cover" format="text/plain" language="en">The International System of Units (SI)</title>
+      <title type="main" format="text/plain" language="fr">Le Système international d’unités</title>
+      <title type="cover" format="text/plain" language="fr">Le Système international d’unités (SI)</title>
+      <docidentifier type="BIPM" primary="true">BIPM SI Brochure</docidentifier>
+      ...
+      <ext schema-version="v1.0.0">
         <doctype>brochure</doctype>
+        ...
       </ext>
     </bibdata>"
 ----
 
 === Typed links
 
-Each BIPM document has `src` type link and optional `doi` type link.
+Each BIPM document has `src` type link and an optional `doi` type link.
 
 [source,ruby]
 ----
@@ -270,16 +318,16 @@ RelatonBipm::BipmBibliographicItem.from_hash hash
 
 === Fetch data
 
-This gem uses following datasets as data sources:
-- `bipm-data-outcomes` - looking for local directory with the repository https://github.com/metanorma/bipm-data-outcomes
-- `bipm-si-brochute` - looking for local directory with the repository https://github.com/metanorma/bipm-si-brochure
+This gem uses the following datasets as data sources:
+- `bipm-data-outcomes` - looking for a local directory with the repository https://github.com/metanorma/bipm-data-outcomes
+- `bipm-si-brochute` - looking for a local directory with the repository https://github.com/metanorma/bipm-si-brochure
 
-The method `RelatonBipm::DataFetcher.fetch(sourece, output: "data", format: "yaml")` fetches all the documents from the datast and save them to the `./data` folder in YAML format.
+The method `RelatonBipm::DataFetcher.fetch(source, output: "data", format: "yaml")` fetches all the documents from the dataset and saves them to the `./data` folder in YAML format.
 Arguments:
 
-- `source` - name of the source dataset
+- `source` - the name of the source dataset
 - `output` - folder to save documents (default './data').
-- `format` - format in which the documents are saved. Possimle formats are: `yaml`, `xml`, `bibxxml` (default `yaml`).
+- `format` - the format in which the documents are saved. Possible formats are: `yaml`, `xml`, `bibxxml` (default `yaml`).
 
 [source,ruby]
 ----

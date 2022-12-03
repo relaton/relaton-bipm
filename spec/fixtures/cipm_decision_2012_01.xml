@@ -1,5 +1,5 @@
-<bibdata type="proceedings">
-  <fetched>2022-11-11</fetched>
+<bibdata type="proceedings" schema-version="v1.2.1">
+  <fetched>2022-11-25</fetched>
   <title format="text/plain" language="en" script="Latn">Decision CIPM/101-1 (2012)</title>
   <title format="text/plain" language="fr" script="Latn">Décision CIPM/101-1 (2012)</title>
   <uri type="citation" language="en" script="Latn">https://www.bipm.org/en/committees/ci/cipm/101-_1-2012</uri>
@@ -35,7 +35,7 @@
   <place>
     <city>Paris</city>
   </place>
-  <ext>
+  <ext schema-version="v1.0.0">
     <doctype>decision</doctype>
     <structuredidentifier>
       <docnumber>101-1</docnumber>
