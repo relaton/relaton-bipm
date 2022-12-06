@@ -153,6 +153,7 @@ describe RelatonBipm::DataOutcomesParser do
           {
             [
               "CGPM -- Resolution (1889)",
+              "CGPM -- RES (1889)",
               "CGPM -- RES (1889, EN)",
               "CGPM -- RES (1889, FR)",
               "CGPM -- Résolution (1889)",
@@ -183,6 +184,7 @@ describe RelatonBipm::DataOutcomesParser do
           {
             [
               "Decision CIPM/101-1 (2012)",
+              "DECN CIPM/101-1 (2012)",
               "DECN CIPM/101-1 (2012, EN)",
               "DECN CIPM/101-1 (2012, FR)",
               "Décision CIPM/101-1 (2012)",

@@ -197,10 +197,11 @@ module RelatonBipm
     # @param [RelatonBipm::BipmBibliographicItem] item bibliographic item
     # @param [String] path path to YAML file
     #
-    def add_to_index(item, path) # rubocop:disable Metrics/AbcSize
+    def add_to_index(item, path) # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
       key = [item.docnumber]
       TYPEABBREV.each do |k, v|
         if item.docnumber.include? k
+          key << item.docnumber.sub(k, v)
           key << item.docnumber.sub(k, v).sub(/(\(\d{4})(\))/, "\\1, EN\\2")
           key << item.docnumber.sub(k, v).sub(/(\(\d{4})(\))/, "\\1, FR\\2")
           break
