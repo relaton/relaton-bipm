@@ -42,6 +42,11 @@ describe RelatonBipm::DataFetcher do
         expect(RelatonBipm::BipmSiBrochureParser).to receive(:parse).with subject
         subject.fetch "bipm-si-brochure"
       end
+
+      it "rawdata-bipm-metrologia" do
+        expect(RelatonBipm::RawdataBipmMetrologia::Fetcher).to receive(:fetch).with subject
+        subject.fetch "rawdata-bipm-metrologia"
+      end
     end
 
     context "#write_file" do
@@ -76,6 +81,26 @@ describe RelatonBipm::DataFetcher do
           subject.instance_variable_set(:@files, [path])
           subject.write_file path, item, warn_duplicate: false
         end.not_to output("File #{path} already exists\n").to_stderr
+      end
+    end
+
+    context "#serialize" do
+      it "xml" do
+        subject.instance_variable_set(:@format, "xml")
+        item = double "item"
+        expect(item).to receive(:to_xml).with(bibdata: true).and_return :xml
+        expect(subject.serialize(item)).to eq :xml
+      end
+
+      it "yaml" do
+        item = double "item", to_hash: {}
+        expect(subject.serialize(item)).to eq "--- {}\n"
+      end
+
+      it "bibxml" do
+        subject.instance_variable_set(:@format, "bibxml")
+        item = double "item", to_bibxml: "<bibxml/>"
+        expect(subject.serialize(item)).to eq "<bibxml/>"
       end
     end
   end

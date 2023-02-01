@@ -43,6 +43,7 @@ module RelatonBipm
       case source
       when "bipm-data-outcomes" then DataOutcomesParser.parse(self)
       when "bipm-si-brochure" then BipmSiBrochureParser.parse(self)
+      when "rawdata-bipm-metrologia" then RawdataBipmMetrologia::Fetcher.fetch(self)
       end
       File.write @index_path, @index.to_yaml, encoding: "UTF-8"
     end
@@ -54,15 +55,22 @@ module RelatonBipm
     # @param [RelatonBipm::BipmBibliographicItem] item document to save
     # @param [Boolean, nil] warn_duplicate Warn if document already exists
     #
-    # @return [<Type>] <description>
-    #
     def write_file(path, item, warn_duplicate: true)
+      content = serialize item
       if @files.include?(path)
         warn "File #{path} already exists" if warn_duplicate
       else
         @files << path
       end
-      File.write path, item.to_hash.to_yaml, encoding: "UTF-8"
+      File.write path, content, encoding: "UTF-8"
+    end
+
+    def serialize(item)
+      case @format
+      when "xml" then item.to_xml bibdata: true
+      when "yaml" then item.to_hash.to_yaml
+      when "bibxml" then item.to_bibxml
+      end
     end
   end
 end

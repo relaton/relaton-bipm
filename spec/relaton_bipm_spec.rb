@@ -213,8 +213,8 @@ RSpec.describe RelatonBipm do
       it "with text/html title", vcr: "metrologia_55_1_L13" do
         result = RelatonBipm::BipmBibliography.get "BIPM Metrologia 55 1 L13"
         expect(result.title[0].title.content).to eq(
-          "The CODATA 2017 values of <em>h</em>, <em>e</em>, <em>k</em>, " \
-          "and <em>N</em><sub>A</sub> for the revision of the SI",
+          "The CODATA 2017 values of<em>h</em>,<em>e</em>,<em>k</em>, " \
+          "and<em>N</em><sub>A</sub> for the revision of the SI",
         )
       end
     end

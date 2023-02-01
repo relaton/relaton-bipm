@@ -82,7 +82,7 @@ module RelatonBipm
       ]
 
       /^(?<num>\d+)(?:-_(?<part>\d+))?-\d{4}$/ =~ en_md["url"].split("/").last
-      file = "#{num}.yaml"
+      file = "#{num}.#{@data_fetcher.ext}"
       path = File.join dir, file
       hash = bibitem body: body, type: type, en: en_md, fr: fr_md, num: num, src: src, pdf: en["pdf"]
       if @data_fetcher.files.include?(path) && part
@@ -92,13 +92,13 @@ module RelatonBipm
         has_part_item = RelatonBipm::BipmBibliographicItem.from_hash(yaml)
         has_part_item.relation << RelatonBib::DocumentRelation.new(type: "partOf", bibitem: item)
         @data_fetcher.write_file path, has_part_item, warn_duplicate: false
-        path = File.join dir, "#{num}-#{part}.yaml"
+        path = File.join dir, "#{num}-#{part}.#{@data_fetcher.ext}"
       elsif part
         hash[:title].each { |t| t[:content] = t[:content].sub(/\s\(.+\)$/, "") }
         h = bibitem body: body, type: type, en: en_md, fr: fr_md, num: num, src: src, pdf: en["pdf"]
         add_part h, part
         part_item = RelatonBipm::BipmBibliographicItem.new(**h)
-        part_item_path = File.join dir, "#{num}-#{part}.yaml"
+        part_item_path = File.join dir, "#{num}-#{part}.#{@data_fetcher.ext}"
         @data_fetcher.write_file part_item_path, part_item
         add_to_index part_item, part_item_path
         hash[:relation] = [RelatonBib::DocumentRelation.new(type: "partOf", bibitem: part_item)]
@@ -146,9 +146,7 @@ module RelatonBipm
         hash[:contributor] = contributors date, args[:body]
         hash[:structuredidentifier] = RelatonBipm::StructuredIdentifier.new docnumber: num
         item = RelatonBipm::BipmBibliographicItem.new(**hash)
-        file = year
-        file += "-#{num_justed}" # if num.size < 4
-        file += ".yaml"
+        file = "#{year}-#{num_justed}.#{@data_fetcher.ext}"
         out_dir = File.join args[:dir], r["type"].downcase
         FileUtils.mkdir_p out_dir
         path = File.join out_dir, file
