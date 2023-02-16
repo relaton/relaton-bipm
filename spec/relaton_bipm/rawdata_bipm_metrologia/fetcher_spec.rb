@@ -48,19 +48,19 @@ describe RelatonBipm::RawdataBipmMetrologia::Fetcher do
     end
 
     it "fetch_volumes" do
-      expect(Dir).to receive(:[]).with("rawdata-bipm-metrologia/*content/0026-1394/*").and_return ["dir/volume"]
+      expect(Dir).to receive(:[]).with("rawdata-bipm-metrologia/data/*content/0026-1394/*").and_return ["dir/volume"]
       expect(subject).to receive(:fetch_metrologia).with("volume")
       subject.fetch_volumes
     end
 
     it "fetch_issues" do
-      expect(Dir).to receive(:[]).with("rawdata-bipm-metrologia/*content/0026-1394/*/*").and_return ["dir/volume/issue"]
+      expect(Dir).to receive(:[]).with("rawdata-bipm-metrologia/data/*content/0026-1394/*/*").and_return ["dir/volume/issue"]
       expect(subject).to receive(:fetch_metrologia).with("volume", "issue")
       subject.fetch_issues
     end
 
     it "fetch_articles" do
-      expect(Dir).to receive(:[]).with("rawdata-bipm-metrologia/*content/0026-1394/**/*.xml").and_return [:path]
+      expect(Dir).to receive(:[]).with("rawdata-bipm-metrologia/data/*content/0026-1394/**/*.xml").and_return [:path]
       expect(File).to receive(:read).with(:path, encoding: "UTF-8").and_return :xml
       doc = double "doc"
       expect(doc).to receive(:at).with("/article").and_return :elm
@@ -90,7 +90,7 @@ describe RelatonBipm::RawdataBipmMetrologia::Fetcher do
 
     it "relation" do
       expect(Dir).to receive(:[])
-        .with("rawdata-bipm-metrologia/*content/0026-1394/volume_1/issue_2/*")
+        .with("rawdata-bipm-metrologia/data/*content/0026-1394/volume_1/issue_2/*")
         .and_return ["dir/volume_1/issue_2/article_3"]
       rel = subject.relation("volume_1", "issue_2")
       expect(rel).to be_instance_of Array

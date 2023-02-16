@@ -3,7 +3,7 @@
 module RelatonBipm
   module RawdataBipmMetrologia
     class Fetcher
-      DIR = "rawdata-bipm-metrologia/*content/0026-1394"
+      DIR = "rawdata-bipm-metrologia/data/*content/0026-1394"
 
       # @param data_fetcher [RelatonBipm::DataFetcher]
       def self.fetch(data_fetcher)
