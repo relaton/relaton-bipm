@@ -189,9 +189,9 @@ item = RelatonBipm::BipmBibliography.get "BIPM SI Brochure"
 ...
 
 # get BIPM Metrologia page
-bib = RelatonBipm::BipmBibliography.get "BIPM Metrologia 29 6 373"
-[relaton-bipm] ("BIPM Metrologia 29 6 373") fetching...
-[relaton-bipm] ("BIPM Metrologia 29 6 373") found Metrologia 29 6 373
+bib = RelatonBipm::BipmBibliography.get "BIPM Metrologia 29 6 001"
+[relaton-bipm] ("BIPM Metrologia 29 6 001") fetching...
+[relaton-bipm] ("BIPM Metrologia 29 6 001") found Metrologia 29 6 001
 => #<RelatonBipm::BipmBibliographicItem:0x007f8857f94d40
 ...
 
@@ -321,6 +321,7 @@ RelatonBipm::BipmBibliographicItem.from_hash hash
 This gem uses the following datasets as data sources:
 - `bipm-data-outcomes` - looking for a local directory with the repository https://github.com/metanorma/bipm-data-outcomes
 - `bipm-si-brochute` - looking for a local directory with the repository https://github.com/metanorma/bipm-si-brochure
+- `rawdata-bipm-metrologia` - looking for a local directory with the repository https://github.com/relaton/rawdata-bipm-metrologia
 
 The method `RelatonBipm::DataFetcher.fetch(source, output: "data", format: "yaml")` fetches all the documents from the dataset and saves them to the `./data` folder in YAML format.
 Arguments:
@@ -341,6 +342,12 @@ RelatonBipm::DataFetcher.fetch "bipm-si-brochure"
 Started at: 2022-06-23 09:37:12 +0200
 Stopped at: 2022-06-23 09:37:12 +0200
 Done in: 0 sec.
+=> nil
+
+RelatonBipm::DataFetcher.fetch "rawdata-bipm-metrologia"
+Started at: 2022-06-23 09:39:12 +0200
+Stopped at: 2022-06-23 09:40:34 +0200
+Done in: 82 sec.
 => nil
 ----
 
