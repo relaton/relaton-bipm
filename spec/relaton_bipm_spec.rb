@@ -180,7 +180,7 @@ RSpec.describe RelatonBipm do
       it "page" do
         VCR.use_cassette "metrologia_29_6_373" do
           file = "spec/fixtures/metrologia_29_6_373.xml"
-          result = RelatonBipm::BipmBibliography.get "BIPM Metrologia 29 6 373"
+          result = RelatonBipm::BipmBibliography.get "BIPM Metrologia 29 6 001"
           xml = result.to_xml bibdata: true
           File.write file, xml, encoding: "UTF-8" unless File.exist? file
           expect(xml).to be_equivalent_to File.read(file, encoding: "UTF-8")
@@ -188,35 +188,32 @@ RSpec.describe RelatonBipm do
         end
       end
 
-      it "wrong page", vcr: "metrologia_34_3_9" do
+      it "wrong page" do
         expect do
-          result = RelatonBipm::BipmBibliography.get "BIPM Metrologia 34 3 9"
+          result = RelatonBipm::BipmBibliography.get "BIPM Metrologia 34 3 999"
           expect(result).to be_nil
         end.to output(
-          %r{
-            \[relaton-bipm\]\sNo\sarticle\sis\savailable\sat\sthe\sspecified\sstart\spage\s"9"\sin\sissue\s"BIPM\sMetrologia\s34\s3"\.\n
-            \[relaton-bipm\]\sAvailable\sarticles\sin\sthe\sissue\sstart\sat\sthe\sfollowing\spages:\s\(201,\s211,\s215,\s235,\s241,\s245,\s251,\s257,\s261,\s291,\s293,\s295\)
-          }x,
+          /\[relaton-bipm\] \("BIPM Metrologia 34 3 999"\) not found\./,
         ).to_stderr
       end
 
-      it "with 403 response code", vcr: "metrologia_50_4_385" do
-        result = RelatonBipm::BipmBibliography.get "BIPM Metrologia 50 4 385"
-        expect(result.docidentifier[0].id).to eq "Metrologia 50 4 385"
-      end
+      # it "with 403 response code", vcr: "metrologia_50_4_385" do
+      #   result = RelatonBipm::BipmBibliography.get "BIPM Metrologia 50 4 385"
+      #   expect(result.docidentifier[0].id).to eq "Metrologia 50 4 385"
+      # end
 
       it "without author", vcr: "metrologia_19_4_163" do
-        result = RelatonBipm::BipmBibliography.get "BIPM Metrologia 19 4 163"
-        expect(result.docidentifier[0].id).to eq "Metrologia 19 4 163"
+        result = RelatonBipm::BipmBibliography.get "BIPM Metrologia 19 4 004"
+        expect(result.docidentifier[0].id).to eq "Metrologia 19 4 004"
       end
 
-      it "with text/html title", vcr: "metrologia_55_1_L13" do
-        result = RelatonBipm::BipmBibliography.get "BIPM Metrologia 55 1 L13"
-        expect(result.title[0].title.content).to eq(
-          "The CODATA 2017 values of <em>h</em>, <em>e</em>, <em>k</em>, " \
-          "and <em>N</em><sub>A</sub> for the revision of the SI",
-        )
-      end
+      # it "with text/html title", vcr: "metrologia_55_1_L13" do
+      #   result = RelatonBipm::BipmBibliography.get "BIPM Metrologia 55 1 aa950a"
+      #   expect(result.title[0].title.content).to eq(
+      #     "The CODATA 2017 values of<em>h</em>,<em>e</em>,<em>k</em>, " \
+      #     "and<em>N</em><sub>A</sub> for the revision of the SI",
+      #   )
+      # end
     end
   end
 end

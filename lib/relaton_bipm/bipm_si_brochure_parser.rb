@@ -33,8 +33,9 @@ module RelatonBipm
         doc = docstd.at "/bibdata"
         hash1 = RelatonBipm::XMLParser.from_xml(doc.to_xml).to_hash
         fix_si_brochure_id hash1
-        outfile = File.join @data_fetcher.output, File.basename(f).sub(/(?:-(?:en|fr))?\.rxl$/, ".yaml")
-        @data_fetcher.index[[hash1["docnumber"] || File.basename(outfile, ".yaml")]] = outfile
+        basename = File.join @data_fetcher.output, File.basename(f).sub(/(?:-(?:en|fr))?\.rxl$/, "")
+        outfile = "#{basename}.#{@data_fetcher.ext}"
+        @data_fetcher.index[[hash1["docnumber"] || basename]] = outfile
         hash = if File.exist? outfile
                  warn_duplicate = false
                  hash2 = YAML.load_file outfile

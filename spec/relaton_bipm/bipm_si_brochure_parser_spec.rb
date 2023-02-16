@@ -9,7 +9,7 @@ describe RelatonBipm::BipmSiBrochureParser do
   end
 
   context "instance methods" do
-    let(:data_fetcher) { double "data_fetcher", output: "data", files: [], index: {} }
+    let(:data_fetcher) { double "data_fetcher", output: "data", ext: "yaml", files: [], index: {} }
     subject { described_class.new data_fetcher }
 
     it "#parse_si_brochure" do

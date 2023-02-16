@@ -9,7 +9,7 @@ module RelatonBipm
       @prefix = "BIPM"
       @defaultprefix = %r{^(?:BIPM|CCTF|CCDS|CGPM|CIPM)(?!\w)}
       @idtype = "BIPM"
-      @datasets = %w[bipm-data-outcomes bipm-si-brochure]
+      @datasets = %w[bipm-data-outcomes bipm-si-brochure rawdata-bipm-metrologia]
     end
 
     # @param code [String]
@@ -21,10 +21,11 @@ module RelatonBipm
     end
 
     #
-    # Fetch all the documents from https://github.com/metanorma/bipm-data-outcomes
-    #   or https://github.com/metanorma/bipm-si-brochure
+    # Fetch all the documents from https://github.com/metanorma/bipm-data-outcomes,
+    #   https://github.com/metanorma/bipm-si-brochure, https://github.com/relaton/rawdata-bipm-metrologia
     #
-    # @param [String] source source name
+    # @param [String] source source name (bipm-data-outcomes, bipm-si-brochure,
+    #   rawdata-bipm-metrologia)
     # @param [Hash] opts
     # @option opts [String] :output directory to output documents
     # @option opts [String] :format

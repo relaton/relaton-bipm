@@ -20,26 +20,26 @@ RSpec.describe RelatonBipm::BipmBibliography do
       end.to raise_error RelatonBib::RequestError
     end
 
-    it "fetch form BIPM and redirec to CAPTCHA" do
-      header = { "location" => "https://validate.perfdrive.com" }
-      resp = double(:page, code: "302", header: header, uri: "https://iopscience.iop.org")
-      expect(agent).to receive(:get).and_return resp
-      expect(agent).to receive(:redirect_ok=)
-      expect(Mechanize).to receive(:new).and_return agent
-      expect do
-        RelatonBipm::BipmBibliography.search "Metrologia"
-      end.to raise_error RelatonBib::RequestError
-    end
+    # it "fetch form BIPM and redirec to CAPTCHA" do
+    #   header = { "location" => "https://validate.perfdrive.com" }
+    #   resp = double(:page, code: "302", header: header, uri: "https://iopscience.iop.org")
+    #   expect(agent).to receive(:get).and_return resp
+    #   expect(agent).to receive(:redirect_ok=)
+    #   expect(Mechanize).to receive(:new).and_return agent
+    #   expect do
+    #     RelatonBipm::BipmBibliography.search "Metrologia"
+    #   end.to raise_error RelatonBib::RequestError
+    # end
 
-    it "fetch form BIPM with HTTP error" do
-      resp = double(:page, code: "404", uri: "https://iopscience.iop.org")
-      expect(agent).to receive(:get).and_return resp
-      expect(agent).to receive(:redirect_ok=)
-      expect(Mechanize).to receive(:new).and_return agent
-      expect do
-        RelatonBipm::BipmBibliography.search "Metrologia"
-      end.to raise_error RelatonBib::RequestError
-    end
+    # it "fetch form BIPM with HTTP error" do
+    #   resp = double(:page, code: "404", uri: "https://iopscience.iop.org")
+    #   expect(agent).to receive(:get).and_return resp
+    #   expect(agent).to receive(:redirect_ok=)
+    #   expect(Mechanize).to receive(:new).and_return agent
+    #   expect do
+    #     RelatonBipm::BipmBibliography.search "Metrologia"
+    #   end.to raise_error RelatonBib::RequestError
+    # end
   end
 
   context "bib instance" do

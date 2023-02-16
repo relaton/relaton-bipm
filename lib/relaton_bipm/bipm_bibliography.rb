@@ -18,7 +18,8 @@ module RelatonBipm
       def search(text, _year = nil, _opts = {}) # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
         warn "[relaton-bipm] (\"#{text}\") fetching..."
         ref = text.sub(/^BIPM\s/, "")
-        item = ref.match?(/^Metrologia/i) ? get_metrologia(ref, magent) : get_bipm(ref, magent)
+        # item = ref.match?(/^Metrologia/i) ? get_metrologia(ref, magent) : get_bipm(ref, magent)
+        item = get_bipm(ref, magent)
         unless item
           warn "[relaton-bipm] (\"#{text}\") not found."
           return
