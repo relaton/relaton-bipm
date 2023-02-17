@@ -14,7 +14,7 @@ describe RelatonBipm::BipmSiBrochureParser do
 
     it "#parse_si_brochure" do
       allow(File).to receive(:exist?).and_call_original
-      expect(Dir).to receive(:[]).with("bipm-si-brochure/site/documents/*.rxl")
+      expect(Dir).to receive(:[]).with("bipm-si-brochure/_site/documents/*.rxl")
         .and_return [
           "spec/fixtures/si_brochure/si-brochure-en.rxl",
           "spec/fixtures/si_brochure/si-brochure-fr.rxl",

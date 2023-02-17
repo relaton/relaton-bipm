@@ -27,7 +27,7 @@ module RelatonBipm
       # puts "Ls #{Dir['bipm-si-brochure/*']}"
       # puts "Ls #{Dir['bipm-si-brochure/site/*']}"
       # puts "Ls #{Dir['bipm-si-brochure/site/documents/*']}"
-      Dir["bipm-si-brochure/site/documents/*.rxl"].each do |f|
+      Dir["bipm-si-brochure/_site/documents/*.rxl"].each do |f|
         puts "Parsing #{f}"
         docstd = Nokogiri::XML File.read f
         doc = docstd.at "/bibdata"
