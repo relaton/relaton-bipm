@@ -68,20 +68,10 @@ module RelatonBipm
     # @param [String] dir output directory
     #
     def fetch_meeting(en_file, body, type, dir) # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
-      en = RelatonBib.parse_yaml File.read(en_file, encoding: "UTF-8"), [Date]
-      en_md = en["metadata"]
-      fr_file = en_file.sub "en", "fr"
-      fr = RelatonBib.parse_yaml File.read(fr_file, encoding: "UTF-8"), [Date]
-      fr_md = fr["metadata"]
-      gh_src = "https://raw.githubusercontent.com/metanorma/bipm-data-outcomes/"
-      src_en = gh_src + en_file.split("/")[-3..].unshift("main").join("/")
-      src_fr = gh_src + fr_file.split("/")[-3..].unshift("main").join("/")
-      src = [
-        { type: "src", content: src_en, language: "en", script: "Latn" },
-        { type: "src", content: src_fr, language: "fr", script: "Latn" },
-      ]
+      _, en, fr_file, fr = read_files en_file
+      en_md, fr_md, num, part = meeting_md en, fr
+      src = meeting_links en_file, fr_file
 
-      /^(?<num>\d+)(?:-_(?<part>\d+))?-\d{4}$/ =~ en_md["url"].split("/").last
       file = "#{num}.#{@data_fetcher.ext}"
       path = File.join dir, file
       hash = bibitem body: body, type: type, en: en_md, fr: fr_md, num: num, src: src, pdf: en["pdf"]
@@ -109,6 +99,40 @@ module RelatonBipm
       @data_fetcher.write_file path, item
       add_to_index item, path
       fetch_resolution body: body, en: en, fr: fr, dir: dir, src: src, num: num
+    end
+
+    #
+    # Read English and French files
+    #
+    # @param [String] en_file Path to English file
+    #
+    # @return [Array<Hash, String, nil>] English / French metadata and file path
+    #
+    def read_files(en_file)
+      fr_file = en_file.sub "en", "fr"
+      [en_file, fr_file].map do |file|
+        if File.exist? file
+          data = RelatonBib.parse_yaml(File.read(file, encoding: "UTF-8"), [Date])
+          path = file
+        end
+        [path, data]
+      end.flatten
+    end
+
+    def meeting_md(eng, frn)
+      en_md = eng["metadata"]
+      /^(?<num>\d+)(?:-_(?<part>\d+))?-\d{4}$/ =~ en_md["url"].split("/").last
+      [en_md, frn&.dig("metadata"), num, part]
+    end
+
+    def meeting_links(en_file, fr_file)
+      gh_src = "https://raw.githubusercontent.com/metanorma/bipm-data-outcomes/"
+      { "en" => en_file, "fr" => fr_file }.map do |lang, file|
+        next unless file
+
+        src = gh_src + file.split("/")[-3..].unshift("main").join("/")
+        { type: "src", content: src, language: lang, script: "Latn" }
+      end.compact
     end
 
     #
@@ -342,8 +366,7 @@ module RelatonBipm
       docnum = create_docnum args[:body], args[:type], args[:num], args[:en]["date"]
       hash = { title: [], type: "proceedings", doctype: args[:type],
                place: [RelatonBib::Place.new(city: "Paris")] }
-      hash[:title] << create_title(args[:en]["title"], "en") if args[:en]["title"]
-      hash[:title] << create_title(args[:fr]["title"], "fr") if args[:fr]["title"]
+      hash[:title] = create_titles args.slice(:en, :fr)
       hash[:date] = [{ type: "published", on: args[:en]["date"] }]
       hash[:docid] = create_docids docnum
       hash[:docnumber] = docnum # .sub(" --", "").sub(/\s\(\d{4}\)/, "")
@@ -356,6 +379,12 @@ module RelatonBipm
       hash
     end
 
+    def create_titles(data)
+      data.each_with_object([]) do |(lang, md), mem|
+        mem << create_title(md["title"], lang.to_s) if md && md["title"]
+      end
+    end
+
     #
     # Create links
     #
@@ -364,12 +393,13 @@ module RelatonBipm
     # @return [Array<Hash>] Array of links
     #
     def create_links(**args)
-      links = [
-        { type: "citation", content: args[:en]["url"], language: "en", script: "Latn" },
-        { type: "citation", content: args[:fr]["url"], language: "fr", script: "Latn" },
-      ]
+      links = args.slice(:en, :fr).each_with_object([]) do |(lang, md), mem|
+        next unless md && md["url"]
+
+        mem << { type: "citation", content: md["url"], language: lang.to_s, script: "Latn" }
+      end
       RelatonBib.array(args[:pdf]).each { |pdf| links << { type: "pdf", content: pdf } }
-      links += args[:src] if args[:src]&.any?
+      links += args[:src] if args[:src]
       links
     end
 
