@@ -6,7 +6,11 @@ describe RelatonBipm::RawdataBipmMetrologia::ArticleParser do
     described_class.parse :doc
   end
   context "instance methods" do
-    subject { described_class.new :doc }
+    let(:doc) { double "doc" }
+    subject do
+      expect(doc).to receive(:at).with("./front/article-meta").and_return :meta
+      described_class.new doc
+    end
 
     let(:doc_series_id) do
       Nokogiri::XML <<~XML
@@ -24,6 +28,7 @@ describe RelatonBipm::RawdataBipmMetrologia::ArticleParser do
               <volume>29</volume>
               <issue>6</issue>
               <fpage>373</fpage>
+              <lpage>378</lpage>
             </article-meta>
           </front>
         </article>
@@ -73,6 +78,7 @@ describe RelatonBipm::RawdataBipmMetrologia::ArticleParser do
 
     it "parse_docid" do
       subject.instance_variable_set :@doc, doc_series_id.at("/article")
+      subject.instance_variable_set :@meta, doc_series_id.at("/article/front/article-meta")
       docid = subject.parse_docid
       expect(docid).to be_instance_of Array
       expect(docid.size).to eq 2
@@ -88,7 +94,7 @@ describe RelatonBipm::RawdataBipmMetrologia::ArticleParser do
       expect(docid[1].type).to eq "doi"
     end
 
-    context "volume_issue_page" do
+    context "volume_issue_article" do
       it "with missing page" do
         doc = Nokogiri::XML <<~XML
           <article>
@@ -102,7 +108,8 @@ describe RelatonBipm::RawdataBipmMetrologia::ArticleParser do
           </article>
         XML
         subject.instance_variable_set :@doc, doc.at("/article")
-        expect(subject.volume_issue_page).to eq %w[1 29 6]
+        subject.instance_variable_set :@meta, doc.at("/article/front/article-meta")
+        expect(subject.volume_issue_article).to eq "1 29 6"
       end
     end
 
@@ -119,6 +126,7 @@ describe RelatonBipm::RawdataBipmMetrologia::ArticleParser do
         </article>
       XML
       subject.instance_variable_set :@doc, doc.at("/article")
+      subject.instance_variable_set :@meta, doc.at("/article/front/article-meta")
       title = subject.parse_title
       expect(title).to be_instance_of Array
       expect(title.size).to eq 1
@@ -152,6 +160,7 @@ describe RelatonBipm::RawdataBipmMetrologia::ArticleParser do
         </article>
       XML
       subject.instance_variable_set :@doc, doc.at("/article")
+      subject.instance_variable_set :@meta, doc.at("/article/front/article-meta")
       contrib = subject.parse_contributor
       expect(contrib).to be_instance_of Array
       expect(contrib.size).to eq 2
@@ -208,6 +217,7 @@ describe RelatonBipm::RawdataBipmMetrologia::ArticleParser do
 
     it "parse_date" do
       subject.instance_variable_set :@doc, doc_dates.at("/article")
+      subject.instance_variable_set :@meta, doc_dates.at("/article/front/article-meta")
       date = subject.parse_date
       expect(date).to be_instance_of Array
       expect(date.size).to eq 1
@@ -230,6 +240,7 @@ describe RelatonBipm::RawdataBipmMetrologia::ArticleParser do
         </article>
       XML
       subject.instance_variable_set :@doc, doc.at("/article")
+      subject.instance_variable_set :@meta, doc.at("/article/front/article-meta")
       copyright = subject.parse_copyright
       expect(copyright).to be_instance_of Array
       expect(copyright.size).to eq 1
@@ -259,6 +270,7 @@ describe RelatonBipm::RawdataBipmMetrologia::ArticleParser do
         </article>
       XML
       subject.instance_variable_set :@doc, doc.at("/article")
+      subject.instance_variable_set :@meta, doc.at("/article/front/article-meta")
       abstract = subject.parse_abstract
       expect(abstract).to be_instance_of Array
       expect(abstract.size).to eq 1
@@ -273,6 +285,7 @@ describe RelatonBipm::RawdataBipmMetrologia::ArticleParser do
 
     it "parse_relation" do
       subject.instance_variable_set :@doc, doc_dates.at("/article")
+      subject.instance_variable_set :@meta, doc_dates.at("/article/front/article-meta")
       rels = subject.parse_relation
       expect(rels).to be_instance_of Array
       expect(rels.size).to eq 2
@@ -291,6 +304,7 @@ describe RelatonBipm::RawdataBipmMetrologia::ArticleParser do
 
     it "parse_extent" do
       subject.instance_variable_set :@doc, doc_series_id.at("/article")
+      subject.instance_variable_set :@meta, doc_series_id.at("/article/front/article-meta")
       extent = subject.parse_extent
       expect(extent).to be_instance_of Array
       expect(extent.size).to eq 3
@@ -300,7 +314,8 @@ describe RelatonBipm::RawdataBipmMetrologia::ArticleParser do
       expect(extent[1].type).to eq "issue"
       expect(extent[1].reference_from).to eq "6"
       expect(extent[2].type).to eq "page"
-      expect(extent[2].reference_from).to eq "001"
+      expect(extent[2].reference_from).to eq "373"
+      expect(extent[2].reference_to).to eq "378"
     end
 
     it "parse_type" do

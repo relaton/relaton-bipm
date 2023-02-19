@@ -21,6 +21,7 @@ module RelatonBipm
       #
       def initialize(doc)
         @doc = doc
+        @meta = @doc.at("./front/article-meta")
       end
 
       #
@@ -39,9 +40,9 @@ module RelatonBipm
       # @return [Array<RelatonBib::DocumentIdentifier>] array of document identifiers
       #
       def parse_docid
-        pubid = "#{journal_title} #{volume_issue_page.join(' ')}"
+        pubid = "#{journal_title} #{volume_issue_article}"
         primary_id = create_docid pubid, "BIPM", true
-        @doc.xpath("./front/article-meta/article-id[@pub-id-type='doi']")
+        @meta.xpath("./article-id[@pub-id-type='doi']")
           .each_with_object([primary_id]) do |id, m|
           m << create_docid(id.text, id["pub-id-type"])
         end
@@ -52,17 +53,15 @@ module RelatonBipm
       #
       # @return [Array<String>] array of volume, issue and page
       #
-      def volume_issue_page
-        @volume_issue_page ||= begin
-          volume = @doc.at("./front/article-meta/volume").text
-          issue = @doc.at("./front/article-meta/issue").text
-          # page = @doc.at("./front/article-meta/fpage")&.text || manuscript
-          [volume, issue, article]
-        end
+      def volume_issue_article
+        volume = @meta.at("./volume").text
+        issue = @meta.at("./issue").text
+        # page = @doc.at("./front/article-meta/fpage")&.text || manuscript
+        [volume, issue, article].join(" ")
       end
 
       def article
-        @doc.at("./front/article-meta/article-id[@pub-id-type='manuscript']").text.match(/[^_]+$/).to_s
+        @meta.at("./article-id[@pub-id-type='manuscript']").text.match(/[^_]+$/).to_s
       end
 
       #
@@ -93,7 +92,7 @@ module RelatonBipm
       # @return [Array<RelatonBib::TypedTitleString>] array of title strings
       #
       def parse_title
-        @doc.xpath("./front/article-meta/title-group/article-title").map do |t|
+        @meta.xpath("./title-group/article-title").map do |t|
           RelatonBib::TypedTitleString.new content: t.text, language: t[:"xml:lang"], script: "Latn"
         end
       end
@@ -104,7 +103,7 @@ module RelatonBipm
       # @return [Array<RelatonBib::Contributor>] array of contributors
       #
       def parse_contributor
-        @doc.xpath("./front/article-meta/contrib-group/contrib").map do |c|
+        @meta.xpath("./contrib-group/contrib").map do |c|
           entity = create_person(c) || create_organization(c)
           RelatonBib::ContributionInfo.new(entity: entity, role: [type: c[:"contrib-type"]])
         end
@@ -130,7 +129,7 @@ module RelatonBipm
       #
       def affiliation(contrib) # rubocop:disable Metrics/AbcSize
         contrib.xpath("./xref[@ref-type='aff']").map do |x|
-          a = @doc.at("./front/article-meta/contrib-group/aff[@id='#{x[:rid]}']/label/following-sibling::node()")
+          a = @meta.at("./contrib-group/aff[@id='#{x[:rid]}']/label/following-sibling::node()")
           parts = a.text.split(", ")
           orgname = parts[0..-3].join(", ")
           city, country = parts[-2..]
@@ -195,7 +194,7 @@ module RelatonBipm
       # @return [Array<String, Object>] string date or whatever block returns
       #
       def dates
-        @doc.xpath("./front/article-meta/pub-date").map do |d|
+        @meta.xpath("./pub-date").map do |d|
           month = date_part(d, "month")
           day = date_part(d, "day")
           date = "#{d.at('./year').text}-#{month}-#{day}"
@@ -216,7 +215,7 @@ module RelatonBipm
       # @return [Array<RelatonBib::CopyrightAssociation>] array of copyright associations
       #
       def parse_copyright
-        @doc.xpath("./front/article-meta/permissions").each_with_object([]) do |l, m|
+        @meta.xpath("./permissions").each_with_object([]) do |l, m|
           from = l.at("./copyright-year")
           next unless from
 
@@ -235,7 +234,7 @@ module RelatonBipm
       # @return [Array<RelatonBib::FormattedString>] array of abstracts
       #
       def parse_abstract
-        @doc.xpath("./front/article-meta/abstract").map do |a|
+        @meta.xpath("./abstract").map do |a|
           RelatonBib::FormattedString.new(
             content: a.inner_html, language: a[:"xml:lang"], script: ["Latn"], format: "text/html",
           )
@@ -286,9 +285,18 @@ module RelatonBipm
       # @return [Array<RelatonBib::Extent>] array of extents
       #
       def parse_extent
-        %w[volume issue page].map.with_index do |t, i|
-          RelatonBib::Locality.new t, volume_issue_page[i]
+        @meta.xpath("./volume|./issue|./fpage").map do |e|
+          if e.name == "fpage"
+            type = "page"
+            to = @meta.at("./lpage")&.text
+          else
+            type = e.name
+          end
+          RelatonBib::Locality.new type, e.text, to
         end
+        # %w[volume issue page].map.with_index do |t, i|
+        #   RelatonBib::Locality.new t, volume_issue_page[i]
+        # end
       end
 
       def parse_type
