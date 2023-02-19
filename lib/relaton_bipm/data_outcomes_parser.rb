@@ -485,7 +485,7 @@ module RelatonBipm
     #
     def create_docid_fr(en_id)
       tr = BipmBibliography::TRANSLATIONS.detect { |_, v| en_id.include? v }
-      id = en_id.sub tr[1], tr[0]
+      id = tr ? en_id.sub(tr[1], tr[0]) : en_id
       make_docid(id: id, type: "BIPM", primary: true, language: "fr", script: "Latn")
     end
 
