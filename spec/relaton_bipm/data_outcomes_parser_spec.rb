@@ -103,12 +103,8 @@ describe RelatonBipm::DataOutcomesParser do
               file = "spec/fixtures/#{path}"
             end
             hash = item.to_hash
-            hash["fetched"] = Date.today.to_s
-            hash["relation"]&.each { |rel| rel["bibitem"]["fetched"] = Date.today.to_s }
             File.write file, hash.to_yaml, encoding: "UTF-8" unless File.exist? file
             yaml = YAML.load_file(file)
-            yaml["fetched"] = Date.today.to_s
-            yaml["relation"]&.each { |rel| rel["bibitem"]["fetched"] = Date.today.to_s }
             expect(hash).to eq yaml
           end
         end

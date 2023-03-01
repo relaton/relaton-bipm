@@ -1,5 +1,5 @@
 <bibdata type="article" schema-version="v1.2.1">
-  <fetched>2023-02-16</fetched>
+  <fetched>2023-02-28</fetched>
   <formattedref format="text/plain" language="en" script="Latn">Metrologia</formattedref>
   <uri type="src">https://iopscience.iop.org/journal/0026-1394</uri>
   <docidentifier type="BIPM" primary="true">Metrologia</docidentifier>
@@ -777,6 +777,24 @@
     <bibitem>
       <formattedref format="text/plain" language="en" script="Latn">Metrologia 59</formattedref>
       <docidentifier type="BIPM" primary="true">Metrologia 59</docidentifier>
+    </bibitem>
+  </relation>
+  <relation type="partOf">
+    <bibitem>
+      <formattedref format="text/plain" language="en" script="Latn">Metrologia 60</formattedref>
+      <docidentifier type="BIPM" primary="true">Metrologia 60</docidentifier>
+    </bibitem>
+  </relation>
+  <relation type="partOf">
+    <bibitem>
+      <formattedref format="text/plain" language="en" script="Latn">Metrologia 60</formattedref>
+      <docidentifier type="BIPM" primary="true">Metrologia 60</docidentifier>
+    </bibitem>
+  </relation>
+  <relation type="partOf">
+    <bibitem>
+      <formattedref format="text/plain" language="en" script="Latn">Metrologia 60</formattedref>
+      <docidentifier type="BIPM" primary="true">Metrologia 60</docidentifier>
     </bibitem>
   </relation>
   <relation type="partOf">

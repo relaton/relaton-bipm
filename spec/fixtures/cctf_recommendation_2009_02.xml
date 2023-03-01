@@ -1,0 +1,45 @@
+<bibdata type="proceedings" schema-version="v1.2.1">
+  <fetched>2023-02-27</fetched>
+  <title format="text/plain" language="en" script="Latn">Characterization of delays of global navigation satellite system (GNSS) equipment in laboratories contributing to International Atomic Time (TAI)</title>
+  <title format="text/plain" language="fr" script="Latn">Caractérisation des retards des équipements de comparaison de temps par systèmes globaux de navigation par satellite (GNSS) des laboratoires contribuant au Temps atomique international (TAI)</title>
+  <uri type="citation" language="en" script="Latn">https://www.bipm.org/en/committees/cc/cctf/18-2009/resolution-2</uri>
+  <uri type="citation" language="fr" script="Latn">https://www.bipm.org/fr/committees/cc/cctf/18-2009/resolution-2</uri>
+  <uri type="src" language="en" script="Latn">https://raw.githubusercontent.com/metanorma/bipm-data-outcomes/main/cctf/meetings-en/meeting-18.yml</uri>
+  <uri type="src" language="fr" script="Latn">https://raw.githubusercontent.com/metanorma/bipm-data-outcomes/main/cctf/meetings-fr/meeting-18.yml</uri>
+  <uri type="pdf">https://www.bipm.org/documents/20126/2071143/CCTF18.pdf/b54a884f-01c7-7f45-7671-a132b99330ed</uri>
+  <docidentifier type="BIPM" primary="true">CCTF -- Recommendation 2 (2009)</docidentifier>
+  <docidentifier type="BIPM" primary="true" language="en" script="Latn">CCTF -- Recommendation 2 (2009)</docidentifier>
+  <docidentifier type="BIPM" primary="true" language="fr" script="Latn">CCTF -- Recommandation 2 (2009)</docidentifier>
+  <docnumber>CCTF -- Recommendation 2 (2009)</docnumber>
+  <date type="published">
+    <on>2009-06-05</on>
+  </date>
+  <contributor>
+    <role type="publisher"/>
+    <organization>
+      <name>Bureau International des Poids et Mesures</name>
+      <abbreviation>BIPM</abbreviation>
+      <uri>www.bipm.org</uri>
+    </organization>
+  </contributor>
+  <contributor>
+    <role type="author"/>
+    <organization>
+      <name language="en" script="Latn">Consultative Committee for Time and Frequency</name>
+      <name language="fr" script="Latn">Comité consultatif du temps et des fréquences</name>
+      <abbreviation language="en,fr" script="Latn">CCTF</abbreviation>
+    </organization>
+  </contributor>
+  <language>en</language>
+  <language>fr</language>
+  <script>Latn</script>
+  <place>
+    <city>Paris</city>
+  </place>
+  <ext schema-version="v1.0.0">
+    <doctype>recommendation</doctype>
+    <structuredidentifier>
+      <docnumber>2</docnumber>
+    </structuredidentifier>
+  </ext>
+</bibdata>

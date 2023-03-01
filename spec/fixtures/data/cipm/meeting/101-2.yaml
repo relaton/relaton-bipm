@@ -23,6 +23,8 @@ link:
   type: citation
   language: fr
   script: Latn
+- content: https://www.bipm.org/documents/20126/34444140/CIPM2012-EN.pdf/86407bb4-17cd-8cdf-638b-de9920a2ace5
+  type: pdf
 - content: https://raw.githubusercontent.com/metanorma/bipm-data-outcomes/main/cipm/meetings-en/meeting-101-2.yml
   type: src
   language: en
@@ -94,4 +96,3 @@ structuredidentifier:
   part: '2'
 ext:
   schema-version: v1.0.0
-fetched: '2022-11-25'

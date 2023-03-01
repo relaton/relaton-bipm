@@ -12,8 +12,8 @@ RSpec.describe RelatonBipm do
   it "search a code" do
     expect(File).to receive(:exist?).with(/index\.yaml/).and_return false
     allow(File).to receive(:exist?).and_call_original
-    VCR.use_cassette "cctf_meeting_5" do
-      result = RelatonBipm::BipmBibliography.search "BIPM CCTF -- Meeting 5 (1970)"
+    VCR.use_cassette "cctf_meeting_14" do
+      result = RelatonBipm::BipmBibliography.search "BIPM CCTF -- Meeting 14 (1999)"
       expect(result).to be_instance_of RelatonBipm::BipmBibliographicItem
     end
   end
@@ -26,9 +26,9 @@ RSpec.describe RelatonBipm do
       end
 
       it "CCTF Recommendation EN" do
-        VCR.use_cassette "cctf_recommendation_1970_02" do
-          file = "spec/fixtures/cctf_recommendation_1970_02.xml"
-          result = RelatonBipm::BipmBibliography.get "CCTF -- Recommendation 2 (1970)"
+        VCR.use_cassette "cctf_recommendation_2009_02" do
+          file = "spec/fixtures/cctf_recommendation_2009_02.xml"
+          result = RelatonBipm::BipmBibliography.get "CCTF -- Recommendation 2 (2009)"
           xml = result.to_xml(bibdata: true)
           File.write file, xml, encoding: "UTF-8" unless File.exist? file
           expect(xml).to be_equivalent_to File.read(file, encoding: "UTF-8")
@@ -37,9 +37,9 @@ RSpec.describe RelatonBipm do
       end
 
       it "CCTF Recommendation short notation EN" do
-        VCR.use_cassette "cctf_recommendation_1970_02" do
-          file = "spec/fixtures/cctf_recommendation_1970_02.xml"
-          result = RelatonBipm::BipmBibliography.get "CCTF -- REC 2 (1970, EN)"
+        VCR.use_cassette "cctf_recommendation_2009_02" do
+          file = "spec/fixtures/cctf_recommendation_2009_02.xml"
+          result = RelatonBipm::BipmBibliography.get "CCTF -- REC 2 (2009, EN)"
           xml = result.to_xml(bibdata: true)
           File.write file, xml, encoding: "UTF-8" unless File.exist? file
           expect(xml).to be_equivalent_to File.read(file, encoding: "UTF-8")
@@ -48,9 +48,9 @@ RSpec.describe RelatonBipm do
       end
 
       it "CCDS Recommendation" do
-        VCR.use_cassette "cctf_recommendation_1970_02" do
-          file = "spec/fixtures/cctf_recommendation_1970_02.xml"
-          result = RelatonBipm::BipmBibliography.get "CCDS -- Recommendation 2 (1970)"
+        VCR.use_cassette "cctf_recommendation_2009_02" do
+          file = "spec/fixtures/cctf_recommendation_2009_02.xml"
+          result = RelatonBipm::BipmBibliography.get "CCDS -- Recommendation 2 (2009)"
           xml = result.to_xml(bibdata: true)
           File.write file, xml, encoding: "UTF-8" unless File.exist? file
           expect(xml).to be_equivalent_to File.read(file, encoding: "UTF-8")

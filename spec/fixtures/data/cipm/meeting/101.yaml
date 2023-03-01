@@ -23,6 +23,8 @@ link:
   type: citation
   language: fr
   script: Latn
+- content: https://www.bipm.org/documents/20126/34444149/CIPM2012-EN.pdf/7d1cab7f-3ae3-8a31-9483-860a9de9200c
+  type: pdf
 - content: https://raw.githubusercontent.com/metanorma/bipm-data-outcomes/main/cipm/meetings-en/meeting-101-1.yml
   type: src
   language: en
@@ -112,6 +114,8 @@ relation:
       type: citation
       language: fr
       script: Latn
+    - content: https://www.bipm.org/documents/20126/34444149/CIPM2012-EN.pdf/7d1cab7f-3ae3-8a31-9483-860a9de9200c
+      type: pdf
     - content: https://raw.githubusercontent.com/metanorma/bipm-data-outcomes/main/cipm/meetings-en/meeting-101-1.yml
       type: src
       language: en
@@ -177,7 +181,6 @@ relation:
     - Latn
     place:
     - city: Paris
-    fetched: '2022-11-25'
     doctype: meeting
     structuredidentifier:
       docnumber: '101'
@@ -207,6 +210,8 @@ relation:
       type: citation
       language: fr
       script: Latn
+    - content: https://www.bipm.org/documents/20126/34444140/CIPM2012-EN.pdf/86407bb4-17cd-8cdf-638b-de9920a2ace5
+      type: pdf
     - content: https://raw.githubusercontent.com/metanorma/bipm-data-outcomes/main/cipm/meetings-en/meeting-101-2.yml
       type: src
       language: en
@@ -276,10 +281,8 @@ relation:
     structuredidentifier:
       docnumber: '101'
       part: '2'
-    fetched: '2022-11-25'
 place:
 - city: Paris
-fetched: '2022-11-25'
 doctype: meeting
 structuredidentifier:
   docnumber: '101'

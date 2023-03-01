@@ -7,6 +7,14 @@ module RelatonBipm
       "Statement" => "DECL",
     }.freeze
 
+    TRANSLATIONS = {
+      "Déclaration" => "Declaration",
+      "Réunion" => "Meeting",
+      "Recommandation" => "Recommendation",
+      "Résolution" => "Resolution",
+      "Décision" => "Decision",
+    }.freeze
+
     #
     # Create data-outcomes parser
     #
@@ -121,7 +129,7 @@ module RelatonBipm
 
     def meeting_md(eng, frn)
       en_md = eng["metadata"]
-      /^(?<num>\d+)(?:-_(?<part>\d+))?-\d{4}$/ =~ en_md["url"].split("/").last
+      num, part = en_md["identifier"].to_s.split("-")
       [en_md, frn&.dig("metadata"), num, part]
     end
 
@@ -484,7 +492,7 @@ module RelatonBipm
     # @return [RelatonBib::DocumentIdentifier] french document ID
     #
     def create_docid_fr(en_id)
-      tr = BipmBibliography::TRANSLATIONS.detect { |_, v| en_id.include? v }
+      tr = TRANSLATIONS.detect { |_, v| en_id.include? v }
       id = tr ? en_id.sub(tr[1], tr[0]) : en_id
       make_docid(id: id, type: "BIPM", primary: true, language: "fr", script: "Latn")
     end
