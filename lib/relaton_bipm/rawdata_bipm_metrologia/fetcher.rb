@@ -12,7 +12,7 @@ module RelatonBipm
 
       # @param data_fetcher [RelatonBipm::DataFetcher]
       def initialize(data_fetcher)
-        @data_fetcher = data_fetcher
+        @data_fetcher = WeakRef.new data_fetcher
       end
 
       #
@@ -35,6 +35,7 @@ module RelatonBipm
           file = "#{item.docidentifier.first.id.downcase.gsub(' ', '-')}.#{@data_fetcher.ext}"
           out_path = File.join(@data_fetcher.output, file)
           @data_fetcher.index[[item.docidentifier.first.id]] = out_path
+          @data_fetcher.index_new.add_or_update [item.docidentifier.first.id], out_path
           @data_fetcher.write_file out_path, item
         end
       end
@@ -67,7 +68,7 @@ module RelatonBipm
       # @overload set(volume)
       #   @param [String] volume volume number
       #
-      def fetch_metrologia(*args)
+      def fetch_metrologia(*args) # rubocop:disable Metrics/MethodLength, Metrics/AbcSize
         id = identifier(*args)
         item = BipmBibliographicItem.new(
           type: "article", formattedref: formattedref(id), docid: docidentifier(id),
@@ -77,6 +78,7 @@ module RelatonBipm
         file = "#{id.downcase.gsub(' ', '-')}.#{@data_fetcher.ext}"
         path = File.join(@data_fetcher.output, file)
         @data_fetcher.index[[id]] = path
+        @data_fetcher.index_new.add_or_update [id], path
         @data_fetcher.write_file path, item
       end
 

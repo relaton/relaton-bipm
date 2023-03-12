@@ -32,17 +32,12 @@ Gem::Specification.new do |spec| # rubocop:disable Metrics/BlockLength
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  spec.add_development_dependency "byebug"
   spec.add_development_dependency "equivalent-xml", "~> 0.6"
-  spec.add_development_dependency "pry-byebug"
-  spec.add_development_dependency "ruby-jing"
-  spec.add_development_dependency "simplecov"
-  spec.add_development_dependency "vcr"
-  spec.add_development_dependency "webmock"
 
   spec.add_dependency "faraday", "~> 1.0"
   spec.add_dependency "mechanize", "~> 2.8.0"
   spec.add_dependency "relaton-bib", "~> 1.14.0"
+  spec.add_dependency "relaton-index", "~> 0.1.0"
   spec.add_dependency "rubyzip", "~> 2.3.0"
   spec.add_dependency "serrano", "~> 1.0"
 end

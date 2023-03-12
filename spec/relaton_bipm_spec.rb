@@ -20,10 +20,10 @@ RSpec.describe RelatonBipm do
 
   context "get document" do
     context "from relaton-data-bipm" do
-      before :each do
-        expect(File).to receive(:exist?).with(/index\.yaml/).and_return false
-        allow(File).to receive(:exist?).and_call_original
-      end
+      # before :each do
+      #   expect(File).to receive(:exist?).with(/index\.yaml/).and_return false
+      #   allow(File).to receive(:exist?).and_call_original
+      # end
 
       it "CCTF Recommendation EN" do
         VCR.use_cassette "cctf_recommendation_2009_02" do

@@ -11,6 +11,7 @@ describe RelatonBipm::DataFetcher do
   it "initialize" do
     expect(File).to receive(:exist?).with("index.yaml").and_return true
     expect(YAML).to receive(:load_file).with("index.yaml").and_return({})
+    expect(Relaton::Index).to receive(:find_or_create).with(:BIPM, file: "index-bipm.yaml").and_return({})
     fetcher = described_class.new "data", "bibxml"
     expect(fetcher.instance_variable_get(:@output)).to eq "data"
     expect(fetcher.instance_variable_get(:@format)).to eq "bibxml"
@@ -31,6 +32,8 @@ describe RelatonBipm::DataFetcher do
     context "#fetch" do
       before(:each) do
         expect(File).to receive(:write).with("index.yaml", "--- {}\n", encoding: "UTF-8")
+        index_new = subject.instance_variable_get(:@index_new)
+        expect(index_new).to receive(:save)
       end
 
       it "bipm-datata-outcomes" do

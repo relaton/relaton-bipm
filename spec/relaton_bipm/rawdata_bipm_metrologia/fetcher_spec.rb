@@ -7,7 +7,8 @@ describe RelatonBipm::RawdataBipmMetrologia::Fetcher do
   end
 
   context "instance methods" do
-    let(:data_fetcher) { double "data_fetcher", output: "output", ext: "yaml", index: {} }
+    let(:index_new) { double "index_new" }
+    let(:data_fetcher) { double "data_fetcher", output: "output", ext: "yaml", index: {}, index_new: index_new }
     subject { described_class.new data_fetcher }
 
     context "fetch_metrologia" do
@@ -24,6 +25,7 @@ describe RelatonBipm::RawdataBipmMetrologia::Fetcher do
         expect(subject).to receive(:relation).with("volume_1A").and_return([:rel])
         expect(subject).to receive(:typed_uri).with("volume_1A").and_return(:uri)
         expect(data_fetcher).to receive(:write_file).with("output/metrologia-1a.yaml", :item)
+        expect(index_new).to receive(:add_or_update).with(["Metrologia 1A"], "output/metrologia-1a.yaml")
         subject.fetch_metrologia "volume_1A"
         expect(data_fetcher.index).to eq ["Metrologia 1A"] => "output/metrologia-1a.yaml"
       end
@@ -34,6 +36,7 @@ describe RelatonBipm::RawdataBipmMetrologia::Fetcher do
         expect(subject).to receive(:relation).with("volume_1", "issue_2").and_return([:rel])
         expect(subject).to receive(:typed_uri).with("volume_1", "issue_2").and_return(:uri)
         expect(data_fetcher).to receive(:write_file).with("output/metrologia-1-2.yaml", :item)
+        expect(index_new).to receive(:add_or_update).with(["Metrologia 1 2"], "output/metrologia-1-2.yaml")
         subject.fetch_metrologia "volume_1", "issue_2"
         expect(data_fetcher.index).to eq ["Metrologia 1 2"] => "output/metrologia-1-2.yaml"
       end
@@ -68,6 +71,7 @@ describe RelatonBipm::RawdataBipmMetrologia::Fetcher do
       item = double "item", docidentifier: [double(id: "123")]
       expect(RelatonBipm::RawdataBipmMetrologia::ArticleParser).to receive(:parse).with(:elm).and_return item
       expect(data_fetcher).to receive(:write_file).with("output/123.yaml", item)
+      expect(index_new).to receive(:add_or_update).with(["123"], "output/123.yaml")
       subject.fetch_articles
     end
 

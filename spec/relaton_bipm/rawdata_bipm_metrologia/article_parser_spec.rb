@@ -232,7 +232,7 @@ describe RelatonBipm::RawdataBipmMetrologia::ArticleParser do
           <front>
             <article-meta>
               <permissions>
-                <copyright-statement>© 2022 BIPM &amp; IOP Publishing Ltd</copyright-statement>
+                <copyright-statement>\u00a9 2022 BIPM &amp; IOP Publishing Ltd</copyright-statement>
                 <copyright-year>2022</copyright-year>
               </permissions>
             </article-meta>

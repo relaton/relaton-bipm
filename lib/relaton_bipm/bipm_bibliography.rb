@@ -49,10 +49,12 @@ module RelatonBipm
         #   "#{$2}-#{$1.to_s.rjust(2, '0')}"
         # end
         ref.sub!("CCDS", "CCTF")
-        path = Index.new.search ref
-        return unless path
+        index = Relaton::Index.find_or_create :BIPM, url: "#{GH_ENDPOINT}index-bipm.zip"
+        rows = index.search(ref)
+        # path = Index.new.search ref
+        return unless rows.any?
 
-        url = "#{GH_ENDPOINT}#{path}"
+        url = "#{GH_ENDPOINT}#{rows.first[:file]}"
         resp = agent.get url
         return unless resp.code == "200"
 

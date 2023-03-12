@@ -6,7 +6,7 @@ module RelatonBipm
     # @param [RelatonBipm::DataFetcher] data_fetcher data fetcher
     #
     def initialize(data_fetcher)
-      @data_fetcher = data_fetcher
+      @data_fetcher = WeakRef.new data_fetcher
     end
 
     #
@@ -36,6 +36,7 @@ module RelatonBipm
         basename = File.join @data_fetcher.output, File.basename(f).sub(/(?:-(?:en|fr))?\.rxl$/, "")
         outfile = "#{basename}.#{@data_fetcher.ext}"
         @data_fetcher.index[[hash1["docnumber"] || basename]] = outfile
+        @data_fetcher.index_new.add_or_update [hash1["docnumber"] || basename], outfile
         hash = if File.exist? outfile
                  warn_duplicate = false
                  hash2 = YAML.load_file outfile

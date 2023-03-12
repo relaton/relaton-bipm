@@ -21,7 +21,7 @@ module RelatonBipm
     # @param [RelatonBipm::DataFetcher] data_fetcher data fetcher
     #
     def initialize(data_fetcher)
-      @data_fetcher = data_fetcher
+      @data_fetcher = WeakRef.new data_fetcher
     end
 
     #
@@ -239,6 +239,7 @@ module RelatonBipm
       end
       key << item.docidentifier.detect { |i| i.language == "fr" }.id
       @data_fetcher.index[key] = path
+      @data_fetcher.index_new.add_or_update key, path
     end
 
     #

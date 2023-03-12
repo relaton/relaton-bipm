@@ -1,6 +1,6 @@
 module RelatonBipm
   class DataFetcher
-    attr_reader :output, :format, :ext, :files, :index
+    attr_reader :output, :format, :ext, :files, :index, :index_new
 
     #
     # Initialize fetcher
@@ -15,6 +15,7 @@ module RelatonBipm
       @files = []
       @index_path = "index.yaml"
       @index = File.exist?(@index_path) ? YAML.load_file(@index_path) : {}
+      @index_new = Relaton::Index.find_or_create :BIPM, file: "index-bipm.yaml"
     end
 
     #
@@ -45,7 +46,8 @@ module RelatonBipm
       when "bipm-si-brochure" then BipmSiBrochureParser.parse(self)
       when "rawdata-bipm-metrologia" then RawdataBipmMetrologia::Fetcher.fetch(self)
       end
-      File.write @index_path, @index.to_yaml, encoding: "UTF-8"
+      File.write @index_path, index.to_yaml, encoding: "UTF-8"
+      index_new.save
     end
 
     #

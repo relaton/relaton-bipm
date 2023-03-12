@@ -1,6 +1,7 @@
 require "zip"
 require "fileutils"
 require "relaton_bib"
+require "relaton/index"
 require "relaton_bipm/version"
 require "relaton_bipm/editorial_group"
 require "relaton_bipm/committee"
