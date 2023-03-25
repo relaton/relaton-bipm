@@ -28,7 +28,7 @@ module RelatonBipm
       #
       # Fetch articles from rawdata-bipm-metrologia and save to files
       #
-      def fetch_articles # rubocop:disable Metrics/AbcSize
+      def fetch_articles # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
         Dir["#{DIR}/**/*.xml"].each do |path|
           doc = Nokogiri::XML File.read(path, encoding: "UTF-8")
           item = ArticleParser.parse doc.at("/article")
@@ -36,6 +36,8 @@ module RelatonBipm
           out_path = File.join(@data_fetcher.output, file)
           @data_fetcher.index[[item.docidentifier.first.id]] = out_path
           @data_fetcher.index_new.add_or_update [item.docidentifier.first.id], out_path
+          key = Id.new(item.docidentifier.first.id).normalized_hash
+          @data_fetcher.index2.add_or_update key, out_path
           @data_fetcher.write_file out_path, item
         end
       end
@@ -79,6 +81,7 @@ module RelatonBipm
         path = File.join(@data_fetcher.output, file)
         @data_fetcher.index[[id]] = path
         @data_fetcher.index_new.add_or_update [id], path
+        @data_fetcher.index2.add_or_update Id.new(id).normalized_hash, path
         @data_fetcher.write_file path, item
       end
 

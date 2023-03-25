@@ -10,7 +10,6 @@ module RelatonBipm
       def search(text, _year = nil, _opts = {}) # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
         warn "[relaton-bipm] (\"#{text}\") fetching..."
         ref = text.sub(/^BIPM\s/, "")
-        # item = ref.match?(/^Metrologia/i) ? get_metrologia(ref, magent) : get_bipm(ref, magent)
         item = get_bipm(ref, magent)
         unless item
           warn "[relaton-bipm] (\"#{text}\") not found."
@@ -18,7 +17,6 @@ module RelatonBipm
         end
 
         warn("[relaton-bipm] (\"#{text}\") found #{item.docidentifier[0].id}")
-        item.fetched = Date.today.to_s
         item
       rescue Mechanize::ResponseCodeError => e
         raise RelatonBib::RequestError, e.message unless e.response_code == "404"
@@ -41,17 +39,13 @@ module RelatonBipm
         a
       end
 
-      # @param ref [String]
+      # @param reference [String]
       # @param agent [Mechanize]
       # @return [RelatonBipm::BipmBibliographicItem]
-      def get_bipm(ref, agent) # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
-        # rf = ref.sub(/(?:(\d{1,2})\s)?\(?(\d{4})(?!-)\)?/) do
-        #   "#{$2}-#{$1.to_s.rjust(2, '0')}"
-        # end
-        ref.sub!("CCDS", "CCTF")
-        index = Relaton::Index.find_or_create :BIPM, url: "#{GH_ENDPOINT}index-bipm.zip"
-        rows = index.search(ref)
-        # path = Index.new.search ref
+      def get_bipm(reference, agent) # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
+        ref_id = Id.new reference
+        index = Relaton::Index.find_or_create :BIPM, url: "#{GH_ENDPOINT}index2.zip"
+        rows = index.search { |r| ref_id == r[:id] }
         return unless rows.any?
 
         url = "#{GH_ENDPOINT}#{rows.first[:file]}"
@@ -63,6 +57,10 @@ module RelatonBipm
         bib_hash = HashConverter.hash_to_bib yaml
         BipmBibliographicItem.new(**bib_hash)
       end
+
+      # def match_item(ids, ref_id)
+      #   ids.find { |id| Id.new(id) == ref_id }
+      # end
 
       # @param ref [String] the BIPM standard Code to look up (e..g "BIPM B-11")
       # @param year [String] not used

@@ -1,0 +1,132 @@
+{
+  "http_interactions": [
+    {
+      "request": {
+        "method": "get",
+        "uri": "https://raw.githubusercontent.com/relaton/relaton-data-bipm/master/data/metrologia-30.yaml",
+        "body": {
+          "encoding": "US-ASCII",
+          "string": ""
+        },
+        "headers": {
+          "Accept-Encoding": [
+            "gzip, deflate, br"
+          ],
+          "Accept": [
+            "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"
+          ],
+          "User-Agent": [
+            "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.125 Safari/537.36"
+          ],
+          "Accept-Charset": [
+            "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+          ],
+          "Accept-Language": [
+            "en-US,en;q=0.9,ru-RU;q=0.8,ru;q=0.7"
+          ],
+          "Host": [
+            "raw.githubusercontent.com"
+          ],
+          "Cache-Control": [
+            "max-age=0"
+          ],
+          "Upgrade-Insecure-Requests": [
+            "1"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Keep-Alive": [
+            "300"
+          ]
+        }
+      },
+      "response": {
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "headers": {
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Length": [
+            "354"
+          ],
+          "Cache-Control": [
+            "max-age=300"
+          ],
+          "Content-Security-Policy": [
+            "default-src 'none'; style-src 'unsafe-inline'; sandbox"
+          ],
+          "Content-Type": [
+            "text/plain; charset=utf-8"
+          ],
+          "Etag": [
+            "W/\"04de3a38a928be310e2b79df58a80523d144c6c1791a7137aabd0bddf636a9bf\""
+          ],
+          "Strict-Transport-Security": [
+            "max-age=31536000"
+          ],
+          "X-Content-Type-Options": [
+            "nosniff"
+          ],
+          "X-Frame-Options": [
+            "deny"
+          ],
+          "X-Xss-Protection": [
+            "1; mode=block"
+          ],
+          "X-Github-Request-Id": [
+            "322E:0ADE:3545A7:44B409:641E5B86"
+          ],
+          "Content-Encoding": [
+            "gzip"
+          ],
+          "Accept-Ranges": [
+            "bytes"
+          ],
+          "Date": [
+            "Sat, 25 Mar 2023 02:25:10 GMT"
+          ],
+          "Via": [
+            "1.1 varnish"
+          ],
+          "X-Served-By": [
+            "cache-iad-kjyo7100070-IAD"
+          ],
+          "X-Cache": [
+            "MISS"
+          ],
+          "X-Cache-Hits": [
+            "0"
+          ],
+          "X-Timer": [
+            "S1679711111.703439,VS0,VE84"
+          ],
+          "Vary": [
+            "Authorization,Accept-Encoding,Origin"
+          ],
+          "Access-Control-Allow-Origin": [
+            "*"
+          ],
+          "X-Fastly-Request-Id": [
+            "3b0496b45771a8336d48dd2293b3371113d4cee7"
+          ],
+          "Expires": [
+            "Sat, 25 Mar 2023 02:30:10 GMT"
+          ],
+          "Source-Age": [
+            "0"
+          ]
+        },
+        "body": {
+          "encoding": "UTF-8",
+          "string": "\u001fã\b\u0000\u0000\u0000\u0000\u0000\u0000\u0003≈’Õn√ \f\u0000‡;O·\u0017»\u001ai\u001cw´¥j{\u0005J›\u0014-\u0001D‹j}˚A“ı'Î!ì\u0016Öì!ÿÊÛ%Q\u0014±N\u001e∞\u0015—\t]ßåÊp ‚<Œò⁄qÿ 9”òZâ\"eç“üúE ç&‘ƒ·@d;û$ ÿN*‘\u0012c\u001f∆∆’……4«\u0016ì4Õ´(+^ ƒÁ\u0003–Ÿ\"áŒI6D¬ëí\r≤ùëæõ/˝ÿ\u0013Óí^◊\u001f\u001bø±Nµ¬ù9ê;\"kÑÆè¢∆êä⁄Cú≤\u00146oÇ4€\u001b◊\n\"‹9‹sü{}˜∏√≠\f@_\b‡ßT8Ëã\u0001\fÂ|g¸¢ƒ6BiÊ∞\u0011\u0014fÊ[\u000eœ¥ûÙæ˜∑∑j´\b€P\u0001`< ¨?Ω®C¯D\u000e√•ë?¨«\u0019Ñì±4¨Á⁄k’{ÛÇﬁ\u001d÷Õ>|∏¯oç\u001ef7y>Eûœ\"œóï\u0017S‰≈,ÚbYy9E^Œ\"/óïØ¶»W≥»WÀ ´)Új\u0016yıﬂr\u001fÒ˛óÎ7ô∆)˚\u00064?œùB\u0007\u0000\u0000"
+        }
+      },
+      "recorded_at": "Sat, 25 Mar 2023 02:25:10 GMT"
+    }
+  ],
+  "recorded_with": "VCR 6.1.0"
+}

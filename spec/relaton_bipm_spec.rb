@@ -12,7 +12,7 @@ RSpec.describe RelatonBipm do
   it "search a code" do
     expect(File).to receive(:exist?).with(/index\.yaml/).and_return false
     allow(File).to receive(:exist?).and_call_original
-    VCR.use_cassette "cctf_meeting_14" do
+    VCR.use_cassette "cctf_meeting_14", serialize_with: :json do
       result = RelatonBipm::BipmBibliography.search "BIPM CCTF -- Meeting 14 (1999)"
       expect(result).to be_instance_of RelatonBipm::BipmBibliographicItem
     end
@@ -20,15 +20,21 @@ RSpec.describe RelatonBipm do
 
   context "get document" do
     context "from relaton-data-bipm" do
-      # before :each do
-      #   expect(File).to receive(:exist?).with(/index\.yaml/).and_return false
-      #   allow(File).to receive(:exist?).and_call_original
-      # end
-
       it "CCTF Recommendation EN" do
         VCR.use_cassette "cctf_recommendation_2009_02" do
           file = "spec/fixtures/cctf_recommendation_2009_02.xml"
           result = RelatonBipm::BipmBibliography.get "CCTF -- Recommendation 2 (2009)"
+          xml = result.to_xml(bibdata: true)
+          File.write file, xml, encoding: "UTF-8" unless File.exist? file
+          expect(xml).to be_equivalent_to File.read(file, encoding: "UTF-8")
+            .gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
+        end
+      end
+
+      it "CCTF Recommendation EN" do
+        VCR.use_cassette "cctf_recommendation_2009_02" do
+          file = "spec/fixtures/cctf_recommendation_2009_02.xml"
+          result = RelatonBipm::BipmBibliography.get "CCTF Recommendation 2009-02"
           xml = result.to_xml(bibdata: true)
           File.write file, xml, encoding: "UTF-8" unless File.exist? file
           expect(xml).to be_equivalent_to File.read(file, encoding: "UTF-8")
@@ -91,6 +97,15 @@ RSpec.describe RelatonBipm do
         end
       end
 
+      it "CIPM resolution", vcr: { cassette_name: "cipm_resolution_1879" } do
+        file = "spec/fixtures/cipm_resolution_1879.xml"
+        result = RelatonBipm::BipmBibliography.get "CIPM Resolution (1879)"
+        xml = result.to_xml(bibdata: true)
+        File.write file, xml, encoding: "UTF-8" unless File.exist? file
+        expect(xml).to be_equivalent_to File.read(file, encoding: "UTF-8")
+          .gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
+      end
+
       context "CIPM decision" do
         it "long notation EN" do
           VCR.use_cassette "cipm_decision_2012_01" do
@@ -124,6 +139,15 @@ RSpec.describe RelatonBipm do
               .sub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
           end
         end
+
+        # it "without year", vcr: { cassette_name: "cipm_meeting_43_1950" } do
+        #   file = "spec/fixtures/cipm_meeting_43_1950.xml"
+        #   result = RelatonBipm::BipmBibliography.get "CIPM Meeting 43"
+        #   xml = result.to_xml(bibdata: true)
+        #   File.write file, xml, encoding: "UTF-8" unless File.exist? file
+        #   expect(xml).to be_equivalent_to File.read(file, encoding: "UTF-8")
+        #     .sub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
+        # end
       end
 
       it "SI Brochure", vcr: "si_brochure" do
@@ -144,7 +168,7 @@ RSpec.describe RelatonBipm do
         end
       end
 
-      it "volume" do
+      it "journal" do
         VCR.use_cassette "metrologia_30" do
           file = "spec/fixtures/metrologia_30.xml"
           result = RelatonBipm::BipmBibliography.get "BIPM Metrologia 30"
@@ -155,7 +179,7 @@ RSpec.describe RelatonBipm do
         end
       end
 
-      it "issue" do
+      it "volume" do
         VCR.use_cassette "metrologia_29_6" do
           file = "spec/fixtures/metrologia_29_6.xml"
           result = RelatonBipm::BipmBibliography.get "BIPM Metrologia 29 6"
@@ -166,7 +190,7 @@ RSpec.describe RelatonBipm do
         end
       end
 
-      it "issue with title" do
+      it "volume with title" do
         VCR.use_cassette "metrologia_30_4" do
           file = "spec/fixtures/metrologia_30_4.xml"
           result = RelatonBipm::BipmBibliography.get "BIPM Metrologia 30 4"

@@ -240,6 +240,8 @@ module RelatonBipm
       key << item.docidentifier.detect { |i| i.language == "fr" }.id
       @data_fetcher.index[key] = path
       @data_fetcher.index_new.add_or_update key, path
+      key2 = Id.new(item.docnumber).normalized_hash
+      @data_fetcher.index2.add_or_update key2, path
     end
 
     #

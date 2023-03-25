@@ -1,0 +1,132 @@
+{
+  "http_interactions": [
+    {
+      "request": {
+        "method": "get",
+        "uri": "https://raw.githubusercontent.com/relaton/relaton-data-bipm/master/data/metrologia-19-4-004.yaml",
+        "body": {
+          "encoding": "US-ASCII",
+          "string": ""
+        },
+        "headers": {
+          "Accept-Encoding": [
+            "gzip, deflate, br"
+          ],
+          "Accept": [
+            "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"
+          ],
+          "User-Agent": [
+            "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_2) AppleWebKit/601.3.9 (KHTML, like Gecko) Version/9.0.2 Safari/601.3.9"
+          ],
+          "Accept-Charset": [
+            "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+          ],
+          "Accept-Language": [
+            "en-US,en;q=0.9,ru-RU;q=0.8,ru;q=0.7"
+          ],
+          "Host": [
+            "raw.githubusercontent.com"
+          ],
+          "Cache-Control": [
+            "max-age=0"
+          ],
+          "Upgrade-Insecure-Requests": [
+            "1"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Keep-Alive": [
+            "300"
+          ]
+        }
+      },
+      "response": {
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "headers": {
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Length": [
+            "494"
+          ],
+          "Cache-Control": [
+            "max-age=300"
+          ],
+          "Content-Security-Policy": [
+            "default-src 'none'; style-src 'unsafe-inline'; sandbox"
+          ],
+          "Content-Type": [
+            "text/plain; charset=utf-8"
+          ],
+          "Etag": [
+            "W/\"d4ef5e7fa06a5d46e4503ca26fec6e3df09b51dace95ef06a9bb96d841c6f669\""
+          ],
+          "Strict-Transport-Security": [
+            "max-age=31536000"
+          ],
+          "X-Content-Type-Options": [
+            "nosniff"
+          ],
+          "X-Frame-Options": [
+            "deny"
+          ],
+          "X-Xss-Protection": [
+            "1; mode=block"
+          ],
+          "X-Github-Request-Id": [
+            "397E:0C81:FA614:16A5BF:641E5B87"
+          ],
+          "Content-Encoding": [
+            "gzip"
+          ],
+          "Accept-Ranges": [
+            "bytes"
+          ],
+          "Date": [
+            "Sat, 25 Mar 2023 02:25:11 GMT"
+          ],
+          "Via": [
+            "1.1 varnish"
+          ],
+          "X-Served-By": [
+            "cache-iad-kcgs7200126-IAD"
+          ],
+          "X-Cache": [
+            "MISS"
+          ],
+          "X-Cache-Hits": [
+            "0"
+          ],
+          "X-Timer": [
+            "S1679711112.737544,VS0,VE71"
+          ],
+          "Vary": [
+            "Authorization,Accept-Encoding,Origin"
+          ],
+          "Access-Control-Allow-Origin": [
+            "*"
+          ],
+          "X-Fastly-Request-Id": [
+            "c4cbae10cccd50c58e7d90834196aa3ec9fcffbd"
+          ],
+          "Expires": [
+            "Sat, 25 Mar 2023 02:30:11 GMT"
+          ],
+          "Source-Age": [
+            "0"
+          ]
+        },
+        "body": {
+          "encoding": "UTF-8",
+          "string": "\u001fã\b\u0000\u0000\u0000\u0000\u0000\u0000\u0003ùTÀn€0\u0010ºÛ+ˆÊìl)\u0011R[«6ó\u0000qÎ?(hje/@ë\u0002πrÍøÔRí_â}\t!@‘ê˚ò\u0019RYñ©hˆÿÍÏÄ!íw\u0015\u001cä˘”ºPTW∞F\u000eﬁ˙\u001dÈbUÊy©òÿb•20ﬁ1:Æ‡’õæïYÑ_ﬁ\u0019\fé‹\u000exè\u001b?‡\u0015\u001brƒí\u0016|3†)#*\u0000´›Æ◊;…\u0005ê\u0001:yE\u0013®„\u0011x◊ú†∆áVK\u0011∆ºË¨&ß¯ÿa\u0005:0\u0019ã™ˆF˙î~nªÖb\u0005%§Ü\u0001∆Äüoõµ|tÅZ\u001déí1Ù8Ö\u0015˘º»óÀEû?Ωd≈Û™\\\u0014´Eπ∏éÆ=©ZÛ¿|D∫~k)Ó±ñ=\u0007m{Åf≈jYfy!œL\u0005<\f\u0001∑®Ò›1–nœ)ëˇp\u0018F∫N∑É\u0012i~Vvs*\u0001Ω´1Ä%É¢0lèˆgsZNrøsj£\tæùÍ•˙V'›/\u001dÔu\\kG\rF\u001eV$bK[bl« ìµüö¯¶Ωi\\[<f\u001dlN„bı∏0Ÿù∆\u001dÀ\u0013<™?Óû\u001c\u0010\u000b¶ò{\u0006$º≈ö˙ˆT∆Ë\u0010H\u0014Oá¿±ä(_q–Á¬¸Ã˚rñ‘W.g&◊<ÆX‹· ≥îW™Yo¥%>N™\u000f\\\u000eﬁä \u0003\u0010∞¡ê|˛{ˆsˆ äbÏ\u001f\u0004ïèb:!Ò†ŒÀÛÏ”\n˚ÑˇXŒ“=ªΩx¬ß\u001aÓÏóG>œ’ïÂãÔW\u0004\u0000\u0000"
+        }
+      },
+      "recorded_at": "Sat, 25 Mar 2023 02:25:11 GMT"
+    }
+  ],
+  "recorded_with": "VCR 6.1.0"
+}

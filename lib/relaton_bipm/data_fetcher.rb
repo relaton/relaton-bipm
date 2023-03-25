@@ -1,6 +1,6 @@
 module RelatonBipm
   class DataFetcher
-    attr_reader :output, :format, :ext, :files, :index, :index_new
+    attr_reader :output, :format, :ext, :files, :index, :index_new, :index2
 
     #
     # Initialize fetcher
@@ -16,6 +16,7 @@ module RelatonBipm
       @index_path = "index.yaml"
       @index = File.exist?(@index_path) ? YAML.load_file(@index_path) : {}
       @index_new = Relaton::Index.find_or_create :BIPM, file: "index-bipm.yaml"
+      @index2 = Relaton::Index.find_or_create :BIPM, file: "index2.yaml"
     end
 
     #
@@ -48,6 +49,7 @@ module RelatonBipm
       end
       File.write @index_path, index.to_yaml, encoding: "UTF-8"
       index_new.save
+      index2.save
     end
 
     #

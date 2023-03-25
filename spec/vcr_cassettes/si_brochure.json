@@ -1,0 +1,132 @@
+{
+  "http_interactions": [
+    {
+      "request": {
+        "method": "get",
+        "uri": "https://raw.githubusercontent.com/relaton/relaton-data-bipm/master/data/si-brochure.yaml",
+        "body": {
+          "encoding": "US-ASCII",
+          "string": ""
+        },
+        "headers": {
+          "Accept-Encoding": [
+            "gzip, deflate, br"
+          ],
+          "Accept": [
+            "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"
+          ],
+          "User-Agent": [
+            "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; .NET CLR 1.1.4322; .NET CLR 2.0.50727)"
+          ],
+          "Accept-Charset": [
+            "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+          ],
+          "Accept-Language": [
+            "en-US,en;q=0.9,ru-RU;q=0.8,ru;q=0.7"
+          ],
+          "Host": [
+            "raw.githubusercontent.com"
+          ],
+          "Cache-Control": [
+            "max-age=0"
+          ],
+          "Upgrade-Insecure-Requests": [
+            "1"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Keep-Alive": [
+            "300"
+          ]
+        }
+      },
+      "response": {
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "headers": {
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Length": [
+            "598"
+          ],
+          "Cache-Control": [
+            "max-age=300"
+          ],
+          "Content-Security-Policy": [
+            "default-src 'none'; style-src 'unsafe-inline'; sandbox"
+          ],
+          "Content-Type": [
+            "text/plain; charset=utf-8"
+          ],
+          "Etag": [
+            "W/\"5e6de25acaca8e1bb65a57b6ea18d1dad22f9c959b82323c039ed7e2775ac9ee\""
+          ],
+          "Strict-Transport-Security": [
+            "max-age=31536000"
+          ],
+          "X-Content-Type-Options": [
+            "nosniff"
+          ],
+          "X-Frame-Options": [
+            "deny"
+          ],
+          "X-Xss-Protection": [
+            "1; mode=block"
+          ],
+          "X-Github-Request-Id": [
+            "E32A:14A9:1AAB02:27733B:641E5B85"
+          ],
+          "Content-Encoding": [
+            "gzip"
+          ],
+          "Accept-Ranges": [
+            "bytes"
+          ],
+          "Date": [
+            "Sat, 25 Mar 2023 02:25:09 GMT"
+          ],
+          "Via": [
+            "1.1 varnish"
+          ],
+          "X-Served-By": [
+            "cache-iad-kjyo7100165-IAD"
+          ],
+          "X-Cache": [
+            "MISS"
+          ],
+          "X-Cache-Hits": [
+            "0"
+          ],
+          "X-Timer": [
+            "S1679711110.846876,VS0,VE76"
+          ],
+          "Vary": [
+            "Authorization,Accept-Encoding,Origin"
+          ],
+          "Access-Control-Allow-Origin": [
+            "*"
+          ],
+          "X-Fastly-Request-Id": [
+            "d986f49f0b1d30199809469ecddaa2acd9ecdfb5"
+          ],
+          "Expires": [
+            "Sat, 25 Mar 2023 02:30:09 GMT"
+          ],
+          "Source-Age": [
+            "0"
+          ]
+        },
+        "body": {
+          "encoding": "UTF-8",
+          "string": "\u001f‹\b\u0000\u0000\u0000\u0000\u0000\u0000\u0003ÍUKŽÚ@\u0010Ýû\u0014µs²hb,E\f,ÙY\u001a¢‘H”å¨m—¡%w·UÝMBV¹Fnœcn’“¤ÚÆ\f\u0004òa\u0013…\rmÓïU½W\u001f„\u0010‰«¶¨¥Ø!9eÍ\u0002vÓI>™&ª^À²xX­‹%Ùj\u001b\b\u0013¯|‹‹D@eGã\u0017ðv‹Pð™Œô\f–-¬÷Î£\u0006ÛÀ;£¼K\u0000Zi6An\u0018\b \u0000\r5–´d¸ÇþU×J\u0015_ú}‡\u000bÐñá–\bðb]¼¼9LeYïiœ{ì‰Ÿ¾j\u0004u\u0016¯þþùKàHOß.Õ4t›š¿Šr]ÑŸB\rŠ†³óÒÔ’ê¤¶\u0015×‘3\u0018«\të\u0002Žõ\u001c¡ñ\u0007~èHiI{f§€\u0007Ì|v'æ¹¸Ës‘ç³\\dGP±^¾‰ü&è\u0012iqF\u001cõ’*ƒ·\u0014ƒ[ÚH£>õR£\u0018\u0000#5\u000e§\u0013s–\f•ág_ÐAgUí\u0000=ht|Çõ@Y–„;uB\n'Tƒ\"²íÁ½!g\u0019üÖÒÿ”Q\u0017ÊV¹-W\u000ek5\u0002 tž&ã\\rÖ‘=ž\u001fké\u0019›æÙt.²×\"ÏRFÕ$\u001bßo6Køê•KÏ\u001dÕ÷S?&®\"Õùøæ^z\u0013+ÊÝãƒ‹‰ðispe'ÛÀtÊ\bîÁ*–¸Û“Úl{¤ý`¸\u0005zYÿÈÇ†¬>ˆKcÎƒ›åØ€ÑLKJ¶\u001b²¡\u001b<ÕZy\u0007÷eEÖìõ‘/\näûÆ»‹äÏ·ÏA\noŸ÷\u0018å;àQƒ\u0015ÊçüÏ'w`ë÷QüŒv?ô¦_·«¸°ëa´k…¿\u000f×/‹_†s<à•g‚ZÕ\u001cP5j¨ÞÉ4ŸìˆNRlÅišðÒé»âò\u000f#›d‰SÒuXñå&´mò\u0003&¶\u000e\u001d\\\u0006\u0000\u0000"
+        }
+      },
+      "recorded_at": "Sat, 25 Mar 2023 02:25:09 GMT"
+    }
+  ],
+  "recorded_with": "VCR 6.1.0"
+}

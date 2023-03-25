@@ -94,7 +94,7 @@ module RelatonBipm
       def parse_title
         @meta.xpath("./title-group/article-title").map do |t|
           next if t.text.empty?
- 
+
           RelatonBib::TypedTitleString.new content: t.text, language: t[:"xml:lang"], script: "Latn"
         end.compact
       end

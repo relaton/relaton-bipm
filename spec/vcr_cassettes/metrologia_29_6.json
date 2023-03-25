@@ -1,0 +1,132 @@
+{
+  "http_interactions": [
+    {
+      "request": {
+        "method": "get",
+        "uri": "https://raw.githubusercontent.com/relaton/relaton-data-bipm/master/data/metrologia-29-6.yaml",
+        "body": {
+          "encoding": "US-ASCII",
+          "string": ""
+        },
+        "headers": {
+          "Accept-Encoding": [
+            "gzip, deflate, br"
+          ],
+          "Accept": [
+            "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"
+          ],
+          "User-Agent": [
+            "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:94.0) Gecko/20100101 Firefox/94.0"
+          ],
+          "Accept-Charset": [
+            "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+          ],
+          "Accept-Language": [
+            "en-US,en;q=0.9,ru-RU;q=0.8,ru;q=0.7"
+          ],
+          "Host": [
+            "raw.githubusercontent.com"
+          ],
+          "Cache-Control": [
+            "max-age=0"
+          ],
+          "Upgrade-Insecure-Requests": [
+            "1"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Keep-Alive": [
+            "300"
+          ]
+        }
+      },
+      "response": {
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "headers": {
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Length": [
+            "393"
+          ],
+          "Cache-Control": [
+            "max-age=300"
+          ],
+          "Content-Security-Policy": [
+            "default-src 'none'; style-src 'unsafe-inline'; sandbox"
+          ],
+          "Content-Type": [
+            "text/plain; charset=utf-8"
+          ],
+          "Etag": [
+            "W/\"13fd94cbb5baa5f8844cb38a69a5ef8eaee92328b8acadce915c14143bc0d188\""
+          ],
+          "Strict-Transport-Security": [
+            "max-age=31536000"
+          ],
+          "X-Content-Type-Options": [
+            "nosniff"
+          ],
+          "X-Frame-Options": [
+            "deny"
+          ],
+          "X-Xss-Protection": [
+            "1; mode=block"
+          ],
+          "X-Github-Request-Id": [
+            "5856:139D:5E91D:9AA9D:641E5B86"
+          ],
+          "Content-Encoding": [
+            "gzip"
+          ],
+          "Accept-Ranges": [
+            "bytes"
+          ],
+          "Date": [
+            "Sat, 25 Mar 2023 02:25:11 GMT"
+          ],
+          "Via": [
+            "1.1 varnish"
+          ],
+          "X-Served-By": [
+            "cache-iad-kjyo7100166-IAD"
+          ],
+          "X-Cache": [
+            "MISS"
+          ],
+          "X-Cache-Hits": [
+            "0"
+          ],
+          "X-Timer": [
+            "S1679711111.932939,VS0,VE82"
+          ],
+          "Vary": [
+            "Authorization,Accept-Encoding,Origin"
+          ],
+          "Access-Control-Allow-Origin": [
+            "*"
+          ],
+          "X-Fastly-Request-Id": [
+            "999f32fa2ed859a95a0529b7aec3f5423b3fe745"
+          ],
+          "Expires": [
+            "Sat, 25 Mar 2023 02:30:11 GMT"
+          ],
+          "Source-Age": [
+            "0"
+          ]
+        },
+        "body": {
+          "encoding": "UTF-8",
+          "string": "\u001f‹\b\u0000\u0000\u0000\u0000\u0000\u0000\u0003ÅÖKnÂ0\u0010\u0006à½O1\u0017ÈËPÀ^vW©¨½‚\tC°šØ–cP¹}í$\u0010\u001e­”JDñÊIÆÿx¾U¢(\"u¾ÇJDG´µÔŠÃ1‹iœ\u0011¹å°Fgu©\u000b)([Rª/N\"Èµr¨\u001c‡½s¦æI\"µ©s‰*ÇØocm‹DÖõ\u0001“4¥‹(›±yBY² \u0000îdCmsÒî„u2/‘luîûùìÛ®@\u0019ôÇ^ß>×şÁXY\t{âàì\u0001I)Tq\u0010\u0005†Ã¨ü0V\u001a\u0017\u001eŞ…Sd§m%œÃ­Å\u001d÷g/WìÑ\u0007\u00014Q\u0000ç°ğ¢‰\u0003h\u0003}oüv‰)…TÄb)\\óMÛ‹\u001a?ÖÇÎWoäF:¬B\u0002À\u0003èl9k>tÃ‡í¯\u0000p.¼ƒ\bë\u0016#¼¹\u001f9¬¿Æ¾J¾\u001e¿½IC\u0010VÏĞ~è(úf7\u001cÿF`C\u0011Øh\blj„ÕP„Õh\b«É\u0011Ør BW8\u0002Â%y*„yö2\fá\\ø|„>y2\u0004:\u0014†@'G˜g\u0003\u0011ºÂ\u0011\u0010.ÉÓ!Ğ¡\bt4\u0004úl\u0004¿ãÍïÅÃW\u001a§ä\u0007òWÄ_”\t\u0000\u0000"
+        }
+      },
+      "recorded_at": "Sat, 25 Mar 2023 02:25:10 GMT"
+    }
+  ],
+  "recorded_with": "VCR 6.1.0"
+}

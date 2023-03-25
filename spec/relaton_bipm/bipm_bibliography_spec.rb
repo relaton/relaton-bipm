@@ -13,36 +13,14 @@ RSpec.describe RelatonBipm::BipmBibliography do
       index = double "index"
       expect(index).to receive(:search).and_return [{ path: "data/doc.yaml" }]
       expect(Relaton::Index).to receive(:find_or_create).with(
-        :BIPM, url: "https://raw.githubusercontent.com/relaton/relaton-data-bipm/master/index-bipm.zip"
+        :BIPM, url: "https://raw.githubusercontent.com/relaton/relaton-data-bipm/master/index2.zip"
       ).and_return index
-      # expect(RelatonBipm::Index).to receive(:new).and_return index
       expect(agent).to receive(:get).and_raise Mechanize::ResponseCodeError.new(Mechanize::Page.new)
       expect(Mechanize).to receive(:new).and_return agent
       expect do
-        RelatonBipm::BipmBibliography.search "ref"
+        RelatonBipm::BipmBibliography.search "Metrologia"
       end.to raise_error RelatonBib::RequestError
     end
-
-    # it "fetch form BIPM and redirec to CAPTCHA" do
-    #   header = { "location" => "https://validate.perfdrive.com" }
-    #   resp = double(:page, code: "302", header: header, uri: "https://iopscience.iop.org")
-    #   expect(agent).to receive(:get).and_return resp
-    #   expect(agent).to receive(:redirect_ok=)
-    #   expect(Mechanize).to receive(:new).and_return agent
-    #   expect do
-    #     RelatonBipm::BipmBibliography.search "Metrologia"
-    #   end.to raise_error RelatonBib::RequestError
-    # end
-
-    # it "fetch form BIPM with HTTP error" do
-    #   resp = double(:page, code: "404", uri: "https://iopscience.iop.org")
-    #   expect(agent).to receive(:get).and_return resp
-    #   expect(agent).to receive(:redirect_ok=)
-    #   expect(Mechanize).to receive(:new).and_return agent
-    #   expect do
-    #     RelatonBipm::BipmBibliography.search "Metrologia"
-    #   end.to raise_error RelatonBib::RequestError
-    # end
   end
 
   context "bib instance" do

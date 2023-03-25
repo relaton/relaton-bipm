@@ -1,0 +1,132 @@
+{
+  "http_interactions": [
+    {
+      "request": {
+        "method": "get",
+        "uri": "https://raw.githubusercontent.com/relaton/relaton-data-bipm/master/data/metrologia-29-6-001.yaml",
+        "body": {
+          "encoding": "US-ASCII",
+          "string": ""
+        },
+        "headers": {
+          "Accept-Encoding": [
+            "gzip, deflate, br"
+          ],
+          "Accept": [
+            "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"
+          ],
+          "User-Agent": [
+            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2486.0 Safari/537.36 Edge/13.10586"
+          ],
+          "Accept-Charset": [
+            "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+          ],
+          "Accept-Language": [
+            "en-US,en;q=0.9,ru-RU;q=0.8,ru;q=0.7"
+          ],
+          "Host": [
+            "raw.githubusercontent.com"
+          ],
+          "Cache-Control": [
+            "max-age=0"
+          ],
+          "Upgrade-Insecure-Requests": [
+            "1"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Keep-Alive": [
+            "300"
+          ]
+        }
+      },
+      "response": {
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "headers": {
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Length": [
+            "1135"
+          ],
+          "Cache-Control": [
+            "max-age=300"
+          ],
+          "Content-Security-Policy": [
+            "default-src 'none'; style-src 'unsafe-inline'; sandbox"
+          ],
+          "Content-Type": [
+            "text/plain; charset=utf-8"
+          ],
+          "Etag": [
+            "W/\"93419dd1f4169c03e952428c4dbd12eb138307d7d6959f9138dcbd215355b0b4\""
+          ],
+          "Strict-Transport-Security": [
+            "max-age=31536000"
+          ],
+          "X-Content-Type-Options": [
+            "nosniff"
+          ],
+          "X-Frame-Options": [
+            "deny"
+          ],
+          "X-Xss-Protection": [
+            "1; mode=block"
+          ],
+          "X-Github-Request-Id": [
+            "6732:6034:61ED68:A08128:641E5B87"
+          ],
+          "Content-Encoding": [
+            "gzip"
+          ],
+          "Accept-Ranges": [
+            "bytes"
+          ],
+          "Date": [
+            "Sat, 25 Mar 2023 02:25:11 GMT"
+          ],
+          "Via": [
+            "1.1 varnish"
+          ],
+          "X-Served-By": [
+            "cache-iad-kjyo7100068-IAD"
+          ],
+          "X-Cache": [
+            "MISS"
+          ],
+          "X-Cache-Hits": [
+            "0"
+          ],
+          "X-Timer": [
+            "S1679711111.468412,VS0,VE91"
+          ],
+          "Vary": [
+            "Authorization,Accept-Encoding,Origin"
+          ],
+          "Access-Control-Allow-Origin": [
+            "*"
+          ],
+          "X-Fastly-Request-Id": [
+            "6c579be274a2a8bd95bb18a27bda516766f416a3"
+          ],
+          "Expires": [
+            "Sat, 25 Mar 2023 02:30:11 GMT"
+          ],
+          "Source-Age": [
+            "0"
+          ]
+        },
+        "body": {
+          "encoding": "UTF-8",
+          "string": "\u001fã\b\u0000\u0000\u0000\u0000\u0000\u0000\u0003ùV€é€6\u0010}◊W\fÚ‚\u0017ﬂ∑ÿ¨ç ¿&)–\u0005ˆÜ¶h\u001e\u000bJ\u001a[ƒR§ ãΩÓ◊˜êíey„}âa√÷\fg8ÁÃÕì…$sE≈µòÏÿ:iÙövãÈr∫»dπ¶\u0007ˆ÷(≥ïbπ∫ûœ\u0017ôó^Ò:õPa¥gÌ◊Ùç\u000bQ2æú‹jG\u001bcÈ\u0007Àm%ı÷ëŸ–£—ì†%‰5˝-¨\u0014∫‡åH\tΩ\rb\u000b_D\u0013bç/WXŸ¯Vp/|\u0014E+ÅK<ø˙Y£Ñ‘ô?4º&aΩ,\u0014g•)\u0010'‚9èññ+∫¶\u00180QkÂÓ˘\u0001\u000fçïµ∞\u0007x¥Å;≥≈|∫òﬂ‹ÃÊÛÂıdqµ˙m∂\\ÕÆgCÎ“»¨\u0014>!o%M»ït\u0015ó8≥\u0013*@4Z¨VWì˘\u0002ÔQ\u0016˘±2\u000fﬁÿh‘Ä\\pã√DZ‘‹˛\u0002Ê`áèt‚ıw˙J\u000f∆ZÈz›ê≥ˆ’1◊˘Í˘;*;\u0016âƒf#ï\u0014^\u001ecòê±[°Â\u0003Ÿ€ÿ‚©>úØﬂÔ˛|¢or'cëƒƒﬁ6çí\\“sup≤pczLæÑB\u001e\u0004pq\rCÑê\u001b+¿¬a‹ªçØÁ'˙b^iπ∏\u0019”Ω‘ÂF≤*œX\u0010≈\u0019\u0016Qññù[üy)§G.\u001føˇ†Â¸„¸\\e\u00022\u0000Ìmpﬁ\n†á\u001aÂ—U\\WF¡W∆fñw)ªÁ)\u0014y4åQ\fx¯©˘¸W≈‰Xq·;*Ñ&\u0006√Öåà˜]ıSôZÇ§#\u0001˚∫∆Ÿ∆ö\\qM≤MK-ú£∫´⁄√î¢„\u0002°ÊVÙÆqìè?¥©%»U\u0007‚\u0003Hé∂Ï‡\tÕaÎÿj…•—å‘Rm,ìÂ\r[Fø\u001d\u000f√çè±#…m—¢∞!÷∆„ÉNãﬁ\u001b∞\u001ca\b}†RFTA˘.y(Á\u000eU€ËËJ÷eƒÍ/E˛\"\u0001Àä∫≈È\r’p%\u001bÖ+ÖnìÌB~\u0012v·aZ‡zƒü@Ä9(_ßt;‡‹\u0006≈8+|d\u0017ÉÎ@{Y≤:$ü¡°*!O˙Ë∞K\u0004&âïØîGÇêˆm¨’)˝aˆ\f\u000f„Å\u0010Eï≤VÓ\u0004 pÀ&∏é[≥ØX\u0013òJû˜˝§ãy8]Uâ\u001d\u000f©n«ﬁîÓ`Z\u0014\u0001$qÚ∏7ˆ\u0005Áp\u0019ﬁ[÷lS\u000ebBZF\u001dèI∏ÙpÙ\u0012i Öä?ìô2¢úî‹ \u0013»[€Ó∫§M\u0000\u001eTF‰P&ûÃ\u0006Ÿ\"Õ∞sòÅ1!†™e\u0019\\ÈT;ùÁi?–˜ï,™ÆZ_†gèzKÜàc?úÙz0È˚`\u0013\u00139„bÁCây1N—â‰±âÌ%Q7$\u001a¥Ü(™\u0018TBn4ö/Ù\u001dÊ\u0002t«“ã\\…\u001dÎÈßYÛ˘√Ø-ì ◊\nC∫9X H-nˆ†ø58M¡AÁ?\u001f'>\n¥\u0004\u0005J\u0016©∑Ú\u0003›==\u001f’±\u0019Ó},Óç5u7QFò0™õ¥«—S\t˜Ä\u0001ºaÁì\u0006\u0016πÃ•Á∫Ωπ€¥oÇ¯≈m{i{\fv«˘Ê\u0018Ïçã\u001b8ä€eÿûÓ\u0016\"6bgsi\u001f¶\u0002‚RÜ˙xM!∞‹¿x‹…®[«xrâü\u0013Ú\u001e˜iµg?cÈë\fq\fP\\¿ê&WJª2EÍ¯éıÑegT®[ﬁ˙\u0019˙OóœÂjÙéït.ºct˝ûM\u0003\u0010óMÆ>^çﬁhºIÚè£¯∑Á¸\u0010¨S’ˇÙWn>ùgˇ\u0003\u0006qŸÊ\t\u0000\u0000"
+        }
+      },
+      "recorded_at": "Sat, 25 Mar 2023 02:25:11 GMT"
+    }
+  ],
+  "recorded_with": "VCR 6.1.0"
+}
