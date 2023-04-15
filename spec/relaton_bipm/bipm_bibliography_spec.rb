@@ -13,7 +13,7 @@ RSpec.describe RelatonBipm::BipmBibliography do
       index = double "index"
       expect(index).to receive(:search).and_return [{ path: "data/doc.yaml" }]
       expect(Relaton::Index).to receive(:find_or_create).with(
-        :BIPM, url: "https://raw.githubusercontent.com/relaton/relaton-data-bipm/master/index2.zip"
+        :BIPM, url: "https://raw.githubusercontent.com/relaton/relaton-data-bipm/master/index2.zip", file: "index2.yaml"
       ).and_return index
       expect(agent).to receive(:get).and_raise Mechanize::ResponseCodeError.new(Mechanize::Page.new)
       expect(Mechanize).to receive(:new).and_return agent

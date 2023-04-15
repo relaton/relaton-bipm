@@ -1,5 +1,5 @@
-<bibdata type="article" schema-version="v1.2.1">
-  <fetched>2023-02-16</fetched>
+<bibdata type="article" schema-version="v1.2.3">
+  <fetched>2023-04-15</fetched>
   <formattedref format="text/plain" language="en" script="Latn">Metrologia 29 6</formattedref>
   <uri type="src">https://iopscience.iop.org/issue/0026-1394/29/6</uri>
   <docidentifier type="BIPM" primary="true">Metrologia 29 6</docidentifier>
@@ -7,8 +7,8 @@
   <script>Latn</script>
   <relation type="partOf">
     <bibitem>
-      <formattedref format="text/plain" language="en" script="Latn">Metrologia 29 6 373</formattedref>
-      <docidentifier type="BIPM" primary="true">Metrologia 29 6 373</docidentifier>
+      <formattedref format="text/plain" language="en" script="Latn">Metrologia 29 6 415</formattedref>
+      <docidentifier type="BIPM" primary="true">Metrologia 29 6 415</docidentifier>
     </bibitem>
   </relation>
   <relation type="partOf">
@@ -19,26 +19,26 @@
   </relation>
   <relation type="partOf">
     <bibitem>
-      <formattedref format="text/plain" language="en" script="Latn">Metrologia 29 6 389</formattedref>
-      <docidentifier type="BIPM" primary="true">Metrologia 29 6 389</docidentifier>
-    </bibitem>
-  </relation>
-  <relation type="partOf">
-    <bibitem>
       <formattedref format="text/plain" language="en" script="Latn">Metrologia 29 6 397</formattedref>
       <docidentifier type="BIPM" primary="true">Metrologia 29 6 397</docidentifier>
     </bibitem>
   </relation>
   <relation type="partOf">
     <bibitem>
-      <formattedref format="text/plain" language="en" script="Latn">Metrologia 29 6 415</formattedref>
-      <docidentifier type="BIPM" primary="true">Metrologia 29 6 415</docidentifier>
+      <formattedref format="text/plain" language="en" script="Latn">Metrologia 29 6 425</formattedref>
+      <docidentifier type="BIPM" primary="true">Metrologia 29 6 425</docidentifier>
     </bibitem>
   </relation>
   <relation type="partOf">
     <bibitem>
-      <formattedref format="text/plain" language="en" script="Latn">Metrologia 29 6 425</formattedref>
-      <docidentifier type="BIPM" primary="true">Metrologia 29 6 425</docidentifier>
+      <formattedref format="text/plain" language="en" script="Latn">Metrologia 29 6 389</formattedref>
+      <docidentifier type="BIPM" primary="true">Metrologia 29 6 389</docidentifier>
+    </bibitem>
+  </relation>
+  <relation type="partOf">
+    <bibitem>
+      <formattedref format="text/plain" language="en" script="Latn">Metrologia 29 6 373</formattedref>
+      <docidentifier type="BIPM" primary="true">Metrologia 29 6 373</docidentifier>
     </bibitem>
   </relation>
   <relation type="partOf">

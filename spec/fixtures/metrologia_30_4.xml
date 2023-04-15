@@ -1,5 +1,5 @@
-<bibdata type="article" schema-version="v1.2.1">
-  <fetched>2023-02-16</fetched>
+<bibdata type="article" schema-version="v1.2.3">
+  <fetched>2023-04-15</fetched>
   <formattedref format="text/plain" language="en" script="Latn">Metrologia 30 4</formattedref>
   <uri type="src">https://iopscience.iop.org/issue/0026-1394/30/4</uri>
   <docidentifier type="BIPM" primary="true">Metrologia 30 4</docidentifier>
@@ -7,14 +7,32 @@
   <script>Latn</script>
   <relation type="partOf">
     <bibitem>
-      <formattedref format="text/plain" language="en" script="Latn">Metrologia 30 4 205</formattedref>
-      <docidentifier type="BIPM" primary="true">Metrologia 30 4 205</docidentifier>
+      <formattedref format="text/plain" language="en" script="Latn">Metrologia 30 4 309</formattedref>
+      <docidentifier type="BIPM" primary="true">Metrologia 30 4 309</docidentifier>
     </bibitem>
   </relation>
   <relation type="partOf">
     <bibitem>
-      <formattedref format="text/plain" language="en" script="Latn">Metrologia 30 4 207</formattedref>
-      <docidentifier type="BIPM" primary="true">Metrologia 30 4 207</docidentifier>
+      <formattedref format="text/plain" language="en" script="Latn">Metrologia 30 4 381</formattedref>
+      <docidentifier type="BIPM" primary="true">Metrologia 30 4 381</docidentifier>
+    </bibitem>
+  </relation>
+  <relation type="partOf">
+    <bibitem>
+      <formattedref format="text/plain" language="en" script="Latn">Metrologia 30 4 265</formattedref>
+      <docidentifier type="BIPM" primary="true">Metrologia 30 4 265</docidentifier>
+    </bibitem>
+  </relation>
+  <relation type="partOf">
+    <bibitem>
+      <formattedref format="text/plain" language="en" script="Latn">Metrologia 30 4 397</formattedref>
+      <docidentifier type="BIPM" primary="true">Metrologia 30 4 397</docidentifier>
+    </bibitem>
+  </relation>
+  <relation type="partOf">
+    <bibitem>
+      <formattedref format="text/plain" language="en" script="Latn">Metrologia 30 4 335</formattedref>
+      <docidentifier type="BIPM" primary="true">Metrologia 30 4 335</docidentifier>
     </bibitem>
   </relation>
   <relation type="partOf">
@@ -25,20 +43,56 @@
   </relation>
   <relation type="partOf">
     <bibitem>
-      <formattedref format="text/plain" language="en" script="Latn">Metrologia 30 4 223</formattedref>
-      <docidentifier type="BIPM" primary="true">Metrologia 30 4 223</docidentifier>
+      <formattedref format="text/plain" language="en" script="Latn">Metrologia 30 4 389</formattedref>
+      <docidentifier type="BIPM" primary="true">Metrologia 30 4 389</docidentifier>
     </bibitem>
   </relation>
   <relation type="partOf">
     <bibitem>
-      <formattedref format="text/plain" language="en" script="Latn">Metrologia 30 4 231</formattedref>
-      <docidentifier type="BIPM" primary="true">Metrologia 30 4 231</docidentifier>
+      <formattedref format="text/plain" language="en" script="Latn">Metrologia 30 4 207</formattedref>
+      <docidentifier type="BIPM" primary="true">Metrologia 30 4 207</docidentifier>
     </bibitem>
   </relation>
   <relation type="partOf">
     <bibitem>
-      <formattedref format="text/plain" language="en" script="Latn">Metrologia 30 4 243</formattedref>
-      <docidentifier type="BIPM" primary="true">Metrologia 30 4 243</docidentifier>
+      <formattedref format="text/plain" language="en" script="Latn">Metrologia 30 4 205</formattedref>
+      <docidentifier type="BIPM" primary="true">Metrologia 30 4 205</docidentifier>
+    </bibitem>
+  </relation>
+  <relation type="partOf">
+    <bibitem>
+      <formattedref format="text/plain" language="en" script="Latn">Metrologia 30 4 279</formattedref>
+      <docidentifier type="BIPM" primary="true">Metrologia 30 4 279</docidentifier>
+    </bibitem>
+  </relation>
+  <relation type="partOf">
+    <bibitem>
+      <formattedref format="text/plain" language="en" script="Latn">Metrologia 30 4 365</formattedref>
+      <docidentifier type="BIPM" primary="true">Metrologia 30 4 365</docidentifier>
+    </bibitem>
+  </relation>
+  <relation type="partOf">
+    <bibitem>
+      <formattedref format="text/plain" language="en" script="Latn">Metrologia 30 4 409</formattedref>
+      <docidentifier type="BIPM" primary="true">Metrologia 30 4 409</docidentifier>
+    </bibitem>
+  </relation>
+  <relation type="partOf">
+    <bibitem>
+      <formattedref format="text/plain" language="en" script="Latn">Metrologia 30 4 367</formattedref>
+      <docidentifier type="BIPM" primary="true">Metrologia 30 4 367</docidentifier>
+    </bibitem>
+  </relation>
+  <relation type="partOf">
+    <bibitem>
+      <formattedref format="text/plain" language="en" script="Latn">Metrologia 30 4 433</formattedref>
+      <docidentifier type="BIPM" primary="true">Metrologia 30 4 433</docidentifier>
+    </bibitem>
+  </relation>
+  <relation type="partOf">
+    <bibitem>
+      <formattedref format="text/plain" language="en" script="Latn">Metrologia 30 4 321</formattedref>
+      <docidentifier type="BIPM" primary="true">Metrologia 30 4 321</docidentifier>
     </bibitem>
   </relation>
   <relation type="partOf">
@@ -55,20 +109,56 @@
   </relation>
   <relation type="partOf">
     <bibitem>
-      <formattedref format="text/plain" language="en" script="Latn">Metrologia 30 4 259</formattedref>
-      <docidentifier type="BIPM" primary="true">Metrologia 30 4 259</docidentifier>
+      <formattedref format="text/plain" language="en" script="Latn">Metrologia 30 4 231</formattedref>
+      <docidentifier type="BIPM" primary="true">Metrologia 30 4 231</docidentifier>
     </bibitem>
   </relation>
   <relation type="partOf">
     <bibitem>
-      <formattedref format="text/plain" language="en" script="Latn">Metrologia 30 4 265</formattedref>
-      <docidentifier type="BIPM" primary="true">Metrologia 30 4 265</docidentifier>
+      <formattedref format="text/plain" language="en" script="Latn">Metrologia 30 4 419</formattedref>
+      <docidentifier type="BIPM" primary="true">Metrologia 30 4 419</docidentifier>
     </bibitem>
   </relation>
   <relation type="partOf">
     <bibitem>
-      <formattedref format="text/plain" language="en" script="Latn">Metrologia 30 4 271</formattedref>
-      <docidentifier type="BIPM" primary="true">Metrologia 30 4 271</docidentifier>
+      <formattedref format="text/plain" language="en" script="Latn">Metrologia 30 4 305</formattedref>
+      <docidentifier type="BIPM" primary="true">Metrologia 30 4 305</docidentifier>
+    </bibitem>
+  </relation>
+  <relation type="partOf">
+    <bibitem>
+      <formattedref format="text/plain" language="en" script="Latn">Metrologia 30 4 371</formattedref>
+      <docidentifier type="BIPM" primary="true">Metrologia 30 4 371</docidentifier>
+    </bibitem>
+  </relation>
+  <relation type="partOf">
+    <bibitem>
+      <formattedref format="text/plain" language="en" script="Latn">Metrologia 30 4 403</formattedref>
+      <docidentifier type="BIPM" primary="true">Metrologia 30 4 403</docidentifier>
+    </bibitem>
+  </relation>
+  <relation type="partOf">
+    <bibitem>
+      <formattedref format="text/plain" language="en" script="Latn">Metrologia 30 4 369</formattedref>
+      <docidentifier type="BIPM" primary="true">Metrologia 30 4 369</docidentifier>
+    </bibitem>
+  </relation>
+  <relation type="partOf">
+    <bibitem>
+      <formattedref format="text/plain" language="en" script="Latn">Metrologia 30 4 375</formattedref>
+      <docidentifier type="BIPM" primary="true">Metrologia 30 4 375</docidentifier>
+    </bibitem>
+  </relation>
+  <relation type="partOf">
+    <bibitem>
+      <formattedref format="text/plain" language="en" script="Latn">Metrologia 30 4 285</formattedref>
+      <docidentifier type="BIPM" primary="true">Metrologia 30 4 285</docidentifier>
+    </bibitem>
+  </relation>
+  <relation type="partOf">
+    <bibitem>
+      <formattedref format="text/plain" language="en" script="Latn">Metrologia 30 4 373</formattedref>
+      <docidentifier type="BIPM" primary="true">Metrologia 30 4 373</docidentifier>
     </bibitem>
   </relation>
   <relation type="partOf">
@@ -79,14 +169,50 @@
   </relation>
   <relation type="partOf">
     <bibitem>
-      <formattedref format="text/plain" language="en" script="Latn">Metrologia 30 4 279</formattedref>
-      <docidentifier type="BIPM" primary="true">Metrologia 30 4 279</docidentifier>
+      <formattedref format="text/plain" language="en" script="Latn">Metrologia 30 4 439</formattedref>
+      <docidentifier type="BIPM" primary="true">Metrologia 30 4 439</docidentifier>
     </bibitem>
   </relation>
   <relation type="partOf">
     <bibitem>
-      <formattedref format="text/plain" language="en" script="Latn">Metrologia 30 4 285</formattedref>
-      <docidentifier type="BIPM" primary="true">Metrologia 30 4 285</docidentifier>
+      <formattedref format="text/plain" language="en" script="Latn">Metrologia 30 4 361</formattedref>
+      <docidentifier type="BIPM" primary="true">Metrologia 30 4 361</docidentifier>
+    </bibitem>
+  </relation>
+  <relation type="partOf">
+    <bibitem>
+      <formattedref format="text/plain" language="en" script="Latn">Metrologia 30 4 355</formattedref>
+      <docidentifier type="BIPM" primary="true">Metrologia 30 4 355</docidentifier>
+    </bibitem>
+  </relation>
+  <relation type="partOf">
+    <bibitem>
+      <formattedref format="text/plain" language="en" script="Latn">Metrologia 30 4 341</formattedref>
+      <docidentifier type="BIPM" primary="true">Metrologia 30 4 341</docidentifier>
+    </bibitem>
+  </relation>
+  <relation type="partOf">
+    <bibitem>
+      <formattedref format="text/plain" language="en" script="Latn">Metrologia 30 4 351</formattedref>
+      <docidentifier type="BIPM" primary="true">Metrologia 30 4 351</docidentifier>
+    </bibitem>
+  </relation>
+  <relation type="partOf">
+    <bibitem>
+      <formattedref format="text/plain" language="en" script="Latn">Metrologia 30 4 327</formattedref>
+      <docidentifier type="BIPM" primary="true">Metrologia 30 4 327</docidentifier>
+    </bibitem>
+  </relation>
+  <relation type="partOf">
+    <bibitem>
+      <formattedref format="text/plain" language="en" script="Latn">Metrologia 30 4 425</formattedref>
+      <docidentifier type="BIPM" primary="true">Metrologia 30 4 425</docidentifier>
+    </bibitem>
+  </relation>
+  <relation type="partOf">
+    <bibitem>
+      <formattedref format="text/plain" language="en" script="Latn">Metrologia 30 4 317</formattedref>
+      <docidentifier type="BIPM" primary="true">Metrologia 30 4 317</docidentifier>
     </bibitem>
   </relation>
   <relation type="partOf">
@@ -103,44 +229,8 @@
   </relation>
   <relation type="partOf">
     <bibitem>
-      <formattedref format="text/plain" language="en" script="Latn">Metrologia 30 4 305</formattedref>
-      <docidentifier type="BIPM" primary="true">Metrologia 30 4 305</docidentifier>
-    </bibitem>
-  </relation>
-  <relation type="partOf">
-    <bibitem>
-      <formattedref format="text/plain" language="en" script="Latn">Metrologia 30 4 309</formattedref>
-      <docidentifier type="BIPM" primary="true">Metrologia 30 4 309</docidentifier>
-    </bibitem>
-  </relation>
-  <relation type="partOf">
-    <bibitem>
-      <formattedref format="text/plain" language="en" script="Latn">Metrologia 30 4 317</formattedref>
-      <docidentifier type="BIPM" primary="true">Metrologia 30 4 317</docidentifier>
-    </bibitem>
-  </relation>
-  <relation type="partOf">
-    <bibitem>
-      <formattedref format="text/plain" language="en" script="Latn">Metrologia 30 4 321</formattedref>
-      <docidentifier type="BIPM" primary="true">Metrologia 30 4 321</docidentifier>
-    </bibitem>
-  </relation>
-  <relation type="partOf">
-    <bibitem>
-      <formattedref format="text/plain" language="en" script="Latn">Metrologia 30 4 327</formattedref>
-      <docidentifier type="BIPM" primary="true">Metrologia 30 4 327</docidentifier>
-    </bibitem>
-  </relation>
-  <relation type="partOf">
-    <bibitem>
-      <formattedref format="text/plain" language="en" script="Latn">Metrologia 30 4 335</formattedref>
-      <docidentifier type="BIPM" primary="true">Metrologia 30 4 335</docidentifier>
-    </bibitem>
-  </relation>
-  <relation type="partOf">
-    <bibitem>
-      <formattedref format="text/plain" language="en" script="Latn">Metrologia 30 4 341</formattedref>
-      <docidentifier type="BIPM" primary="true">Metrologia 30 4 341</docidentifier>
+      <formattedref format="text/plain" language="en" script="Latn">Metrologia 30 4 271</formattedref>
+      <docidentifier type="BIPM" primary="true">Metrologia 30 4 271</docidentifier>
     </bibitem>
   </relation>
   <relation type="partOf">
@@ -151,110 +241,20 @@
   </relation>
   <relation type="partOf">
     <bibitem>
-      <formattedref format="text/plain" language="en" script="Latn">Metrologia 30 4 351</formattedref>
-      <docidentifier type="BIPM" primary="true">Metrologia 30 4 351</docidentifier>
+      <formattedref format="text/plain" language="en" script="Latn">Metrologia 30 4 259</formattedref>
+      <docidentifier type="BIPM" primary="true">Metrologia 30 4 259</docidentifier>
     </bibitem>
   </relation>
   <relation type="partOf">
     <bibitem>
-      <formattedref format="text/plain" language="en" script="Latn">Metrologia 30 4 355</formattedref>
-      <docidentifier type="BIPM" primary="true">Metrologia 30 4 355</docidentifier>
+      <formattedref format="text/plain" language="en" script="Latn">Metrologia 30 4 223</formattedref>
+      <docidentifier type="BIPM" primary="true">Metrologia 30 4 223</docidentifier>
     </bibitem>
   </relation>
   <relation type="partOf">
     <bibitem>
-      <formattedref format="text/plain" language="en" script="Latn">Metrologia 30 4 361</formattedref>
-      <docidentifier type="BIPM" primary="true">Metrologia 30 4 361</docidentifier>
-    </bibitem>
-  </relation>
-  <relation type="partOf">
-    <bibitem>
-      <formattedref format="text/plain" language="en" script="Latn">Metrologia 30 4 365</formattedref>
-      <docidentifier type="BIPM" primary="true">Metrologia 30 4 365</docidentifier>
-    </bibitem>
-  </relation>
-  <relation type="partOf">
-    <bibitem>
-      <formattedref format="text/plain" language="en" script="Latn">Metrologia 30 4 367</formattedref>
-      <docidentifier type="BIPM" primary="true">Metrologia 30 4 367</docidentifier>
-    </bibitem>
-  </relation>
-  <relation type="partOf">
-    <bibitem>
-      <formattedref format="text/plain" language="en" script="Latn">Metrologia 30 4 369</formattedref>
-      <docidentifier type="BIPM" primary="true">Metrologia 30 4 369</docidentifier>
-    </bibitem>
-  </relation>
-  <relation type="partOf">
-    <bibitem>
-      <formattedref format="text/plain" language="en" script="Latn">Metrologia 30 4 371</formattedref>
-      <docidentifier type="BIPM" primary="true">Metrologia 30 4 371</docidentifier>
-    </bibitem>
-  </relation>
-  <relation type="partOf">
-    <bibitem>
-      <formattedref format="text/plain" language="en" script="Latn">Metrologia 30 4 373</formattedref>
-      <docidentifier type="BIPM" primary="true">Metrologia 30 4 373</docidentifier>
-    </bibitem>
-  </relation>
-  <relation type="partOf">
-    <bibitem>
-      <formattedref format="text/plain" language="en" script="Latn">Metrologia 30 4 375</formattedref>
-      <docidentifier type="BIPM" primary="true">Metrologia 30 4 375</docidentifier>
-    </bibitem>
-  </relation>
-  <relation type="partOf">
-    <bibitem>
-      <formattedref format="text/plain" language="en" script="Latn">Metrologia 30 4 381</formattedref>
-      <docidentifier type="BIPM" primary="true">Metrologia 30 4 381</docidentifier>
-    </bibitem>
-  </relation>
-  <relation type="partOf">
-    <bibitem>
-      <formattedref format="text/plain" language="en" script="Latn">Metrologia 30 4 389</formattedref>
-      <docidentifier type="BIPM" primary="true">Metrologia 30 4 389</docidentifier>
-    </bibitem>
-  </relation>
-  <relation type="partOf">
-    <bibitem>
-      <formattedref format="text/plain" language="en" script="Latn">Metrologia 30 4 397</formattedref>
-      <docidentifier type="BIPM" primary="true">Metrologia 30 4 397</docidentifier>
-    </bibitem>
-  </relation>
-  <relation type="partOf">
-    <bibitem>
-      <formattedref format="text/plain" language="en" script="Latn">Metrologia 30 4 403</formattedref>
-      <docidentifier type="BIPM" primary="true">Metrologia 30 4 403</docidentifier>
-    </bibitem>
-  </relation>
-  <relation type="partOf">
-    <bibitem>
-      <formattedref format="text/plain" language="en" script="Latn">Metrologia 30 4 409</formattedref>
-      <docidentifier type="BIPM" primary="true">Metrologia 30 4 409</docidentifier>
-    </bibitem>
-  </relation>
-  <relation type="partOf">
-    <bibitem>
-      <formattedref format="text/plain" language="en" script="Latn">Metrologia 30 4 419</formattedref>
-      <docidentifier type="BIPM" primary="true">Metrologia 30 4 419</docidentifier>
-    </bibitem>
-  </relation>
-  <relation type="partOf">
-    <bibitem>
-      <formattedref format="text/plain" language="en" script="Latn">Metrologia 30 4 425</formattedref>
-      <docidentifier type="BIPM" primary="true">Metrologia 30 4 425</docidentifier>
-    </bibitem>
-  </relation>
-  <relation type="partOf">
-    <bibitem>
-      <formattedref format="text/plain" language="en" script="Latn">Metrologia 30 4 433</formattedref>
-      <docidentifier type="BIPM" primary="true">Metrologia 30 4 433</docidentifier>
-    </bibitem>
-  </relation>
-  <relation type="partOf">
-    <bibitem>
-      <formattedref format="text/plain" language="en" script="Latn">Metrologia 30 4 439</formattedref>
-      <docidentifier type="BIPM" primary="true">Metrologia 30 4 439</docidentifier>
+      <formattedref format="text/plain" language="en" script="Latn">Metrologia 30 4 243</formattedref>
+      <docidentifier type="BIPM" primary="true">Metrologia 30 4 243</docidentifier>
     </bibitem>
   </relation>
   <relation type="partOf">

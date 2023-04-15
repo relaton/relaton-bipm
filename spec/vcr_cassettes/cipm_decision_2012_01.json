@@ -16,7 +16,7 @@
             "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"
           ],
           "User-Agent": [
-            "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)"
+            "Mechanize/2.8.5 Ruby/3.2.0p0 (http://github.com/sparklemotion/mechanize/)"
           ],
           "Accept-Charset": [
             "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
@@ -51,7 +51,7 @@
             "keep-alive"
           ],
           "Content-Length": [
-            "1893"
+            "607"
           ],
           "Cache-Control": [
             "max-age=300"
@@ -63,7 +63,7 @@
             "text/plain; charset=utf-8"
           ],
           "Etag": [
-            "\"aadbe9e7caa82e60ba54f3a406b2440e76a49dfd89adefd1fc2c96498e974744\""
+            "W/\"9a56792ee1194a5fb943912c7d1ddf3187cc72ef6da5ecf25354239703153e92\""
           ],
           "Strict-Transport-Security": [
             "max-age=31536000"
@@ -78,19 +78,22 @@
             "1; mode=block"
           ],
           "X-Github-Request-Id": [
-            "89B0:4424:236DA3F:2E2692B:641E5B86"
+            "09D0:4A30:210A8C:29B256:643AE6EB"
+          ],
+          "Content-Encoding": [
+            "gzip"
           ],
           "Accept-Ranges": [
             "bytes"
           ],
           "Date": [
-            "Sat, 25 Mar 2023 02:25:10 GMT"
+            "Sat, 15 Apr 2023 18:03:23 GMT"
           ],
           "Via": [
             "1.1 varnish"
           ],
           "X-Served-By": [
-            "cache-iad-kcgs7200088-IAD"
+            "cache-iad-kjyo7100087-IAD"
           ],
           "X-Cache": [
             "MISS"
@@ -99,7 +102,7 @@
             "0"
           ],
           "X-Timer": [
-            "S1679711110.116892,VS0,VE89"
+            "S1681581803.043767,VS0,VE82"
           ],
           "Vary": [
             "Authorization,Accept-Encoding,Origin"
@@ -108,10 +111,10 @@
             "*"
           ],
           "X-Fastly-Request-Id": [
-            "9c700ae9bb97d200e7d3252d118fd3cf69d5349a"
+            "1d67d974c453d1a08a9d18b755c030ab8eeceabc"
           ],
           "Expires": [
-            "Sat, 25 Mar 2023 02:30:10 GMT"
+            "Sat, 15 Apr 2023 18:08:23 GMT"
           ],
           "Source-Age": [
             "0"
@@ -119,10 +122,10 @@
         },
         "body": {
           "encoding": "UTF-8",
-          "string": "---\nschema-version: v1.2.1\nid: Decision-CIPM-2012-101-1\ntitle:\n- content: Decision CIPM/101-1 (2012)\n  language:\n  - en\n  script:\n  - Latn\n  format: text/plain\n- content: D√©cision CIPM/101-1 (2012)\n  language:\n  - fr\n  script:\n  - Latn\n  format: text/plain\nlink:\n- content: https://www.bipm.org/en/committees/ci/cipm/101-_1-2012\n  type: citation\n  language: en\n  script: Latn\n- content: https://www.bipm.org/fr/committees/ci/cipm/101-_1-2012\n  type: citation\n  language: fr\n  script: Latn\n- content: https://raw.githubusercontent.com/metanorma/bipm-data-outcomes/main/cipm/meetings-en/meeting-101-1.yml\n  type: src\n  language: en\n  script: Latn\n- content: https://raw.githubusercontent.com/metanorma/bipm-data-outcomes/main/cipm/meetings-fr/meeting-101-1.yml\n  type: src\n  language: fr\n  script: Latn\ntype: proceedings\ndocid:\n- id: Decision CIPM/101-1 (2012)\n  type: BIPM\n  primary: true\n- id: Decision CIPM/101-1 (2012)\n  type: BIPM\n  primary: true\n  language: en\n  script: Latn\n- id: D√©cision CIPM/101-1 (2012)\n  type: BIPM\n  primary: true\n  language: fr\n  script: Latn\ndocnumber: Decision CIPM/101-1 (2012)\ndate:\n- type: published\n  value: '2012-06-08'\ncontributor:\n- organization:\n    name:\n    - content: Bureau International des Poids et Mesures\n    abbreviation:\n      content: BIPM\n    url: www.bipm.org\n  role:\n  - type: publisher\n- organization:\n    name:\n    - content: International Committee for Weights and Measures\n      language:\n      - en\n      script:\n      - Latn\n    - content: Comit√© International des Poids et Mesures\n      language:\n      - fr\n      script:\n      - Latn\n    abbreviation:\n      content: CIPM\n      language:\n      - en\n      - fr\n      script:\n      - Latn\n  role:\n  - type: author\nrevdate: '2012-06-08'\nlanguage:\n- en\n- fr\nscript:\n- Latn\nplace:\n- city: Paris\ndoctype: decision\nstructuredidentifier:\n  docnumber: 101-1\next:\n  schema-version: v1.0.0\n"
+          "string": "\u001fã\b\u0000\u0000\u0000\u0000\u0000\u0000\u0003≠U¡éõ0\u0010ΩÛ\u0015æm{0Ñ\u001c™ä„¶óï∫Rn=V\u0006&dTlê=Nö˛—~«˛X\u0007õ4–›M®∂\u0011R¿\u001eø˜¸<3ñR&Æ⁄ÉVÚ\u0000÷ag\nq»”uö'X\u0017‚\u000bT8\f Õ√ˆQÆW˘ZÊ´\\Ê\t!µP$RTù!0t\t\u0015Ch\u0016¢ƒáa≈«DàVô∆´ÜW\b!\u0005\u0018˛sï≈û‚¿WE√–Æ≥Z1\u0014¡O ˙V°ô\u0011<?-fÿŸ≈\f-ö\u001f≥çÏâzWdŸÒxLKÏu⁄Ÿ&\u0003ìUù÷H\u0004‡≤\n˘Èu–=\u000fæ08ùz(DÖ§àUN5Õv\u001cµ‹\"‹Ÿw\u0011N\rxì–™c⁄ Ì}È\u001dÿq:e⁄L\u0003)3xï\rÇd≠H…Œ\u0013O±\u0018Õ∂E9\u001aÄ–4N≤=„{ÃèÙ§€?\u0002ù≠˛›åˇßçù\\ÆÌ•o1Æ∑]\u0005P\u000fÄI›U\\\u001b,zZ!Ø&e\\{œ3¸—[‘ û8˘¨áwÆæeg¿æZ/\u000b¡_˙¡ª7^ó`Ø™ÁS\tÌatœó-∫=‘\fvP≠Á°ª–LVü‰ÍÛ]2\u001cØ≈“SgáEúˇ ‡Øê’C˘\naîÜ¯6Iï{oAyÒ¿ü÷Ñ`’ä\u001aúÿvX;\u0001$\u001e¡qå\u000b\u000bUYZ8‡\u0004TL†¢\u000fBx€\u0016bZà<jªvl+Û›ÿÂRÁ\u001a7Á¬\u001e˙ë¯\u0006ÿÏ…\tej\u0016¨.äÁM-\"Ü√\u001e~óÊ\u0016'∆\u00067ce\u001e§Áß•\u000eΩ∆\u0017Œˇ*ﬂU_7g_ØÓÂ6ÕﬂG†<Ì;õ0qH¥y6]ò\u0002G@?„éà‹˙´x}!q⁄oï≈P◊\u0011Ω\u001eÛ:q\\\u000f\u0015±A5÷º\u001f‹!ß=Àò‘@º\u000e˘:)B°º∏IWÈ*˘\rX‘Qpe\u0007\u0000\u0000"
         }
       },
-      "recorded_at": "Sat, 25 Mar 2023 02:25:10 GMT"
+      "recorded_at": "Sat, 15 Apr 2023 18:03:23 GMT"
     }
   ],
   "recorded_with": "VCR 6.1.0"

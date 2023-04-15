@@ -44,7 +44,7 @@ module RelatonBipm
       # @return [RelatonBipm::BipmBibliographicItem]
       def get_bipm(reference, agent) # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
         ref_id = Id.new reference
-        index = Relaton::Index.find_or_create :BIPM, url: "#{GH_ENDPOINT}index2.zip"
+        index = Relaton::Index.find_or_create :BIPM, url: "#{GH_ENDPOINT}index2.zip", file: "index2.yaml"
         rows = index.search { |r| ref_id == r[:id] }
         return unless rows.any?
 
