@@ -30,8 +30,7 @@ module RelatonBipm
       #
       def fetch_articles # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
         Dir["#{DIR}/**/*.xml"].each do |path|
-          doc = Nokogiri::XML File.read(path, encoding: "UTF-8")
-          item = ArticleParser.parse doc.at("/article")
+          item = ArticleParser.parse path
           file = "#{item.docidentifier.first.id.downcase.gsub(' ', '-')}.#{@data_fetcher.ext}"
           out_path = File.join(@data_fetcher.output, file)
           @data_fetcher.index[[item.docidentifier.first.id]] = out_path

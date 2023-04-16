@@ -1,15 +1,20 @@
 describe RelatonBipm::RawdataBipmMetrologia::ArticleParser do
   it "create instance" do
+    path = "rawdata-bipm-metrologia//data/2022-04-05T10_55_52_content/0026-1394/0026-1394_55/0026-1394_55_1/0026-1394_55_1_L13/met_55_1_L13.xml"
+    expect(File).to receive(:read).with(path, encoding: "UTF-8").and_return :xml
+    expect(Nokogiri).to receive(:XML).with(:xml).and_return :doc
     parser = double "parser"
     expect(parser).to receive(:parse)
-    expect(described_class).to receive(:new).with(:doc).and_return parser
-    described_class.parse :doc
+    expect(described_class).to receive(:new).with(:doc, "55", "1", "L13").and_return parser
+    described_class.parse path
   end
+
   context "instance methods" do
     let(:doc) { double "doc" }
     subject do
-      expect(doc).to receive(:at).with("./front/article-meta").and_return :meta
-      described_class.new doc
+      expect(doc).to receive(:at).with("/article").and_return :doc
+      expect(doc).to receive(:at).with("/article/front/article-meta").and_return :meta
+      described_class.new doc, "29", "6", "389"
     end
 
     let(:doc_series_id) do
@@ -23,7 +28,7 @@ describe RelatonBipm::RawdataBipmMetrologia::ArticleParser do
             </journal-meta>
             <article-meta>
               <article-id pub-id-type="publisher-id">0026-1394__</article-id>
-              <article-id pub-id-type="doi">10.1088/0026-1394/29/6/001</article-id>
+              <article-id pub-id-type="doi">10.1088/0026-1394/29/6/389</article-id>
               <article-id pub-id-type="manuscript">001</article-id>
               <volume>29</volume>
               <issue>6</issue>
@@ -83,14 +88,12 @@ describe RelatonBipm::RawdataBipmMetrologia::ArticleParser do
       expect(docid).to be_instance_of Array
       expect(docid.size).to eq 2
       expect(docid[0]).to be_instance_of RelatonBib::DocumentIdentifier
-      expect(docid[0].id).to eq "Metrologia 29 6 001"
+      expect(docid[0].id).to eq "Metrologia 29 6 389"
       expect(docid[0].type).to eq "BIPM"
       expect(docid[0].primary).to be true
       expect(docid[1]).to be_instance_of RelatonBib::DocumentIdentifier
-      # expect(docid[1].id).to eq "0026-1394__"
-      # expect(docid[1].type).to eq "publisher-id"
       expect(docid[1].primary).to be nil
-      expect(docid[1].id).to eq "10.1088/0026-1394/29/6/001"
+      expect(docid[1].id).to eq "10.1088/0026-1394/29/6/389"
       expect(docid[1].type).to eq "doi"
     end
 
@@ -109,7 +112,7 @@ describe RelatonBipm::RawdataBipmMetrologia::ArticleParser do
         XML
         subject.instance_variable_set :@doc, doc.at("/article")
         subject.instance_variable_set :@meta, doc.at("/article/front/article-meta")
-        expect(subject.volume_issue_article).to eq "1 29 6"
+        expect(subject.volume_issue_article).to eq "29 6 389"
       end
     end
 

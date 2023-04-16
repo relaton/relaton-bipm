@@ -67,12 +67,8 @@ describe RelatonBipm::RawdataBipmMetrologia::Fetcher do
 
     it "fetch_articles" do
       expect(Dir).to receive(:[]).with("rawdata-bipm-metrologia/data/*content/0026-1394/**/*.xml").and_return [:path]
-      expect(File).to receive(:read).with(:path, encoding: "UTF-8").and_return :xml
-      doc = double "doc"
-      expect(doc).to receive(:at).with("/article").and_return :elm
-      expect(Nokogiri).to receive(:XML).with(:xml).and_return doc
       item = double "item", docidentifier: [double(id: "Metrologia")]
-      expect(RelatonBipm::RawdataBipmMetrologia::ArticleParser).to receive(:parse).with(:elm).and_return item
+      expect(RelatonBipm::RawdataBipmMetrologia::ArticleParser).to receive(:parse).with(:path).and_return item
       expect(data_fetcher).to receive(:write_file).with("output/metrologia.yaml", item)
       expect(index_new).to receive(:add_or_update).with(["Metrologia"], "output/metrologia.yaml")
       expect(index2).to receive(:add_or_update).with({ group: "Metrologia" }, "output/metrologia.yaml")

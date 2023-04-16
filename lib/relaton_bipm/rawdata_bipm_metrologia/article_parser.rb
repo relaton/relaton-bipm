@@ -6,22 +6,30 @@ module RelatonBipm
       #
       # Create new parser and parse document
       #
-      # @param [Nokogiri::XML::Element] doc document XML element
+      # @param [String] path path to XML file
       #
       # @return [RelatonBipm::BipmBibliographicItem] document
       #
-      def self.parse(doc)
-        new(doc).parse
+      def self.parse(path)
+        doc = Nokogiri::XML(File.read(path, encoding: "UTF-8"))
+        journal, volume, article = path.split("/")[-2].split("_")[1..]
+        new(doc, journal, volume, article).parse
       end
 
       #
       # Initialize parser
       #
-      # @param [Nokogiri::XML::Element] doc XML document
+      # @param [Nokogiri::XML::Document] doc XML document
+      # @param [String] journal journal
+      # @param [String] volume volume
+      # @param [String] article article
       #
-      def initialize(doc)
-        @doc = doc
-        @meta = @doc.at("./front/article-meta")
+      def initialize(doc, journal, volume, article)
+        @doc = doc.at "/article"
+        @journal = journal
+        @volume = volume
+        @article = article
+        @meta = doc.at("/article/front/article-meta")
       end
 
       #
@@ -54,15 +62,15 @@ module RelatonBipm
       # @return [Array<String>] array of volume, issue and page
       #
       def volume_issue_article
-        volume = @meta.at("./volume").text
-        issue = @meta.at("./issue").text
+        # volume = @meta.at("./volume").text
+        # issue = @meta.at("./issue").text
         # page = @doc.at("./front/article-meta/fpage")&.text || manuscript
-        [volume, issue, article].join(" ")
+        [@journal, @volume, @article].compact.join(" ")
       end
 
-      def article
-        @meta.at("./article-id[@pub-id-type='manuscript']").text.match(/[^_]+$/).to_s
-      end
+      # def article
+      #   @meta.at("./article-id[@pub-id-type='manuscript']").text.match(/[^_]+$/).to_s
+      # end
 
       #
       # Parse journal title
