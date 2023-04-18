@@ -91,13 +91,13 @@ Short:
 {group name} {type-abbrev} {number} ({year}, {lang})
 ----
 
-`group name` - a name of the group, required. A full list of group names is available https://github.com/metanorma/bipm-editor-guides/blob/main/sources/bipm-outcomes-en.adoc#appendix-a-bipm-groups-and-codes[here].
-`type` - a type of document, required. A list of types is: Resolution (Résolution), Recommendation (Recommandation), Decision (Décision), Meeting (Réunion), Declaration (Déclaration).
-`type-abbrev` - an abbreviation of the type, required. A list of abbreviations: RES (Resolution), REC (Recommendation), DECN (Decision).
-`number` - a number of the document, optional. Can be with part, e.g. `1-2`.
-`zero_leading_number` - a number of the document with a leading zero, required. Can be used when a document has a 1 or 2 digits number. It's `00` for documents without a number.
-`year` - a year of the document, optional.
-`lang` - a language of the document, optional. Can be `EN` or `FR`.
+- `group name` - a name of the group, required. A full list of group names is available https://github.com/metanorma/bipm-editor-guides/blob/main/sources/bipm-outcomes-en.adoc#appendix-a-bipm-groups-and-codes[here].
+- `type` - a type of document, required. A list of types is: Resolution (Résolution), Recommendation (Recommandation), Decision (Décision), Meeting (Réunion), Declaration (Déclaration).
+- `type-abbrev` - an abbreviation of the type, required. A list of abbreviations: RES (Resolution), REC (Recommendation), DECN (Decision).
+- `number` - a number of the document, optional. Can be with part, e.g. `1-2`.
+- `zero_leading_number` - a number of the document with a leading zero, required. Can be used when a document has a 1 or 2 digits number. It's `00` for documents without a number.
+- `year` - a year of the document, optional.
+- `lang` - a language of the document, optional. Can be `EN` or `FR`.
 
 ===== Special case pattern
 
