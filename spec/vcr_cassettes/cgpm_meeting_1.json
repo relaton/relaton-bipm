@@ -16,7 +16,7 @@
             "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"
           ],
           "User-Agent": [
-            "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_2) AppleWebKit/601.3.9 (KHTML, like Gecko) Version/9.0.2 Safari/601.3.9"
+            "Mechanize/2.8.5 Ruby/3.2.0p0 (http://github.com/sparklemotion/mechanize/)"
           ],
           "Accept-Charset": [
             "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
@@ -78,7 +78,7 @@
             "1; mode=block"
           ],
           "X-Github-Request-Id": [
-            "40BE:3FA8:200443:28B5BE:643AE6EA"
+            "6656:213A:3A33B1:4351E7:644B1A8B"
           ],
           "Content-Encoding": [
             "gzip"
@@ -87,7 +87,7 @@
             "bytes"
           ],
           "Date": [
-            "Sat, 15 Apr 2023 18:03:22 GMT"
+            "Fri, 28 Apr 2023 00:59:55 GMT"
           ],
           "Via": [
             "1.1 varnish"
@@ -102,7 +102,7 @@
             "0"
           ],
           "X-Timer": [
-            "S1681581802.101198,VS0,VE90"
+            "S1682643595.399845,VS0,VE91"
           ],
           "Vary": [
             "Authorization,Accept-Encoding,Origin"
@@ -111,10 +111,10 @@
             "*"
           ],
           "X-Fastly-Request-Id": [
-            "e687b0c750a4593a1c578acd071b773672f53164"
+            "d3b834be0d05ec7816ae0b493c27f7f2b3a7ff9c"
           ],
           "Expires": [
-            "Sat, 15 Apr 2023 18:08:22 GMT"
+            "Fri, 28 Apr 2023 01:04:55 GMT"
           ],
           "Source-Age": [
             "0"
@@ -125,7 +125,7 @@
           "string": "\u001f‹\b\u0000\u0000\u0000\u0000\u0000\u0000\u0003­UKnÛ0\u0010Ýë\u0014³s» >NâÈZ&‹ @\u0003\u0004ÝtMI#‰¨D\nüØMo”säb\u001dQJ\"Õiì´5\f˜&9ï½ù’1\u0016˜¢ÁŽ³\u001dj#”Ì`—„ëð,\u0010e\u0006×7÷wì\u000eÑ\nY³$M·,\t¬°-f\u0001ƒBI‹Òf\u0018\u000bÝx\tT\u0005¶Ao\u0018\u0000´\\ÖŽ×t\u001d€\u0001Jú1…\u0016½\u001d7¾p;lUJwœp,þ°Qßr!\u0017è\búéÑIÒ\u0006%\u0012äÛà•>\u0019¼\u0015òûÂÆÚÞdQ´ßïÃ\\ô]¨t\u001d¡Œ\nÕuÂZD\u0013\u00155}û.J|\u0018\b×>ô˜A!,·¤l.gáç(ã\u0018W¥ÿ–kîöi\\¥*\\GÇ&ZÇÉz\u0013¥ñö2Ùn¢!¬IØ—U\u0014WÕyrQnXzÉ×ì\u0002×gì‚'\u0005+xY¥y\u001aŸ_òÍ‹,2x‹Só}X\u000bÛ¸Ü\u0019ÔÓqH^F\u001dZ.‡¬Dƒ&VrË™r–ŽÈ÷Ž\u00124z?U”a”ˆiÍâ$|èÚ\u0017j£‹\u0007þÿ\t£¬(ì0KSì´*\u0010Ë\u0001- ¼PË‘âçÆ\u0003Æ`ê=HàÓP\u000bŸ_\u0018®n}\u000fôZt\\?Pyk‡ÿd{,Žsä¯ÏýøqèÃHßÒu9êw”S*üÈ™¢æòV˜\u0006K‚ÚñÖÑÖÊ\u000f§xËÖé*\u0018rªEî¬Òƒ\u0011\u0015=—â§ïa4\u0000HÞá¸šÕÇ•ÓÈ\u001dÜÒ_-ýeÞÒÀ1p¯Di\u0000-É2tÇxCžç\u001awb\u0006\n3¨1\n\u0000N·\u0019Ì»vµj§‘µôFŸ.õ\u0006%jRw­d…\u001ae@Éø†¢n¬\u0001.K’Ê_µ.GåˆåS<|^Gæx0Í\u0005ßÀóô8\u0012Ý<=JZó\u0016ÿ\u001cœ·\b}âß%|7¤ÓÌ?âÌqšß£Ïm”\u000eˆØ×Ø²^™<‡GÆ\u0010éE)Æ×PXª÷{®…oå\u0011}\u001a\u000f¡>(,Å§\u0014%¹#*AåN*fµ¿JV\u0001=Q™oƒ\u00079\u000eãà\u0017'\u001aÉ\u0011¬\u0007\u0000\u0000"
         }
       },
-      "recorded_at": "Sat, 15 Apr 2023 18:03:22 GMT"
+      "recorded_at": "Fri, 28 Apr 2023 00:59:55 GMT"
     }
   ],
   "recorded_with": "VCR 6.1.0"

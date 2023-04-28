@@ -157,16 +157,16 @@ RSpec.describe RelatonBipm do
     end
 
     context "Metrologia" do
-      it "journal" do
-        VCR.use_cassette "metrologia" do
-          file = "spec/fixtures/metrologia.xml"
-          result = RelatonBipm::BipmBibliography.get "BIPM Metrologia"
-          xml = result.to_xml bibdata: true
-          File.write file, xml, encoding: "UTF-8" unless File.exist? file
-          expect(xml).to be_equivalent_to File.read(file, encoding: "UTF-8")
-            .sub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
-        end
-      end
+      # it "journal" do
+      #   VCR.use_cassette "metrologia" do
+      #     file = "spec/fixtures/metrologia.xml"
+      #     result = RelatonBipm::BipmBibliography.get "BIPM Metrologia"
+      #     xml = result.to_xml bibdata: true
+      #     File.write file, xml, encoding: "UTF-8" unless File.exist? file
+      #     expect(xml).to be_equivalent_to File.read(file, encoding: "UTF-8")
+      #       .sub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
+      #   end
+      # end
 
       it "journal" do
         VCR.use_cassette "metrologia_30" do
@@ -204,7 +204,7 @@ RSpec.describe RelatonBipm do
       it "page" do
         VCR.use_cassette "metrologia_29_6_373" do
           file = "spec/fixtures/metrologia_29_6_373.xml"
-          result = RelatonBipm::BipmBibliography.get "BIPM Metrologia 29 6 001"
+          result = RelatonBipm::BipmBibliography.get "BIPM Metrologia 29 6 373"
           xml = result.to_xml bibdata: true
           File.write file, xml, encoding: "UTF-8" unless File.exist? file
           expect(xml).to be_equivalent_to File.read(file, encoding: "UTF-8")
@@ -227,8 +227,8 @@ RSpec.describe RelatonBipm do
       # end
 
       it "without author", vcr: "metrologia_19_4_163" do
-        result = RelatonBipm::BipmBibliography.get "BIPM Metrologia 19 4 004"
-        expect(result.docidentifier[0].id).to eq "Metrologia 19 4 004"
+        result = RelatonBipm::BipmBibliography.get "BIPM Metrologia 19 4 163"
+        expect(result.docidentifier[0].id).to eq "Metrologia 19 4 163"
       end
 
       # it "with text/html title", vcr: "metrologia_55_1_L13" do

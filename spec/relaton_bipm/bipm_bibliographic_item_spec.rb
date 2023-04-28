@@ -10,4 +10,16 @@ RSpec.describe RelatonBipm::BipmBibliographicItem do
       RelatonBipm::BipmBibliographicItem.new docstatus: RelatonBib::DocumentStatus.new(stage: "status")
     end.to output(/\[relaton-bipm\] Warning: invalid docstatus: status/).to_stderr
   end
+
+  context "doctypes" do
+    shared_examples "allowed doctype" do |doctype|
+      it do
+        expect do
+          RelatonBipm::BipmBibliographicItem.new doctype: doctype
+        end.not_to output(/invalid doctype/).to_stderr
+      end
+    end
+
+    it_behaves_like "allowed doctype", "brochure"
+  end
 end

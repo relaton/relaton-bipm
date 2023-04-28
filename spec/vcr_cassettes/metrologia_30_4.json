@@ -16,7 +16,7 @@
             "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"
           ],
           "User-Agent": [
-            "Mozilla/5.0 (Macintosh; U; PPC Mac OS X Mach-O; en-US; rv:1.4a) Gecko/20030401"
+            "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)"
           ],
           "Accept-Charset": [
             "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
@@ -51,7 +51,7 @@
             "keep-alive"
           ],
           "Content-Length": [
-            "779"
+            "11587"
           ],
           "Cache-Control": [
             "max-age=300"
@@ -63,7 +63,7 @@
             "text/plain; charset=utf-8"
           ],
           "Etag": [
-            "W/\"f2e342efffa8ea14e98db989355c8989449b01a7212adf4aae1dd7cc8ac0d7a8\""
+            "\"6c6e3c79aad68599ec8f226e6577e3b1bed98d8188d6b0223e8282787204fabb\""
           ],
           "Strict-Transport-Security": [
             "max-age=31536000"
@@ -78,22 +78,19 @@
             "1; mode=block"
           ],
           "X-Github-Request-Id": [
-            "9360:79C0:25501E:2E89DE:643AE6EC"
-          ],
-          "Content-Encoding": [
-            "gzip"
+            "6AF6:0BA5:E70E7:11E941:644B1A8E"
           ],
           "Accept-Ranges": [
             "bytes"
           ],
           "Date": [
-            "Sat, 15 Apr 2023 18:03:24 GMT"
+            "Fri, 28 Apr 2023 00:59:58 GMT"
           ],
           "Via": [
             "1.1 varnish"
           ],
           "X-Served-By": [
-            "cache-iad-kjyo7100077-IAD"
+            "cache-iad-kcgs7200041-IAD"
           ],
           "X-Cache": [
             "MISS"
@@ -102,7 +99,7 @@
             "0"
           ],
           "X-Timer": [
-            "S1681581804.376271,VS0,VE82"
+            "S1682643598.330804,VS0,VE81"
           ],
           "Vary": [
             "Authorization,Accept-Encoding,Origin"
@@ -111,10 +108,10 @@
             "*"
           ],
           "X-Fastly-Request-Id": [
-            "52e1986b57e626456a22a60e76364ab5ab2074b7"
+            "40d8e8e6d06bb793a8f17e8e76d18252bac6eda1"
           ],
           "Expires": [
-            "Sat, 15 Apr 2023 18:08:24 GMT"
+            "Fri, 28 Apr 2023 01:04:58 GMT"
           ],
           "Source-Age": [
             "0"
@@ -122,10 +119,10 @@
         },
         "body": {
           "encoding": "UTF-8",
-          "string": "\u001fã\b\u0000\u0000\u0000\u0000\u0000\u0000\u0003≈Z€n§0\f}Á+Ú\u0003\f¡\u000e◊«}[i´›_†L:çñ\u0001\u00142’ˆÔ\u0017fÜ°”v%ØTÀ<q1\u000e9≤èOL‚8é¶ˆŸ\u001eõ¯≈˙…\r}≠^“\u001dÏ0r˚Z=ÿ‡án8∏\u0006µâ:◊ˇÆ£XµC\u001fl\u001fjı\u001c¬8’I‚ÜqjùÌ[ªõOwÉ?$nöN6—\u001aÚ8≈ $®\u0013\u0013)\u0015^G[´…∑—Â¨Ò¡µùçˆC;è7˚æ\u001fU°V€kﬂæˇzò/FÔéç≠U'\u001buM85\u0007ªºl˚y2ﬁçaπ¯—Ñ>z\u001a¸±\t¡ÓΩ}™Áwoü˛qåÕëRgWJ≠Œñ\u001bgwJ]\u001cŒc€?!\u0019ª∆ıë∑]\u0013\u0016‰ÊA/\u001f:Œ”˙˘4[?∫G\u0017ÏqÒ†‘\u0007@QWÁ\u0007◊…/ßü\u0002†V√w@,«=\u0018Àù˜S^éM˚çÁ∑”ø|…\u0019ÇÂÿ`∏<∏B±\rv\u0007«ˇÇP¶D\u0010ÆÜ\f ‹<KÅ\u0000yF\u0003a5¸z\u00106œbëP\u0015ƒH∏\u001a2D¬Õ≥\u0018\bHåÑ’ê\u0001\u0004îé\u0004Hëò\u000eWCÜt∏yñ#Fju(Ÿ™C)]\u001d@\u00139a5dà\u0004-Õ\t†©’A≥U\u0007-Œ\t\u00051\u001dVC\u0006\u0010\nÈt@™N@6ùÄ‚:¡Pe≥aìÕF^6ÁT±î≥â•\\ö\u0018gµDå\u0004‰“\tõg±H\u0000Í\u0002\nÿ\u0016P æÄ2‘Í`ÿ™ÉëÊ\u0004»®:!c”\tôtu\u0000$¶√j»\u0000\u0002JßÉI©%2e+ë©t: U6#õlFqŸå\u0005µ:\u0014l’°\u0010O\u0007M’\töM'hqùêS˚\t9[?!\u0017ÁÑÇ \t\u0005\u001b'\u0014“ú\u0000%U'îl:°î\u0006\u0001\u000b\"'¨Ü\u001cë Õ\t@M\u0007`K\u0007\u0010O\u0007ÉT±Ñlb\t≈â1ßÍÑúM'‰“:\u0001©\u000b(d[@°¯\u0002\n\r5\u0012\f[$\u0018˘H†Çê±ÅêâÉ\u0000‘\u001e#∞ı\u0018Aº«\bDNX\r\u0019™\u0003àsBJçÑî-\u0012RÈHÄä⁄Y™ÿ:Kï4'\u0000uì\u0006∞m“\u0000ÒM\u001a@m™\u0000[S\u0005ƒõ*h®b…∞â%#MåêQˇ;dlˇ\u001d2Èµ\u0003\u0000uª\u000e∞m◊\u0001Ò•¥°Ç`ÿ@0“ \u0018™l6l≤Ÿ|Ωlûœ\u0016”OˆIÎùé˛\u00029Ñ\u0010=C-\u0000\u0000"
+          "string": "---\nschema-version: v1.2.3\nid: Metrologia304\nlink:\n- content: https://iopscience.iop.org/issue/0026-1394/30/4\n  type: src\ntype: article\ndocid:\n- id: Metrologia 30 4\n  type: BIPM\n  primary: true\nlanguage:\n- en\nscript:\n- Latn\nformattedref:\n  content: Metrologia 30 4\n  language:\n  - en\n  script:\n  - Latn\n  format: text/plain\nrelation:\n- type: partOf\n  bibitem:\n    id: Metrologia304249\n    docid:\n    - id: Metrologia 30 4 249\n      type: BIPM\n      primary: true\n    formattedref:\n      content: Metrologia 30 4 249\n      language:\n      - en\n      script:\n      - Latn\n      format: text/plain\n- type: partOf\n  bibitem:\n    id: Metrologia304397\n    docid:\n    - id: Metrologia 30 4 397\n      type: BIPM\n      primary: true\n    formattedref:\n      content: Metrologia 30 4 397\n      language:\n      - en\n      script:\n      - Latn\n      format: text/plain\n- type: partOf\n  bibitem:\n    id: Metrologia304291\n    docid:\n    - id: Metrologia 30 4 291\n      type: BIPM\n      primary: true\n    formattedref:\n      content: Metrologia 30 4 291\n      language:\n      - en\n      script:\n      - Latn\n      format: text/plain\n- type: partOf\n  bibitem:\n    id: Metrologia304439\n    docid:\n    - id: Metrologia 30 4 439\n      type: BIPM\n      primary: true\n    formattedref:\n      content: Metrologia 30 4 439\n      language:\n      - en\n      script:\n      - Latn\n      format: text/plain\n- type: partOf\n  bibitem:\n    id: Metrologia304375\n    docid:\n    - id: Metrologia 30 4 375\n      type: BIPM\n      primary: true\n    formattedref:\n      content: Metrologia 30 4 375\n      language:\n      - en\n      script:\n      - Latn\n      format: text/plain\n- type: partOf\n  bibitem:\n    id: Metrologia304259\n    docid:\n    - id: Metrologia 30 4 259\n      type: BIPM\n      primary: true\n    formattedref:\n      content: Metrologia 30 4 259\n      language:\n      - en\n      script:\n      - Latn\n      format: text/plain\n- type: partOf\n  bibitem:\n    id: Metrologia304297\n    docid:\n    - id: Metrologia 30 4 297\n      type: BIPM\n      primary: true\n    formattedref:\n      content: Metrologia 30 4 297\n      language:\n      - en\n      script:\n      - Latn\n      format: text/plain\n- type: partOf\n  bibitem:\n    id: Metrologia304425\n    docid:\n    - id: Metrologia 30 4 425\n      type: BIPM\n      primary: true\n    formattedref:\n      content: Metrologia 30 4 425\n      language:\n      - en\n      script:\n      - Latn\n      format: text/plain\n- type: partOf\n  bibitem:\n    id: Metrologia304345\n    docid:\n    - id: Metrologia 30 4 345\n      type: BIPM\n      primary: true\n    formattedref:\n      content: Metrologia 30 4 345\n      language:\n      - en\n      script:\n      - Latn\n      format: text/plain\n- type: partOf\n  bibitem:\n    id: Metrologia304361\n    docid:\n    - id: Metrologia 30 4 361\n      type: BIPM\n      primary: true\n    formattedref:\n      content: Metrologia 30 4 361\n      language:\n      - en\n      script:\n      - Latn\n      format: text/plain\n- type: partOf\n  bibitem:\n    id: Metrologia304367\n    docid:\n    - id: Metrologia 30 4 367\n      type: BIPM\n      primary: true\n    formattedref:\n      content: Metrologia 30 4 367\n      language:\n      - en\n      script:\n      - Latn\n      format: text/plain\n- type: partOf\n  bibitem:\n    id: Metrologia304381\n    docid:\n    - id: Metrologia 30 4 381\n      type: BIPM\n      primary: true\n    formattedref:\n      content: Metrologia 30 4 381\n      language:\n      - en\n      script:\n      - Latn\n      format: text/plain\n- type: partOf\n  bibitem:\n    id: Metrologia304373\n    docid:\n    - id: Metrologia 30 4 373\n      type: BIPM\n      primary: true\n    formattedref:\n      content: Metrologia 30 4 373\n      language:\n      - en\n      script:\n      - Latn\n      format: text/plain\n- type: partOf\n  bibitem:\n    id: Metrologia304285\n    docid:\n    - id: Metrologia 30 4 285\n      type: BIPM\n      primary: true\n    formattedref:\n      content: Metrologia 30 4 285\n      language:\n      - en\n      script:\n      - Latn\n      format: text/plain\n- type: partOf\n  bibitem:\n    id: Metrologia304409\n    docid:\n    - id: Metrologia 30 4 409\n      type: BIPM\n      primary: true\n    formattedref:\n      content: Metrologia 30 4 409\n      language:\n      - en\n      script:\n      - Latn\n      format: text/plain\n- type: partOf\n  bibitem:\n    id: Metrologia304231\n    docid:\n    - id: Metrologia 30 4 231\n      type: BIPM\n      primary: true\n    formattedref:\n      content: Metrologia 30 4 231\n      language:\n      - en\n      script:\n      - Latn\n      format: text/plain\n- type: partOf\n  bibitem:\n    id: Metrologia304341\n    docid:\n    - id: Metrologia 30 4 341\n      type: BIPM\n      primary: true\n    formattedref:\n      content: Metrologia 30 4 341\n      language:\n      - en\n      script:\n      - Latn\n      format: text/plain\n- type: partOf\n  bibitem:\n    id: Metrologia304369\n    docid:\n    - id: Metrologia 30 4 369\n      type: BIPM\n      primary: true\n    formattedref:\n      content: Metrologia 30 4 369\n      language:\n      - en\n      script:\n      - Latn\n      format: text/plain\n- type: partOf\n  bibitem:\n    id: Metrologia304309\n    docid:\n    - id: Metrologia 30 4 309\n      type: BIPM\n      primary: true\n    formattedref:\n      content: Metrologia 30 4 309\n      language:\n      - en\n      script:\n      - Latn\n      format: text/plain\n- type: partOf\n  bibitem:\n    id: Metrologia304275\n    docid:\n    - id: Metrologia 30 4 275\n      type: BIPM\n      primary: true\n    formattedref:\n      content: Metrologia 30 4 275\n      language:\n      - en\n      script:\n      - Latn\n      format: text/plain\n- type: partOf\n  bibitem:\n    id: Metrologia304321\n    docid:\n    - id: Metrologia 30 4 321\n      type: BIPM\n      primary: true\n    formattedref:\n      content: Metrologia 30 4 321\n      language:\n      - en\n      script:\n      - Latn\n      format: text/plain\n- type: partOf\n  bibitem:\n    id: Metrologia304351\n    docid:\n    - id: Metrologia 30 4 351\n      type: BIPM\n      primary: true\n    formattedref:\n      content: Metrologia 30 4 351\n      language:\n      - en\n      script:\n      - Latn\n      format: text/plain\n- type: partOf\n  bibitem:\n    id: Metrologia304265\n    docid:\n    - id: Metrologia 30 4 265\n      type: BIPM\n      primary: true\n    formattedref:\n      content: Metrologia 30 4 265\n      language:\n      - en\n      script:\n      - Latn\n      format: text/plain\n- type: partOf\n  bibitem:\n    id: Metrologia304207\n    docid:\n    - id: Metrologia 30 4 207\n      type: BIPM\n      primary: true\n    formattedref:\n      content: Metrologia 30 4 207\n      language:\n      - en\n      script:\n      - Latn\n      format: text/plain\n- type: partOf\n  bibitem:\n    id: Metrologia304419\n    docid:\n    - id: Metrologia 30 4 419\n      type: BIPM\n      primary: true\n    formattedref:\n      content: Metrologia 30 4 419\n      language:\n      - en\n      script:\n      - Latn\n      format: text/plain\n- type: partOf\n  bibitem:\n    id: Metrologia304403\n    docid:\n    - id: Metrologia 30 4 403\n      type: BIPM\n      primary: true\n    formattedref:\n      content: Metrologia 30 4 403\n      language:\n      - en\n      script:\n      - Latn\n      format: text/plain\n- type: partOf\n  bibitem:\n    id: Metrologia304271\n    docid:\n    - id: Metrologia 30 4 271\n      type: BIPM\n      primary: true\n    formattedref:\n      content: Metrologia 30 4 271\n      language:\n      - en\n      script:\n      - Latn\n      format: text/plain\n- type: partOf\n  bibitem:\n    id: Metrologia304205\n    docid:\n    - id: Metrologia 30 4 205\n      type: BIPM\n      primary: true\n    formattedref:\n      content: Metrologia 30 4 205\n      language:\n      - en\n      script:\n      - Latn\n      format: text/plain\n- type: partOf\n  bibitem:\n    id: Metrologia304389\n    docid:\n    - id: Metrologia 30 4 389\n      type: BIPM\n      primary: true\n    formattedref:\n      content: Metrologia 30 4 389\n      language:\n      - en\n      script:\n      - Latn\n      format: text/plain\n- type: partOf\n  bibitem:\n    id: Metrologia304371\n    docid:\n    - id: Metrologia 30 4 371\n      type: BIPM\n      primary: true\n    formattedref:\n      content: Metrologia 30 4 371\n      language:\n      - en\n      script:\n      - Latn\n      format: text/plain\n- type: partOf\n  bibitem:\n    id: Metrologia304451\n    docid:\n    - id: Metrologia 30 4 451\n      type: BIPM\n      primary: true\n    formattedref:\n      content: Metrologia 30 4 451\n      language:\n      - en\n      script:\n      - Latn\n      format: text/plain\n- type: partOf\n  bibitem:\n    id: Metrologia304365\n    docid:\n    - id: Metrologia 30 4 365\n      type: BIPM\n      primary: true\n    formattedref:\n      content: Metrologia 30 4 365\n      language:\n      - en\n      script:\n      - Latn\n      format: text/plain\n- type: partOf\n  bibitem:\n    id: Metrologia304317\n    docid:\n    - id: Metrologia 30 4 317\n      type: BIPM\n      primary: true\n    formattedref:\n      content: Metrologia 30 4 317\n      language:\n      - en\n      script:\n      - Latn\n      format: text/plain\n- type: partOf\n  bibitem:\n    id: Metrologia304327\n    docid:\n    - id: Metrologia 30 4 327\n      type: BIPM\n      primary: true\n    formattedref:\n      content: Metrologia 30 4 327\n      language:\n      - en\n      script:\n      - Latn\n      format: text/plain\n- type: partOf\n  bibitem:\n    id: Metrologia304335\n    docid:\n    - id: Metrologia 30 4 335\n      type: BIPM\n      primary: true\n    formattedref:\n      content: Metrologia 30 4 335\n      language:\n      - en\n      script:\n      - Latn\n      format: text/plain\n- type: partOf\n  bibitem:\n    id: Metrologia304305\n    docid:\n    - id: Metrologia 30 4 305\n      type: BIPM\n      primary: true\n    formattedref:\n      content: Metrologia 30 4 305\n      language:\n      - en\n      script:\n      - Latn\n      format: text/plain\n- type: partOf\n  bibitem:\n    id: Metrologia304433\n    docid:\n    - id: Metrologia 30 4 433\n      type: BIPM\n      primary: true\n    formattedref:\n      content: Metrologia 30 4 433\n      language:\n      - en\n      script:\n      - Latn\n      format: text/plain\n- type: partOf\n  bibitem:\n    id: Metrologia304213\n    docid:\n    - id: Metrologia 30 4 213\n      type: BIPM\n      primary: true\n    formattedref:\n      content: Metrologia 30 4 213\n      language:\n      - en\n      script:\n      - Latn\n      format: text/plain\n- type: partOf\n  bibitem:\n    id: Metrologia304355\n    docid:\n    - id: Metrologia 30 4 355\n      type: BIPM\n      primary: true\n    formattedref:\n      content: Metrologia 30 4 355\n      language:\n      - en\n      script:\n      - Latn\n      format: text/plain\n- type: partOf\n  bibitem:\n    id: Metrologia304279\n    docid:\n    - id: Metrologia 30 4 279\n      type: BIPM\n      primary: true\n    formattedref:\n      content: Metrologia 30 4 279\n      language:\n      - en\n      script:\n      - Latn\n      format: text/plain\n- type: partOf\n  bibitem:\n    id: Metrologia304223\n    docid:\n    - id: Metrologia 30 4 223\n      type: BIPM\n      primary: true\n    formattedref:\n      content: Metrologia 30 4 223\n      language:\n      - en\n      script:\n      - Latn\n      format: text/plain\n- type: partOf\n  bibitem:\n    id: Metrologia304255\n    docid:\n    - id: Metrologia 30 4 255\n      type: BIPM\n      primary: true\n    formattedref:\n      content: Metrologia 30 4 255\n      language:\n      - en\n      script:\n      - Latn\n      format: text/plain\n- type: partOf\n  bibitem:\n    id: Metrologia304243\n    docid:\n    - id: Metrologia 30 4 243\n      type: BIPM\n      primary: true\n    formattedref:\n      content: Metrologia 30 4 243\n      language:\n      - en\n      script:\n      - Latn\n      format: text/plain\next:\n  schema-version: v1.0.0\n"
         }
       },
-      "recorded_at": "Sat, 15 Apr 2023 18:03:24 GMT"
+      "recorded_at": "Fri, 28 Apr 2023 00:59:58 GMT"
     }
   ],
   "recorded_with": "VCR 6.1.0"

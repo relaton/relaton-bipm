@@ -3,7 +3,7 @@
     {
       "request": {
         "method": "get",
-        "uri": "https://raw.githubusercontent.com/relaton/relaton-data-bipm/master/data/metrologia-19-4-004.yaml",
+        "uri": "https://raw.githubusercontent.com/relaton/relaton-data-bipm/master/data/metrologia-19-4-163.yaml",
         "body": {
           "encoding": "US-ASCII",
           "string": ""
@@ -16,7 +16,7 @@
             "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"
           ],
           "User-Agent": [
-            "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.4) Gecko/20030624"
+            "Mozilla/5.0 (Windows NT 6.3; WOW64; Trident/7.0; rv:11.0) like Gecko"
           ],
           "Accept-Charset": [
             "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
@@ -51,7 +51,7 @@
             "keep-alive"
           ],
           "Content-Length": [
-            "495"
+            "496"
           ],
           "Cache-Control": [
             "max-age=300"
@@ -63,7 +63,7 @@
             "text/plain; charset=utf-8"
           ],
           "Etag": [
-            "W/\"9b7921602c5d5f3d906fc19b4d749f1d82c295f292f0a5d30590455a576a272f\""
+            "W/\"9762246253fd744b976fe2b0b78c826377fb2e0242debbcad02316d963f0bf5f\""
           ],
           "Strict-Transport-Security": [
             "max-age=31536000"
@@ -78,7 +78,7 @@
             "1; mode=block"
           ],
           "X-Github-Request-Id": [
-            "E842:632F:1EBE47:27AD99:643AE6EC"
+            "D3E6:04DB:3BC0C8:4520B7:644B221B"
           ],
           "Content-Encoding": [
             "gzip"
@@ -87,13 +87,13 @@
             "bytes"
           ],
           "Date": [
-            "Sat, 15 Apr 2023 18:03:25 GMT"
+            "Fri, 28 Apr 2023 01:32:11 GMT"
           ],
           "Via": [
             "1.1 varnish"
           ],
           "X-Served-By": [
-            "cache-iad-kcgs7200056-IAD"
+            "cache-iad-kcgs7200166-IAD"
           ],
           "X-Cache": [
             "MISS"
@@ -102,7 +102,7 @@
             "0"
           ],
           "X-Timer": [
-            "S1681581805.893426,VS0,VE135"
+            "S1682645531.255261,VS0,VE87"
           ],
           "Vary": [
             "Authorization,Accept-Encoding,Origin"
@@ -111,10 +111,10 @@
             "*"
           ],
           "X-Fastly-Request-Id": [
-            "e0273fc8f98ab4394ee89b4ec2530eb3231a5bea"
+            "d53b5d0a4ff697ed8998fd4d5275259115a1635b"
           ],
           "Expires": [
-            "Sat, 15 Apr 2023 18:08:25 GMT"
+            "Fri, 28 Apr 2023 01:37:11 GMT"
           ],
           "Source-Age": [
             "0"
@@ -122,10 +122,10 @@
         },
         "body": {
           "encoding": "UTF-8",
-          "string": "\u001fã\b\u0000\u0000\u0000\u0000\u0000\u0000\u0003ùTÀn€0\u0010ºÛ+ˆÊìl)\u0016R[«6ó\u0000qÎ?(hje/@ë\u0002πrÍøÔRí_I|\t!@‘ê˚ò\u0019RYñ©h\u000eÿÍÏà!íw\u0015\u001cã˘”|©®Æ`É\u001cºı{“≈∫ÃÛR1±≈Je`ºct\\¡ã7}+≥\bøº3\u0018\u001cπ=\u0001·7æ√\u000b6‰à%-¯f@SFT\u0000Vª}Ø˜í\u000b \u0003tÚä&P«#¶9Aç\u000f≠ñ\"åˇx—YMNÒ©√\nt`2\u0016UÌçÙ)˝‹w\u000b≈\u001aJH\r\u0003å\u0001?_∑\u001b˘Ë\u0002µ:ú$cËq\n+ÚyëØVã<zŒäÂ∫\\\u0014ÎEπ∏çÆ=©ZÛ¿|D∫~g)\u001e∞ñ=Gm{Åf≈zUfy!œL\u0005<\u000e\u0001˜®Ò›)–˛¿)ëw\u0018F∫N∑É\u0012i~Qv{.\u0001Ω´1Ä%É¢0ÏN˙g{^Nrøqj£\tæùÍ•˙V'›Ø\u001d\u001ft‹hG\rF\u001eV$bG;bl« ìµ\u001fö¯¶Ωi‹Z<f\u001dlN„jı∏0Ÿù∆\u0017ñ'xT‹=9 \u0016L1_\u0019ê\u0016kÍ€s\u0019£C Q<\u001d\u0002«*¢|≈Aü+Û\u000bÔÎYRüπ\\ò‹Ú∏aÒ\u0005\u0007ô•ºRÕz£-ÒiR}‡rÙVT\u001eÄÄ\rÜ‰Ûﬂãü≥\u0007Q\u0014cˇ ®|\u0014”\tâ\u0007uûó≥\u000f+Ï\u0013˛c5K˜Ï˛‚\tüj∏≥ü˛\u001d˘<Wˇ\u0001⁄º\u0002eW\u0004\u0000\u0000"
+          "string": "\u001fã\b\u0000\u0000\u0000\u0000\u0000\u0000\u0003ùTÀé£0\u0010º˚+˙ñ\u0013\tLP6·∏;óë&ª˘Éïc\u001a“í±ëm2Àﬂo\u001b\bIfíÀXHÿe˙QU6Ií\bØNÿ»‰åŒì5\u0005ú≥ÂÀr-®,`è¡YmkíŸ.œ6k\u0011(h,D\u0002 öÄ&\u0014jU◊Ã√/k\u0014:C¶ÜpB¯ç\u001fä\u0015\u0019\nú\u0016l5†1#\n\u0000-M›…ös\u0001$ÄÜ_^9j√\bºÀ\u0010° ∫FrëÄˇ¬™’íå\b}ã\u0005H\u0017Hi\u0014•U‹'˜sﬂ-d;»!6\f0\u0006¸|;Ïy—:j§Î9£Îp\nÀ“eñn∑´4}Ÿ$ŸzóØ≤›*Áe>GóñD)√¿|D⁄Ó®…ü∞‰oŒRw\f-≤›6O“åüÖpx\u001e\u0002ÓQe€ﬁQ}\n1ë˝0ËF∫F6É\u0012q>+{∏îÄŒîË@ìBV\u0018é=º˝9\\∂£‹Ô!∂Q9€Lıb}-£Ó◊éO“Ô•°\n}\u0018v8‚HG\nÿåï'k?5ÒM{„∏µxÃ:ÿ\u001c«’Íqc≤;é\u0007ñGxT¸zrÄ-òb\u001e\u0019\u0010Ò\u0006KÍöK\u0019%ù#V<\u001e\u0002\u0013ÑG^˘Aü+Ûô˜ı,âØ\\f&∑<nX<‡¿≥òó´i´§¶–O™\u000f\\ŒV≥ \u0003‡∞B\u0017}˛;˚πx\u0012EﬁwOÇÚg1-ìxRg≥^|⁄\t6‚?∂ãxœÓ/\u001eÛ)Ü;˚Âﬂë.SÒ\u001f\u0002Ã‹[W\u0004\u0000\u0000"
         }
       },
-      "recorded_at": "Sat, 15 Apr 2023 18:03:24 GMT"
+      "recorded_at": "Fri, 28 Apr 2023 01:32:11 GMT"
     }
   ],
   "recorded_with": "VCR 6.1.0"

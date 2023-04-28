@@ -16,7 +16,7 @@
             "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"
           ],
           "User-Agent": [
-            "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:43.0) Gecko/20100101 Firefox/43.0"
+            "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)"
           ],
           "Accept-Charset": [
             "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
@@ -51,7 +51,7 @@
             "keep-alive"
           ],
           "Content-Length": [
-            "736"
+            "2087"
           ],
           "Cache-Control": [
             "max-age=300"
@@ -63,7 +63,7 @@
             "text/plain; charset=utf-8"
           ],
           "Etag": [
-            "W/\"7bc3e382b8d785aea43751600bfaa825fd8c0344869ba464e2aff19c6702989a\""
+            "\"bf7a23febf10d3587c839df2e14fda3c128f6fbe4a6378baeb8b3464440be247\""
           ],
           "Strict-Transport-Security": [
             "max-age=31536000"
@@ -78,22 +78,19 @@
             "1; mode=block"
           ],
           "X-Github-Request-Id": [
-            "1E1C:6D80:1EFAA0:27E299:643AE6EA"
-          ],
-          "Content-Encoding": [
-            "gzip"
+            "2038:3513:24776C:2F2A44:644B1A8B"
           ],
           "Accept-Ranges": [
             "bytes"
           ],
           "Date": [
-            "Sat, 15 Apr 2023 18:03:22 GMT"
+            "Fri, 28 Apr 2023 00:59:55 GMT"
           ],
           "Via": [
             "1.1 varnish"
           ],
           "X-Served-By": [
-            "cache-iad-kjyo7100088-IAD"
+            "cache-iad-kjyo7100096-IAD"
           ],
           "X-Cache": [
             "MISS"
@@ -102,7 +99,7 @@
             "0"
           ],
           "X-Timer": [
-            "S1681581802.332548,VS0,VE93"
+            "S1682643596.681564,VS0,VE95"
           ],
           "Vary": [
             "Authorization,Accept-Encoding,Origin"
@@ -111,10 +108,10 @@
             "*"
           ],
           "X-Fastly-Request-Id": [
-            "0df5173d1a42ccb7843f01d26ff6d14f20d54252"
+            "ce584ebf278370cbb2f365154ee6a6c89b6eb061"
           ],
           "Expires": [
-            "Sat, 15 Apr 2023 18:08:22 GMT"
+            "Fri, 28 Apr 2023 01:04:55 GMT"
           ],
           "Source-Age": [
             "0"
@@ -122,10 +119,10 @@
         },
         "body": {
           "encoding": "UTF-8",
-          "string": "\u001fã\b\u0000\u0000\u0000\u0000\u0000\u0000\u0003≠VÀr⁄0\u0014›˚+¥£]»Ø–\u0004ºL\u0016ôÃî\u0019¶]t-À\u0017£â%yÙÄ¶_‘|\u0007?÷+\u001bÇ›$@\u001f\fÉ%]Îû£s\u001fÇR\u001aYæ\u0006…Ë\u0006å\u0015Z\u0015dì≈y|\u0015â™ w˜À\u0005˝\u0002V7ﬁ°çf≥Ÿ<r¬5PDîp≠\u001c(WêØLÒ`'zE‹\u001aà¿u£XXb\riçv⁄=µ`\u000fv\tŒ\u0000a™Ífè¢—µa2\"§a™ˆ¨FÔÑP\u0002\n\u001fñ\u001b—∫~·3sai•çd\bÎ‡ªK⁄Ü\tı&ô\n\u0001\u0007ÿCR˛;©<ëªüÅ\u0007∏09∞êä« \\Ã£\u0011Íq$Õ⁄π÷\u0016I≤›n„R¥2÷¶N@%\\K)ú\u0003∞\tØÒ€ $Î‰MÃQnƒ\b‹\u000b¬ÖÎà\u000f©ç‰È)ù√]ôÀp≥”¿C=ﬁ\u00056l\u001b◊¬≠}È-òΩ9F¯\u0004£œTê.\tƒh≈\u001c£⁄;4!)â*ˆ¥$Ä\u0013™∂\u0014’⁄èiö≈O≤yag\rˇsE˛\u001f1îÛBb\u0017)6\nU•πóh∂Iûf˘uí›\\e”˘lñÑíÃ‚∂Z%¨ºûﬂÃsFs¯\u00044Oß)Õ¶\u0015˛d”Îi…Á”l _\u0018·Üh?2ö\u0003T·\u0004\u0011¢`ô#ôC±\u0013J…±ﬁ…áê\u0019\u001f_ú‹>,\u00178içêÃ<a‚\u001b\u000fˇ∂˘\\ÙFÆwœÌ˚u\u0000Ë À\u0012Ã)Óò\u0002]ß€+ÁÀFÿ5TËk√\u001aèKì\u001eMÁ4üM¢\u0010Q#JÔ¥\tõ0åLâ\u001f]˝ÑæAàb\u0012˙— ¸∑ﬁ\u0000Û‰a‘3CÔZjQŸ–ù\u0016`Ò\u001d€mdei`#\u0006N…¿U/\u0003!ﬁ4\u0005\u0019Ê\u0013Æ\u001a›Ï˚Ÿ¯4Êr™˜†¿ ª;≠V`@q ®’7\u0010ı⁄ŸÆü/Ä\u001dπé˚hÔ´\u000br¯\u001c˚ioÿ˜‘\u0011^¿Ÿ=˜@˜ªgÖc÷¿˚‚º\u0005ÿE˛$‡IICnú?Ãyòﬂ’gﬁ≠µâ\u0010∏À±q\"\u001dë:åŒ˚¡Ôﬁ#^7ºøÑÖ√Ñ_2#∫rÓΩ\u001f{yd±\u0016∏Câ*Q·âƒJ` #ëA˛O“IÑWX—ï»´ˇ\u0002iúFø\u0000–\b◊5'\b\u0000\u0000"
+          "string": "---\nschema-version: v1.2.3\nid: CGPM-Resolution-1889\ntitle:\n- content: Sanction of the international prototypes of the metre and the kilogram\n  language:\n  - en\n  script:\n  - Latn\n  format: text/plain\n- content: Sanction des prototypes internationaux du m√®tre et du kilogramme\n  language:\n  - fr\n  script:\n  - Latn\n  format: text/plain\nlink:\n- content: https://www.bipm.org/en/committees/cg/cgpm/1-1889/resolution-\n  type: citation\n  language: en\n  script: Latn\n- content: https://www.bipm.org/fr/committees/cg/cgpm/1-1889/resolution-1\n  type: citation\n  language: fr\n  script: Latn\n- content: https://raw.githubusercontent.com/metanorma/bipm-data-outcomes/main/cgpm/meetings-en/meeting-01.yml\n  type: src\n  language: en\n  script: Latn\n- content: https://raw.githubusercontent.com/metanorma/bipm-data-outcomes/main/cgpm/meetings-fr/meeting-01.yml\n  type: src\n  language: fr\n  script: Latn\n- content: https://www.bipm.org/documents/20126/17314988/CGPM1.pdf/ab69792a-2e5e-2040-14d0-11464bc9414c\n  type: pdf\ntype: proceedings\ndocid:\n- id: CGPM -- Resolution (1889)\n  type: BIPM\n  primary: true\n- id: CGPM -- Resolution (1889)\n  type: BIPM\n  primary: true\n  language: en\n  script: Latn\n- id: CGPM -- R√©solution (1889)\n  type: BIPM\n  primary: true\n  language: fr\n  script: Latn\ndocnumber: CGPM -- Resolution (1889)\ndate:\n- type: published\n  value: '1889-09-28'\ncontributor:\n- organization:\n    name:\n    - content: Bureau International des Poids et Mesures\n    abbreviation:\n      content: BIPM\n    url: www.bipm.org\n  role:\n  - type: publisher\n- organization:\n    name:\n    - content: General Conference on Weights and Measures\n      language:\n      - en\n      script:\n      - Latn\n    - content: Conf√©rence G√©n√©rale des Poids et Mesures\n      language:\n      - fr\n      script:\n      - Latn\n    abbreviation:\n      content: CGPM\n      language:\n      - en\n      - fr\n      script:\n      - Latn\n  role:\n  - type: author\nrevdate: '1889-09-28'\nlanguage:\n- en\n- fr\nscript:\n- Latn\nplace:\n- city: Paris\ndoctype: resolution\nstructuredidentifier:\n  docnumber: '0'\next:\n  schema-version: v1.0.0\n"
         }
       },
-      "recorded_at": "Sat, 15 Apr 2023 18:03:22 GMT"
+      "recorded_at": "Fri, 28 Apr 2023 00:59:55 GMT"
     }
   ],
   "recorded_with": "VCR 6.1.0"

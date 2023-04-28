@@ -138,11 +138,12 @@ module RelatonBipm
       #
       def relation(*args)
         dir = [DIR, *args].join("/")
-        Dir["#{dir}/*"].map do |path|
+        ids = Set.new
+        Dir["#{dir}/*"].each do |path|
           part = path.split("/").last
-          id = identifier(*args, part)
-          RelatonBib::DocumentRelation.new(type: "partOf", bibitem: rel_bibitem(id))
+          ids << identifier(*args, part)
         end
+        ids.map { |id| RelatonBib::DocumentRelation.new(type: "partOf", bibitem: rel_bibitem(id)) }
       end
 
       #

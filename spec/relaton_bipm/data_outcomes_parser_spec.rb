@@ -85,8 +85,8 @@ describe RelatonBipm::DataOutcomesParser do
           body: "CGPM", en: kind_of(Hash), fr: kind_of(Hash),
           dir: "data/cgpm/meeting", src: kind_of(Array), num: "1"
         )
-        expect(index_new).to receive(:add_or_update).with ["CGPM -- Meeting 1 (1889)", "CGPM -- Réunion 1 (1889)"], "data/cgpm/meeting/1.yaml"
-        expect(index2).to receive(:add_or_update).with({ group: "CGPM", type: "Meeting", number: "1", year: "1889" }, "data/cgpm/meeting/1.yaml")
+        expect(index_new).to receive(:add_or_update).with ["CGPM 1th meeting (1889)", "CGPM 1e réunion (1889)"], "data/cgpm/meeting/1.yaml"
+        expect(index2).to receive(:add_or_update).with({ group: "CGPM", type: "meeting", number: "1", year: "1889" }, "data/cgpm/meeting/1.yaml")
         subject.fetch_meeting "spec/fixtures/cgpm/meetings-en/meeting-01.yml", "CGPM", "meeting", "data/cgpm/meeting"
       end
 
@@ -119,24 +119,24 @@ describe RelatonBipm::DataOutcomesParser do
         ).twice
 
         expect(index_new).to receive(:add_or_update).with(
-          ["CIPM -- Meeting 101-1 (2012)", "CIPM -- Réunion 101-1 (2012)"], "data/cipm/meeting/101-1.yaml"
+          ["CIPM 101-1th meeting (2012)", "CIPM 101-1e réunion (2012)"], "data/cipm/meeting/101-1.yaml"
         )
         expect(index_new).to receive(:add_or_update).with(
-          ["CIPM -- Meeting 101-2 (2012)", "CIPM -- Réunion 101-2 (2012)"], "data/cipm/meeting/101-2.yaml"
+          ["CIPM 101-2th meeting (2012)", "CIPM 101-2e réunion (2012)"], "data/cipm/meeting/101-2.yaml"
         )
         expect(index_new).to receive(:add_or_update).with(
-          ["CIPM -- Meeting 101 (2012)", "CIPM -- Réunion 101 (2012)"], "data/cipm/meeting/101.yaml"
+          ["CIPM 101th meeting (2012)", "CIPM 101e réunion (2012)"], "data/cipm/meeting/101.yaml"
         )
-        expect(index2).to receive(:add_or_update).with({ group: "CIPM", type: "Meeting", number: "101-1", year: "2012" }, "data/cipm/meeting/101-1.yaml")
-        expect(index2).to receive(:add_or_update).with({ group: "CIPM", type: "Meeting", number: "101-2", year: "2012" }, "data/cipm/meeting/101-2.yaml")
-        expect(index2).to receive(:add_or_update).with({ group: "CIPM", type: "Meeting", number: "101", year: "2012" }, "data/cipm/meeting/101.yaml")
+        expect(index2).to receive(:add_or_update).with({ group: "CIPM", type: "meeting", number: "101-1", year: "2012" }, "data/cipm/meeting/101-1.yaml")
+        expect(index2).to receive(:add_or_update).with({ group: "CIPM", type: "meeting", number: "101-2", year: "2012" }, "data/cipm/meeting/101-2.yaml")
+        expect(index2).to receive(:add_or_update).with({ group: "CIPM", type: "meeting", number: "101", year: "2012" }, "data/cipm/meeting/101.yaml")
         subject.fetch_meeting "spec/fixtures/cipm/meetings-en/meeting-101-1.yml", "CIPM", "meeting", "data/cipm/meeting"
         subject.fetch_meeting "spec/fixtures/cipm/meetings-en/meeting-101-2.yml", "CIPM", "meeting", "data/cipm/meeting"
         expect(data_fetcher.index).to eq(
           {
-            ["CIPM -- Meeting 101 (2012)", "CIPM -- Réunion 101 (2012)"] => "data/cipm/meeting/101.yaml",
-            ["CIPM -- Meeting 101-1 (2012)", "CIPM -- Réunion 101-1 (2012)"] => "data/cipm/meeting/101-1.yaml",
-            ["CIPM -- Meeting 101-2 (2012)", "CIPM -- Réunion 101-2 (2012)"] => "data/cipm/meeting/101-2.yaml",
+            ["CIPM 101th meeting (2012)", "CIPM 101e réunion (2012)"] => "data/cipm/meeting/101.yaml",
+            ["CIPM 101-1th meeting (2012)", "CIPM 101-1e réunion (2012)"] => "data/cipm/meeting/101-1.yaml",
+            ["CIPM 101-2th meeting (2012)", "CIPM 101-2e réunion (2012)"] => "data/cipm/meeting/101-2.yaml",
           },
         )
       end
@@ -159,9 +159,7 @@ describe RelatonBipm::DataOutcomesParser do
         src = [{ type: "src", content: "http://www.bipm.org/publications/cgpm/meeting-01.html" }]
 
         expect(index_new).to receive(:add_or_update).with(
-          ["CGPM -- Resolution (1889)", "CGPM -- RES (1889)", "CGPM -- RES (1889, EN)",
-           "CGPM -- RES (1889, FR)", "CGPM -- Résolution (1889)"],
-          "data/cgpm/meeting/resolution/1889-00.yaml",
+          ["CGPM RES (1889)", "CGPM RES (1889, E)", "CGPM RES (1889, F)"], "data/cgpm/meeting/resolution/1889-00.yaml"
         )
         expect(index2).to receive(:add_or_update).with({ group: "CGPM", type: "RES", year: "1889" }, "data/cgpm/meeting/resolution/1889-00.yaml")
         subject.fetch_resolution(
@@ -170,11 +168,9 @@ describe RelatonBipm::DataOutcomesParser do
         expect(data_fetcher.index).to eq(
           {
             [
-              "CGPM -- Resolution (1889)",
-              "CGPM -- RES (1889)",
-              "CGPM -- RES (1889, EN)",
-              "CGPM -- RES (1889, FR)",
-              "CGPM -- Résolution (1889)",
+              "CGPM RES (1889)",
+              "CGPM RES (1889, E)",
+              "CGPM RES (1889, F)",
             ] => "data/cgpm/meeting/resolution/1889-00.yaml",
           },
         )
@@ -196,8 +192,7 @@ describe RelatonBipm::DataOutcomesParser do
         src = [{ type: "src", content: "http://www.bipm.org/publications/cipm/meeting-01.html" }]
 
         expect(index_new).to receive(:add_or_update).with(
-          ["Decision CIPM/101-1 (2012)", "DECN CIPM/101-1 (2012)", "DECN CIPM/101-1 (2012, EN)",
-           "DECN CIPM/101-1 (2012, FR)", "Décision CIPM/101-1 (2012)"],
+          ["CIPM DECN 101-1 (2012)", "CIPM DECN 101-1 (2012, E)", "CIPM DECN 101-1 (2012, F)"],
           "data/cipm/meeting/decision/2012-101-1.yaml",
         )
         expect(index_new).to receive(:add_or_update).with(kind_of(Array), kind_of(String)).exactly(39).times
@@ -208,11 +203,9 @@ describe RelatonBipm::DataOutcomesParser do
         expect(data_fetcher.index).to include(
           {
             [
-              "Decision CIPM/101-1 (2012)",
-              "DECN CIPM/101-1 (2012)",
-              "DECN CIPM/101-1 (2012, EN)",
-              "DECN CIPM/101-1 (2012, FR)",
-              "Décision CIPM/101-1 (2012)",
+              "CIPM DECN 101-1 (2012)",
+              "CIPM DECN 101-1 (2012, E)",
+              "CIPM DECN 101-1 (2012, F)",
             ] => "data/cipm/meeting/decision/2012-101-1.yaml",
           },
         )

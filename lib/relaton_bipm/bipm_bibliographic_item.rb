@@ -2,9 +2,9 @@ module RelatonBipm
   class BipmBibliographicItem < RelatonBib::BibliographicItem
     include RelatonBib
 
-    TYPES = %w[brochure mise-en-pratique rapport monographie guide
-               meeting-report technical-report working-party-note strategy
-               cipm-mra resolutions].freeze
+    DOCTYPES = %w[brochure mise-en-pratique rapport monographie guide
+                  meeting-report technical-report working-party-note strategy
+                  cipm-mra resolutions].freeze
 
     STATUSES = %w[draft-proposal draft-development in-force retired].freeze
 

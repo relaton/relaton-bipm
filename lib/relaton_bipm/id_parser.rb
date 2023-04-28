@@ -14,8 +14,10 @@ module RelatonBipm
       rule(:lang) { comma >> match["A-Z"].repeat(2, 2).as(:lang) }
       rule(:lang?) { lang.maybe }
 
-      rule(:number) { match["0-9-"].repeat(1).as(:number) >> space? }
+      rule(:numdash) { match["0-9-"].repeat(1).as(:number) }
+      rule(:number) { numdash >> space? }
       rule(:number?) { number.maybe }
+      rule(:num_suff) { numdash >> match["a-z"].repeat(1, 2) >> space }
 
       rule(:year) { match["0-9"].repeat(4, 4).as(:year) }
       rule(:year_paren) { lparen >> year >> lang? >> rparen }
@@ -37,7 +39,8 @@ module RelatonBipm
 
       rule(:type_group) { type >> group >> slash >> num_and_year }
       rule(:group_type) { group >> space >> delimeter? >> type >> num_and_year }
-      rule(:outcome) { group_type | type_group }
+      rule(:group_num) { group >> space >> num_suff >> type >> year_paren }
+      rule(:outcome) { group_num | group_type | type_group }
 
       rule(:append) { comma >> str("Appendix") >> space >> number }
       rule(:brochure) { str("SI").as(:group) >> space >> str("Brochure").as(:type) >> append.maybe }

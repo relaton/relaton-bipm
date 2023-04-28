@@ -1,18 +1,20 @@
 module RelatonBipm
   class DataOutcomesParser
-    TYPEABBREV = {
+    SHORTTYPE = {
       "Resolution" => "RES",
       "Recommendation" => "REC",
       "Decision" => "DECN",
       "Statement" => "DECL",
+      "Declaration" => "DECL",
+      "Action" => "ACT",
     }.freeze
 
     TRANSLATIONS = {
-      "Déclaration" => "Declaration",
-      "Réunion" => "Meeting",
-      "Recommandation" => "Recommendation",
-      "Résolution" => "Resolution",
-      "Décision" => "Decision",
+      "Declaration" => "Déclaration",
+      "Meeting" => "Réunion",
+      "Recommendation" => "Recommandation",
+      "Resolution" => "Résolution",
+      "Decision" => "Décision",
     }.freeze
 
     #
@@ -228,16 +230,16 @@ module RelatonBipm
     # @param [String] path path to YAML file
     #
     def add_to_index(item, path) # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
-      key = [item.docnumber]
-      TYPEABBREV.each do |k, v|
-        if item.docnumber.include? k
-          key << item.docnumber.sub(k, v)
-          key << item.docnumber.sub(k, v).sub(/(\(\d{4})(\))/, "\\1, EN\\2")
-          key << item.docnumber.sub(k, v).sub(/(\(\d{4})(\))/, "\\1, FR\\2")
-          break
-        end
-      end
-      key << item.docidentifier.detect { |i| i.language == "fr" }.id
+      # key = [item.docnumber]
+      # SHORTTYPE.each do |k, v|
+      #   if item.docnumber.include? k
+      #     key << item.docnumber.sub(k, v)
+      #     key << item.docnumber.sub(k, v).sub(/(\(\d{4})(\))/, "\\1, EN\\2")
+      #     key << item.docnumber.sub(k, v).sub(/(\(\d{4})(\))/, "\\1, FR\\2")
+      #     break
+      #   end
+      # end
+      key = item.docidentifier.select { |i| i.type == "BIPM" }.map &:id
       @data_fetcher.index[key] = path
       @data_fetcher.index_new.add_or_update key, path
       key2 = Id.new(item.docnumber).normalized_hash
@@ -349,12 +351,12 @@ module RelatonBipm
     # @param [String] session number of meeting
     #
     def add_part(hash, part)
-      regex = /(\p{L}+\s(?:--\s\p{L}+\s|\w+\/)\d+)/
+      regex = /(\p{L}+\s(?:\w+\/)?\d+)(?![\d-])/
       hash[:id] += "-#{part}"
       hash[:docnumber].sub!(regex) { |m| "#{m}-#{part}" }
       hash[:docid].select { |id| id.type == "BIPM" }.each do |did|
-        id = did.instance_variable_get(:@id).sub!(regex) { "#{$1}-#{part}" }
-        did.instance_variable_set(:@id, id)
+        did.instance_variable_get(:@id).sub!(regex) { "#{$1}-#{part}" }
+        # did.instance_variable_set(:@id, id)
       end
       hash[:structuredidentifier].instance_variable_set :@part, part
     end
@@ -374,12 +376,12 @@ module RelatonBipm
     # @return [Hash] Hash of BIPM meeting/resolution
     #
     def bibitem(**args) # rubocop:disable Metrics/MethodLength, Metrics/AbcSize, Metrics/CyclomaticComplexity
-      docnum = create_docnum args[:body], args[:type], args[:num], args[:en]["date"]
+      docnum = create_meeting_docnum args[:body], args[:type], args[:num], args[:en]["date"]
       hash = { title: [], type: "proceedings", doctype: args[:type],
                place: [RelatonBib::Place.new(city: "Paris")] }
       hash[:title] = create_titles args.slice(:en, :fr)
       hash[:date] = [{ type: "published", on: args[:en]["date"] }]
-      hash[:docid] = create_docids docnum
+      hash[:docid] = create_meeting_docids docnum
       hash[:docnumber] = docnum # .sub(" --", "").sub(/\s\(\d{4}\)/, "")
       hash[:id] = create_id(args[:body], args[:type], args[:num], args[:en]["date"])
       hash[:link] = create_links(**args)
@@ -426,14 +428,19 @@ module RelatonBipm
     #
     def create_docnum(body, type, num, date)
       year = Date.parse(date).year
-      if special_id_case? body, type, year
-        id = "#{type.capitalize} #{body}"
-        id += "/#{num}" if num.to_i.positive?
-      else
-        id = "#{body} -- #{type.capitalize}"
-        id += " #{num}" if num.to_i.positive?
-      end
+      # if special_id_case? body, type, year
+      #   id = "#{type.capitalize} #{body}"
+      #   id += "/#{num}" if num.to_i.positive?
+      # else
+      id = "#{body} #{SHORTTYPE[type.capitalize]}"
+      id += " #{num}" if num.to_i.positive?
+      # end
       "#{id} (#{year})"
+    end
+
+    def create_meeting_docnum(body, type, num, date)
+      year = Date.parse(date).year
+      "#{body} #{num}th #{type} (#{year})"
     end
 
     #
@@ -448,13 +455,11 @@ module RelatonBipm
     #
     def create_id(body, type, num, date)
       year = Date.parse(date).year
-      id = if special_id_case?(body, type, year)
-             "#{type.capitalize}-#{body}-#{year}"
-           else
-             "#{body}-#{type.capitalize}-#{year}"
-           end
-      id += "-#{num}" if num.to_i.positive?
-      id
+      # if special_id_case?(body, type, year)
+      #   [type.capitalize, body, year]
+      # else
+      [body, SHORTTYPE[type.capitalize], year, num].compact.join("-")
+      # end
     end
 
     #
@@ -466,10 +471,10 @@ module RelatonBipm
     #
     # @return [Boolean] is special case
     #
-    def special_id_case?(body, type, year)
-      (body == "CIPM" && type == "Decision" && year.to_i > 2011) ||
-        (body == "JCRB" && %w[recomendation resolution descision].include?(type))
-    end
+    # def special_id_case?(body, type, year)
+    #   (body == "CIPM" && type == "Decision" && year.to_i > 2011) ||
+    #     (body == "JCRB" && %w[recomendation resolution descision].include?(type))
+    # end
 
     #
     # Create documetn IDs
@@ -478,12 +483,22 @@ module RelatonBipm
     #
     # @return [Array<RelatonBib::DocumentIdentifier>] document IDs
     #
-    def create_docids(en_id)
-      id = en_id.clone
+    def create_docids(id)
+      en_id = id.sub(/(\s\(\d{4})(\))$/, '\1, E\2')
+      fr_id = id.sub(/(\s\(\d{4})(\))$/, '\1, F\2')
       [
         make_docid(id: id, type: "BIPM", primary: true),
-        make_docid(id: id.clone, type: "BIPM", primary: true, language: "en", script: "Latn"),
-        create_docid_fr(en_id),
+        make_docid(id: en_id, type: "BIPM", primary: true, language: "en", script: "Latn"),
+        make_docid(id: fr_id, type: "BIPM", primary: true, language: "fr", script: "Latn"),
+        # create_docid_fr(en_id),
+      ]
+    end
+
+    def create_meeting_docids(en_id)
+      fr_id = en_id.sub(/(\d+)th/, '\1e').sub("meeting", "réunion")
+      [
+        make_docid(id: en_id, type: "BIPM", primary: true, language: "en", script: "Latn"),
+        make_docid(id: fr_id, type: "BIPM", primary: true, language: "fr", script: "Latn"),
       ]
     end
 
@@ -494,11 +509,11 @@ module RelatonBipm
     #
     # @return [RelatonBib::DocumentIdentifier] french document ID
     #
-    def create_docid_fr(en_id)
-      tr = TRANSLATIONS.detect { |_, v| en_id.include? v }
-      id = tr ? en_id.sub(tr[1], tr[0]) : en_id
-      make_docid(id: id, type: "BIPM", primary: true, language: "fr", script: "Latn")
-    end
+    # def create_docid_fr(en_id)
+    #   tr = TRANSLATIONS.detect { |_, v| en_id.include? v }
+    #   id = tr ? en_id.sub(tr[1], tr[0]) : en_id
+    #   make_docid(id: id, type: "BIPM", primary: true, language: "fr", script: "Latn")
+    # end
 
     #
     # Create doucment ID

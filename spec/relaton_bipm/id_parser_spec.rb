@@ -68,7 +68,7 @@ describe RelatonBipm::Id do
     context "outcomes" do
       it_behaves_like "comparing IDs", "CCTF -- Recommendation 2 (2009)", "CCTF REC 2 (2009)"
       it_behaves_like "comparing IDs", "JCRB -- Meeting 22 (2009)", "JCRB -- Réunion 22 (2009)"
-      it_behaves_like "comparing IDs", "CIPM Decision 2017-10", "CIPM -- Décision 10 (2017)"
+      it_behaves_like "comparing IDs", "CIPM Decision 106-10 (2017)", "CIPM -- Décision 106-10 (2017)"
       it_behaves_like "comparing IDs", "CGPM Resolution 1889-00", "CGPM -- Resolution (1889)"
       it_behaves_like "comparing IDs", "CCTF -- REC 1 (2001, EN)", "CCTF -- REC 1 (2001, FR)", false
       it_behaves_like "comparing IDs", "CIPM Declaration (2001)", "CIPM -- Déclaration (2001)"
