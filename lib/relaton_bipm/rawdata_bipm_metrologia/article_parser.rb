@@ -103,9 +103,9 @@ module RelatonBipm
         @meta.xpath("./title-group/article-title").map do |t|
           next if t.text.empty?
 
-          format = CGI.escapeHTML(t.text) == t.text ? "text/plain" : "text/html"
+          format = CGI.escapeHTML(t.inner_html) == t.inner_html ? "text/plain" : "text/html"
           RelatonBib::TypedTitleString.new(
-            content: t.text, language: t[:"xml:lang"], script: "Latn", format: format,
+            content: t.inner_html, language: t[:"xml:lang"], script: "Latn", format: format,
           )
         end.compact
       end
