@@ -1,5 +1,5 @@
 <bibdata type="proceedings" schema-version="v1.2.3">
-  <fetched>2023-03-24</fetched>
+  <fetched>2023-04-27</fetched>
   <title format="text/plain" language="en" script="Latn">43rd meeting of the CIPM</title>
   <title format="text/plain" language="fr" script="Latn">43e réunion du CIPM</title>
   <uri type="citation" language="en" script="Latn">https://www.bipm.org/en/committees/ci/cipm/43-1950</uri>
@@ -7,10 +7,9 @@
   <uri type="pdf">https://www.bipm.org/documents/20126/71755187/CIPM1950.pdf/e2ae0cc0-7e98-0653-dfe2-4b8964ea73f1</uri>
   <uri type="src" language="en" script="Latn">https://raw.githubusercontent.com/metanorma/bipm-data-outcomes/main/cipm/meetings-en/meeting-43.yml</uri>
   <uri type="src" language="fr" script="Latn">https://raw.githubusercontent.com/metanorma/bipm-data-outcomes/main/cipm/meetings-fr/meeting-43.yml</uri>
-  <docidentifier type="BIPM" primary="true">CIPM -- Meeting 43 (1950)</docidentifier>
-  <docidentifier type="BIPM" primary="true" language="en" script="Latn">CIPM -- Meeting 43 (1950)</docidentifier>
-  <docidentifier type="BIPM" primary="true" language="fr" script="Latn">CIPM -- Réunion 43 (1950)</docidentifier>
-  <docnumber>CIPM -- Meeting 43 (1950)</docnumber>
+  <docidentifier type="BIPM" primary="true" language="en" script="Latn">CIPM 43th meeting (1950)</docidentifier>
+  <docidentifier type="BIPM" primary="true" language="fr" script="Latn">CIPM 43e réunion (1950)</docidentifier>
+  <docnumber>CIPM 43th meeting (1950)</docnumber>
   <date type="published">
     <on>1950-06-13</on>
   </date>
