@@ -38,7 +38,7 @@ module RelatonBipm
         key = hash1["docnumber"] || basename
         @data_fetcher.index[[key]] = outfile
         @data_fetcher.index_new.add_or_update [key], outfile
-        @data_fetcher.index2.add_or_update Id.new(key).normalized_hash, outfile
+        @data_fetcher.index2.add_or_update Id.new(key).to_hash, outfile
         hash = if File.exist? outfile
                  warn_duplicate = false
                  hash2 = YAML.load_file outfile

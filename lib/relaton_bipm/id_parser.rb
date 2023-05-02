@@ -11,7 +11,7 @@ module RelatonBipm
       rule(:delimeter) { str("--") >> space }
       rule(:delimeter?) { delimeter.maybe }
 
-      rule(:lang) { comma >> match["A-Z"].repeat(2, 2).as(:lang) }
+      rule(:lang) { comma >> space? >> match["A-Z"].repeat(1, 2).as(:lang) }
       rule(:lang?) { lang.maybe }
 
       rule(:numdash) { match["0-9-"].repeat(1).as(:number) }
@@ -61,6 +61,7 @@ module RelatonBipm
       "Décision" => "DECN",
       "Declaration" => "Déclaration",
       "Réunion" => "Meeting",
+      "Action" => "ACT",
     }.freeze
 
     # @return [Hash] the parsed id components
@@ -87,8 +88,8 @@ module RelatonBipm
     # @return [Boolean] true if the two Id objects are equal
     #
     def ==(other)
-      other_hash = other.is_a?(Id) ? other.normalized_hash : other
-      hash = normalized_hash
+      other_hash = other.is_a?(Id) ? other.to_hash : normalize_hash(other)
+      hash = to_hash
       hash.delete(:year) unless other_hash[:year]
       other_hash.delete(:year) unless hash[:year]
       hash.delete(:lang) unless other_hash[:lang]
@@ -102,16 +103,26 @@ module RelatonBipm
     #
     # @return [Hash] the normalized ID parts
     #
-    def normalized_hash # rubocop:disable Metrics/AbcSize, Metrics/CyclomaticComplexity
-      @normalized_hash ||= begin
-        hash = { group: id[:group].to_s.sub("CCDS", "CCTF") }
-        hash[:type] = normalized_type if id[:type]
-        norm_num = normalized_number
-        hash[:number] = norm_num unless norm_num.nil? || norm_num.empty?
-        hash[:year] = id[:year].to_s if id[:year]
-        hash[:lang] = id[:lang].to_s if id[:lang]
-        hash
-      end
+    def to_hash
+      @to_hash ||= normalize_hash id
+    end
+
+    #
+    # Normalize ID parts
+    # Traslate type into abbreviation, remove leading zeros from number
+    #
+    # @param [RelatonBipm::Id, Hash] src the ID parts
+    #
+    # @return [Hash] the normalized ID parts
+    #
+    def normalize_hash(src) # rubocop:disable Metrics/AbcSize
+      hash = { group: src[:group].to_s.sub("CCDS", "CCTF") }
+      hash[:type] = normalized_type(src) if src[:type]
+      norm_num = normalized_number(src)
+      hash[:number] = norm_num unless norm_num.nil? || norm_num.empty?
+      hash[:year] = src[:year].to_s if src[:year]
+      hash[:lang] = src[:lang].to_s if src[:lang]
+      hash
     end
 
     #
@@ -119,8 +130,9 @@ module RelatonBipm
     #
     # @return [String] the normalized type
     #
-    def normalized_type
-      TYPES[id[:type].to_s] || id[:type].to_s
+    def normalized_type(src)
+      type = TYPES[src[:type].to_s.capitalize] || src[:type].to_s
+      type == type.upcase ? type : type.capitalize
     end
 
     #
@@ -128,10 +140,10 @@ module RelatonBipm
     #
     # @return [String, nil] the normalized number
     #
-    def normalized_number
-      return unless id[:number]
+    def normalized_number(src)
+      return unless src[:number]
 
-      id[:number].to_s.sub(/^0+/, "")
+      src[:number].to_s.sub(/^0+/, "")
     end
   end
 end
