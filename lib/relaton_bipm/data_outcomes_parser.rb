@@ -230,15 +230,6 @@ module RelatonBipm
     # @param [String] path path to YAML file
     #
     def add_to_index(item, path) # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
-      # key = [item.docnumber]
-      # SHORTTYPE.each do |k, v|
-      #   if item.docnumber.include? k
-      #     key << item.docnumber.sub(k, v)
-      #     key << item.docnumber.sub(k, v).sub(/(\(\d{4})(\))/, "\\1, EN\\2")
-      #     key << item.docnumber.sub(k, v).sub(/(\(\d{4})(\))/, "\\1, FR\\2")
-      #     break
-      #   end
-      # end
       key = item.docidentifier.select { |i| i.type == "BIPM" }.map &:id
       @data_fetcher.index[key] = path
       @data_fetcher.index_new.add_or_update key, path
@@ -254,20 +245,40 @@ module RelatonBipm
     #
     # @return [Array<Hash>] contributors
     #
-    def contributors(date, body) # rubocop:disable Metrics/MethodLength
+    def contributors(date, body)
+      contribs = [{ entity: bipm_org, role: [{ type: "publisher" }] }]
+      author = author_org date, body
+      contribs << { entity: author, role: [{ type: "author" }] } if author
+      contribs
+    end
+
+    #
+    # Create author organization
+    #
+    # @param [String] date date of publication
+    # @param [String] body organization abbreviation (CCTF, CIPM, CGPM)
+    #
+    # @return [Hash, nil] author organization
+    #
+    def author_org(date, body)
       case body
       when "CCTF" then cctf_org date
       when "CGPM" then cgpm_org
       when "CIPM" then cipm_org
-      else []
-      end.reduce(
-        [{ entity: {
-             url: "www.bipm.org",
-             name: "Bureau International des Poids et Mesures",
-             abbreviation: "BIPM",
-           },
-           role: [{ type: "publisher" }] }],
-      ) { |a, e| a << { entity: e, role: [{ type: "author" }] } }
+      end
+    end
+
+    #
+    # Create BIPM organization
+    #
+    # @return [Hash] BIPM organization
+    #
+    def bipm_org
+      nms = [
+        { content: "International Bureau of Weights and Measures", language: "en" },
+        { content: "Bureau international des poids et mesures", language: "fr" },
+      ]
+      organization(nms, "BIPM").tap { |org| org[:url] = "www.bipm.org" }
     end
 
     #
@@ -275,7 +286,7 @@ module RelatonBipm
     #
     # @param [String] date date of meeting
     #
-    # @return [Array<Hash>] CCTF organization
+    # @return [Hash] CCTF organization
     #
     def cctf_org(date) # rubocop:disable Metrics/MethodLength
       if Date.parse(date).year < 1999
@@ -299,17 +310,17 @@ module RelatonBipm
     # @param [Array<Hash>] names organization names in different languages
     # @param [String] abbr abbreviation
     #
-    # @return [Array<Hash>] organization
+    # @return [Hash] organization
     #
     def organization(names, abbr)
       names.each { |ctrb| ctrb[:script] = "Latn" }
-      [{ name: names, abbreviation: { content: abbr, language: ["en", "fr"], script: "Latn" } }]
+      { name: names, abbreviation: { content: abbr, language: ["en", "fr"], script: "Latn" } }
     end
 
     #
     # Create CGPM organization
     #
-    # @return [Array<Hash>] CGPM organization
+    # @return [Hash] CGPM organization
     #
     def cgpm_org
       nms = [

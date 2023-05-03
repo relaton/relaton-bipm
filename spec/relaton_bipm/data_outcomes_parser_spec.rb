@@ -42,8 +42,11 @@ describe RelatonBipm::DataOutcomesParser do
           contribs = subject.contributors date, body
           expect(contribs.size).to eq 2
           expect(contribs[0][:role]).to eq [{ type: "publisher" }]
-          expect(contribs[0][:entity][:abbreviation]).to eq "BIPM"
-          expect(contribs[0][:entity][:name]).to eq "Bureau International des Poids et Mesures"
+          expect(contribs[0][:entity][:abbreviation]).to eq content: "BIPM", language: ["en", "fr"], script: "Latn"
+          expect(contribs[0][:entity][:name][0][:content]).to eq "International Bureau of Weights and Measures"
+          expect(contribs[0][:entity][:name][0][:language]).to eq "en"
+          expect(contribs[0][:entity][:name][0][:script]).to eq "Latn"
+          expect(contribs[0][:entity][:name][1][:content]).to eq "Bureau international des poids et mesures"
           expect(contribs[0][:entity][:url]).to eq "www.bipm.org"
           if body == "CCTF"
             if Date.parse(date).year < 1999
