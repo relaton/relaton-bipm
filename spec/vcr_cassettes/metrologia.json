@@ -6,7 +6,7 @@
         "uri": "https://raw.githubusercontent.com/relaton/relaton-data-bipm/master/data/metrologia.yaml",
         "body": {
           "encoding": "US-ASCII",
-          "string": ""
+          "base64_string": ""
         },
         "headers": {
           "Accept-Encoding": [
@@ -16,7 +16,7 @@
             "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"
           ],
           "User-Agent": [
-            "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:94.0) Gecko/20100101 Firefox/94.0"
+            "Mozilla/5.0 (Macintosh; U; PPC Mac OS X Mach-O; en-US; rv:1.4a) Gecko/20030401"
           ],
           "Accept-Charset": [
             "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
@@ -78,7 +78,7 @@
             "1; mode=block"
           ],
           "X-Github-Request-Id": [
-            "27C4:4D0A:12E498:15D88A:6450351B"
+            "13DC:5A82:C362:E9D3:6451CB18"
           ],
           "Content-Encoding": [
             "gzip"
@@ -87,13 +87,13 @@
             "bytes"
           ],
           "Date": [
-            "Mon, 01 May 2023 21:54:36 GMT"
+            "Wed, 03 May 2023 02:46:48 GMT"
           ],
           "Via": [
             "1.1 varnish"
           ],
           "X-Served-By": [
-            "cache-iad-kjyo7100029-IAD"
+            "cache-atl18467-ATL"
           ],
           "X-Cache": [
             "MISS"
@@ -102,7 +102,7 @@
             "0"
           ],
           "X-Timer": [
-            "S1682978076.981478,VS0,VE79"
+            "S1683082009.511493,VS0,VE137"
           ],
           "Vary": [
             "Authorization,Accept-Encoding,Origin"
@@ -111,10 +111,10 @@
             "*"
           ],
           "X-Fastly-Request-Id": [
-            "c11f34a79500d91fe564355b0e868510f35a3069"
+            "3053a5999ecdfda9783e8153a7c36df456a0f229"
           ],
           "Expires": [
-            "Mon, 01 May 2023 21:59:36 GMT"
+            "Wed, 03 May 2023 02:51:48 GMT"
           ],
           "Source-Age": [
             "0"
@@ -122,10 +122,10 @@
         },
         "body": {
           "encoding": "UTF-8",
-          "string": "\u001fã\b\u0000\u0000\u0000\u0000\u0000\u0000\u0003≠ì›n√ \fÖÔy\nø@~⁄nï ÂÓ&≠⁄^Å\u0012'e#Ä\u001cßZﬂ~ê§ÕöMö&’W∆ÿÁ!»≤Lt˙à≠ NHùÒN¬iïØÛç0ïÑ=2yÎ\u001b£Ñ5ÓCä\f¥wåé%\u001côC'ã¬¯–iÉNc\u001e”‹SSº˚ûú≤EYÆ∑Ÿj≥{\u0010\u0000|\u000e(°#-∆L\u0011\u001bmQT^Gß(ºªL<=øÌ„\"êi\u0015ù%0ı(¨rMØ\u001aLsË\"\u0001ô¿iÒ¢ÿâ⁄S´ò±\"¨eúΩ\u001e˘F~÷\u0000\u0018T\u0000.:©0(\u0001åZ—\u0016?π\bV\u0019'\b≠‚tS—o<cà0ØuÏ>òÉalì\u0002,Ä\u001ewCq¬MÈ\u0012\u0019¶ñ\u0005yä[˙TY2¶¯Ös÷¸é;∫\u000f»)fÏqcBümnˇ\u0003Ω-ˇÑûZÓ\n}’º\u001btÃ‰@~|ï2/≈\u0017˛ò\b\u0011F\u0003\u0000\u0000"
+          "base64_string": "H4sIAAAAAAAAA62T3W7DIAyF73kKv0B+2m6VyuXuJq3aXoESJ2UjgBynWt9+\nkKTNmk2aJtVXxtjn8CHIskx0+oityk5InfFOwmmVr/ONMJWEPTJ56xujhDXu\nQ4oMtHeMjiUcmUMni8L40GmDTmMe09xTU7z7npyyRVmut9lqs3sQAHwOKKEj\nLcZMERttUVReR6covPC7TDw9v+3jIpBpFZ0lMPUorHJNrxpMc+giAZnAafGi\n2InaU6uYsSKsZZy9HvlGftYAGFQALjqpMCgBjFrRFj+5CFYZJwit4nRT0W88\nY4gwr3XsPpiDYWyTAiyAHndDccJN6RIZppYFeYpb+lRZMqb4hXPW/I47ug/I\nKWbscWNCn21u8P8DvS3/hJ5a7gp91bwbdMzk8EB+fJUyL8UX/pgIEUYDAAA=\n"
         }
       },
-      "recorded_at": "Mon, 01 May 2023 21:54:36 GMT"
+      "recorded_at": "Wed, 03 May 2023 02:46:48 GMT"
     }
   ],
   "recorded_with": "VCR 6.1.0"

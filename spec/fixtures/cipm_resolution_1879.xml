@@ -1,5 +1,5 @@
 <bibdata type="proceedings" schema-version="v1.2.3">
-  <fetched>2023-05-01</fetched>
+  <fetched>2023-05-02</fetched>
   <title format="text/plain" language="en" script="Latn">Signes abréviatifs pour les poids et mesures métriques</title>
   <uri type="citation" language="en" script="Latn">https://www.bipm.org/en/committees/ci/cipm/4-1879/resolution-</uri>
   <uri type="src" language="en" script="Latn">https://raw.githubusercontent.com/metanorma/bipm-data-outcomes/main/cipm/meetings-en/meeting-4.yml</uri>
@@ -15,8 +15,9 @@
   <contributor>
     <role type="publisher"/>
     <organization>
-      <name>Bureau International des Poids et Mesures</name>
-      <abbreviation>BIPM</abbreviation>
+      <name language="en" script="Latn">International Bureau of Weights and Measures</name>
+      <name language="fr" script="Latn">Bureau international des poids et mesures</name>
+      <abbreviation language="en,fr" script="Latn">BIPM</abbreviation>
       <uri>www.bipm.org</uri>
     </organization>
   </contributor>

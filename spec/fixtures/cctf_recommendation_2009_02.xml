@@ -1,5 +1,5 @@
 <bibdata type="proceedings" schema-version="v1.2.3">
-  <fetched>2023-05-01</fetched>
+  <fetched>2023-05-02</fetched>
   <title format="text/plain" language="en" script="Latn">Characterization of delays of global navigation satellite system (GNSS) equipment in laboratories contributing to International Atomic Time (TAI)</title>
   <title format="text/plain" language="fr" script="Latn">Caractérisation des retards des équipements de comparaison de temps par systèmes globaux de navigation par satellite (GNSS) des laboratoires contribuant au Temps atomique international (TAI)</title>
   <uri type="citation" language="en" script="Latn">https://www.bipm.org/en/committees/cc/cctf/18-2009/resolution-2</uri>
@@ -17,8 +17,9 @@
   <contributor>
     <role type="publisher"/>
     <organization>
-      <name>Bureau International des Poids et Mesures</name>
-      <abbreviation>BIPM</abbreviation>
+      <name language="en" script="Latn">International Bureau of Weights and Measures</name>
+      <name language="fr" script="Latn">Bureau international des poids et mesures</name>
+      <abbreviation language="en,fr" script="Latn">BIPM</abbreviation>
       <uri>www.bipm.org</uri>
     </organization>
   </contributor>

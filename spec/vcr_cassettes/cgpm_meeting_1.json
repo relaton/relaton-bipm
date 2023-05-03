@@ -6,7 +6,7 @@
         "uri": "https://raw.githubusercontent.com/relaton/relaton-data-bipm/master/data/cgpm/meeting/1.yaml",
         "body": {
           "encoding": "US-ASCII",
-          "string": ""
+          "base64_string": ""
         },
         "headers": {
           "Accept-Encoding": [
@@ -16,7 +16,7 @@
             "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"
           ],
           "User-Agent": [
-            "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0)"
+            "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.4) Gecko/20030624"
           ],
           "Accept-Charset": [
             "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
@@ -51,7 +51,7 @@
             "keep-alive"
           ],
           "Content-Length": [
-            "686"
+            "701"
           ],
           "Cache-Control": [
             "max-age=300"
@@ -63,7 +63,7 @@
             "text/plain; charset=utf-8"
           ],
           "Etag": [
-            "W/\"d935bd2916dc17446d17df3284c4b077c70d2c4075abc515aa6c26f65b3b6da5\""
+            "W/\"3275cde7b45def37751d138aca5bc3bdc0e01c0dc0383f4abd1d2aa67e2261e7\""
           ],
           "Strict-Transport-Security": [
             "max-age=31536000"
@@ -78,7 +78,7 @@
             "1; mode=block"
           ],
           "X-Github-Request-Id": [
-            "496A:92AC:10351A:12F16D:64508045"
+            "9362:7AC3:DFFA:10667:6451CB16"
           ],
           "Content-Encoding": [
             "gzip"
@@ -87,13 +87,13 @@
             "bytes"
           ],
           "Date": [
-            "Tue, 02 May 2023 03:15:17 GMT"
+            "Wed, 03 May 2023 02:46:46 GMT"
           ],
           "Via": [
             "1.1 varnish"
           ],
           "X-Served-By": [
-            "cache-iad-kcgs7200057-IAD"
+            "cache-atl18478-ATL"
           ],
           "X-Cache": [
             "MISS"
@@ -102,7 +102,7 @@
             "0"
           ],
           "X-Timer": [
-            "S1682997318.641852,VS0,VE101"
+            "S1683082006.007744,VS0,VE87"
           ],
           "Vary": [
             "Authorization,Accept-Encoding,Origin"
@@ -111,10 +111,10 @@
             "*"
           ],
           "X-Fastly-Request-Id": [
-            "c040f0130e7280872dc2c5ab499824834223f844"
+            "942e36ba82d9b7867bd71579e2532a88fef719b5"
           ],
           "Expires": [
-            "Tue, 02 May 2023 03:20:17 GMT"
+            "Wed, 03 May 2023 02:51:46 GMT"
           ],
           "Source-Age": [
             "0"
@@ -122,10 +122,10 @@
         },
         "body": {
           "encoding": "UTF-8",
-          "string": "\u001fã\b\u0000\u0000\u0000\u0000\u0000\u0000\u0003≠UÀn€0\u0010ºÎ+xs{†\u001eN‚»:&á @\u0003‰÷3%≠$¢\"%êKªÈ\u001fÂ;Úc]Q™-5\u000f;E\r\u0003ñIqfvˆAŒy`ã\u0006î‡;0Vv:cª$\\á\u0017Å,3v{˜¯¿ì4›Ú$@â-d\u0001gEß\u00114f,±»\u0014\u0000J]≥ÆbÿÄ?\u00100÷\n];Q”Îåq\u0006ö~ladè„¬7Å√R’\u0019%\b\u0007·'F}+§^†\u00033/œNì&V\u0002Aæ\r^ô≥¡[©,\u0002h\u0010{õE—~ø\u000fsŸ´∞3u\u0004:*:•$\"ÄçäöæΩä\u0012o\u0003·‚S\u000f\u0019+$\n$es9ã8G\u0019ß∏*ÛØ\\Û∞œ„*ª¬)⁄∂—:N÷õË\"ç∑◊…v\u0013\r∂&a_VQ\\Uó…Uπ·ÈµXÛ+X_+ë\u0014º\u0010eïÊi|y-6\u0007Yt‡-N#ˆa-±qπ≥`¶Ìê¢å\u0014†–CV¢A\u0013/\u0005\nﬁ9§-ä]QÇ∆Ëßä≤ú\u00121=Û8\tüT{†∂¶¯ºÒˇO\u0018eÌLaØ≥4yg∫\u0002†\u001c–\u0002 \u000bµ\u001a)˛”p,¡Ê–W_ÜR¯z ∏π˜-–\u001b©Ñy¢Í6\u000eNZq\u0004ûµ‘gÅ_áB¬µS9ò˜eìï~dLQªºï∂Åíêv¢u¥¥Ú√%ﬁÚu∫\nÜú\u0018ô;ÏÃpàäVh˘À◊˛–⁄åi°`|öÂ˜∆\u0019\u0010é›”_£˝À¢•ÅaŸc'KÀ\u0000Ÿ\u0003Xz«˙É\"œ\rÏ‰\fîÕ†F\u0013\u0018s¶Õÿº{h’tÌ4rñ—òÛ•ﬁÅ\u0006CÍn;]Å\u0001]\u0000£L|\u0007Y7hô–%I\u0015G≠ÀQ7b˘¸\u000eü„»\u001b7¶±∑‡\u001bx^ûG¢ªógMœ¢Ö˜Õyã–Á˝C¬\u000f-ùfˆâ`N”¸Ìæpÿt& b_cÀB:2y\u000eè˛\u0007wB§\u001b°\u0018o3âTÓè¬Hﬂä#˙T∆Å•6(ê¸)eI·»JRµìäYÈØíU@WLÊª„’E\u001aáq\u001b\t¥T]d\u0007\u0000\u0000"
+          "base64_string": "H4sIAAAAAAAAA7VWy07cMBTd5yu8m3bhPAYYMlnCAiEViV3Xjn2TWI2dyI+Z\n0j/iO/ix3jhhSIDC0JbRSLHs+Jx77/G5DqU0srwBxegOjJWdLsgui9fxSSRF\nQS6vbm9oludbmkVOuhaKiBLeaQfaFSSzjigAJ3VNuoq4BsKGiJCW6dqzGl8n\nhBLQ+LDcyN6NE9+YG6aqziiGOA5+uqRvmdQLdCDm4d5rjIkIQMjXwStzNHgr\n9Y9FAo1zvS2SZL/fx6XsVdyZOgGd8E4p6RyATXiN/14lWSgD4rq7HgrCpWMO\nI5uHs8hzDOM9rsr8Ldc87eO4RMe9wmWbrNNsvUlO8nR7nm03yVDWLO5FlaRV\ndZqdiQ3Nz9mansH6hJ6xjFPORJWXeXp6zjaHsHDDa5yG7eNausaX3oKZlmPM\nMlHgmB5USYaYqGCO0c47XMLcFQo0Zj+dKEtRiGlM0yy+U+2B2hr+8cL/v8BQ\ntSMDe6nSVDvTcQAxoEWoC1oNI340HMlcc/DVl+EofD0QXFwHC/RGKmbu8HQb\nD++W4gl4ZqmPAr9MBQPXXpVg/hw2ljK0jClrX7bSNiAQacdaj1Or0FzSLV3n\nq2jQxMjSu84Mm/DQMi1/hbM/WJsQzRSMo5m+1/g0OrzFWnLhDTA/tKPvIOvG\nWcK0IDfALC7YsHfZQUa0ULbh99RJxoWpmywYJw65IBZgSd9JYQkMXfFtulDM\nN+lYWRrYyVnyZBbAKNY7qRxD401bkHmbwFnTtVNvXcpmjtfkCjQYLMplpysw\noDkQPHKfp8jA83A/El093GscsxaCJrePmtx8ribT5fTPmjyvPvOu6UyExMFM\nS8c8MQWOgP6IOyHi1cfHa1s69PUtMzL0nBF98mtk0e/cYX2EFJiOrCTaGqOY\neXyVrSK8S4vQBl58MaRxGv0GuDHKG00IAAA=\n"
         }
       },
-      "recorded_at": "Tue, 02 May 2023 03:15:17 GMT"
+      "recorded_at": "Wed, 03 May 2023 02:46:46 GMT"
     }
   ],
   "recorded_with": "VCR 6.1.0"
