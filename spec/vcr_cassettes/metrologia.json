@@ -16,7 +16,7 @@
             "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"
           ],
           "User-Agent": [
-            "Mozilla/5.0 (Macintosh; U; PPC Mac OS X Mach-O; en-US; rv:1.4a) Gecko/20030401"
+            "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:43.0) Gecko/20100101 Firefox/43.0"
           ],
           "Accept-Charset": [
             "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
@@ -78,7 +78,7 @@
             "1; mode=block"
           ],
           "X-Github-Request-Id": [
-            "13DC:5A82:C362:E9D3:6451CB18"
+            "A126:6E7E:A4DE3:BF306:6453BEDB"
           ],
           "Content-Encoding": [
             "gzip"
@@ -87,13 +87,13 @@
             "bytes"
           ],
           "Date": [
-            "Wed, 03 May 2023 02:46:48 GMT"
+            "Thu, 04 May 2023 14:19:08 GMT"
           ],
           "Via": [
             "1.1 varnish"
           ],
           "X-Served-By": [
-            "cache-atl18467-ATL"
+            "cache-atl18471-ATL"
           ],
           "X-Cache": [
             "MISS"
@@ -102,7 +102,7 @@
             "0"
           ],
           "X-Timer": [
-            "S1683082009.511493,VS0,VE137"
+            "S1683209948.924118,VS0,VE131"
           ],
           "Vary": [
             "Authorization,Accept-Encoding,Origin"
@@ -111,10 +111,10 @@
             "*"
           ],
           "X-Fastly-Request-Id": [
-            "3053a5999ecdfda9783e8153a7c36df456a0f229"
+            "b90327a0859104a6efeb52c3106cc2f86a4b5110"
           ],
           "Expires": [
-            "Wed, 03 May 2023 02:51:48 GMT"
+            "Thu, 04 May 2023 14:24:08 GMT"
           ],
           "Source-Age": [
             "0"
@@ -125,7 +125,7 @@
           "base64_string": "H4sIAAAAAAAAA62T3W7DIAyF73kKv0B+2m6VyuXuJq3aXoESJ2UjgBynWt9+\nkKTNmk2aJtVXxtjn8CHIskx0+oityk5InfFOwmmVr/ONMJWEPTJ56xujhDXu\nQ4oMtHeMjiUcmUMni8L40GmDTmMe09xTU7z7npyyRVmut9lqs3sQAHwOKKEj\nLcZMERttUVReR6covPC7TDw9v+3jIpBpFZ0lMPUorHJNrxpMc+giAZnAafGi\n2InaU6uYsSKsZZy9HvlGftYAGFQALjqpMCgBjFrRFj+5CFYZJwit4nRT0W88\nY4gwr3XsPpiDYWyTAiyAHndDccJN6RIZppYFeYpb+lRZMqb4hXPW/I47ug/I\nKWbscWNCn21u8P8DvS3/hJ5a7gp91bwbdMzk8EB+fJUyL8UX/pgIEUYDAAA=\n"
         }
       },
-      "recorded_at": "Wed, 03 May 2023 02:46:48 GMT"
+      "recorded_at": "Thu, 04 May 2023 14:19:07 GMT"
     }
   ],
   "recorded_with": "VCR 6.1.0"

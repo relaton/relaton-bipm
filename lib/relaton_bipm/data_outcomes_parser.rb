@@ -61,7 +61,7 @@ module RelatonBipm
     # @param [String] body name of body
     #
     def fetch_type(dir, body) # rubocop:disable Metrics/AbcSize
-      type = dir.split("/").last.split("-").first.sub(/s$/, "")
+      type = dir.split("/").last.split("-").first.sub(/s$/, "").capitalize
       body_dir = File.join @data_fetcher.output, body.downcase
       FileUtils.mkdir_p body_dir
       outdir = File.join body_dir, type.downcase
@@ -482,7 +482,7 @@ module RelatonBipm
     #
     def special_id_case?(body, type, year)
       (body == "CIPM" && type == "Decision" && year.to_i > 2011) ||
-        (body == "JCRB" && %w[recomendation resolution descision].include?(type))
+        (body == "JCRB" && %w[Recomendation Resolution Descision].include?(type))
     end
 
     #

@@ -1,5 +1,5 @@
 <bibdata type="proceedings" schema-version="v1.2.3">
-  <fetched>2023-05-02</fetched>
+  <fetched>2023-05-04</fetched>
   <title format="text/plain" language="en" script="Latn">1st meeting of the CGPM</title>
   <title format="text/plain" language="fr" script="Latn">1e réunion de la CGPM</title>
   <uri type="citation" language="en" script="Latn">https://www.bipm.org/en/committees/cg/cgpm/1-1889</uri>
@@ -9,6 +9,7 @@
   <uri type="src" language="fr" script="Latn">https://raw.githubusercontent.com/metanorma/bipm-data-outcomes/main/cgpm/meetings-fr/meeting-01.yml</uri>
   <docidentifier type="BIPM" primary="true" language="en" script="Latn">CGPM 1th meeting (1889)</docidentifier>
   <docidentifier type="BIPM" primary="true" language="fr" script="Latn">CGPM 1e réunion (1889)</docidentifier>
+  <docidentifier type="BIPM" primary="true">CGPM 1th meeting (1889) / CGPM 1e réunion (1889)</docidentifier>
   <docnumber>CGPM 1th meeting (1889)</docnumber>
   <date type="published">
     <on>1889-09-28</on>

@@ -130,7 +130,7 @@ RSpec.describe RelatonBipm do
       end
 
       context "CIPM Meeting" do
-        it "without year", vcr: "cipm_meeting_43_1950"  do
+        it "without year", vcr: "cipm_meeting_43_1950" do
           file = "spec/fixtures/cipm_meeting_43_1950.xml"
           result = RelatonBipm::BipmBibliography.get "CIPM Meeting 43"
           xml = result.to_xml(bibdata: true)
@@ -139,7 +139,7 @@ RSpec.describe RelatonBipm do
             .sub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
         end
 
-        it "CIPM meeting", vcr: "cipm_meeting" do
+        it "with year", vcr: "cipm_meeting" do
           result = RelatonBipm::BipmBibliography.get "CIPM 111th Meeting (2022)"
           expect(result.docidentifier.first.id).to eq "CIPM 111th meeting (2022)"
         end

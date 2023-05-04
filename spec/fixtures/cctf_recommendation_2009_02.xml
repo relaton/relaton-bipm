@@ -1,5 +1,5 @@
 <bibdata type="proceedings" schema-version="v1.2.3">
-  <fetched>2023-05-02</fetched>
+  <fetched>2023-05-04</fetched>
   <title format="text/plain" language="en" script="Latn">Characterization of delays of global navigation satellite system (GNSS) equipment in laboratories contributing to International Atomic Time (TAI)</title>
   <title format="text/plain" language="fr" script="Latn">Caractérisation des retards des équipements de comparaison de temps par systèmes globaux de navigation par satellite (GNSS) des laboratoires contribuant au Temps atomique international (TAI)</title>
   <uri type="citation" language="en" script="Latn">https://www.bipm.org/en/committees/cc/cctf/18-2009/resolution-2</uri>
@@ -10,6 +10,9 @@
   <docidentifier type="BIPM" primary="true">CCTF REC 2 (2009)</docidentifier>
   <docidentifier type="BIPM" primary="true" language="en" script="Latn">CCTF REC 2 (2009, E)</docidentifier>
   <docidentifier type="BIPM" primary="true" language="fr" script="Latn">CCTF REC 2 (2009, F)</docidentifier>
+  <docidentifier type="BIPM-long" primary="true" language="en" script="Latn">CCTF Recommendation 2 (2009)</docidentifier>
+  <docidentifier type="BIPM-long" primary="true" language="fr" script="Latn">CCTF Recommandation 2 du (2009)</docidentifier>
+  <docidentifier type="BIPM-long" primary="true">CCTF Recommendation 2 (2009) / CCTF Recommandation 2 du (2009)</docidentifier>
   <docnumber>CCTF REC 2 (2009)</docnumber>
   <date type="published">
     <on>2009-06-05</on>

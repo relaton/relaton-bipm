@@ -31,7 +31,7 @@ describe RelatonBipm::DataOutcomesParser do
       expect(FileUtils).to receive(:mkdir_p).with("data/cgpm")
       expect(FileUtils).to receive(:mkdir_p).with("data/cgpm/meeting")
       expect(Dir).to receive(:[]).with("cgpm/meetings-en/*.{yml,yaml}").and_return ["cgpm/meetings-en/1.yml"]
-      expect(subject).to receive(:fetch_meeting).with("cgpm/meetings-en/1.yml", "CGPM", "meeting", "data/cgpm/meeting")
+      expect(subject).to receive(:fetch_meeting).with("cgpm/meetings-en/1.yml", "CGPM", "Meeting", "data/cgpm/meeting")
       subject.fetch_type("cgpm/meetings-en", "CGPM")
     end
 
