@@ -521,7 +521,7 @@ module RelatonBipm
       else
         fr = "#{body} #{fr_type}"
         fr += " #{num}" if num.to_i.positive?
-        fr += body == "CGMP" ? " de la" : " du"
+        fr += body == "CGPM" ? " de la" : " du"
       end
       fr += " (#{year})"
       ids << make_docid(id: fr, type: "BIPM-long", primary: true, language: "fr", script: "Latn")
