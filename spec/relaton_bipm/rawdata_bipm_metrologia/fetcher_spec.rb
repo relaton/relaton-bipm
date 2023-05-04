@@ -7,9 +7,8 @@ describe RelatonBipm::RawdataBipmMetrologia::Fetcher do
   end
 
   context "instance methods" do
-    let(:index_new) { double "index_new" }
     let(:index2) { double "index2" }
-    let(:data_fetcher) { double "data_fetcher", output: "output", ext: "yaml", index: {}, index_new: index_new, index2: index2 }
+    let(:data_fetcher) { double "data_fetcher", output: "output", ext: "yaml", index2: index2 }
     subject { described_class.new data_fetcher }
 
     context "fetch_metrologia" do
@@ -26,10 +25,8 @@ describe RelatonBipm::RawdataBipmMetrologia::Fetcher do
         expect(subject).to receive(:relation).with("volume_1A").and_return([:rel])
         expect(subject).to receive(:typed_uri).with("volume_1A").and_return(:uri)
         expect(data_fetcher).to receive(:write_file).with("output/metrologia-1a.yaml", :item)
-        expect(index_new).to receive(:add_or_update).with(["Metrologia 1A"], "output/metrologia-1a.yaml")
         expect(index2).to receive(:add_or_update).with({ group: "Metrologia", number: "1A" }, "output/metrologia-1a.yaml")
         subject.fetch_metrologia "volume_1A"
-        expect(data_fetcher.index).to eq ["Metrologia 1A"] => "output/metrologia-1a.yaml"
       end
 
       it "with volume and issue" do
@@ -38,10 +35,8 @@ describe RelatonBipm::RawdataBipmMetrologia::Fetcher do
         expect(subject).to receive(:relation).with("volume_1", "issue_2").and_return([:rel])
         expect(subject).to receive(:typed_uri).with("volume_1", "issue_2").and_return(:uri)
         expect(data_fetcher).to receive(:write_file).with("output/metrologia-1-2.yaml", :item)
-        expect(index_new).to receive(:add_or_update).with(["Metrologia 1 2"], "output/metrologia-1-2.yaml")
         expect(index2).to receive(:add_or_update).with({ group: "Metrologia", number: "1 2" }, "output/metrologia-1-2.yaml")
         subject.fetch_metrologia "volume_1", "issue_2"
-        expect(data_fetcher.index).to eq ["Metrologia 1 2"] => "output/metrologia-1-2.yaml"
       end
     end
 
@@ -70,7 +65,6 @@ describe RelatonBipm::RawdataBipmMetrologia::Fetcher do
       item = double "item", docidentifier: [double(id: "Metrologia")]
       expect(RelatonBipm::RawdataBipmMetrologia::ArticleParser).to receive(:parse).with(:path).and_return item
       expect(data_fetcher).to receive(:write_file).with("output/metrologia.yaml", item)
-      expect(index_new).to receive(:add_or_update).with(["Metrologia"], "output/metrologia.yaml")
       expect(index2).to receive(:add_or_update).with({ group: "Metrologia" }, "output/metrologia.yaml")
       subject.fetch_articles
     end

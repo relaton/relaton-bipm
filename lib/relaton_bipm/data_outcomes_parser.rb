@@ -74,7 +74,7 @@ module RelatonBipm
     #
     # @param [String] en_file Path to English file
     # @param [String] body Body name
-    # @param [String] type Type of Recommendation/Decision/Resolution
+    # @param [String] type meeting
     # @param [String] dir output directory
     #
     def fetch_meeting(en_file, body, type, dir) # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
@@ -84,7 +84,7 @@ module RelatonBipm
 
       file = "#{num}.#{@data_fetcher.ext}"
       path = File.join dir, file
-      hash = bibitem body: body, type: type, en: en_md, fr: fr_md, num: num, src: src, pdf: en["pdf"]
+      hash = meeting_bibitem body: body, type: type, en: en_md, fr: fr_md, num: num, src: src, pdf: en["pdf"]
       if @data_fetcher.files.include?(path) && part
         add_part hash, part
         item = RelatonBipm::BipmBibliographicItem.new(**hash)
@@ -95,7 +95,7 @@ module RelatonBipm
         path = File.join dir, "#{num}-#{part}.#{@data_fetcher.ext}"
       elsif part
         hash[:title].each { |t| t[:content] = t[:content].sub(/\s\(.+\)$/, "") }
-        h = bibitem body: body, type: type, en: en_md, fr: fr_md, num: num, src: src, pdf: en["pdf"]
+        h = meeting_bibitem body: body, type: type, en: en_md, fr: fr_md, num: num, src: src, pdf: en["pdf"]
         add_part h, part
         part_item = RelatonBipm::BipmBibliographicItem.new(**h)
         part_item_path = File.join dir, "#{num}-#{part}.#{@data_fetcher.ext}"
@@ -171,9 +171,9 @@ module RelatonBipm
         num = "0" if num == year
         num_justed = num.rjust 2, "0"
         type = r["type"].capitalize
-        docnum = create_docnum args[:body], type, num, date
+        docnum = create_resolution_docnum args[:body], type, num, date
         hash[:id] = create_id(args[:body], type, num_justed, date)
-        hash[:docid] = create_docids docnum
+        hash[:docid] = create_resolution_docids args[:body], type, num, date
         hash[:docnumber] = docnum
         hash[:language] = %w[en fr]
         hash[:script] = ["Latn"]
@@ -230,11 +230,8 @@ module RelatonBipm
     # @param [String] path path to YAML file
     #
     def add_to_index(item, path) # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
-      key = item.docidentifier.select { |i| i.type == "BIPM" }.map &:id
-      @data_fetcher.index[key] = path
-      @data_fetcher.index_new.add_or_update key, path
-      key2 = Id.new(item.docnumber).to_hash
-      @data_fetcher.index2.add_or_update key2, path
+      key = Id.new(item.docnumber).to_hash
+      @data_fetcher.index2.add_or_update key, path
     end
 
     #
@@ -373,20 +370,20 @@ module RelatonBipm
     end
 
     #
-    # Create hash from BIPM meeting/resolution
+    # Create hash from BIPM meeting
     #
     # @param [Hash] **args Hash of arguments
-    # @option args [String] :type Type of meeting/resolution
+    # @option args [String] :type meeting
     # @option args [Hash] :en Hash of English metadata
     # @option args [Hash] :fr Hash of French metadata
-    # @option args [String] :id ID of meeting/resolution
-    # @option args [String] :num Number of meeting/resolution
+    # @option args [String] :id ID of meeting
+    # @option args [String] :num Number of meeting
     # @option args [Array<Hash>] :src Array of links to bipm-data-outcomes
     # @option args [String] :pdf link to PDF
     #
     # @return [Hash] Hash of BIPM meeting/resolution
     #
-    def bibitem(**args) # rubocop:disable Metrics/MethodLength, Metrics/AbcSize, Metrics/CyclomaticComplexity
+    def meeting_bibitem(**args) # rubocop:disable Metrics/MethodLength, Metrics/AbcSize, Metrics/CyclomaticComplexity
       docnum = create_meeting_docnum args[:body], args[:type], args[:num], args[:en]["date"]
       hash = { title: [], type: "proceedings", doctype: args[:type],
                place: [RelatonBib::Place.new(city: "Paris")] }
@@ -428,27 +425,32 @@ module RelatonBipm
     end
 
     #
-    # Creata a document number
+    # Creata resolution document number
     #
-    # @param [<Type>] body <description>
-    # @param [<Type>] type <description>
-    # @param [<Type>] num <description>
-    # @param [<Type>] date <description>
+    # @param [String] body CIPM, CGPM, CCTF
+    # @param [String] type Recommendation, Resolution, Decision
+    # @param [String] num number of recommendation, resolution, decision
+    # @param [String] date date of publication
     #
-    # @return [<Type>] <description>
+    # @return [String] document number
     #
-    def create_docnum(body, type, num, date)
+    def create_resolution_docnum(body, type, num, date)
       year = Date.parse(date).year
-      # if special_id_case? body, type, year
-      #   id = "#{type.capitalize} #{body}"
-      #   id += "/#{num}" if num.to_i.positive?
-      # else
       id = "#{body} #{SHORTTYPE[type.capitalize]}"
       id += " #{num}" if num.to_i.positive?
-      # end
       "#{id} (#{year})"
     end
 
+    #
+    # Create meeting document number
+    #
+    # @param [String] body CIPM, CGPM, CCTF
+    # @param [String] type meeting
+    # @param [String] num number of meeting
+    # @param [String] date date of publication
+    #
+    # @return [String] <description>
+    #
     def create_meeting_docnum(body, type, num, date)
       year = Date.parse(date).year
       "#{body} #{num}th #{type} (#{year})"
@@ -457,20 +459,16 @@ module RelatonBipm
     #
     # Create ID
     #
-    # @param [String] body body of meeting
-    # @param [String] type type of meeting
-    # @param [String, nil] num part number
+    # @param [String] body CIPM, CGPM, CCTF
+    # @param [String] type meeting, recommendation, resolution, decision
+    # @param [String, nil] num number of meeting, recommendation, resolution, decision
     # @param [String] date published date
     #
     # @return [String] ID
     #
     def create_id(body, type, num, date)
       year = Date.parse(date).year
-      # if special_id_case?(body, type, year)
-      #   [type.capitalize, body, year]
-      # else
       [body, SHORTTYPE[type.capitalize], year, num].compact.join("-")
-      # end
     end
 
     #
@@ -482,10 +480,10 @@ module RelatonBipm
     #
     # @return [Boolean] is special case
     #
-    # def special_id_case?(body, type, year)
-    #   (body == "CIPM" && type == "Decision" && year.to_i > 2011) ||
-    #     (body == "JCRB" && %w[recomendation resolution descision].include?(type))
-    # end
+    def special_id_case?(body, type, year)
+      (body == "CIPM" && type == "Decision" && year.to_i > 2011) ||
+        (body == "JCRB" && %w[recomendation resolution descision].include?(type))
+    end
 
     #
     # Create documetn IDs
@@ -494,15 +492,41 @@ module RelatonBipm
     #
     # @return [Array<RelatonBib::DocumentIdentifier>] document IDs
     #
-    def create_docids(id)
-      en_id = id.sub(/(\s\(\d{4})(\))$/, '\1, E\2')
-      fr_id = id.sub(/(\s\(\d{4})(\))$/, '\1, F\2')
-      [
-        make_docid(id: id, type: "BIPM", primary: true),
-        make_docid(id: en_id, type: "BIPM", primary: true, language: "en", script: "Latn"),
-        make_docid(id: fr_id, type: "BIPM", primary: true, language: "fr", script: "Latn"),
-        # create_docid_fr(en_id),
-      ]
+    def create_resolution_docids(body, type, num, date)
+      year = Date.parse(date).year
+      ids = []
+
+      short_type = SHORTTYPE[type.capitalize]
+      short_id = "#{body} #{short_type}"
+      short_id += " #{num}" if num.to_i.positive?
+
+      short = "#{short_id} (#{year})"
+      ids << make_docid(id: short, type: "BIPM", primary: true)
+
+      short_en = "#{short_id} (#{year}, E)"
+      ids << make_docid(id: short_en, type: "BIPM", primary: true, language: "en", script: "Latn")
+
+      short_fr = "#{short_id} (#{year}, F)"
+      ids << make_docid(id: short_fr, type: "BIPM", primary: true, language: "fr", script: "Latn")
+
+      en = "#{body} #{type.capitalize}"
+      en += " #{num}" if num.to_i.positive?
+      en += " (#{year})"
+      ids << make_docid(id: en, type: "BIPM-long", primary: true, language: "en", script: "Latn")
+
+      fr_type = TRANSLATIONS[type.capitalize]
+      if special_id_case? body, type, year
+        fr = "#{fr_type} #{body}"
+        fr += "/#{num}" if num.to_i.positive?
+      else
+        fr = "#{body} #{fr_type}"
+        fr += " #{num}" if num.to_i.positive?
+        fr += body == "CGMP" ? " de la" : " du"
+      end
+      fr += " (#{year})"
+      ids << make_docid(id: fr, type: "BIPM-long", primary: true, language: "fr", script: "Latn")
+
+      ids << make_docid(id: "#{en} / #{fr}", type: "BIPM-long", primary: true)
     end
 
     def create_meeting_docids(en_id)
@@ -510,6 +534,7 @@ module RelatonBipm
       [
         make_docid(id: en_id, type: "BIPM", primary: true, language: "en", script: "Latn"),
         make_docid(id: fr_id, type: "BIPM", primary: true, language: "fr", script: "Latn"),
+        make_docid(id: "#{en_id} / #{fr_id}", type: "BIPM", primary: true),
       ]
     end
 

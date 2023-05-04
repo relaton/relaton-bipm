@@ -9,34 +9,25 @@ describe RelatonBipm::DataFetcher do
   end
 
   it "initialize" do
-    expect(File).to receive(:exist?).with("index.yaml").and_return true
-    expect(YAML).to receive(:load_file).with("index.yaml").and_return({})
-    expect(Relaton::Index).to receive(:find_or_create).with(:BIPM, file: "index-bipm.yaml").and_return({})
     expect(Relaton::Index).to receive(:find_or_create).with(:BIPM, file: "index2.yaml").and_return({})
     fetcher = described_class.new "data", "bibxml"
     expect(fetcher.instance_variable_get(:@output)).to eq "data"
     expect(fetcher.instance_variable_get(:@format)).to eq "bibxml"
     expect(fetcher.instance_variable_get(:@ext)).to eq "xml"
     expect(fetcher.instance_variable_get(:@files)).to eq []
-    expect(fetcher.instance_variable_get(:@index_path)).to eq "index.yaml"
-    expect(fetcher.instance_variable_get(:@index)).to eq({})
-    expect(fetcher.instance_variable_get(:@index_new)).to eq({})
     expect(fetcher.instance_variable_get(:@index2)).to eq({})
   end
 
   context "instance methods" do
     subject { described_class.new "data", "yaml" }
 
-    before :each do
-      expect(File).to receive(:exist?).with("index.yaml").and_return false
-      allow(File).to receive(:exist?).and_call_original
-    end
+    # before :each do
+    #   expect(File).to receive(:exist?).with("index.yaml").and_return false
+    #   allow(File).to receive(:exist?).and_call_original
+    # end
 
     context "#fetch" do
       before(:each) do
-        expect(File).to receive(:write).with("index.yaml", "--- {}\n", encoding: "UTF-8")
-        index_new = subject.instance_variable_get(:@index_new)
-        expect(index_new).to receive(:save)
         index2 = subject.instance_variable_get(:@index2)
         expect(index2).to receive(:save)
       end
