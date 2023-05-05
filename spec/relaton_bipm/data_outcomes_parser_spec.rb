@@ -143,7 +143,9 @@ describe RelatonBipm::DataOutcomesParser do
         fr = YAML.load_file "spec/fixtures/cgpm/meetings-fr/meeting-01.yml"
         src = [{ type: "src", content: "http://www.bipm.org/publications/cgpm/meeting-01.html" }]
 
-        expect(index2).to receive(:add_or_update).with({ group: "CGPM", type: "RES", year: "1889" }, "data/cgpm/meeting/resolution/1889-00.yaml")
+        expect(index2).to receive(:add_or_update).with(
+          { group: "CGPM", number: "1", type: "RES", year: "1889" }, "data/cgpm/meeting/resolution/1889-00.yaml"
+        )
         subject.fetch_resolution(
           body: "CGPM", en: en, fr: fr, dir: "data/cgpm/meeting", src: src, num: "1",
         )
