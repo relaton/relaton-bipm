@@ -16,7 +16,7 @@
             "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"
           ],
           "User-Agent": [
-            "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:43.0) Gecko/20100101 Firefox/43.0"
+            "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_2) AppleWebKit/601.3.9 (KHTML, like Gecko) Version/9.0.2 Safari/601.3.9"
           ],
           "Accept-Charset": [
             "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
@@ -78,7 +78,7 @@
             "1; mode=block"
           ],
           "X-Github-Request-Id": [
-            "A126:6E7E:A4DE3:BF306:6453BEDB"
+            "087C:91E8:1780D5:1AADF3:6453E892"
           ],
           "Content-Encoding": [
             "gzip"
@@ -87,13 +87,13 @@
             "bytes"
           ],
           "Date": [
-            "Thu, 04 May 2023 14:19:08 GMT"
+            "Thu, 04 May 2023 17:17:06 GMT"
           ],
           "Via": [
             "1.1 varnish"
           ],
           "X-Served-By": [
-            "cache-atl18471-ATL"
+            "cache-atl18494-ATL"
           ],
           "X-Cache": [
             "MISS"
@@ -102,7 +102,7 @@
             "0"
           ],
           "X-Timer": [
-            "S1683209948.924118,VS0,VE131"
+            "S1683220627.801033,VS0,VE102"
           ],
           "Vary": [
             "Authorization,Accept-Encoding,Origin"
@@ -111,10 +111,10 @@
             "*"
           ],
           "X-Fastly-Request-Id": [
-            "b90327a0859104a6efeb52c3106cc2f86a4b5110"
+            "e5e5ca8c3c6ca471867258d55530fafca37c6437"
           ],
           "Expires": [
-            "Thu, 04 May 2023 14:24:08 GMT"
+            "Thu, 04 May 2023 17:22:06 GMT"
           ],
           "Source-Age": [
             "0"
@@ -125,7 +125,7 @@
           "base64_string": "H4sIAAAAAAAAA62T3W7DIAyF73kKv0B+2m6VyuXuJq3aXoESJ2UjgBynWt9+\nkKTNmk2aJtVXxtjn8CHIskx0+oityk5InfFOwmmVr/ONMJWEPTJ56xujhDXu\nQ4oMtHeMjiUcmUMni8L40GmDTmMe09xTU7z7npyyRVmut9lqs3sQAHwOKKEj\nLcZMERttUVReR6covPC7TDw9v+3jIpBpFZ0lMPUorHJNrxpMc+giAZnAafGi\n2InaU6uYsSKsZZy9HvlGftYAGFQALjqpMCgBjFrRFj+5CFYZJwit4nRT0W88\nY4gwr3XsPpiDYWyTAiyAHndDccJN6RIZppYFeYpb+lRZMqb4hXPW/I47ug/I\nKWbscWNCn21u8P8DvS3/hJ5a7gp91bwbdMzk8EB+fJUyL8UX/pgIEUYDAAA=\n"
         }
       },
-      "recorded_at": "Thu, 04 May 2023 14:19:07 GMT"
+      "recorded_at": "Thu, 04 May 2023 17:17:06 GMT"
     }
   ],
   "recorded_with": "VCR 6.1.0"

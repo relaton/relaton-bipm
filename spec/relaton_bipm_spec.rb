@@ -141,12 +141,12 @@ RSpec.describe RelatonBipm do
 
         it "with year", vcr: "cipm_meeting" do
           result = RelatonBipm::BipmBibliography.get "CIPM 111th Meeting (2022)"
-          expect(result.docidentifier.first.id).to eq "CIPM 111th meeting (2022)"
+          expect(result.docidentifier.first.id).to eq "CIPM 111th Meeting (2022)"
         end
 
         it "FR", vcr: "cipm_meeting" do
           result = RelatonBipm::BipmBibliography.get "CIPM 111te Réunion (2022)"
-          expect(result.docidentifier.first.id).to eq "CIPM 111th meeting (2022)"
+          expect(result.docidentifier.first.id).to eq "CIPM 111th Meeting (2022)"
         end
       end
 

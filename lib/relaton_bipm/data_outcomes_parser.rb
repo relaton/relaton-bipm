@@ -437,7 +437,7 @@ module RelatonBipm
     def create_resolution_docnum(body, type, num, date)
       year = Date.parse(date).year
       id = "#{body} #{SHORTTYPE[type.capitalize]}"
-      id += " #{num}" if num.to_i.positive?
+      id += " #{zero_to_one num}"
       "#{id} (#{year})"
     end
 
@@ -453,7 +453,8 @@ module RelatonBipm
     #
     def create_meeting_docnum(body, type, num, date)
       year = Date.parse(date).year
-      "#{body} #{num}th #{type} (#{year})"
+      ord = %w[th st nd rd th th th th th th][num.to_i % 10]
+      "#{body} #{num}#{ord} #{type} (#{year})"
     end
 
     #
@@ -495,61 +496,62 @@ module RelatonBipm
     def create_resolution_docids(body, type, num, date)
       year = Date.parse(date).year
       ids = []
+      resolution_short_ids(body, type, num, year) { |id| ids << id }
+      resolution_long_ids(body, type, num, year) { |id| ids << id }
+    end
 
-      short_type = SHORTTYPE[type.capitalize]
-      short_id = "#{body} #{short_type}"
-      short_id += " #{num}" if num.to_i.positive?
+    def resolution_short_ids(body, type, num, year, &_block)
+      short_type = SHORTTYPE[type]
+      id = "#{body} #{short_type}"
+      id += " #{zero_to_one num}"
 
-      short = "#{short_id} (#{year})"
-      ids << make_docid(id: short, type: "BIPM", primary: true)
+      short = "#{id} (#{year})"
+      yield make_docid(id: short, type: "BIPM", primary: true)
 
-      short_en = "#{short_id} (#{year}, E)"
-      ids << make_docid(id: short_en, type: "BIPM", primary: true, language: "en", script: "Latn")
+      en = "#{id} (#{year}, E)"
+      yield make_docid(id: en, type: "BIPM", primary: true, language: "en", script: "Latn")
 
-      short_fr = "#{short_id} (#{year}, F)"
-      ids << make_docid(id: short_fr, type: "BIPM", primary: true, language: "fr", script: "Latn")
+      fr = "#{id} (#{year}, F)"
+      yield make_docid(id: fr, type: "BIPM", primary: true, language: "fr", script: "Latn")
+    end
 
-      en = "#{body} #{type.capitalize}"
-      en += " #{num}" if num.to_i.positive?
+    def resolution_long_ids(body, type, num, year, &_block)
+      en = "#{body} #{type}"
+      en += " #{zero_to_one num}"
       en += " (#{year})"
-      ids << make_docid(id: en, type: "BIPM-long", primary: true, language: "en", script: "Latn")
+      yield make_docid id: en, type: "BIPM-long", language: "en", script: "Latn"
 
-      fr_type = TRANSLATIONS[type.capitalize]
+      fr = resolution_fr_long_id(body, type, num, year)
+      yield make_docid id: fr, type: "BIPM-long", language: "fr", script: "Latn"
+
+      yield make_docid(id: "#{en} / #{fr}", type: "BIPM-long")
+    end
+
+    def resolution_fr_long_id(body, type, num, year)
+      fr = TRANSLATIONS[type]
       if special_id_case? body, type, year
-        fr = "#{fr_type} #{body}"
-        fr += "/#{num}" if num.to_i.positive?
+        fr += " #{body}"
+        fr += "/#{zero_to_one num}"
       else
-        fr = "#{body} #{fr_type}"
-        fr += " #{num}" if num.to_i.positive?
+        fr += " #{zero_to_one num}"
         fr += body == "CGPM" ? " de la" : " du"
+        fr += " #{body}"
       end
-      fr += " (#{year})"
-      ids << make_docid(id: fr, type: "BIPM-long", primary: true, language: "fr", script: "Latn")
+      "#{fr} (#{year})"
+    end
 
-      ids << make_docid(id: "#{en} / #{fr}", type: "BIPM-long", primary: true)
+    def zero_to_one(num)
+      num.to_i.positive? ? num : "1"
     end
 
     def create_meeting_docids(en_id)
-      fr_id = en_id.sub(/(\d+)th/, '\1e').sub("meeting", "réunion")
+      fr_id = en_id.sub(/(\d+)(?:st|nd|rd|th)/, '\1e').sub("Meeting", "Réunion")
       [
         make_docid(id: en_id, type: "BIPM", primary: true, language: "en", script: "Latn"),
         make_docid(id: fr_id, type: "BIPM", primary: true, language: "fr", script: "Latn"),
         make_docid(id: "#{en_id} / #{fr_id}", type: "BIPM", primary: true),
       ]
     end
-
-    #
-    # Create French document ID
-    #
-    # @param [String] en_id English document ID
-    #
-    # @return [RelatonBib::DocumentIdentifier] french document ID
-    #
-    # def create_docid_fr(en_id)
-    #   tr = TRANSLATIONS.detect { |_, v| en_id.include? v }
-    #   id = tr ? en_id.sub(tr[1], tr[0]) : en_id
-    #   make_docid(id: id, type: "BIPM", primary: true, language: "fr", script: "Latn")
-    # end
 
     #
     # Create doucment ID

@@ -7,10 +7,10 @@
   <uri type="pdf">https://www.bipm.org/documents/20126/38097196/CGPM1.pdf/0ff415d6-87a2-5e23-5a1c-cadf8b8047a6</uri>
   <uri type="src" language="en" script="Latn">https://raw.githubusercontent.com/metanorma/bipm-data-outcomes/main/cgpm/meetings-en/meeting-01.yml</uri>
   <uri type="src" language="fr" script="Latn">https://raw.githubusercontent.com/metanorma/bipm-data-outcomes/main/cgpm/meetings-fr/meeting-01.yml</uri>
-  <docidentifier type="BIPM" primary="true" language="en" script="Latn">CGPM 1th meeting (1889)</docidentifier>
-  <docidentifier type="BIPM" primary="true" language="fr" script="Latn">CGPM 1e réunion (1889)</docidentifier>
-  <docidentifier type="BIPM" primary="true">CGPM 1th meeting (1889) / CGPM 1e réunion (1889)</docidentifier>
-  <docnumber>CGPM 1th meeting (1889)</docnumber>
+  <docidentifier type="BIPM" primary="true" language="en" script="Latn">CGPM 1th Meeting (1889)</docidentifier>
+  <docidentifier type="BIPM" primary="true" language="fr" script="Latn">CGPM 1e Meeting (1889)</docidentifier>
+  <docidentifier type="BIPM" primary="true">CGPM 1th Meeting (1889) / CGPM 1e Meeting (1889)</docidentifier>
+  <docnumber>CGPM 1th Meeting (1889)</docnumber>
   <date type="published">
     <on>1889-09-28</on>
   </date>
@@ -38,7 +38,7 @@
     <city>Paris</city>
   </place>
   <ext schema-version="v1.0.0">
-    <doctype>meeting</doctype>
+    <doctype>Meeting</doctype>
     <structuredidentifier>
       <docnumber>1</docnumber>
     </structuredidentifier>

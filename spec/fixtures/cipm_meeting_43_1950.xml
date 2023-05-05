@@ -7,10 +7,10 @@
   <uri type="pdf">https://www.bipm.org/documents/20126/71755187/CIPM1950.pdf/e2ae0cc0-7e98-0653-dfe2-4b8964ea73f1</uri>
   <uri type="src" language="en" script="Latn">https://raw.githubusercontent.com/metanorma/bipm-data-outcomes/main/cipm/meetings-en/meeting-43.yml</uri>
   <uri type="src" language="fr" script="Latn">https://raw.githubusercontent.com/metanorma/bipm-data-outcomes/main/cipm/meetings-fr/meeting-43.yml</uri>
-  <docidentifier type="BIPM" primary="true" language="en" script="Latn">CIPM 43th meeting (1950)</docidentifier>
-  <docidentifier type="BIPM" primary="true" language="fr" script="Latn">CIPM 43e réunion (1950)</docidentifier>
-  <docidentifier type="BIPM" primary="true">CIPM 43th meeting (1950) / CIPM 43e réunion (1950)</docidentifier>
-  <docnumber>CIPM 43th meeting (1950)</docnumber>
+  <docidentifier type="BIPM" primary="true" language="en" script="Latn">CIPM 43th Meeting (1950)</docidentifier>
+  <docidentifier type="BIPM" primary="true" language="fr" script="Latn">CIPM 43e Meeting (1950)</docidentifier>
+  <docidentifier type="BIPM" primary="true">CIPM 43th Meeting (1950) / CIPM 43e Meeting (1950)</docidentifier>
+  <docnumber>CIPM 43th Meeting (1950)</docnumber>
   <date type="published">
     <on>1950-06-13</on>
   </date>
@@ -38,7 +38,7 @@
     <city>Paris</city>
   </place>
   <ext schema-version="v1.0.0">
-    <doctype>meeting</doctype>
+    <doctype>Meeting</doctype>
     <structuredidentifier>
       <docnumber>43</docnumber>
     </structuredidentifier>
