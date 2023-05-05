@@ -528,7 +528,7 @@ module RelatonBipm
     end
 
     def resolution_fr_long_id(body, type, num, year)
-      fr = TRANSLATIONS[type]
+      fr = TRANSLATIONS[type] || type
       if special_id_case? body, type, year
         fr += " #{body}"
         fr += "/#{zero_to_one num}"
