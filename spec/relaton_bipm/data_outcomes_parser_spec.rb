@@ -144,7 +144,7 @@ describe RelatonBipm::DataOutcomesParser do
         src = [{ type: "src", content: "http://www.bipm.org/publications/cgpm/meeting-01.html" }]
 
         expect(index2).to receive(:add_or_update).with(
-          { group: "CGPM", number: "1", type: "RES", year: "1889" }, "data/cgpm/meeting/resolution/1889-00.yaml"
+          { group: "CGPM", type: "RES", year: "1889" }, "data/cgpm/meeting/resolution/1889-00.yaml"
         )
         subject.fetch_resolution(
           body: "CGPM", en: en, fr: fr, dir: "data/cgpm/meeting", src: src, num: "1",
@@ -179,6 +179,20 @@ describe RelatonBipm::DataOutcomesParser do
         fr_res = { "title" => "" }
         expect(subject.resolution_title(en_res, fr_res)).to eq []
       end
+    end
+
+    context "#resolution_fr_long_id" do
+      shared_examples "resolution_fr_long_id" do |group, type, number, year, expected|
+        it "special case" do
+          fr_id = subject.resolution_fr_long_id group, type, number, year
+          expect(fr_id).to eq expected
+        end
+      end
+
+      it_behaves_like "resolution_fr_long_id", "CIPM", "Decision", "10-1", "2012", "Décision CIPM/10-1 (2012)"
+      it_behaves_like "resolution_fr_long_id", "CIPM", "Resolution", "1", "2012", "Résolution 1 du CIPM (2012)"
+      it_behaves_like "resolution_fr_long_id", "CGPM", "Resolution", "1", "2012", "Résolution 1 de la CGPM (2012)"
+      it_behaves_like "resolution_fr_long_id", "CIPM", "NoTranslation", "", "2012", "NoTranslation du CIPM (2012)"
     end
   end
 end

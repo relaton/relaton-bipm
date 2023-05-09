@@ -74,6 +74,7 @@ describe RelatonBipm::Id do
       it_behaves_like "comparing IDs", "CIPM Declaration (2001)", "CIPM -- Déclaration (2001)"
       it_behaves_like "comparing IDs", "Recommendation JCRB/43-1 (2021)", "JCRB -- Recommandation 43-1 (2021)"
       it_behaves_like "comparing IDs", "CIPM Meeting 43", "CIPM -- Réunion 43 (1950)"
+      it_behaves_like "comparing IDs", "CGPM RES 1 (1889)", "CGPM Resolution (1889)"
     end
 
     context "SI Brochure" do

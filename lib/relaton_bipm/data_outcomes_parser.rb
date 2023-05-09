@@ -437,7 +437,7 @@ module RelatonBipm
     def create_resolution_docnum(body, type, num, date)
       year = Date.parse(date).year
       id = "#{body} #{SHORTTYPE[type.capitalize]}"
-      id += " #{zero_to_one num}"
+      id += " #{num}" if num.to_i.positive?
       "#{id} (#{year})"
     end
 
@@ -503,7 +503,7 @@ module RelatonBipm
     def resolution_short_ids(body, type, num, year, &_block)
       short_type = SHORTTYPE[type]
       id = "#{body} #{short_type}"
-      id += " #{zero_to_one num}"
+      id += " #{num}" if num.to_i.positive?
 
       short = "#{id} (#{year})"
       yield make_docid(id: short, type: "BIPM", primary: true)
@@ -517,7 +517,7 @@ module RelatonBipm
 
     def resolution_long_ids(body, type, num, year, &_block)
       en = "#{body} #{type}"
-      en += " #{zero_to_one num}"
+      en += " #{num}" if num.to_i.positive?
       en += " (#{year})"
       yield make_docid id: en, type: "BIPM-long", language: "en", script: "Latn"
 
@@ -531,17 +531,13 @@ module RelatonBipm
       fr = TRANSLATIONS[type] || type
       if special_id_case? body, type, year
         fr += " #{body}"
-        fr += "/#{zero_to_one num}"
+        fr += "/#{num}" if num.to_i.positive?
       else
-        fr += " #{zero_to_one num}"
+        fr += " #{num}" if num.to_i.positive?
         fr += body == "CGPM" ? " de la" : " du"
         fr += " #{body}"
       end
       "#{fr} (#{year})"
-    end
-
-    def zero_to_one(num)
-      num.to_i.positive? ? num : "1"
     end
 
     def create_meeting_docids(en_id)
