@@ -59,7 +59,8 @@ module RelatonBipm
       "Recommandation" => "REC",
       "Decision" => "DECN",
       "Décision" => "DECN",
-      "Declaration" => "Déclaration",
+      "Declaration" => "DECL",
+      "Déclaration" => "DECL",
       "Réunion" => "Meeting",
       "Action" => "ACT",
     }.freeze

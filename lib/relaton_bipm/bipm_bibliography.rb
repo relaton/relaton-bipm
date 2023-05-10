@@ -3,6 +3,7 @@ require "mechanize"
 module RelatonBipm
   class BipmBibliography
     GH_ENDPOINT = "https://raw.githubusercontent.com/relaton/relaton-data-bipm/master/".freeze
+    INDEX_FILE = "index2.yaml".freeze
 
     class << self
       # @param text [String]
@@ -44,7 +45,6 @@ module RelatonBipm
       # @return [RelatonBipm::BipmBibliographicItem]
       def get_bipm(reference, agent) # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
         ref_id = Id.new reference
-        index = Relaton::Index.find_or_create :BIPM, url: "#{GH_ENDPOINT}index2.zip", file: "index2.yaml"
         rows = index.search { |r| ref_id == r[:id] }
         return unless rows.any?
 
@@ -56,6 +56,10 @@ module RelatonBipm
         yaml["fetched"] = Date.today.to_s
         bib_hash = HashConverter.hash_to_bib yaml
         BipmBibliographicItem.new(**bib_hash)
+      end
+
+      def index
+        Relaton::Index.find_or_create :BIPM, url: "#{GH_ENDPOINT}index2.zip", file: INDEX_FILE
       end
 
       # def match_item(ids, ref_id)

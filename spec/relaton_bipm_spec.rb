@@ -94,6 +94,11 @@ RSpec.describe RelatonBipm do
         end
       end
 
+      it "CGPM Declaration 1971-00", vcr: "cgpm_declaration_1971_00" do
+        result = RelatonBipm::BipmBibliography.get "CGPM Declaration 1971-00"
+        expect(result.docidentifier.first.id).to eq "CGPM DECL (1971)"
+      end
+
       it "CIPM resolution", vcr: "cipm_resolution_1879" do
         file = "spec/fixtures/cipm_resolution_1879.xml"
         result = RelatonBipm::BipmBibliography.get "CIPM Resolution (1879)"
@@ -162,11 +167,11 @@ RSpec.describe RelatonBipm do
           expect(result.docidentifier.first.id).to eq "CIPM 111th Meeting (2022)"
         end
       end
+    end
 
-      it "SI Brochure", vcr: "si_brochure" do
-        result = RelatonBipm::BipmBibliography.get "BIPM SI Brochure"
-        expect(result.docidentifier[0].id).to eq "BIPM SI Brochure"
-      end
+    it "SI Brochure", vcr: "si_brochure" do
+      result = RelatonBipm::BipmBibliography.get "BIPM SI Brochure"
+      expect(result.docidentifier[0].id).to eq "BIPM SI Brochure"
     end
 
     context "Metrologia" do

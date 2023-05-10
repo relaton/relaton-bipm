@@ -51,5 +51,9 @@ module RelatonBipm
     def grammar_hash
       @grammar_hash ||= ::RelatonBipm.grammar_hash
     end
+
+    # def remove_index_file
+    #   Relaton::Index
+    # end
   end
 end
