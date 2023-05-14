@@ -1,0 +1,132 @@
+{
+  "http_interactions": [
+    {
+      "request": {
+        "method": "get",
+        "uri": "https://raw.githubusercontent.com/relaton/relaton-data-bipm/master/data/metrologia-50-4-385.yaml",
+        "body": {
+          "encoding": "US-ASCII",
+          "base64_string": ""
+        },
+        "headers": {
+          "Accept-Encoding": [
+            "gzip, deflate, br"
+          ],
+          "Accept": [
+            "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"
+          ],
+          "User-Agent": [
+            "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.125 Safari/537.36"
+          ],
+          "Accept-Charset": [
+            "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+          ],
+          "Accept-Language": [
+            "en-US,en;q=0.9,ru-RU;q=0.8,ru;q=0.7"
+          ],
+          "Host": [
+            "raw.githubusercontent.com"
+          ],
+          "Cache-Control": [
+            "max-age=0"
+          ],
+          "Upgrade-Insecure-Requests": [
+            "1"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Keep-Alive": [
+            "300"
+          ]
+        }
+      },
+      "response": {
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "headers": {
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Length": [
+            "1757"
+          ],
+          "Cache-Control": [
+            "max-age=300"
+          ],
+          "Content-Security-Policy": [
+            "default-src 'none'; style-src 'unsafe-inline'; sandbox"
+          ],
+          "Content-Type": [
+            "text/plain; charset=utf-8"
+          ],
+          "Etag": [
+            "W/\"1d2ace824344d8b2e3594c2e1e7f3ee2308815547fd0095b98ca7519ffdcd2ea\""
+          ],
+          "Strict-Transport-Security": [
+            "max-age=31536000"
+          ],
+          "X-Content-Type-Options": [
+            "nosniff"
+          ],
+          "X-Frame-Options": [
+            "deny"
+          ],
+          "X-Xss-Protection": [
+            "1; mode=block"
+          ],
+          "X-Github-Request-Id": [
+            "89B8:30C8:4DE369:5C0EC7:645C4CC6"
+          ],
+          "Content-Encoding": [
+            "gzip"
+          ],
+          "Accept-Ranges": [
+            "bytes"
+          ],
+          "Date": [
+            "Thu, 11 May 2023 02:02:46 GMT"
+          ],
+          "Via": [
+            "1.1 varnish"
+          ],
+          "X-Served-By": [
+            "cache-atl18493-ATL"
+          ],
+          "X-Cache": [
+            "MISS"
+          ],
+          "X-Cache-Hits": [
+            "0"
+          ],
+          "X-Timer": [
+            "S1683770567.881757,VS0,VE110"
+          ],
+          "Vary": [
+            "Authorization,Accept-Encoding,Origin"
+          ],
+          "Access-Control-Allow-Origin": [
+            "*"
+          ],
+          "X-Fastly-Request-Id": [
+            "d197e144ae16b8260dafefc71849fceaf5775901"
+          ],
+          "Expires": [
+            "Thu, 11 May 2023 02:07:46 GMT"
+          ],
+          "Source-Age": [
+            "0"
+          ]
+        },
+        "body": {
+          "encoding": "UTF-8",
+          "base64_string": "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\nAAA=\n"
+        }
+      },
+      "recorded_at": "Thu, 11 May 2023 02:02:46 GMT"
+    }
+  ],
+  "recorded_with": "VCR 6.1.0"
+}

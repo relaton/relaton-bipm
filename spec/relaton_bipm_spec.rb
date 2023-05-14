@@ -158,13 +158,13 @@ RSpec.describe RelatonBipm do
         end
 
         it "with year", vcr: "cipm_meeting" do
-          result = RelatonBipm::BipmBibliography.get "CIPM 111th Meeting (2022)"
-          expect(result.docidentifier.first.id).to eq "CIPM 111th Meeting (2022)"
+          result = RelatonBipm::BipmBibliography.get "CIPM 111st Meeting (2022)"
+          expect(result.docidentifier.first.id).to eq "CIPM 111st Meeting (2022)"
         end
 
         it "FR", vcr: "cipm_meeting" do
-          result = RelatonBipm::BipmBibliography.get "CIPM 111te Réunion (2022)"
-          expect(result.docidentifier.first.id).to eq "CIPM 111th Meeting (2022)"
+          result = RelatonBipm::BipmBibliography.get "CIPM 111e Réunion (2022)"
+          expect(result.docidentifier.first.id).to eq "CIPM 111st Meeting (2022)"
         end
       end
     end
@@ -186,49 +186,49 @@ RSpec.describe RelatonBipm do
         end
       end
 
-      # it "journal" do
-      #   VCR.use_cassette "metrologia_30" do
-      #     file = "spec/fixtures/metrologia_30.xml"
-      #     result = RelatonBipm::BipmBibliography.get "BIPM Metrologia 30"
-      #     xml = result.to_xml bibdata: true
-      #     File.write file, xml, encoding: "UTF-8" unless File.exist? file
-      #     expect(xml).to be_equivalent_to File.read(file, encoding: "UTF-8")
-      #       .sub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
-      #   end
-      # end
+      it "journal" do
+        VCR.use_cassette "metrologia_30" do
+          file = "spec/fixtures/metrologia_30.xml"
+          result = RelatonBipm::BipmBibliography.get "BIPM Metrologia 30"
+          xml = result.to_xml bibdata: true
+          File.write file, xml, encoding: "UTF-8" unless File.exist? file
+          expect(xml).to be_equivalent_to File.read(file, encoding: "UTF-8")
+            .sub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
+        end
+      end
 
-      # it "volume" do
-      #   VCR.use_cassette "metrologia_29_6" do
-      #     file = "spec/fixtures/metrologia_29_6.xml"
-      #     result = RelatonBipm::BipmBibliography.get "BIPM Metrologia 29 6"
-      #     xml = result.to_xml bibdata: true
-      #     File.write file, xml, encoding: "UTF-8" unless File.exist? file
-      #     expect(xml).to be_equivalent_to File.read(file, encoding: "UTF-8")
-      #       .sub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
-      #   end
-      # end
+      it "volume" do
+        VCR.use_cassette "metrologia_29_6" do
+          file = "spec/fixtures/metrologia_29_6.xml"
+          result = RelatonBipm::BipmBibliography.get "BIPM Metrologia 29 6"
+          xml = result.to_xml bibdata: true
+          File.write file, xml, encoding: "UTF-8" unless File.exist? file
+          expect(xml).to be_equivalent_to File.read(file, encoding: "UTF-8")
+            .sub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
+        end
+      end
 
-      # it "volume with title" do
-      #   VCR.use_cassette "metrologia_30_4" do
-      #     file = "spec/fixtures/metrologia_30_4.xml"
-      #     result = RelatonBipm::BipmBibliography.get "BIPM Metrologia 30 4"
-      #     xml = result.to_xml bibdata: true
-      #     File.write file, xml, encoding: "UTF-8" unless File.exist? file
-      #     expect(xml).to be_equivalent_to File.read(file, encoding: "UTF-8")
-      #       .sub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
-      #   end
-      # end
+      it "volume with title" do
+        VCR.use_cassette "metrologia_30_4" do
+          file = "spec/fixtures/metrologia_30_4.xml"
+          result = RelatonBipm::BipmBibliography.get "BIPM Metrologia 30 4"
+          xml = result.to_xml bibdata: true
+          File.write file, xml, encoding: "UTF-8" unless File.exist? file
+          expect(xml).to be_equivalent_to File.read(file, encoding: "UTF-8")
+            .sub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
+        end
+      end
 
-      # it "page" do
-      #   VCR.use_cassette "metrologia_29_6_373" do
-      #     file = "spec/fixtures/metrologia_29_6_373.xml"
-      #     result = RelatonBipm::BipmBibliography.get "BIPM Metrologia 29 6 373"
-      #     xml = result.to_xml bibdata: true
-      #     File.write file, xml, encoding: "UTF-8" unless File.exist? file
-      #     expect(xml).to be_equivalent_to File.read(file, encoding: "UTF-8")
-      #       .sub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
-      #   end
-      # end
+      it "page" do
+        VCR.use_cassette "metrologia_29_6_373" do
+          file = "spec/fixtures/metrologia_29_6_373.xml"
+          result = RelatonBipm::BipmBibliography.get "BIPM Metrologia 29 6 373"
+          xml = result.to_xml bibdata: true
+          File.write file, xml, encoding: "UTF-8" unless File.exist? file
+          expect(xml).to be_equivalent_to File.read(file, encoding: "UTF-8")
+            .sub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
+        end
+      end
 
       it "wrong page" do
         expect do
@@ -239,23 +239,22 @@ RSpec.describe RelatonBipm do
         ).to_stderr
       end
 
-      # it "with 403 response code", vcr: "metrologia_50_4_385" do
-      #   result = RelatonBipm::BipmBibliography.get "BIPM Metrologia 50 4 385"
-      #   expect(result.docidentifier[0].id).to eq "Metrologia 50 4 385"
-      # end
+      it "with 403 response code", vcr: "metrologia_50_4_385" do
+        result = RelatonBipm::BipmBibliography.get "BIPM Metrologia 50 4 385"
+        expect(result.docidentifier[0].id).to eq "Metrologia 50 4 385"
+      end
 
-      # it "without author", vcr: "metrologia_19_4_163" do
-      #   result = RelatonBipm::BipmBibliography.get "BIPM Metrologia 19 4 163"
-      #   expect(result.docidentifier[0].id).to eq "Metrologia 19 4 163"
-      # end
+      it "without author", vcr: "metrologia_19_4_163" do
+        result = RelatonBipm::BipmBibliography.get "BIPM Metrologia 19 4 163"
+        expect(result.docidentifier[0].id).to eq "Metrologia 19 4 163"
+      end
 
-      # it "with text/html title", vcr: "metrologia_55_1_L13" do
-      #   result = RelatonBipm::BipmBibliography.get "BIPM Metrologia 55 1 L13"
-      #   expect(result.title[0].title.content).to eq(
-      #     "The CODATA 2017 values of<em>h</em>,<em>e</em>,<em>k</em>, " \
-      #     "and<em>N</em><sub>A</sub> for the revision of the SI",
-      #   )
-      # end
+      it "with text/html title", vcr: "metrologia_55_1_L13" do
+        result = RelatonBipm::BipmBibliography.get "BIPM Metrologia 55 1 L13"
+        expect(result.title[0].title.content).to eq(
+          "The CODATA 2017 values of h, e, k, and N<sub>A</sub> for the revision of the SI",
+        )
+      end
     end
   end
 end

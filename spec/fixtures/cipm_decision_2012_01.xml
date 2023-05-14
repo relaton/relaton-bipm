@@ -1,5 +1,5 @@
 <bibdata type="proceedings" schema-version="v1.2.3">
-  <fetched>2023-05-04</fetched>
+  <fetched>2023-05-12</fetched>
   <title format="text/plain" language="en" script="Latn">Decision CIPM/101-1 (2012)</title>
   <title format="text/plain" language="fr" script="Latn">Décision CIPM/101-1 (2012)</title>
   <uri type="citation" language="en" script="Latn">https://www.bipm.org/en/committees/ci/cipm/101-_1-2012</uri>
@@ -9,9 +9,9 @@
   <docidentifier type="BIPM" primary="true">CIPM DECN 101-1 (2012)</docidentifier>
   <docidentifier type="BIPM" primary="true" language="en" script="Latn">CIPM DECN 101-1 (2012, E)</docidentifier>
   <docidentifier type="BIPM" primary="true" language="fr" script="Latn">CIPM DECN 101-1 (2012, F)</docidentifier>
-  <docidentifier type="BIPM-long" primary="true" language="en" script="Latn">CIPM Decision 101-1 (2012)</docidentifier>
-  <docidentifier type="BIPM-long" primary="true" language="fr" script="Latn">Décision CIPM/101-1 (2012)</docidentifier>
-  <docidentifier type="BIPM-long" primary="true">CIPM Decision 101-1 (2012) / Décision CIPM/101-1 (2012)</docidentifier>
+  <docidentifier type="BIPM-long" language="en" script="Latn">CIPM Decision 101-1 (2012)</docidentifier>
+  <docidentifier type="BIPM-long" language="fr" script="Latn">Décision CIPM/101-1 (2012)</docidentifier>
+  <docidentifier type="BIPM-long">CIPM Decision 101-1 (2012) / Décision CIPM/101-1 (2012)</docidentifier>
   <docnumber>CIPM DECN 101-1 (2012)</docnumber>
   <date type="published">
     <on>2012-06-08</on>

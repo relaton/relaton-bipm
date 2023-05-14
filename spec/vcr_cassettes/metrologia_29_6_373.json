@@ -3,7 +3,7 @@
     {
       "request": {
         "method": "get",
-        "uri": "https://raw.githubusercontent.com/relaton/relaton-data-bipm/master/data/cctf/meeting/recommendation/2009-02.yaml",
+        "uri": "https://raw.githubusercontent.com/relaton/relaton-data-bipm/master/data/metrologia-29-6-373.yaml",
         "body": {
           "encoding": "US-ASCII",
           "base64_string": ""
@@ -16,7 +16,7 @@
             "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"
           ],
           "User-Agent": [
-            "Mechanize/2.8.5 Ruby/3.2.0p0 (http://github.com/sparklemotion/mechanize/)"
+            "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.4) Gecko/20030624"
           ],
           "Accept-Charset": [
             "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
@@ -51,7 +51,7 @@
             "keep-alive"
           ],
           "Content-Length": [
-            "927"
+            "1136"
           ],
           "Cache-Control": [
             "max-age=300"
@@ -63,7 +63,7 @@
             "text/plain; charset=utf-8"
           ],
           "Etag": [
-            "W/\"85f492b700f72e620e68d3827a681e500f24679d15e6ca4d521b970c24e168a1\""
+            "W/\"02b6bff8131a0ccca59b64f5c6352efb7561bd823c230d3079ab1a345c197d0a\""
           ],
           "Strict-Transport-Security": [
             "max-age=31536000"
@@ -78,7 +78,7 @@
             "1; mode=block"
           ],
           "X-Github-Request-Id": [
-            "2210:38A3:28651C:2FC8A9:645E66DE"
+            "7D4C:24FE:529C5A:60BD55:645C4B60"
           ],
           "Content-Encoding": [
             "gzip"
@@ -87,13 +87,13 @@
             "bytes"
           ],
           "Date": [
-            "Fri, 12 May 2023 16:18:38 GMT"
+            "Thu, 11 May 2023 01:56:48 GMT"
           ],
           "Via": [
             "1.1 varnish"
           ],
           "X-Served-By": [
-            "cache-atl18429-ATL"
+            "cache-atl18450-ATL"
           ],
           "X-Cache": [
             "MISS"
@@ -102,7 +102,7 @@
             "0"
           ],
           "X-Timer": [
-            "S1683908318.422310,VS0,VE91"
+            "S1683770208.278221,VS0,VE102"
           ],
           "Vary": [
             "Authorization,Accept-Encoding,Origin"
@@ -111,10 +111,10 @@
             "*"
           ],
           "X-Fastly-Request-Id": [
-            "f5be2580ccfe8418de2299f3860b3001debb9481"
+            "a560432506c14a1e7a344859db87a9a9124996c4"
           ],
           "Expires": [
-            "Fri, 12 May 2023 16:23:38 GMT"
+            "Thu, 11 May 2023 02:01:48 GMT"
           ],
           "Source-Age": [
             "0"
@@ -122,10 +122,10 @@
         },
         "body": {
           "encoding": "UTF-8",
-          "base64_string": "H4sIAAAAAAAAA7VW224bNxB936/gmx2g1F5kW7beEiMuDDRF0BjoM3d3dkWU\nlw0vctQvar7DP9YhuZZ3W6VSAlcw5BW5M+fMmeEMKaWZbTYgGd2CsVyrNdmW\ni2qxzHi7Jre3D3f0t/e3tCqKG1pUmeNOwDqjpNHKgXL4yoYZ1jgw/E/m0J7o\njrQg2M6Gp17omgmi2Jb3adsyB0JwB8TurANJzn/+9dOnNxnBD3z2fJDolnBF\nBKu1YU4bDjbCGV57x1VPnCb3iG5U9Iju3zoteUMeuARy/vD2PngTTPWe9UiW\nEEpA4T/bGD64tPALc2Gp00YyjMLBF5cPgnE1iy2G9vTVcJvIt0jFgGOmtfH5\n6WtgDIFyWEBLOaANt/Fd9CoHS3AlRhfiffpLollUxX8Jr0yUwfcm6iRZIsqz\nEtxMlGDKRa/Mk4cIw4IInz2gdlNtDuvRmZP1EFz9Mcv4xrnBrvP88fFxUWO+\nFtr0Oagcg5fcOQCbNw3+uS4vr2Pl5EhcCx8Y0QpR3G6ANWm4iySn5GaJSqSO\nIXfmdZCnknwT2bDHRc/dxtfeghm3F4ifSywLFdTLAzPaMseo9g63kJVEIRMv\nCRBq2FIUbHym5fViJ8WenTXN90vyesRQzxOJnaTYLFetbnw8LHlVlNUVfq/K\n8mKZhz6DYEPb5fXlBbu+vuhoUTYruuouLunqalVSVi6r+uZmuSyg3TNCg2x8\nMroBaEMEGaJg80Iyzy2MYAsjFTkPFfFmb/zu/uMH/DEYLpnZYc0bD98w+om8\nP2J3LGGHvd59h9dDar94hXAGQLWplRyMlQqt+pOIJm/sxVvrE8xJXn+EKMl/\nABTzrLyswRzKMrqJg2osD18LbjexdLZMeFw6SzPtihaXZ9l+vmgTjLBWmRoH\n2jq2WcUkpKdJjc+n0DtvALsxTr3fgfcbnAgYDPkAzOKGjbbzNpy8xSTE+bBv\nx2ljbMkzxBFj3uLDjBg0x5kEjuCp/k+4zhyDY3VtYMsnwZMJgVSmR0I5BcYb\nsSbT7oCrRotxQM3TZk7Pya1W1ovQ37eAP8bBEAZbuh+EnNwZvGmAanavkxRE\n4XhLCAsjdBeKN01/TEnIT2fCXQEx/7/UhDPwGqn5ZxKYdxttMgSOZ2p+cF6Q\nIkb0/ux39IjXiCbdGbnDxvaR4XUqnN3k3cwaQmax7zUOK7jlLUbFO47HG8lM\nzvpZdZbh9WQdu8y/rq7Fosj+BuTXrPzWCgAA\n"
+          "base64_string": "H4sIAAAAAAAAA51W227iSBB991eU5oUXIEBWSUCjkTIXaSPlpp3VzuOobRe4\nlXa3ty8Q9uv3dNsYkyEvExGBq7qq65y6eTKZZK6ouBaTLVsnjV7Rdj5dTC8z\nWa7ogb01ymykWCyvLq8vMy+94lU2ocJoz9qv6CsXomR8ObnRjtbG0g+Wm0rq\njSOzpkejJ0FLyGv6R1gpdMEZkRJ6E8QGvogmxBpfrrCy8a3gXvgoilYCl3h+\n9ReNElJnft/wioT1slCclaZAnIjnNFpaLOmKYsBErcHnu+cHPDRW1sLu4dEG\n7szms+l8dnNzMZstribzy+UfF4vlxRUe5711aWRWCp+Qt5Im5Eq6ikuc2QoV\nIBrNl8vLyWyOzyiL/FiZB29sNGpALrjFYSItam5/AXOww0c68vqNvtCDsVa6\nXjfkrP3rmOt89fwdlB2LRGK9lkoKLw8xTMjYjdDyv4HsbWzxVB/Ol+93fz3R\nV7mVsUhiYm+bRkku6bnaO1m4MT0mX0IhDwK4uIYhQsiNFWBhP+7dxr/nJ/ps\nXmkxvxnTvdTlWrIqT1gQxQkWUZaWnVudeCmkRy4fv/+gxex6dqoyARmA9jY4\nbwXQQ43y6CquK6PgK2Mzy9uU3dMUijwaxigGPHz42Hz6u2JyrLjwHRVCE4Ph\nQkbEu676qUwtQdKRgH1d42xjTa64JtmmpRbOUd1V7X5K0XGBUHMrete4yccf\n2tQS5Ko98b8BJEdbdvCE5rB1bLXk0mhGaqk2lsnymi2j3w6H4cbH2JHktmhR\n2BBr4/GPToveG7AcYQi9p1JGVEH5Lnko5w5V2+joStZlxOrPRf4iAcuKusXp\nDdVwJRuFK4Vuk+1CfhR24WFa4HrEn0CAOShfp3Q74NwGxTgrfGQXg2tPO1my\n2iefwaEqIU/66LBLBCaJla+UR4KQ9k2s1Sn9aXYMD+OBEEWVslZuBcpwwya4\njlvws6tYE5hKnnf9pIt5OF5ViS0PqW7H3pTuYFoUASRx8rgz9gXncBk+G9Zs\nUw5iQlpGHY9JuPRw8BJpyoWKP5OZMqKclNwgE8hb2+66pHUAHlRG5FAmnswa\n2SLNsHOYgTEhoKplGVzpVDud52k/0HeVLKquWl+gZ496S4aIYzec9How6ftg\nExM542LnQ4l5MU7RieSxie0lUTckGrSGKKoYVEJuNJov9B3mAnSH0otcyS3r\n6ceL5tOH31smla8VhnSzt0CQWtzsQH9rcJyCg85/Pkx8FGgJCpQsUm/le7p7\nej6oYzPc+1jca2vqbqKMMGFUN2kPo6cS7gEDeM3OJw0scplLz3V7c7dp3wTx\nm9v23PYY7I7TzTHYG2c3cBS3y7A93S1EbMTO5tw+TAXEpQz14ZpCYLmB8biT\nUbeO8eQSP0fkPe7jas9+xdIjGeIYoDiDIU2ulHZlitTxHesJy9aoULe89TP0\nZ5fPxXL0jpV0LrxjdPWeTQMQ503w8jJ6o/Emya9H8bXn9D0IeFap6n95lZtN\nZ9n/o8pa0uYJAAA=\n"
         }
       },
-      "recorded_at": "Fri, 12 May 2023 16:18:38 GMT"
+      "recorded_at": "Thu, 11 May 2023 01:56:48 GMT"
     }
   ],
   "recorded_with": "VCR 6.1.0"

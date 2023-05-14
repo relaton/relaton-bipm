@@ -1,5 +1,5 @@
 <bibdata type="proceedings" schema-version="v1.2.3">
-  <fetched>2023-05-04</fetched>
+  <fetched>2023-05-12</fetched>
   <title format="text/plain" language="en" script="Latn">Signes abréviatifs pour les poids et mesures métriques</title>
   <uri type="citation" language="en" script="Latn">https://www.bipm.org/en/committees/ci/cipm/4-1879/resolution-</uri>
   <uri type="src" language="en" script="Latn">https://raw.githubusercontent.com/metanorma/bipm-data-outcomes/main/cipm/meetings-en/meeting-4.yml</uri>
@@ -8,9 +8,9 @@
   <docidentifier type="BIPM" primary="true">CIPM RES (1879)</docidentifier>
   <docidentifier type="BIPM" primary="true" language="en" script="Latn">CIPM RES (1879, E)</docidentifier>
   <docidentifier type="BIPM" primary="true" language="fr" script="Latn">CIPM RES (1879, F)</docidentifier>
-  <docidentifier type="BIPM-long" primary="true" language="en" script="Latn">CIPM Resolution (1879)</docidentifier>
-  <docidentifier type="BIPM-long" primary="true" language="fr" script="Latn">CIPM Résolution du (1879)</docidentifier>
-  <docidentifier type="BIPM-long" primary="true">CIPM Resolution (1879) / CIPM Résolution du (1879)</docidentifier>
+  <docidentifier type="BIPM-long" language="en" script="Latn">CIPM Resolution (1879)</docidentifier>
+  <docidentifier type="BIPM-long" language="fr" script="Latn">Résolution du CIPM (1879)</docidentifier>
+  <docidentifier type="BIPM-long">CIPM Resolution (1879) / Résolution du CIPM (1879)</docidentifier>
   <docnumber>CIPM RES (1879)</docnumber>
   <date type="published">
     <on>1879-10-13</on>
