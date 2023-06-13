@@ -9,7 +9,7 @@ describe RelatonBipm::DataFetcher do
   end
 
   it "initialize" do
-    expect(Relaton::Index).to receive(:find_or_create).with(:BIPM, file: "index2.yaml").and_return({})
+    expect(Relaton::Index).to receive(:find_or_create).with(:bipm, file: "index2.yaml").and_return({})
     fetcher = described_class.new "data", "bibxml"
     expect(fetcher.instance_variable_get(:@output)).to eq "data"
     expect(fetcher.instance_variable_get(:@format)).to eq "bibxml"

@@ -13,7 +13,7 @@ module RelatonBipm
       @format = format
       @ext = format.sub(/^bib/, "")
       @files = []
-      @index2 = Relaton::Index.find_or_create :BIPM, file: "index2.yaml"
+      @index2 = Relaton::Index.find_or_create :bipm, file: "index2.yaml"
     end
 
     #

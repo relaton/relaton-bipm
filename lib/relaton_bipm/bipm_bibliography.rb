@@ -59,7 +59,9 @@ module RelatonBipm
       end
 
       def index
-        Relaton::Index.find_or_create :BIPM, url: "#{GH_ENDPOINT}index2.zip", file: INDEX_FILE
+        Relaton::Index.find_or_create(
+          :bipm, url: "#{GH_ENDPOINT}index2.zip", file: INDEX_FILE, id_keys: %i[group type number year]
+        )
       end
 
       # def match_item(ids, ref_id)

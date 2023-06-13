@@ -56,7 +56,7 @@ module RelatonBipm
     # Remove index file
     #
     def remove_index_file
-      Relaton::Index.find_or_create(:BIPM, url: true, file: BipmBibliography::INDEX_FILE).remove_file
+      Relaton::Index.find_or_create(:bipm, url: true, file: BipmBibliography::INDEX_FILE).remove_file
     end
   end
 end

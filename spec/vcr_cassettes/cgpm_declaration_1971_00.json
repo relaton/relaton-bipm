@@ -16,7 +16,7 @@
             "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"
           ],
           "User-Agent": [
-            "Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; WOW64; Trident/6.0)"
+            "Mozilla/5.0 (Macintosh; U; PPC Mac OS X Mach-O; en-US; rv:1.4a) Gecko/20030401"
           ],
           "Accept-Charset": [
             "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
@@ -78,7 +78,7 @@
             "1; mode=block"
           ],
           "X-Github-Request-Id": [
-            "A9C2:6C1A:259BA43:2D1D697:6469492F"
+            "8F12:3E87:142E25:1956AA:648479EA"
           ],
           "Content-Encoding": [
             "gzip"
@@ -87,13 +87,13 @@
             "bytes"
           ],
           "Date": [
-            "Sat, 20 May 2023 22:26:55 GMT"
+            "Sat, 10 Jun 2023 13:26:02 GMT"
           ],
           "Via": [
             "1.1 varnish"
           ],
           "X-Served-By": [
-            "cache-atl18453-ATL"
+            "cache-atl18447-ATL"
           ],
           "X-Cache": [
             "MISS"
@@ -102,7 +102,7 @@
             "0"
           ],
           "X-Timer": [
-            "S1684621615.114835,VS0,VE124"
+            "S1686403562.225352,VS0,VE85"
           ],
           "Vary": [
             "Authorization,Accept-Encoding,Origin"
@@ -110,11 +110,14 @@
           "Access-Control-Allow-Origin": [
             "*"
           ],
+          "Cross-Origin-Resource-Policy": [
+            "cross-origin"
+          ],
           "X-Fastly-Request-Id": [
-            "e8598ea37450d9d0faac57fe27d266b7f2be0fff"
+            "9e6913f6e6899d2b5bf4c74873556e1a76cc319d"
           ],
           "Expires": [
-            "Sat, 20 May 2023 22:31:55 GMT"
+            "Sat, 10 Jun 2023 13:31:02 GMT"
           ],
           "Source-Age": [
             "0"
@@ -125,7 +128,7 @@
           "base64_string": "H4sIAAAAAAAAA7VWSW7bMBTd6xTcuQVKDR7qWN1laBCgBrzrmiK/ZKISKZCU\nXfdGOUcu1i9Kia3WiW0gMQyIJvXfe380KaWB5WuoGN2AsVKrlGyScBxOAilS\ncnO/WtLbu5sfNFnMExrHgZOuhDSghGvlQLmUrJjlrCRMCWIlVKBsQEjJVNGw\nAt8khBJQ+LDcyNp1Gz+Ya7dybSqGEA5+u6gumVRHgL+9Cpubs2FLqX4NVK+d\nq20aRdvtNsxkXYXaFBGoiOuqks4B2IgX+K2rKJl67yMDVpeNwxhRJHG7GlLC\npWPtzqG2gbudplPEuXkX4sOAvEps2DYspFs3WWPB9Mch0kcVOKba2EWtMCqY\nY1Q3Do9QVIVh7GRVAE6qwlIMV7+myTTcVeWLOmv45RF5P2EYzjOFnRWxQaqE\n5g1Wo7PROE7GX6NkPkmmi6urqO0VZKtFHk0mszzJJwmFRTyj+YyPqVjMF3TO\n4/GEz6YzkSUvktAg6FdGcwDRuhAgDTYgqnluQ9K2IfnUFsTnF9vrh9USf9RG\nVszssOJNA8dtvpC7E2an8nUU9PsFoMdivQcFXjLjS/qYk7TUqjhL4u3T4x5J\nAFp0BGeBXiiRRJfTYWJVU2VgjqQVC9vP1r4cmqyUdg0CUTasbHBr5MdwEtN4\nPgraOjUya5w2rREWJ1Pyj1fSjkNCFKugWx0U9QM+jfJv4XC9bgywhuic/ARZ\nrJ31c3wJzOKB9bbDqduh+eC3n/307Q76CTxg7DnkgFiAJbWWwhJwBNv4TTqf\nljfpWJYZ2MgD58mBgK4yT7hyDk1jypQcjgPcNbrs/4+GaTPn5+QeFBgMyo1W\nORhQHAhW08dlpOV5euyI7p8eFa5ZCT4nq+ecLD82J23tv0dO/o0+a9xamwCJ\nfTMNO2bP5Dk8+jNuj4jXBd7db6TbtXcQI/0w7tDFfgQEFgccdxgjIQW6JHOJ\nPY1KDhp8FI8CvIOkfqj8d8mKwzj4C65H+dKACQAA\n"
         }
       },
-      "recorded_at": "Sat, 20 May 2023 22:26:55 GMT"
+      "recorded_at": "Sat, 10 Jun 2023 13:26:02 GMT"
     }
   ],
   "recorded_with": "VCR 6.1.0"
