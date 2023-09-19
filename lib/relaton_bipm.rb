@@ -28,10 +28,10 @@ module RelatonBipm
   # Returns hash of XML reammar
   # @return [String]
   def grammar_hash
-    gem_path = File.expand_path "..", __dir__
-    grammars_path = File.join gem_path, "grammars", "*"
-    grammars = Dir[grammars_path].sort.map { |gp| File.read gp }.join
-    Digest::MD5.hexdigest grammars
+    # gem_path = File.expand_path "..", __dir__
+    # grammars_path = File.join gem_path, "grammars", "*"
+    # grammars = Dir[grammars_path].sort.map { |gp| File.read gp }.join
+    Digest::MD5.hexdigest RelatonBipm::VERSION + RelatonBib::VERSION # grammars
   end
 
   extend self

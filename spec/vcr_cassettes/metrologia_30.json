@@ -16,7 +16,7 @@
             "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"
           ],
           "User-Agent": [
-            "Mozilla/5.0 (Macintosh; U; PPC Mac OS X Mach-O; en-US; rv:1.4a) Gecko/20030401"
+            "Mozilla/5.0 (Windows NT 6.3; WOW64; rv:43.0) Gecko/20100101 Firefox/43.0"
           ],
           "Accept-Charset": [
             "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
@@ -63,7 +63,7 @@
             "text/plain; charset=utf-8"
           ],
           "Etag": [
-            "W/\"cac2aed320ee810153ac02d00b565c01aacb93d7bc2a3173f1cf8fd266427ae9\""
+            "W/\"05b361907940dc1a8b79a50d294031f106bd0a58d9be30b55898242cf8dcada1\""
           ],
           "Strict-Transport-Security": [
             "max-age=31536000"
@@ -78,7 +78,7 @@
             "1; mode=block"
           ],
           "X-Github-Request-Id": [
-            "5C4A:8D3E:2C7E2D:33D155:64F1549C"
+            "418E:046B:4462BA:511E7F:6509DF6F"
           ],
           "Content-Encoding": [
             "gzip"
@@ -87,13 +87,13 @@
             "bytes"
           ],
           "Date": [
-            "Fri, 01 Sep 2023 03:04:00 GMT"
+            "Tue, 19 Sep 2023 17:50:39 GMT"
           ],
           "Via": [
             "1.1 varnish"
           ],
           "X-Served-By": [
-            "cache-iad-kcgs7200078-IAD"
+            "cache-pdk-kpdk1780085-PDK"
           ],
           "X-Cache": [
             "MISS"
@@ -102,7 +102,7 @@
             "0"
           ],
           "X-Timer": [
-            "S1693537440.868714,VS0,VE192"
+            "S1695145840.564840,VS0,VE105"
           ],
           "Vary": [
             "Authorization,Accept-Encoding,Origin"
@@ -114,10 +114,10 @@
             "cross-origin"
           ],
           "X-Fastly-Request-Id": [
-            "7a86766cddf598d43cd7eaa85e35cf3c5bee168f"
+            "09567fe68324c849c012e760ebe270718580f630"
           ],
           "Expires": [
-            "Fri, 01 Sep 2023 03:09:00 GMT"
+            "Tue, 19 Sep 2023 17:55:39 GMT"
           ],
           "Source-Age": [
             "0"
@@ -125,10 +125,10 @@
         },
         "body": {
           "encoding": "UTF-8",
-          "base64_string": "H4sIAAAAAAAAA8XVzW7DIAwA4DtP4RfIX5NGGsfdJq3aXoFSN0MjgIhbrW8/\nSLr+ZD1k0qJwMgTbfL4kSRLWyQ9sRXJE3ylrOByLdJWWTO04bJC81bZRosyZ\nVuaTswSkNYSGOHwQuY5nmbKukwqNxDSEqfVNdrT60GKW56s6KcqnKgv5AHRy\nyKHzkg2R8KSkRrazMnQLpe97wk3S88v7JmycV63wJw7kD8i0MM1BNBhT0QSI\nV47i5lWQYXvrW0GEO497HnIv7x53uJYB6AsB/JSKB30xgKFc6IxflDktlGEe\ntaA4s9ByeKYLpLd9uL1VW0XYxgoA41Gu+tOzOoYP5DBcGvnjup9BPBlL43qs\nvVS9NQ8v6N1xXe3Dh7P/2uhuBn+Tl1Pk5Szycll5MUVezCIvlpWvp8jXs8jX\ny8qrKfJqFnm1rLyeIq9nkdf/LQ8R738Jv36TeZqzb0csl0dCBwAA\n"
+          "base64_string": "H4sIAAAAAAAAA8XVzW7DIAwA4DtP4RfIfxtpHHebtGp7BUrdDI0AIm61vv0g\n6fqT9ZBJi8LJEGzz+ZIkSVgnP7AVyRF9p6zhcCzSMl0xteOwQfJW20aJKmda\nmU/OEpDWEBri8EHkOp5lyrpOKjQS0xCm1jfZ0epDi1mel3VSVE+rLOQD0Mkh\nh85LNkTCk5Ia2c7K0C2Uvu8JN0nPL++bsHFetcKfOJA/INPCNAfRYExFEyBe\nOYqbV0GG7a1vBRHuPO55yL28e9zhWgagLwTwUyoe9MUAhnKhM35R5rRQhnnU\nguLMQsvhmS6Q3vbh9lZtFWEbKwCMR7nqT8/qGD6Qw3Bp5I/rfgbxZCyN67H2\nUvXWPLygd8d1tQ8fzv5ro7sZ/E1eT5HXs8jrZeXrKfL1LPL1svJiiryYRV4s\nK6+myKtZ5NWy8nKKvJxFXv63PES8/yX8+k3mac6+AWJf6KZCBwAA\n"
         }
       },
-      "recorded_at": "Fri, 01 Sep 2023 03:03:59 GMT"
+      "recorded_at": "Tue, 19 Sep 2023 17:50:39 GMT"
     }
   ],
   "recorded_with": "VCR 6.2.0"

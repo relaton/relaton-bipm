@@ -16,7 +16,7 @@
             "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"
           ],
           "User-Agent": [
-            "Mozilla/5.0 (Windows NT 6.3; WOW64; Trident/7.0; rv:11.0) like Gecko"
+            "Mechanize/2.8.5 Ruby/3.2.0p0 (http://github.com/sparklemotion/mechanize/)"
           ],
           "Accept-Charset": [
             "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
@@ -63,7 +63,7 @@
             "text/plain; charset=utf-8"
           ],
           "Etag": [
-            "W/\"a93e4f2004b8437273badb630cbe8e2ea99d37de76fea794fa011a1b4b8e8187\""
+            "W/\"e509a747eae20e4b233536a5df907d01637fcb2edc43a5a8d85be6c0ca651007\""
           ],
           "Strict-Transport-Security": [
             "max-age=31536000"
@@ -78,7 +78,7 @@
             "1; mode=block"
           ],
           "X-Github-Request-Id": [
-            "D30E:78CD:29D734:312939:64F154A2"
+            "DE48:15A1:3EACF0:4B66DD:6509DF70"
           ],
           "Content-Encoding": [
             "gzip"
@@ -87,13 +87,13 @@
             "bytes"
           ],
           "Date": [
-            "Fri, 01 Sep 2023 03:04:03 GMT"
+            "Tue, 19 Sep 2023 17:50:41 GMT"
           ],
           "Via": [
             "1.1 varnish"
           ],
           "X-Served-By": [
-            "cache-iad-kjyo7100106-IAD"
+            "cache-pdk-kpdk1780096-PDK"
           ],
           "X-Cache": [
             "MISS"
@@ -102,7 +102,7 @@
             "0"
           ],
           "X-Timer": [
-            "S1693537443.275468,VS0,VE263"
+            "S1695145842.649532,VS0,VE115"
           ],
           "Vary": [
             "Authorization,Accept-Encoding,Origin"
@@ -114,10 +114,10 @@
             "cross-origin"
           ],
           "X-Fastly-Request-Id": [
-            "918da6f11c04e5bbc19b04345df89c2b133117ab"
+            "1137c2b85c0e09c9360f7cd386b1534ff95cfb80"
           ],
           "Expires": [
-            "Fri, 01 Sep 2023 03:09:03 GMT"
+            "Tue, 19 Sep 2023 17:55:41 GMT"
           ],
           "Source-Age": [
             "0"
@@ -125,10 +125,10 @@
         },
         "body": {
           "encoding": "UTF-8",
-          "base64_string": "H4sIAAAAAAAAA+2ZzW7jNhCA73qKubkFIsfK1knWCAI42U3rbpx14RQB9lLQ\n0tjiRiIFknLWKfpAfY6+WIeUbMtJXRpFD4uFfLE05vx9HJLWKAzDQMcp5ixc\notJcigEso+5J903AkwGM0SiZyQVn/X50G70JDDcZDoIQYikMCjOA+xTh+uO7\n4f0QTnrRGSxZVqIGOYf0CPAIHo+AiQTuLnQ5uxxeHNsvmEsFhhQVLrl1SsMD\noI+VTUd0qWPFCzOgqxBumRF0QTo5I4cGv5jj1ORZYFYFDoApw+MMg0TGFDKF\nths49PsQgY2dzDuFq9FkTDeF4jlTKzKoSqzVol436p2fH0en51F41j/rHzP2\ntt9jG91E8iBhxiGoJEU5y7hOMaExLvcBdAjEediLwpO3ncCCUnxWGqmsUkGU\nCbLLVrAcqyuABV+iWN+4ZLH5s+WQMbEo2aIhs1IUjdsttu2AGt/6wwU3nGUD\neFcLdal2PW2m9g6fMMs28tf+d7y/9N3wzOZznnFm+DrzEKRaMMGfG7KXROyo\n3/+gG5pIrCqhnvDSpFJ9VSxvvCyv2cwCaGH6Yf7shXnD7Z6lWph+mB/8MMvP\nvK3LA1BOvSg/MEUngZhJnrdA/UB/8gIdM7WQdLy2NP0033tpJghjrujf2F9/\ntkQPIDrx16dM21PoAJL+/0d3+NyC9IP0H+cTFqdl/Nie6AfQvPfS/KXkQrQo\n/SivvCjv2SqT7W55AMuxl+UDOWxJ+kn6q/JByqQl6Sf5yUvyU/oVF6XCpWvb\n7fbm2EwbxWKz09Ac1sKL4nJaUiwxJzEUSi4Uag1GPjGVaFCY4JzwiIXrWo5I\nm8jYCFkG05U2WD0Dyjn8ShA1fDcdfU88gcblrj+KX8hLo186L0VCKQlDBiga\nbZggtZRpmCEKoHOd4xKTrjP7/oWyjWFC0OPHja5rwGboLKoVxCk9TKFtyV7J\nzDznTIjNUGey7tQOl3LBEiW3dl70bpXMnbtm13daYEx1AsPkc6mNdblO3o68\naWR2vcmMKSSsqEmOCaSosGu7yRrXadkBCmOZk2qC1TI10lk8OTUp/IgCVWVy\nTtoiRpACHpAvUmuechkjo4JFO2uuf+x059KGY2eqGaNrRVMc01H34ri4DA7s\nQceyWCnr0NaQfKKAKoVtcTZKq+487/l19HECk6qbbKvq1tiMLe26ajtUxVm9\nBtblTdUxpqUxR2JaZzTjM07FV5mv+/UvPP0vPfvNyqsBur7967W9s6W85mel\nVUO9Glw31YtyVqvs9tR/oKXbcb/kmPAyX3uJmVKc2NuuPtXeN44H9+GptrV/\nwSNFxgV+63xkgSJkcUz79X/DVFWRRrrTbrFtOWyf/TevmJx898DbHHbNbBq5\n7GRSZIyLgK6sXfKWyZhl3KzqOXApLWVW5ugECuvd7rd6c+j3O3u0uNblHqVo\nn05BSfyjSvUOrSk30kpP7au33XdxlMvA7aCv3iz2ur3gb24Otbd1HAAA\n"
+          "base64_string": "H4sIAAAAAAAAA+2ZzW7jNhCA73qKubkFIsdK10nWCAI42U3rbpx14RQB9lLQ\n0tjiRiIFknLWKfpAfY6+WIeUbMtJXRpFD4uFfLE05vx9HJLWKAzDQMcp5ixc\notJcigEso+5J903AkwGM0SiZyQVn/X50G/0QGG4yHAQhxFIYFGYA9ynC9cd3\nw/shnPSiM1iyrEQNcg7pEeARPB4BEwncXehydjm8OLZfMJcKDCkqXHLrlIYH\nQB8rm47oUseKF2ZAVyHcMiPognRyRg4NfjHHqcmzwKwKHABThscZBomMKWQK\nbTdw6PchAhs7mXcKV6PJmG4KxXOmVmRQlVirRb1u1Ds/P45Oz6PwrH/WP2bs\nbb/HNrqJ5EHCjENQSYpylnGdYkJjXO4D6BCI87AXhSdvO4EFpfisNFJZpYIo\nE2SXrWA5VlcAC75Esb5xyWLzZ8shY2JRskVDZqUoGrdbbNsBNb71hwtuOMsG\n8K4W6lLtetpM7R0+YZZt5K/973h/6bvhmc3nPOPM8HXmIUi1YII/N2QvidhR\nv/9BNzSRWFVCPeGlSaX6qljeeFles5kF0ML0w/zZC/OG2z1LtTD9MD/4YZaf\neVuXB6CcelF+YIpOAjGTPG+B+oH+5AU6Zmoh6XhtafppvvfSTBDGXNG/sb/+\nbIkeQHTir0+ZtqfQAST9/4/u8LkF6QfpP84nLE7L+LE90Q+gee+l+UvJhWhR\n+lFeeVHes1Um293yAJZjL8sHctiS9JP0V+WDlElL0k/yk5fkp/QrLkqFS9e2\n2+3NsZk2isVmp6E5rIUXxeW0pFhiTmIolFwo1BqMfGIq0aAwwTnhEQvXtRyR\nNpGxEbIMpittsHoGlHP4lSBq+G46+p54Ao3LXX8Uv5CXRr90XoqEUhKGDFA0\n2jBBainTMEMUQOc6xyUmXWf2/QtlG8OEoMePG13XgM3QWVQriFN6mELbkr2S\nmXnOmRCboc5k3akdLuWCJUpu7bzo3SqZO3fNru+0wJjqBIbJ51Ib63KdvB15\n08jsepMZU0hYUZMcE0hRYdd2kzWu07IDFMYyJ9UEq2VqpLN4cmpS+BEFqsrk\nnLRFjCAFPCBfpNY85TJGRgWLdtZc/9jpzqUNx85UM0bXiqY4pqPuxXFxGRzY\ng45lsVLWoa0h+UQBVQrb4myUVt153vPr6OMEJlU32VbVrbEZW9p11XaoirN6\nDazLm6pjTEtjjsS0zmjGZ5yKrzJf9+tfePpfevablVcDdH3712t7Z0t5zc9K\nq4Z6NbhuqhflrFbZ7am/oaXbcb/kmPAyX3uJmVKc2NuuPtXeN44H9+GptrV/\nwSNFxgV+63xkgSJkcUz79X/DVFWRRrrTbrFtOWyf/TevmJx898DbHHbNbBq5\n7GRSZIyLgK6sXfKWyZhl3KzqOXApLWVW5ugECuvd7rd6c+j3O3u0uNblHqVo\nn05BSfyjSvUOrSk30kpP7au33XdxlMvA7aCv3iz2ur3gb0xA0yp1HAAA\n"
         }
       },
-      "recorded_at": "Fri, 01 Sep 2023 03:04:03 GMT"
+      "recorded_at": "Tue, 19 Sep 2023 17:50:41 GMT"
     }
   ],
   "recorded_with": "VCR 6.2.0"
