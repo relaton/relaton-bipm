@@ -187,76 +187,87 @@ Recommendation JCRB/43-1 (2021) / Recommandation JCRB/43-1 (2021)
 JCRB REC JCRB/43-1 (2021)
 ----
 
-==== Examples
+=== Configuration
+
+Configuration is optional. The available option is `logger` which is a `Logger` instance. By default, the logger is `Logger.new($stderr)` with `Logger::WARN` level. To change the logger level, use `RelatonBipm.configure` block.
 
 [source,ruby]
 ----
 require 'relaton_bipm'
 => true
 
+RelatonBipm.configure do |config|
+  config.logger.level = Logger::DEBUG
+end
+----
+
+==== Examples
+
+[source,ruby]
+----
 # get BIPM brochure
 item = RelatonBipm::BipmBibliography.get "BIPM SI Brochure"
-[relaton-bipm] ("BIPM SI Brochure") fetching...
-[relaton-bipm] ("BIPM SI Brochure") found BIPM SI Brochure
+[relaton-bipm] (BIPM SI Brochure) fetching...
+[relaton-bipm] (BIPM SI Brochure) found `BIPM SI Brochure`
 => #<RelatonBipm::BipmBibliographicItem:0x007ffb83982fe8
 ...
 
 # get BIPM Metrologia page
 bib = RelatonBipm::BipmBibliography.get "BIPM Metrologia 29 6 001"
-[relaton-bipm] ("BIPM Metrologia 29 6 001") fetching...
-[relaton-bipm] ("BIPM Metrologia 29 6 001") found Metrologia 29 6 001
+[relaton-bipm] (BIPM Metrologia 29 6 001) fetching...
+[relaton-bipm] (BIPM Metrologia 29 6 001) found `Metrologia 29 6 001`
 => #<RelatonBipm::BipmBibliographicItem:0x007f8857f94d40
 ...
 
 # get CGPM meetings
 RelatonBipm::BipmBibliography.get "CGPM 1st Meeting (1889)"
-[relaton-bipm] ("CGPM 1st Meeting (1889)") fetching...
-[relaton-bipm] ("CGPM 1st Meeting (1889)") found CGPM 1th meeting (1889)
+[relaton-bipm] (CGPM 1st Meeting (1889)) fetching...
+[relaton-bipm] (CGPM 1st Meeting (1889)) found `CGPM 1th meeting (1889)`
 => #<RelatonBipm::BipmBibliographicItem:0x00007f7fd02aba28
 ...
 
 # get CGPM resolutions
 RelatonBipm::BipmBibliography.get "CGPM RES (1889, E)"
-[relaton-bipm] ("CGPM RES (1889, E)") fetching...
-[relaton-bipm] ("CGPM RES (1889, E)") found CGPM RES (1889)
+[relaton-bipm] (CGPM RES (1889, E)) fetching...
+[relaton-bipm] (CGPM RES (1889, E)) found `CGPM RES (1889)`
 => #<RelatonBipm::BipmBibliographicItem:0x00007f80421f93d8
 ...
 
 RelatonBipm::BipmBibliography.get "CGPM Resolution (1889)"
-[relaton-bipm] ("CGPM Resolution (1889)") fetching...
-[relaton-bipm] ("CGPM Resolution (1889)") found CGPM RES (1889)
+[relaton-bipm] (CGPM Resolution (1889)) fetching...
+[relaton-bipm] (CGPM Resolution (1889)) found `CGPM RES (1889)`
 => #<RelatonBipm::BipmBibliographicItem:0x00007f8017f60c18
 ...
 
 RelatonBipm::BipmBibliography.get "CGPM Résolution (1889)"
-[relaton-bipm] ("CGPM Résolution (1889)") fetching...
-[relaton-bipm] ("CGPM Résolution (1889)") found CGPM RES (1889)
+[relaton-bipm] (CGPM Résolution (1889)) fetching...
+[relaton-bipm] (CGPM Résolution (1889)) found `CGPM RES (1889)`
 => #<RelatonBipm::BipmBibliographicItem:0x00007f8017f492e8
 ...
 
 # get CIPM decision by year and decision number
 RelatonBipm::BipmBibliography.get "BIPM Decision CIPM/101-1 (2012)"
-[relaton-bipm] ("BIPM Decision CIPM/101-1 (2012)") fetching...
-[relaton-bipm] ("BIPM Decision CIPM/101-1 (2012)") found CIPM DECN 101-1 (2012)
+[relaton-bipm] (BIPM Decision CIPM/101-1 (2012)) fetching...
+[relaton-bipm] (BIPM Decision CIPM/101-1 (2012)) found `CIPM DECN 101-1 (2012)`
 => #<RelatonBipm::BipmBibliographicItem:0x00007f8017f2bd88
 ...
 
 RelatonBipm::BipmBibliography.get "BIPM DECN CIPM/101-1 (2012, E)"
-[relaton-bipm] ("BIPM DECN CIPM/101-1 (2012, E)") fetching...
-[relaton-bipm] ("BIPM DECN CIPM/101-1 (2012, E)") found CIPM DECN 101-1 (2012)
+[relaton-bipm] (BIPM DECN CIPM/101-1 (2012, E)) fetching...
+[relaton-bipm] (BIPM DECN CIPM/101-1 (2012, E)) found `CIPM DECN 101-1 (2012)`
 => #<RelatonBipm::BipmBibliographicItem:0x00007f8017f39438
 ...
 
 # get CIPM recommendation
 RelatonBipm::BipmBibliography.get "CIPM Recommendation 1 (2005)"
-[relaton-bipm] ("CIPM Recommendation 1 (2005)") fetching...
-[relaton-bipm] ("CIPM Recommendation 1 (2005)") found CIPM REC 1 (2005)
+[relaton-bipm] (CIPM Recommendation 1 (2005)) fetching...
+[relaton-bipm] (CIPM Recommendation 1 (2005)) found `CIPM REC 1 (2005)`
 => #<RelatonBipm::BipmBibliographicItem:0x00007f8017f31da0
 ...
 
 RelatonBipm::BipmBibliography.get "CIPM REC 1 (2005, FR)"
-[relaton-bipm] ("CIPM REC 1 (2005, FR)") fetching...
-[relaton-bipm] ("CIPM REC 1 (2005, FR)") found CIPM REC 1 (2005)
+[relaton-bipm] (CIPM REC 1 (2005, FR)) fetching...
+[relaton-bipm] (CIPM REC 1 (2005, FR)) found `CIPM REC 1 (2005)`
 => #<RelatonBipm::BipmBibliographicItem:0x00007f80422100d8
 ...
 ----

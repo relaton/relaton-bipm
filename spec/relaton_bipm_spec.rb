@@ -1,4 +1,6 @@
 RSpec.describe RelatonBipm do
+  before { RelatonBipm.instance_variable_set :@configuration, nil }
+
   it "has a version number" do
     expect(RelatonBipm::VERSION).not_to be nil
   end
@@ -235,7 +237,7 @@ RSpec.describe RelatonBipm do
           result = RelatonBipm::BipmBibliography.get "BIPM Metrologia 34 3 999"
           expect(result).to be_nil
         end.to output(
-          /\[relaton-bipm\] \("BIPM Metrologia 34 3 999"\) not found\./,
+          /\[relaton-bipm\] \(BIPM Metrologia 34 3 999\) not found\./,
         ).to_stderr
       end
 
