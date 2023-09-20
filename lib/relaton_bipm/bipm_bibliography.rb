@@ -9,15 +9,15 @@ module RelatonBipm
       # @param text [String]
       # @return [RelatonBipm::BipmBibliographicItem]
       def search(text, _year = nil, _opts = {}) # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
-        warn "[relaton-bipm] (\"#{text}\") fetching..."
+        Util.warn "(#{text}) fetching..."
         ref = text.sub(/^BIPM\s/, "")
         item = get_bipm(ref, magent)
         unless item
-          warn "[relaton-bipm] (\"#{text}\") not found."
+          Util.warn "(#{text}) not found."
           return
         end
 
-        warn("[relaton-bipm] (\"#{text}\") found #{item.docidentifier[0].id}")
+        Util.warn("(#{text}) found `#{item.docidentifier[0].id}`")
         item
       rescue Mechanize::ResponseCodeError => e
         raise RelatonBib::RequestError, e.message unless e.response_code == "404"
