@@ -10,28 +10,22 @@
         },
         "headers": {
           "Accept-Encoding": [
-            "gzip, deflate, br"
+            "gzip,deflate,identity"
           ],
           "Accept": [
-            "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"
+            "*/*"
           ],
           "User-Agent": [
-            "Mozilla/5.0 (Windows; U; Windows NT 5.0; en-US; rv:1.4b) Gecko/20030516 Mozilla Firebird/0.6"
+            "Mechanize/2.8.5 Ruby/3.2.0p0 (http://github.com/sparklemotion/mechanize/)"
           ],
           "Accept-Charset": [
             "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
           ],
           "Accept-Language": [
-            "en-US,en;q=0.9,ru-RU;q=0.8,ru;q=0.7"
+            "en-us,en;q=0.5"
           ],
           "Host": [
             "raw.githubusercontent.com"
-          ],
-          "Cache-Control": [
-            "max-age=0"
-          ],
-          "Upgrade-Insecure-Requests": [
-            "1"
           ],
           "Connection": [
             "keep-alive"
@@ -51,7 +45,7 @@
             "keep-alive"
           ],
           "Content-Length": [
-            "1109"
+            "1089"
           ],
           "Cache-Control": [
             "max-age=300"
@@ -63,7 +57,7 @@
             "text/plain; charset=utf-8"
           ],
           "Etag": [
-            "W/\"8cc6d38719e6bb662bd8c5f5268d145224e4ff604d73d64f1c04346ebcd2006a\""
+            "W/\"796d9225f1d71eec18dfdf0a9547b72690336b0ab2492291a66afa8c570cfe1a\""
           ],
           "Strict-Transport-Security": [
             "max-age=31536000"
@@ -78,7 +72,7 @@
             "1; mode=block"
           ],
           "X-Github-Request-Id": [
-            "488E:063F:3C9B25:495503:6509DF6B"
+            "8EFC:6BAA:1E0747:24AE11:65208514"
           ],
           "Content-Encoding": [
             "gzip"
@@ -87,13 +81,13 @@
             "bytes"
           ],
           "Date": [
-            "Tue, 19 Sep 2023 17:50:38 GMT"
+            "Fri, 06 Oct 2023 22:07:17 GMT"
           ],
           "Via": [
             "1.1 varnish"
           ],
           "X-Served-By": [
-            "cache-pdk-kpdk1780102-PDK"
+            "cache-pdk-kpdk1780121-PDK"
           ],
           "X-Cache": [
             "MISS"
@@ -102,7 +96,7 @@
             "0"
           ],
           "X-Timer": [
-            "S1695145839.848351,VS0,VE99"
+            "S1696630037.408861,VS0,VE91"
           ],
           "Vary": [
             "Authorization,Accept-Encoding,Origin"
@@ -114,10 +108,10 @@
             "cross-origin"
           ],
           "X-Fastly-Request-Id": [
-            "1d92ad2e49fdc25eacef9ffc4ceef5feecc1000f"
+            "f7d0325de52467c72d811db7cfb55e9895b95798"
           ],
           "Expires": [
-            "Tue, 19 Sep 2023 17:55:38 GMT"
+            "Fri, 06 Oct 2023 22:12:17 GMT"
           ],
           "Source-Age": [
             "0"
@@ -125,10 +119,10 @@
         },
         "body": {
           "encoding": "UTF-8",
-          "base64_string": "H4sIAAAAAAAAA+2ZzW7bOBSF934K7pwuKFly4rReNqsCE0zQzSwHlHRlE6M/\nUFTSzBvlOfJivRQl69+WZHuKDmIEcExZPIf3kFcfEkrpInX3EDL6DCLlcbQl\nz5ZhG7cL7m3Jw7enR2qvbJtalrWQXAawXVDixpGESG4Jjso9CQEkj3Yk9onc\nQ37TgpCARbuM7fAGQiiBCN9SV/BE6oE/mFRDfixChjNJ+CHNJGA8as0PRLy/\nZRE6I17WP7cvRs8d8Oifxgr2Uibp1jRfXl4MhyehEYudCZHpxmHIpQRITZfj\nTxKaaIb+beflwMnlawJb4nLJJHqre2qsVXs5JeiLswTrBRgn6MVuFuLl1LRX\nlr0xP1tfVuvbzcpUBVaCRuL5prO5W996/po6mzVQz767o188/57e39t3/nrl\ngH/vHZzhDX2ygr0YOy73mZOlIIrLBq7WDEGySEVkKlvUY5LROJN4CWsQYlq6\nCsXuSimmUvyudiO1jdcwOKinwp2eweW8YYDjvXXjKiooYhfAUxMuMCA8gGi6\nPIbqLKSSPBZn7UaF9Okg8VWfi0TwkIlX3PIig5P1qE8N5Ht5zKZO3bf7jrom\n5lxZrEqUhQ6IYzXBsPIuVRQ1cwKe7kFt1GcWZDi0zDvaakPt9XKhUhfcyWQs\n1E14OFjE/83PmGomhEQsBP1bbQd9w3cR5d9iAfmaCWCZ6n9/Ad/tZUpY5KEt\nluKFNL+32bP0bHkm6lX1Ln2h6F8NxUKDN4Q9SEkScy8lILENH5fLczoqxxxH\nwDOvLZ7UDOhATixljEwmgi2ptyMcFXFQdPNmbGJuJg9lP1WPgSvmgjpcvr+1\n1FUwT2Uwj9cN5uFCwbQjYJncx2KBwvmJah6bSinXyGcv5y1mFBAUhg+hMiH/\n9FHC4Q6XEGoLHdCgdj5e4Ear3seQY26cvajQ1e1FkbmRDmpqRGmpz8aUvJBt\ncmh47tSnd5vPxpYRBtrFGm/gohhTOVUoMyB/dZypXGhsOCOrq+PNca/DsXZx\nR40WyKMXUwcIaveBTzVR7cnUppTx1WsK9nHJDMFjO/vECk9A0kgzPcA0VE2N\nTdpbF53Uqw+f1HgDofQE3Ue2elWP7daOnYFTjULXxmr9vlb4xhdqPfgsxBq2\ncMh9lIW+p3tZ1zZ6jVz2VAt9SKZeJRPoW9popkfPyno0po1c+JS8J6PbsIcL\nB/5w5cD7Yi1wL7/ci3xdJwcPB/W6bk0R6catUI5LbFFPTPBD39cOiqakJ8IW\n5kqsvcc9LAn3OYjSca2pLbGhLcvuh3SpLC8n86Y1hzfJTSIAFRi2vdfyC2Vr\n/k8plNxUI4APgfe33BZ+HrbzqwHV+tWAOsXAJEC9GiFavxEhjvN6OULs/dNY\nNdHlCfEcKJtFiJP/jDbSTB8hDlRzKiGuqX37QYgfhPhBiP97QqyO+m9AiPi5\nkGtKdWSGJDrTIyCp8Z7/pK6M1eIn292G4mUdAAA=\n"
+          "base64_string": "H4sIAAAAAAAAA+1Zy27bMBC86yt4c3qgZMmJ0/rYnAo0aNBLjwUlrWyieoGi\nkqZ/lO/Ij3UpSraetmTH6QMRAthZSTvD2eVyAFNKjczbQMToPYiMJ/GK3Num\nY14a3F+Rm093t9SZOw61bduQXIawMijxklhCLFcEo3JDIgDJ4zVJAiI3ULxk\nEBKyeJ2zNb5ACCUQ40fmCZ5KHfjMpAoFiYgYZpLwU1ppyHjcyg9EPD/lMTIj\nft6fOxCjc4c8/tFYwUbKNFtZ1sPDg+nyNDITsbYgtrwkiriUAJnlcfxLIwvJ\n0O92IQcml48prIjHJZPIrc6psVbN5RBgIE4CrAswCCjYg7nmcpO7eQaivG0i\nrBWBZLHSylKEqM8ko0ku8RaSiVA2Tacsc0ZRnvK7agtqm49RuCWYCW+6GC/H\nDZUcz62rm34uFYkH4KuEhp94uBOQdLUfVFNmktyWTX+hyvNuC/FRN2gqeMTE\nI/aeyOGgHvXUQL5W/T41dV8b7GVNrGNhUZU4j1wQ+zTBYhXjohQ1d0OebcDH\nZPcszDE0K0bLfEGdy5mhqi64m8tEqJdwW7CY/yqaXe1qQmIWgf5W66BP+Cni\n4ikWko+5AJarQfQN+HojM8JiH2mxDG9kxbvN4aGzFTVR126I6BvlIGkglhi8\nAexDRtKE+xkBifNwP1xRp71wzHUF3PPa4kmNgC7IgaWMgclFuCL1QYRRkYTl\nWG2WTRxbk5tqsKl5fMa6IA6Xz08tdFWYu6owt+ctzM0LFaZdApbLTSIMBC52\nVHPb7JAKjCJ7lbfMKCAsCW+LyoT8EiCEy10uIdIUOic+tYt4ee639B48+8lF\nKgARGO7kx+qBdycUufck77LpOgVysYsATrDnp4IW/j9M53APDNLR5qJF7GiD\nUSjfPvMbnDvS9e6Low3HCAJtsfYSOLsB2RHWB/0JYp3dkOznOqxr16CoaGlS\n9GLqRz7ttSq7RLWzpO0rxqvXBOxzEkcA7mutAys8YGtGkumxOENqaqOjuXXN\njrr6DI+KN0yPTtA9ZNW1O2hbHXuEAWoIXYvVZnFN+MYDtSF4kikaprCt+ygK\nfedxpWvbLI1c9lQKfSZKXdUprl9pmykdPanWo43VyIVPqfdkszXM4YULfnPm\ngveVtTRoxe1ek9ZlsuWwRa/j1hDRXng788Uljqg7Jvh27msG5VDSiXCEeRK1\n97mPkvCAg6gY14baDAfarJp+6AdVZDbZITrHOMQ/4QX/WsPn/GnDN4XAJMPX\nIICdl0d4O7Ocue0srff2h/nicjm3VHEUATP1A8tdXi0u/WBB3eUCqO9cXdEP\nfnBNr6+dq2AxdyG49htM8aVX95vOP+Q3x3F9Ob/pvLbfdF7bb3ZXeD6/OaDm\nVL+5pM7izW+++c03v/nf+83dVv8H/KYzM0q4JlQHZgiikx79mYr3/KQ5N+fG\nb496mezuHAAA\n"
         }
       },
-      "recorded_at": "Tue, 19 Sep 2023 17:50:38 GMT"
+      "recorded_at": "Fri, 06 Oct 2023 22:07:17 GMT"
     }
   ],
   "recorded_with": "VCR 6.2.0"

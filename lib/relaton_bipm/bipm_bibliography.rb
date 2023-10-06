@@ -9,9 +9,9 @@ module RelatonBipm
       # @param text [String]
       # @return [RelatonBipm::BipmBibliographicItem]
       def search(text, _year = nil, _opts = {}) # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
-        Util.warn "(#{text}) fetching..."
+        Util.warn "(#{text}) fetching from Relaton repository ..."
         ref = text.sub(/^BIPM\s/, "")
-        item = get_bipm(ref, magent)
+        item = get_bipm ref
         unless item
           Util.warn "(#{text}) not found."
           return
@@ -24,32 +24,34 @@ module RelatonBipm
       end
 
       # @return [Mechanize]
-      def magent # rubocop:disable Metrics/MethodLength
-        a = Mechanize.new
-        a.request_headers = {
-          "Accept" => "text/html,application/xhtml+xml,application/xml;q=0.9," \
-                      "image/avif,image/webp,image/apng," \
-                      "*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
-          "Accept-Encoding" => "gzip, deflate, br",
-          "Accept-Language" => "en-US,en;q=0.9,ru-RU;q=0.8,ru;q=0.7",
-          "Cache-Control" => "max-age=0",
-          "Upgrade-Insecure-Requests" => "1",
-        }
-        a.user_agent_alias = Mechanize::AGENT_ALIASES.map(&:first).shuffle.first
-        # a.user_agent_alias = "Mac Safari"
-        a
-      end
+      # def magent # rubocop:disable Metrics/MethodLength
+      #   a = Mechanize.new
+      #   a.request_headers = {
+      #     "Accept" => "text/html,application/xhtml+xml,application/xml;q=0.9," \
+      #                 "image/avif,image/webp,image/apng," \
+      #                 "*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
+      #     "Accept-Encoding" => "gzip, deflate, br",
+      #     "Accept-Language" => "en-US,en;q=0.9,ru-RU;q=0.8,ru;q=0.7",
+      #     "Cache-Control" => "max-age=0",
+      #     "Upgrade-Insecure-Requests" => "1",
+      #   }
+      #   a.user_agent_alias = Mechanize::AGENT_ALIASES.map(&:first).shuffle.first
+      #   # a.user_agent_alias = "Mac Safari"
+      #   a
+      # end
 
+      #
       # @param reference [String]
-      # @param agent [Mechanize]
+      #
       # @return [RelatonBipm::BipmBibliographicItem]
-      def get_bipm(reference, agent) # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
+      #
+      def get_bipm(reference) # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
         ref_id = Id.new reference
         rows = index.search { |r| ref_id == r[:id] }
         return unless rows.any?
 
         url = "#{GH_ENDPOINT}#{rows.first[:file]}"
-        resp = agent.get url
+        resp = Mechanize.new.get url
         return unless resp.code == "200"
 
         yaml = RelatonBib.parse_yaml resp.body, [Date]

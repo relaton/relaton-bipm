@@ -10,28 +10,22 @@
         },
         "headers": {
           "Accept-Encoding": [
-            "gzip, deflate, br"
+            "gzip,deflate,identity"
           ],
           "Accept": [
-            "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"
+            "*/*"
           ],
           "User-Agent": [
-            "Mozilla/5.0 (Windows NT 6.3; WOW64; rv:43.0) Gecko/20100101 Firefox/43.0"
+            "Mechanize/2.8.5 Ruby/3.2.0p0 (http://github.com/sparklemotion/mechanize/)"
           ],
           "Accept-Charset": [
             "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
           ],
           "Accept-Language": [
-            "en-US,en;q=0.9,ru-RU;q=0.8,ru;q=0.7"
+            "en-us,en;q=0.5"
           ],
           "Host": [
             "raw.githubusercontent.com"
-          ],
-          "Cache-Control": [
-            "max-age=0"
-          ],
-          "Upgrade-Insecure-Requests": [
-            "1"
           ],
           "Connection": [
             "keep-alive"
@@ -63,7 +57,7 @@
             "text/plain; charset=utf-8"
           ],
           "Etag": [
-            "W/\"05b361907940dc1a8b79a50d294031f106bd0a58d9be30b55898242cf8dcada1\""
+            "W/\"61a6e44c5040dbacd9518a507738ece30e2ad305c3775ecab13f7a67c43c5b94\""
           ],
           "Strict-Transport-Security": [
             "max-age=31536000"
@@ -78,7 +72,7 @@
             "1; mode=block"
           ],
           "X-Github-Request-Id": [
-            "418E:046B:4462BA:511E7F:6509DF6F"
+            "C5B0:61B9:20C0B8:27678F:65208515"
           ],
           "Content-Encoding": [
             "gzip"
@@ -87,13 +81,13 @@
             "bytes"
           ],
           "Date": [
-            "Tue, 19 Sep 2023 17:50:39 GMT"
+            "Fri, 06 Oct 2023 22:07:18 GMT"
           ],
           "Via": [
             "1.1 varnish"
           ],
           "X-Served-By": [
-            "cache-pdk-kpdk1780085-PDK"
+            "cache-pdk-kpdk1780081-PDK"
           ],
           "X-Cache": [
             "MISS"
@@ -102,7 +96,7 @@
             "0"
           ],
           "X-Timer": [
-            "S1695145840.564840,VS0,VE105"
+            "S1696630039.607620,VS0,VE93"
           ],
           "Vary": [
             "Authorization,Accept-Encoding,Origin"
@@ -114,10 +108,10 @@
             "cross-origin"
           ],
           "X-Fastly-Request-Id": [
-            "09567fe68324c849c012e760ebe270718580f630"
+            "114ea677ea57bd74f21e224178ae9f4033f6b9ef"
           ],
           "Expires": [
-            "Tue, 19 Sep 2023 17:55:39 GMT"
+            "Fri, 06 Oct 2023 22:12:18 GMT"
           ],
           "Source-Age": [
             "0"
@@ -125,10 +119,10 @@
         },
         "body": {
           "encoding": "UTF-8",
-          "base64_string": "H4sIAAAAAAAAA8XVzW7DIAwA4DtP4RfIfxtpHHebtGp7BUrdDI0AIm61vv0g\n6fqT9ZBJi8LJEGzz+ZIkSVgnP7AVyRF9p6zhcCzSMl0xteOwQfJW20aJKmda\nmU/OEpDWEBri8EHkOp5lyrpOKjQS0xCm1jfZ0epDi1mel3VSVE+rLOQD0Mkh\nh85LNkTCk5Ia2c7K0C2Uvu8JN0nPL++bsHFetcKfOJA/INPCNAfRYExFEyBe\nOYqbV0GG7a1vBRHuPO55yL28e9zhWgagLwTwUyoe9MUAhnKhM35R5rRQhnnU\nguLMQsvhmS6Q3vbh9lZtFWEbKwCMR7nqT8/qGD6Qw3Bp5I/rfgbxZCyN67H2\nUvXWPLygd8d1tQ8fzv5ro7sZ/E1eT5HXs8jrZeXrKfL1LPL1svJiiryYRV4s\nK6+myKtZ5NWy8nKKvJxFXv63PES8/yX8+k3mac6+AWJf6KZCBwAA\n"
+          "base64_string": "H4sIAAAAAAAAA8XVzW7DIAwA4DtP4RfIfxtpHHebtGp7BUrdDI0AIm61vv0g\n6fqT9ZBJi8LJEGzz+ZIkSVgnP7AVyRF9p6zhcCzSMl0xteOwQfJW20aJKmda\nmU/OEpDWEBri8EHkOp5lyrpOKjQS0xCm1jfZ0epDi1mel3VSVE+rLOQD0Mkh\nh85LNkTCk5Ia2c7K0C2Uvu8JN0nPL++bsHFetcKfOJA/INPCNAfRYExFEyBe\nOYqbV0GG7a1vBRHuPO55yL28e9zhWgagLwTwUyoe9MUAhnKhM35R5rRQhnnU\nguLMQsvhmS6Q3vbh9lZtFWEbKwCMR7nqT8/qGD6Qw3Bp5I/rfgbxZCyN67H2\nUvXWPLygd8d1tQ8fzv5ro7sZ/E1eTJEXs8iLZeX1FHk9i7xeVr6eIl/PIl8v\nKy+nyMtZ5OWy8mqKvJpFXv23PES8/yX8+k3mac6+AddC6BdCBwAA\n"
         }
       },
-      "recorded_at": "Tue, 19 Sep 2023 17:50:39 GMT"
+      "recorded_at": "Fri, 06 Oct 2023 22:07:18 GMT"
     }
   ],
   "recorded_with": "VCR 6.2.0"
