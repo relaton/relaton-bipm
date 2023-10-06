@@ -76,7 +76,7 @@ module RelatonBipm
     def initialize(id)
       @id = Parser.new.parse(id)
     rescue Parslet::ParseFailed => e
-      Util.warn "Incorrect reference: `#{id}`"
+      Util.warn "WARNING: Incorrect reference: `#{id}`"
       # warn "[relaton-bipm] #{e.parse_failure_cause.ascii_tree}"
       raise RelatonBib::RequestError, e
     end

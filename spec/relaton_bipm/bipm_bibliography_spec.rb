@@ -2,13 +2,6 @@ require "jing"
 
 RSpec.describe RelatonBipm::BipmBibliography do
   context "raise RequestError" do
-    let(:agent) do
-      agent = double(:agent)
-      expect(agent).to receive(:request_headers=)
-      expect(agent).to receive(:user_agent_alias=)
-      agent
-    end
-
     it "fetch from GitHub" do
       index = double "index"
       expect(index).to receive(:search).and_return [{ path: "data/doc.yaml" }]
@@ -17,6 +10,7 @@ RSpec.describe RelatonBipm::BipmBibliography do
         url: "https://raw.githubusercontent.com/relaton/relaton-data-bipm/master/index2.zip",
         file: "index2.yaml", id_keys: %i[group type number year]
       ).and_return index
+      agent = double(:agent)
       expect(agent).to receive(:get).and_raise Mechanize::ResponseCodeError.new(Mechanize::Page.new)
       expect(Mechanize).to receive(:new).and_return agent
       expect do

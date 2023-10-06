@@ -10,28 +10,22 @@
         },
         "headers": {
           "Accept-Encoding": [
-            "gzip, deflate, br"
+            "gzip,deflate,identity"
           ],
           "Accept": [
-            "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"
+            "*/*"
           ],
           "User-Agent": [
-            "Mozilla/5.0 (iPad; CPU OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1"
+            "Mechanize/2.8.5 Ruby/3.2.0p0 (http://github.com/sparklemotion/mechanize/)"
           ],
           "Accept-Charset": [
             "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
           ],
           "Accept-Language": [
-            "en-US,en;q=0.9,ru-RU;q=0.8,ru;q=0.7"
+            "en-us,en;q=0.5"
           ],
           "Host": [
             "raw.githubusercontent.com"
-          ],
-          "Cache-Control": [
-            "max-age=0"
-          ],
-          "Upgrade-Insecure-Requests": [
-            "1"
           ],
           "Connection": [
             "keep-alive"
@@ -78,7 +72,7 @@
             "1; mode=block"
           ],
           "X-Github-Request-Id": [
-            "0B8E:1A78:41A13D:4E5C0D:6509DF70"
+            "7700:110A:1ECF8F:256B4E:65208517"
           ],
           "Content-Encoding": [
             "gzip"
@@ -87,13 +81,13 @@
             "bytes"
           ],
           "Date": [
-            "Tue, 19 Sep 2023 17:50:41 GMT"
+            "Fri, 06 Oct 2023 22:07:20 GMT"
           ],
           "Via": [
             "1.1 varnish"
           ],
           "X-Served-By": [
-            "cache-pdk-kpdk1780065-PDK"
+            "cache-pdk-kpdk1780080-PDK"
           ],
           "X-Cache": [
             "MISS"
@@ -102,7 +96,7 @@
             "0"
           ],
           "X-Timer": [
-            "S1695145841.919984,VS0,VE156"
+            "S1696630040.950735,VS0,VE155"
           ],
           "Vary": [
             "Authorization,Accept-Encoding,Origin"
@@ -114,10 +108,10 @@
             "cross-origin"
           ],
           "X-Fastly-Request-Id": [
-            "33ab30af6b13eab06bbc848bce4b80f1e2d2dddc"
+            "a7d30b52998faa8e44b0831b77944b0d6547e4eb"
           ],
           "Expires": [
-            "Tue, 19 Sep 2023 17:55:41 GMT"
+            "Fri, 06 Oct 2023 22:12:20 GMT"
           ],
           "Source-Age": [
             "0"
@@ -128,7 +122,7 @@
           "base64_string": "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\nAAA=\n"
         }
       },
-      "recorded_at": "Tue, 19 Sep 2023 17:50:40 GMT"
+      "recorded_at": "Fri, 06 Oct 2023 22:07:19 GMT"
     }
   ],
   "recorded_with": "VCR 6.2.0"
