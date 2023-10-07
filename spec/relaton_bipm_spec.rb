@@ -237,7 +237,7 @@ RSpec.describe RelatonBipm do
           result = RelatonBipm::BipmBibliography.get "BIPM Metrologia 34 3 999"
           expect(result).to be_nil
         end.to output(
-          /\[relaton-bipm\] \(BIPM Metrologia 34 3 999\) not found\./,
+          /\[relaton-bipm\] \(BIPM Metrologia 34 3 999\) Not found\./,
         ).to_stderr
       end
 
