@@ -92,5 +92,11 @@ describe RelatonBipm::Id do
       it_behaves_like "comparing IDs", "Metrologia 12 4", "Metrologia 26 4 E01", false
       it_behaves_like "comparing IDs", "Metrologia 26 4 E01", "Metrologia 26 4 E01"
     end
+
+    it "`CIPM RES 1` should not be equal to `CGPM Resolution (1889)`" do
+      id1 = RelatonBipm::Id.new "CIPM RES 1"
+      id2 = RelatonBipm::Id.new "CGPM Resolution (1889)"
+      expect(id1 == id2).to be false
+    end
   end
 end
