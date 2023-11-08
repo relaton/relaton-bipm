@@ -64,11 +64,11 @@ Allowed document names are:
 
 `BIPM Metrologia {JOURNAL} {VOLUME} {ISSUE}`
 
-- `{JOURNAL}` - journal number, required
+- `{JOURNAL}` - journal number, optional
 - `{VOLUME}` - volume number, optional
 - `{ISSUE}` - issue number, optional
 
-==== Reference structures for CCTF (CCDS), CGPM, CIPM documents
+==== Reference structures for Outcomes documents
 
 ===== Basic pattern
 
@@ -83,7 +83,7 @@ Short:
 {group name} {type-abbrev} {number} ({year}, {lang})
 ----
 
-- `group name` - a name of the group, required. A full list of group names is available https://github.com/metanorma/bipm-editor-guides/blob/main/sources/bipm-outcomes-en.adoc#appendix-a-bipm-groups-and-codes[here].
+- `group name` - a name of the group, required. A full list of group names is available https://github.com/metanorma/bipm-editor-guides/blob/main/sources/bipm-references-en.adoc#appendix-a-bipm-groups-and-codes[here].
 - `type` - a type of document, required. A list of types is: Resolution (Résolution), Recommendation (Recommandation), Decision (Décision), Meeting (Réunion), Declaration (Déclaration).
 - `type-abbrev` - an abbreviation of the type, required. A list of abbreviations: RES (Resolution), REC (Recommendation), DECN (Decision).
 - `number` - a number of the document, optional. Can be with part, e.g. `1-2`.
