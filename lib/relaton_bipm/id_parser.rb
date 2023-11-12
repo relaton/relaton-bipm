@@ -14,7 +14,7 @@ module RelatonBipm
       rule(:lang) { comma >> space? >> match["A-Z"].repeat(1, 2).as(:lang) }
       rule(:lang?) { lang.maybe }
 
-      rule(:numdash) { match["0-9-"].repeat(1).as(:number) }
+      rule(:numdash) { match["A-Z0-9-"].repeat(1).as(:number) }
       rule(:number) { numdash >> space? }
       rule(:number?) { number.maybe }
       rule(:num_suff) { numdash >> match["a-z"].repeat(1, 2) >> space }
@@ -47,7 +47,11 @@ module RelatonBipm
 
       rule(:metrologia) { str("Metrologia").as(:group) >> (space >> match["a-zA-Z0-9\s"].repeat(1).as(:number)).maybe }
 
-      rule(:result) { outcome | brochure | metrologia }
+      rule(:corr) { space >> str("Corrigendum").as(:corr) }
+      rule(:corr?) { corr.maybe }
+      rule(:jcgm) { group >> space >> numdash >> (str(":") >> year).maybe >> corr? }
+
+      rule(:result) { outcome | brochure | metrologia | jcgm }
 
       root :result
     end
@@ -93,7 +97,7 @@ module RelatonBipm
       hash = to_hash
       hash.delete(:number) if other_hash[:number].nil? && hash[:number] == "1" and hash[:year]
       other_hash.delete(:number) if hash[:number].nil? && other_hash[:number] == "1"
-      hash.delete(:year) unless other_hash[:year]
+      # hash.delete(:year) unless other_hash[:year]
       other_hash.delete(:year) unless hash[:year]
       hash.delete(:lang) unless other_hash[:lang]
       other_hash.delete(:lang) unless hash[:lang]
@@ -124,6 +128,7 @@ module RelatonBipm
       norm_num = normalized_number(src)
       hash[:number] = norm_num unless norm_num.nil? || norm_num.empty?
       hash[:year] = src[:year].to_s if src[:year]
+      hash[:corr] = true if src[:corr]
       hash[:lang] = src[:lang].to_s if src[:lang]
       hash
     end
