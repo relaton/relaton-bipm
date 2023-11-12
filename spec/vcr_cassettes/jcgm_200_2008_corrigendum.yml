@@ -1,0 +1,108 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://raw.githubusercontent.com/relaton/relaton-data-bipm/master/static/jcgm/200-2008-corr.yaml
+    body:
+      encoding: US-ASCII
+      base64_string: ''
+    headers:
+      Accept-Encoding:
+      - gzip,deflate,identity
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Mechanize/2.8.5 Ruby/3.2.0p0 (http://github.com/sparklemotion/mechanize/)
+      Accept-Charset:
+      - ISO-8859-1,utf-8;q=0.7,*;q=0.7
+      Accept-Language:
+      - en-us,en;q=0.5
+      Host:
+      - raw.githubusercontent.com
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '300'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1031'
+      Cache-Control:
+      - max-age=300
+      Content-Security-Policy:
+      - default-src 'none'; style-src 'unsafe-inline'; sandbox
+      Content-Type:
+      - text/plain; charset=utf-8
+      Etag:
+      - W/"95b8f678440fd2e97170fea12cab10330a88308d4f32d4d79ecaf0e5d5180982"
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Github-Request-Id:
+      - 7056:1693:9CDB5E:C23466:65510477
+      Content-Encoding:
+      - gzip
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Sun, 12 Nov 2023 16:59:39 GMT
+      Via:
+      - 1.1 varnish
+      X-Served-By:
+      - cache-pdk-kpdk1780111-PDK
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      X-Timer:
+      - S1699808380.659017,VS0,VE91
+      Vary:
+      - Authorization,Accept-Encoding,Origin
+      Access-Control-Allow-Origin:
+      - "*"
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      X-Fastly-Request-Id:
+      - 00dcb1b72300edaf16ba96a6c2eb4fe793f2db94
+      Expires:
+      - Sun, 12 Nov 2023 17:04:39 GMT
+      Source-Age:
+      - '0'
+    body:
+      encoding: UTF-8
+      base64_string: |
+        H4sIAAAAAAAAA+2YzW7bOBDH73oK3tI9yHWDXezCt0RoChc2YqBoe6YoWh6A
+        IlV+OPE+wZ73LfQcepN9kh2KcizZsdrNygUKNEBgm7bmP5zfDDWjOI4jwza8
+        oPGWawNKzsj2zeR68msE2Yy8T94t4+vp1P//ESdKa8i5zFwRWbCCz6KYMCUt
+        l3ZG5viqJbVogwqyVYymTlC9I2pNCm61EirfkX/++pvcUgOMUJkRNMY1/hqN
+        MF5a0yxSYxQDanlG0GJhyKtP8+UvESGCytzRHGUJiQmX+GKYhtKGhQW1fmmt
+        dEHRH8sf7etSUJBdLz+1foHmBHoeZ5wUdRX8BO79TPZerZXMaIHXU/dIuCV5
+        Xcm60u0n7yQ3rdt1dc7ftf5mf+2u5DNiLEaD6izK0G7mY71HQhDHzCMhXSSE
+        hOtu56slfig1FBh+NKwd73rTi1zwYjTT3U2OYBp3Ll2Rcj1kIcNU8dEJdkqX
+        CjAbnqGxLRUOl66up2+m8fS3+Pr3q8hngobUWaX9RUrnVMKfTRJ4LIRIJB3e
+        nU3uW6c5dT6xP3PIN23eLjk1+IVpru3TD9aauPu/QxaEL9pM6Cm2Gsc5akip
+        IDM+7zDpBuUaFoNyNE0130Jn86TjQADyla18i4zTYkYeHh4mKZTFBCOOq1hm
+        bV30semXMrnvXORrinxoy6ddG4dKUDFBpceG+wNE+loW7feXAjP/cD8yFzDq
+        J5YfCQt1dqP0CzgNkHorOMO7n+VsI4HhQqKKAow5hOx0Z729HW+pt6me8MEy
+        qauu7Bd3dFfmg9JPsRyUHqb2NhmbGmcTthmspROQYxQX3o0WPMfV5b7ZukBt
+        zU9qa3nomciirvIDs9Er7H6+XIwMS0EhhmvshWg+ypbJCu/RTXtwU5YCsKdN
+        sNsGY/VIeILQ6ZnHNlAgktLLY7NAvfoXV1cXozP/uLoZvZZcSdl35rPa7HA8
+        GamLO0en9CL+tPu+fFYX4FNehM8dz3Ay3B9siYD2nrQvngbZgqYKf6Tw45Jn
+        wECej95/wnZXV5kf8M70E21tMe+Vh4j8cDWF9hgslKgrFobMi9G8S0YvtjX7
+        X7U2QLMD6oYxjaxsiG2iVNlyHr/JUOVZhlcU3UDIez/8YCVaJ+EwVF2u7ViM
+        f1aKrx2V6E4zK/cH4oN+o9xo7tVanRJNh4c9YHE0X1ENxs/mwXovtvHTUwsP
+        WWmgItfKld4d5ts+a/lT7VOmldwVYbhvt7ZF41Ra043pU9jeKxQL7aO30wwU
+        7xx4eiBPGp9edLspdPSI4hkhlABbV43LTuLM7TQRqJIHMS67z4qeleskyZEc
+        Hl+OWeerIEMxWAPXfredhx0IaHoV8ccG+DPP56aTafQvcgR4S7sTAAA=
+  recorded_at: Sun, 12 Nov 2023 16:59:39 GMT
+recorded_with: VCR 6.2.0
