@@ -159,7 +159,7 @@ module RelatonBipm
       args[:en]["resolutions"].each.with_index do |r, i| # rubocop:disable Metrics/BlockLength
         hash = {
           type: "proceedings", title: [],
-          doctype: r["type"], place: [RelatonBib::Place.new(city: "Paris")]
+          doctype: DocumentType.new(type: r["type"]), place: [RelatonBib::Place.new(city: "Paris")]
         }
         fr_r = args[:fr]["resolutions"].fetch(i, nil)
         hash[:title] = resolution_title r, fr_r
@@ -385,7 +385,7 @@ module RelatonBipm
     #
     def meeting_bibitem(**args) # rubocop:disable Metrics/MethodLength, Metrics/AbcSize, Metrics/CyclomaticComplexity
       docnum = create_meeting_docnum args[:body], args[:type], args[:num], args[:en]["date"]
-      hash = { title: [], type: "proceedings", doctype: args[:type],
+      hash = { title: [], type: "proceedings", doctype: DocumentType.new(type: args[:type]),
                place: [RelatonBib::Place.new(city: "Paris")] }
       hash[:title] = create_titles args.slice(:en, :fr)
       hash[:date] = [{ type: "published", on: args[:en]["date"] }]

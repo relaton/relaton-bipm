@@ -190,7 +190,7 @@ describe RelatonBipm::RawdataBipmMetrologia::ArticleParser do
       expect(contrib[1].entity).to be_instance_of RelatonBib::Organization
       expect(contrib[1].entity.name).to be_instance_of Array
       expect(contrib[1].entity.name[0]).to be_instance_of RelatonBib::LocalizedString
-      expect(contrib[1].entity.name[0].content).to eq "Sentinel-3 L2 Products and Algorithm Team" 
+      expect(contrib[1].entity.name[0].content).to eq "Sentinel-3 L2 Products and Algorithm Team"
     end
 
     it "fullname" do
@@ -326,7 +326,9 @@ describe RelatonBipm::RawdataBipmMetrologia::ArticleParser do
     end
 
     it "parse_doctype" do
-      expect(subject.parse_doctype).to eq "article"
+      doctype = subject.parse_doctype
+      expect(doctype).to be_instance_of RelatonBipm::DocumentType
+      expect(doctype.type).to eq "article"
     end
   end
 end

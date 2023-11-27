@@ -1,5 +1,5 @@
 ---
-schema-version: v1.2.4
+schema-version: v1.2.5
 id: BIPMSIBrochure
 title:
 - content: The International System of Units
@@ -65,7 +65,8 @@ copyright:
     abbreviation:
       content: BIPM
   from: '2019'
-doctype: brochure
+doctype:
+  type: brochure
 editorialgroup:
   committee:
   - acronym: BIPM

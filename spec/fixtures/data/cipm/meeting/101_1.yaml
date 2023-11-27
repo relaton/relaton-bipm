@@ -1,5 +1,5 @@
 ---
-schema-version: v1.2.4
+schema-version: v1.2.5
 id: CIPM-2012-101
 title:
 - content: 101st meeting of the CIPM
@@ -209,13 +209,15 @@ relation:
     - Latn
     place:
     - city: Paris
-    doctype: Meeting
+    doctype:
+      type: Meeting
     structuredidentifier:
       docnumber: '101'
       part: '1'
 place:
 - city: Paris
-doctype: Meeting
+doctype:
+  type: Meeting
 structuredidentifier:
   docnumber: '101'
 ext:

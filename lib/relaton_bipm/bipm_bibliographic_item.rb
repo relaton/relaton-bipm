@@ -2,10 +2,6 @@ module RelatonBipm
   class BipmBibliographicItem < RelatonBib::BibliographicItem
     include RelatonBib
 
-    DOCTYPES = %w[brochure mise-en-pratique rapport monographie guide
-                  meeting-report technical-report working-party-note strategy
-                  cipm-mra resolutions].freeze
-
     STATUSES = %w[draft-proposal draft-development in-force retired].freeze
 
     SI_ASPECTS = %w[
@@ -69,7 +65,7 @@ module RelatonBipm
                               si_aspect || comment_period ||
                               structuredidentifier)
           ext = b.ext do
-            b.doctype doctype if doctype
+            doctype&.to_xml b
             editorialgroup&.to_xml b
             comment_period&.to_xml b
             b.send :"si-aspect", si_aspect if si_aspect

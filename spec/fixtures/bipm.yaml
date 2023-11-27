@@ -1,5 +1,5 @@
 ---
-schema-version: v1.2.4
+schema-version: v1.2.5
 id: Draft-Agenda-NMI-Dir-Meeting-2017-v10
 title:
 - content: 19th Meeting of the Directors of NMIs and Member State Representatives
@@ -296,7 +296,8 @@ keyword:
 - content: Key Word
 license:
 - License
-doctype: brochure
+doctype:
+  type: brochure
 editorialgroup:
   committee:
   - acronym: CGPM

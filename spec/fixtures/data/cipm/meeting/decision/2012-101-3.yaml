@@ -1,5 +1,5 @@
 ---
-schema-version: v1.2.4
+schema-version: v1.2.5
 id: CIPM-DECN-2012-101-3
 title:
 - content: Decision CIPM/101-3 (2012)
@@ -106,7 +106,8 @@ script:
 - Latn
 place:
 - city: Paris
-doctype: decision
+doctype:
+  type: decision
 structuredidentifier:
   docnumber: 101-3
 ext:

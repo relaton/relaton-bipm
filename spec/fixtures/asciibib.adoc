@@ -192,7 +192,7 @@ series.title.variant.content:: Séries
 series.title.variant.language:: fr
 series.title.variant.script:: Latn
 series.title.format:: text/plain
-doctype:: brochure
+doctype.type:: brochure
 keyword:: Keyword
 keyword:: Key Word
 editorialgroup.committee::

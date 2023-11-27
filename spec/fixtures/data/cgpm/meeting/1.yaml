@@ -1,5 +1,5 @@
 ---
-schema-version: v1.2.4
+schema-version: v1.2.5
 id: CGPM-1889-1
 title:
 - content: 1st meeting of the CGPM
@@ -104,7 +104,8 @@ script:
 - Latn
 place:
 - city: Paris
-doctype: Meeting
+doctype:
+  type: Meeting
 structuredidentifier:
   docnumber: '1'
 ext:

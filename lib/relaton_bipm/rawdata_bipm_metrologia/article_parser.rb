@@ -316,7 +316,9 @@ module RelatonBipm
         "article"
       end
 
-      alias_method :parse_doctype, :parse_type
+      def parse_doctype
+        DocumentType.new type: "article"
+      end
     end
   end
 end
