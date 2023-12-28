@@ -1,3 +1,3 @@
 module RelatonBipm
-  VERSION = "1.17.0".freeze
+  VERSION = "1.17.1".freeze
 end

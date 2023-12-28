@@ -28,7 +28,7 @@ require "relaton_bipm/rawdata_bipm_metrologia/article_parser"
 module RelatonBipm
   class Error < StandardError; end
 
-  # Returns hash of XML reammar
+  # Returns hash of gems versions used to generate the data model.
   # @return [String]
   def grammar_hash
     # gem_path = File.expand_path "..", __dir__

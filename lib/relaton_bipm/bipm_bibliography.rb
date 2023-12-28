@@ -50,7 +50,8 @@ module RelatonBipm
         rows = index.search { |r| ref_id == r[:id] }
         return unless rows.any?
 
-        url = "#{GH_ENDPOINT}#{rows.first[:file]}"
+        row = rows.sort_by { |r| r[:id][:year] }.last
+        url = "#{GH_ENDPOINT}#{row[:file]}"
         resp = Mechanize.new.get url
         return unless resp.code == "200"
 

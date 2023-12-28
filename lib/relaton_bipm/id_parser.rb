@@ -94,9 +94,9 @@ module RelatonBipm
     #
     def ==(other) # rubocop:disable Metrics/CyclomaticComplexity,Metrics/PerceivedComplexity,Metrics/AbcSize
       other_hash = other.is_a?(Id) ? other.to_hash : normalize_hash(other)
-      hash = to_hash
-      hash.delete(:number) if other_hash[:number].nil? && hash[:number] == "1" and hash[:year]
-      other_hash.delete(:number) if hash[:number].nil? && other_hash[:number] == "1"
+      hash = to_hash.dup
+      hash.delete(:number) if other_hash[:number].nil? && hash[:number] == "1" && hash[:year]
+      other_hash.delete(:number) if hash[:number].nil? && other_hash[:number] == "1" && other_hash[:year]
       # hash.delete(:year) unless other_hash[:year]
       other_hash.delete(:year) unless hash[:year]
       hash.delete(:lang) unless other_hash[:lang]
