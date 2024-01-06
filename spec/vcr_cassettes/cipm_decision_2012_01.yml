@@ -49,23 +49,23 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Github-Request-Id:
-      - C242:5C0F:3283FA:40314E:658DE0E4
+      - 48E4:052D:231D222:2AD934C:65986630
       Content-Encoding:
       - gzip
       Accept-Ranges:
       - bytes
       Date:
-      - Thu, 28 Dec 2023 20:56:04 GMT
+      - Fri, 05 Jan 2024 20:27:28 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-pdk-kpdk1780065-PDK
+      - cache-pdk-kpdk1780021-PDK
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1703796965.562586,VS0,VE83
+      - S1704486449.601505,VS0,VE93
       Vary:
       - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
@@ -73,9 +73,9 @@ http_interactions:
       Cross-Origin-Resource-Policy:
       - cross-origin
       X-Fastly-Request-Id:
-      - 877298cbbef5b7f1b39be65d4b6cd75d7669f6dc
+      - d897f773d97e3632c9ac0a1346d239abe460bfac
       Expires:
-      - Thu, 28 Dec 2023 21:01:04 GMT
+      - Fri, 05 Jan 2024 20:32:28 GMT
       Source-Age:
       - '0'
     body:
@@ -96,7 +96,7 @@ http_interactions:
         VsNBMU2b+9ecLLatujth3jAvgkP8cL+D3iXmdpuYm7dNzOKVErObAt3yyrpI
         gIOiprJ5QgoYwfvW7+BRDvO8v5AQSz+71Y5Cpw7eH5VdDF0h8tLwcpZAFVTI
         vmhJonFZNhJ8f9GRi0Ia2syz+9EsnkV/AOS0KH07CQAA
-  recorded_at: Thu, 28 Dec 2023 20:56:04 GMT
+  recorded_at: Fri, 05 Jan 2024 20:27:28 GMT
 - request:
     method: get
     uri: https://raw.githubusercontent.com/relaton/relaton-data-bipm/master/data/cipm/meeting/decision/2022-111-10.yaml
@@ -146,23 +146,23 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Github-Request-Id:
-      - DB4A:5B35:359835:434559:658DE0E4
+      - 146E:10D5:4AE4AA:5ACF05:65986630
       Content-Encoding:
       - gzip
       Accept-Ranges:
       - bytes
       Date:
-      - Thu, 28 Dec 2023 20:56:05 GMT
+      - Fri, 05 Jan 2024 20:27:29 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-pdk-kpdk1780075-PDK
+      - cache-pdk-kpdk1780043-PDK
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1703796965.983342,VS0,VE86
+      - S1704486449.006656,VS0,VE90
       Vary:
       - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
@@ -170,9 +170,9 @@ http_interactions:
       Cross-Origin-Resource-Policy:
       - cross-origin
       X-Fastly-Request-Id:
-      - 0e1b46a1010c68feb339525a929a36f698262fe2
+      - f88729a130d143945d1d920ca31889b01b83e61b
       Expires:
-      - Thu, 28 Dec 2023 21:01:05 GMT
+      - Fri, 05 Jan 2024 20:32:29 GMT
       Source-Age:
       - '0'
     body:
@@ -193,5 +193,5 @@ http_interactions:
         o85Ww4ExTZt7bU4Wu5bdnTTvmBfBIb69eYDeJeZql5jL903M4o0S8zAFuuW1
         dZEAB0VNZXOPFDCC953fwaMc6nl/NSGWpnalHYWOHbzfSbsYGkPkpevlLIEq
         qJB90YpE5LJspPjhziM3hiy0mkd3pVk8i/4B6HPhOUcJAAA=
-  recorded_at: Thu, 28 Dec 2023 20:56:04 GMT
+  recorded_at: Fri, 05 Jan 2024 20:27:29 GMT
 recorded_with: VCR 6.2.0
