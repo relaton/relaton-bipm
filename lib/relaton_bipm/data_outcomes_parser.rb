@@ -88,8 +88,7 @@ module RelatonBipm
       if @data_fetcher.files.include?(path) && part
         add_part hash, part
         item = RelatonBipm::BipmBibliographicItem.new(**hash)
-        yaml = RelatonBib.parse_yaml(File.read(path, encoding: "UTF-8"), [Date])
-        has_part_item = RelatonBipm::BipmBibliographicItem.from_hash(yaml)
+        has_part_item = parse_file path
         has_part_item.relation << RelatonBib::DocumentRelation.new(type: "partOf", bibitem: item)
         @data_fetcher.write_file path, has_part_item, warn_duplicate: false
         path = File.join dir, "#{num}-#{part}.#{@data_fetcher.ext}"
@@ -109,6 +108,17 @@ module RelatonBipm
       @data_fetcher.write_file path, item
       add_to_index item, path
       fetch_resolution body: body, en: en, fr: fr, dir: dir, src: src, num: num
+    end
+
+    def parse_file(path)
+        case @data_fetcher.format
+        when "yaml"
+          yaml = RelatonBib.parse_yaml(File.read(path, encoding: "UTF-8"), [Date])
+          RelatonBipm::BipmBibliographicItem.from_hash(yaml)
+        when "xml"
+          xml = File.read(path, encoding: "UTF-8")
+          RelatonBipm::XMLParser.from_xml xml
+        end
     end
 
     #
@@ -348,8 +358,12 @@ module RelatonBipm
     #
     # @return [Hash] title
     #
-    def create_title(content, language)
-      { content: content, language: language, script: "Latn" }
+    def create_title(content, language, format = "text/plain")
+      if language == "fr"
+        content.sub!(/(\d+)(e)/, '\1<sup>\2</sup>')
+        format = "text/html" if content.match?(/<sup>/)
+      end
+      { content: content, language: language, script: "Latn", format: format }
     end
 
     #
@@ -541,11 +555,12 @@ module RelatonBipm
     end
 
     def create_meeting_docids(en_id)
-      fr_id = en_id.sub(/(\d+)(?:st|nd|rd|th)/, '\1e').sub("Meeting", "Réunion")
+      fr_id = en_id.sub(/(\d+)(?:st|nd|rd|th)/, '\1e').sub("Meeting", "réunion")
+      fr_id_sup = fr_id.sub(/(\d+)(e)/, '\1<sup>\2</sup>')
       [
         make_docid(id: en_id, type: "BIPM", primary: true, language: "en", script: "Latn"),
-        make_docid(id: fr_id, type: "BIPM", primary: true, language: "fr", script: "Latn"),
-        make_docid(id: "#{en_id} / #{fr_id}", type: "BIPM", primary: true),
+        make_docid(id: fr_id_sup, type: "BIPM", primary: true, language: "fr", script: "Latn"),
+        make_docid(id: "#{en_id} / #{fr_id_sup}", type: "BIPM", primary: true),
       ]
     end
 
