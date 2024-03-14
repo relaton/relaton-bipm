@@ -1,16 +1,14 @@
 RSpec.describe RelatonBipm::BipmBibliographicItem do
-  before { RelatonBipm.instance_variable_set :@configuration, nil }
-
   it "warn when si_aspect is invalid" do
     expect do
       RelatonBipm::BipmBibliographicItem.new si_aspect: "aspect"
-    end.to output(/\[relaton-bipm\] WARNING: Invalid si_aspect/).to_stderr
+    end.to output(/\[relaton-bipm\] WARN: Invalid si_aspect/).to_stderr_from_any_process
   end
 
   it "warning when docstatus is invalid" do
     expect do
       RelatonBipm::BipmBibliographicItem.new docstatus: RelatonBib::DocumentStatus.new(stage: "status")
-    end.to output(/\[relaton-bipm\] WARNING: Invalid docstatus: `status`/).to_stderr
+    end.to output(/\[relaton-bipm\] WARN: Invalid docstatus: `status`/).to_stderr_from_any_process
   end
 
   context "doctypes" do
@@ -18,7 +16,7 @@ RSpec.describe RelatonBipm::BipmBibliographicItem do
       it do
         expect do
           RelatonBipm::BipmBibliographicItem.new doctype: doctype
-        end.not_to output(/\[relaton-bipm\] WARNING: invalid doctype/).to_stderr
+        end.not_to output(/\[relaton-bipm\] WARNING: invalid doctype/).to_stderr_from_any_process
       end
     end
 

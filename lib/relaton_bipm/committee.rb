@@ -11,7 +11,7 @@ module RelatonBipm
     def initialize(acronym:, content: nil)
       acronyms = YAML.load_file File.join(__dir__, "acronyms.yaml")
       unless acronyms[acronym]
-        Util.warn "WARNING: Invalid acronym: `#{acronym}`. Allowed " \
+        Util.warn "Invalid acronym: `#{acronym}`. Allowed " \
                   "values: `#{acronyms.map { |k, _v| k }.join '`, `'}`"
       end
 

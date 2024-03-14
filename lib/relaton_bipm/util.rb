@@ -1,9 +1,6 @@
 module RelatonBipm
   module Util
     extend RelatonBib::Util
-
-    def self.logger
-      RelatonBipm.configuration.logger
-    end
+    PROGNAME = "relaton-bipm".freeze
   end
 end
