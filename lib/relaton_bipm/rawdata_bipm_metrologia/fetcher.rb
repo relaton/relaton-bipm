@@ -128,7 +128,7 @@ module RelatonBipm
       #
       # Fetch relations
       #
-      # @param (see #fetch_metrologia)
+      # @see #fetch_metrologia
       #
       # @return [Array<RelatonBib::DocumentRelation>] relations
       #
