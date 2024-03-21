@@ -1,12 +1,12 @@
 <bibdata type="standard">
-<title language="en" format="text/plain" type="main">The International System of Units</title>
+<title language="en" format="text/plain" type="title-main">The International System of Units</title>
 
-<title language="en" format="text/plain" type="cover">The International System of Units (SI)</title>
+<title language="en" format="text/plain" type="title-cover">The International System of Units (SI)</title>
 
-<title language="fr" format="text/plain" type="main">Le Système international d’unités</title>
+<title language="fr" format="text/plain" type="title-main">Le Système international d’unités</title>
 
-<title language="fr" format="text/plain" type="cover">Le Système international d’unités (SI)</title>
-<docidentifier type="BIPM">BIPM Brochure</docidentifier><docidentifier type="ISBN">978-92-822-2272-0</docidentifier><docnumber>Brochure</docnumber><contributor><role type="author"/><organization>
+<title language="fr" format="text/plain" type="title-cover">Le Système international d’unités (SI)</title>
+<docidentifier type="BIPM" language="fr">BIPM Brochure Partie 1</docidentifier><docidentifier type="BIPM" language="en">BIPM Brochure Part 1</docidentifier><docidentifier type="ISBN">978-92-822-2272-0</docidentifier><docnumber>Brochure</docnumber><contributor><role type="author"/><organization>
 <name>Bureau international des poids et mesures</name>
 <abbreviation>BIPM</abbreviation></organization></contributor><contributor><role type="publisher"/><organization>
 <name>Bureau international des poids et mesures</name>

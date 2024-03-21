@@ -42,8 +42,9 @@ module RelatonBipm
       rule(:group_num) { group >> space >> num_suff >> type >> year_paren }
       rule(:outcome) { group_num | group_type | type_group }
 
-      rule(:append) { comma >> str("Appendix") >> space >> number }
-      rule(:brochure) { str("SI").as(:group) >> space >> str("Brochure").as(:type) >> append.maybe }
+      rule(:part) { (comma | space) >> (str("Part") | str("Partie")) >> space >> number }
+      rule(:append) { (comma | space) >> (str("Appendix") | str("Annexe")) >> space >> number }
+      rule(:brochure) { str("SI").as(:group) >> space >> str("Brochure").as(:type) >> (part | append).maybe }
 
       rule(:metrologia) { str("Metrologia").as(:group) >> (space >> match["a-zA-Z0-9\s"].repeat(1).as(:number)).maybe }
 
