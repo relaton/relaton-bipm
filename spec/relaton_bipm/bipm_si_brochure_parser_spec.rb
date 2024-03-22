@@ -40,7 +40,7 @@ describe RelatonBipm::BipmSiBrochureParser do
       end
 
       expect(index2).to receive(:add_or_update)
-        .with({group: "SI", type: "Brochure", number: "1" }, "data/si-brochure.yaml").twice
+        .with({group: "SI", type: "Brochure", part: "1" }, "data/si-brochure.yaml").twice
       subject.parse
     end
 

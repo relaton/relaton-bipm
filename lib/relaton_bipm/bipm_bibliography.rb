@@ -46,7 +46,7 @@ module RelatonBipm
       # @return [RelatonBipm::BipmBibliographicItem]
       #
       def get_bipm(reference) # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
-        ref_id = Id.new reference
+        ref_id = Id.new.parse reference
         rows = index.search { |r| ref_id == r[:id] }
         return unless rows.any?
 

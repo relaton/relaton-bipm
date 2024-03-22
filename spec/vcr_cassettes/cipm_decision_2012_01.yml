@@ -49,23 +49,23 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Github-Request-Id:
-      - D724:F2E96:18BAC:1E090:65F49179
+      - 94E0:A23FC:2634EB:29BBD7:65FC45A5
       Content-Encoding:
       - gzip
       Accept-Ranges:
       - bytes
       Date:
-      - Fri, 15 Mar 2024 18:20:41 GMT
+      - Thu, 21 Mar 2024 14:35:17 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-iad-kjyo7100163-IAD
+      - cache-pdk-katl1840065-PDK
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1710526842.785855,VS0,VE66
+      - S1711031718.681442,VS0,VE98
       Vary:
       - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
@@ -73,9 +73,9 @@ http_interactions:
       Cross-Origin-Resource-Policy:
       - cross-origin
       X-Fastly-Request-Id:
-      - 533c5c4a548fc3345589cc9655f85ea2dc6e47ca
+      - 9e833236553a28185af2645c08ee328cb1cc30e8
       Expires:
-      - Fri, 15 Mar 2024 18:25:41 GMT
+      - Thu, 21 Mar 2024 14:40:17 GMT
       Source-Age:
       - '0'
     body:
@@ -96,7 +96,7 @@ http_interactions:
         1XBQTNPm/jUni22r7k6Yd8yL4BA/Puygd4m52ybm9n0Ts3ijxOymQLe8si4S
         4KCoqWyekQJG8L71O3iUwzzvLyTE0s/utKPQqYP3J2UXQ1eIvDS8nCVQBRWy
         L1qSaFyWjQTfX3TkopCGNvPifjSLZ9EfuJC2CDsJAAA=
-  recorded_at: Fri, 15 Mar 2024 18:20:41 GMT
+  recorded_at: Thu, 21 Mar 2024 14:35:17 GMT
 - request:
     method: get
     uri: https://raw.githubusercontent.com/relaton/relaton-data-bipm/master/data/cipm/meeting/decision/2022-111-10.yaml
@@ -146,23 +146,23 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Github-Request-Id:
-      - 1432:6EFF:1B909:20D5F:65F49175
+      - DA50:27A2CF:1F8B9E:230EC8:65FC45A5
       Content-Encoding:
       - gzip
       Accept-Ranges:
       - bytes
       Date:
-      - Fri, 15 Mar 2024 18:20:42 GMT
+      - Thu, 21 Mar 2024 14:35:18 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-iad-kjyo7100036-IAD
+      - cache-pdk-katl1840042-PDK
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1710526842.209952,VS0,VE56
+      - S1711031718.030866,VS0,VE82
       Vary:
       - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
@@ -170,9 +170,9 @@ http_interactions:
       Cross-Origin-Resource-Policy:
       - cross-origin
       X-Fastly-Request-Id:
-      - 546b2cf33c0a8d67ec164749afbaef4e8cdf9fa2
+      - e3ea31d60fbfd9f54a1f166f3a0a232e9d6de9d3
       Expires:
-      - Fri, 15 Mar 2024 18:25:42 GMT
+      - Thu, 21 Mar 2024 14:40:18 GMT
       Source-Age:
       - '0'
     body:
@@ -193,5 +193,5 @@ http_interactions:
         o85Ww4ExTZt7bU4Wu5bdnTTvmBfBIb69eYDeJeZql5jL903M4o0S8zAFuuW1
         dZEAB0VNZXOPFDCC953fwaMc6nl/NSGWpnalHYWOHbzfSbsYGkPkpevlLIEq
         qJB90YpE5LJspPjhziM3hiy0mkd3pVk8i/4B8KaDU0cJAAA=
-  recorded_at: Fri, 15 Mar 2024 18:20:42 GMT
+  recorded_at: Thu, 21 Mar 2024 14:35:18 GMT
 recorded_with: VCR 6.2.0
