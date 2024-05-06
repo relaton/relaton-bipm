@@ -33,7 +33,7 @@ module RelatonBipm
           item = ArticleParser.parse path
           file = "#{item.docidentifier.first.id.downcase.gsub(' ', '-')}.#{@data_fetcher.ext}"
           out_path = File.join(@data_fetcher.output, file)
-          key = Id.new.parse(item.docidentifier.first.id).to_hash
+          key = Id.new.parse(item.docidentifier.first.id).to_h
           @data_fetcher.index2.add_or_update key, out_path
           @data_fetcher.write_file out_path, item
         end
@@ -76,7 +76,7 @@ module RelatonBipm
         )
         file = "#{id.downcase.gsub(' ', '-')}.#{@data_fetcher.ext}"
         path = File.join(@data_fetcher.output, file)
-        @data_fetcher.index2.add_or_update Id.new.parse(id).to_hash, path
+        @data_fetcher.index2.add_or_update Id.new.parse(id).to_h, path
         @data_fetcher.write_file path, item
       end
 
@@ -88,7 +88,7 @@ module RelatonBipm
       # @return [RelatonBib::FormattedRef] formattedref
       #
       def formattedref(id)
-        RelatonBib::FormattedRef.new content: id, language: "en", script: "Latn"
+        RelatonBib::FormattedRef.new id
       end
 
       #

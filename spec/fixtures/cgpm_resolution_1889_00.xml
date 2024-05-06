@@ -1,7 +1,7 @@
-<bibdata type="proceedings" schema-version="v1.2.8">
+<bibdata type="proceedings" schema-version="v1.3.0">
   <fetched>2023-05-12</fetched>
-  <title format="text/plain" language="en" script="Latn">Sanction of the international prototypes of the metre and the kilogram</title>
-  <title format="text/plain" language="fr" script="Latn">Sanction des prototypes internationaux du mètre et du kilogramme</title>
+  <title language="en" script="Latn">Sanction of the international prototypes of the metre and the kilogram</title>
+  <title language="fr" script="Latn">Sanction des prototypes internationaux du mètre et du kilogramme</title>
   <uri type="citation" language="en" script="Latn">https://www.bipm.org/en/committees/cg/cgpm/1-1889/resolution-</uri>
   <uri type="citation" language="fr" script="Latn">https://www.bipm.org/fr/committees/cg/cgpm/1-1889/resolution-1</uri>
   <uri type="src" language="en" script="Latn">https://raw.githubusercontent.com/metanorma/bipm-data-outcomes/main/cgpm/meetings-en/meeting-01.yml</uri>
@@ -40,7 +40,7 @@
   <place>
     <city>Paris</city>
   </place>
-  <ext schema-version="v1.0.0">
+  <ext schema-version="v1.0.1">
     <doctype>resolution</doctype>
     <structuredidentifier>
       <docnumber>0</docnumber>

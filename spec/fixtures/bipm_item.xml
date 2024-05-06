@@ -1,6 +1,6 @@
-<bibdata type="standard" schema-version="v1.2.8">
+<bibdata type="standard" schema-version="v1.3.0">
   <fetched>2020-09-10</fetched>
-  <title format="text/plain">19th Meeting of the Directors of NMIs and Member State Representatives</title>
+  <title>19th Meeting of the Directors of NMIs and Member State Representatives</title>
   <uri type="obp">http://www.bipm.org/cc/PARTNERS/Allowed/2017_October/2017-09-04-Draft-Agenda-NMI-Dir-Meeting-2017-v10.pdf</uri>
   <docidentifier type="BIPM">2017-09-04-Draft-Agenda-NMI-Dir-Meeting-2017-v10</docidentifier>
   <docnumber>Draft-Agenda-NMI-Dir-Meeting-2017-v10</docnumber>
@@ -20,7 +20,9 @@
     </role>
     <organization>
       <name>International Organization for Standardization</name>
-      <subdivision>division</subdivision>
+      <subdivision type="division">
+        <name>IEC</name>
+      </subdivision>
       <abbreviation>ISO</abbreviation>
       <uri>www.iso.org</uri>
     </organization>
@@ -107,8 +109,8 @@
   <language>en</language>
   <language>fr</language>
   <script>Latn</script>
-  <abstract format="text/plain" language="en" script="Latn">The agenda for the first day addresses current issues relating to the BIPM and CIPM and also includes advanced information about plans for the 26th CGPM in 2018.</abstract>
-  <abstract format="text/plain" language="fr" script="Latn">Conférence générale des poids et mesures</abstract>
+  <abstract language="en" script="Latn">The agenda for the first day addresses current issues relating to the BIPM and CIPM and also includes advanced information about plans for the 26th CGPM in 2018.</abstract>
+  <abstract language="fr" script="Latn">Conférence générale des poids et mesures</abstract>
   <status>
     <stage>in-force</stage>
   </status>
@@ -126,7 +128,7 @@
   </copyright>
   <relation type="obsoletes">
     <bibitem>
-      <formattedref format="text/plain">ISO 19115:2003</formattedref>
+      <formattedref>ISO 19115:2003</formattedref>
     </bibitem>
     <localityStack>
       <locality type="section">
@@ -151,13 +153,13 @@
     </sourceLocalityStack>
   </relation>
   <relation type="obsoletedBy">
-    <description format="text/plain">Obsoleted by</description>
+    <description>Obsoleted by</description>
     <bibitem type="standard">
-      <formattedref format="text/plain">ISO 19115:2003/Cor 1:2006</formattedref>
+      <formattedref>ISO 19115:2003/Cor 1:2006</formattedref>
     </bibitem>
   </relation>
   <series type="main">
-    <title type="original" format="text/plain" language="en" script="Latn">ISO/IEC FDIS 10118-3</title>
+    <title type="original" language="en" script="Latn">ISO/IEC FDIS 10118-3</title>
     <place>Serie's place</place>
     <organization>Serie's organization</organization>
     <abbreviation>ABVR</abbreviation>
@@ -167,18 +169,15 @@
     <partnumber>part5678</partnumber>
   </series>
   <series type="alt">
-    <formattedref format="text/plain" language="en" script="Latn">serieref</formattedref>
-    <title format="text/plain">Series Title</title>
+    <formattedref>serieref</formattedref>
+    <title>Series Title</title>
   </series>
   <series type="alt">
-    <title format="text/plain">Journal</title>
+    <title>Journal</title>
     <number>7</number>
   </series>
   <series>
-    <title format="text/plain">
-      <variant language="en" script="Latn">Series</variant>
-      <variant language="fr" script="Latn">Séries</variant>
-    </title>
+    <title language="en" script="Latn">Series</title>
   </series>
   <medium>
     <form>medium form</form>
@@ -225,7 +224,7 @@
     <validityEnds>2011-02-03 18:30</validityEnds>
     <revision>2011-03-04 09:00</revision>
   </validity>
-  <ext schema-version="v1.0.0">
+  <ext schema-version="v1.0.1">
     <doctype>brochure</doctype>
     <editorialgroup>
       <committee acronym="CGPM">

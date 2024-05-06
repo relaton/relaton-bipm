@@ -230,7 +230,7 @@ module RelatonBipm
     # @param [String] path path to YAML file
     #
     def add_to_index(item, path) # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
-      key = Id.new.parse(item.docnumber).to_hash
+      key = Id.new.parse(item.docnumber).to_h
       @data_fetcher.index2.add_or_update key, path
     end
 
@@ -363,8 +363,8 @@ module RelatonBipm
       hash[:id] += "-#{part}"
       hash[:docnumber].sub!(regex) { |m| "#{m}-#{part}" }
       hash[:docid].select { |id| id.type == "BIPM" }.each do |did|
-        did.instance_variable_get(:@id).sub!(regex) { "#{$1}-#{part}" }
-        # did.instance_variable_set(:@id, id)
+        # did.instance_variable_get(:@id).sub!(regex) { "#{$1}-#{part}" }
+        did.id = did.id.to_s.sub(regex) { "#{$1}-#{part}" }
       end
       hash[:structuredidentifier].instance_variable_set :@part, part
     end

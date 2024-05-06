@@ -67,7 +67,7 @@ module RelatonBipm
     def serialize(item)
       case @format
       when "xml" then item.to_xml bibdata: true
-      when "yaml" then item.to_hash.to_yaml
+      when "yaml" then item.to_h.to_yaml
       when "bibxml" then item.to_bibxml
       end
     end

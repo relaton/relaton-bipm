@@ -1,5 +1,5 @@
 ---
-schema-version: v1.2.8
+schema-version: v1.3.0
 id: CIPM-2012-101
 title:
 - content: 101st meeting of the CIPM
@@ -7,13 +7,11 @@ title:
   - en
   script:
   - Latn
-  format: text/plain
 - content: 101e réunion du CIPM
   language:
   - fr
   script:
   - Latn
-  format: text/plain
 link:
 - content: https://www.bipm.org/en/committees/ci/cipm/101-_1-2012
   type: citation
@@ -112,13 +110,11 @@ relation:
       - en
       script:
       - Latn
-      format: text/plain
     - content: 101e réunion du CIPM (Partie I)
       language:
       - fr
       script:
       - Latn
-      format: text/plain
     link:
     - content: https://www.bipm.org/en/committees/ci/cipm/101-_1-2012
       type: citation
@@ -221,4 +217,4 @@ doctype:
 structuredidentifier:
   docnumber: '101'
 ext:
-  schema-version: v1.0.0
+  schema-version: v1.0.1

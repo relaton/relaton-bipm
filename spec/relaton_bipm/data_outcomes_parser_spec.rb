@@ -77,7 +77,7 @@ describe RelatonBipm::DataOutcomesParser do
       it "no part" do
         expect(data_fetcher).to receive(:write_file) do |path, item|
           expect(path).to eq "data/cgpm/meeting/1.yaml"
-          hash = item.to_hash
+          hash = item.to_h
           file = "spec/fixtures/#{path}"
           File.write file, hash.to_yaml, encoding: "UTF-8" unless File.exist? file
           yaml = YAML.load_file(file)
@@ -107,7 +107,7 @@ describe RelatonBipm::DataOutcomesParser do
               expect(args[:warn_duplicate]).to be item.relation.empty? && nil
               file = "spec/fixtures/#{path}"
             end
-            hash = item.to_hash
+            hash = item.to_h
             File.write file, hash.to_yaml, encoding: "UTF-8" unless File.exist? file
             yaml = YAML.load_file(file)
             expect(hash).to eq yaml
@@ -132,7 +132,7 @@ describe RelatonBipm::DataOutcomesParser do
         expect(FileUtils).to receive(:mkdir_p).with("data/cgpm/meeting/resolution")
         expect(data_fetcher).to receive(:write_file) do |path, item|
           expect(path).to eq "data/cgpm/meeting/resolution/1889-00.yaml"
-          hash = item.to_hash
+          hash = item.to_h
           file = "spec/fixtures/#{path}"
           File.write file, hash.to_yaml, encoding: "UTF-8" unless File.exist? file
           yaml = YAML.load_file(file)
@@ -155,7 +155,7 @@ describe RelatonBipm::DataOutcomesParser do
         expect(FileUtils).to receive(:mkdir_p).with("data/cipm/meeting/decision").exactly(40).times
         expect(data_fetcher).to receive(:write_file) do |path, item|
           expect(path).to match(/data\/cipm\/meeting\/decision\/\d{4}-[\d-]{2,6}\.yaml/)
-          hash = item.to_hash
+          hash = item.to_h
           file = "spec/fixtures/#{path}"
           File.write file, hash.to_yaml, encoding: "UTF-8" unless File.exist? file
           yaml = YAML.load_file(file)

@@ -35,10 +35,10 @@ module RelatonBipm
     end
 
     # @return [Hash]
-    def to_hash
+    def to_h
       hash = {}
-      hash["committee"] = single_element_array(committee) if committee.any?
-      hash["workgroup"] = single_element_array(workgroup) if workgroup.any?
+      hash["committee"] = committee.map(&:to_h) if committee.any?
+      hash["workgroup"] = workgroup.map(&:to_h) if workgroup.any?
       hash
     end
 

@@ -84,9 +84,9 @@ module RelatonBipm
     #
     # @return [Hash] document as Hash
     #
-    def to_hash(embedded: false)
+    def to_h(embedded: false)
       hash = super
-      hash["comment_period"] = comment_period.to_hash if comment_period
+      hash["comment_period"] = comment_period.to_h if comment_period
       hash["si_aspect"] = si_aspect if si_aspect
       hash["meeting_note"] = meeting_note if meeting_note
       hash

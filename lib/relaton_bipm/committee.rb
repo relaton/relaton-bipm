@@ -36,9 +36,9 @@ module RelatonBipm
     end
 
     # @return [Hash]
-    def to_hash
+    def to_h
       hash = { "acronym" => acronym }
-      cnt = content.to_hash
+      cnt = content.to_h
       case cnt
       when Array then hash["variants"] = cnt
       when Hash then hash.merge! cnt

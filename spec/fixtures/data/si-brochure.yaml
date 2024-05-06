@@ -1,26 +1,22 @@
 ---
-schema-version: v1.2.8
+schema-version: v1.3.0
 id: BIPMSIBrochurePart1
 title:
 - content: The International System of Units
   language:
   - en
-  format: text/plain
   type: title-main
 - content: The International System of Units (SI)
   language:
   - en
-  format: text/plain
   type: title-cover
 - content: Le Système international d’unités
   language:
   - fr
-  format: text/plain
   type: title-main
 - content: Le Système international d’unités (SI)
   language:
   - fr
-  format: text/plain
   type: title-cover
 type: standard
 docid:
@@ -66,10 +62,11 @@ docstatus:
     value: in-force
 copyright:
 - owner:
-  - name:
-    - content: Bureau international des poids et mesures
-    abbreviation:
-      content: BIPM
+  - organization:
+      name:
+      - content: Bureau international des poids et mesures
+      abbreviation:
+        content: BIPM
   from: '2019'
 doctype:
   type: brochure
@@ -91,5 +88,5 @@ structuredidentifier:
   docnumber: Brochure
   part: '1'
 ext:
-  schema-version: v1.0.0
+  schema-version: v1.0.1
 si_aspect: full
