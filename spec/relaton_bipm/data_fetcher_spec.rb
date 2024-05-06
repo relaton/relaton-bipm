@@ -53,7 +53,7 @@ describe RelatonBipm::DataFetcher do
         item = double "item"
         hash = double "hash"
         expect(hash).to receive(:to_yaml).and_return :yaml
-        expect(item).to receive(:to_hash).and_return hash
+        expect(item).to receive(:to_h).and_return hash
         item
       end
 
@@ -92,7 +92,7 @@ describe RelatonBipm::DataFetcher do
       end
 
       it "yaml" do
-        item = double "item", to_hash: {}
+        item = double "item", to_h: {}
         expect(subject.serialize(item)).to eq "--- {}\n"
       end
 

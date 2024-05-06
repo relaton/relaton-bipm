@@ -118,7 +118,7 @@ module RelatonBipm
       def parse_contributor
         @meta.xpath("./contrib-group/contrib").map do |c|
           entity = create_person(c) || create_organization(c)
-          RelatonBib::ContributionInfo.new(entity: entity, role: [type: c[:"contrib-type"]])
+          RelatonBib::Contributor.new(entity: entity, role: [type: c[:"contrib-type"]])
         end
       end
 
@@ -235,7 +235,7 @@ module RelatonBipm
           owner = l.at("./copyright-statement").text.split(" & ").map do |c|
             /(?<name>[A-z]+(?:\s[A-z]+)*)/ =~ c
             org = RelatonBib::Organization.new name: name
-            RelatonBib::ContributionInfo.new(entity: org)
+            RelatonBib::Contributor.new(entity: org)
           end
           m << RelatonBib::CopyrightAssociation.new(owner: owner, from: from.text)
         end

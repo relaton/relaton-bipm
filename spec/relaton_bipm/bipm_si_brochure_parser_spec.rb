@@ -29,7 +29,7 @@ describe RelatonBipm::BipmSiBrochureParser do
             else
               "spec/fixtures/#{path}"
             end
-        hash = item.to_hash
+        hash = item.to_h
         File.write p, hash.to_yaml, encoding: "UTF-8" unless File.exist? p
         yaml = YAML.load_file(p)
         expect(hash).to eq yaml

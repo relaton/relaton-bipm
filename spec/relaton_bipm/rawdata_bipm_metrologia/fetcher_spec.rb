@@ -72,9 +72,7 @@ describe RelatonBipm::RawdataBipmMetrologia::Fetcher do
     it "formattedref" do
       fr = subject.formattedref("Metrologia 1A")
       expect(fr).to be_instance_of RelatonBib::FormattedRef
-      expect(fr.content).to eq "Metrologia 1A"
-      expect(fr.language).to eq ["en"]
-      expect(fr.script).to eq ["Latn"]
+      expect(fr.to_s).to eq "Metrologia 1A"
     end
 
     it "docidentifier" do
@@ -101,9 +99,7 @@ describe RelatonBipm::RawdataBipmMetrologia::Fetcher do
       expect(rel[0].bibitem.docidentifier[0].type).to eq "BIPM"
       expect(rel[0].bibitem.docidentifier[0].primary).to be true
       expect(rel[0].bibitem.formattedref).to be_instance_of RelatonBib::FormattedRef
-      expect(rel[0].bibitem.formattedref.content).to eq "Metrologia 1 2 3"
-      expect(rel[0].bibitem.formattedref.language).to eq ["en"]
-      expect(rel[0].bibitem.formattedref.script).to eq ["Latn"]
+      expect(rel[0].bibitem.formattedref.to_s).to eq "Metrologia 1 2 3"
     end
 
     context "typed_uri" do

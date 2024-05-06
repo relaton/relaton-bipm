@@ -1,9 +1,8 @@
 ---
-schema-version: v1.2.8
+schema-version: v1.3.0
 id: Draft-Agenda-NMI-Dir-Meeting-2017-v10
 title:
 - content: 19th Meeting of the Directors of NMIs and Member State Representatives
-  format: text/plain
 link:
 - content: http://www.bipm.org/cc/PARTNERS/Allowed/2017_October/2017-09-04-Draft-Agenda-NMI-Dir-Meeting-2017-v10.pdf
   type: obp
@@ -27,7 +26,10 @@ contributor:
     abbreviation:
       content: ISO
     subdivision:
-    - content: division
+      - type: division
+        organization:
+          name:
+          - content: IEC
     url: www.iso.org
   role:
   - description:
@@ -151,32 +153,29 @@ abstract:
   - en
   script:
   - Latn
-  format: text/plain
 - content: Conférence générale des poids et mesures
   language:
   - fr
   script:
   - Latn
-  format: text/plain
 docstatus:
   stage:
     value: in-force
 copyright:
 - owner:
-  - name:
-    - content: International Organization for Standardization
-    abbreviation:
-      content: ISO
-    url: www.iso.org
+  - organization:
+      name:
+      - content: International Organization for Standardization
+      abbreviation:
+        content: ISO
+      url: www.iso.org
   from: '2014'
   to: '2020'
   scope: Scope
 relation:
 - type: obsoletes
   bibitem:
-    formattedref:
-      content: ISO 19115:2003
-      format: text/plain
+    formattedref: ISO 19115:2003
   locality:
   - locality_stack:
     - locality:
@@ -198,12 +197,9 @@ relation:
 - type: obsoletedBy
   bibitem:
     type: standard
-    formattedref:
-      content: ISO 19115:2003/Cor 1:2006
-      format: text/plain
+    formattedref: ISO 19115:2003/Cor 1:2006
   description:
     content: Obsoleted by
-    format: text/plain
 series:
 - type: main
   title:
@@ -212,7 +208,6 @@ series:
     - en
     script:
     - Latn
-    format: text/plain
     type: original
   place: Serie's place
   organization: Serie's organization
@@ -223,34 +218,19 @@ series:
   number: serie1234
   partnumber: part5678
 - type: alt
-  formattedref:
-    content: serieref
+  formattedref: serieref
+  title:
+    content: Series Title
+- type: alt
+  title:
+    content: Journal
+  number: '7'
+- title:
+    content: Series
     language:
     - en
     script:
     - Latn
-    format: text/plain
-  title:
-    content: Series Title
-    format: text/plain
-- type: alt
-  title:
-    content: Journal
-    format: text/plain
-  number: '7'
-- title:
-    content:
-    - content: Series
-      language:
-      - en
-      script:
-      - Latn
-    - content: Séries
-      language:
-      - fr
-      script:
-      - Latn
-    format: text/plain
 medium:
   form: medium form
   size: medium size
@@ -325,7 +305,7 @@ structuredidentifier:
   part: '1'
   appendix: A
 ext:
-  schema-version: v1.0.0
+  schema-version: v1.0.1
 comment_period:
   from: '2011-01-01'
   to: '2011-12-31'

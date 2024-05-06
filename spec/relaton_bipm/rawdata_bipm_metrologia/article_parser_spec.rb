@@ -135,9 +135,9 @@ describe RelatonBipm::RawdataBipmMetrologia::ArticleParser do
       expect(title).to be_instance_of Array
       expect(title.size).to eq 1
       expect(title[0]).to be_instance_of RelatonBib::TypedTitleString
-      expect(title[0].title.content).to eq "Title"
-      expect(title[0].title.language).to eq ["en"]
-      expect(title[0].title.script).to eq ["Latn"]
+      expect(title[0].to_s).to eq "Title"
+      expect(title[0].language).to eq ["en"]
+      expect(title[0].script).to eq ["Latn"]
     end
 
     it "parse_contrib" do
@@ -168,7 +168,7 @@ describe RelatonBipm::RawdataBipmMetrologia::ArticleParser do
       contrib = subject.parse_contributor
       expect(contrib).to be_instance_of Array
       expect(contrib.size).to eq 2
-      expect(contrib[0]).to be_instance_of RelatonBib::ContributionInfo
+      expect(contrib[0]).to be_instance_of RelatonBib::Contributor
       expect(contrib[0].role).to be_instance_of Array
       expect(contrib[0].role[0].type).to eq "author"
       expect(contrib[0].entity).to be_instance_of RelatonBib::Person
@@ -251,7 +251,7 @@ describe RelatonBipm::RawdataBipmMetrologia::ArticleParser do
       expect(copyright[0]).to be_instance_of RelatonBib::CopyrightAssociation
       expect(copyright[0].owner).to be_instance_of Array
       expect(copyright[0].owner.size).to eq 2
-      expect(copyright[0].owner[0]).to be_instance_of RelatonBib::ContributionInfo
+      expect(copyright[0].owner[0]).to be_instance_of RelatonBib::Contributor
       expect(copyright[0].owner[0].entity).to be_instance_of RelatonBib::Organization
       expect(copyright[0].owner[0].entity.name).to be_instance_of Array
       expect(copyright[0].owner[0].entity.name[0]).to be_instance_of RelatonBib::LocalizedString
@@ -303,7 +303,7 @@ describe RelatonBipm::RawdataBipmMetrologia::ArticleParser do
       expect(series.size).to eq 1
       expect(series[0]).to be_instance_of RelatonBib::Series
       expect(series[0].title).to be_instance_of RelatonBib::TypedTitleString
-      expect(series[0].title.title.content).to eq "Metrologia"
+      expect(series[0].title.to_s).to eq "Metrologia"
     end
 
     it "parse_extent" do

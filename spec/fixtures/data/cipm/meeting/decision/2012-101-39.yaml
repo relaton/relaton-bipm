@@ -1,5 +1,5 @@
 ---
-schema-version: v1.2.8
+schema-version: v1.3.0
 id: CIPM-DECN-2012-101-39
 title:
 - content: Decision CIPM/101-39 (2012)
@@ -7,13 +7,11 @@ title:
   - en
   script:
   - Latn
-  format: text/plain
 - content: Décision CIPM/101-39 (2012)
   language:
   - fr
   script:
   - Latn
-  format: text/plain
 link:
 - content: https://www.bipm.org/en/committees/ci/cipm/101-_1-2012
   type: citation
@@ -111,4 +109,4 @@ doctype:
 structuredidentifier:
   docnumber: 101-39
 ext:
-  schema-version: v1.0.0
+  schema-version: v1.0.1

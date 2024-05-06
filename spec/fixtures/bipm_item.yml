@@ -56,13 +56,16 @@ contributor:
       name: International Organization for Standardization
       url: www.iso.org
       abbreviation: ISO
-      subdivision: division
+      subdivision:
+        type: division
+        organization:
+          name: IEC
     role:
       type: publisher
       description: Publisher role
   - person:
-      name: 
-        completename: 
+      name:
+        completename:
           content: A. Bierman
           language: en
       affiliation:
@@ -135,7 +138,7 @@ contributor:
     role:
       type: distributor
       description: sponsor
- 
+
 copyright:
   owner:
     name: International Organization for Standardization
@@ -203,13 +206,9 @@ series:
       content: Journal
     number: "7"
   - title:
-      content:
-        - content: Series
-          language: en
-          script: Latn
-        - content: Séries
-          language: fr
-          script: Latn
+      content: Series
+      language: en
+      script: Latn
 
 medium:
   form: medium form

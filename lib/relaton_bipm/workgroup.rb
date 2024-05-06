@@ -34,7 +34,7 @@ module RelatonBipm
     end
 
     # @return [Hash, String]
-    def to_hash
+    def to_h
       if acronym
         hash = { "content" => content }
         hash["acronym"] = acronym

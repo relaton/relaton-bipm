@@ -178,8 +178,8 @@ module RelatonBipm
     # @return [Boolean] true if the two Id objects are equal
     #
     def ==(other) # rubocop:disable Metrics/CyclomaticComplexity,Metrics/PerceivedComplexity,Metrics/AbcSize
-      other_hash = other.is_a?(Id) ? other.to_hash : normalize_hash(other)
-      hash = to_hash.dup
+      other_hash = other.is_a?(Id) ? other.to_h : normalize_hash(other)
+      hash = to_h.dup
       hash.delete(:number) if other_hash[:number].nil? && hash[:number] == "1" && hash[:year]
       other_hash.delete(:number) if hash[:number].nil? && other_hash[:number] == "1" && other_hash[:year]
       # hash.delete(:year) unless other_hash[:year]
@@ -195,8 +195,8 @@ module RelatonBipm
     #
     # @return [Hash] the normalized ID parts
     #
-    def to_hash
-      @to_hash ||= normalize_hash id
+    def to_h
+      @to_h ||= normalize_hash id
     end
 
     #

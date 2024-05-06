@@ -1,6 +1,6 @@
-<bibdata type="proceedings" schema-version="v1.2.8">
+<bibdata type="proceedings" schema-version="v1.3.0">
   <fetched>2023-05-12</fetched>
-  <title format="text/plain" language="en" script="Latn">Signes abréviatifs pour les poids et mesures métriques</title>
+  <title language="en" script="Latn">Signes abréviatifs pour les poids et mesures métriques</title>
   <uri type="citation" language="en" script="Latn">https://www.bipm.org/en/committees/ci/cipm/4-1879/resolution-</uri>
   <uri type="src" language="en" script="Latn">https://raw.githubusercontent.com/metanorma/bipm-data-outcomes/main/cipm/meetings-en/meeting-4.yml</uri>
   <uri type="src" language="fr" script="Latn">https://raw.githubusercontent.com/metanorma/bipm-data-outcomes/main/cipm/meetings-fr/meeting-4.yml</uri>
@@ -38,7 +38,7 @@
   <place>
     <city>Paris</city>
   </place>
-  <ext schema-version="v1.0.0">
+  <ext schema-version="v1.0.1">
     <doctype>resolution</doctype>
     <structuredidentifier>
       <docnumber>0</docnumber>

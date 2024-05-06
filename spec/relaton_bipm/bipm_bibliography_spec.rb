@@ -37,7 +37,7 @@ RSpec.describe RelatonBipm::BipmBibliography do
     end
 
     it "returns Hash" do
-      hash = subject.to_hash
+      hash = subject.to_h
       file = "spec/fixtures/bipm.yaml"
       File.write file, hash.to_yaml, encoding: "UTF-8" unless File.exist? file
       expect(hash).to eq YAML.load_file file

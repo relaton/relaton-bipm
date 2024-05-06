@@ -25,7 +25,7 @@ module RelatonBipm
     end
 
     # @return [Hash]
-    def to_hash
+    def to_h
       hash = { "docnumber" => docnumber }
       hash["part"] = part if part
       hash["appendix"] = appendix if appendix

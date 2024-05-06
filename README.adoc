@@ -293,7 +293,7 @@ item.to_xml bibdata: true
       <title type="cover" format="text/plain" language="fr">Le Système international d’unités (SI)</title>
       <docidentifier type="BIPM" primary="true">BIPM SI Brochure</docidentifier>
       ...
-      <ext schema-version="v1.0.0">
+      <ext schema-version="v1.0.1">
         <doctype>brochure</doctype>
         ...
       </ext>
