@@ -29,7 +29,7 @@ http_interactions:
       Content-Type:
       - application/zip
       Etag:
-      - W/"74dbde99331e79e8dbfe2f698a48bb178cbda88ba884d12b5c0bbf24746fb973"
+      - W/"08cf3e352ba484074919e45f082f52263a98550c077dc2f6acd2c3a42d3c961d"
       Strict-Transport-Security:
       - max-age=31536000
       X-Content-Type-Options:
@@ -39,21 +39,21 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Github-Request-Id:
-      - B28A:8474:1A379C:1F9FC3:65FE371B
+      - A8C7:3BC57D:55AF22:5FE6EE:6671843C
       Accept-Ranges:
       - bytes
       Date:
-      - Sat, 23 Mar 2024 01:59:31 GMT
+      - Tue, 18 Jun 2024 13:00:07 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-pdk-katl1840076-PDK
+      - cache-pdk-kpdk1780138-PDK
       X-Cache:
       - HIT
       X-Cache-Hits:
-      - '2'
+      - '1'
       X-Timer:
-      - S1711159172.969159,VS0,VE0
+      - S1718715607.012137,VS0,VE1
       Vary:
       - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
@@ -61,16 +61,16 @@ http_interactions:
       Cross-Origin-Resource-Policy:
       - cross-origin
       X-Fastly-Request-Id:
-      - 334c3493fae1bebccea7747276bbc06ed9cdbc9b
+      - 867bd95afdc691ed95bfb1bd9de983b8f1b4e119
       Expires:
-      - Sat, 23 Mar 2024 02:04:31 GMT
+      - Tue, 18 Jun 2024 13:05:07 GMT
       Source-Age:
-      - '103'
+      - '154'
     body:
-      encoding: UTF-8
+      encoding: ASCII-8BIT
       base64_string: |
-        UEsDBBQAAAAIAMW8dlibb+5C+OYAAMbeCwALABwAaW5kZXgyLnlhbWxVVAkA
-        A2IW/mVBFv5ldXgLAAEE6QMAAAR/AAAAtf1Pk2Q5cuWJ7udT+I4rf3S7F/cf
+        UEsDBBQAAAAIAPp00Vibb+5C+OYAAMbeCwALABwAaW5kZXgyLnlhbWxVVAkA
+        A7dKcGa4SnBmdXgLAAEE6QMAAAR/AAAAtf1Pk2Q5cuWJ7udT+I4rf3S7F/cf
         d5zqei09khyZqeyefXUxh69aolhkZnFE+ts/KGAO9wiY6wF+atMhQpHOijgH
         hgtVKBSqB6+vr//L68s//Pmf/+F/ecn/7x/+5de//se//cPL7373X/+/9T/8
         7X/+2y//8PJPv/zytz//67/U//Sv//GX//7Lr//w8ne39Hf1v/zPX/5Y/v/X
@@ -1384,10 +1384,10 @@ http_interactions:
         f/vj3/78p7//H3/6l7/8ff67r4u3HTzEv03g3wD+8iP+7fYl/vK6eEvoIX7q
         xn99iZ9s/F+76of4ezf+5Uv83cb/9QJ6gL989X3zf/nTX3/N/+Vvv/7HL4/5
         lvv3frW/+BRShySI/+WkVfypSfvP/+2fXvcf8Je3L/D/5T/+Yk/peLfLDxm+
-        RJuA+b/+yz+9ro+B/p8//+X17oz//1BLAQIeAxQAAAAIAMW8dlibb+5C+OYA
-        AMbeCwALABgAAAAAAAEAAACkgQAAAABpbmRleDIueWFtbFVUBQADYhb+ZXV4
+        RJuA+b/+yz+9ro+B/p8//+X17oz//1BLAQIeAxQAAAAIAPp00Vibb+5C+OYA
+        AMbeCwALABgAAAAAAAEAAACkgQAAAABpbmRleDIueWFtbFVUBQADt0pwZnV4
         CwABBOkDAAAEfwAAAFBLBQYAAAAAAQABAFEAAAA95wAAAAA=
-  recorded_at: Sat, 23 Mar 2024 01:59:31 GMT
+  recorded_at: Tue, 18 Jun 2024 13:00:06 GMT
 - request:
     method: get
     uri: https://raw.githubusercontent.com/relaton/relaton-data-bipm/master/static/jcgm/vim-3.yaml
@@ -1400,7 +1400,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - Mechanize/2.8.5 Ruby/3.2.0p0 (http://github.com/sparklemotion/mechanize/)
+      - Mechanize/2.10.1 Ruby/3.3.3p89 (http://github.com/sparklemotion/mechanize/)
       Accept-Charset:
       - ISO-8859-1,utf-8;q=0.7,*;q=0.7
       Accept-Language:
@@ -1437,23 +1437,23 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Github-Request-Id:
-      - 88BA:61C4:484AD2:5A1F43:65FE430B
+      - B9B3:367E4A:5389B6:5DC3A2:667184DA
       Content-Encoding:
       - gzip
       Accept-Ranges:
       - bytes
       Date:
-      - Sat, 23 Mar 2024 02:48:43 GMT
+      - Tue, 18 Jun 2024 13:00:10 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-pdk-katl1840021-PDK
+      - cache-pdk-kpdk1780111-PDK
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1711162123.411283,VS0,VE71
+      - S1718715611.844572,VS0,VE97
       Vary:
       - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
@@ -1461,13 +1461,13 @@ http_interactions:
       Cross-Origin-Resource-Policy:
       - cross-origin
       X-Fastly-Request-Id:
-      - be99146c2209ace125565946c067ef95b05520fd
+      - 7512a46461dd5516e9d085a53d5c1be1d2b74749
       Expires:
-      - Sat, 23 Mar 2024 02:53:43 GMT
+      - Tue, 18 Jun 2024 13:05:10 GMT
       Source-Age:
       - '0'
     body:
-      encoding: UTF-8
+      encoding: ASCII-8BIT
       base64_string: |
         H4sIAAAAAAAAA+1YzZLaOBC+8xS6ze4BmGRv3GaoTIoU1FCVSvYs5MbuXVly
         9MMM+0Z+Dr/YtiwDNgQmy5pUbdXOhbFs9fepv26pW8PhcIDJhH2aflwMv84W
@@ -1492,5 +1492,5 @@ http_interactions:
         UPA5B/us58Jotc1jB98sakPGuXK27c29wz5pAouFY7BTtxIfPQbdUJ2UPB2/
         toPn6OLhO0AEga4qa8peUbftDZOEkkYwUO2rpO/CtcLjCI42Li+cD/GfEBiu
         EUxYbetG466+zbgbwGstthW04fHhBkyolids8250P7of/A0UC/fGtBMAAA==
-  recorded_at: Sat, 23 Mar 2024 02:48:43 GMT
+  recorded_at: Tue, 18 Jun 2024 13:00:10 GMT
 recorded_with: VCR 6.2.0
