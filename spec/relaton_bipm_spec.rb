@@ -1,4 +1,10 @@
 RSpec.describe RelatonBipm do
+  before do
+    # Force to download index file
+    allow_any_instance_of(Relaton::Index::Type).to receive(:actual?).and_return(false)
+    allow_any_instance_of(Relaton::Index::FileIO).to receive(:check_file).and_return(nil)
+  end
+
   it "has a version number" do
     expect(RelatonBipm::VERSION).not_to be nil
   end
@@ -10,8 +16,6 @@ RSpec.describe RelatonBipm do
   end
 
   it "search a code", vcr: "cctf_meeting_14" do
-    expect(File).to receive(:exist?).with(/index2\.yaml/).and_return false
-    allow(File).to receive(:exist?).and_call_original
     result = RelatonBipm::BipmBibliography.search "BIPM CCTF Meeting 14 (1999)"
     expect(result).to be_instance_of RelatonBipm::BipmBibliographicItem
   end
@@ -170,8 +174,8 @@ RSpec.describe RelatonBipm do
     end
 
     it "SI Brochure", vcr: "si_brochure" do
-      result = RelatonBipm::BipmBibliography.get "BIPM SI Brochure"
-      expect(result.docidentifier[0].id).to eq "BIPM SI Brochure"
+      result = RelatonBipm::BipmBibliography.get "BIPM SI Brochure Part 1"
+      expect(result.docidentifier.find { |id| id.language == "en" }.id).to eq "BIPM SI Brochure Part 1"
     end
 
     context "Metrologia" do
@@ -230,7 +234,7 @@ RSpec.describe RelatonBipm do
         end
       end
 
-      it "wrong page" do
+      it "wrong page", vcr: "not_found" do
         expect do
           result = RelatonBipm::BipmBibliography.get "BIPM Metrologia 34 3 999"
           expect(result).to be_nil

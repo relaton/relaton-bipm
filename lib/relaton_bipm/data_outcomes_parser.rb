@@ -230,7 +230,7 @@ module RelatonBipm
     # @param [String] path path to YAML file
     #
     def add_to_index(item, path) # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
-      key = Id.new(item.docnumber).to_hash
+      key = Id.new.parse(item.docnumber).to_hash
       @data_fetcher.index2.add_or_update key, path
     end
 

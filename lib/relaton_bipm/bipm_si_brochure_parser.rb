@@ -36,7 +36,7 @@ module RelatonBipm
         basename = File.join @data_fetcher.output, File.basename(f).sub(/(?:-(?:en|fr))?\.rxl$/, "")
         outfile = "#{basename}.#{@data_fetcher.ext}"
         key = hash1["docnumber"] || basename
-        @data_fetcher.index2.add_or_update Id.new(key).to_hash, outfile
+        @data_fetcher.index2.add_or_update Id.new.parse(key).to_hash, outfile
         hash = if File.exist? outfile
                  warn_duplicate = false
                  hash2 = YAML.load_file outfile
@@ -60,19 +60,19 @@ module RelatonBipm
     # @return [void]
     #
     def fix_si_brochure_id(hash) # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
-      did = hash["docid"].detect { |id| id["type"] == "BIPM" }
-      did["primary"] = true
-      return unless did["id"] == "BIPM Brochure"
+      # isbn = hash["docid"].detect { |id| id["type"] == "ISBN" }
+      # num = isbn && isbn["id"] == "978-92-822-2272-0" ?  "SI Brochure" : "SI Brochure, Appendix 4"
 
-      isbn = hash["docid"].detect { |id| id["type"] == "ISBN" }
-      num = if isbn && isbn["id"] == "978-92-822-2272-0"
-              "SI Brochure"
-            else
-              "SI Brochure, Appendix 4"
-            end
-      hash["id"] = hash["id"].sub(/(?<=^BIPM)Brochure$/i, num.gsub(/[,\s]/, ""))
-      hash["docnumber"] = hash["docnumber"].sub(/^Brochure$/i, num)
-      did["id"] = did["id"].sub(/(?<=^BIPM\s)Brochure$/i, num)
+      hash["docid"].each do |id|
+        next unless id["type"] == "BIPM" && id["id"].match?(/BIPM Brochure/i)
+
+        id["primary"] = true
+        id["id"].sub!(/(?<=^BIPM\s)(Brochure)/i, "SI \\1")
+      end
+
+      num = hash["docid"].detect { |id| id["primary"] && id["language"] == "en" }["id"]
+      hash["docnumber"].sub!(/^Brochure$/i, num.sub(/^BIPM\s/, ""))
+      hash["id"] = num.gsub(/[,\s]/, "")
     end
 
     #

@@ -1,7 +1,7 @@
 describe RelatonBipm::Id do
   context "ID parser" do
     shared_examples "parses ID" do |ref, result|
-      subject(:id) { RelatonBipm::Id::Parser.new.parse ref }
+      subject(:id) { RelatonBipm::Id.new.parse ref }
 
       it "parses #{ref}" do
         expect(id).to eq result
@@ -41,8 +41,12 @@ describe RelatonBipm::Id do
     end
 
     context "SI Brochure" do
-      it_behaves_like "parses ID", "SI Brochure", group: "SI", type: "Brochure"
-      it_behaves_like "parses ID", "SI Brochure, Appendix 4", group: "SI", type: "Brochure", number: "4"
+      it_behaves_like "parses ID", "SI Brochure, Part 1", group: "SI", type: "Brochure", part: "1"
+      it_behaves_like "parses ID", "SI Brochure, Partie 1", group: "SI", type: "Brochure", part: "1"
+      it_behaves_like "parses ID", "SI Brochure Part 1", group: "SI", type: "Brochure", part: "1"
+      it_behaves_like "parses ID", "SI Brochure, Appendix 4", group: "SI", type: "Brochure", append: "4"
+      it_behaves_like "parses ID", "SI Brochure, Annexe 4", group: "SI", type: "Brochure", append: "4"
+      it_behaves_like "parses ID", "SI Brochure Appendix 4", group: "SI", type: "Brochure", append: "4"
     end
 
     context "Metrologia" do
@@ -57,15 +61,15 @@ describe RelatonBipm::Id do
 
   it "invalid ID" do
     expect do
-      RelatonBipm::Id.new "CCTF -- Recommendation 2 (2009"
+      RelatonBipm::Id.new.parse "CCTF -- Recommendation 2 (2009"
     end.to raise_error RelatonBib::RequestError
   end
 
   context "comparing IDs" do
     shared_examples "comparing IDs" do |ref1, ref2, result = true|
       it "abbreviation and full type names are equal" do
-        id1 = RelatonBipm::Id.new ref1
-        id2 = RelatonBipm::Id.new ref2
+        id1 = RelatonBipm::Id.new.parse ref1
+        id2 = RelatonBipm::Id.new.parse ref2
         expect(id1 == id2).to eq result
       end
     end
@@ -112,8 +116,8 @@ describe RelatonBipm::Id do
     end
 
     it "`CIPM RES 1` should not be equal to `CGPM Resolution (1889)`" do
-      id1 = RelatonBipm::Id.new "CIPM RES 1"
-      id2 = RelatonBipm::Id.new "CGPM Resolution (1889)"
+      id1 = RelatonBipm::Id.new.parse "CIPM RES 1"
+      id2 = RelatonBipm::Id.new.parse "CGPM Resolution (1889)"
       expect(id1 == id2).to be false
     end
   end

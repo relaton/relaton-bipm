@@ -2,7 +2,7 @@ module RelatonBipm
   module RawdataBipmMetrologia
     class ArticleParser
       ATTRS = %i[docid title contributor date copyright abstract relation series
-                 extent type doctype].freeze
+                 extent type doctype link].freeze
       #
       # Create new parser and parse document
       #
@@ -318,6 +318,14 @@ module RelatonBipm
 
       def parse_doctype
         DocumentType.new type: "article"
+      end
+
+      def parse_link
+        @meta.xpath("./article-id[@pub-id-type='doi']").each_with_object([]) do |l, a|
+          url = "https://doi.org/#{l.text}"
+          a << RelatonBib::TypedUri.new(content: url, type: "src")
+          a << RelatonBib::TypedUri.new(content: url, type: "doi")
+        end
       end
     end
   end

@@ -46,7 +46,7 @@ module RelatonBipm
       # @return [RelatonBipm::BipmBibliographicItem]
       #
       def get_bipm(reference) # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
-        ref_id = Id.new reference
+        ref_id = Id.new.parse reference
         rows = index.search { |r| ref_id == r[:id] }
         return unless rows.any?
 
@@ -63,7 +63,7 @@ module RelatonBipm
 
       def index
         Relaton::Index.find_or_create(
-          :bipm, url: "#{GH_ENDPOINT}index2.zip", file: INDEX_FILE, id_keys: %i[group type number year corr]
+          :bipm, url: "#{GH_ENDPOINT}index2.zip", file: INDEX_FILE, id_keys: %i[group type number year corr part append]
         )
       end
 

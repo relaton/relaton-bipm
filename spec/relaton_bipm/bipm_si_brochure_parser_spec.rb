@@ -39,20 +39,27 @@ describe RelatonBipm::BipmSiBrochureParser do
         m.call path.sub(/^data\/si-brochure\.yaml/, "spec/fixtures/data/si-brochure_1.yaml")
       end
 
-      expect(index2).to receive(:add_or_update).with({group: "SI", type: "Brochure" }, "data/si-brochure.yaml").twice
+      expect(index2).to receive(:add_or_update)
+        .with({group: "SI", type: "Brochure", part: "1" }, "data/si-brochure.yaml").twice
       subject.parse
     end
 
     it "#fix_si_brochure_id" do
       hash = {
         "id" => "BIPMBrochure", "docnumber" => "Brochure",
-        "docid" => [{ "type" => "BIPM", "id" => "BIPM Brochure" }]
+        "docid" => [
+          { "type" => "BIPM", "id" => "BIPM Brochure Partie 1", "language" => "fr" },
+          { "type" => "BIPM", "id" => "BIPM Brochure Part 1", "language" => "en" }
+        ]
       }
       subject.fix_si_brochure_id hash
-      expect(hash["id"]).to eq "BIPMSIBrochureAppendix4"
-      expect(hash["docnumber"]).to eq "SI Brochure, Appendix 4"
+      expect(hash["id"]).to eq "BIPMSIBrochurePart1"
+      expect(hash["docnumber"]).to eq "SI Brochure Part 1"
       expect(hash["docid"]).to eq(
-        [{ "type" => "BIPM", "id" => "BIPM SI Brochure, Appendix 4", "primary" => true }],
+        [
+          { "type" => "BIPM", "id" => "BIPM SI Brochure Partie 1", "primary" => true, "language" => "fr" },
+          { "type" => "BIPM", "id" => "BIPM SI Brochure Part 1", "primary" => true, "language" => "en" }
+        ],
       )
     end
   end

@@ -6,30 +6,35 @@ title:
   language:
   - en
   format: text/plain
-  type: main
+  type: title-main
 - content: The International System of Units (SI)
   language:
   - en
   format: text/plain
-  type: cover
+  type: title-cover
 - content: Le Système international d’unités
   language:
   - fr
   format: text/plain
-  type: main
+  type: title-main
 - content: Le Système international d’unités (SI)
   language:
   - fr
   format: text/plain
-  type: cover
+  type: title-cover
 type: standard
 docid:
-- id: BIPM SI Brochure
+- id: BIPM SI Brochure Part 1
   type: BIPM
   primary: true
+  language: en
+- id: BIPM SI Brochure Partie 1
+  type: BIPM
+  primary: true
+  language: fr
 - id: 978-92-822-2272-0
   type: ISBN
-docnumber: SI Brochure
+docnumber: SI Brochure Part 1
 contributor:
 - organization:
     name:

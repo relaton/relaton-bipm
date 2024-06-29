@@ -73,10 +73,11 @@ describe RelatonBipm::RawdataBipmMetrologia::ArticleParser do
       expect(subject).to receive(:parse_extent).and_return :extent
       expect(subject).to receive(:parse_type).and_return :type
       expect(subject).to receive(:parse_doctype).and_return :doctype
+      expect(subject).to receive(:parse_link).and_return :link
       expect(RelatonBipm::BipmBibliographicItem).to receive(:new).with(
         docid: :docid, title: :title, contributor: :contributor, date: :date,
         copyright: :copyright, abstract: :abstract, relation: :relation,
-        series: :series, extent: :extent, type: :type, doctype: :doctype
+        series: :series, extent: :extent, type: :type, doctype: :doctype, link: :link
       ).and_return :item
       expect(subject.parse).to eq :item
     end
@@ -329,6 +330,18 @@ describe RelatonBipm::RawdataBipmMetrologia::ArticleParser do
       doctype = subject.parse_doctype
       expect(doctype).to be_instance_of RelatonBipm::DocumentType
       expect(doctype.type).to eq "article"
+    end
+
+    it "parse_link" do
+      doc = Nokogiri::XML File.read("spec/fixtures/met_52_1_155.xml", encoding: "UTF-8")
+      subject.instance_variable_set :@meta, doc.at("/article/front/article-meta")
+      link = subject.parse_link
+      expect(link).to be_instance_of Array
+      expect(link.size).to eq 2
+      expect(link[0]).to be_instance_of RelatonBib::TypedUri
+      expect(link[0].content.to_s).to eq "https://doi.org/10.1088/0026-1394/52/1/155"
+      expect(link[0].type).to eq "src"
+      expect(link[1].type).to eq "doi"
     end
   end
 end

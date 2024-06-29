@@ -43,17 +43,17 @@ http_interactions:
       Accept-Ranges:
       - bytes
       Date:
-      - Tue, 18 Jun 2024 13:00:11 GMT
+      - Tue, 18 Jun 2024 12:59:38 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-pdk-kpdk1780060-PDK
+      - cache-pdk-kpdk1780085-PDK
       X-Cache:
       - HIT
       X-Cache-Hits:
       - '1'
       X-Timer:
-      - S1718715611.064100,VS0,VE1
+      - S1718715578.035388,VS0,VE1
       Vary:
       - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
@@ -61,11 +61,11 @@ http_interactions:
       Cross-Origin-Resource-Policy:
       - cross-origin
       X-Fastly-Request-Id:
-      - e19414bbc374c68a0edc6cbaff3ddc21803c57ae
+      - 5ca8bcd6ccecb54c45e771d1106f2ea42be3a5cd
       Expires:
-      - Tue, 18 Jun 2024 13:05:11 GMT
+      - Tue, 18 Jun 2024 13:04:38 GMT
       Source-Age:
-      - '158'
+      - '125'
     body:
       encoding: ASCII-8BIT
       base64_string: |
@@ -1387,110 +1387,5 @@ http_interactions:
         RJuA+b/+yz+9ro+B/p8//+X17oz//1BLAQIeAxQAAAAIAPp00Vibb+5C+OYA
         AMbeCwALABgAAAAAAAEAAACkgQAAAABpbmRleDIueWFtbFVUBQADt0pwZnV4
         CwABBOkDAAAEfwAAAFBLBQYAAAAAAQABAFEAAAA95wAAAAA=
-  recorded_at: Tue, 18 Jun 2024 13:00:10 GMT
-- request:
-    method: get
-    uri: https://raw.githubusercontent.com/relaton/relaton-data-bipm/master/static/jcgm/200-2008-corr.yaml
-    body:
-      encoding: US-ASCII
-      base64_string: ''
-    headers:
-      Accept-Encoding:
-      - gzip,deflate,identity
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Mechanize/2.10.1 Ruby/3.3.3p89 (http://github.com/sparklemotion/mechanize/)
-      Accept-Charset:
-      - ISO-8859-1,utf-8;q=0.7,*;q=0.7
-      Accept-Language:
-      - en-us,en;q=0.5
-      Host:
-      - raw.githubusercontent.com
-      Connection:
-      - keep-alive
-      Keep-Alive:
-      - '300'
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '1024'
-      Cache-Control:
-      - max-age=300
-      Content-Security-Policy:
-      - default-src 'none'; style-src 'unsafe-inline'; sandbox
-      Content-Type:
-      - text/plain; charset=utf-8
-      Etag:
-      - W/"30e30297281ab19949ba520669e11856958bfca6e508fe9c1db16bd1fc0cc4a2"
-      Strict-Transport-Security:
-      - max-age=31536000
-      X-Content-Type-Options:
-      - nosniff
-      X-Frame-Options:
-      - deny
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Github-Request-Id:
-      - 817A:726F5:1520D1:17351A:667184DE
-      Content-Encoding:
-      - gzip
-      Accept-Ranges:
-      - bytes
-      Date:
-      - Tue, 18 Jun 2024 13:00:15 GMT
-      Via:
-      - 1.1 varnish
-      X-Served-By:
-      - cache-pdk-kpdk1780119-PDK
-      X-Cache:
-      - MISS
-      X-Cache-Hits:
-      - '0'
-      X-Timer:
-      - S1718715615.945956,VS0,VE94
-      Vary:
-      - Authorization,Accept-Encoding,Origin
-      Access-Control-Allow-Origin:
-      - "*"
-      Cross-Origin-Resource-Policy:
-      - cross-origin
-      X-Fastly-Request-Id:
-      - a9f81094c64d924f826212d8f00d9e94ce5b1d65
-      Expires:
-      - Tue, 18 Jun 2024 13:05:15 GMT
-      Source-Age:
-      - '0'
-    body:
-      encoding: ASCII-8BIT
-      base64_string: |
-        H4sIAAAAAAAAA+2YzW7jNhDH734K3tIe5HoDFC18S4TNwgsbMbDY7ZmiaHkA
-        itTyw4n7BD33LfQcepM+SYciHUv2WrtN5QUKNEBgm7bmP5zfDDWjJEkmkM/J
-        +/TdKrmdzfz/r0mqtIaCy9yVEwtW8PkkIUxJy6WdkwW+akktKEkF2SlGMyeo
-        3hO1ISW3WglV7Mlff/xJ7qkBRqjMCRrjGn+NRhivrGkXqTGKAbU8J2ixNOSH
-        T4vVjxNCBJWFowXKEpIQLvHFMA2VDQtLav3SRumSoj+WP9ufKkFBdr38FP0C
-        zQn0PM45KZs6+Anc+5kevNoomdMSr6fumXBLiqaWTa3jJ+8kN9Htpr7k70Z/
-        s792X/E5MRajQXU+ydFu7mN9QEIQx9wjIV0khITr7hfrFX6oNJQYfjSsHe96
-        04tc8GI0091NjmAady5dmXE9ZCHHVPHRCXYqlwkwW56jsR0VDpdubmdvZsns
-        5+T2l5uJzwQNmbNK+4uULqiE39sk8FgIkUg6vLuY3PdOc+p8Yv/GodjGvF1x
-        avAL017bpx+stXH3f8csCF/ETOgpRo3THDWkUpAbn3eYdINyLYtBOZplmu+g
-        s3nScSAA+cpWvkXGaTEnT09P0wyqcooRx1Uss1gXfWz6tUweOxf5miIfYvnE
-        tXGoBBUTVHpsuD9ApK9lEb+/FpjFh8eRuYBR/2P5L2Ghzm6VfgWnAVJvBWd4
-        97OcbSUwXEhVWYIxx5Cd76y3t9Mt9TbVEz5aJk3dlf3sTu7KfFD6JZaD0sPU
-        3qZjU+NsyraDtXQGcoziwrvRkhe4ujo0W1eorcVZba2OPRNZNnVxZDZ6hT0u
-        VsuRYSkoxXCNvRLNRxmZrPEe3bYHd1UlAHvadMsx+a0eCU8QOj/z2BZKRFJ5
-        eWwWqFf/7Jr6anQWH9d3o9eSqyj7znzW2z2OJyN1cZfoVF7En3bfl8/6Cnyq
-        q/B54DlOhoeDLRUQ70mH4mmRLWmm8EcKP654Dgzk5ej9I2wPTZ37Ae9CPxFr
-        i3mvPETkh6sZxGOwVKKpWRgyr0bzIR292DbsX9XaAM0OqDvGNLKyIbapUlXk
-        PH6ToaqLDG8ouoGQD374wUpEJ+E4VF2v7ViOf1aKrx2V6E47K/cH4qN+q9xq
-        HtSiToWmw8MesDiar6kG42fzYL0X2+TlqYWHrDRQUWjlKu8O822ftfyl9inT
-        Su7LMNzHre3QOJXWdGP6Erb3CsVC++jttAPFOweeHsizxqcX3W4KnTyi+IIQ
-        SoBt6tZlJ3HmdpoIVCmCGJfdZ0VflOskyYkcHl+OWeerIEcx2ADXfredhx0I
-        aHYz4c8tcMPw0KPJjmvfMc/J7s10Np1N/gYNBh0qpBMAAA==
-  recorded_at: Tue, 18 Jun 2024 13:00:14 GMT
+  recorded_at: Tue, 18 Jun 2024 12:59:37 GMT
 recorded_with: VCR 6.2.0
