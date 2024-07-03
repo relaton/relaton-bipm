@@ -179,24 +179,13 @@ Recommendation JCRB/43-1 (2021) / Recommandation JCRB/43-1 (2021)
 JCRB REC JCRB/43-1 (2021)
 ----
 
-=== Configuration
-
-Configuration is optional. The available option is `logger` which is a `Logger` instance. By default, the logger is `Logger.new($stderr)` with `Logger::WARN` level. To change the logger level, use `RelatonBipm.configure` block.
-
-[source,ruby]
-----
-require 'relaton_bipm'
-=> true
-
-RelatonBipm.configure do |config|
-  config.logger.level = Logger::DEBUG
-end
-----
-
 ==== Examples
 
 [source,ruby]
 ----
+require "relaton_bipm"
+=> true
+
 # get BIPM brochure
 item = RelatonBipm::BipmBibliography.get "BIPM SI Brochure"
 [relaton-bipm] (BIPM SI Brochure) Fetching from Relaton repository ...
@@ -269,7 +258,7 @@ RelatonBipm::BipmBibliography.get "CIPM REC 1 (2005, FR)"
 [source,ruby]
 ----
 item.to_xml
-=> "<bibitem id="BIPMSIBrochure" type="standard" schema-version="v1.2.1">
+=> "<bibitem id="BIPMSIBrochurePart1" type="standard" schema-version="v1.2.1">
       <fetched>2022-12-02</fetched>
       <title type="main" format="text/plain" language="en">The International System of Units</title>
       <title type="cover" format="text/plain" language="en">The International System of Units (SI)</title>
@@ -366,6 +355,10 @@ Stopped at: 2022-06-23 09:40:34 +0200
 Done in: 82 sec.
 => nil
 ----
+
+=== Logging
+
+RelatonBipm uses the relaton-logger gem for logging. By default, it logs to STDOUT. To change the log levels and add other loggers, read the https://github.com/relaton/relaton-logger#usage[relaton-logger] documentation.
 
 == Development
 
