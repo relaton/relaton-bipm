@@ -22,7 +22,7 @@ module RelatonBipm
     #
     def check_type(type)
       # unless DOCTYPES.include? type
-      #   Util.warn "WARNING: invalid doctype: `#{type}`"
+      #   Util.warn "invalid doctype: `#{type}`"
       # end
     end
   end

@@ -97,6 +97,10 @@ module RelatonBipm
       #     conts << RelatonBib::Address.new(city: city, country: country)
       #   end
       # end
+
+      def create_doctype(type)
+        DocumentType.new type: type.text, abbreviation: type[:abbreviation]
+      end
     end
   end
 end

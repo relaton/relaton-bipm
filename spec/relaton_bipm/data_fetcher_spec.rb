@@ -72,14 +72,14 @@ describe RelatonBipm::DataFetcher do
         expect do
           subject.instance_variable_set(:@files, [path])
           subject.write_file path, item
-        end.to output("File #{path} already exists\n").to_stderr
+        end.to output("[relaton-bipm] WARN: File #{path} already exists\n").to_stderr_from_any_process
       end
 
       it "with duplicate and warn_duplicate: false" do
         expect do
           subject.instance_variable_set(:@files, [path])
           subject.write_file path, item, warn_duplicate: false
-        end.not_to output("File #{path} already exists\n").to_stderr
+        end.not_to output("File #{path} already exists\n").to_stderr_from_any_process
       end
     end
 

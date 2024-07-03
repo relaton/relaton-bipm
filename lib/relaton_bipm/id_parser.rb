@@ -95,7 +95,7 @@ module RelatonBipm
       @id = match.named_captures.compact.transform_keys(&:to_sym)
       self
     rescue StandardError => e
-      Util.warn "WARNING: Incorrect reference: `#{id}`"
+      Util.warn "Incorrect reference: `#{id}`"
       raise RelatonBib::RequestError, e
     end
 

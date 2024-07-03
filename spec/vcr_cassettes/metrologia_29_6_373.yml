@@ -29,7 +29,7 @@ http_interactions:
       Content-Type:
       - application/zip
       Etag:
-      - W/"08cf3e352ba484074919e45f082f52263a98550c077dc2f6acd2c3a42d3c961d"
+      - W/"857289e19d678484f734f00fa68d645eece400a9ac9d6e62372c1ec7694074ea"
       Strict-Transport-Security:
       - max-age=31536000
       X-Content-Type-Options:
@@ -39,21 +39,21 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Github-Request-Id:
-      - A8C7:3BC57D:55AF22:5FE6EE:6671843C
+      - EFDC:A362:5C41D5:68F6E7:66809521
       Accept-Ranges:
       - bytes
       Date:
-      - Tue, 18 Jun 2024 12:59:32 GMT
+      - Sat, 29 Jun 2024 23:14:07 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-pdk-kpdk1780112-PDK
+      - cache-iad-kjyo7100177-IAD
       X-Cache:
       - HIT
       X-Cache-Hits:
       - '1'
       X-Timer:
-      - S1718715573.793393,VS0,VE1
+      - S1719702848.533799,VS0,VE1
       Vary:
       - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
@@ -61,16 +61,16 @@ http_interactions:
       Cross-Origin-Resource-Policy:
       - cross-origin
       X-Fastly-Request-Id:
-      - e549944338882ab8b0972c622aec65b4e27c73e1
+      - c18c0bc4ab9fcbb634975e72f24800d17f4e6934
       Expires:
-      - Tue, 18 Jun 2024 13:04:32 GMT
+      - Sat, 29 Jun 2024 23:19:07 GMT
       Source-Age:
-      - '119'
+      - '29'
     body:
       encoding: ASCII-8BIT
       base64_string: |
-        UEsDBBQAAAAIAPp00Vibb+5C+OYAAMbeCwALABwAaW5kZXgyLnlhbWxVVAkA
-        A7dKcGa4SnBmdXgLAAEE6QMAAAR/AAAAtf1Pk2Q5cuWJ7udT+I4rf3S7F/cf
+        UEsDBBQAAAAIAAB13Vibb+5C+OYAAMbeCwALABwAaW5kZXgyLnlhbWxVVAkA
+        A78cgGbAHIBmdXgLAAEE6QMAAAR/AAAAtf1Pk2Q5cuWJ7udT+I4rf3S7F/cf
         d5zqei09khyZqeyefXUxh69aolhkZnFE+ts/KGAO9wiY6wF+atMhQpHOijgH
         hgtVKBSqB6+vr//L68s//Pmf/+F/ecn/7x/+5de//se//cPL7373X/+/9T/8
         7X/+2y//8PJPv/zytz//67/U//Sv//GX//7Lr//w8ne39Hf1v/zPX/5Y/v/X
@@ -1384,10 +1384,10 @@ http_interactions:
         f/vj3/78p7//H3/6l7/8ff67r4u3HTzEv03g3wD+8iP+7fYl/vK6eEvoIX7q
         xn99iZ9s/F+76of4ezf+5Uv83cb/9QJ6gL989X3zf/nTX3/N/+Vvv/7HL4/5
         lvv3frW/+BRShySI/+WkVfypSfvP/+2fXvcf8Je3L/D/5T/+Yk/peLfLDxm+
-        RJuA+b/+yz+9ro+B/p8//+X17oz//1BLAQIeAxQAAAAIAPp00Vibb+5C+OYA
-        AMbeCwALABgAAAAAAAEAAACkgQAAAABpbmRleDIueWFtbFVUBQADt0pwZnV4
+        RJuA+b/+yz+9ro+B/p8//+X17oz//1BLAQIeAxQAAAAIAAB13Vibb+5C+OYA
+        AMbeCwALABgAAAAAAAEAAACkgQAAAABpbmRleDIueWFtbFVUBQADvxyAZnV4
         CwABBOkDAAAEfwAAAFBLBQYAAAAAAQABAFEAAAA95wAAAAA=
-  recorded_at: Tue, 18 Jun 2024 12:59:32 GMT
+  recorded_at: Sat, 29 Jun 2024 23:14:07 GMT
 - request:
     method: get
     uri: https://raw.githubusercontent.com/relaton/relaton-data-bipm/master/data/metrologia-29-6-373.yaml
@@ -1437,23 +1437,23 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Github-Request-Id:
-      - F05E:20970C:55723A:5F9D75:667184B9
+      - D354:213DAB:88170E:98FB90:66809540
       Content-Encoding:
       - gzip
       Accept-Ranges:
       - bytes
       Date:
-      - Tue, 18 Jun 2024 12:59:37 GMT
+      - Sat, 29 Jun 2024 23:14:08 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-pdk-kpdk1780103-PDK
+      - cache-iad-kjyo7100053-IAD
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1718715578.823179,VS0,VE82
+      - S1719702849.621626,VS0,VE68
       Vary:
       - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
@@ -1461,9 +1461,9 @@ http_interactions:
       Cross-Origin-Resource-Policy:
       - cross-origin
       X-Fastly-Request-Id:
-      - bb5934ba4af0dae61acafa9fd4750e7c39a2d74d
+      - 0d20ed736174a17777a745dbb2d5f236a0560547
       Expires:
-      - Tue, 18 Jun 2024 13:04:37 GMT
+      - Sat, 29 Jun 2024 23:19:08 GMT
       Source-Age:
       - '0'
     body:
@@ -1495,5 +1495,5 @@ http_interactions:
         GLanu4GIidjZnJuHKYG4lKE+XFMIDDcwHmcy8tYxnlzi54i8x30c7dmPWHok
         QxwDFGcwpM6VZFemSBXfsZ6wbI0Kdctb30P/6vRcLEfvWEnnwjtGV+/ZNABx
         3gQvL6M3O96k9etRfO1J9v0LyuF9CLhWKft/eLmcTWbZv64vwJF4CgAA
-  recorded_at: Tue, 18 Jun 2024 12:59:37 GMT
+  recorded_at: Sat, 29 Jun 2024 23:14:08 GMT
 recorded_with: VCR 6.2.0

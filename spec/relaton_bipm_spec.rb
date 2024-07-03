@@ -1,7 +1,5 @@
 RSpec.describe RelatonBipm do
   before do
-    RelatonBipm.instance_variable_set :@configuration, nil
-
     # Force to download index file
     allow_any_instance_of(Relaton::Index::Type).to receive(:actual?).and_return(false)
     allow_any_instance_of(Relaton::Index::FileIO).to receive(:check_file).and_return(nil)
@@ -241,8 +239,8 @@ RSpec.describe RelatonBipm do
           result = RelatonBipm::BipmBibliography.get "BIPM Metrologia 34 3 999"
           expect(result).to be_nil
         end.to output(
-          /\[relaton-bipm\] \(BIPM Metrologia 34 3 999\) Not found\./,
-        ).to_stderr
+          /\[relaton-bipm\] INFO: \(BIPM Metrologia 34 3 999\) Not found\./,
+        ).to_stderr_from_any_process
       end
 
       it "with 403 response code", vcr: "metrologia_50_4_385" do

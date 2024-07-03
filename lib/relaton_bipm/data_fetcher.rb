@@ -57,7 +57,7 @@ module RelatonBipm
     def write_file(path, item, warn_duplicate: true)
       content = serialize item
       if @files.include?(path)
-        warn "File #{path} already exists" if warn_duplicate
+        Util.warn "File #{path} already exists" if warn_duplicate
       else
         @files << path
       end
