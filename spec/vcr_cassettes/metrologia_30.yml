@@ -29,7 +29,7 @@ http_interactions:
       Content-Type:
       - application/zip
       Etag:
-      - W/"857289e19d678484f734f00fa68d645eece400a9ac9d6e62372c1ec7694074ea"
+      - W/"c0da0c3dec4181a292c872865e3e742ea2a9ceab90ed30eba82b55c00c1e3cb7"
       Strict-Transport-Security:
       - max-age=31536000
       X-Content-Type-Options:
@@ -39,21 +39,21 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Github-Request-Id:
-      - EFDC:A362:5C41D5:68F6E7:66809521
+      - 9DA7:16B0:4E6A4D:58246B:66A9AF7C
       Accept-Ranges:
       - bytes
       Date:
-      - Sat, 29 Jun 2024 23:14:03 GMT
+      - Wed, 31 Jul 2024 03:42:07 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-iad-kjyo7100079-IAD
+      - cache-iad-kjyo7100058-IAD
       X-Cache:
       - HIT
       X-Cache-Hits:
       - '1'
       X-Timer:
-      - S1719702844.593653,VS0,VE2
+      - S1722397328.750418,VS0,VE2
       Vary:
       - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
@@ -61,16 +61,16 @@ http_interactions:
       Cross-Origin-Resource-Policy:
       - cross-origin
       X-Fastly-Request-Id:
-      - 78cb61d5b3eec66ca6df6ae9c4800583dbb8d6b1
+      - c6a7e4f36b4a6ca749c013f1395a6775c7f8943a
       Expires:
-      - Sat, 29 Jun 2024 23:19:03 GMT
+      - Wed, 31 Jul 2024 03:47:07 GMT
       Source-Age:
-      - '25'
+      - '30'
     body:
       encoding: ASCII-8BIT
       base64_string: |
-        UEsDBBQAAAAIAAB13Vibb+5C+OYAAMbeCwALABwAaW5kZXgyLnlhbWxVVAkA
-        A78cgGbAHIBmdXgLAAEE6QMAAAR/AAAAtf1Pk2Q5cuWJ7udT+I4rf3S7F/cf
+        UEsDBBQAAAAIAGN1/Vibb+5C+OYAAMbeCwALABwAaW5kZXgyLnlhbWxVVAkA
+        A3mqp2Z5qqdmdXgLAAEE6QMAAAR/AAAAtf1Pk2Q5cuWJ7udT+I4rf3S7F/cf
         d5zqei09khyZqeyefXUxh69aolhkZnFE+ts/KGAO9wiY6wF+atMhQpHOijgH
         hgtVKBSqB6+vr//L68s//Pmf/+F/ecn/7x/+5de//se//cPL7373X/+/9T/8
         7X/+2y//8PJPv/zytz//67/U//Sv//GX//7Lr//w8ne39Hf1v/zPX/5Y/v/X
@@ -1384,10 +1384,10 @@ http_interactions:
         f/vj3/78p7//H3/6l7/8ff67r4u3HTzEv03g3wD+8iP+7fYl/vK6eEvoIX7q
         xn99iZ9s/F+76of4ezf+5Uv83cb/9QJ6gL989X3zf/nTX3/N/+Vvv/7HL4/5
         lvv3frW/+BRShySI/+WkVfypSfvP/+2fXvcf8Je3L/D/5T/+Yk/peLfLDxm+
-        RJuA+b/+yz+9ro+B/p8//+X17oz//1BLAQIeAxQAAAAIAAB13Vibb+5C+OYA
-        AMbeCwALABgAAAAAAAEAAACkgQAAAABpbmRleDIueWFtbFVUBQADvxyAZnV4
+        RJuA+b/+yz+9ro+B/p8//+X17oz//1BLAQIeAxQAAAAIAGN1/Vibb+5C+OYA
+        AMbeCwALABgAAAAAAAEAAACkgQAAAABpbmRleDIueWFtbFVUBQADeaqnZnV4
         CwABBOkDAAAEfwAAAFBLBQYAAAAAAQABAFEAAAA95wAAAAA=
-  recorded_at: Sat, 29 Jun 2024 23:14:03 GMT
+  recorded_at: Wed, 31 Jul 2024 03:42:07 GMT
 - request:
     method: get
     uri: https://raw.githubusercontent.com/relaton/relaton-data-bipm/master/data/metrologia-30.yaml
@@ -1427,7 +1427,7 @@ http_interactions:
       Content-Type:
       - text/plain; charset=utf-8
       Etag:
-      - W/"a4bac26c20c43f8ac284aa8a990e679b680170a9d644951e82ab249b6124fcb0"
+      - W/"33d954664e35defdcfef6c370ad17af8ad5da15f3c61d2d6f34f817c1810648d"
       Strict-Transport-Security:
       - max-age=31536000
       X-Content-Type-Options:
@@ -1437,23 +1437,23 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Github-Request-Id:
-      - 4FC0:18AAFA:8248BA:932B4F:6680953C
+      - D44E:CA4A3:B2F8FB:C689FE:66A9B290
       Content-Encoding:
       - gzip
       Accept-Ranges:
       - bytes
       Date:
-      - Sat, 29 Jun 2024 23:14:04 GMT
+      - Wed, 31 Jul 2024 03:42:09 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-iad-kjyo7100107-IAD
+      - cache-iad-kjyo7100053-IAD
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1719702845.638658,VS0,VE77
+      - S1722397329.991424,VS0,VE85
       Vary:
       - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
@@ -1461,21 +1461,21 @@ http_interactions:
       Cross-Origin-Resource-Policy:
       - cross-origin
       X-Fastly-Request-Id:
-      - 1fcf0cf013e07ea3b7d9a5003183d2107a8ee379
+      - f1a88e9b91c17325d1a6f214c531e6189af436a0
       Expires:
-      - Sat, 29 Jun 2024 23:19:04 GMT
+      - Wed, 31 Jul 2024 03:47:09 GMT
       Source-Age:
       - '0'
     body:
       encoding: ASCII-8BIT
       base64_string: |
-        H4sIAAAAAAAAA8XVzW6DMAwA4Huewi/AT4GiLcfdJq3aXiGlLo0WkiiYan37
-        JdD1h/XApCFyckJs5/OFKIpYWx2wEdERXSuN5nBcxVn8xOSOwwbJGWVqKfKU
-        Kak/OYugMppQE4cDkW15kkhj20qirjD2YWxcnRyN6hpM0jQro1X+XCQ+H4BO
-        Fjm0rmJDJBzJSiHbmcp386Xve8JN0svrx8ZvrJONcCcO5DpkSui6EzWGVNQe
-        4qSlsHkTpNneuEYQ4c7hnvvcy7vHHa5lAPpCAD+lwkFfDGAo5zvjFyVWCamZ
-        QyUozMy3HJ5pPel9729v5VYSNqECwHiUq/70rA7hAzkMl0b+sO5nEE7G0rAe
-        ay9Vb83DC3p3WFf78OHsvza6m8Hf5NkUeTaLPFtWnk+R57PI82XlxRR5MYu8
-        WFa+niJfzyJfLysvp8jLWeTlf8t9xPtfwq/fZBqn7BvhNteCQgcAAA==
-  recorded_at: Sat, 29 Jun 2024 23:14:04 GMT
+        H4sIAAAAAAAAA8XVzW6DMAwA4Huewi/AT4EiNcfdJq3aXiGlLo0WkiiYan37
+        JdD1h/XApCFyckJs5/OFKIpYWx2xEdEJXSuN5nBaxVm8YXLPYYvkjDK1FHnK
+        lNSfnEVQGU2oicORyLY8SaSxbSVRVxj7MDauTk5GdQ0maZqV0SrfFInPB6Cz
+        RQ6tq9gQCUeyUsj2pvLdfOnHnnCX9PL6sfUb62Qj3JkDuQ6ZErruRI0hFbWH
+        OGkpbN4EaXYwrhFEuHd44D73+u5xh1sZgL4QwE+pcNAXAxjK+c74RYlVQmrm
+        UAkKM/Mth2daT3o/+Ns7uZOETagAMB7lqj+9qEP4RA7DpZE/rMcZhJOxNKzn
+        2mvVe/Pwgt4d1s0+fLj4b40eZvA3eTZFns0iz5aV51Pk+SzyfFl5MUVezCIv
+        lpWvp8jXs8jXy8rLKfJyFnn533If8f6X8Os3mcYp+wbqymYLQgcAAA==
+  recorded_at: Wed, 31 Jul 2024 03:42:08 GMT
 recorded_with: VCR 6.2.0

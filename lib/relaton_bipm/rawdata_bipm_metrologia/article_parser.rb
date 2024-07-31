@@ -161,10 +161,9 @@ module RelatonBipm
       # @return [RelatonBib::FullName] full name
       #
       def fullname(name)
-        fname = forename name.at("./given-names")
-        sname = name.at("./surname").text
-        surname = RelatonBib::LocalizedString.new sname, "en", "Latn"
-        RelatonBib::FullName.new surname: surname, forename: fname
+        cname = [name.at("./given-names"), name.at("./surname")].compact.map(&:text).join(" ")
+        completename = RelatonBib::LocalizedString.new cname, "en", "Latn"
+        RelatonBib::FullName.new completename: completename
       end
 
       #

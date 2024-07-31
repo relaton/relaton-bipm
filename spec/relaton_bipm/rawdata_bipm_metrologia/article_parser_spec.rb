@@ -172,12 +172,8 @@ describe RelatonBipm::RawdataBipmMetrologia::ArticleParser do
       expect(contrib[0].role).to be_instance_of Array
       expect(contrib[0].role[0].type).to eq "author"
       expect(contrib[0].entity).to be_instance_of RelatonBib::Person
-      expect(contrib[0].entity.name.surname).to be_instance_of RelatonBib::LocalizedString
-      expect(contrib[0].entity.name.surname.content).to eq "Smith"
-      expect(contrib[0].entity.name.forename).to be_instance_of Array
-      expect(contrib[0].entity.name.forename[0].content).to eq "John"
-      expect(contrib[0].entity.name.forename[0].initial).to eq "M"
-      expect(contrib[0].entity.name.forename[1].initial).to eq "G"
+      expect(contrib[0].entity.name.completename).to be_instance_of RelatonBib::LocalizedString
+      expect(contrib[0].entity.name.completename.content).to eq "John M G Smith"
       expect(contrib[0].entity.affiliation).to be_instance_of Array
       expect(contrib[0].entity.affiliation[0]).to be_instance_of RelatonBib::Affiliation
       expect(contrib[0].entity.affiliation[0].organization).to be_instance_of RelatonBib::Organization
@@ -213,10 +209,10 @@ describe RelatonBipm::RawdataBipmMetrologia::ArticleParser do
       contrib = doc.at("/article/front/article-meta/contrib-group/contrib/name")
       fullname = subject.fullname contrib
       expect(fullname).to be_instance_of RelatonBib::FullName
-      expect(fullname.surname).to be_instance_of RelatonBib::LocalizedString
-      expect(fullname.surname.content).to eq "E C Morris"
-      expect(fullname.surname.language).to eq ["en"]
-      expect(fullname.surname.script).to eq ["Latn"]
+      expect(fullname.completename).to be_instance_of RelatonBib::LocalizedString
+      expect(fullname.completename.content).to eq "E C Morris"
+      expect(fullname.completename.language).to eq ["en"]
+      expect(fullname.completename.script).to eq ["Latn"]
     end
 
     it "parse_date" do

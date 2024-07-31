@@ -29,7 +29,7 @@ http_interactions:
       Content-Type:
       - application/zip
       Etag:
-      - W/"857289e19d678484f734f00fa68d645eece400a9ac9d6e62372c1ec7694074ea"
+      - W/"c0da0c3dec4181a292c872865e3e742ea2a9ceab90ed30eba82b55c00c1e3cb7"
       Strict-Transport-Security:
       - max-age=31536000
       X-Content-Type-Options:
@@ -39,21 +39,21 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Github-Request-Id:
-      - EFDC:A362:5C41D5:68F6E7:66809521
+      - 9DA7:16B0:4E6A4D:58246B:66A9AF7C
       Accept-Ranges:
       - bytes
       Date:
-      - Sat, 29 Jun 2024 23:14:06 GMT
+      - Wed, 31 Jul 2024 03:42:10 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-iad-kjyo7100135-IAD
+      - cache-iad-kjyo7100046-IAD
       X-Cache:
       - HIT
       X-Cache-Hits:
-      - '1'
+      - '2'
       X-Timer:
-      - S1719702846.059065,VS0,VE2
+      - S1722397331.744247,VS0,VE0
       Vary:
       - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
@@ -61,16 +61,16 @@ http_interactions:
       Cross-Origin-Resource-Policy:
       - cross-origin
       X-Fastly-Request-Id:
-      - ed61cd60b3c00b824683f083bd64e7c5a6538ddb
+      - b2f4a2c829c432722f39b60aba0b8c1fdcca485b
       Expires:
-      - Sat, 29 Jun 2024 23:19:06 GMT
+      - Wed, 31 Jul 2024 03:47:10 GMT
       Source-Age:
-      - '28'
+      - '33'
     body:
       encoding: ASCII-8BIT
       base64_string: |
-        UEsDBBQAAAAIAAB13Vibb+5C+OYAAMbeCwALABwAaW5kZXgyLnlhbWxVVAkA
-        A78cgGbAHIBmdXgLAAEE6QMAAAR/AAAAtf1Pk2Q5cuWJ7udT+I4rf3S7F/cf
+        UEsDBBQAAAAIAGN1/Vibb+5C+OYAAMbeCwALABwAaW5kZXgyLnlhbWxVVAkA
+        A3mqp2Z5qqdmdXgLAAEE6QMAAAR/AAAAtf1Pk2Q5cuWJ7udT+I4rf3S7F/cf
         d5zqei09khyZqeyefXUxh69aolhkZnFE+ts/KGAO9wiY6wF+atMhQpHOijgH
         hgtVKBSqB6+vr//L68s//Pmf/+F/ecn/7x/+5de//se//cPL7373X/+/9T/8
         7X/+2y//8PJPv/zytz//67/U//Sv//GX//7Lr//w8ne39Hf1v/zPX/5Y/v/X
@@ -1384,10 +1384,10 @@ http_interactions:
         f/vj3/78p7//H3/6l7/8ff67r4u3HTzEv03g3wD+8iP+7fYl/vK6eEvoIX7q
         xn99iZ9s/F+76of4ezf+5Uv83cb/9QJ6gL989X3zf/nTX3/N/+Vvv/7HL4/5
         lvv3frW/+BRShySI/+WkVfypSfvP/+2fXvcf8Je3L/D/5T/+Yk/peLfLDxm+
-        RJuA+b/+yz+9ro+B/p8//+X17oz//1BLAQIeAxQAAAAIAAB13Vibb+5C+OYA
-        AMbeCwALABgAAAAAAAEAAACkgQAAAABpbmRleDIueWFtbFVUBQADvxyAZnV4
+        RJuA+b/+yz+9ro+B/p8//+X17oz//1BLAQIeAxQAAAAIAGN1/Vibb+5C+OYA
+        AMbeCwALABgAAAAAAAEAAACkgQAAAABpbmRleDIueWFtbFVUBQADeaqnZnV4
         CwABBOkDAAAEfwAAAFBLBQYAAAAAAQABAFEAAAA95wAAAAA=
-  recorded_at: Sat, 29 Jun 2024 23:14:05 GMT
+  recorded_at: Wed, 31 Jul 2024 03:42:10 GMT
 - request:
     method: get
     uri: https://raw.githubusercontent.com/relaton/relaton-data-bipm/master/data/metrologia-30-4.yaml
@@ -1427,7 +1427,7 @@ http_interactions:
       Content-Type:
       - text/plain; charset=utf-8
       Etag:
-      - W/"762929156c67929111457b7219bc63c08ede1feb89e021a8ea0a5f23606be3d2"
+      - W/"5abafde0cd3cd99d7299220e879b0083cb0c73c7192a9dc04ba2e954e0f5d8c5"
       Strict-Transport-Security:
       - max-age=31536000
       X-Content-Type-Options:
@@ -1437,23 +1437,23 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Github-Request-Id:
-      - 5CF8:9FF51:7F114E:8FEEEC:6680953F
+      - F08C:1E3C6E:ABCE4F:BF5116:66A9B291
       Content-Encoding:
       - gzip
       Accept-Ranges:
       - bytes
       Date:
-      - Sat, 29 Jun 2024 23:14:07 GMT
+      - Wed, 31 Jul 2024 03:42:12 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-iad-kjyo7100056-IAD
+      - cache-iad-kjyo7100163-IAD
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1719702847.277608,VS0,VE60
+      - S1722397332.066375,VS0,VE90
       Vary:
       - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
@@ -1461,30 +1461,30 @@ http_interactions:
       Cross-Origin-Resource-Policy:
       - cross-origin
       X-Fastly-Request-Id:
-      - 3866042ab91ba7e4d035527bcb0661f6497ee151
+      - f8f88d1b40b237f17382415f0eae52dcc70ccf6b
       Expires:
-      - Sat, 29 Jun 2024 23:19:07 GMT
+      - Wed, 31 Jul 2024 03:47:12 GMT
       Source-Age:
       - '0'
     body:
       encoding: ASCII-8BIT
       base64_string: |
-        H4sIAAAAAAAAA8VawW6jMBC9+yv8AwTwGBs47m2lrbq/QImTWksAGadq/34h
-        CUnTdqVZqaPh5MAwxk9v3uBHkiQRU/vsDk3y4sLkh76WL/lGbUrht7V8cDEM
-        3bD3DWRadL7/U4tEtkMfXR9r+RzjONVp6odxar3rW7eZh5sh7FM/TUeXZpky
-        SQ6VTiFLtZAyvo2ullNoxXnUhOjbzont0M7zzbnvZ5WQydttP37+fph/jMEf
-        mvBWyxiOTnRNvz82e7fc7Pp5McGPcfnxq4m92A3h0MTotsHt6vne66N/nuOW
-        SMpTKinXZMuJUzopzwnnud1rTMeu8b0Irmvigtw86flBx3lZj7s5+sk/+egO
-        SwYpPwGqsuJ04bL4ZfglAHIN/ADEctyDsZz5uOTl+Ney32V+v/zzk5wgWI4b
-        DOcLFyhuk93B8d8gWCwIlgwEyw1CDkgQLoEEIFwzs4GgsCAoMhAUOwiQI0G4
-        BBKAcM3MBoLGMkGTMUGzM0FXWBAqMhAqbhAKbIssyFpkwd4iCywTCjImFOxM
-        MFgmGDImGHYmWGx3sGTdwbJ3B4tlgiVjguVnAlYTLJkmWHZNKLFMKMmYULIz
-        ocJqQkWmCRW7JlTYXWRFtousuHeRgPUTgMxPAHY/ATKkMK6BFCBwCyPkyHJY
-        AwlAyNnLQSGFcQ0kAEFxCyMoLBMUGRMUOxMAK4xAJozALowaWw6arBw0ezlo
-        LBM0GRM0OxMKLBMKMiYU7EzAOktA5iwBu7MEBssEQ8YEw84ErLMEZM4SsDtL
-        YLDvCYbsPcGwvycY7N7BkO0dDPveAesxApnHCOweI1jkF6g1kAIE7i9QgDVa
-        gcxoBXajFUpsOZRk5VCyl0OJFcaSTBhLdmHEeoxA5jECu8eoM6QwroHfD8It
-        Mx8IyHLQZB6jZvcYdY4FIScDIWcHQSFb5BpIAILibpEasJoAZJoA7JoA2HIA
-        snIA9nLAOkuazFnS3+8szaMl9Iv/SWebTPwFgiIBP0MtAAA=
-  recorded_at: Sat, 29 Jun 2024 23:14:07 GMT
+        H4sIAAAAAAAAA8VawW6jMBC98xX+AQJ4jI057m2lrbq/QImTWksAGadq/34h
+        CUnTdqVZqaPh5MAwxk9v3uBH0jRNpvbZHZr0xYXJD30tXoqN3NjEb2vx4GIY
+        umHvG8hV0vn+T52koh366PpYi+cYx6nOMj+MU+td37rNPNwMYZ/5aTq6LM+l
+        TguwKoM8U4kQ8W10tZhCm5xHTYi+7VyyHdp5vjn3/awCcnG77cfP3w/zjzH4
+        QxPeahHD0SVd0++Pzd4tN7t+XkzwY1x+/Gpin+yGcGhidNvgdvV87/XRP89x
+        SyTEKZUQa7LlxCmdEOeE89zuNWZj1/g+Ca5r4oLcPOn5Qcd5WY+7OfrJP/no
+        DksGIT4BKvPydOGy+GX4JQBiDfwAxHLcg7Gc+bjk5fjXst9lfr/885OcIFiO
+        GwznCxcobpPdwfHfIBgsCIYMBMMNQgFIEC6BBCBcM7OBILEgSDIQJDsIUCBB
+        uAQSgHDNzAaCwjJBkTFBsTNBWSwIlgwEyw1CiW2RJVmLLNlbZIllQknGhJKd
+        CRrLBE3GBM3OBIPtDoasOxj27mCwTDBkTDD8TMBqgiHTBMOuCRWWCRUZEyp2
+        JlisJlgyTbDsmmCxu0hLtou03LtIwPoJQOYnALufADlSGNdAChC4hREKZDms
+        gQQgFOzlIJHCuAYSgCC5hREklgmSjAmSnQmAFUYgE0ZgF0aFLQdFVg6KvRwU
+        lgmKjAmKnQkllgklGRNKdiZgnSUgc5aA3VkCjWWCJmOCZmcC1lkCMmcJ2J0l
+        0Nj3BE32nqDZ3xM0du+gyfYOmn3vgPUYgcxjBHaPEQzyC9QaSAEC9xcowBqt
+        QGa0ArvRChW2HCqycqjYy6HCCmNFJowVuzBiPUYg8xiB3WNUOVIY18DvB+GW
+        mQ8EZDkoMo9RsXuMqsCCUJCBULCDIJEtcg0kAEFyt0gFWE0AMk0Adk0AbDkA
+        WTkAezlgnSVF5iyp73eW5tES+sX/pPNNnvwFoaYb3kMtAAA=
+  recorded_at: Wed, 31 Jul 2024 03:42:12 GMT
 recorded_with: VCR 6.2.0

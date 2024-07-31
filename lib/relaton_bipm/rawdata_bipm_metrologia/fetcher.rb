@@ -31,7 +31,7 @@ module RelatonBipm
       def fetch_articles # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
         Dir["#{DIR}/**/*.xml"].each do |path|
           item = ArticleParser.parse path
-          file = "#{item.docidentifier.first.id.downcase.gsub(' ', '-')}.#{@data_fetcher.ext}"
+          file = "#{item.docidentifier.first.id.downcase.tr(' ', '-')}.#{@data_fetcher.ext}"
           out_path = File.join(@data_fetcher.output, file)
           key = Id.new.parse(item.docidentifier.first.id).to_hash
           @data_fetcher.index2.add_or_update key, out_path
