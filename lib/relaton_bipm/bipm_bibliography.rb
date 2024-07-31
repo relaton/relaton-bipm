@@ -2,7 +2,7 @@ require "mechanize"
 
 module RelatonBipm
   class BipmBibliography
-    GH_ENDPOINT = "https://raw.githubusercontent.com/relaton/relaton-data-bipm/master/".freeze
+    GH_ENDPOINT = "https://raw.githubusercontent.com/relaton/relaton-data-bipm/main/".freeze
     INDEX_FILE = "index2.yaml".freeze
 
     class << self

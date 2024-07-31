@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://raw.githubusercontent.com/relaton/relaton-data-bipm/master/index2.zip
+    uri: https://raw.githubusercontent.com/relaton/relaton-data-bipm/main/index2.zip
     body:
       encoding: US-ASCII
       base64_string: ''
@@ -29,7 +29,7 @@ http_interactions:
       Content-Type:
       - application/zip
       Etag:
-      - W/"c0da0c3dec4181a292c872865e3e742ea2a9ceab90ed30eba82b55c00c1e3cb7"
+      - W/"ed5bdcd3845fb91efa568f06f0a16e838c10216ccb40b89be4903d5e089048cf"
       Strict-Transport-Security:
       - max-age=31536000
       X-Content-Type-Options:
@@ -39,21 +39,21 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Github-Request-Id:
-      - 9DA7:16B0:4E6A4D:58246B:66A9AF7C
+      - AFB9:330AF:7A4C4:86EEE:66AAA8EA
       Accept-Ranges:
       - bytes
       Date:
-      - Wed, 31 Jul 2024 03:42:18 GMT
+      - Wed, 31 Jul 2024 21:13:49 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-iad-kjyo7100046-IAD
+      - cache-iad-kjyo7100140-IAD
       X-Cache:
       - HIT
       X-Cache-Hits:
-      - '3'
+      - '1'
       X-Timer:
-      - S1722397338.447205,VS0,VE0
+      - S1722460430.550217,VS0,VE1
       Vary:
       - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
@@ -61,16 +61,16 @@ http_interactions:
       Cross-Origin-Resource-Policy:
       - cross-origin
       X-Fastly-Request-Id:
-      - 396b3cbdf420dfa0e01022c349635795faa1fd53
+      - e4693f38052ab62b28d7fe96612d354407953b67
       Expires:
-      - Wed, 31 Jul 2024 03:47:18 GMT
+      - Wed, 31 Jul 2024 21:18:49 GMT
       Source-Age:
-      - '40'
+      - '34'
     body:
       encoding: ASCII-8BIT
       base64_string: |
-        UEsDBBQAAAAIAGN1/Vibb+5C+OYAAMbeCwALABwAaW5kZXgyLnlhbWxVVAkA
-        A3mqp2Z5qqdmdXgLAAEE6QMAAAR/AAAAtf1Pk2Q5cuWJ7udT+I4rf3S7F/cf
+        UEsDBBQAAAAIADZ1/1ibb+5C+OYAAMbeCwALABwAaW5kZXgyLnlhbWxVVAkA
+        AyhNqmYoTapmdXgLAAEE6QMAAAR/AAAAtf1Pk2Q5cuWJ7udT+I4rf3S7F/cf
         d5zqei09khyZqeyefXUxh69aolhkZnFE+ts/KGAO9wiY6wF+atMhQpHOijgH
         hgtVKBSqB6+vr//L68s//Pmf/+F/ecn/7x/+5de//se//cPL7373X/+/9T/8
         7X/+2y//8PJPv/zytz//67/U//Sv//GX//7Lr//w8ne39Hf1v/zPX/5Y/v/X
@@ -1384,13 +1384,13 @@ http_interactions:
         f/vj3/78p7//H3/6l7/8ff67r4u3HTzEv03g3wD+8iP+7fYl/vK6eEvoIX7q
         xn99iZ9s/F+76of4ezf+5Uv83cb/9QJ6gL989X3zf/nTX3/N/+Vvv/7HL4/5
         lvv3frW/+BRShySI/+WkVfypSfvP/+2fXvcf8Je3L/D/5T/+Yk/peLfLDxm+
-        RJuA+b/+yz+9ro+B/p8//+X17oz//1BLAQIeAxQAAAAIAGN1/Vibb+5C+OYA
-        AMbeCwALABgAAAAAAAEAAACkgQAAAABpbmRleDIueWFtbFVUBQADeaqnZnV4
+        RJuA+b/+yz+9ro+B/p8//+X17oz//1BLAQIeAxQAAAAIADZ1/1ibb+5C+OYA
+        AMbeCwALABgAAAAAAAEAAACkgQAAAABpbmRleDIueWFtbFVUBQADKE2qZnV4
         CwABBOkDAAAEfwAAAFBLBQYAAAAAAQABAFEAAAA95wAAAAA=
-  recorded_at: Wed, 31 Jul 2024 03:42:18 GMT
+  recorded_at: Wed, 31 Jul 2024 21:13:49 GMT
 - request:
     method: get
-    uri: https://raw.githubusercontent.com/relaton/relaton-data-bipm/master/data/metrologia-55-1-l13.yaml
+    uri: https://raw.githubusercontent.com/relaton/relaton-data-bipm/main/data/metrologia-55-1-l13.yaml
     body:
       encoding: US-ASCII
       base64_string: ''
@@ -1419,7 +1419,7 @@ http_interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '1160'
+      - '1090'
       Cache-Control:
       - max-age=300
       Content-Security-Policy:
@@ -1427,7 +1427,7 @@ http_interactions:
       Content-Type:
       - text/plain; charset=utf-8
       Etag:
-      - W/"6fd4d11a86987e4908066e9bf97c251ce10c6ed11c2d4bfba12c3f70d1b386f4"
+      - W/"a9ffed9dabe66ba7ede3e920d0a27ddeade25bd28c4612dd23c524a817586181"
       Strict-Transport-Security:
       - max-age=31536000
       X-Content-Type-Options:
@@ -1437,23 +1437,23 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Github-Request-Id:
-      - CF1E:33AB8D:AF5531:C2E8DB:66A9B299
+      - A420:3EE238:60018E:6971E4:66AAA90D
       Content-Encoding:
       - gzip
       Accept-Ranges:
       - bytes
       Date:
-      - Wed, 31 Jul 2024 03:42:19 GMT
+      - Wed, 31 Jul 2024 21:13:50 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-iad-kjyo7100176-IAD
+      - cache-iad-kjyo7100112-IAD
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1722397340.637472,VS0,VE150
+      - S1722460431.652194,VS0,VE86
       Vary:
       - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
@@ -1461,39 +1461,38 @@ http_interactions:
       Cross-Origin-Resource-Policy:
       - cross-origin
       X-Fastly-Request-Id:
-      - dfbdc73e7a24cf4d7d607c9585db07fa82567120
+      - a4c4e8d33c24cd38ac049ef36e8c719fee960d68
       Expires:
-      - Wed, 31 Jul 2024 03:47:19 GMT
+      - Wed, 31 Jul 2024 21:18:50 GMT
       Source-Age:
       - '0'
     body:
       encoding: ASCII-8BIT
       base64_string: |
-        H4sIAAAAAAAAA+2ZzW7jNhCA73qKubkFIttK6/wYQQAnu9t6N866cIoAeylo
-        aWxxI5ECSTnrvFGfoy/WISXbUtJUi6qHdiFfLI05M5xvhpTM8X3f02GMKfM3
-        qDSXYgyboH/cP/d4NIYZGiUTueZsNApugh88w02CY8+HUAqDwozhLka4/vhm
-        cjeB42FwChuW5KhBriA+AjyChyNgIoLbC50vLycXA/sFK6nAkKLCDbdOabgH
-        9LGyxZQudah4ZsZ05cMNM4IuSCdl5NDgFzOITZp4CRcPtbnExmR6PBhEkvel
-        Wg+CYT8Ynp0NgpOzwD8dnY4GjJ2PhoysmW2GY9AqbKVPA73iiinDwwS9SIYE
-        jozW8cFoBAFYgjvVq+l8RjeZ4ilTWwpL5ViqfZXbiBmXiEKS5cuE6xgjGuMy
-        MIYepePMHwb+8XnPsyEqvsyNVFYpo1xTqh1zwVIsrgDWfINid+OQY/Vnm409
-        rL0MIGFinbN1ZZwdiaJye0joYUCZ2N2HC244S8bwphTqXNW9733f4iMmyV7+
-        0n/N+3PfFc9steIJZ4bvaPhAiWeCP1VkzynVMPR6JKUsY1GsZTXkJpbqPw/6
-        XSPoa7a0dDrSLUm/byT9jtt9WHWkW5L+0Ew6/8y7im7LedHI+QNT9EQSS8nT
-        jnZL2j830p4xtZb0DtChbon6bSPqCGHGFb3V/vF7h7st7nlzZcu4eyy2xdz8
-        qneLTx3llpSbXz7mLIzz8KF7/2iL+q4R9S85F6Lj3JLzVSPnO7ZNZLdDtwU9
-        awR9Tw47zC0xN9fzvZRRh7kl5k+NmD/F/4dyVrhxJ63141S21Eax0NROnyel
-        8CK7XOQ0qZCTGDIl1wq1BiMfmYo0KIxwRZzE2h13T0mbENmpsgQWW22w+Lss
-        V/Ar0dTw3WL6PYEFGpe6g3X8Ql4qB+2rXEQUmzBkgGajDROkFjMNS0QB9MbB
-        cYNR35l9+0zZzmFO9MOHva47uU/QWVRbCGP6a4n2LP9KJuYpZULshzqT5RH/
-        ZCPXLFLyYOfZob+SqXNXbRcsMgypYGASfc61sS53wduR7yqRXe8jYwoJK2qS
-        YwQxKuzbNoTGXVh2gMJQpqQaYbGYjXQWj09MDD+hQFWYXJG2CBGkgHvk69ia
-        p1hmyKhy0WbNNR6c7kra6dhMVefoehg0j8W0fzHILr2vbF6EMtsq69DWkHyk
-        CRUKhyqtlFbZLHjl1+nHOcyLBoCtqhtjI7a0y6rtURUn5WLYlTdVx4zWyAqJ
-        aRnRki85FV9hvmz0PPP0rzR79kuwBOgaPi8XeW1vecnPSoseSDG47INk+bJU
-        qbdBfqSl23O/pBjxPN15CZlSnNjbRgzV3jeOB1/DU2xrf4NHioQL/Nb5yAyF
-        z8KQ9ut/hqmoIo10p91iO3A4nGfsu4JOXn/y7Z961WgqsdQiyRLGhUdX1i55
-        S2TIEm62ZQ5cSBuZ5Ck6gcJyt/ut3BxGo94rWlzr/BWl4DWdjIL4S5Wi7VmV
-        G2mlJ7Zb6nS9nY1dG5ViGrud9EVretgfen8CeQv0VbYeAAA=
-  recorded_at: Wed, 31 Jul 2024 03:42:19 GMT
+        H4sIAAAAAAAAA91YX2/bNhB/16e4N3dAZFvZnD9GEMBJ685L3LpwhgJ9GSjp
+        bLGhSIGknDrfaJ9jX2xHSpbltB6Kbi9TXkKfeMf7/e6O0l0YhoFJMsxZuEFt
+        uJJj2ET90/5lwNMxzNFqJdSas9Eouo9+Diy3AsdBCImSFqUdw0OGcPv+9eRh
+        AqfD6Bw2TJRoQK0gOwE8gccTYDKFd1emjK8nVwP3D1ZKgyVFjRvuDqXtAdCf
+        ky1ntDSJ5oUd0yqEe2YlLUgnZ3SgxS92kNlcBILLxwNfMmsLMx4MUsX7Sq8H
+        0bAfDS8uBtHZRRSej85HA8YuR0NG1uy2wDEYnfwrfdoYVCumLU8EBqlKiDgy
+        ekgfjEYQgWNwp3ozW8zpR6F5zvSWYOkSa7XvOjZl1geikhRlLLjJMKU9PgJj
+        6FE4LsJhFJ5e9gIHUfO4tEo7pYJiTaH2nEuWY7UCYiIvBBIZLRns+XkNN/AO
+        n1CI5plgcl2ydWt3CCibH/s47h7W0QRgqxUXnFm+cyQE4pxJ/tySvXTQ7Wrc
+        6fVISgRjlSd1IEqbKf3jGKdwy2LnVnch/gZT7opedxfiHUzLz7zDMVzCW7hj
+        mkpexorn3QX6K0GdM71WdL91F+UbSBHmXNOr8q8/O4xzQZfPXGUdvnmm9IZ8
+        7i68O1iwJCuTxw7frQ+UpB9KLmV3IdJ3HDywrVAdrsQ5fCRI3cV34xAqlXYX
+        4Sf4lP0fQkhtrG/HDnsuFhurWWIPWtRJLbwqrpclOZVwElMXqNYajQGrnphO
+        DTXGKa645HLte+IZaWvpXWUClltjsfrkozb7d8mtgVfL2U/AJXXHOvfdN36h
+        U1rd+KqUKWGTlgyQN8YySWoZMxAjSqBLneMG0743++aFsvNhQewnj42ub+8F
+        eot6C0lG32joGv4bJexzzqRstnqT9RxgslFrlmq1t/NiMqBV7o9rzxSWBSac
+        /J6kn0tj3ZE78G7ntIXstkHGNBKtaEiOKVCzg303qzC4g+U2aKQMJNUUqyqy
+        yls8PbMZvEWJujK5Im2ZICgJH5GvM2eesMyRmZKOcGpuOuF1V8q54yLV9tEP
+        OsiP5ax/NSiug++ccCSq2Gp3oMsh9UQOVQr7LG2lVj1ROPJ09n4Bi2pK4LLq
+        3jrEju06a3uUxaIuhl16U3bMqUZWSJzWiGIec0q+ynw9DXpx0n8yEWpKsCbQ
+        T4W+LvJWiX+LPyetBiXV5npYUpRxrXI4K/mFSrfnn+SY8jJvrimmNSfu3bSG
+        cq/j9OAxeqpr7R/oUVJwiV3nRxUoQ5YkdF//GE1VFhmkX8YX256H/cdLMzr0
+        8sM3X/PWa6NpYTlAUgjGZUArZ5dOEyphgtttHQMPaaNEmaMXaKxvuz/qy2E0
+        6h3R4saUR5SiYzoFgfimSjUbbcutctIzN1L1usHOxm7WSpjG/ib9an497A+D
+        vwF/QrMg2xYAAA==
+  recorded_at: Wed, 31 Jul 2024 21:13:50 GMT
 recorded_with: VCR 6.2.0

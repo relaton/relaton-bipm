@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://raw.githubusercontent.com/relaton/relaton-data-bipm/master/index2.zip
+    uri: https://raw.githubusercontent.com/relaton/relaton-data-bipm/main/index2.zip
     body:
       encoding: US-ASCII
       base64_string: ''
@@ -29,7 +29,7 @@ http_interactions:
       Content-Type:
       - application/zip
       Etag:
-      - W/"c0da0c3dec4181a292c872865e3e742ea2a9ceab90ed30eba82b55c00c1e3cb7"
+      - W/"ed5bdcd3845fb91efa568f06f0a16e838c10216ccb40b89be4903d5e089048cf"
       Strict-Transport-Security:
       - max-age=31536000
       X-Content-Type-Options:
@@ -39,21 +39,21 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Github-Request-Id:
-      - 9DA7:16B0:4E6A4D:58246B:66A9AF7C
+      - AFB9:330AF:7A4C4:86EEE:66AAA8EA
       Accept-Ranges:
       - bytes
       Date:
-      - Wed, 31 Jul 2024 03:42:24 GMT
+      - Wed, 31 Jul 2024 21:13:54 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-iad-kjyo7100153-IAD
+      - cache-iad-kjyo7100051-IAD
       X-Cache:
       - HIT
       X-Cache-Hits:
       - '1'
       X-Timer:
-      - S1722397344.055279,VS0,VE1
+      - S1722460435.584677,VS0,VE2
       Vary:
       - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
@@ -61,16 +61,16 @@ http_interactions:
       Cross-Origin-Resource-Policy:
       - cross-origin
       X-Fastly-Request-Id:
-      - 9833f6399e31ebdd5660b49ab698558dff675d2c
+      - de252b30fb70a6e7511bd49df5cfc0e15821d910
       Expires:
-      - Wed, 31 Jul 2024 03:47:24 GMT
+      - Wed, 31 Jul 2024 21:18:54 GMT
       Source-Age:
-      - '46'
+      - '39'
     body:
       encoding: ASCII-8BIT
       base64_string: |
-        UEsDBBQAAAAIAGN1/Vibb+5C+OYAAMbeCwALABwAaW5kZXgyLnlhbWxVVAkA
-        A3mqp2Z5qqdmdXgLAAEE6QMAAAR/AAAAtf1Pk2Q5cuWJ7udT+I4rf3S7F/cf
+        UEsDBBQAAAAIADZ1/1ibb+5C+OYAAMbeCwALABwAaW5kZXgyLnlhbWxVVAkA
+        AyhNqmYoTapmdXgLAAEE6QMAAAR/AAAAtf1Pk2Q5cuWJ7udT+I4rf3S7F/cf
         d5zqei09khyZqeyefXUxh69aolhkZnFE+ts/KGAO9wiY6wF+atMhQpHOijgH
         hgtVKBSqB6+vr//L68s//Pmf/+F/ecn/7x/+5de//se//cPL7373X/+/9T/8
         7X/+2y//8PJPv/zytz//67/U//Sv//GX//7Lr//w8ne39Hf1v/zPX/5Y/v/X
@@ -1384,13 +1384,13 @@ http_interactions:
         f/vj3/78p7//H3/6l7/8ff67r4u3HTzEv03g3wD+8iP+7fYl/vK6eEvoIX7q
         xn99iZ9s/F+76of4ezf+5Uv83cb/9QJ6gL989X3zf/nTX3/N/+Vvv/7HL4/5
         lvv3frW/+BRShySI/+WkVfypSfvP/+2fXvcf8Je3L/D/5T/+Yk/peLfLDxm+
-        RJuA+b/+yz+9ro+B/p8//+X17oz//1BLAQIeAxQAAAAIAGN1/Vibb+5C+OYA
-        AMbeCwALABgAAAAAAAEAAACkgQAAAABpbmRleDIueWFtbFVUBQADeaqnZnV4
+        RJuA+b/+yz+9ro+B/p8//+X17oz//1BLAQIeAxQAAAAIADZ1/1ibb+5C+OYA
+        AMbeCwALABgAAAAAAAEAAACkgQAAAABpbmRleDIueWFtbFVUBQADKE2qZnV4
         CwABBOkDAAAEfwAAAFBLBQYAAAAAAQABAFEAAAA95wAAAAA=
-  recorded_at: Wed, 31 Jul 2024 03:42:23 GMT
+  recorded_at: Wed, 31 Jul 2024 21:13:54 GMT
 - request:
     method: get
-    uri: https://raw.githubusercontent.com/relaton/relaton-data-bipm/master/static/jcgm/vim-3.yaml
+    uri: https://raw.githubusercontent.com/relaton/relaton-data-bipm/main/static/jcgm/vim-3.yaml
     body:
       encoding: US-ASCII
       base64_string: ''
@@ -1437,23 +1437,23 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Github-Request-Id:
-      - F6E8:1BDC06:23568C:2798B1:66A9B29F
+      - 9AF9:31908E:81685:8DF00:66AAA912
       Content-Encoding:
       - gzip
       Accept-Ranges:
       - bytes
       Date:
-      - Wed, 31 Jul 2024 03:42:25 GMT
+      - Wed, 31 Jul 2024 21:13:55 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-iad-kjyo7100108-IAD
+      - cache-iad-kjyo7100106-IAD
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1722397345.180361,VS0,VE97
+      - S1722460436.626481,VS0,VE85
       Vary:
       - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
@@ -1461,9 +1461,9 @@ http_interactions:
       Cross-Origin-Resource-Policy:
       - cross-origin
       X-Fastly-Request-Id:
-      - f8d51466ea19135b9ff39e0098f3fc6ca21e4bc5
+      - d820e55b13f9fe1cea0f3234e6a8d858b4d85c22
       Expires:
-      - Wed, 31 Jul 2024 03:47:25 GMT
+      - Wed, 31 Jul 2024 21:18:55 GMT
       Source-Age:
       - '0'
     body:
@@ -1492,5 +1492,5 @@ http_interactions:
         UPA5B/us58Jotc1jB98sakPGuXK27c29wz5pAouFY7BTtxIfPQbdUJ2UPB2/
         toPn6OLhO0AEga4qa8peUbftDZOEkkYwUO2rpO/CtcLjCI42Li+cD/GfEBiu
         EUxYbetG466+zbgbwGstthW04fHhBkyolids8250P7of/A0UC/fGtBMAAA==
-  recorded_at: Wed, 31 Jul 2024 03:42:25 GMT
+  recorded_at: Wed, 31 Jul 2024 21:13:55 GMT
 recorded_with: VCR 6.2.0

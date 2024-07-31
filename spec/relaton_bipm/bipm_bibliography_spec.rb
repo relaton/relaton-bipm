@@ -7,7 +7,7 @@ RSpec.describe RelatonBipm::BipmBibliography do
       expect(index).to receive(:search).and_return [{ id: { year: "156" }, path: "data/doc.yaml" }]
       expect(Relaton::Index).to receive(:find_or_create).with(
         :bipm,
-        url: "https://raw.githubusercontent.com/relaton/relaton-data-bipm/master/index2.zip",
+        url: "https://raw.githubusercontent.com/relaton/relaton-data-bipm/main/index2.zip",
         file: "index2.yaml", id_keys: %i[group type number year corr part append]
       ).and_return index
       agent = double(:agent)

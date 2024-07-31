@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://raw.githubusercontent.com/relaton/relaton-data-bipm/master/index2.zip
+    uri: https://raw.githubusercontent.com/relaton/relaton-data-bipm/main/index2.zip
     body:
       encoding: US-ASCII
       base64_string: ''
@@ -29,7 +29,7 @@ http_interactions:
       Content-Type:
       - application/zip
       Etag:
-      - W/"c0da0c3dec4181a292c872865e3e742ea2a9ceab90ed30eba82b55c00c1e3cb7"
+      - W/"ed5bdcd3845fb91efa568f06f0a16e838c10216ccb40b89be4903d5e089048cf"
       Strict-Transport-Security:
       - max-age=31536000
       X-Content-Type-Options:
@@ -39,21 +39,21 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Github-Request-Id:
-      - 9DA7:16B0:4E6A4D:58246B:66A9AF7C
+      - AFB9:330AF:7A4C4:86EEE:66AAA8EA
       Accept-Ranges:
       - bytes
       Date:
-      - Wed, 31 Jul 2024 03:42:10 GMT
+      - Wed, 31 Jul 2024 21:13:43 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-iad-kjyo7100046-IAD
+      - cache-iad-kjyo7100124-IAD
       X-Cache:
       - HIT
       X-Cache-Hits:
-      - '2'
+      - '1'
       X-Timer:
-      - S1722397331.744247,VS0,VE0
+      - S1722460423.155307,VS0,VE1
       Vary:
       - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
@@ -61,16 +61,16 @@ http_interactions:
       Cross-Origin-Resource-Policy:
       - cross-origin
       X-Fastly-Request-Id:
-      - b2f4a2c829c432722f39b60aba0b8c1fdcca485b
+      - dc4a2c1dcd21ec36380beb88224fa64239d81417
       Expires:
-      - Wed, 31 Jul 2024 03:47:10 GMT
+      - Wed, 31 Jul 2024 21:18:43 GMT
       Source-Age:
-      - '33'
+      - '28'
     body:
       encoding: ASCII-8BIT
       base64_string: |
-        UEsDBBQAAAAIAGN1/Vibb+5C+OYAAMbeCwALABwAaW5kZXgyLnlhbWxVVAkA
-        A3mqp2Z5qqdmdXgLAAEE6QMAAAR/AAAAtf1Pk2Q5cuWJ7udT+I4rf3S7F/cf
+        UEsDBBQAAAAIADZ1/1ibb+5C+OYAAMbeCwALABwAaW5kZXgyLnlhbWxVVAkA
+        AyhNqmYoTapmdXgLAAEE6QMAAAR/AAAAtf1Pk2Q5cuWJ7udT+I4rf3S7F/cf
         d5zqei09khyZqeyefXUxh69aolhkZnFE+ts/KGAO9wiY6wF+atMhQpHOijgH
         hgtVKBSqB6+vr//L68s//Pmf/+F/ecn/7x/+5de//se//cPL7373X/+/9T/8
         7X/+2y//8PJPv/zytz//67/U//Sv//GX//7Lr//w8ne39Hf1v/zPX/5Y/v/X
@@ -1384,13 +1384,13 @@ http_interactions:
         f/vj3/78p7//H3/6l7/8ff67r4u3HTzEv03g3wD+8iP+7fYl/vK6eEvoIX7q
         xn99iZ9s/F+76of4ezf+5Uv83cb/9QJ6gL989X3zf/nTX3/N/+Vvv/7HL4/5
         lvv3frW/+BRShySI/+WkVfypSfvP/+2fXvcf8Je3L/D/5T/+Yk/peLfLDxm+
-        RJuA+b/+yz+9ro+B/p8//+X17oz//1BLAQIeAxQAAAAIAGN1/Vibb+5C+OYA
-        AMbeCwALABgAAAAAAAEAAACkgQAAAABpbmRleDIueWFtbFVUBQADeaqnZnV4
+        RJuA+b/+yz+9ro+B/p8//+X17oz//1BLAQIeAxQAAAAIADZ1/1ibb+5C+OYA
+        AMbeCwALABgAAAAAAAEAAACkgQAAAABpbmRleDIueWFtbFVUBQADKE2qZnV4
         CwABBOkDAAAEfwAAAFBLBQYAAAAAAQABAFEAAAA95wAAAAA=
-  recorded_at: Wed, 31 Jul 2024 03:42:10 GMT
+  recorded_at: Wed, 31 Jul 2024 21:13:43 GMT
 - request:
     method: get
-    uri: https://raw.githubusercontent.com/relaton/relaton-data-bipm/master/data/metrologia-30-4.yaml
+    uri: https://raw.githubusercontent.com/relaton/relaton-data-bipm/main/data/metrologia-30-4.yaml
     body:
       encoding: US-ASCII
       base64_string: ''
@@ -1437,23 +1437,23 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Github-Request-Id:
-      - F08C:1E3C6E:ABCE4F:BF5116:66A9B291
+      - 4EA6:19927B:1D932F:2078BF:66AAA907
       Content-Encoding:
       - gzip
       Accept-Ranges:
       - bytes
       Date:
-      - Wed, 31 Jul 2024 03:42:12 GMT
+      - Wed, 31 Jul 2024 21:13:44 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-iad-kjyo7100163-IAD
+      - cache-iad-kjyo7100119-IAD
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1722397332.066375,VS0,VE90
+      - S1722460424.254698,VS0,VE163
       Vary:
       - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
@@ -1461,9 +1461,9 @@ http_interactions:
       Cross-Origin-Resource-Policy:
       - cross-origin
       X-Fastly-Request-Id:
-      - f8f88d1b40b237f17382415f0eae52dcc70ccf6b
+      - b548c49373219bae83bfee4e4775d102fb888eaf
       Expires:
-      - Wed, 31 Jul 2024 03:47:12 GMT
+      - Wed, 31 Jul 2024 21:18:44 GMT
       Source-Age:
       - '0'
     body:
@@ -1486,5 +1486,5 @@ http_interactions:
         QGa0ArvRChW2HCqycqjYy6HCCmNFJowVuzBiPUYg8xiB3WNUOVIY18DvB+GW
         mQ8EZDkoMo9RsXuMqsCCUJCBULCDIJEtcg0kAEFyt0gFWE0AMk0Adk0AbDkA
         WTkAezlgnSVF5iyp73eW5tES+sX/pPNNnvwFoaYb3kMtAAA=
-  recorded_at: Wed, 31 Jul 2024 03:42:12 GMT
+  recorded_at: Wed, 31 Jul 2024 21:13:44 GMT
 recorded_with: VCR 6.2.0
