@@ -29,7 +29,7 @@ http_interactions:
       Content-Type:
       - application/zip
       Etag:
-      - W/"ed5bdcd3845fb91efa568f06f0a16e838c10216ccb40b89be4903d5e089048cf"
+      - W/"c78592bf8cc962c27b552a778563d226eae55670d043d4c3f96626f4b996e59a"
       Strict-Transport-Security:
       - max-age=31536000
       X-Content-Type-Options:
@@ -39,21 +39,21 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Github-Request-Id:
-      - AFB9:330AF:7A4C4:86EEE:66AAA8EA
+      - 28D6:8CBBA:EF9202:10866A0:66B42BC3
       Accept-Ranges:
       - bytes
       Date:
-      - Wed, 31 Jul 2024 21:13:54 GMT
+      - Thu, 08 Aug 2024 02:22:42 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-iad-kjyo7100051-IAD
+      - cache-iad-kjyo7100125-IAD
       X-Cache:
       - HIT
       X-Cache-Hits:
       - '1'
       X-Timer:
-      - S1722460435.584677,VS0,VE2
+      - S1723083762.169080,VS0,VE1
       Vary:
       - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
@@ -61,16 +61,16 @@ http_interactions:
       Cross-Origin-Resource-Policy:
       - cross-origin
       X-Fastly-Request-Id:
-      - de252b30fb70a6e7511bd49df5cfc0e15821d910
+      - 7ea5ebd52ea6cda867d12f10cddab85674b4ecce
       Expires:
-      - Wed, 31 Jul 2024 21:18:54 GMT
+      - Thu, 08 Aug 2024 02:27:42 GMT
       Source-Age:
-      - '39'
+      - '42'
     body:
       encoding: ASCII-8BIT
       base64_string: |
-        UEsDBBQAAAAIADZ1/1ibb+5C+OYAAMbeCwALABwAaW5kZXgyLnlhbWxVVAkA
-        AyhNqmYoTapmdXgLAAEE6QMAAAR/AAAAtf1Pk2Q5cuWJ7udT+I4rf3S7F/cf
+        UEsDBBQAAAAIADF1Almbb+5C+OYAAMbeCwALABwAaW5kZXgyLnlhbWxVVAkA
+        Ax7wrGYe8KxmdXgLAAEE6QMAAAR/AAAAtf1Pk2Q5cuWJ7udT+I4rf3S7F/cf
         d5zqei09khyZqeyefXUxh69aolhkZnFE+ts/KGAO9wiY6wF+atMhQpHOijgH
         hgtVKBSqB6+vr//L68s//Pmf/+F/ecn/7x/+5de//se//cPL7373X/+/9T/8
         7X/+2y//8PJPv/zytz//67/U//Sv//GX//7Lr//w8ne39Hf1v/zPX/5Y/v/X
@@ -1384,10 +1384,10 @@ http_interactions:
         f/vj3/78p7//H3/6l7/8ff67r4u3HTzEv03g3wD+8iP+7fYl/vK6eEvoIX7q
         xn99iZ9s/F+76of4ezf+5Uv83cb/9QJ6gL989X3zf/nTX3/N/+Vvv/7HL4/5
         lvv3frW/+BRShySI/+WkVfypSfvP/+2fXvcf8Je3L/D/5T/+Yk/peLfLDxm+
-        RJuA+b/+yz+9ro+B/p8//+X17oz//1BLAQIeAxQAAAAIADZ1/1ibb+5C+OYA
-        AMbeCwALABgAAAAAAAEAAACkgQAAAABpbmRleDIueWFtbFVUBQADKE2qZnV4
+        RJuA+b/+yz+9ro+B/p8//+X17oz//1BLAQIeAxQAAAAIADF1Almbb+5C+OYA
+        AMbeCwALABgAAAAAAAEAAACkgQAAAABpbmRleDIueWFtbFVUBQADHvCsZnV4
         CwABBOkDAAAEfwAAAFBLBQYAAAAAAQABAFEAAAA95wAAAAA=
-  recorded_at: Wed, 31 Jul 2024 21:13:54 GMT
+  recorded_at: Thu, 08 Aug 2024 02:22:42 GMT
 - request:
     method: get
     uri: https://raw.githubusercontent.com/relaton/relaton-data-bipm/main/static/jcgm/vim-3.yaml
@@ -1400,9 +1400,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - Mechanize/2.10.1 Ruby/3.3.3p89 (http://github.com/sparklemotion/mechanize/)
-      Accept-Charset:
-      - ISO-8859-1,utf-8;q=0.7,*;q=0.7
+      - Mechanize/2.12.0 Ruby/3.3.3p89 (http://github.com/sparklemotion/mechanize/)
       Accept-Language:
       - en-us,en;q=0.5
       Host:
@@ -1437,23 +1435,23 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Github-Request-Id:
-      - 9AF9:31908E:81685:8DF00:66AAA912
+      - BF8F:3E7A2E:FCB644:115907C:66B42BF1
       Content-Encoding:
       - gzip
       Accept-Ranges:
       - bytes
       Date:
-      - Wed, 31 Jul 2024 21:13:55 GMT
+      - Thu, 08 Aug 2024 02:22:43 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-iad-kjyo7100106-IAD
+      - cache-iad-kjyo7100066-IAD
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1722460436.626481,VS0,VE85
+      - S1723083763.265146,VS0,VE75
       Vary:
       - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
@@ -1461,9 +1459,9 @@ http_interactions:
       Cross-Origin-Resource-Policy:
       - cross-origin
       X-Fastly-Request-Id:
-      - d820e55b13f9fe1cea0f3234e6a8d858b4d85c22
+      - b2fbf5683928ca6dcacf7cc5d5f7e7e5028656b5
       Expires:
-      - Wed, 31 Jul 2024 21:18:55 GMT
+      - Thu, 08 Aug 2024 02:27:43 GMT
       Source-Age:
       - '0'
     body:
@@ -1492,5 +1490,5 @@ http_interactions:
         UPA5B/us58Jotc1jB98sakPGuXK27c29wz5pAouFY7BTtxIfPQbdUJ2UPB2/
         toPn6OLhO0AEga4qa8peUbftDZOEkkYwUO2rpO/CtcLjCI42Li+cD/GfEBiu
         EUxYbetG466+zbgbwGstthW04fHhBkyolids8250P7of/A0UC/fGtBMAAA==
-  recorded_at: Wed, 31 Jul 2024 21:13:55 GMT
+  recorded_at: Thu, 08 Aug 2024 02:22:43 GMT
 recorded_with: VCR 6.2.0

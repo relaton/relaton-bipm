@@ -58,12 +58,9 @@ module RelatonBipm
 
         cm = eg.xpath("committee").map do |c|
           vars = variants c
-          cnt = if vars.any?
-                  RelatonBib::LocalizedString.new vars
-                else
-                  RelatonBib::LocalizedString.new c.text, c[:language], c[:script]
-                end
-          Committee.new acronym: c[:acronym], content: cnt
+          cnt = vars.any? ? vars : c.text
+          args = c.to_h.transform_keys(&:to_sym).select { |k, _| %i[language script locale].include?(k) }
+          Committee.new acronym: c[:acronym], content: cnt, **args
         end
         wg = eg.xpath("workgroup").map do |w|
           WorkGroup.new content: w.text, acronym: w[:acronym]

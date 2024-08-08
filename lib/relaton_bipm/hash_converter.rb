@@ -73,8 +73,7 @@ module RelatonBipm
 
       cmt = ret[:editorialgroup][:committee].map do |c|
         if (vars = committee_variants c).any?
-          content = RelatonBib::LocalizedString.new vars
-          Committee.new acronym: c[:acronym], content: content
+          Committee.new acronym: c[:acronym], content: vars
         else
           Committee.new(**c)
         end
