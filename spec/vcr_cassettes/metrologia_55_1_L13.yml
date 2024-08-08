@@ -29,7 +29,7 @@ http_interactions:
       Content-Type:
       - application/zip
       Etag:
-      - W/"c78592bf8cc962c27b552a778563d226eae55670d043d4c3f96626f4b996e59a"
+      - W/"03d52cb7902a61dea2be8e33fe5be10c40972787b3e60ff770c953246cf0fbd4"
       Strict-Transport-Security:
       - max-age=31536000
       X-Content-Type-Options:
@@ -39,21 +39,21 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Github-Request-Id:
-      - 28D6:8CBBA:EF9202:10866A0:66B42BC3
+      - ED28:149A33:FC0107:1158F7D:66B43C16
       Accept-Ranges:
       - bytes
       Date:
-      - Thu, 08 Aug 2024 02:22:36 GMT
+      - Thu, 08 Aug 2024 03:32:11 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-iad-kjyo7100106-IAD
+      - cache-iad-kjyo7100123-IAD
       X-Cache:
       - HIT
       X-Cache-Hits:
-      - '1'
+      - '2'
       X-Timer:
-      - S1723083757.712628,VS0,VE1
+      - S1723087932.752388,VS0,VE0
       Vary:
       - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
@@ -61,16 +61,16 @@ http_interactions:
       Cross-Origin-Resource-Policy:
       - cross-origin
       X-Fastly-Request-Id:
-      - 0eb0831854277a3fcb13db52b835fc0a907df380
+      - de7cefec48d0b121f6a4ca25b9a9b592e4fe6d4e
       Expires:
-      - Thu, 08 Aug 2024 02:27:36 GMT
+      - Thu, 08 Aug 2024 03:37:11 GMT
       Source-Age:
       - '36'
     body:
       encoding: ASCII-8BIT
       base64_string: |
-        UEsDBBQAAAAIADF1Almbb+5C+OYAAMbeCwALABwAaW5kZXgyLnlhbWxVVAkA
-        Ax7wrGYe8KxmdXgLAAEE6QMAAAR/AAAAtf1Pk2Q5cuWJ7udT+I4rf3S7F/cf
+        UEsDBBQAAAAIAKkbCFmbb+5C+OYAAMbeCwALABwAaW5kZXgyLnlhbWxVVAkA
+        A407tGaNO7RmdXgLAAEE6QMAAAR/AAAAtf1Pk2Q5cuWJ7udT+I4rf3S7F/cf
         d5zqei09khyZqeyefXUxh69aolhkZnFE+ts/KGAO9wiY6wF+atMhQpHOijgH
         hgtVKBSqB6+vr//L68s//Pmf/+F/ecn/7x/+5de//se//cPL7373X/+/9T/8
         7X/+2y//8PJPv/zytz//67/U//Sv//GX//7Lr//w8ne39Hf1v/zPX/5Y/v/X
@@ -1384,10 +1384,10 @@ http_interactions:
         f/vj3/78p7//H3/6l7/8ff67r4u3HTzEv03g3wD+8iP+7fYl/vK6eEvoIX7q
         xn99iZ9s/F+76of4ezf+5Uv83cb/9QJ6gL989X3zf/nTX3/N/+Vvv/7HL4/5
         lvv3frW/+BRShySI/+WkVfypSfvP/+2fXvcf8Je3L/D/5T/+Yk/peLfLDxm+
-        RJuA+b/+yz+9ro+B/p8//+X17oz//1BLAQIeAxQAAAAIADF1Almbb+5C+OYA
-        AMbeCwALABgAAAAAAAEAAACkgQAAAABpbmRleDIueWFtbFVUBQADHvCsZnV4
+        RJuA+b/+yz+9ro+B/p8//+X17oz//1BLAQIeAxQAAAAIAKkbCFmbb+5C+OYA
+        AMbeCwALABgAAAAAAAEAAACkgQAAAABpbmRleDIueWFtbFVUBQADjTu0ZnV4
         CwABBOkDAAAEfwAAAFBLBQYAAAAAAQABAFEAAAA95wAAAAA=
-  recorded_at: Thu, 08 Aug 2024 02:22:36 GMT
+  recorded_at: Thu, 08 Aug 2024 03:32:11 GMT
 - request:
     method: get
     uri: https://raw.githubusercontent.com/relaton/relaton-data-bipm/main/data/metrologia-55-1-l13.yaml
@@ -1435,23 +1435,23 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Github-Request-Id:
-      - CBDC:378138:34DA30:3B78CD:66B42BED
+      - C91F:4E7D9:B2F325:C61DD4:66B43C3C
       Content-Encoding:
       - gzip
       Accept-Ranges:
       - bytes
       Date:
-      - Thu, 08 Aug 2024 02:22:37 GMT
+      - Thu, 08 Aug 2024 03:32:13 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-iad-kjyo7100130-IAD
+      - cache-iad-kjyo7100040-IAD
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1723083758.902376,VS0,VE87
+      - S1723087933.921403,VS0,VE89
       Vary:
       - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
@@ -1459,9 +1459,9 @@ http_interactions:
       Cross-Origin-Resource-Policy:
       - cross-origin
       X-Fastly-Request-Id:
-      - a97874999f5a80832f7e6b2c454a0eb56bea349a
+      - 6d24659451adfa36595f121ec0b6d754a0ca696e
       Expires:
-      - Thu, 08 Aug 2024 02:27:37 GMT
+      - Thu, 08 Aug 2024 03:37:13 GMT
       Source-Age:
       - '0'
     body:
@@ -1492,5 +1492,5 @@ http_interactions:
         8sM3X/PWa6NpYTlAUgjGZUArZ5dOEyphgtttHQMPaaNEmaMXaKxvuz/qy2E0
         6h3R4saUR5SiYzoFgfimSjUbbcutctIzN1L1usHOxm7WSpjG/ib9an497A+D
         vwF/QrMg2xYAAA==
-  recorded_at: Thu, 08 Aug 2024 02:22:37 GMT
+  recorded_at: Thu, 08 Aug 2024 03:32:12 GMT
 recorded_with: VCR 6.2.0
