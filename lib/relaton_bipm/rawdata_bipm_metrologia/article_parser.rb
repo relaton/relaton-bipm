@@ -145,7 +145,7 @@ module RelatonBipm
       end
 
       def parse_affiliation(aff)
-        text = aff.xpath("text()").map { |n| n.text.strip }.join
+        text = aff.xpath("text()|sup|sub").to_xml.split(",").map(&:strip).reject(&:empty?).join(", ")
         return if text.include?("Permanent address:") || text == "Germany" ||
           text.start_with?("Guest") || text.start_with?("Deceased") ||
           text.include?("Author to whom any correspondence should be addressed")

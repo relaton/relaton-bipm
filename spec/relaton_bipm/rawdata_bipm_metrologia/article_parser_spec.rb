@@ -209,7 +209,7 @@ describe RelatonBipm::RawdataBipmMetrologia::ArticleParser do
         let(:affiliation) do
           xml = <<~XML
             <aff id="aff1">
-            <label>1</label>Bureau International des Poids et Mesures, Pavillon de Breteuil, Sèvres/Seine et Oise, France</aff>
+              <label>1</label>DRA/SRIRMa, C.E.N. Saclay, B.P. n<sup>o</sup> 2, F-91190 Gif s/Yvette, France</aff>
           XML
           aff = Nokogiri::XML::DocumentFragment.parse(xml).at("aff")
           subject.parse_affiliation aff
@@ -220,7 +220,7 @@ describe RelatonBipm::RawdataBipmMetrologia::ArticleParser do
         it { expect(affiliation.organization).to be_instance_of RelatonBib::Organization }
         it do
           expect(affiliation.organization.name[0].content).to eq(
-            "Bureau International des Poids et Mesures, Pavillon de Breteuil, Sèvres/Seine et Oise, France"
+            "DRA/SRIRMa, C.E.N. Saclay, B.P. n<sup>o</sup> 2, F-91190 Gif s/Yvette, France"
           )
         end
       end
