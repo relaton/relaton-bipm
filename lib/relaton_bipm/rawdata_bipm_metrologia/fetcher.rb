@@ -29,8 +29,9 @@ module RelatonBipm
       # Fetch articles from rawdata-bipm-metrologia and save to files
       #
       def fetch_articles # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
+        # aff = Affiliations.parse DIR
         Dir["#{DIR}/**/*.xml"].each do |path|
-          item = ArticleParser.parse path
+          item = ArticleParser.parse path # , aff
           file = "#{item.docidentifier.first.id.downcase.tr(' ', '-')}.#{@data_fetcher.ext}"
           out_path = File.join(@data_fetcher.output, file)
           key = Id.new.parse(item.docidentifier.first.id).to_hash

@@ -29,7 +29,7 @@ http_interactions:
       Content-Type:
       - application/zip
       Etag:
-      - W/"03d52cb7902a61dea2be8e33fe5be10c40972787b3e60ff770c953246cf0fbd4"
+      - W/"bc435146c7c605652287429b26cb19cc4f3319ef43cdb317683c91a714f9f915"
       Strict-Transport-Security:
       - max-age=31536000
       X-Content-Type-Options:
@@ -39,21 +39,21 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Github-Request-Id:
-      - ED28:149A33:FC0107:1158F7D:66B43C16
+      - D2D1:16E098:53A15B:5CCD59:66D29252
       Accept-Ranges:
       - bytes
       Date:
-      - Thu, 08 Aug 2024 03:31:51 GMT
+      - Sat, 31 Aug 2024 03:47:48 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-iad-kjyo7100055-IAD
+      - cache-iad-kjyo7100163-IAD
       X-Cache:
       - HIT
       X-Cache-Hits:
       - '1'
       X-Timer:
-      - S1723087911.457104,VS0,VE1
+      - S1725076069.537011,VS0,VE1
       Vary:
       - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
@@ -61,16 +61,16 @@ http_interactions:
       Cross-Origin-Resource-Policy:
       - cross-origin
       X-Fastly-Request-Id:
-      - 477bd1319bb0bddb702551acf01598159163c7c1
+      - 9414a5b4ab670307d3fc4eff394b5b34de41605a
       Expires:
-      - Thu, 08 Aug 2024 03:36:51 GMT
+      - Sat, 31 Aug 2024 03:52:48 GMT
       Source-Age:
       - '16'
     body:
       encoding: ASCII-8BIT
       base64_string: |
-        UEsDBBQAAAAIAKkbCFmbb+5C+OYAAMbeCwALABwAaW5kZXgyLnlhbWxVVAkA
-        A407tGaNO7RmdXgLAAEE6QMAAAR/AAAAtf1Pk2Q5cuWJ7udT+I4rf3S7F/cf
+        UEsDBBQAAAAIACB1Hlmbb+5C+OYAAMbeCwALABwAaW5kZXgyLnlhbWxVVAkA
+        A/zZ0Wb82dFmdXgLAAEE6QMAAAR/AAAAtf1Pk2Q5cuWJ7udT+I4rf3S7F/cf
         d5zqei09khyZqeyefXUxh69aolhkZnFE+ts/KGAO9wiY6wF+atMhQpHOijgH
         hgtVKBSqB6+vr//L68s//Pmf/+F/ecn/7x/+5de//se//cPL7373X/+/9T/8
         7X/+2y//8PJPv/zytz//67/U//Sv//GX//7Lr//w8ne39Hf1v/zPX/5Y/v/X
@@ -1384,10 +1384,10 @@ http_interactions:
         f/vj3/78p7//H3/6l7/8ff67r4u3HTzEv03g3wD+8iP+7fYl/vK6eEvoIX7q
         xn99iZ9s/F+76of4ezf+5Uv83cb/9QJ6gL989X3zf/nTX3/N/+Vvv/7HL4/5
         lvv3frW/+BRShySI/+WkVfypSfvP/+2fXvcf8Je3L/D/5T/+Yk/peLfLDxm+
-        RJuA+b/+yz+9ro+B/p8//+X17oz//1BLAQIeAxQAAAAIAKkbCFmbb+5C+OYA
-        AMbeCwALABgAAAAAAAEAAACkgQAAAABpbmRleDIueWFtbFVUBQADjTu0ZnV4
+        RJuA+b/+yz+9ro+B/p8//+X17oz//1BLAQIeAxQAAAAIACB1Hlmbb+5C+OYA
+        AMbeCwALABgAAAAAAAEAAACkgQAAAABpbmRleDIueWFtbFVUBQAD/NnRZnV4
         CwABBOkDAAAEfwAAAFBLBQYAAAAAAQABAFEAAAA95wAAAAA=
-  recorded_at: Thu, 08 Aug 2024 03:31:51 GMT
+  recorded_at: Sat, 31 Aug 2024 03:47:48 GMT
 - request:
     method: get
     uri: https://raw.githubusercontent.com/relaton/relaton-data-bipm/main/data/cipm/meeting/decision/2012-101-1.yaml
@@ -1435,23 +1435,23 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Github-Request-Id:
-      - 2229:A95AE:BA20E:D3F79:66B43C26
+      - E1F0:1EF3F2:5335ED:5C62B4:66D29262
       Content-Encoding:
       - gzip
       Accept-Ranges:
       - bytes
       Date:
-      - Thu, 08 Aug 2024 03:31:52 GMT
+      - Sat, 31 Aug 2024 03:47:49 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-iad-kjyo7100173-IAD
+      - cache-iad-kjyo7100099-IAD
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1723087913.612765,VS0,VE80
+      - S1725076070.620162,VS0,VE84
       Vary:
       - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
@@ -1459,9 +1459,9 @@ http_interactions:
       Cross-Origin-Resource-Policy:
       - cross-origin
       X-Fastly-Request-Id:
-      - 828025a475efac769c0102140093904d4ae21814
+      - 38702b4f02109be3fbea116a4be2c75cd0c5b69f
       Expires:
-      - Thu, 08 Aug 2024 03:36:52 GMT
+      - Sat, 31 Aug 2024 03:52:49 GMT
       Source-Age:
       - '0'
     body:
@@ -1482,7 +1482,7 @@ http_interactions:
         VsNBMU2b+9ecLLatujth3jAvgkP8cL+D3iXmdpuYm7dNzOKVErObAt3yyrpI
         gIOiprJ5QgoYwfvW7+BRDvO8v5AQSz+71Y5Cpw7eH5VdDF0h8tLwcpZAFVTI
         vmhJonFZNhJ8f9GRi0Ia2syz+9EsnkV/ACOUG7c7CQAA
-  recorded_at: Thu, 08 Aug 2024 03:31:52 GMT
+  recorded_at: Sat, 31 Aug 2024 03:47:49 GMT
 - request:
     method: get
     uri: https://raw.githubusercontent.com/relaton/relaton-data-bipm/main/data/cipm/meeting/decision/2022-111-10.yaml
@@ -1530,23 +1530,23 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Github-Request-Id:
-      - F560:37886:BC75FD:CFA5BD:66B43C2C
+      - 5C91:64584:8A3DA:9CE66:66D29269
       Content-Encoding:
       - gzip
       Accept-Ranges:
       - bytes
       Date:
-      - Thu, 08 Aug 2024 03:31:57 GMT
+      - Sat, 31 Aug 2024 03:47:53 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-iad-kjyo7100090-IAD
+      - cache-iad-kjyo7100082-IAD
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1723087917.109230,VS0,VE69
+      - S1725076074.844484,VS0,VE145
       Vary:
       - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
@@ -1554,9 +1554,9 @@ http_interactions:
       Cross-Origin-Resource-Policy:
       - cross-origin
       X-Fastly-Request-Id:
-      - 64fc5f247ec8ffc91469f6d8c820d95af19c1033
+      - ab787d1edbb57b9cb0019dc13c4d095ea780bf0e
       Expires:
-      - Thu, 08 Aug 2024 03:36:57 GMT
+      - Sat, 31 Aug 2024 03:52:53 GMT
       Source-Age:
       - '0'
     body:
@@ -1577,5 +1577,5 @@ http_interactions:
         o85Ww4ExTZt7bU4Wu5bdnTTvmBfBIb69eYDeJeZql5jL903M4o0S8zAFuuW1
         dZEAB0VNZXOPFDCC953fwaMc6nl/NSGWpnalHYWOHbzfSbsYGkPkpevlLIEq
         qJB90YpE5LJspPjhziM3hiy0mkd3pVk8i/4BTX1sNUcJAAA=
-  recorded_at: Thu, 08 Aug 2024 03:31:57 GMT
+  recorded_at: Sat, 31 Aug 2024 03:47:53 GMT
 recorded_with: VCR 6.2.0

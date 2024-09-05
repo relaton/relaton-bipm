@@ -59,12 +59,9 @@ module RelatonBipm
       #
       # Parse volume, issue and page
       #
-      # @return [Array<String>] array of volume, issue and page
+      # @return [String] volume issue page
       #
       def volume_issue_article
-        # volume = @meta.at("./volume").text
-        # issue = @meta.at("./issue").text
-        # page = @doc.at("./front/article-meta/fpage")&.text || manuscript
         [@journal, @volume, @article].compact.join(" ")
       end
 
@@ -140,17 +137,52 @@ module RelatonBipm
       #
       # @return [Array<RelatonBib::Affiliation>] array of affiliations
       #
-      def affiliation(contrib) # rubocop:disable Metrics/AbcSize
+      def affiliation(contrib)
         contrib.xpath("./xref[@ref-type='aff']").map do |x|
-          a = @meta.at("./contrib-group/aff[@id='#{x[:rid]}']/label/following-sibling::node()")
-          parts = a.text.split(", ")
-          orgname = parts[0..-3].join(", ")
-          city, country = parts[-2..]
-          address = []
-          address << RelatonBib::Address.new(city: city, country: country) if city && country
-          org = RelatonBib::Organization.new name: orgname, contact: address
-          RelatonBib::Affiliation.new organization: org
+          a = @meta.at("./contrib-group/aff[@id='#{x[:rid]}']") # /label/following-sibling::node()")
+            parse_affiliation a
+        end.compact
+      end
+
+      def parse_affiliation(aff)
+        text = aff.xpath("text()").map(&:text).join.strip
+        return if text.include?("Permanent address:") || text == "Germany" ||
+          text.start_with?("Guest") || text.start_with?("Deceased") ||
+          text.include?("Author to whom any correspondence should be addressed")
+
+        args = {}
+        institution = aff.at('institution')
+        if institution
+          name = institution.text
+          return if name == "1005 Southover Lane"
+
+          args[:subdivision] = parse_division(aff)
+          args[:contact] = parse_address(aff)
+        else
+          name = text
         end
+        args[:name] = [RelatonBib::LocalizedString.new(name)]
+        org = RelatonBib::Organization.new(**args)
+        RelatonBib::Affiliation.new(organization: org)
+      end
+
+      def parse_division(aff)
+        div = aff.xpath("text()[following-sibling::institution]").text.gsub(/^\W*|\W*$/, "")
+        return [] if div.empty?
+
+        [RelatonBib::LocalizedString.new(div)]
+      end
+
+      def parse_address(aff)
+        address = []
+        addr = aff.xpath("text()[preceding-sibling::institution]").text.gsub(/^\W*|\W*$/, "")
+        address << addr unless addr.empty?
+        country = aff.at('country')
+        address << country.text if country && !country.text.empty?
+        address = address.join(", ")
+        return [] if address.empty?
+
+        [RelatonBib::Address.new(formatted_address: address)]
       end
 
       #
@@ -173,20 +205,20 @@ module RelatonBipm
       #
       # @return [Array<RelatonBib::Forename>] array of forenames
       #
-      def forename(given_name) # rubocop:disable Metrics/MethodLength
-        return [] unless given_name
+      # def forename(given_name) # rubocop:disable Metrics/MethodLength
+      #   return [] unless given_name
 
-        given_name.text.scan(/(\w+)(?:\s(\w)(?:\s|$))?/).map do |nm, int|
-          if nm.size == 1
-            name = nil
-            init = nm
-          else
-            name = nm
-            init = int
-          end
-          RelatonBib::Forename.new(content: name, language: ["en"], script: ["Latn"], initial: init)
-        end
-      end
+      #   given_name.text.scan(/(\w+)(?:\s(\w)(?:\s|$))?/).map do |nm, int|
+      #     if nm.size == 1
+      #       name = nil
+      #       init = nm
+      #     else
+      #       name = nm
+      #       init = int
+      #     end
+      #     RelatonBib::Forename.new(content: name, language: ["en"], script: ["Latn"], initial: init)
+      #   end
+      # end
 
       #
       # Parse date

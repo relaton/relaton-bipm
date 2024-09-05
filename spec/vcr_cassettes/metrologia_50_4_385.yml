@@ -29,7 +29,7 @@ http_interactions:
       Content-Type:
       - application/zip
       Etag:
-      - W/"03d52cb7902a61dea2be8e33fe5be10c40972787b3e60ff770c953246cf0fbd4"
+      - W/"bc435146c7c605652287429b26cb19cc4f3319ef43cdb317683c91a714f9f915"
       Strict-Transport-Security:
       - max-age=31536000
       X-Content-Type-Options:
@@ -39,21 +39,21 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Github-Request-Id:
-      - ED28:149A33:FC0107:1158F7D:66B43C16
+      - D2D1:16E098:53A15B:5CCD59:66D29252
       Accept-Ranges:
       - bytes
       Date:
-      - Thu, 08 Aug 2024 03:32:09 GMT
+      - Sat, 31 Aug 2024 03:48:05 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-iad-kjyo7100024-IAD
+      - cache-iad-kjyo7100081-IAD
       X-Cache:
       - HIT
       X-Cache-Hits:
       - '1'
       X-Timer:
-      - S1723087929.115280,VS0,VE2
+      - S1725076086.671783,VS0,VE1
       Vary:
       - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
@@ -61,16 +61,16 @@ http_interactions:
       Cross-Origin-Resource-Policy:
       - cross-origin
       X-Fastly-Request-Id:
-      - 9214af14bb64c4254b1b824895c893a7c77056d3
+      - 3a379241bae875bf6826522a6253cc85a400edc4
       Expires:
-      - Thu, 08 Aug 2024 03:37:09 GMT
+      - Sat, 31 Aug 2024 03:53:05 GMT
       Source-Age:
       - '33'
     body:
       encoding: ASCII-8BIT
       base64_string: |
-        UEsDBBQAAAAIAKkbCFmbb+5C+OYAAMbeCwALABwAaW5kZXgyLnlhbWxVVAkA
-        A407tGaNO7RmdXgLAAEE6QMAAAR/AAAAtf1Pk2Q5cuWJ7udT+I4rf3S7F/cf
+        UEsDBBQAAAAIACB1Hlmbb+5C+OYAAMbeCwALABwAaW5kZXgyLnlhbWxVVAkA
+        A/zZ0Wb82dFmdXgLAAEE6QMAAAR/AAAAtf1Pk2Q5cuWJ7udT+I4rf3S7F/cf
         d5zqei09khyZqeyefXUxh69aolhkZnFE+ts/KGAO9wiY6wF+atMhQpHOijgH
         hgtVKBSqB6+vr//L68s//Pmf/+F/ecn/7x/+5de//se//cPL7373X/+/9T/8
         7X/+2y//8PJPv/zytz//67/U//Sv//GX//7Lr//w8ne39Hf1v/zPX/5Y/v/X
@@ -1384,10 +1384,10 @@ http_interactions:
         f/vj3/78p7//H3/6l7/8ff67r4u3HTzEv03g3wD+8iP+7fYl/vK6eEvoIX7q
         xn99iZ9s/F+76of4ezf+5Uv83cb/9QJ6gL989X3zf/nTX3/N/+Vvv/7HL4/5
         lvv3frW/+BRShySI/+WkVfypSfvP/+2fXvcf8Je3L/D/5T/+Yk/peLfLDxm+
-        RJuA+b/+yz+9ro+B/p8//+X17oz//1BLAQIeAxQAAAAIAKkbCFmbb+5C+OYA
-        AMbeCwALABgAAAAAAAEAAACkgQAAAABpbmRleDIueWFtbFVUBQADjTu0ZnV4
+        RJuA+b/+yz+9ro+B/p8//+X17oz//1BLAQIeAxQAAAAIACB1Hlmbb+5C+OYA
+        AMbeCwALABgAAAAAAAEAAACkgQAAAABpbmRleDIueWFtbFVUBQAD/NnRZnV4
         CwABBOkDAAAEfwAAAFBLBQYAAAAAAQABAFEAAAA95wAAAAA=
-  recorded_at: Thu, 08 Aug 2024 03:32:08 GMT
+  recorded_at: Sat, 31 Aug 2024 03:48:05 GMT
 - request:
     method: get
     uri: https://raw.githubusercontent.com/relaton/relaton-data-bipm/main/data/metrologia-50-4-385.yaml
@@ -1435,23 +1435,23 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Github-Request-Id:
-      - 8612:342DB1:F478EE:10E09B7:66B43C3A
+      - 554D:3340D4:5872FF:61A07B:66D29275
       Content-Encoding:
       - gzip
       Accept-Ranges:
       - bytes
       Date:
-      - Thu, 08 Aug 2024 03:32:10 GMT
+      - Sat, 31 Aug 2024 03:48:06 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-iad-kjyo7100029-IAD
+      - cache-iad-kjyo7100167-IAD
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1723087930.248278,VS0,VE77
+      - S1725076087.718059,VS0,VE174
       Vary:
       - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
@@ -1459,9 +1459,9 @@ http_interactions:
       Cross-Origin-Resource-Policy:
       - cross-origin
       X-Fastly-Request-Id:
-      - c18d45e669e5f39486692b6214ade12b22ba361f
+      - 89adcc064cad1d430881e010c41402366736c3b9
       Expires:
-      - Thu, 08 Aug 2024 03:37:10 GMT
+      - Sat, 31 Aug 2024 03:53:06 GMT
       Source-Age:
       - '0'
     body:
@@ -1506,5 +1506,5 @@ http_interactions:
         MlohCQYOexS7KKgjDb1r1P3FcHx/etw4HDX6jvTceMaJUNV0TBVlUKJARheC
         6MzGqLZOtRQ7I/IYqfu3LgGus4sXZknn2hcmzV6a08CJ56dcza8vHn3xJrx/
         DWOlKeL8wd7O/jYdfi1ixXjyb4pslA3+Dg/LE2/CGAAA
-  recorded_at: Thu, 08 Aug 2024 03:32:10 GMT
+  recorded_at: Sat, 31 Aug 2024 03:48:06 GMT
 recorded_with: VCR 6.2.0
