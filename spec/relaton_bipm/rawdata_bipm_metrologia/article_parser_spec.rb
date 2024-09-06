@@ -206,21 +206,33 @@ describe RelatonBipm::RawdataBipmMetrologia::ArticleParser do
       end
 
       context "without institution" do
-        let(:affiliation) do
-          xml = <<~XML
+        let(:aff_with_tags) do
+          aff = Nokogiri::XML::DocumentFragment.parse(<<~XML).at("aff")
             <aff id="aff1">
               <label>1</label>DRA/SRIRMa, C.E.N. Saclay, B.P. n<sup>o</sup> 2, F-91190 Gif s/Yvette, France</aff>
           XML
-          aff = Nokogiri::XML::DocumentFragment.parse(xml).at("aff")
           subject.parse_affiliation aff
         end
 
-        # let(:affiliation) { subject.parse_affiliation doc.at("aff") }
-        it { expect(affiliation).to be_instance_of RelatonBib::Affiliation }
-        it { expect(affiliation.organization).to be_instance_of RelatonBib::Organization }
+        let(:aff_with_amp) do
+          aff = Nokogiri::XML::DocumentFragment.parse(<<~XML).at("aff")
+            <aff id="aff1">
+              <label>1</label>Department of Physics, Texas A &amp; M University, College Station, Texas 77843, USA</aff>
+          XML
+          subject.parse_affiliation aff
+        end
+
+        it { expect(aff_with_tags).to be_instance_of RelatonBib::Affiliation }
+        it { expect(aff_with_tags.organization).to be_instance_of RelatonBib::Organization }
         it do
-          expect(affiliation.organization.name[0].content).to eq(
+          expect(aff_with_tags.organization.name[0].content).to eq(
             "DRA/SRIRMa, C.E.N. Saclay, B.P. n<sup>o</sup> 2, F-91190 Gif s/Yvette, France"
+          )
+        end
+
+        it do
+          expect(aff_with_amp.organization.name[0].content).to eq(
+            "Department of Physics, Texas A & M University, College Station, Texas 77843, USA"
           )
         end
       end

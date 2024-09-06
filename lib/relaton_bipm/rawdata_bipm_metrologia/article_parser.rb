@@ -146,6 +146,7 @@ module RelatonBipm
 
       def parse_affiliation(aff)
         text = aff.xpath("text()|sup|sub").to_xml.split(",").map(&:strip).reject(&:empty?).join(", ")
+        text = Nokogiri::XML.fragment(text).text
         return if text.include?("Permanent address:") || text == "Germany" ||
           text.start_with?("Guest") || text.start_with?("Deceased") ||
           text.include?("Author to whom any correspondence should be addressed")
