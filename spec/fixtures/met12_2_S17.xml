@@ -1,0 +1,272 @@
+<bibdata type="article" schema-version="v1.2.9">
+  <title format="text/plain" language="en" script="Latn">Applying uncertainties to ocean colour data</title>
+  <uri type="src">https://doi.org/10.1088/0026-1394/49/2/S17</uri>
+  <uri type="doi">https://doi.org/10.1088/0026-1394/49/2/S17</uri>
+  <docidentifier type="BIPM" primary="true">Metrologia 52 1 155</docidentifier>
+  <docidentifier type="doi">10.1088/0026-1394/49/2/S17</docidentifier>
+  <date type="published">
+    <on>2012-03-02</on>
+  </date>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename language="en" script="Latn">S Lavender</completename>
+      </name>
+      <affiliation>
+        <organization>
+          <name>ARGANS Limited</name>
+        </organization>
+      </affiliation>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename language="en" script="Latn">O Fanton d'Andon</completename>
+      </name>
+      <affiliation>
+        <organization>
+          <name>ACRI-ST</name>
+        </organization>
+      </affiliation>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename language="en" script="Latn">S Kay</completename>
+      </name>
+      <affiliation>
+        <organization>
+          <name>ARGANS Limited</name>
+        </organization>
+      </affiliation>
+      <affiliation>
+        <organization>
+          <name>School of Biosciences</name>
+        </organization>
+      </affiliation>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename language="en" script="Latn">L Bourg</completename>
+      </name>
+      <affiliation>
+        <organization>
+          <name>ACRI-ST</name>
+        </organization>
+      </affiliation>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename language="en" script="Latn">S Emsley</completename>
+      </name>
+      <affiliation>
+        <organization>
+          <name>ARGANS Limited</name>
+        </organization>
+      </affiliation>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename language="en" script="Latn">Nicolas Gilles</completename>
+      </name>
+      <affiliation>
+        <organization>
+          <name>ACRI-ST</name>
+        </organization>
+      </affiliation>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename language="en" script="Latn">T Nightingale</completename>
+      </name>
+      <affiliation>
+        <organization>
+          <name>RAL Space</name>
+        </organization>
+      </affiliation>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename language="en" script="Latn">Ralf Quast</completename>
+      </name>
+      <affiliation>
+        <organization>
+          <name>Brockmann Consult</name>
+        </organization>
+      </affiliation>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename language="en" script="Latn">Martin Bates</completename>
+      </name>
+      <affiliation>
+        <organization>
+          <name>RAL Space</name>
+        </organization>
+      </affiliation>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename language="en" script="Latn">Thomas Storm</completename>
+      </name>
+      <affiliation>
+        <organization>
+          <name>Brockmann Consult</name>
+        </organization>
+      </affiliation>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename language="en" script="Latn">J Hedley</completename>
+      </name>
+      <affiliation>
+        <organization>
+          <name>ARGANS Limited</name>
+        </organization>
+      </affiliation>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename language="en" script="Latn">M Knul</completename>
+      </name>
+      <affiliation>
+        <organization>
+          <name>ARGANS Limited</name>
+        </organization>
+      </affiliation>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename language="en" script="Latn">G Sotis</completename>
+      </name>
+      <affiliation>
+        <organization>
+          <name>Telespazio S.p.A.</name>
+        </organization>
+      </affiliation>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename language="en" script="Latn">R Nasir-Habeeb</completename>
+      </name>
+      <affiliation>
+        <organization>
+          <name>ARGANS Limited</name>
+        </organization>
+      </affiliation>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename language="en" script="Latn">P Goryl</completename>
+      </name>
+      <affiliation>
+        <organization>
+          <name>Telespazio S.p.A.</name>
+        </organization>
+      </affiliation>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="author"/>
+    <organization>
+      <name>Sentinel-3 L2 Products and Algorithm Team</name>
+    </organization>
+  </contributor>
+  <abstract format="text/html" language="en" script="Latn">
+    <p>Retrieval of operational optical products from the future Global Monitoring for Environment and Security (GMES) Sentinel-3 mission aims to provide continuity of existing missions delivering ocean/land colour, surface temperature and sea surface topography data. This paper describes the current status of the Sentinel-3 Level 2 Optical Prototype Processor (O-L2PP) whose development includes not only a list of products, but also associated uncertainty estimates—a key requirement for the processor. Examples of the approaches adopted within the Ocean and Land Colour Instrument (OLCI) processing module demonstrate how uncertainties can be estimated.</p>
+  </abstract>
+  <copyright>
+    <from>2012</from>
+    <owner>
+      <organization>
+        <name>BIPM</name>
+      </organization>
+    </owner>
+    <owner>
+      <organization>
+        <name>IOP Publishing Ltd</name>
+      </organization>
+    </owner>
+  </copyright>
+  <relation type="hasManifestation">
+    <bibitem>
+      <title format="text/plain" language="en" script="Latn">Applying uncertainties to ocean colour data</title>
+      <date type="epub">
+        <on>2012-03-02</on>
+      </date>
+      <medium>
+        <carrier>online</carrier>
+      </medium>
+    </bibitem>
+  </relation>
+  <relation type="hasManifestation">
+    <bibitem>
+      <title format="text/plain" language="en" script="Latn">Applying uncertainties to ocean colour data</title>
+      <date type="ppub">
+        <on>2012-04-01</on>
+      </date>
+      <medium>
+        <carrier>print</carrier>
+      </medium>
+    </bibitem>
+  </relation>
+  <series>
+    <title format="text/plain" language="en" script="Latn">Metrologia</title>
+  </series>
+  <extent>
+    <locality type="volume">
+      <referenceFrom>49</referenceFrom>
+    </locality>
+    <locality type="issue">
+      <referenceFrom>2</referenceFrom>
+    </locality>
+    <locality type="page">
+      <referenceFrom>S17</referenceFrom>
+      <referenceTo>S20</referenceTo>
+    </locality>
+  </extent>
+  <ext schema-version="v1.0.0">
+    <doctype>article</doctype>
+  </ext>
+</bibdata>
