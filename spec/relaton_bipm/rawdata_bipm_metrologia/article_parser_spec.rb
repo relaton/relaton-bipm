@@ -1,7 +1,7 @@
 # encoding: UTF-8
 
 describe RelatonBipm::RawdataBipmMetrologia::ArticleParser do
-  let(:doc) { Nokogiri::XML(File.read("spec/fixtures/met12_3_273.xml", encoding: "UTF-8")) }
+  let(:doc) { Nokogiri::XML(File.read("spec/fixtures/rawdata-bipm/met12_3_273.xml", encoding: "UTF-8")) }
   subject { described_class.new doc, "12", "3", "273" }
 
   it "call parser method" do
@@ -196,7 +196,7 @@ describe RelatonBipm::RawdataBipmMetrologia::ArticleParser do
       end
 
       context "with institution only" do
-        let(:doc) { Nokogiri::XML File.read("spec/fixtures/met_52_1_155.xml", encoding: "UTF-8") }
+        let(:doc) { Nokogiri::XML File.read("spec/fixtures/rawdata-bipm/met_52_1_155.xml", encoding: "UTF-8") }
         let(:affiliation) { subject.parse_affiliation doc.at("aff") }
         it { expect(affiliation).to be_instance_of RelatonBib::Affiliation }
         it { expect(affiliation.organization).to be_instance_of RelatonBib::Organization }
@@ -316,7 +316,7 @@ describe RelatonBipm::RawdataBipmMetrologia::ArticleParser do
     end
 
     context "parse_extent" do
-      let(:doc) { Nokogiri::XML(File.read("spec/fixtures/met_52_1_155.xml", encoding: "UTF-8")) }
+      let(:doc) { Nokogiri::XML(File.read("spec/fixtures/rawdata-bipm/met_52_1_155.xml", encoding: "UTF-8")) }
       let(:extent) { subject.parse_extent }
       it { expect(extent[0]).to be_instance_of RelatonBib::Extent }
       it { expect(extent[0].locality[0]).to be_instance_of RelatonBib::Locality }
@@ -338,7 +338,7 @@ describe RelatonBipm::RawdataBipmMetrologia::ArticleParser do
     end
 
     context "parse_link" do
-      let(:doc) { Nokogiri::XML File.read("spec/fixtures/met_52_1_155.xml", encoding: "UTF-8") }
+      let(:doc) { Nokogiri::XML File.read("spec/fixtures/rawdata-bipm/met_52_1_155.xml", encoding: "UTF-8") }
       let(:link) { subject.parse_link }
       it { expect(link[0]).to be_instance_of RelatonBib::TypedUri }
       it { expect(link[0].content.to_s).to eq "https://doi.org/10.1088/0026-1394/52/1/155" }
