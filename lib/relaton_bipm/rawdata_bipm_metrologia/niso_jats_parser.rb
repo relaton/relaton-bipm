@@ -3,8 +3,7 @@ require "niso-jats"
 module RelatonBipm
   module RawdataBipmMetrologia
     class NisoJatsParser
-      ATTRS = %i[docid title contributor date copyright abstract relation series
-                 extent type doctype link].freeze
+      ATTRS = %i[docid title contributor date copyright abstract relation series extent type doctype link].freeze
 
       #
       # @param [Niso::Jats::Article] doc document
@@ -119,6 +118,44 @@ module RelatonBipm
         end
       end
 
+      #
+      # Parese relation
+      #
+      # @return [Array<RelatonBib::DocumentRelation>] array of document relations
+      #
+      def parse_relation
+        @doc.date do |d, t|
+          RelatonBib::DocumentRelation.new(type: "hasManifestation", bibitem: bibitem(d, t))
+        end
+      end
+
+      #
+      # Parse series
+      #
+      # @return [Array<RelatonBib::Series>] array of series
+      #
+      def parse_series
+        title = RelatonBib::TypedTitleString.new(content: @doc.journal_title, language: ["en"], script: ["Latn"])
+        [RelatonBib::Series.new(title: title)]
+      end
+
+      #
+      # Parse extent
+      #
+      # @return [Array<RelatonBib::Extent>] array of extents
+      #
+      def parse_extent
+        @meta.xpath("./volume|./issue|./fpage").map do |e|
+          if e.name == "fpage"
+            type = "page"
+            to = @meta.at("./lpage")&.text
+          else
+            type = e.name
+          end
+          RelatonBib::Locality.new type, e.text, to
+        end
+      end
+
       private
 
       #
@@ -222,6 +259,21 @@ module RelatonBipm
         return [] if address.empty?
 
         [RelatonBib::Address.new(formatted_address: address.join(", "))]
+      end
+
+      #
+      # Create bibitem
+      #
+      # @param [String] date
+      # @param [String] type date type
+      #
+      # @return [RelatonBipm::BipmBibliographicItem] bibitem
+      #
+      def bibitem(date, type)
+        dt = RelatonBib::BibliographicDate.new(type: type, on: date)
+        carrier = type == "epub" ? "online" : "print"
+        medium = RelatonBib::Medium.new carrier: carrier
+        BipmBibliographicItem.new title: parse_title, date: [dt], medium: medium
       end
     end
   end
