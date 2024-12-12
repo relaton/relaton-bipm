@@ -61,8 +61,8 @@ contributor:
       type: publisher
       description: Publisher role
   - person:
-      name: 
-        completename: 
+      name:
+        completename:
           content: A. Bierman
           language: en
       affiliation:
@@ -135,7 +135,7 @@ contributor:
     role:
       type: distributor
       description: sponsor
- 
+
 copyright:
   owner:
     name: International Organization for Standardization
@@ -153,17 +153,17 @@ relation:
   - type: obsoletes
     bibitem:
       formattedref: ISO 19115:2003
-    locality:
-      - locality_stack:
-          type: section
-          reference_from: Reference from
-      - locality_stack:
-        - type: chapter
-          reference_from: "1"
-        - type: page
-          reference_from: "2"
-    source_locality:
-      source_locality_stack:
+    locality_stack:
+    - locality:
+      - type: section
+        reference_from: Reference from
+    - locality:
+      - type: chapter
+        reference_from: "1"
+      - type: page
+        reference_from: "2"
+    source_locality_stack:
+      - source_locality:
         - type: volume
           reference_from: "2"
         - type: chapter
@@ -225,18 +225,15 @@ place:
 
 extent:
   - locality:
-      type: section
+    - type: section
       reference_from: Reference from
       reference_to: Reference to
-  - locality:
-      type: chapter
+    - type: chapter
       reference_from: "4"
-  - locality:
-      type: page
+    - type: page
       reference_from: "10"
       reference_to: "20"
-  - locality:
-      type: volume
+    - type: volume
       reference_from: "1"
 
 accesslocation:

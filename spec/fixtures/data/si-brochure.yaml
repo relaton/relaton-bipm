@@ -71,25 +71,25 @@ copyright:
     abbreviation:
       content: BIPM
   from: '2019'
-doctype:
-  type: brochure
-editorialgroup:
-  committee:
-  - acronym: BIPM
-    variants:
-    - content: International Bureau of Weights and Measures
-      language:
-      - en
-      script:
-      - Latn
-    - content: Bureau International des Poids et Mesures
-      language:
-      - fr
-      script:
-      - Latn
-structuredidentifier:
-  docnumber: Brochure
-  part: '1'
 ext:
   schema-version: v1.0.0
-si_aspect: full
+  doctype:
+    type: brochure
+  editorialgroup:
+    committee:
+    - acronym: BIPM
+      variants:
+      - content: International Bureau of Weights and Measures
+        language:
+        - en
+        script:
+        - Latn
+      - content: Bureau International des Poids et Mesures
+        language:
+        - fr
+        script:
+        - Latn
+  structuredidentifier:
+    docnumber: Brochure
+    part: '1'
+  si_aspect: full

@@ -195,19 +195,13 @@
       <referenceFrom>Reference from</referenceFrom>
       <referenceTo>Reference to</referenceTo>
     </locality>
-  </extent>
-  <extent>
     <locality type="chapter">
       <referenceFrom>4</referenceFrom>
     </locality>
-  </extent>
-  <extent>
     <locality type="page">
       <referenceFrom>10</referenceFrom>
       <referenceTo>20</referenceTo>
     </locality>
-  </extent>
-  <extent>
     <locality type="volume">
       <referenceFrom>1</referenceFrom>
     </locality>

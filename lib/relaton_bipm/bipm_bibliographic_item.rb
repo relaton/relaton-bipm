@@ -86,10 +86,14 @@ module RelatonBipm
     #
     def to_hash(embedded: false)
       hash = super
-      hash["comment_period"] = comment_period.to_hash if comment_period
-      hash["si_aspect"] = si_aspect if si_aspect
-      hash["meeting_note"] = meeting_note if meeting_note
+      hash["ext"]["comment_period"] = comment_period.to_hash if comment_period
+      hash["ext"]["si_aspect"] = si_aspect if si_aspect
+      hash["ext"]["meeting_note"] = meeting_note if meeting_note
       hash
+    end
+
+    def has_ext?
+      super || comment_period || si_aspect || meeting_note
     end
 
     # @param prefix [String]

@@ -17,6 +17,7 @@ module RelatonBipm
 
       # project_group_hash_to_bib ret
       commentperiod_hash_to_bib ret
+      ret[:si_aspect] = args["ext"]["si_aspect"] if args.dig("ext", "si_aspect")
       ret
     end
 
@@ -42,7 +43,10 @@ module RelatonBipm
 
     # @param ret [Hash]
     def commentperiod_hash_to_bib(ret)
-      ret[:comment_period] &&= CommentPeriond.new(**ret[:comment_period])
+      compr = ret.dig(:ext, :comment_period) || ret[:comment_period] # @TODO: remove ret[:comment_period] after all data is updated
+      return unless compr
+
+      ret[:comment_period] &&= CommentPeriond.new(**compr)
     end
 
     # @param ret [Hash]
@@ -69,16 +73,17 @@ module RelatonBipm
 
     # @param ret [Hash]
     def editorialgroup_hash_to_bib(ret) # rubocop:disable Metrics/AbcSize,Metrics/MethodLength
-      return unless ret[:editorialgroup]
+      ed = ret.dig(:ext, :editorialgroup) || ret[:editorialgroup] # @TODO: remove ret[:editorialgroup] after all data is updated
+      return unless ed
 
-      cmt = ret[:editorialgroup][:committee].map do |c|
+      cmt = ed[:committee].map do |c|
         if (vars = committee_variants c).any?
           Committee.new acronym: c[:acronym], content: vars
         else
           Committee.new(**c)
         end
       end
-      wg = RelatonBib.array(ret[:editorialgroup][:workgroup]).map do |w|
+      wg = RelatonBib.array(ed[:workgroup]).map do |w|
         w.is_a?(Hash) ? WorkGroup.new(**w) : WorkGroup.new(content: w)
       end
       ret[:editorialgroup] = EditorialGroup.new committee: cmt, workgroup: wg
@@ -97,9 +102,10 @@ module RelatonBipm
 
     # @param ret [Hash]
     def structuredidentifier_hash_to_bib(ret)
-      ret[:structuredidentifier] &&= StructuredIdentifier.new(
-        **ret[:structuredidentifier],
-      )
+      struct_id = ret.dig(:ext, :structuredidentifier) || ret[:structuredidentifier] # @TODO: remove ret[:structuredidentifier] after all data is updated
+      return unless struct_id
+
+      ret[:structuredidentifier] = StructuredIdentifier.new(**struct_id)
     end
 
     def create_doctype(**args)
