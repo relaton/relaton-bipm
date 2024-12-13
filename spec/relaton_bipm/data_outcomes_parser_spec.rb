@@ -10,7 +10,7 @@ describe RelatonBipm::DataOutcomesParser do
 
   context "instance methods" do
     let(:index2) { double "index2" }
-    let(:data_fetcher) { double "data_fetcher", output: "data", ext: "yaml", files: [], index2: index2 }
+    let(:data_fetcher) { double "data_fetcher", output: "data", format: "yaml", ext: "yaml", files: [], index2: index2 }
     subject { described_class.new data_fetcher }
 
     it "#parse" do
@@ -124,6 +124,15 @@ describe RelatonBipm::DataOutcomesParser do
         expect(index2).to receive(:add_or_update).with({ group: "CIPM", type: "Meeting", number: "101", year: "2012" }, "data/cipm/meeting/101.yaml")
         subject.fetch_meeting "spec/fixtures/cipm/meetings-en/meeting-101-1.yml", "CIPM", "Meeting", "data/cipm/meeting"
         subject.fetch_meeting "spec/fixtures/cipm/meetings-en/meeting-101-2.yml", "CIPM", "Meeting", "data/cipm/meeting"
+      end
+    end
+
+    context "#parse_file" do
+      let(:data_fetcher) { double "data_fetcher", output: "data", format: "xml", ext: "xml", files: [], index2: index2 }
+      it "xml" do
+        expect(File).to receive(:read).with("file.xml", encoding: "UTF-8").and_return "xml"
+        expect(RelatonBipm::XMLParser).to receive(:from_xml).with("xml").and_return "item"
+        expect(subject.parse_file("file.xml")).to eq "item"
       end
     end
 
