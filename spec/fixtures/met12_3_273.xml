@@ -1,0 +1,151 @@
+<bibdata type="article" schema-version="v1.2.9">
+  <title format="text/plain" script="Latn">Realization and validation of the detector-based absolute integrating sphere method for luminous-flux measurement at KRISS</title>
+  <uri type="src">https://doi.org/10.1088/0026-1394/49/3/273</uri>
+  <uri type="doi">https://doi.org/10.1088/0026-1394/49/3/273</uri>
+  <docidentifier type="BIPM" primary="true">Metrologia 52 1 155</docidentifier>
+  <docidentifier type="doi">10.1088/0026-1394/49/3/273</docidentifier>
+  <date type="published">
+    <on>2012-03-16</on>
+  </date>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename language="en" script="Latn">Yong-Wan Kim</completename>
+      </name>
+      <affiliation>
+        <organization>
+          <name>Korea Research Institute of Standards and Science</name>
+          <subdivision>Division of Physical Metrology</subdivision>
+          <address>
+            <formattedAddress>267 Gajeong-ro, Yuseong-gu, Daejeon 305-340, Republic of Korea</formattedAddress>
+          </address>
+        </organization>
+      </affiliation>
+      <affiliation>
+        <organization>
+          <name>Chungnam National University</name>
+          <subdivision>Department of Physics</subdivision>
+          <address>
+            <formattedAddress>99 Daehak-ro, Yuseong-gu, Daejeon 305-764, Republic of Korea</formattedAddress>
+          </address>
+        </organization>
+      </affiliation>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename language="en" script="Latn">Dong-Hoon Lee</completename>
+      </name>
+      <affiliation>
+        <organization>
+          <name>Korea Research Institute of Standards and Science</name>
+          <subdivision>Division of Physical Metrology</subdivision>
+          <address>
+            <formattedAddress>267 Gajeong-ro, Yuseong-gu, Daejeon 305-340, Republic of Korea</formattedAddress>
+          </address>
+        </organization>
+      </affiliation>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename language="en" script="Latn">Seung-Nam Park</completename>
+      </name>
+      <affiliation>
+        <organization>
+          <name>Korea Research Institute of Standards and Science</name>
+          <subdivision>Division of Physical Metrology</subdivision>
+          <address>
+            <formattedAddress>267 Gajeong-ro, Yuseong-gu, Daejeon 305-340, Republic of Korea</formattedAddress>
+          </address>
+        </organization>
+      </affiliation>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename language="en" script="Latn">Min-Yong Jeon</completename>
+      </name>
+      <affiliation>
+        <organization>
+          <name>Chungnam National University</name>
+          <subdivision>Department of Physics</subdivision>
+          <address>
+            <formattedAddress>99 Daehak-ro, Yuseong-gu, Daejeon 305-764, Republic of Korea</formattedAddress>
+          </address>
+        </organization>
+      </affiliation>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename language="en" script="Latn">Seongchong Park</completename>
+      </name>
+      <affiliation>
+        <organization>
+          <name>Korea Research Institute of Standards and Science</name>
+          <subdivision>Division of Physical Metrology</subdivision>
+          <address>
+            <formattedAddress>267 Gajeong-ro, Yuseong-gu, Daejeon 305-340, Republic of Korea</formattedAddress>
+          </address>
+        </organization>
+      </affiliation>
+    </person>
+  </contributor>
+  <abstract format="text/html" script="Latn">Abstract<p>We present two detector-based realizations of the absolute integrating sphere method for luminous-flux measurement. A large-size realization with a sphere diameter of 2 m is applied to high-flux lamps above 1000 lm, and a small-size realization with a sphere diameter of 0.3 m to low-flux lamps below 100 lm. The uncertainty of both realizations is analysed with a focus on the systematic effect in the spatial mismatch correction, and evaluated to be 1.2% and 1.1% (k = 2) for the large-size and small-size realizations, respectively. Comparison with a goniophotometer using two different types of lamp artefacts for both cases has verified the validity of the realization within the comparison uncertainty.</p></abstract>
+  <copyright>
+    <from>2012</from>
+    <owner>
+      <organization>
+        <name>IOP Publishing Ltd</name>
+      </organization>
+    </owner>
+  </copyright>
+  <relation type="hasManifestation">
+    <bibitem>
+      <title format="text/plain" script="Latn">Realization and validation of the detector-based absolute integrating sphere method for luminous-flux measurement at KRISS</title>
+      <date type="ppub">
+        <on>2012-06-01</on>
+      </date>
+      <medium>
+        <carrier>print</carrier>
+      </medium>
+    </bibitem>
+  </relation>
+  <relation type="hasManifestation">
+    <bibitem>
+      <title format="text/plain" script="Latn">Realization and validation of the detector-based absolute integrating sphere method for luminous-flux measurement at KRISS</title>
+      <date type="epub">
+        <on>2012-03-16</on>
+      </date>
+      <medium>
+        <carrier>online</carrier>
+      </medium>
+    </bibitem>
+  </relation>
+  <series>
+    <title format="text/plain" language="en" script="Latn">Metrologia</title>
+  </series>
+  <extent>
+    <locality type="volume">
+      <referenceFrom>49</referenceFrom>
+    </locality>
+  </extent>
+  <extent>
+    <locality type="issue">
+      <referenceFrom>3</referenceFrom>
+    </locality>
+  </extent>
+  <ext schema-version="v1.0.0">
+    <doctype>article</doctype>
+  </ext>
+</bibdata>

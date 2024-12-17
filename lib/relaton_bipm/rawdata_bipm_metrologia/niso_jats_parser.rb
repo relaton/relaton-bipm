@@ -113,7 +113,7 @@ module RelatonBipm
       def parse_abstract
         @doc.front.article_meta.abstract.map do |a|
           RelatonBib::FormattedString.new(
-            content: a.inner_html, language: a[:"xml:lang"], script: ["Latn"], format: "text/html",
+            content: a.content, language: a.lang, script: ["Latn"], format: "text/html",
           )
         end
       end
@@ -145,15 +145,27 @@ module RelatonBipm
       # @return [Array<RelatonBib::Extent>] array of extents
       #
       def parse_extent
-        @meta.xpath("./volume|./issue|./fpage").map do |e|
-          if e.name == "fpage"
-            type = "page"
-            to = @meta.at("./lpage")&.text
-          else
-            type = e.name
-          end
-          RelatonBib::Locality.new type, e.text, to
+        @doc.extent.map do |e|
+          # if e.name == "fpage"
+          #   type = "page"
+          #   to = @meta.at("./lpage")&.text
+          # else
+          #   type = e.name
+          # end
+          RelatonBib::Locality.new(*e)
         end
+      end
+
+      def parse_type
+        "article"
+      end
+
+      def parse_doctype
+        DocumentType.new type: "article"
+      end
+
+      def parse_link
+        @doc.link.map { |l| RelatonBib::TypedUri.new(**l) }
       end
 
       private
@@ -221,7 +233,7 @@ module RelatonBipm
           args[:subdivision] = parse_division(div) if div
           args[:contact] = parse_address(aff, addr)
         else
-          name = text
+          name = div
         end
         args[:name] = [RelatonBib::LocalizedString.new(name)]
         org = RelatonBib::Organization.new(**args)
@@ -237,8 +249,9 @@ module RelatonBipm
           div = div_addr[0..-2].join(", ")
           addr = div_addr[-1]
         else
-          div = nil
-          addr = div_addr[0]
+          div_addr = div_addr[0].split(",").map(&:strip)
+          div = div_addr[0]
+          addr = div_addr[1..].join(", ")
         end
         [div, addr]
       end

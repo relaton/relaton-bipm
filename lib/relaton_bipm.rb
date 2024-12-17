@@ -22,7 +22,6 @@ require "relaton_bipm/data_fetcher"
 require "relaton_bipm/data_outcomes_parser"
 require "relaton_bipm/bipm_si_brochure_parser"
 require "relaton_bipm/rawdata_bipm_metrologia/fetcher"
-require "relaton_bipm/rawdata_bipm_metrologia/article_parser"
 
 module RelatonBipm
   class Error < StandardError; end

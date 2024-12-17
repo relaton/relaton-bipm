@@ -1,0 +1,147 @@
+<bibdata type="article" schema-version="v1.2.9">
+  <title format="text/plain" script="Latn">News from the BIPM laboratories: 2014</title>
+  <uri type="src">https://doi.org/10.1088/0026-1394/52/1/155</uri>
+  <uri type="doi">https://doi.org/10.1088/0026-1394/52/1/155</uri>
+  <docidentifier type="BIPM" primary="true">Metrologia 52 1 155</docidentifier>
+  <docidentifier type="doi">10.1088/0026-1394/52/1/155</docidentifier>
+  <date type="published">
+    <on>2015-01-30</on>
+  </date>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename language="en" script="Latn">José-Maria Los Arcos</completename>
+      </name>
+      <affiliation>
+        <organization>
+          <name>Bureau International des Poids et Mesures (BIPM)</name>
+          <address>
+            <formattedAddress>Pavillon de Breteuil, 92312 CEDEX, Sèvres, France</formattedAddress>
+          </address>
+        </organization>
+      </affiliation>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename language="en" script="Latn">Michael Stock</completename>
+      </name>
+      <affiliation>
+        <organization>
+          <name>Bureau International des Poids et Mesures (BIPM)</name>
+          <address>
+            <formattedAddress>Pavillon de Breteuil, 92312 CEDEX, Sèvres, France</formattedAddress>
+          </address>
+        </organization>
+      </affiliation>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename language="en" script="Latn">Robert Wielgosz</completename>
+      </name>
+      <affiliation>
+        <organization>
+          <name>Bureau International des Poids et Mesures (BIPM)</name>
+          <address>
+            <formattedAddress>Pavillon de Breteuil, 92312 CEDEX, Sèvres, France</formattedAddress>
+          </address>
+        </organization>
+      </affiliation>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename language="en" script="Latn">Felicitas Arias</completename>
+      </name>
+      <affiliation>
+        <organization>
+          <name>Bureau International des Poids et Mesures (BIPM)</name>
+          <address>
+            <formattedAddress>Pavillon de Breteuil, 92312 CEDEX, Sèvres, France</formattedAddress>
+          </address>
+        </organization>
+      </affiliation>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename language="en" script="Latn">Martin Milton</completename>
+      </name>
+      <affiliation>
+        <organization>
+          <name>Bureau International des Poids et Mesures (BIPM)</name>
+          <address>
+            <formattedAddress>Pavillon de Breteuil, 92312 CEDEX, Sèvres, France</formattedAddress>
+          </address>
+        </organization>
+      </affiliation>
+    </person>
+  </contributor>
+  <copyright>
+    <from>2015</from>
+    <owner>
+      <organization>
+        <name>BIPM</name>
+      </organization>
+    </owner>
+    <owner>
+      <organization>
+        <name>IOP Publishing Ltd</name>
+      </organization>
+    </owner>
+  </copyright>
+  <relation type="hasManifestation">
+    <bibitem>
+      <title format="text/plain" script="Latn">News from the BIPM laboratories: 2014</title>
+      <date type="ppub">
+        <on>2015-02-01</on>
+      </date>
+      <medium>
+        <carrier>print</carrier>
+      </medium>
+    </bibitem>
+  </relation>
+  <relation type="hasManifestation">
+    <bibitem>
+      <title format="text/plain" script="Latn">News from the BIPM laboratories: 2014</title>
+      <date type="epub">
+        <on>2015-01-30</on>
+      </date>
+      <medium>
+        <carrier>online</carrier>
+      </medium>
+    </bibitem>
+  </relation>
+  <series>
+    <title format="text/plain" language="en" script="Latn">Metrologia</title>
+  </series>
+  <extent>
+    <locality type="volume">
+      <referenceFrom>52</referenceFrom>
+    </locality>
+  </extent>
+  <extent>
+    <locality type="issue">
+      <referenceFrom>1</referenceFrom>
+    </locality>
+  </extent>
+  <extent>
+    <locality type="page">
+      <referenceFrom>155</referenceFrom>
+      <referenceTo>162</referenceTo>
+    </locality>
+  </extent>
+  <ext schema-version="v1.0.0">
+    <doctype>article</doctype>
+  </ext>
+</bibdata>
