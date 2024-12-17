@@ -125,6 +125,36 @@ describe RelatonBipm::DataOutcomesParser do
         subject.fetch_meeting "spec/fixtures/cipm/meetings-en/meeting-101-1.yml", "CIPM", "Meeting", "data/cipm/meeting"
         subject.fetch_meeting "spec/fixtures/cipm/meetings-en/meeting-101-2.yml", "CIPM", "Meeting", "data/cipm/meeting"
       end
+
+      it "without fr" do
+        outdir = "spec/fixtures/data/jcrb/meeting"
+        expect(data_fetcher).to receive(:write_file) do |path, item|
+          hash = item.to_hash
+          File.write path, hash.to_yaml, encoding: "UTF-8" unless File.exist? path
+          expect(hash).to eq(YAML.load_file(path))
+        end.exactly(6).times
+
+        expect(index2).to receive(:add_or_update).with(
+          { group: "JCRB", type: "Meeting", number: "48", year: "2024" }, "#{outdir}/48.yaml"
+        )
+        expect(index2).to receive(:add_or_update).with(
+          { group: "JCRB", type: "ACT", number: "48-1", year: "2024" }, "#{outdir}/action/2024-48-1.yaml"
+        )
+        expect(index2).to receive(:add_or_update).with(
+          { group: "JCRB", type: "ACT", number: "48-2", year: "2024" }, "#{outdir}/action/2024-48-2.yaml"
+        )
+        expect(index2).to receive(:add_or_update).with(
+          { group: "JCRB", type: "ACT", number: "48-3", year: "2024" }, "#{outdir}/action/2024-48-3.yaml"
+        )
+        expect(index2).to receive(:add_or_update).with(
+          { group: "JCRB", type: "RES", number: "48-1", year: "2024" }, "#{outdir}/resolution/2024-48-1.yaml"
+        )
+        expect(index2).to receive(:add_or_update).with(
+          { group: "JCRB", type: "RES", number: "48-2", year: "2024" }, "#{outdir}/resolution/2024-48-2.yaml"
+        )
+
+        subject.fetch_meeting "spec/fixtures/jcrb/meetings-en/meeting-48.yml", "JCRB", "Meeting", outdir
+      end
     end
 
     context "#parse_file" do
