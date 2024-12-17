@@ -171,7 +171,7 @@ module RelatonBipm
           type: "proceedings", title: [],
           doctype: DocumentType.new(type: r["type"]), place: [RelatonBib::Place.new(city: "Paris")]
         }
-        fr_r = args[:fr]["resolutions"].fetch(i, nil)
+        fr_r = args.dig(:fr, "resolutions", i) # @TODO: create a GH issue when fr is missing
         hash[:title] = resolution_title r, fr_r
         hash[:link] = resolution_link r, fr_r, args[:src]
         date = r["dates"].first.to_s
