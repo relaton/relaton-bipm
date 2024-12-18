@@ -47,6 +47,11 @@ describe RelatonBipm::Id do
       it_behaves_like "parses ID", "SI Brochure, Appendix 4", group: "SI", type: "Brochure", append: "4"
       it_behaves_like "parses ID", "SI Brochure, Annexe 4", group: "SI", type: "Brochure", append: "4"
       it_behaves_like "parses ID", "SI Brochure Appendix 4", group: "SI", type: "Brochure", append: "4"
+      it_behaves_like "parses ID", "CCEM-GD-RSI-1", group: "CCEM", type: "GD-RSI", number: "1"
+      it_behaves_like "parses ID", "CCL-GD-MeP-1", group: "CCL", type: "GD-MeP", number: "1"
+      it_behaves_like "parses ID", "CCM-GD-RSI-1", group: "CCM", type: "GD-RSI", number: "1"
+      it_behaves_like "parses ID", "SI MEP A1", group: "SI", type: "MEP", number: "A1"
+      it_behaves_like "parses ID", "Rapport BIPM-2019/05", group: "Rapport", type: "BIPM", number: "2019/05"
     end
 
     context "Metrologia" do
