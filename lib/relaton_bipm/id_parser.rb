@@ -91,7 +91,7 @@ module RelatonBipm
     #
     def parse(id)
       # str = StringScanner.new id
-      match = parse_outcome(id) || parse_brochure(id) || parse_metrologia(id) || parse_jcgm(id)
+      match = parse_outcome(id) || parse_brochure(id) || parse_brochure_other(id) || parse_metrologia(id) || parse_jcgm(id)
       @id = match.named_captures.compact.transform_keys(&:to_sym)
       self
     rescue StandardError => e
@@ -131,6 +131,10 @@ module RelatonBipm
         (?<group>SI)\s(?<type>Brochure)
         (?:,?\s(?:(?:Part|Partie)\s(?<part>\d+)|(?:Appendix|Annexe)\s(?<append>\d+)))?
       $}x.match(id)
+    end
+
+    def parse_brochure_other(id)
+      %r{^(?<group>CCEM|CCL|CCM|SI|Rapport)[-\s](?<type>GD-RSI|GD-MeP|MEP|BIPM)[-\s](?<number>\w+|\d{4}\/\d{2})$}.match(id)
     end
 
     def parse_metrologia(id)
