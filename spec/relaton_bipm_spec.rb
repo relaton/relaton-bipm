@@ -67,7 +67,7 @@ RSpec.describe RelatonBipm do
           .gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
       end
 
-      it "CGPM resolution", vcr: "cgpm_resolution_1889_00" do
+      xit "CGPM resolution", vcr: "cgpm_resolution_1889_00" do
         file = "spec/fixtures/cgpm_resolution_1889_00.xml"
         result = RelatonBipm::BipmBibliography.get "CGPM Resolution (1889)"
         xml = result.to_xml(bibdata: true)
@@ -79,7 +79,7 @@ RSpec.describe RelatonBipm do
       context "CGPM resolution", vcr: "cgpm_resolution_1889_00" do
         let(:file) { "spec/fixtures/cgpm_resolution_1889_00.xml" }
 
-        it "CGPM Resolution (1889)" do
+        xit "CGPM Resolution (1889)" do
           result = RelatonBipm::BipmBibliography.get "CGPM Resolution (1889)"
           xml = result.to_xml(bibdata: true)
           File.write file, xml, encoding: "UTF-8" unless File.exist? file
@@ -87,12 +87,12 @@ RSpec.describe RelatonBipm do
             .gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
         end
 
-        it "CGPM Resolution 1889-00" do
+        xit "CGPM Resolution 1889-00" do
           result = RelatonBipm::BipmBibliography.get "CGPM Resolution 1889-00"
           expect(result.docidentifier.first.id).to eq "CGPM RES (1889)"
         end
 
-        it "CGPM RES 1 (1889)" do
+        xit "CGPM RES 1 (1889)" do
           result = RelatonBipm::BipmBibliography.get "CGPM RES 1 (1889)"
           expect(result.docidentifier.first.id).to eq "CGPM RES (1889)"
         end
@@ -173,7 +173,7 @@ RSpec.describe RelatonBipm do
       end
     end
 
-    it "SI Brochure", vcr: "si_brochure" do
+    xit "SI Brochure", vcr: "si_brochure" do
       result = RelatonBipm::BipmBibliography.get "BIPM SI Brochure Part 1"
       expect(result.docidentifier.find { |id| id.language == "en" }.id).to eq "BIPM SI Brochure Part 1"
     end

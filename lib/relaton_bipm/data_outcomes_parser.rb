@@ -345,7 +345,7 @@ module RelatonBipm
     def cipm_org
       names = [
         { content: "International Committee for Weights and Measures", language: "en" },
-        { content: "Comité International des Poids et Mesures", language: "fr" },
+        { content: "Comité international des poids et mesures", language: "fr" },
       ]
       organization names, "CIPM"
     end
