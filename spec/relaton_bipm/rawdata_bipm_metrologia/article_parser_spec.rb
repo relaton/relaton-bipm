@@ -86,7 +86,7 @@ describe RelatonBipm::RawdataBipmMetrologia::ArticleParser do
       it { expect(item.abstract[0]).to be_instance_of RelatonBib::FormattedString }
       it { expect(item.relation[0]).to be_instance_of RelatonBib::DocumentRelation }
       it { expect(item.series[0]).to be_instance_of RelatonBib::Series }
-      it { expect(item.extent[0]).to be_instance_of RelatonBib::Locality }
+      it { expect(item.extent[0]).to be_instance_of RelatonBib::Extent }
       it { expect(item.type).to eq "article" }
       it { expect(item.doctype).to be_instance_of RelatonBipm::DocumentType }
       it { expect(item.link[0]).to be_instance_of RelatonBib::TypedUri }
@@ -318,14 +318,15 @@ describe RelatonBipm::RawdataBipmMetrologia::ArticleParser do
     context "parse_extent" do
       let(:doc) { Nokogiri::XML(File.read("spec/fixtures/met_52_1_155.xml", encoding: "UTF-8")) }
       let(:extent) { subject.parse_extent }
-      it { expect(extent[0]).to be_instance_of RelatonBib::Locality }
-      it { expect(extent[0].type).to eq "volume" }
-      it { expect(extent[0].reference_from).to eq "52" }
-      it { expect(extent[1].type).to eq "issue" }
-      it { expect(extent[1].reference_from).to eq "1" }
-      it { expect(extent[2].type).to eq "page" }
-      it { expect(extent[2].reference_from).to eq "155" }
-      it { expect(extent[2].reference_to).to eq "162" }
+      it { expect(extent[0]).to be_instance_of RelatonBib::Extent }
+      it { expect(extent[0].locality[0]).to be_instance_of RelatonBib::Locality }
+      it { expect(extent[0].locality[0].type).to eq "volume" }
+      it { expect(extent[0].locality[0].reference_from).to eq "52" }
+      it { expect(extent[0].locality[1].type).to eq "issue" }
+      it { expect(extent[0].locality[1].reference_from).to eq "1" }
+      it { expect(extent[0].locality[2].type).to eq "page" }
+      it { expect(extent[0].locality[2].reference_from).to eq "155" }
+      it { expect(extent[0].locality[2].reference_to).to eq "162" }
     end
 
     it("parse_type") { expect(subject.parse_type).to eq "article" }

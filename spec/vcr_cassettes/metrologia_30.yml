@@ -29,7 +29,7 @@ http_interactions:
       Content-Type:
       - application/zip
       Etag:
-      - W/"941f984cd42ff0b347bdf53ac941b7654211356c0c9dff4b3a7ffe1d9d378b03"
+      - W/"82a8a250f8b3b48b6ffafcdb362abcbcfa2b6a8fb99275c4177425adc225b33b"
       Strict-Transport-Security:
       - max-age=31536000
       X-Content-Type-Options:
@@ -39,21 +39,21 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Github-Request-Id:
-      - 184C:257AB2:9993BF:ABE14C:67648972
+      - 224C:30C746:3E816:45473:6764CEE9
       Accept-Ranges:
       - bytes
       Date:
-      - Thu, 19 Dec 2024 21:30:10 GMT
+      - Fri, 20 Dec 2024 01:57:01 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-iad-kjyo7100164-IAD
+      - cache-iad-kjyo7100057-IAD
       X-Cache:
       - HIT
       X-Cache-Hits:
       - '1'
       X-Timer:
-      - S1734643811.838374,VS0,VE2
+      - S1734659822.662807,VS0,VE1
       Vary:
       - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
@@ -61,16 +61,16 @@ http_interactions:
       Cross-Origin-Resource-Policy:
       - cross-origin
       X-Fastly-Request-Id:
-      - 7db59e1c0b663e0e6c6600bc6d48dffd1036fd83
+      - dfe5c91bfa596ba946b24f82daa99f86c371a1c6
       Expires:
-      - Thu, 19 Dec 2024 21:35:10 GMT
+      - Fri, 20 Dec 2024 02:02:01 GMT
       Source-Age:
-      - '29'
+      - '2'
     body:
       encoding: ASCII-8BIT
       base64_string: |
-        UEsDBBQAAAAIAC5/k1locasJAesAAGANDAALABwAaW5kZXgyLnlhbWxVVAkA
-        A2hCZGdoQmRndXgLAAEE6QMAAAR2AAAAtf1ds6S5kZ2J3s+v2He8itM73u+3
+        UEsDBBQAAAAIABy2k1locasJAesAAGANDAALABwAaW5kZXgyLnlhbWxVVAkA
+        A9eiZGfXomRndXgLAAEE6QMAAAR2AAAAtf1ds6S5kZ2J3s+v2He8itM73u+3
         71oUT1trkrKeKkn31cUSpzRZZLOyKLM+v/7AgdjYH4jtC3g8RmnWZipmroXA
         C3c4HO4Ll8vl/7g8/ePPf/rH/+Mp/b9//POvf/37v//j0+9//9/+v+U//PYf
         //7TPz798aeffvv5L38u/+kvf//l33769R+ffnddflf+y3/89EP+/5/naf/l
@@ -1407,10 +1407,10 @@ http_interactions:
         g/2HBHP8rmH4Xz/++Zd/SH/3MnkbzF386wD+FeBPH/Gv10/xp8vkLcq7+Esz
         /vNT/MXG/7nzv4u/NeOfPsXfbPyfL8k7+NNn3zf9lx//+mv6L7/9+vef7vNN
         t+99sb/4EFKHJIj/6aQV/KFJ++f//sfL9gF/ev4E/89//8Ue5/Huq+8yfIo2
-        APM//uWPl/k+0P/++ZfLzb3//wFQSwECHgMUAAAACAAuf5NZaHGrCQHrAABg
-        DQwACwAYAAAAAAABAAAApIEAAAAAaW5kZXgyLnlhbWxVVAUAA2hCZGd1eAsA
+        APM//uWPl/k+0P/++ZfLzb3//wFQSwECHgMUAAAACAActpNZaHGrCQHrAABg
+        DQwACwAYAAAAAAABAAAApIEAAAAAaW5kZXgyLnlhbWxVVAUAA9eiZGd1eAsA
         AQTpAwAABHYAAABQSwUGAAAAAAEAAQBRAAAARusAAAAA
-  recorded_at: Thu, 19 Dec 2024 21:30:10 GMT
+  recorded_at: Fri, 20 Dec 2024 01:57:01 GMT
 - request:
     method: get
     uri: https://raw.githubusercontent.com/relaton/relaton-data-bipm/main/data/metrologia-30.yaml
@@ -1440,7 +1440,7 @@ http_interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '355'
+      - '343'
       Cache-Control:
       - max-age=300
       Content-Security-Policy:
@@ -1448,7 +1448,7 @@ http_interactions:
       Content-Type:
       - text/plain; charset=utf-8
       Etag:
-      - W/"33d954664e35defdcfef6c370ad17af8ad5da15f3c61d2d6f34f817c1810648d"
+      - W/"60364503c5e506deeecb9b6f52a89f0d948aa2d0e851b8c00690fc88ba956e26"
       Strict-Transport-Security:
       - max-age=31536000
       X-Content-Type-Options:
@@ -1458,23 +1458,23 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Github-Request-Id:
-      - A472:31B82B:1489B3:168724:67648988
+      - 25C0:300644:375EA:3E263:6764CEED
       Content-Encoding:
       - gzip
       Accept-Ranges:
       - bytes
       Date:
-      - Thu, 19 Dec 2024 21:30:12 GMT
+      - Fri, 20 Dec 2024 01:57:02 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-iad-kjyo7100035-IAD
+      - cache-iad-kjyo7100135-IAD
       X-Cache:
-      - HIT
+      - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1734643812.119359,VS0,VE47
+      - S1734659823.773921,VS0,VE79
       Vary:
       - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
@@ -1482,21 +1482,21 @@ http_interactions:
       Cross-Origin-Resource-Policy:
       - cross-origin
       X-Fastly-Request-Id:
-      - 97c5c24be65ba46cc7f59b6bba0569e7424a9aea
+      - d74f4e704c72a924eb223d2ea21bb9c49d553869
       Expires:
-      - Thu, 19 Dec 2024 21:35:12 GMT
+      - Fri, 20 Dec 2024 02:02:02 GMT
       Source-Age:
       - '0'
     body:
       encoding: ASCII-8BIT
       base64_string: |
-        H4sIAAAAAAAAA8XVzW6DMAwA4Huewi/AT4EiNcfdJq3aXiGlLo0WkiiYan37
-        JdD1h/XApCFyckJs5/OFKIpYWx2xEdEJXSuN5nBaxVm8YXLPYYvkjDK1FHnK
-        lNSfnEVQGU2oicORyLY8SaSxbSVRVxj7MDauTk5GdQ0maZqV0SrfFInPB6Cz
-        RQ6tq9gQCUeyUsj2pvLdfOnHnnCX9PL6sfUb62Qj3JkDuQ6ZErruRI0hFbWH
-        OGkpbN4EaXYwrhFEuHd44D73+u5xh1sZgL4QwE+pcNAXAxjK+c74RYlVQmrm
-        UAkKM/Mth2daT3o/+Ns7uZOETagAMB7lqj+9qEP4RA7DpZE/rMcZhJOxNKzn
-        2mvVe/Pwgt4d1s0+fLj4b40eZvA3eTZFns0iz5aV51Pk+SzyfFl5MUVezCIv
-        lpWvp8jXs8jXy8rLKfJyFnn533If8f6X8Os3mcYp+wbqymYLQgcAAA==
-  recorded_at: Thu, 19 Dec 2024 21:30:12 GMT
+        H4sIAAAAAAAAA8XQS26DMBAG4L1PMRcAEiBI8bK7SI3aKzjOhFg1tmUmUXP7
+        2pDmgbKgUhFeGeP5x98kScJaecRGJGf0rbKGw3mZ5umaqT2HLZK32tZKFAum
+        lfniLAFpDaEhDkci1/IsU9a1UqGRmIZtan2dna0+NZgtFnmVLIt1mYV6ALo4
+        5NB6yfqd8KSkRra3MnQL0c894aHobfO5DR/Oq0b4CwfyJ2RamPokaoylaALE
+        K0fx412QYQfrG0GEe48HHmpv7x52uMcAdEEAv1HxoAsD6ONCZ/ymzGmhDPOo
+        BcWZhZb9M10gfRzC7Z3aKcImJgAMR7nsTq/quH0hh/7SwB/X8wziyVAa12vt
+        LfXR3L+gc8d1t/c/rv57o6cZ/E2ej5Hnk8jzeeXFGHkxibyYV16OkZeTyMt5
+        5asx8tUk8tW88mqMvJpEXv23/AfEZzNTJAcAAA==
+  recorded_at: Fri, 20 Dec 2024 01:57:02 GMT
 recorded_with: VCR 6.3.1

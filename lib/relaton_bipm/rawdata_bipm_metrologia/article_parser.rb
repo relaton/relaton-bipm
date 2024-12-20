@@ -330,7 +330,7 @@ module RelatonBipm
       # @return [Array<RelatonBib::Extent>] array of extents
       #
       def parse_extent
-        @meta.xpath("./volume|./issue|./fpage").map do |e|
+        locs = @meta.xpath("./volume|./issue|./fpage").map do |e|
           if e.name == "fpage"
             type = "page"
             to = @meta.at("./lpage")&.text
@@ -339,6 +339,7 @@ module RelatonBipm
           end
           RelatonBib::Locality.new type, e.text, to
         end
+        [RelatonBib::Extent.new(locs)]
         # %w[volume issue page].map.with_index do |t, i|
         #   RelatonBib::Locality.new t, volume_issue_page[i]
         # end

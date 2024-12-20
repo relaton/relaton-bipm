@@ -29,7 +29,7 @@ http_interactions:
       Content-Type:
       - application/zip
       Etag:
-      - W/"941f984cd42ff0b347bdf53ac941b7654211356c0c9dff4b3a7ffe1d9d378b03"
+      - W/"82a8a250f8b3b48b6ffafcdb362abcbcfa2b6a8fb99275c4177425adc225b33b"
       Strict-Transport-Security:
       - max-age=31536000
       X-Content-Type-Options:
@@ -39,21 +39,21 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Github-Request-Id:
-      - 184C:257AB2:9993BF:ABE14C:67648972
+      - 224C:30C746:3E816:45473:6764CEE9
       Accept-Ranges:
       - bytes
       Date:
-      - Thu, 19 Dec 2024 21:30:21 GMT
+      - Fri, 20 Dec 2024 01:57:11 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-iad-kjyo7100083-IAD
+      - cache-iad-kjyo7100159-IAD
       X-Cache:
       - HIT
       X-Cache-Hits:
       - '1'
       X-Timer:
-      - S1734643821.120062,VS0,VE1
+      - S1734659831.134641,VS0,VE3
       Vary:
       - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
@@ -61,16 +61,16 @@ http_interactions:
       Cross-Origin-Resource-Policy:
       - cross-origin
       X-Fastly-Request-Id:
-      - 5bcfa1b15947fb0d3c33deb6cee8b407305a880e
+      - 6f82506c088a9a2c1854924602313ac4e6472cff
       Expires:
-      - Thu, 19 Dec 2024 21:35:21 GMT
+      - Fri, 20 Dec 2024 02:02:11 GMT
       Source-Age:
-      - '39'
+      - '11'
     body:
       encoding: ASCII-8BIT
       base64_string: |
-        UEsDBBQAAAAIAC5/k1locasJAesAAGANDAALABwAaW5kZXgyLnlhbWxVVAkA
-        A2hCZGdoQmRndXgLAAEE6QMAAAR2AAAAtf1ds6S5kZ2J3s+v2He8itM73u+3
+        UEsDBBQAAAAIABy2k1locasJAesAAGANDAALABwAaW5kZXgyLnlhbWxVVAkA
+        A9eiZGfXomRndXgLAAEE6QMAAAR2AAAAtf1ds6S5kZ2J3s+v2He8itM73u+3
         71oUT1trkrKeKkn31cUSpzRZZLOyKLM+v/7AgdjYH4jtC3g8RmnWZipmroXA
         C3c4HO4Ll8vl/7g8/ePPf/rH/+Mp/b9//POvf/37v//j0+9//9/+v+U//PYf
         //7TPz798aeffvv5L38u/+kvf//l33769R+ffnddflf+y3/89EP+/5/naf/l
@@ -1407,10 +1407,10 @@ http_interactions:
         g/2HBHP8rmH4Xz/++Zd/SH/3MnkbzF386wD+FeBPH/Gv10/xp8vkLcq7+Esz
         /vNT/MXG/7nzv4u/NeOfPsXfbPyfL8k7+NNn3zf9lx//+mv6L7/9+vef7vNN
         t+99sb/4EFKHJIj/6aQV/KFJ++f//sfL9gF/ev4E/89//8Ue5/Huq+8yfIo2
-        APM//uWPl/k+0P/++ZfLzb3//wFQSwECHgMUAAAACAAuf5NZaHGrCQHrAABg
-        DQwACwAYAAAAAAABAAAApIEAAAAAaW5kZXgyLnlhbWxVVAUAA2hCZGd1eAsA
+        APM//uWPl/k+0P/++ZfLzb3//wFQSwECHgMUAAAACAActpNZaHGrCQHrAABg
+        DQwACwAYAAAAAAABAAAApIEAAAAAaW5kZXgyLnlhbWxVVAUAA9eiZGd1eAsA
         AQTpAwAABHYAAABQSwUGAAAAAAEAAQBRAAAARusAAAAA
-  recorded_at: Thu, 19 Dec 2024 21:30:21 GMT
+  recorded_at: Fri, 20 Dec 2024 01:57:11 GMT
 - request:
     method: get
     uri: https://raw.githubusercontent.com/relaton/relaton-data-bipm/main/data/metrologia-55-1-l13.yaml
@@ -1448,7 +1448,7 @@ http_interactions:
       Content-Type:
       - text/plain; charset=utf-8
       Etag:
-      - W/"e0ee247c40d98007eb95b49e8bc14cf5170a8e4030a427a0207220301aa8c191"
+      - W/"001cdc04b2f6e5317aee8d78de9d94d80db115a1f174317f6a14d921027c665c"
       Strict-Transport-Security:
       - max-age=31536000
       X-Content-Type-Options:
@@ -1458,23 +1458,23 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Github-Request-Id:
-      - C1D4:23E71A:8A0E25:9AAC3F:676488DA
+      - 1DF8:295944:A80CFB:BC36AF:6764CEF6
       Content-Encoding:
       - gzip
       Accept-Ranges:
       - bytes
       Date:
-      - Thu, 19 Dec 2024 21:30:22 GMT
+      - Fri, 20 Dec 2024 01:57:12 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-iad-kjyo7100135-IAD
+      - cache-iad-kjyo7100062-IAD
       X-Cache:
-      - HIT
+      - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1734643822.359891,VS0,VE69
+      - S1734659832.325312,VS0,VE75
       Vary:
       - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
@@ -1482,9 +1482,9 @@ http_interactions:
       Cross-Origin-Resource-Policy:
       - cross-origin
       X-Fastly-Request-Id:
-      - 9e2a9b74536d9f499f64fa0ffba5ab35adfbcb25
+      - 1a97a9ee824089542dfa6a62f53f8efebd8836e0
       Expires:
-      - Thu, 19 Dec 2024 21:35:22 GMT
+      - Fri, 20 Dec 2024 02:02:12 GMT
       Source-Age:
       - '0'
     body:
@@ -1515,6 +1515,6 @@ http_interactions:
         799p6x74OxkmvMi2nZBpzQl7R71T7f3i8OBr8JRt7T/gUVJwib86PipHGbI4
         pn79czCVVWSQrozfbDscdk952+9Afn7/cN0erPVoarHsRZILxmVAI6eXrAkV
         M8HtusqBD2mlRJGhn9BYdbu/qubQ7x+8IsWNKV4Ril6TySmIF0XKD131eavc
-        7LH7PuZlg42OzYczimngO+l3HyN7nV7wL5Atmu6oHAAA
-  recorded_at: Thu, 19 Dec 2024 21:30:22 GMT
+        7LFzfeAb5nffHHudHt1IVOx116xsPq39C+qzerusHAAA
+  recorded_at: Fri, 20 Dec 2024 01:57:12 GMT
 recorded_with: VCR 6.3.1
