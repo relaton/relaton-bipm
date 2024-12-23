@@ -145,15 +145,10 @@ module RelatonBipm
       # @return [Array<RelatonBib::Extent>] array of extents
       #
       def parse_extent
-        @doc.extent.map do |e|
-          # if e.name == "fpage"
-          #   type = "page"
-          #   to = @meta.at("./lpage")&.text
-          # else
-          #   type = e.name
-          # end
-          RelatonBib::Locality.new(*e)
-        end
+        locality = @doc.locality.map { |e| RelatonBib::Locality.new(*e) }
+        return [] if locality.empty?
+
+        [RelatonBib::Extent.new(locality)]
       end
 
       def parse_type
@@ -188,7 +183,7 @@ module RelatonBipm
       end
 
       def create_organization(contrib)
-        RelatonBib::Organization.new name: contrib.collab
+        RelatonBib::Organization.new name: contrib.collab.map(&:content)
       end
 
       #

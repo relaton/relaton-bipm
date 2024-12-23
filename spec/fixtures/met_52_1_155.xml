@@ -16,8 +16,9 @@
       <affiliation>
         <organization>
           <name>Bureau International des Poids et Mesures (BIPM)</name>
+          <subdivision>Pavillon de Breteuil</subdivision>
           <address>
-            <formattedAddress>Pavillon de Breteuil, 92312 CEDEX, Sèvres, France</formattedAddress>
+            <formattedAddress>92312 CEDEX, Sèvres, France</formattedAddress>
           </address>
         </organization>
       </affiliation>
@@ -32,8 +33,9 @@
       <affiliation>
         <organization>
           <name>Bureau International des Poids et Mesures (BIPM)</name>
+          <subdivision>Pavillon de Breteuil</subdivision>
           <address>
-            <formattedAddress>Pavillon de Breteuil, 92312 CEDEX, Sèvres, France</formattedAddress>
+            <formattedAddress>92312 CEDEX, Sèvres, France</formattedAddress>
           </address>
         </organization>
       </affiliation>
@@ -48,8 +50,9 @@
       <affiliation>
         <organization>
           <name>Bureau International des Poids et Mesures (BIPM)</name>
+          <subdivision>Pavillon de Breteuil</subdivision>
           <address>
-            <formattedAddress>Pavillon de Breteuil, 92312 CEDEX, Sèvres, France</formattedAddress>
+            <formattedAddress>92312 CEDEX, Sèvres, France</formattedAddress>
           </address>
         </organization>
       </affiliation>
@@ -64,8 +67,9 @@
       <affiliation>
         <organization>
           <name>Bureau International des Poids et Mesures (BIPM)</name>
+          <subdivision>Pavillon de Breteuil</subdivision>
           <address>
-            <formattedAddress>Pavillon de Breteuil, 92312 CEDEX, Sèvres, France</formattedAddress>
+            <formattedAddress>92312 CEDEX, Sèvres, France</formattedAddress>
           </address>
         </organization>
       </affiliation>
@@ -80,8 +84,9 @@
       <affiliation>
         <organization>
           <name>Bureau International des Poids et Mesures (BIPM)</name>
+          <subdivision>Pavillon de Breteuil</subdivision>
           <address>
-            <formattedAddress>Pavillon de Breteuil, 92312 CEDEX, Sèvres, France</formattedAddress>
+            <formattedAddress>92312 CEDEX, Sèvres, France</formattedAddress>
           </address>
         </organization>
       </affiliation>
@@ -129,13 +134,9 @@
     <locality type="volume">
       <referenceFrom>52</referenceFrom>
     </locality>
-  </extent>
-  <extent>
     <locality type="issue">
       <referenceFrom>1</referenceFrom>
     </locality>
-  </extent>
-  <extent>
     <locality type="page">
       <referenceFrom>155</referenceFrom>
       <referenceTo>162</referenceTo>
