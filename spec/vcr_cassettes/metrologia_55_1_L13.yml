@@ -29,7 +29,7 @@ http_interactions:
       Content-Type:
       - application/zip
       Etag:
-      - W/"82a8a250f8b3b48b6ffafcdb362abcbcfa2b6a8fb99275c4177425adc225b33b"
+      - W/"42f3dea8a640112c3da335cdf5b377c080c3d3f3c61f5a816f40177fb13529cf"
       Strict-Transport-Security:
       - max-age=31536000
       X-Content-Type-Options:
@@ -39,21 +39,21 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Github-Request-Id:
-      - 224C:30C746:3E816:45473:6764CEE9
+      - 8025:67F05:581C1B:615DF6:67AD2AD9
       Accept-Ranges:
       - bytes
       Date:
-      - Fri, 20 Dec 2024 01:57:11 GMT
+      - Wed, 12 Feb 2025 23:12:55 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-iad-kjyo7100159-IAD
+      - cache-iad-kjyo7100095-IAD
       X-Cache:
       - HIT
       X-Cache-Hits:
       - '1'
       X-Timer:
-      - S1734659831.134641,VS0,VE3
+      - S1739401975.030911,VS0,VE2
       Vary:
       - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
@@ -61,16 +61,16 @@ http_interactions:
       Cross-Origin-Resource-Policy:
       - cross-origin
       X-Fastly-Request-Id:
-      - 6f82506c088a9a2c1854924602313ac4e6472cff
+      - 87c37526463ccca8294e03e1d268358f56ccdf12
       Expires:
-      - Fri, 20 Dec 2024 02:02:11 GMT
+      - Wed, 12 Feb 2025 23:17:55 GMT
       Source-Age:
-      - '11'
+      - '29'
     body:
       encoding: ASCII-8BIT
       base64_string: |
-        UEsDBBQAAAAIABy2k1locasJAesAAGANDAALABwAaW5kZXgyLnlhbWxVVAkA
-        A9eiZGfXomRndXgLAAEE6QMAAAR2AAAAtf1ds6S5kZ2J3s+v2He8itM73u+3
+        UEsDBBQAAAAIAJt+mFlocasJAesAAGANDAALABwAaW5kZXgyLnlhbWxVVAkA
+        A9XYamfV2GpndXgLAAEE6QMAAAR2AAAAtf1ds6S5kZ2J3s+v2He8itM73u+3
         71oUT1trkrKeKkn31cUSpzRZZLOyKLM+v/7AgdjYH4jtC3g8RmnWZipmroXA
         C3c4HO4Ll8vl/7g8/ePPf/rH/+Mp/b9//POvf/37v//j0+9//9/+v+U//PYf
         //7TPz798aeffvv5L38u/+kvf//l33769R+ffnddflf+y3/89EP+/5/naf/l
@@ -1407,10 +1407,10 @@ http_interactions:
         g/2HBHP8rmH4Xz/++Zd/SH/3MnkbzF386wD+FeBPH/Gv10/xp8vkLcq7+Esz
         /vNT/MXG/7nzv4u/NeOfPsXfbPyfL8k7+NNn3zf9lx//+mv6L7/9+vef7vNN
         t+99sb/4EFKHJIj/6aQV/KFJ++f//sfL9gF/ev4E/89//8Ue5/Huq+8yfIo2
-        APM//uWPl/k+0P/++ZfLzb3//wFQSwECHgMUAAAACAActpNZaHGrCQHrAABg
-        DQwACwAYAAAAAAABAAAApIEAAAAAaW5kZXgyLnlhbWxVVAUAA9eiZGd1eAsA
+        APM//uWPl/k+0P/++ZfLzb3//wFQSwECHgMUAAAACACbfphZaHGrCQHrAABg
+        DQwACwAYAAAAAAABAAAApIEAAAAAaW5kZXgyLnlhbWxVVAUAA9XYamd1eAsA
         AQTpAwAABHYAAABQSwUGAAAAAAEAAQBRAAAARusAAAAA
-  recorded_at: Fri, 20 Dec 2024 01:57:11 GMT
+  recorded_at: Wed, 12 Feb 2025 23:12:54 GMT
 - request:
     method: get
     uri: https://raw.githubusercontent.com/relaton/relaton-data-bipm/main/data/metrologia-55-1-l13.yaml
@@ -1440,7 +1440,7 @@ http_interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '1158'
+      - '1157'
       Cache-Control:
       - max-age=300
       Content-Security-Policy:
@@ -1448,7 +1448,7 @@ http_interactions:
       Content-Type:
       - text/plain; charset=utf-8
       Etag:
-      - W/"001cdc04b2f6e5317aee8d78de9d94d80db115a1f174317f6a14d921027c665c"
+      - W/"3aafb7851d6f58145c123459eb2467f2a3cc36a62b4d09254c898cdfbd8ec638"
       Strict-Transport-Security:
       - max-age=31536000
       X-Content-Type-Options:
@@ -1458,23 +1458,23 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Github-Request-Id:
-      - 1DF8:295944:A80CFB:BC36AF:6764CEF6
+      - DF32:D6E32:56077E:5F4C4D:67AD2AF8
       Content-Encoding:
       - gzip
       Accept-Ranges:
       - bytes
       Date:
-      - Fri, 20 Dec 2024 01:57:12 GMT
+      - Wed, 12 Feb 2025 23:12:56 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-iad-kjyo7100062-IAD
+      - cache-iad-kjyo7100029-IAD
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1734659832.325312,VS0,VE75
+      - S1739401976.092636,VS0,VE67
       Vary:
       - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
@@ -1482,39 +1482,39 @@ http_interactions:
       Cross-Origin-Resource-Policy:
       - cross-origin
       X-Fastly-Request-Id:
-      - 1a97a9ee824089542dfa6a62f53f8efebd8836e0
+      - 89dd9dc018fede50f40796de4db4baab1371fdee
       Expires:
-      - Fri, 20 Dec 2024 02:02:12 GMT
+      - Wed, 12 Feb 2025 23:17:56 GMT
       Source-Age:
       - '0'
     body:
       encoding: ASCII-8BIT
       base64_string: |
         H4sIAAAAAAAAA+1ZzW7bOBC+6ynmlhaIbCu7zo8RBHCSJuttnLqwiwK9LGhp
-        bLGhSIGknDpvtM+xL7ZDSrblNFkU1Z4K+WKK4vx9MxxKn8IwDEycYsbCFWrD
-        lRzAKuocdc4CngxgjFYroZac9fvRXfRbYLkVOAhCiJW0KO0AZinC1Yfr4WwI
-        R73oBFZMFGhALSA9BDyEh0NgMoH7c1PML4bnXfcHC6XBkqDGFXdGaXkA9HNz
-        0xENTax5bgc0CuGOWUkDkskYGbT4zXZTm4lAcPmw50tqbW4G3W6ieEfpZTfq
-        daLe6Wk3Oj6NwpP+Sb/L2Fm/x0ibXec4AKPjRvK0MChHTFseCwwSFRNwpHQf
-        Puj3IQKH4Eb0cjQZ00Wuecb0msLSBVZiP2Q2YdYnopzJi7ngJsWE1vgMDOCA
-        0nEa9qLw6OwgcCFqPi+s0k4op1xTqj3mkmVYjoCQyHKBBEZtDnb4XMMl3OMj
-        CrG9J5hcFmxZWx0Cyu3FLo+bm1U2AdhiwQVnlm8cCYEwZ5I/1eaeO+hWbd25
-        UlnGrUUEqqBrZpmvq2nMUcboq26GcSpdBtbwpizStzBj5gFutSryrU73IxU3
-        hUzIlrRMkG5pLJPW0CLKIZalWOW6sKnSPw/jDVyxuYu8RbEBin/CDXetS7co
-        NkDxPVn6yttKbILhFG7hPdPUfuVc8azFsgGWfxCaY6aXio6zFsgGQL6DBGHM
-        NXn4z98tlE2gnNBZM1Zpe9A0e+i5x6cWwUZH9YTFaRE/tKd1ExhntJs/FlzK
-        FsUGKNKLIHmxFqrtik1gHMNnQq2FsFElEohKJS2IDUD8Al/SthA9hhpXnlvb
-        J9DY3FjNYrvHNw6ryfP8YlpQ3M5FC7lWS43GgFWPTCcGNCa44JLLpSc4RySt
-        pUeDPJqujcXynVEt4JPk1sCb6egtcAm0LvNUKn4jKzVqdVELKd6EBCkzMEeU
-        QI8JHFeYdLzad8+EnQ8TSnD8sJX1XK1Ar1GvIU7pDQwde3uphH3KmJTbpV5l
-        ReoOV2rJEq12ep7RvFpl3lydIJ7mGHPye5h8LYx1JjfBu5UvJguYRoIVDc1j
-        Ailq7Dji2eAmLLdAIxU5iSZY9gKrvMajY5vCLUrUpcoFSbtCosr4jHyZOvUU
-        yxiZKciEE3NUs5ddKOeOy1TdR89akx/TUee8m18EP0hXxypfa2fQ1ZB6JIdK
-        gd1GqJVWRQ+/cnf0YQKTkvJ1VXVnXcQO7apqD6iKRbXfNuVN1TGmbbhAwrSK
-        aM7nnIqvVF9R+88s/S/0/nZHVgB6iv/7PlLrIi/h52ZL1rtcXDHfeTGvRPaJ
-        799p6x74OxkmvMi2nZBpzQl7R71T7f3i8OBr8JRt7T/gUVJwib86PipHGbI4
-        pn79czCVVWSQrozfbDscdk952+9Afn7/cN0erPVoarHsRZILxmVAI6eXrAkV
-        M8HtusqBD2mlRJGhn9BYdbu/qubQ7x+8IsWNKV4Ril6TySmIF0XKD131eavc
-        7LFzfeAb5nffHHudHt1IVOx116xsPq39C+qzerusHAAA
-  recorded_at: Fri, 20 Dec 2024 01:57:12 GMT
+        bLGhSIGknDpvtM+xL7ZDSrblNFkU1Z4K+WKKmhnOfDMcSp/CMAxMnGLGwhVq
+        w5UcwCrqHHXOAp4MYIxWK6GWnPX70V30W2C5FTgIQoiVtCjtAGYpwtWH6+Fs
+        CEe96ARWTBRoQC0gPQQ8hIdDYDKB+3NTzC+G5133BwulwZKixhV3i5J4APRz
+        c9MRDU2seW4HNArhjllJA9LJGC1o8ZvtpjYTgeDyYc+X1NrcDLrdRPGO0stu
+        1OtEvdPTbnR8GoUn/ZN+l7Gzfo+RNbvOcQBGx430STAoR0xbHgsMEhUTcGR0
+        Hz7o9yECh+BG9XI0GdNFrnnG9JrC0gVWaj+0bMKsT0Q5kxdzwU2KCcn4DAzg
+        gNJxGvai8OjsIHAhaj4vrNJOKadcU6o95pJlWI6AkMhygQRGbQ52+FzDJdzj
+        IwqxvSeYXBZsWZMOAeX2YpfHzc0qmwBsseCCM8s3joRAmDPJn2pzzx10Ult3
+        rlSWcWsRgSromlnm62oac5Qx+qqbYZxKl4E1vCmL9C3MmHmAW62KfGvT/cjE
+        TSETWktaJsi2NJZJa0iIcohlKVa5Lmyq9M/DeANXbO4ib1FsgOKfcMNd69It
+        ig1QfE8rfeVtJTbBcAq38J5par9yrnjWYtkAyz8IzTHTS0XHWQtkAyDfQYIw
+        5po8/OfvFsomUE7orBmrtD1omj303ONTi2Cjo3rC4rSIH9rTugmMM9rNHwsu
+        ZYtiAxTpRZC8WAvVdsUmMI7hM6HWQtioEglEpZIWxAYgfoEvaVuIHkONK8+t
+        7RNobG6sZrHd4xuH1eR5fjEtKG7nooVcq6VGY8CqR6YTAxoTXHDJ5dITnCPS
+        1tKjQR5N18Zi+c6oFvBJcmvgzXT0FrgEkss8lYrfaJUatbqohRRvQoKUGZgj
+        SqDHBI4rTDre7Ltnys6HCSU4ftjqeq5WoLeo1xCn9AaGjr29VMI+ZUzKrag3
+        WZG6w5VaskSrnZ1nNK9WmV+uThBPc4w5+T1MvhbGuiU3wTvJF5MFTCPBiobm
+        MYEUNXYc8WxwE5YT0EhFTqoJlr3AKm/x6NimcIsSdWlyQdqukKgyPiNfps48
+        xTJGZgpawqk5qtnrLpRzx2Wq7qNnrcmP6ahz3s0vgh+kq2OVr7Vb0NWQeiSH
+        SoXdRqiVVkUPv3J39GECk5LydVV1Z13EDu2qag+oikW13zblTdUxpm24QMK0
+        imjO55yKrzRfUfvPVvpf6P3tjqwA9BT/932k1kVews/Nlqx3KVwx33kxr1T2
+        ie/faese+DsZJrzItp2Qac0Je0e9U+394vDga/CUbe0/4FFScIm/Oj4qRxmy
+        OKZ+/XMwlVVkkK6M32w7HHZPedvvQH5+/3DdHqz1aGqx7EWSC8ZlQCNnl1YT
+        KmaC23X9HFspUWTodTVW3e6vqjn0+wc1SW5M8YpgVJfLydkXxcoPWvV5q9zs
+        sXNx4Bvjd98We50e3UhU7G2XtbP3Ce1fwWzvSpQcAAA=
+  recorded_at: Wed, 12 Feb 2025 23:12:56 GMT
 recorded_with: VCR 6.3.1
