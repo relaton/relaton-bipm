@@ -1,0 +1,249 @@
+id: Draft-Agenda-NMI-Dir-Meeting-2017-v10
+
+fetched: "2020-09-10"
+
+title:
+  - content: 19th Meeting of the Directors of NMIs and Member State Representatives
+
+type: standard
+
+docidentifier:
+  content: 2017-09-04-Draft-Agenda-NMI-Dir-Meeting-2017-v10
+  type: BIPM
+
+docnumber: Draft-Agenda-NMI-Dir-Meeting-2017-v10
+edition:
+  content: "1"
+
+language:
+  - en
+  - fr
+
+script: Latn
+
+version:
+  revision_date: "2019-04-01"
+  draft: draft
+
+note:
+  - content: note
+  - content: An note
+    type: annote
+
+status:
+  stage:
+    content: in-force
+
+date:
+  - type: issued
+    at: "2014-01-01"
+  - type: effective
+    from: "2014-04-01"
+    to: "2015-12-31"
+  - type: supreseded
+    at: "2015-05-20"
+
+abstract:
+  - content: The agenda for the first day addresses current issues relating to the BIPM and CIPM and also includes advanced information about plans for the 26th CGPM in 2018.
+    language: en
+    script: Latn
+  - content: Conférence générale des poids et mesures
+    language: fr
+    script: Latn
+
+contributor:
+  - organization:
+      name:
+        - content: International Organization for Standardization
+      uri:
+        - content: www.iso.org
+      abbreviation:
+        content: ISO
+      subdivision:
+        - name:
+            - content: division
+    role:
+      type: publisher
+      description:
+        content: Publisher role
+  - person:
+      name:
+        completename:
+          content: A. Bierman
+          language: en
+      affiliation:
+        organization:
+          name:
+            content: IETF
+          abbreviation:
+            content: IETF
+          identifier:
+            type: uri
+            content: www.ietf.org
+      address:
+        - street:
+          - Street
+          city: City
+          postcode: "123456"
+          country: Country
+          state: State
+      phone:
+        - content: "223322"
+    role:
+      type: author
+
+copyright:
+  owner:
+    organization:
+      name:
+        - content: International Organization for Standardization
+      abbreviation:
+        content: ISO
+      uri:
+        - content: www.iso.org
+  from: "2014"
+  to: "2020"
+  scope: Scope
+
+source:
+  type: obp
+  content: http://www.bipm.org/cc/PARTNERS/Allowed/2017_October/2017-09-04-Draft-Agenda-NMI-Dir-Meeting-2017-v10.pdf
+
+relation:
+  - type: obsoletes
+    bibitem:
+      formattedref: ISO 19115:2003
+    locality_stack:
+    - locality:
+      - type: section
+        reference_from: Reference from
+    - locality:
+      - type: chapter
+        reference_from: "1"
+      - type: page
+        reference_from: "2"
+    source_locality_stack:
+      - source_locality:
+        - type: volume
+          reference_from: "2"
+        - type: chapter
+          reference_from: "3"
+  - type: obsoletedBy
+    description:
+      content: Obsoleted by
+    bibitem:
+      type: standard
+      formattedref: ISO 19115:2003/Cor 1:2006
+
+series:
+  - type: main
+    title:
+      - type: original
+        content: ISO/IEC FDIS 10118-3
+        language: en
+        script: Latn
+    place:
+      formatted_place: Serie's place
+    organization: Serie's organization
+    abbreviation:
+      content: ABVR
+    from: "2009-02-01"
+    to: "2010-12-20"
+    number: serie1234
+    partnumber: part5678
+  - type: alt
+    formattedref: serieref
+    title:
+      - content: Series Title
+  - type: alt
+    title:
+      - content: Journal
+    number: "7"
+  - title:
+      - content: Series
+        language: en
+        script: Latn
+      - content: Séries
+        language: fr
+        script: Latn
+
+medium:
+  form: medium form
+  size: medium size
+  scale: medium scale
+
+place:
+  - formatted_place: bib place
+  - city: Geneva
+    country:
+      - content: Switzeland
+        iso: CH
+
+extent:
+  - locality:
+    - type: section
+      reference_from: Reference from
+      reference_to: Reference to
+    - type: chapter
+      reference_from: "4"
+    - type: page
+      reference_from: "10"
+      reference_to: "20"
+    - type: volume
+      reference_from: "1"
+
+accesslocation:
+  - accesslocation1
+  - accesslocation2
+
+classification:
+  - type: type
+    content: value
+  - type: keyword
+    content: Keywords
+
+keyword:
+  - taxon:
+      - content: Keyword
+  - taxon:
+      - content: Key Word
+
+license: License
+
+validity:
+  begins: "2010-10-10"
+  ends: "2011-02-03"
+  revision: "2011-03-04"
+
+ext:
+  schema_version: 1.0.0
+  doctype:
+    abbreviation: BRO
+    content: brochure
+  subdoctype: Draft Agenda
+  flavor: bipm
+  editorialgroup:
+    committee:
+      - acronym: CGPM
+        content: General Conference on Weights and Measures
+        language: en
+        script: Latn
+        locale: en-US
+      - acronym: JCGM
+        content: Joint Committee for Guides in Metrology
+    workgroup:
+      - content: Work group
+      - acronym: ACRN
+        content: Workgroup
+
+  comment_period:
+    from: "2011-01-01"
+    to: "2011-12-31"
+
+  si_aspect: A_e_deltanu
+  meeting_note: Meeting note
+
+  structuredidentifier:
+    docnumber: si-brochure
+    part: '1'
+    appendix: A

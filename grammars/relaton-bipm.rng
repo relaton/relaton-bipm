@@ -14,6 +14,7 @@
         <value>strategy</value>
         <value>cipm-mra</value>
         <value>resolution</value>
+        <value>policy</value>
       </choice>
     </define>
     <define name="editorialgroup">
@@ -53,6 +54,7 @@
       <optional>
         <ref name="docsubtype"/>
       </optional>
+      <ref name="flavor"/>
       <ref name="editorialgroup"/>
       <optional>
         <ref name="comment-period"/>
