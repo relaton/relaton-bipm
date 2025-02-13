@@ -50,13 +50,9 @@
     <locality type="volume">
       <referenceFrom>29</referenceFrom>
     </locality>
-  </extent>
-  <extent>
     <locality type="issue">
       <referenceFrom>6</referenceFrom>
     </locality>
-  </extent>
-  <extent>
     <locality type="page">
       <referenceFrom>373</referenceFrom>
       <referenceTo>377</referenceTo>

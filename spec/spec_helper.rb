@@ -1,7 +1,8 @@
 require "bundler/setup"
+require "jing"
 
 Dir["./spec/support/**/*.rb"].sort.each { |f| require f }
-require "relaton_bipm"
+require "relaton/bipm"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
