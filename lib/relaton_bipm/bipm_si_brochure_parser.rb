@@ -66,7 +66,11 @@ module RelatonBipm
       update_id hash
 
       prid = primary_id hash
-      hash["docnumber"].sub!(/^Brochure$/i, prid.sub(/^BIPM\s/, ""))
+      if hash["docnumber"]
+        hash["docnumber"].sub!(/^Brochure$/i, prid.sub(/^BIPM\s/, ""))
+      else
+        hash["docnumber"] = prid.sub(/^BIPM\s/, "")
+      end
       hash["id"] = prid.gsub(/[,\s]/, "")
     end
 

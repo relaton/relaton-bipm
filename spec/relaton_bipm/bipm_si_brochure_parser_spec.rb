@@ -44,23 +44,44 @@ describe RelatonBipm::BipmSiBrochureParser do
       subject.parse
     end
 
-    it "#fix_si_brochure_id" do
-      hash = {
-        "id" => "BIPMBrochure", "docnumber" => "Brochure",
-        "docid" => [
-          { "type" => "BIPM", "id" => "BIPM Brochure Partie 1", "language" => "fr" },
-          { "type" => "BIPM", "id" => "BIPM Brochure Part 1", "language" => "en" }
-        ]
-      }
-      subject.fix_si_brochure_id hash
-      expect(hash["id"]).to eq "BIPMSIBrochurePart1"
-      expect(hash["docnumber"]).to eq "SI Brochure Part 1"
-      expect(hash["docid"]).to eq(
-        [
-          { "type" => "BIPM", "id" => "BIPM SI Brochure Partie 1", "primary" => true, "language" => "fr" },
-          { "type" => "BIPM", "id" => "BIPM SI Brochure Part 1", "primary" => true, "language" => "en" }
-        ],
-      )
+    context "#fix_si_brochure_id" do
+      it "docnumber is defined" do
+        hash = {
+          "id" => "BIPMBrochure", "docnumber" => "Brochure",
+          "docid" => [
+            { "type" => "BIPM", "id" => "BIPM Brochure Partie 1", "language" => "fr" },
+            { "type" => "BIPM", "id" => "BIPM Brochure Part 1", "language" => "en" }
+          ]
+        }
+        subject.fix_si_brochure_id hash
+        expect(hash["id"]).to eq "BIPMSIBrochurePart1"
+        expect(hash["docnumber"]).to eq "SI Brochure Part 1"
+        expect(hash["docid"]).to eq(
+          [
+            { "type" => "BIPM", "id" => "BIPM SI Brochure Partie 1", "primary" => true, "language" => "fr" },
+            { "type" => "BIPM", "id" => "BIPM SI Brochure Part 1", "primary" => true, "language" => "en" }
+          ],
+        )
+      end
+
+      it "docnumber is not defined" do
+        hash = {
+          "id" => "BIPMBrochure",
+          "docid" => [
+            { "type" => "BIPM", "id" => "BIPM Brochure Partie 1", "language" => "fr" },
+            { "type" => "BIPM", "id" => "BIPM Brochure Part 1", "language" => "en" }
+          ]
+        }
+        subject.fix_si_brochure_id hash
+        expect(hash["id"]).to eq "BIPMSIBrochurePart1"
+        expect(hash["docnumber"]).to eq "SI Brochure Part 1"
+        expect(hash["docid"]).to eq(
+          [
+            { "type" => "BIPM", "id" => "BIPM SI Brochure Partie 1", "primary" => true, "language" => "fr" },
+            { "type" => "BIPM", "id" => "BIPM SI Brochure Part 1", "primary" => true, "language" => "en" }
+          ],
+        )
+      end
     end
 
     context "#update_id" do
