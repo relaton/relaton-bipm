@@ -62,5 +62,45 @@ describe RelatonBipm::BipmSiBrochureParser do
         ],
       )
     end
+
+    context "#update_id" do
+      it "updates id" do
+        hash = {
+          "docid" => [
+            { "type" => "BIPM", "id" => "BIPM Brochure Partie 1", "language" => "fr" },
+            { "type" => "BIPM", "id" => "BIPM Brochure Part 1", "language" => "en" }
+          ]
+        }
+        subject.update_id hash
+        expect(hash["docid"]).to eq(
+          [
+            { "type" => "BIPM", "id" => "BIPM SI Brochure Partie 1", "primary" => true, "language" => "fr" },
+            { "type" => "BIPM", "id" => "BIPM SI Brochure Part 1", "primary" => true, "language" => "en" }
+          ],
+        )
+      end
+    end
+
+    context "#primary_id" do
+      it "returns EN primary id" do
+        hash = {
+          "docid" => [
+            { "type" => "BIPM", "id" => "BIPM SI Brochure Partie 1", "primary" => true, "language" => "fr" },
+            { "type" => "BIPM", "id" => "BIPM SI Brochure Part 1", "primary" => true, "language" => "en" }
+          ]
+        }
+        expect(subject.primary_id hash).to eq("BIPM SI Brochure Part 1")
+      end
+
+      it "returns primary id without language" do
+        hash = {
+          "docid" => [
+            { "type" => "BIPM", "id" => "BIPM SI Brochure Partie 1", "primary" => true, "language" => "fr" },
+            { "type" => "BIPM", "id" => "BIPM SI Brochure Part 1", "primary" => true }
+          ]
+        }
+        expect(subject.primary_id hash).to eq("BIPM SI Brochure Part 1")
+      end
+    end
   end
 end

@@ -59,20 +59,30 @@ module RelatonBipm
     #
     # @return [void]
     #
-    def fix_si_brochure_id(hash) # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
+    def fix_si_brochure_id(hash)
       # isbn = hash["docid"].detect { |id| id["type"] == "ISBN" }
       # num = isbn && isbn["id"] == "978-92-822-2272-0" ?  "SI Brochure" : "SI Brochure, Appendix 4"
 
+      update_id hash
+
+      prid = primary_id hash
+      hash["docnumber"].sub!(/^Brochure$/i, prid.sub(/^BIPM\s/, ""))
+      hash["id"] = prid.gsub(/[,\s]/, "")
+    end
+
+    def update_id(hash)
       hash["docid"].each do |id|
         next unless id["type"] == "BIPM" && id["id"].match?(/BIPM Brochure/i)
 
         id["primary"] = true
         id["id"].sub!(/(?<=^BIPM\s)(Brochure)/i, "SI \\1")
       end
+    end
 
-      num = hash["docid"].detect { |id| id["primary"] && id["language"] == "en" }["id"]
-      hash["docnumber"].sub!(/^Brochure$/i, num.sub(/^BIPM\s/, ""))
-      hash["id"] = num.gsub(/[,\s]/, "")
+    def primary_id(hash)
+      hash["docid"].detect do |id|
+        id["primary"] && (id["language"] == "en" || id["language"].nil?)
+      end["id"]
     end
 
     #

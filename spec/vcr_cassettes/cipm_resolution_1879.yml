@@ -39,21 +39,21 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Github-Request-Id:
-      - 8025:67F05:581C1B:615DF6:67AD2AD9
+      - BA6B:6E6B4:F4B73:13430C:680BEA5B
       Accept-Ranges:
       - bytes
       Date:
-      - Wed, 12 Feb 2025 23:12:34 GMT
+      - Fri, 25 Apr 2025 20:02:44 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-iad-kjyo7100102-IAD
+      - cache-iad-kjyo7100125-IAD
       X-Cache:
       - HIT
       X-Cache-Hits:
       - '1'
       X-Timer:
-      - S1739401954.427906,VS0,VE2
+      - S1745611364.155500,VS0,VE2
       Vary:
       - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
@@ -61,9 +61,9 @@ http_interactions:
       Cross-Origin-Resource-Policy:
       - cross-origin
       X-Fastly-Request-Id:
-      - b520de78a98473e11b94a34eae90d59ec658b4a2
+      - 265681b38e90bbf6e1f9716eb7b17c103d4daf27
       Expires:
-      - Wed, 12 Feb 2025 23:17:34 GMT
+      - Fri, 25 Apr 2025 20:07:44 GMT
       Source-Age:
       - '8'
     body:
@@ -1410,7 +1410,7 @@ http_interactions:
         APM//uWPl/k+0P/++ZfLzb3//wFQSwECHgMUAAAACACbfphZaHGrCQHrAABg
         DQwACwAYAAAAAAABAAAApIEAAAAAaW5kZXgyLnlhbWxVVAUAA9XYamd1eAsA
         AQTpAwAABHYAAABQSwUGAAAAAAEAAQBRAAAARusAAAAA
-  recorded_at: Wed, 12 Feb 2025 23:12:34 GMT
+  recorded_at: Fri, 25 Apr 2025 20:02:44 GMT
 - request:
     method: get
     uri: https://raw.githubusercontent.com/relaton/relaton-data-bipm/main/data/cipm/meeting/resolution/1879-00.yaml
@@ -1423,7 +1423,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - Mechanize/2.12.2 Ruby/3.3.3p89 (http://github.com/sparklemotion/mechanize/)
+      - Mechanize/2.14.0 Ruby/3.3.3p89 (http://github.com/sparklemotion/mechanize/)
       Accept-Language:
       - en-us,en;q=0.5
       Host:
@@ -1458,13 +1458,13 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Github-Request-Id:
-      - AB67:4F3CE:5D41B4:669027:67AD2AE2
+      - 59D7:8BECF:ABB3:E203:680BEA63
       Content-Encoding:
       - gzip
       Accept-Ranges:
       - bytes
       Date:
-      - Wed, 12 Feb 2025 23:12:35 GMT
+      - Fri, 25 Apr 2025 20:02:45 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
@@ -1474,7 +1474,7 @@ http_interactions:
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1739401956.643311,VS0,VE72
+      - S1745611365.278148,VS0,VE93
       Vary:
       - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
@@ -1482,9 +1482,9 @@ http_interactions:
       Cross-Origin-Resource-Policy:
       - cross-origin
       X-Fastly-Request-Id:
-      - 9b67d0cfa821e33604613d5ccc4173c5543b3534
+      - 168a40aa9729c88ecc5c9277d7be49f06027c5ea
       Expires:
-      - Wed, 12 Feb 2025 23:17:35 GMT
+      - Fri, 25 Apr 2025 20:07:45 GMT
       Source-Age:
       - '0'
     body:
@@ -1507,5 +1507,5 @@ http_interactions:
         /tec3Gx1vzu13jAvgMPtZv0fE3PzSon5MwXE2YXSAQD7jhq3zR7JY3jvW7+D
         R7gglP39iFuQrweiuQng5pB7XXh2z4rDGCagrz26J9fz2J/T3UJQwdJCOCmn
         sHtecZAA//GBIkziSfAb8c1qV84JAAA=
-  recorded_at: Wed, 12 Feb 2025 23:12:35 GMT
+  recorded_at: Fri, 25 Apr 2025 20:02:45 GMT
 recorded_with: VCR 6.3.1
