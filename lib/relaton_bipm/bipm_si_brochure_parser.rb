@@ -67,7 +67,7 @@ module RelatonBipm
 
       prid = primary_id hash
       if hash["docnumber"]
-        hash["docnumber"].sub!(/^Brochure$/i, prid.sub(/^BIPM\s/, ""))
+        hash["docnumber"].sub!(/^Brochure(?:\sConcise|\sFAQ)?$/i, prid.sub(/^BIPM\s/, ""))
       else
         hash["docnumber"] = prid.sub(/^BIPM\s/, "")
       end

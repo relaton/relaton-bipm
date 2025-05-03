@@ -52,6 +52,8 @@ describe RelatonBipm::Id do
       it_behaves_like "parses ID", "CCM-GD-RSI-1", group: "CCM", type: "GD-RSI", number: "1"
       it_behaves_like "parses ID", "SI MEP A1", group: "SI", type: "MEP", number: "A1"
       it_behaves_like "parses ID", "Rapport BIPM-2019/05", group: "Rapport", type: "BIPM", number: "2019/05"
+      it_behaves_like "parses ID", "SI Brochure Concise", group: "SI", type: "Brochure", number: "Concise"
+      it_behaves_like "parses ID", "SI Brochure FAQ", group: "SI", type: "Brochure", number: "FAQ"
     end
 
     context "Metrologia" do

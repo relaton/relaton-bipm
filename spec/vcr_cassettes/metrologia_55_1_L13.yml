@@ -39,21 +39,21 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Github-Request-Id:
-      - BA6B:6E6B4:F4B73:13430C:680BEA5B
+      - F04F:222D74:15D7069:1B2AC79:68158138
       Accept-Ranges:
       - bytes
       Date:
-      - Fri, 25 Apr 2025 20:03:04 GMT
+      - Sat, 03 May 2025 02:37:11 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-iad-kjyo7100156-IAD
+      - cache-iad-kjyo7100157-IAD
       X-Cache:
       - HIT
       X-Cache-Hits:
       - '1'
       X-Timer:
-      - S1745611384.253596,VS0,VE1
+      - S1746239831.236068,VS0,VE1
       Vary:
       - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
@@ -61,9 +61,9 @@ http_interactions:
       Cross-Origin-Resource-Policy:
       - cross-origin
       X-Fastly-Request-Id:
-      - 5f6eeb258ff8bddd0a0ba869abf592692c31fcfe
+      - 49bd8db4e1301716c6e25f53e5d23928a41ccdb8
       Expires:
-      - Fri, 25 Apr 2025 20:08:04 GMT
+      - Sat, 03 May 2025 02:42:11 GMT
       Source-Age:
       - '28'
     body:
@@ -1410,7 +1410,7 @@ http_interactions:
         APM//uWPl/k+0P/++ZfLzb3//wFQSwECHgMUAAAACACbfphZaHGrCQHrAABg
         DQwACwAYAAAAAAABAAAApIEAAAAAaW5kZXgyLnlhbWxVVAUAA9XYamd1eAsA
         AQTpAwAABHYAAABQSwUGAAAAAAEAAQBRAAAARusAAAAA
-  recorded_at: Fri, 25 Apr 2025 20:03:04 GMT
+  recorded_at: Sat, 03 May 2025 02:37:11 GMT
 - request:
     method: get
     uri: https://raw.githubusercontent.com/relaton/relaton-data-bipm/main/data/metrologia-55-1-l13.yaml
@@ -1458,23 +1458,23 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Github-Request-Id:
-      - D52B:18AADC:E689:11F0E:680BEA78
+      - 39A9:5B5EB:15CD36A:1BE96B8:68158156
       Content-Encoding:
       - gzip
       Accept-Ranges:
       - bytes
       Date:
-      - Fri, 25 Apr 2025 20:03:05 GMT
+      - Sat, 03 May 2025 02:37:12 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-iad-kjyo7100108-IAD
+      - cache-iad-kjyo7100043-IAD
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1745611385.296629,VS0,VE86
+      - S1746239832.343559,VS0,VE86
       Vary:
       - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
@@ -1482,9 +1482,9 @@ http_interactions:
       Cross-Origin-Resource-Policy:
       - cross-origin
       X-Fastly-Request-Id:
-      - c8c269bb09b092002736bb3fbf8f81702c6be2a7
+      - cafa1b65c0661247d30ab4cc25694b12d4f27de1
       Expires:
-      - Fri, 25 Apr 2025 20:08:05 GMT
+      - Sat, 03 May 2025 02:42:12 GMT
       Source-Age:
       - '0'
     body:
@@ -1516,5 +1516,5 @@ http_interactions:
         OKZ+/XMwlVVkkK6M32w7HHZPedvvQH5+/3DdHqz1aGqx7EWSC8ZlQCNnl1YT
         KmaC23X9HFspUWTodTVW3e6vqjn0+wc1SW5M8YpgVJfLydkXxcoPWvV5q9zs
         sXNx4Bvjd98We50e3UhU7G2XtbP3Ce1fwWzvSpQcAAA=
-  recorded_at: Fri, 25 Apr 2025 20:03:05 GMT
+  recorded_at: Sat, 03 May 2025 02:37:12 GMT
 recorded_with: VCR 6.3.1

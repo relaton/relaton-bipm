@@ -91,7 +91,7 @@ module RelatonBipm
     #
     def parse(id)
       # str = StringScanner.new id
-      match = parse_outcome(id) || parse_brochure(id) || parse_brochure_other(id) || parse_metrologia(id) || parse_jcgm(id)
+      match = parse_outcome(id) || parse_brochure(id) || parse_metrologia(id) || parse_jcgm(id)
       @id = match.named_captures.compact.transform_keys(&:to_sym)
       self
     rescue StandardError => e
@@ -127,9 +127,13 @@ module RelatonBipm
     def num_and_year; "(?:(?:#{number}\\s)?#{year_lang}|#{year}-#{number}|#{number})"; end
 
     def parse_brochure(id)
+      parse_si_brochure(id) || parse_brochure_other(id)
+    end
+
+    def parse_si_brochure(id)
       %r{^
         (?<group>SI)\s(?<type>Brochure)
-        (?:,?\s(?:(?:Part|Partie)\s(?<part>\d+)|(?:Appendix|Annexe)\s(?<append>\d+)))?
+        (?:,?\s(?:(?:Part|Partie)\s(?<part>\d+)|(?:Appendix|Annexe)\s(?<append>\d+)|(?<number>Concise|FAQ)))?
       $}x.match(id)
     end
 
