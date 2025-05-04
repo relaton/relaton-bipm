@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article
+  PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Publishing DTD v1.1 20151215//EN" "JATS-journalpublishing1.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML"
+  xmlns:xlink="http://www.w3.org/1999/xlink" article-type="research-article" dtd-version="1.1" xml:lang="en">
+  <front>
+    <journal-meta>
+      <journal-id journal-id-type="publisher-id">met</journal-id>
+      <journal-title-group>
+        <journal-title>Metrologia</journal-title>
+        <abbrev-journal-title abbrev-type="IOP">met</abbrev-journal-title>
+        <abbrev-journal-title abbrev-type="publisher">Metrologia</abbrev-journal-title>
+      </journal-title-group>
+      <issn pub-type="ppub">0026-1394</issn>
+      <issn pub-type="epub">1681-7575</issn>
+    </journal-meta>
+    <article-meta>
+      <article-id pub-id-type="publisher-id">0026-1394__</article-id>
+      <article-id pub-id-type="doi">10.1088/0026-1394/49/2/S17</article-id>
+      <article-id pub-id-type="manuscript">S17</article-id>
+      <article-categories>
+        <subj-group subj-group-type="display-article-type">
+          <subject/>
+        </subj-group>
+      </article-categories>
+      <title-group>
+        <article-title xml:lang="en">Applying uncertainties to ocean colour data</article-title>
+      </title-group>
+      <contrib-group>
+        <contrib contrib-type="author" xlink:type="simple">
+          <name>
+            <surname>Lavender</surname>
+            <given-names>S</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff1">1</xref>
+        </contrib>
+        <contrib contrib-type="author" xlink:type="simple">
+          <name>
+            <surname>d'Andon</surname>
+            <given-names>O Fanton</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff2">2</xref>
+        </contrib>
+        <contrib contrib-type="author" xlink:type="simple">
+          <name>
+            <surname>Kay</surname>
+            <given-names>S</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff1">1</xref>
+          <xref ref-type="aff" rid="aff3">3</xref>
+        </contrib>
+        <contrib contrib-type="author" xlink:type="simple">
+          <name>
+            <surname>Bourg</surname>
+            <given-names>L</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff2">2</xref>
+        </contrib>
+        <contrib contrib-type="author" xlink:type="simple">
+          <name>
+            <surname>Emsley</surname>
+            <given-names>S</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff1">1</xref>
+        </contrib>
+        <contrib contrib-type="author" xlink:type="simple">
+          <name>
+            <surname>Gilles</surname>
+            <given-names>Nicolas</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff2">2</xref>
+        </contrib>
+        <contrib contrib-type="author" xlink:type="simple">
+          <name>
+            <surname>Nightingale</surname>
+            <given-names>T</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff4">4</xref>
+        </contrib>
+        <contrib contrib-type="author" xlink:type="simple">
+          <name>
+            <surname>Quast</surname>
+            <given-names>Ralf</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff5">5</xref>
+        </contrib>
+        <contrib contrib-type="author" xlink:type="simple">
+          <name>
+            <surname>Bates</surname>
+            <given-names>Martin</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff4">4</xref>
+        </contrib>
+        <contrib contrib-type="author" xlink:type="simple">
+          <name>
+            <surname>Storm</surname>
+            <given-names>Thomas</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff5">5</xref>
+        </contrib>
+        <contrib contrib-type="author" xlink:type="simple">
+          <name>
+            <surname>Hedley</surname>
+            <given-names>J</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff1">1</xref>
+        </contrib>
+        <contrib contrib-type="author" xlink:type="simple">
+          <name>
+            <surname>Knul</surname>
+            <given-names>M</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff1">1</xref>
+        </contrib>
+        <contrib contrib-type="author" xlink:type="simple">
+          <name>
+            <surname>Sotis</surname>
+            <given-names>G</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff6">6</xref>
+        </contrib>
+        <contrib contrib-type="author" xlink:type="simple">
+          <name>
+            <surname>Nasir-Habeeb</surname>
+            <given-names>R</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff1">1</xref>
+        </contrib>
+        <contrib contrib-type="author" xlink:type="simple">
+          <name>
+            <surname>Goryl</surname>
+            <given-names>P</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff6">6</xref>
+        </contrib>
+        <contrib contrib-type="author" xlink:type="simple">
+          <collab>Sentinel-3 L2 Products and Algorithm Team</collab>
+        </contrib>
+        <aff id="aff1">
+          <label>1</label>ARGANS Limited, 19 Research Way, Tamar Science Park, Derriford, Plymouth, Devon, PL6 8BT, UK</aff>
+        <aff id="aff2">
+          <label>2</label>ACRI-ST, 260 Route du Pin Montard, F-06904 Sophia Antipolis, France</aff>
+        <aff id="aff3">
+          <label>3</label>School of Biosciences, University of Exeter, Prince of Wales Road, Exeter, EX4 4PS, UK</aff>
+        <aff id="aff4">
+          <label>4</label>RAL Space, Science and Technology Facilities Council, Rutherford Appleton Laboratory, Harwell Science and Innovation Campus, Didcot, OX11 0QX, UK</aff>
+        <aff id="aff5">
+          <label>5</label>Brockmann Consult, Max-Planck-Strasse 2, D-21502 Geesthacht, Germany</aff>
+        <aff id="aff6">
+          <label>6</label>Telespazio S.p.A., Space and Environment Unit, 91, v. B Segre-00134 Rome, Italy</aff>
+        <aff id="aff7">
+          <label>7</label>European Space Agency, Frascati, Italy</aff>
+      </contrib-group>
+      <pub-date pub-type="epub">
+        <day>02</day>
+        <month>03</month>
+        <year>2012</year>
+      </pub-date>
+      <pub-date pub-type="ppub">
+        <day>01</day>
+        <month>04</month>
+        <year>2012</year>
+      </pub-date>
+      <volume>49</volume>
+      <issue>2</issue>
+      <fpage>S17</fpage>
+      <lpage>S20</lpage>
+      <history>
+        <date date-type="received">
+          <day>09</day>
+          <month>10</month>
+          <year>2011</year>
+        </date>
+      </history>
+      <permissions>
+        <copyright-statement>2012 BIPM &amp; IOP Publishing Ltd</copyright-statement>
+        <copyright-year>2012</copyright-year>
+      </permissions>
+      <self-uri content-type="pdf" xlink:href="met12_2_S17.pdf" xlink:type="simple"/>
+      <abstract xml:lang="en">
+        <p>Retrieval of operational optical products from the future Global Monitoring for Environment and Security (GMES) Sentinel-3 mission aims to provide continuity of existing missions delivering ocean/land colour, surface temperature and sea surface topography data. This paper describes the current status of the Sentinel-3 Level 2 Optical Prototype Processor (O-L2PP) whose development includes not only a list of products, but also associated uncertainty estimates—a key requirement for the processor. Examples of the approaches adopted within the Ocean and Land Colour Instrument (OLCI) processing module demonstrate how uncertainties can be estimated.</p>
+      </abstract>
+    </article-meta>
+  </front>
+</article>

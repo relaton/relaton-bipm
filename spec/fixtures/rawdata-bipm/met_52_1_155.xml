@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article
+  PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Publishing DTD v1.1 20151215//EN" "JATS-journalpublishing1.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML"
+  xmlns:xlink="http://www.w3.org/1999/xlink" article-type="note" dtd-version="1.1" xml:lang="en">
+  <front>
+    <journal-meta>
+      <journal-id journal-id-type="publisher-id">met</journal-id>
+      <journal-id journal-id-type="coden">MTRGAU</journal-id>
+      <journal-title-group>
+        <journal-title xml:lang="en">Metrologia</journal-title>
+        <abbrev-journal-title abbrev-type="IOP" xml:lang="en">MET</abbrev-journal-title>
+        <abbrev-journal-title abbrev-type="publisher" xml:lang="en">Metrologia</abbrev-journal-title>
+      </journal-title-group>
+      <issn pub-type="ppub">0026-1394</issn>
+      <issn pub-type="epub">1681-7575</issn>
+      <publisher>
+        <publisher-name>IOP Publishing</publisher-name>
+      </publisher>
+      <notes notes-type="publishing-partner">
+        <p>Bureau International des Poids et Mesures</p>
+      </notes>
+    </journal-meta>
+    <article-meta>
+      <article-id pub-id-type="publisher-id">met507496</article-id>
+      <article-id pub-id-type="doi">10.1088/0026-1394/52/1/155</article-id>
+      <article-id pub-id-type="manuscript">507496</article-id>
+      <article-categories>
+        <subj-group subj-group-type="display-article-type">
+          <subject>International Report</subject>
+        </subj-group>
+        <subj-group subj-group-type="section">
+          <subject>Other Editorial Matter</subject>
+        </subj-group>
+      </article-categories>
+      <title-group>
+        <article-title>News from the BIPM laboratories: 2014</article-title>
+
+      </title-group>
+      <contrib-group>
+        <contrib contrib-type="author" xlink:type="simple">
+          <name name-style="western">
+            <surname>Los Arcos</surname>
+            <given-names>José-Maria</given-names>
+          </name>
+          <xref ref-type="aff" rid="affiliation01">1</xref>
+        </contrib>
+        <contrib contrib-type="author" xlink:type="simple">
+          <name name-style="western">
+            <surname>Stock</surname>
+            <given-names>Michael</given-names>
+          </name>
+          <xref ref-type="aff" rid="affiliation01">1</xref>
+        </contrib>
+        <contrib contrib-type="author" xlink:type="simple">
+          <name name-style="western">
+            <surname>Wielgosz</surname>
+            <given-names>Robert</given-names>
+          </name>
+          <xref ref-type="aff" rid="affiliation01">1</xref>
+        </contrib>
+        <contrib contrib-type="author" xlink:type="simple">
+          <name name-style="western">
+            <surname>Arias</surname>
+            <given-names>Felicitas</given-names>
+          </name>
+          <xref ref-type="aff" rid="affiliation01">1</xref>
+        </contrib>
+        <contrib contrib-type="author" xlink:type="simple">
+          <name name-style="western">
+            <surname>Milton</surname>
+            <given-names>Martin</given-names>
+          </name>
+          <xref ref-type="aff" rid="affiliation01">1</xref>
+          <email>martin.milton@bipm.org</email>
+        </contrib>
+
+
+
+        <aff id="affiliation01">
+          <label>1</label>
+          <institution xlink:type="simple">Bureau International des Poids et Mesures (BIPM)</institution>, Pavillon de Breteuil, 92312 CEDEX, Sèvres, <country>France</country>
+        </aff>
+      </contrib-group>
+      <pub-date pub-type="ppub">
+        <day>01</day>
+        <month>2</month>
+        <year>2015</year>
+      </pub-date>
+      <pub-date pub-type="epub">
+        <day>30</day>
+        <month>1</month>
+        <year>2015</year>
+      </pub-date>
+      <volume>52</volume>
+      <issue>1</issue>
+      <fpage>155</fpage>
+      <lpage>162</lpage>
+      <history>
+        <date date-type="received">
+          <day>22</day>
+          <month>12</month>
+          <year>2014</year>
+        </date>
+        <date date-type="revised">
+          <day>22</day>
+          <month>12</month>
+          <year>2014</year>
+        </date>
+        <date date-type="accepted">
+          <day>22</day>
+          <month>12</month>
+          <year>2014</year>
+        </date>
+      </history>
+      <permissions>
+        <copyright-statement>© 2015 BIPM &amp; IOP Publishing Ltd</copyright-statement>
+        <copyright-year>2015</copyright-year>
+        <license license-type="iop-standard" xlink:href="https://publishingsupport.iopscience.iop.org/iop-standard/v1">
+          <license-p>This article is available under the terms of the <ext-link ext-link-type="uri">IOP-Standard License</ext-link>.
+          </license-p>
+        </license>
+      </permissions>
+      <self-uri content-type="pdf" xlink:href="met_52_1_155.pdf" xlink:type="simple"/>
+      <counts>
+        <page-count count="8"/>
+      </counts>
+      <custom-meta-group>
+        <custom-meta xlink:type="simple">
+          <meta-name>ccc</meta-name>
+          <meta-value>0026-1394/15/010155+08$33.00</meta-value>
+        </custom-meta>
+        <custom-meta xlink:type="simple">
+          <meta-name>printed</meta-name>
+          <meta-value>Printed in the UK</meta-value>
+        </custom-meta>
+        <custom-meta xlink:type="simple">
+          <meta-name>crossmark</meta-name>
+          <meta-value>yes</meta-value>
+        </custom-meta>
+      </custom-meta-group>
+    </article-meta>
+  </front>
+</article>

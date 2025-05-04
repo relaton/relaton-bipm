@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require_relative "niso_jats_parser"
+
 module RelatonBipm
   module RawdataBipmMetrologia
     class Fetcher
@@ -31,7 +33,7 @@ module RelatonBipm
       def fetch_articles # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
         # aff = Affiliations.parse DIR
         Dir["#{DIR}/**/*.xml"].each do |path|
-          item = ArticleParser.parse path # , aff
+          item = NisoJatsParser.parse path # , aff
           file = "#{item.docidentifier.first.id.downcase.tr(' ', '-')}.#{@data_fetcher.ext}"
           out_path = File.join(@data_fetcher.output, file)
           key = Id.new.parse(item.docidentifier.first.id).to_hash

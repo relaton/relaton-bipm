@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article
+  PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Publishing DTD v1.1 20151215//EN" "JATS-journalpublishing1.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML"
+  xmlns:xlink="http://www.w3.org/1999/xlink" article-type="research-article" dtd-version="1.1" xml:lang="en">
+  <front>
+    <journal-meta>
+      <journal-id journal-id-type="publisher-id">metro</journal-id>
+      <journal-id journal-id-type="coden">MTRGAU</journal-id>
+      <journal-title-group>
+        <journal-title xml:lang="en">Metrologia</journal-title>
+        <abbrev-journal-title abbrev-type="IOP" xml:lang="en">MET</abbrev-journal-title>
+        <abbrev-journal-title abbrev-type="publisher" xml:lang="en">Metrologia</abbrev-journal-title>
+      </journal-title-group>
+      <issn pub-type="ppub">0026-1394</issn>
+      <issn pub-type="epub">1681-7575</issn>
+      <publisher>
+        <publisher-name>IOP Publishing</publisher-name>
+      </publisher>
+    </journal-meta>
+    <article-meta>
+      <article-id pub-id-type="publisher-id">metro412950</article-id>
+      <article-id pub-id-type="doi">10.1088/0026-1394/49/3/273</article-id>
+      <article-id pub-id-type="manuscript">412950</article-id>
+      <article-categories>
+        <subj-group subj-group-type="display-article-type">
+          <subject>Paper</subject>
+        </subj-group>
+      </article-categories>
+      <title-group>
+        <article-title>Realization and validation of the detector-based absolute integrating sphere method for luminous-flux measurement at KRISS</article-title>
+
+
+
+      </title-group>
+      <contrib-group>
+        <contrib contrib-type="author" xlink:type="simple">
+          <name name-style="western">
+            <surname>Kim</surname>
+            <given-names>Yong-Wan</given-names>
+          </name>
+          <xref ref-type="aff" rid="affiliation01">1</xref>
+          <xref ref-type="aff" rid="affiliation02">2</xref>
+        </contrib>
+        <contrib contrib-type="author" xlink:type="simple">
+          <name name-style="western">
+            <surname>Lee</surname>
+            <given-names>Dong-Hoon</given-names>
+          </name>
+          <xref ref-type="aff" rid="affiliation01">1</xref>
+        </contrib>
+        <contrib contrib-type="author" xlink:type="simple">
+          <name name-style="western">
+            <surname>Park</surname>
+            <given-names>Seung-Nam</given-names>
+          </name>
+          <xref ref-type="aff" rid="affiliation01">1</xref>
+        </contrib>
+        <contrib contrib-type="author" xlink:type="simple">
+          <name name-style="western">
+            <surname>Jeon</surname>
+            <given-names>Min-Yong</given-names>
+          </name>
+          <xref ref-type="aff" rid="affiliation02">2</xref>
+        </contrib>
+        <contrib contrib-type="author" xlink:type="simple">
+          <name name-style="western">
+            <surname>Park</surname>
+            <given-names>Seongchong</given-names>
+          </name>
+          <xref ref-type="aff" rid="affiliation01">1</xref>
+          <xref ref-type="fn" rid="metro412950afn1">3</xref>
+          <email>spark@kriss.re.kr</email>
+        </contrib>
+
+
+
+
+        <aff id="affiliation01">
+          <label>1</label>
+Division of Physical Metrology, <institution xlink:type="simple">Korea Research Institute of Standards and Science</institution>, 267 Gajeong-ro, Yuseong-gu, Daejeon 305-340, <country>Republic of Korea</country>
+        </aff>
+        <aff id="affiliation02">
+          <label>2</label>
+Department of Physics, <institution xlink:type="simple">Chungnam National University</institution>, 99 Daehak-ro, Yuseong-gu, Daejeon 305-764, <country>Republic of Korea</country>
+        </aff>
+      </contrib-group>
+      <author-notes>
+        <fn id="metro412950afn1">
+          <label>3</label>
+          <p>Author to whom any correspondence should be addressed.</p>
+        </fn>
+      </author-notes>
+      <pub-date pub-type="ppub">
+        <day>01</day>
+        <month>6</month>
+        <year>2012</year>
+      </pub-date>
+      <pub-date pub-type="epub">
+        <day>16</day>
+        <month>3</month>
+        <year>2012</year>
+      </pub-date>
+      <volume>49</volume>
+      <issue>3</issue>
+      <elocation-id content-type="artnum">273</elocation-id>
+      <history>
+        <date date-type="received">
+          <day>7</day>
+          <month>11</month>
+          <year>2011</year>
+        </date>
+        <date date-type="finalform">
+          <day>16</day>
+          <month>1</month>
+          <year>2012</year>
+        </date>
+      </history>
+      <permissions>
+        <copyright-statement>© 2012 IOP Publishing Ltd</copyright-statement>
+        <copyright-year>2012</copyright-year>
+        <license license-type="iop-standard" xlink:href="https://publishingsupport.iopscience.iop.org/iop-standard/v1">
+          <license-p>This article is available under the terms of the <ext-link ext-link-type="uri">IOP-Standard License</ext-link>.
+          </license-p>
+        </license>
+      </permissions>
+      <self-uri content-type="pdf" xlink:href="met12_3_273.pdf" xlink:type="simple"/>
+      <abstract>
+        <title>Abstract</title>
+        <p>We present two detector-based realizations of the absolute integrating sphere method for luminous-flux measurement. A large-size realization with a sphere diameter of 2 m is applied to high-flux lamps above 1000 lm, and a small-size realization with a sphere diameter of 0.3 m to low-flux lamps below 100 lm. The uncertainty of both realizations is analysed with a focus on the systematic effect in the spatial mismatch correction, and evaluated to be 1.2% and 1.1% (<italic>k</italic> = 2) for the large-size and small-size realizations, respectively. Comparison with a goniophotometer using two different types of lamp artefacts for both cases has verified the validity of the realization within the comparison uncertainty.</p>
+      </abstract>
+      <counts>
+        <page-count count="10"/>
+      </counts>
+      <custom-meta-group>
+        <custom-meta xlink:type="simple">
+          <meta-name>ccc</meta-name>
+          <meta-value>0026-1394/12/030273+10$33.00</meta-value>
+        </custom-meta>
+        <custom-meta xlink:type="simple">
+          <meta-name>printed</meta-name>
+          <meta-value>Printed in the UK &amp; the USA</meta-value>
+        </custom-meta>
+      </custom-meta-group>
+    </article-meta>
+  </front>
+</article>
