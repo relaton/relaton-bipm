@@ -4,7 +4,7 @@ source "https://rubygems.org"
 gemspec
 
 gem "byebug"
-gem "equivalent-xml", "~> 0.6"
+gem "lutaml-model", github: "lutaml/lutaml-model", branch: "main"
 gem "pry-byebug"
 gem "rake", "~> 13.0"
 gem "rspec", "~> 3.0"
