@@ -2,21 +2,26 @@ describe RelatonBipm::RawdataBipmMetrologia::NisoJatsParser do
   # let(:doc) { Nokogiri::XML(File.read("spec/fixtures/met12_3_273.xml", encoding: "UTF-8")) }
   # subject { described_class.new doc, "12", "3", "273" }
 
+  subject { described_class.new(doc, "52", "1", "155").parse }
+
+  let(:doc) { Niso::Jats::Article.from_xml source }
+
   it "call parser method" do
     path = "rawdata-bipm-metrologia//data/2022-04-05T10_55_52_content/0026-1394/0026-1394_55/0026-1394_55_1/0026-1394_55_1_L13/met_55_1_L13.xml"
     expect(File).to receive(:read).with(path, encoding: "UTF-8").and_return :xml
     expect(Niso::Jats::Article).to receive(:from_xml).with(:xml).and_return :doc
     parser = double "parser"
     expect(parser).to receive(:parse)
-    expect(described_class).to receive(:new).with(:doc, "55", "1", "L13").and_return parser
+    expect(described_class).to receive(:new).with(:doc, "55", "1",
+                                                  "L13").and_return parser
     described_class.parse path
   end
 
-  let(:doc) { Niso::Jats::Article.from_xml source }
-  subject { described_class.new(doc, "52", "1", "155").parse }
-
   shared_examples "parse" do |file_name|
-    let(:source) { File.read("spec/fixtures/rawdata-bipm/#{file_name}.xml", encoding: "UTF-8") }
+    let(:source) do
+      File.read("spec/fixtures/rawdata-bipm/#{file_name}.xml",
+                encoding: "UTF-8")
+    end
 
     it do
       xml = subject.to_xml bibdata: true
@@ -31,7 +36,9 @@ describe RelatonBipm::RawdataBipmMetrologia::NisoJatsParser do
   it_behaves_like "parse", "met12_2_S17"
 
   describe "#extract_paragraph_text" do
-    let(:source) { File.read("spec/fixtures/rawdata-bipm/met12_3_273.xml", encoding: "UTF-8") }
+    let(:source) do
+      File.read("spec/fixtures/rawdata-bipm/met12_3_273.xml", encoding: "UTF-8")
+    end
     let(:doc) { Niso::Jats::Article.from_xml source }
     let(:parser) { described_class.new(doc, "52", "1", "155") }
     let(:paragraph) { doc.front.article_meta.abstract.first.p.first }

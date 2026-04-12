@@ -6,9 +6,9 @@ Gem::Specification.new do |spec| # rubocop:disable Metrics/BlockLength
   spec.authors       = ["Ribose Inc."]
   spec.email         = ["open.source@ribose.com"]
 
-  spec.summary       = "RelatonBipm: retrieve BIPM Standards for "\
+  spec.summary       = "RelatonBipm: retrieve BIPM Standards for " \
                        "bibliographic use using the BibliographicItem model"
-  spec.description   = "RelatonBipm: retrieve BIPM Standards for "\
+  spec.description   = "RelatonBipm: retrieve BIPM Standards for " \
                        "bibliographic use using the BibliographicItem model"
   spec.homepage      = "https://github.com/relaton/relaton-bipm"
   spec.license       = "BSD-2-Clause"
@@ -18,6 +18,7 @@ Gem::Specification.new do |spec| # rubocop:disable Metrics/BlockLength
 
   spec.metadata["homepage_uri"] = spec.homepage
   spec.metadata["source_code_uri"] = "https://github.com/relaton/relaton-bipm"
+  spec.metadata["rubygems_mfa_required"] = "true"
   # spec.metadata["changelog_uri"] = "Put your gem's CHANGELOG.md URL here."
 
   # Specify which files should be added to the gem when it is released.

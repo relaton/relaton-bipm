@@ -81,7 +81,7 @@ module RelatonBipm
     def initialize
       # @id = Parser.new.parse(id)
       # @id = parse(id)
-    # rescue Parslet::ParseFailed => e
+      # rescue Parslet::ParseFailed => e
       # Util.warn "WARNING: Incorrect reference: `#{id}`"
       # warn e.parse_failure_cause.ascii_tree
       # raise RelatonBib::RequestError, e
@@ -112,7 +112,7 @@ module RelatonBipm
     end
 
     def parse_type_group(id)
-      %r{^#{type}\s#{group}\/#{num_and_year}$}.match(id)
+      %r{^#{type}\s#{group}/#{num_and_year}$}.match(id)
     end
 
     def group
@@ -124,7 +124,10 @@ module RelatonBipm
     def year; "(?<year>\\d{4})"; end
     def lang; ",\\s?(?<lang>[A-Z]{1,2})"; end
     def year_lang; "\\(#{year}(?:#{lang})?\\)"; end
-    def num_and_year; "(?:(?:#{number}\\s)?#{year_lang}|#{year}-#{number}|#{number})"; end
+
+    def num_and_year
+      "(?:(?:#{number}\\s)?#{year_lang}|#{year}-#{number}|#{number})"
+    end
 
     def parse_brochure(id)
       parse_si_brochure(id) || parse_brochure_other(id)
@@ -138,7 +141,7 @@ module RelatonBipm
     end
 
     def parse_brochure_other(id)
-      %r{^(?<group>CCEM|CCL|CCM|SI|Rapport)[-\s](?<type>GD-RSI|GD-MeP|MEP|BIPM)[-\s](?<number>\w+|\d{4}\/\d{2})$}.match(id)
+      %r{^(?<group>CCEM|CCL|CCM|SI|Rapport)[-\s](?<type>GD-RSI|GD-MeP|MEP|BIPM)[-\s](?<number>\w+|\d{4}/\d{2})$}.match(id)
     end
 
     def parse_metrologia(id)

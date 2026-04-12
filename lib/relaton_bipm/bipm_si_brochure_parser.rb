@@ -33,7 +33,8 @@ module RelatonBipm
         doc = docstd.at "/bibdata"
         hash1 = RelatonBipm::XMLParser.from_xml(doc.to_xml).to_hash
         fix_si_brochure_id hash1
-        basename = File.join @data_fetcher.output, File.basename(f).sub(/(?:-(?:en|fr))?\.rxl$/, "")
+        basename = File.join @data_fetcher.output,
+                             File.basename(f).sub(/(?:-(?:en|fr))?\.rxl$/, "")
         outfile = "#{basename}.#{@data_fetcher.ext}"
         key = hash1["docnumber"] || basename
         @data_fetcher.index2.add_or_update Id.new.parse(key).to_hash, outfile
@@ -67,7 +68,8 @@ module RelatonBipm
 
       prid = primary_id hash
       if hash["docnumber"]
-        hash["docnumber"].sub!(/^Brochure(?:\sConcise|\sFAQ)?$/i, prid.sub(/^BIPM\s/, ""))
+        hash["docnumber"].sub!(/^Brochure(?:\sConcise|\sFAQ)?$/i,
+                               prid.sub(/^BIPM\s/, ""))
       else
         hash["docnumber"] = prid.sub(/^BIPM\s/, "")
       end

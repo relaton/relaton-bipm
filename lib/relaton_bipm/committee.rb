@@ -25,7 +25,7 @@ module RelatonBipm
 
     # @param builder [Nokogiri::XML::Builder]
     def to_xml(builder)
-      builder.committee(acronym: acronym) { |b| super b }
+      builder.committee(acronym: acronym) { |b| super(b) }
     end
 
     # @param prefix [String]
@@ -57,7 +57,12 @@ module RelatonBipm
       if args[:content].is_a? String
         [args[:content], args[:language], args[:script]]
       elsif args[:content].nil?
-        lang = args[:language] || ACRONYMS.dig(acronym, "en") ? "en" : ACRONYMS[acronym]&.keys&.first
+        lang = if args[:language] || ACRONYMS.dig(acronym,
+                                                  "en")
+                 "en"
+               else
+                 ACRONYMS[acronym]&.keys&.first
+               end
         script = args[:script] || lang == "en" ? "Latn" : nil
         [ACRONYMS.dig(accronym, lang), lang, script]
       else [args[:content]]

@@ -97,14 +97,14 @@ module RelatonBipm
       # @return [Array<RelatonBib::TypedTitleString>] array of title strings
       #
       def parse_title
-        @meta.xpath("./title-group/article-title").map do |t|
+        @meta.xpath("./title-group/article-title").filter_map do |t|
           next if t.text.empty?
 
           format = CGI.escapeHTML(t.inner_html) == t.inner_html ? "text/plain" : "text/html"
           RelatonBib::TypedTitleString.new(
             content: t.inner_html, language: t[:"xml:lang"], script: "Latn", format: format,
           )
-        end.compact
+        end
       end
 
       #
@@ -115,7 +115,8 @@ module RelatonBipm
       def parse_contributor
         @meta.xpath("./contrib-group/contrib").map do |c|
           entity = create_person(c) || create_organization(c)
-          RelatonBib::ContributionInfo.new(entity: entity, role: [type: c[:"contrib-type"]])
+          RelatonBib::ContributionInfo.new(entity: entity,
+                                           role: [{ type: c[:"contrib-type"] }])
         end
       end
 
@@ -123,7 +124,8 @@ module RelatonBipm
         name = contrib.at("./name")
         return unless name
 
-        RelatonBib::Person.new name: fullname(name), affiliation: affiliation(contrib)
+        RelatonBib::Person.new name: fullname(name),
+                               affiliation: affiliation(contrib)
       end
 
       def create_organization(contrib)
@@ -138,10 +140,10 @@ module RelatonBipm
       # @return [Array<RelatonBib::Affiliation>] array of affiliations
       #
       def affiliation(contrib)
-        contrib.xpath("./xref[@ref-type='aff']").map do |x|
+        contrib.xpath("./xref[@ref-type='aff']").filter_map do |x|
           a = @meta.at("./contrib-group/aff[@id='#{x[:rid]}']") # /label/following-sibling::node()")
-            parse_affiliation a
-        end.compact
+          parse_affiliation a
+        end
       end
 
       def parse_affiliation(aff)
@@ -152,7 +154,7 @@ module RelatonBipm
           text.include?("Author to whom any correspondence should be addressed")
 
         args = {}
-        institution = aff.at('institution')
+        institution = aff.at("institution")
         if institution
           name = institution.text
           return if name == "1005 Southover Lane"
@@ -168,7 +170,9 @@ module RelatonBipm
       end
 
       def parse_division(aff)
-        div = aff.xpath("text()[following-sibling::institution]").text.gsub(/^\W*|\W*$/, "")
+        div = aff.xpath("text()[following-sibling::institution]").text.gsub(
+          /^\W*|\W*$/, ""
+        )
         return [] if div.empty?
 
         [RelatonBib::LocalizedString.new(div)]
@@ -176,9 +180,11 @@ module RelatonBipm
 
       def parse_address(aff)
         address = []
-        addr = aff.xpath("text()[preceding-sibling::institution]").text.gsub(/^\W*|\W*$/, "")
+        addr = aff.xpath("text()[preceding-sibling::institution]").text.gsub(
+          /^\W*|\W*$/, ""
+        )
         address << addr unless addr.empty?
-        country = aff.at('country')
+        country = aff.at("country")
         address << country.text if country && !country.text.empty?
         address = address.join(", ")
         return [] if address.empty?
@@ -194,7 +200,8 @@ module RelatonBipm
       # @return [RelatonBib::FullName] full name
       #
       def fullname(name)
-        cname = [name.at("./given-names"), name.at("./surname")].compact.map(&:text).join(" ")
+        cname = [name.at("./given-names"),
+                 name.at("./surname")].compact.map(&:text).join(" ")
         completename = RelatonBib::LocalizedString.new cname, "en", "Latn"
         RelatonBib::FullName.new completename: completename
       end
@@ -265,11 +272,12 @@ module RelatonBipm
           next unless from
 
           owner = l.at("./copyright-statement").text.split(" & ").map do |c|
-            /(?<name>[A-z]+(?:\s[A-z]+)*)/ =~ c
+            /(?<name>[A-Za-z]+(?:\s[A-Za-z]+)*)/ =~ c
             org = RelatonBib::Organization.new name: name
             RelatonBib::ContributionInfo.new(entity: org)
           end
-          m << RelatonBib::CopyrightAssociation.new(owner: owner, from: from.text)
+          m << RelatonBib::CopyrightAssociation.new(owner: owner,
+                                                    from: from.text)
         end
       end
 
@@ -293,7 +301,10 @@ module RelatonBipm
       #
       def parse_relation
         dates do |d, t|
-          RelatonBib::DocumentRelation.new(type: "hasManifestation", bibitem: bibitem(d, t))
+          RelatonBib::DocumentRelation.new(type: "hasManifestation",
+                                           bibitem: bibitem(
+                                             d, t
+                                           ))
         end
       end
 

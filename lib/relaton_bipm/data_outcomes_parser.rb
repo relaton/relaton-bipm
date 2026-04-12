@@ -66,7 +66,9 @@ module RelatonBipm
       FileUtils.mkdir_p body_dir
       outdir = File.join body_dir, type.downcase
       FileUtils.mkdir_p outdir
-      Dir[File.join(dir, "*.{yml,yaml}")].each { |en_file| fetch_meeting en_file, body, type, outdir }
+      Dir[File.join(dir, "*.{yml,yaml}")].each do |en_file|
+        fetch_meeting en_file, body, type, outdir
+      end
     end
 
     #
@@ -84,23 +86,28 @@ module RelatonBipm
 
       file = "#{num}.#{@data_fetcher.ext}"
       path = File.join dir, file
-      hash = meeting_bibitem body: body, type: type, en: en_md, fr: fr_md, num: num, src: src, pdf: en["pdf"]
+      hash = meeting_bibitem body: body, type: type, en: en_md, fr: fr_md,
+                             num: num, src: src, pdf: en["pdf"]
       if @data_fetcher.files.include?(path) && part
         add_part hash, part
         item = RelatonBipm::BipmBibliographicItem.new(**hash)
         has_part_item = parse_file path
-        has_part_item.relation << RelatonBib::DocumentRelation.new(type: "partOf", bibitem: item)
+        has_part_item.relation << RelatonBib::DocumentRelation.new(
+          type: "partOf", bibitem: item,
+        )
         @data_fetcher.write_file path, has_part_item, warn_duplicate: false
         path = File.join dir, "#{num}-#{part}.#{@data_fetcher.ext}"
       elsif part
         hash[:title].each { |t| t[:content] = t[:content].sub(/\s\(.+\)$/, "") }
-        h = meeting_bibitem body: body, type: type, en: en_md, fr: fr_md, num: num, src: src, pdf: en["pdf"]
+        h = meeting_bibitem body: body, type: type, en: en_md, fr: fr_md,
+                            num: num, src: src, pdf: en["pdf"]
         add_part h, part
         part_item = RelatonBipm::BipmBibliographicItem.new(**h)
         part_item_path = File.join dir, "#{num}-#{part}.#{@data_fetcher.ext}"
         @data_fetcher.write_file part_item_path, part_item
         add_to_index part_item, part_item_path
-        hash[:relation] = [RelatonBib::DocumentRelation.new(type: "partOf", bibitem: part_item)]
+        hash[:relation] =
+          [RelatonBib::DocumentRelation.new(type: "partOf", bibitem: part_item)]
         item = RelatonBipm::BipmBibliographicItem.new(**hash)
       else
         item = RelatonBipm::BipmBibliographicItem.new(**hash)
@@ -111,14 +118,15 @@ module RelatonBipm
     end
 
     def parse_file(path)
-        case @data_fetcher.format
-        when "yaml"
-          yaml = RelatonBib.parse_yaml(File.read(path, encoding: "UTF-8"), [Date])
-          RelatonBipm::BipmBibliographicItem.from_hash(yaml)
-        when "xml"
-          xml = File.read(path, encoding: "UTF-8")
-          RelatonBipm::XMLParser.from_xml xml
-        end
+      case @data_fetcher.format
+      when "yaml"
+        yaml = RelatonBib.parse_yaml(File.read(path, encoding: "UTF-8"),
+                                     [Date])
+        RelatonBipm::BipmBibliographicItem.from_hash(yaml)
+      when "xml"
+        xml = File.read(path, encoding: "UTF-8")
+        RelatonBipm::XMLParser.from_xml xml
+      end
     end
 
     #
@@ -132,7 +140,8 @@ module RelatonBipm
       fr_file = en_file.sub "en", "fr"
       [en_file, fr_file].map do |file|
         if File.exist? file
-          data = RelatonBib.parse_yaml(File.read(file, encoding: "UTF-8"), [Date])
+          data = RelatonBib.parse_yaml(File.read(file, encoding: "UTF-8"),
+                                       [Date])
           path = file
         end
         [path, data]
@@ -147,12 +156,12 @@ module RelatonBipm
 
     def meeting_links(en_file, fr_file)
       gh_src = "https://raw.githubusercontent.com/metanorma/bipm-data-outcomes/"
-      { "en" => en_file, "fr" => fr_file }.map do |lang, file|
+      { "en" => en_file, "fr" => fr_file }.filter_map do |lang, file|
         next unless file
 
         src = gh_src + file.split("/")[-3..].unshift("main").join("/")
         { type: "src", content: src, language: lang, script: "Latn" }
-      end.compact
+      end
     end
 
     #
@@ -188,7 +197,8 @@ module RelatonBipm
         hash[:language] = %w[en fr]
         hash[:script] = ["Latn"]
         hash[:contributor] = contributors date, args[:body]
-        hash[:structuredidentifier] = RelatonBipm::StructuredIdentifier.new docnumber: num
+        hash[:structuredidentifier] =
+          RelatonBipm::StructuredIdentifier.new docnumber: num
         item = RelatonBipm::BipmBibliographicItem.new(**hash)
         file = "#{year}-#{num_justed}.#{@data_fetcher.ext}"
         out_dir = File.join args[:dir], r["type"].downcase
@@ -209,8 +219,14 @@ module RelatonBipm
     #
     def resolution_title(en_r, fr_r)
       title = []
-      title << create_title(en_r["title"], "en") if en_r["title"] && !en_r["title"].empty?
-      title << create_title(fr_r["title"], "fr") if fr_r && fr_r["title"] && !fr_r["title"].empty?
+      if en_r["title"] && !en_r["title"].empty?
+        title << create_title(en_r["title"],
+                              "en")
+      end
+      if fr_r && fr_r["title"] && !fr_r["title"].empty?
+        title << create_title(fr_r["title"],
+                              "fr")
+      end
       title
     end
 
@@ -224,9 +240,11 @@ module RelatonBipm
     # @return [Array<Hash>] links
     #
     def resolution_link(en_r, fr_r, src)
-      link = [{ type: "citation", content: en_r["url"], language: "en", script: "Latn" }]
+      link = [{ type: "citation", content: en_r["url"], language: "en",
+                script: "Latn" }]
       if fr_r
-        link << { type: "citation", content: fr_r["url"], language: "fr", script: "Latn" }
+        link << { type: "citation", content: fr_r["url"], language: "fr",
+                  script: "Latn" }
       end
       link += src
       link << { type: "pdf", content: en_r["reference"] } if en_r["reference"]
@@ -282,8 +300,10 @@ module RelatonBipm
     #
     def bipm_org
       nms = [
-        { content: "International Bureau of Weights and Measures", language: "en" },
-        { content: "Bureau international des poids et mesures", language: "fr" },
+        { content: "International Bureau of Weights and Measures",
+          language: "en" },
+        { content: "Bureau international des poids et mesures",
+          language: "fr" },
       ]
       organization(nms, "BIPM").tap { |org| org[:url] = "www.bipm.org" }
     end
@@ -298,14 +318,18 @@ module RelatonBipm
     def cctf_org(date) # rubocop:disable Metrics/MethodLength
       if Date.parse(date).year < 1999
         nms = [
-          { content: "Consultative Committee for the Definition of the Second", language: "en" },
-          { content: "Comité Consultatif pour la Définition de la Seconde", language: "fr" },
+          { content: "Consultative Committee for the Definition of the Second",
+            language: "en" },
+          { content: "Comité Consultatif pour la Définition de la Seconde",
+            language: "fr" },
         ]
         organization nms, "CCDS"
       else
         nms = [
-          { content: "Consultative Committee for Time and Frequency", language: "en" },
-          { content: "Comité consultatif du temps et des fréquences", language: "fr" },
+          { content: "Consultative Committee for Time and Frequency",
+            language: "en" },
+          { content: "Comité consultatif du temps et des fréquences",
+            language: "fr" },
         ]
         organization nms, "CCTF"
       end
@@ -321,7 +345,9 @@ module RelatonBipm
     #
     def organization(names, abbr)
       names.each { |ctrb| ctrb[:script] = "Latn" }
-      { name: names, abbreviation: { content: abbr, language: ["en", "fr"], script: "Latn" } }
+      { name: names,
+        abbreviation: { content: abbr, language: ["en", "fr"],
+                        script: "Latn" } }
     end
 
     #
@@ -331,7 +357,8 @@ module RelatonBipm
     #
     def cgpm_org
       nms = [
-        { content: "General Conference on Weights and Measures", language: "en" },
+        { content: "General Conference on Weights and Measures",
+          language: "en" },
         { content: "Conférence Générale des Poids et Mesures", language: "fr" },
       ]
       organization nms, "CGPM"
@@ -344,8 +371,10 @@ module RelatonBipm
     #
     def cipm_org
       names = [
-        { content: "International Committee for Weights and Measures", language: "en" },
-        { content: "Comité international des poids et mesures", language: "fr" },
+        { content: "International Committee for Weights and Measures",
+          language: "en" },
+        { content: "Comité international des poids et mesures",
+          language: "fr" },
       ]
       organization names, "CIPM"
     end
@@ -361,7 +390,7 @@ module RelatonBipm
     def create_title(content, language, format = "text/plain")
       if language == "fr"
         content.sub!(/(\d+)(e)/, '\1<sup>\2</sup>')
-        format = "text/html" if content.match?(/<sup>/)
+        format = "text/html" if content.include?("<sup>")
       end
       { content: content, language: language, script: "Latn", format: format }
     end
@@ -398,19 +427,22 @@ module RelatonBipm
     # @return [Hash] Hash of BIPM meeting/resolution
     #
     def meeting_bibitem(**args) # rubocop:disable Metrics/MethodLength, Metrics/AbcSize, Metrics/CyclomaticComplexity
-      docnum = create_meeting_docnum args[:body], args[:type], args[:num], args[:en]["date"]
+      docnum = create_meeting_docnum args[:body], args[:type], args[:num],
+                                     args[:en]["date"]
       hash = { title: [], type: "proceedings", doctype: DocumentType.new(type: args[:type]),
                place: [RelatonBib::Place.new(city: "Paris")] }
       hash[:title] = create_titles args.slice(:en, :fr)
       hash[:date] = [{ type: "published", on: args[:en]["date"] }]
       hash[:docid] = create_meeting_docids docnum
       hash[:docnumber] = docnum # .sub(" --", "").sub(/\s\(\d{4}\)/, "")
-      hash[:id] = create_id(args[:body], args[:type], args[:num], args[:en]["date"])
+      hash[:id] =
+        create_id(args[:body], args[:type], args[:num], args[:en]["date"])
       hash[:link] = create_links(**args)
       hash[:language] = %w[en fr]
       hash[:script] = ["Latn"]
       hash[:contributor] = contributors args[:en]["date"], args[:body]
-      hash[:structuredidentifier] = RelatonBipm::StructuredIdentifier.new docnumber: args[:num]
+      hash[:structuredidentifier] =
+        RelatonBipm::StructuredIdentifier.new docnumber: args[:num]
       hash
     end
 
@@ -431,9 +463,12 @@ module RelatonBipm
       links = args.slice(:en, :fr).each_with_object([]) do |(lang, md), mem|
         next unless md && md["url"]
 
-        mem << { type: "citation", content: md["url"], language: lang.to_s, script: "Latn" }
+        mem << { type: "citation", content: md["url"], language: lang.to_s,
+                 script: "Latn" }
       end
-      RelatonBib.array(args[:pdf]).each { |pdf| links << { type: "pdf", content: pdf } }
+      RelatonBib.array(args[:pdf]).each do |pdf|
+        links << { type: "pdf", content: pdf }
+      end
       links += args[:src] if args[:src]
       links
     end
@@ -497,7 +532,8 @@ module RelatonBipm
     #
     def special_id_case?(body, type, year)
       (body == "CIPM" && type == "Decision" && year.to_i > 2011) ||
-        (body == "JCRB" && %w[Recomendation Resolution Descision].include?(type))
+        (body == "JCRB" && %w[Recomendation Resolution
+                              Descision].include?(type))
     end
 
     #
@@ -523,10 +559,12 @@ module RelatonBipm
       yield make_docid(id: short, type: "BIPM", primary: true)
 
       en = "#{id} (#{year}, E)"
-      yield make_docid(id: en, type: "BIPM", primary: true, language: "en", script: "Latn")
+      yield make_docid(id: en, type: "BIPM", primary: true, language: "en",
+                       script: "Latn")
 
       fr = "#{id} (#{year}, F)"
-      yield make_docid(id: fr, type: "BIPM", primary: true, language: "fr", script: "Latn")
+      yield make_docid(id: fr, type: "BIPM", primary: true, language: "fr",
+                       script: "Latn")
     end
 
     def resolution_long_ids(body, type, num, year, &_block)
@@ -558,8 +596,10 @@ module RelatonBipm
       fr_id = en_id.sub(/(\d+)(?:st|nd|rd|th)/, '\1e').sub("Meeting", "réunion")
       fr_id_sup = fr_id.sub(/(\d+)(e)/, '\1<sup>\2</sup>')
       [
-        make_docid(id: en_id, type: "BIPM", primary: true, language: "en", script: "Latn"),
-        make_docid(id: fr_id_sup, type: "BIPM", primary: true, language: "fr", script: "Latn"),
+        make_docid(id: en_id, type: "BIPM", primary: true, language: "en",
+                   script: "Latn"),
+        make_docid(id: fr_id_sup, type: "BIPM", primary: true, language: "fr",
+                   script: "Latn"),
         make_docid(id: "#{en_id} / #{fr_id_sup}", type: "BIPM", primary: true),
       ]
     end

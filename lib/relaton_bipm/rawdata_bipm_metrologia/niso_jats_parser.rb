@@ -4,7 +4,8 @@ require "niso-jats"
 module RelatonBipm
   module RawdataBipmMetrologia
     class NisoJatsParser
-      ATTRS = %i[docid title contributor date copyright abstract relation series extent type doctype link].freeze
+      ATTRS = %i[docid title contributor date copyright abstract relation
+                 series extent type doctype link].freeze
 
       #
       # @param [Niso::Jats::Article] doc document
@@ -60,7 +61,8 @@ module RelatonBipm
       #
       def parse_title
         title = @doc.front.article_meta.title_group.article_title
-        [RelatonBib::TypedTitleString.new(content: title.content, language: [title.lang], script: ["Latn"])]
+        [RelatonBib::TypedTitleString.new(content: title.content,
+                                          language: [title.lang], script: ["Latn"])]
       end
 
       #
@@ -71,7 +73,8 @@ module RelatonBipm
       def parse_contributor
         @doc.contributors.map do |contrib|
           entity = create_person(contrib) || create_organization(contrib)
-          RelatonBib::ContributionInfo.new(entity: entity, role: [type: contrib.contrib_type])
+          RelatonBib::ContributionInfo.new(entity: entity,
+                                           role: [{ type: contrib.contrib_type }])
         end
       end
 
@@ -119,10 +122,8 @@ module RelatonBipm
         abstracts.filter_map do |a|
           content_parts = []
           content_parts << a.title.content if a.title
-          if a.p
-            a.p.each do |paragraph|
-              content_parts << "<p>#{extract_paragraph_text(paragraph)}</p>"
-            end
+          a.p&.each do |paragraph|
+            content_parts << "<p>#{extract_paragraph_text(paragraph)}</p>"
           end
           next if content_parts.empty?
 
@@ -136,7 +137,8 @@ module RelatonBipm
         return "" unless paragraph.respond_to?(:element_order) && paragraph.element_order
 
         # Build a map of inline element types to their instances
-        inline_types = %i[italic bold fixed_case monospace overline roman sans_serif sc strike underline sub sup]
+        inline_types = %i[italic bold fixed_case monospace overline roman
+                          sans_serif sc strike underline sub sup]
         inline_instances = {}
         inline_types.each do |type|
           inline_instances[type] = paragraph.send(type).to_a.dup
@@ -157,7 +159,7 @@ module RelatonBipm
               instances = inline_instances[type]
               instance = instances[inline_indices[type]]
               inline_indices[type] += 1
-              if instance&.respond_to?(:content)
+              if instance.respond_to?(:content)
                 content = instance.content
                 content = content.join if content.is_a?(Array)
                 result << content
@@ -180,7 +182,10 @@ module RelatonBipm
 
         pub_dates.sort_by { |pd| pd.pub_type == "ppub" ? 0 : 1 }.map do |pd|
           type = pd.pub_type == "epub" ? "epub" : "ppub"
-          RelatonBib::DocumentRelation.new(type: "hasManifestation", bibitem: bibitem(pd, type))
+          RelatonBib::DocumentRelation.new(type: "hasManifestation",
+                                           bibitem: bibitem(
+                                             pd, type
+                                           ))
         end
       end
 
@@ -190,7 +195,8 @@ module RelatonBipm
       # @return [Array<RelatonBib::Series>] array of series
       #
       def parse_series
-        title = RelatonBib::TypedTitleString.new(content: @doc.journal_title, language: ["en"], script: ["Latn"])
+        title = RelatonBib::TypedTitleString.new(content: @doc.journal_title,
+                                                 language: ["en"], script: ["Latn"])
         [RelatonBib::Series.new(title: title)]
       end
 
@@ -232,9 +238,10 @@ module RelatonBipm
       end
 
       def create_person(contrib)
-        return unless contrib.name && contrib.name.any?
+        return unless contrib.name&.any?
 
-        RelatonBib::Person.new name: fullname(contrib.name[0]), affiliation: affiliation(contrib)
+        RelatonBib::Person.new name: fullname(contrib.name[0]),
+                               affiliation: affiliation(contrib)
       end
 
       def create_organization(contrib)
@@ -249,11 +256,11 @@ module RelatonBipm
       # @return [RelatonBib::FullName] full name
       #
       def fullname(name)
-        cname = [name.given_names, name.surname].compact.map(&:content).join(" ")
+        cname = [name.given_names,
+                 name.surname].compact.map(&:content).join(" ")
         completename = RelatonBib::LocalizedString.new cname, "en", "Latn"
         RelatonBib::FullName.new completename: completename
       end
-
 
       #
       # Parse affiliations
@@ -263,10 +270,10 @@ module RelatonBipm
       # @return [Array<RelatonBib::Affiliation>] array of affiliations
       #
       def affiliation(contrib)
-        contrib.aff_xrefs.map do |xref|
+        contrib.aff_xrefs.filter_map do |xref|
           aff = @doc.affiliation(xref.rid)
           parse_affiliation(aff[0]) if aff.any?
-        end.compact
+        end
       end
 
       def parse_affiliation(aff)
@@ -335,7 +342,8 @@ module RelatonBipm
       # @return [RelatonBipm::BipmBibliographicItem] bibitem
       #
       def bibitem(pd, type)
-        dt = RelatonBib::BibliographicDate.new(type: type, on: format_pub_date(pd))
+        dt = RelatonBib::BibliographicDate.new(type: type,
+                                               on: format_pub_date(pd))
         carrier = type == "epub" ? "online" : "print"
         medium = RelatonBib::Medium.new carrier: carrier
         BipmBibliographicItem.new title: parse_title, date: [dt], medium: medium

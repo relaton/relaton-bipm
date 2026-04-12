@@ -60,7 +60,7 @@ module RelatonBipm
     # @option opts [String] :lang language
     # @return [String] XML
     def to_xml(**opts) # rubocop:disable Metrics/AbcSize, Metrics/CyclomaticComplexity, Metrics/MethodLength, Metrics/PerceivedComplexity
-      super ext: !comment_period.nil?, **opts do |b|
+      super(ext: !comment_period.nil?, **opts) do |b|
         if opts[:bibdata] && (doctype || editorialgroup&.presence? ||
                               si_aspect || comment_period ||
                               structuredidentifier)

@@ -35,7 +35,7 @@ module RelatonBipm
     # @param prefix [String]
     # @return [String]
     def to_asciibib(prefix = "")
-      pref = prefix.empty? ? prefix : prefix + "."
+      pref = prefix.empty? ? prefix : "#{prefix}."
       pref += "structuredidentifier"
       out = "#{pref}.docnumber:: #{docnumber}\n"
       out += "#{pref}.part:: #{part}\n" if part

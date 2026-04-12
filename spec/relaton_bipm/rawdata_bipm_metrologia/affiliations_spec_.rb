@@ -18,10 +18,10 @@ describe RelatonBipm::RawdataBipmMetrologia::Affiliations do
   context "parse affiliation" do
     it "with institution & subdivision" do
       aff = Nokogiri::XML(<<~XML).at("aff")
-        <aff id="affiliation01">
-          <label>1</label>
-Division of Physical Metrology, <institution xlink:type="simple">Korea Research Institute of Standards and Science</institution>, 267 Gajeong-ro, Yuseong-gu, Daejeon 305-340, <country>Republic of Korea</country>
-        </aff>
+                <aff id="affiliation01">
+                  <label>1</label>
+        Division of Physical Metrology, <institution xlink:type="simple">Korea Research Institute of Standards and Science</institution>, 267 Gajeong-ro, Yuseong-gu, Daejeon 305-340, <country>Republic of Korea</country>
+                </aff>
       XML
       affiliation = described_class.parse_affiliation aff
       expect(affiliation).to be_instance_of RelatonBib::Affiliation
@@ -29,7 +29,7 @@ Division of Physical Metrology, <institution xlink:type="simple">Korea Research 
       expect(affiliation.organization.name.first.content).to eq "Korea Research Institute of Standards and Science"
       expect(affiliation.organization.subdivision.first.content).to eq "Division of Physical Metrology"
       expect(affiliation.organization.contact.first.formatted_address).to eq(
-        "267 Gajeong-ro, Yuseong-gu, Daejeon 305-340, Republic of Korea"
+        "267 Gajeong-ro, Yuseong-gu, Daejeon 305-340, Republic of Korea",
       )
     end
 
@@ -46,7 +46,7 @@ Division of Physical Metrology, <institution xlink:type="simple">Korea Research 
       expect(affiliation.organization.name.first.content).to eq "Bureau International des Poids et Mesures (BIPM)"
       expect(affiliation.organization.subdivision).to be_empty
       expect(affiliation.organization.contact.first.formatted_address).to eq(
-        "Pavillon de Breteuil, 92312 CEDEX, S\u00E8vres, France"
+        "Pavillon de Breteuil, 92312 CEDEX, S\u00E8vres, France",
       )
     end
 

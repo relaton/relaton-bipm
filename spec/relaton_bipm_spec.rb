@@ -6,11 +6,11 @@ RSpec.describe RelatonBipm do
   end
 
   it "has a version number" do
-    expect(RelatonBipm::VERSION).not_to be nil
+    expect(RelatonBipm::VERSION).not_to be_nil
   end
 
   it "retur grammar hash" do
-    hash = RelatonBipm.grammar_hash
+    hash = described_class.grammar_hash
     expect(hash).to be_instance_of String
     expect(hash.size).to eq 32
   end
@@ -40,7 +40,8 @@ RSpec.describe RelatonBipm do
           .gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
       end
 
-      it "CCTF Recommendation short notation EN", vcr: "cctf_recommendation_2009_02" do
+      it "CCTF Recommendation short notation EN",
+         vcr: "cctf_recommendation_2009_02" do
         file = "spec/fixtures/cctf_recommendation_2009_02.xml"
         result = RelatonBipm::BipmBibliography.get "CCTF REC 2 (2009, EN)"
         xml = result.to_xml(bibdata: true)
@@ -175,7 +176,9 @@ RSpec.describe RelatonBipm do
 
     xit "SI Brochure", vcr: "si_brochure" do
       result = RelatonBipm::BipmBibliography.get "BIPM SI Brochure Part 1"
-      expect(result.docidentifier.find { |id| id.language == "en" }.id).to eq "BIPM SI Brochure Part 1"
+      expect(result.docidentifier.find do |id|
+        id.language == "en"
+      end.id).to eq "BIPM SI Brochure Part 1"
     end
 
     context "Metrologia" do

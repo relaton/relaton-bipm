@@ -23,7 +23,7 @@ module RelatonBipm
     # @param count [Integer]
     # @return [String]
     def to_asciibib(prefix, count = 1)
-      pref = prefix.empty? ? prefix : prefix + "."
+      pref = prefix.empty? ? prefix : "#{prefix}."
       pref += "workgroup"
       if acronym
         out = count > 1 ? "#{pref}::\n" : ""

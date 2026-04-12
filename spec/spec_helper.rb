@@ -1,6 +1,6 @@
 require "bundler/setup"
 
-Dir["./spec/support/**/*.rb"].sort.each { |f| require f }
+Dir["./spec/support/**/*.rb"].each { |f| require f }
 require_relative "../lib/relaton_bipm"
 
 require "rspec/matchers"
