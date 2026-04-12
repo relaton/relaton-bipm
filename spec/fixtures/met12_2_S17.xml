@@ -232,22 +232,22 @@
   <relation type="hasManifestation">
     <bibitem>
       <title format="text/plain" language="en" script="Latn">Applying uncertainties to ocean colour data</title>
-      <date type="epub">
-        <on>2012-03-02</on>
+      <date type="ppub">
+        <on>2012-04-01</on>
       </date>
       <medium>
-        <carrier>online</carrier>
+        <carrier>print</carrier>
       </medium>
     </bibitem>
   </relation>
   <relation type="hasManifestation">
     <bibitem>
       <title format="text/plain" language="en" script="Latn">Applying uncertainties to ocean colour data</title>
-      <date type="ppub">
-        <on>2012-04-01</on>
+      <date type="epub">
+        <on>2012-03-02</on>
       </date>
       <medium>
-        <carrier>print</carrier>
+        <carrier>online</carrier>
       </medium>
     </bibitem>
   </relation>

@@ -99,7 +99,7 @@ module RelatonBipm
 
         owner = permissions.copyright_statement.inject([]) do |acc, cs|
           acc + cs.content.split(" & ").map do |c|
-            /(?<name>[A-z]+(?:\s[A-z]+)*)/ =~ c
+            /(?<name>[A-Za-z]+(?:\s[A-Za-z]+)*)/ =~ c
             org = RelatonBib::Organization.new name: name
             RelatonBib::ContributionInfo.new(entity: org)
           end

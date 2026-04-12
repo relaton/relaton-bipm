@@ -22,7 +22,7 @@ describe RelatonBipm::RawdataBipmMetrologia::NisoJatsParser do
       xml = subject.to_xml bibdata: true
       file = "spec/fixtures/#{file_name}.xml"
       File.write file, xml, encoding: "UTF-8" unless File.exist? file
-      expect(xml).to be_equivalent_to File.read(file, encoding: "UTF-8")
+      expect(xml).to be_xml_equivalent_to File.read(file, encoding: "UTF-8")
     end
   end
 

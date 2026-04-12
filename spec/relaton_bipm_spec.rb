@@ -27,7 +27,7 @@ RSpec.describe RelatonBipm do
         result = RelatonBipm::BipmBibliography.get "CCTF Recommendation 2 (2009)"
         xml = result.to_xml(bibdata: true)
         File.write file, xml, encoding: "UTF-8" unless File.exist? file
-        expect(xml).to be_equivalent_to File.read(file, encoding: "UTF-8")
+        expect(xml).to be_xml_equivalent_to File.read(file, encoding: "UTF-8")
           .gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
       end
 
@@ -36,7 +36,7 @@ RSpec.describe RelatonBipm do
         result = RelatonBipm::BipmBibliography.get "CCTF Recommendation 2009-02"
         xml = result.to_xml(bibdata: true)
         File.write file, xml, encoding: "UTF-8" unless File.exist? file
-        expect(xml).to be_equivalent_to File.read(file, encoding: "UTF-8")
+        expect(xml).to be_xml_equivalent_to File.read(file, encoding: "UTF-8")
           .gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
       end
 
@@ -45,7 +45,7 @@ RSpec.describe RelatonBipm do
         result = RelatonBipm::BipmBibliography.get "CCTF REC 2 (2009, EN)"
         xml = result.to_xml(bibdata: true)
         File.write file, xml, encoding: "UTF-8" unless File.exist? file
-        expect(xml).to be_equivalent_to File.read(file, encoding: "UTF-8")
+        expect(xml).to be_xml_equivalent_to File.read(file, encoding: "UTF-8")
           .gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
       end
 
@@ -54,7 +54,7 @@ RSpec.describe RelatonBipm do
         result = RelatonBipm::BipmBibliography.get "CCDS Recommendation 2 (2009)"
         xml = result.to_xml(bibdata: true)
         File.write file, xml, encoding: "UTF-8" unless File.exist? file
-        expect(xml).to be_equivalent_to File.read(file, encoding: "UTF-8")
+        expect(xml).to be_xml_equivalent_to File.read(file, encoding: "UTF-8")
           .gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
       end
 
@@ -63,7 +63,7 @@ RSpec.describe RelatonBipm do
         result = RelatonBipm::BipmBibliography.get "CGPM Meeting 1 (1889)"
         xml = result.to_xml(bibdata: true)
         File.write file, xml, encoding: "UTF-8" unless File.exist? file
-        expect(xml).to be_equivalent_to File.read(file, encoding: "UTF-8")
+        expect(xml).to be_xml_equivalent_to File.read(file, encoding: "UTF-8")
           .gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
       end
 
@@ -72,7 +72,7 @@ RSpec.describe RelatonBipm do
         result = RelatonBipm::BipmBibliography.get "CGPM Resolution (1889)"
         xml = result.to_xml(bibdata: true)
         File.write file, xml, encoding: "UTF-8" unless File.exist? file
-        expect(xml).to be_equivalent_to File.read(file, encoding: "UTF-8")
+        expect(xml).to be_xml_equivalent_to File.read(file, encoding: "UTF-8")
           .gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
       end
 
@@ -83,7 +83,7 @@ RSpec.describe RelatonBipm do
           result = RelatonBipm::BipmBibliography.get "CGPM Resolution (1889)"
           xml = result.to_xml(bibdata: true)
           File.write file, xml, encoding: "UTF-8" unless File.exist? file
-          expect(xml).to be_equivalent_to File.read(file, encoding: "UTF-8")
+          expect(xml).to be_xml_equivalent_to File.read(file, encoding: "UTF-8")
             .gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
         end
 
@@ -108,7 +108,7 @@ RSpec.describe RelatonBipm do
         result = RelatonBipm::BipmBibliography.get "CIPM Resolution (1879)"
         xml = result.to_xml(bibdata: true)
         File.write file, xml, encoding: "UTF-8" unless File.exist? file
-        expect(xml).to be_equivalent_to File.read(file, encoding: "UTF-8")
+        expect(xml).to be_xml_equivalent_to File.read(file, encoding: "UTF-8")
           .gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
       end
 
@@ -118,7 +118,7 @@ RSpec.describe RelatonBipm do
           result = RelatonBipm::BipmBibliography.get "CIPM Decision 101-1 (2012)"
           xml = result.to_xml(bibdata: true)
           File.write file, xml, encoding: "UTF-8" unless File.exist? file
-          expect(xml).to be_equivalent_to File.read(file, encoding: "UTF-8")
+          expect(xml).to be_xml_equivalent_to File.read(file, encoding: "UTF-8")
             .gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
         end
 
@@ -127,7 +127,7 @@ RSpec.describe RelatonBipm do
           result = RelatonBipm::BipmBibliography.get "CIPM DECN 101-1 (2012, EN)"
           xml = result.to_xml(bibdata: true)
           File.write file, xml, encoding: "UTF-8" unless File.exist? file
-          expect(xml).to be_equivalent_to File.read(file, encoding: "UTF-8")
+          expect(xml).to be_xml_equivalent_to File.read(file, encoding: "UTF-8")
             .sub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
         end
 
@@ -141,7 +141,7 @@ RSpec.describe RelatonBipm do
           result = RelatonBipm::BipmBibliography.get "CIPM Décision 101-1 (2012)"
           xml = result.to_xml(bibdata: true)
           File.write file, xml, encoding: "UTF-8" unless File.exist? file
-          expect(xml).to be_equivalent_to File.read(file, encoding: "UTF-8")
+          expect(xml).to be_xml_equivalent_to File.read(file, encoding: "UTF-8")
             .sub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
         end
 
@@ -157,7 +157,7 @@ RSpec.describe RelatonBipm do
           result = RelatonBipm::BipmBibliography.get "CIPM Meeting 43"
           xml = result.to_xml(bibdata: true)
           File.write file, xml, encoding: "UTF-8" unless File.exist? file
-          expect(xml).to be_equivalent_to File.read(file, encoding: "UTF-8")
+          expect(xml).to be_xml_equivalent_to File.read(file, encoding: "UTF-8")
             .sub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
         end
 
@@ -185,7 +185,7 @@ RSpec.describe RelatonBipm do
           result = RelatonBipm::BipmBibliography.get "BIPM Metrologia"
           xml = result.to_xml bibdata: true
           File.write file, xml, encoding: "UTF-8" unless File.exist? file
-          expect(xml).to be_equivalent_to File.read(file, encoding: "UTF-8")
+          expect(xml).to be_xml_equivalent_to File.read(file, encoding: "UTF-8")
             .sub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
         end
       end
@@ -196,7 +196,7 @@ RSpec.describe RelatonBipm do
           result = RelatonBipm::BipmBibliography.get "BIPM Metrologia 30"
           xml = result.to_xml bibdata: true
           File.write file, xml, encoding: "UTF-8" unless File.exist? file
-          expect(xml).to be_equivalent_to File.read(file, encoding: "UTF-8")
+          expect(xml).to be_xml_equivalent_to File.read(file, encoding: "UTF-8")
             .sub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
         end
       end
@@ -207,7 +207,7 @@ RSpec.describe RelatonBipm do
           result = RelatonBipm::BipmBibliography.get "BIPM Metrologia 29 6"
           xml = result.to_xml bibdata: true
           File.write file, xml, encoding: "UTF-8" unless File.exist? file
-          expect(xml).to be_equivalent_to File.read(file, encoding: "UTF-8")
+          expect(xml).to be_xml_equivalent_to File.read(file, encoding: "UTF-8")
             .sub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
         end
       end
@@ -218,7 +218,7 @@ RSpec.describe RelatonBipm do
           result = RelatonBipm::BipmBibliography.get "BIPM Metrologia 30 4"
           xml = result.to_xml bibdata: true
           File.write file, xml, encoding: "UTF-8" unless File.exist? file
-          expect(xml).to be_equivalent_to File.read(file, encoding: "UTF-8")
+          expect(xml).to be_xml_equivalent_to File.read(file, encoding: "UTF-8")
             .sub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
         end
       end
@@ -229,7 +229,7 @@ RSpec.describe RelatonBipm do
           result = RelatonBipm::BipmBibliography.get "BIPM Metrologia 29 6 373"
           xml = result.to_xml bibdata: true
           File.write file, xml, encoding: "UTF-8" unless File.exist? file
-          expect(xml).to be_equivalent_to File.read(file, encoding: "UTF-8")
+          expect(xml).to be_xml_equivalent_to File.read(file, encoding: "UTF-8")
             .sub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
         end
       end
