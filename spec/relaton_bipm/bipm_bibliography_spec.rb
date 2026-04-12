@@ -4,7 +4,8 @@ RSpec.describe RelatonBipm::BipmBibliography do
   context "raise RequestError" do
     it "fetch from GitHub" do
       index = double "index"
-      expect(index).to receive(:search).and_return [{ id: { year: "156" }, path: "data/doc.yaml" }]
+      expect(index).to receive(:search).and_return [{ id: { year: "156" },
+                                                      path: "data/doc.yaml" }]
       expect(Relaton::Index).to receive(:find_or_create).with(
         :bipm,
         url: "https://raw.githubusercontent.com/relaton/relaton-data-bipm/main/index2.zip",
@@ -14,7 +15,7 @@ RSpec.describe RelatonBipm::BipmBibliography do
       expect(agent).to receive(:get).and_raise Mechanize::ResponseCodeError.new(Mechanize::Page.new)
       expect(Mechanize).to receive(:new).and_return agent
       expect do
-        RelatonBipm::BipmBibliography.search "Metrologia"
+        described_class.search "Metrologia"
       end.to raise_error RelatonBib::RequestError
     end
   end
@@ -30,7 +31,7 @@ RSpec.describe RelatonBipm::BipmBibliography do
       file = "spec/fixtures/bipm_item.xml"
       xml = subject.to_xml bibdata: true
       File.write file, xml, encoding: "UTF-8" unless File.exist? file
-      expect(xml).to be_equivalent_to File.read(file, encoding: "UTF-8")
+      expect(xml).to be_xml_equivalent_to File.read(file, encoding: "UTF-8")
       schema = Jing.new "grammars/relaton-bipm-compile.rng"
       errors = schema.validate file
       expect(errors).to eq []

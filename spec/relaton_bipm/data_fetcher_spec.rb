@@ -4,12 +4,14 @@ describe RelatonBipm::DataFetcher do
     expect(FileUtils).to receive(:mkdir_p).with("data")
     fetcher = double("fetcher")
     expect(fetcher).to receive(:fetch).with "bipm-data-outcomes"
-    expect(described_class).to receive(:new).with("data", "yaml").and_return fetcher
+    expect(described_class).to receive(:new).with("data",
+                                                  "yaml").and_return fetcher
     described_class.fetch "bipm-data-outcomes"
   end
 
   it "initialize" do
-    expect(Relaton::Index).to receive(:find_or_create).with(:bipm, file: "index2.yaml").and_return({})
+    expect(Relaton::Index).to receive(:find_or_create).with(:bipm,
+                                                            file: "index2.yaml").and_return({})
     fetcher = described_class.new "data", "bibxml"
     expect(fetcher.instance_variable_get(:@output)).to eq "data"
     expect(fetcher.instance_variable_get(:@format)).to eq "bibxml"
@@ -26,8 +28,8 @@ describe RelatonBipm::DataFetcher do
     #   allow(File).to receive(:exist?).and_call_original
     # end
 
-    context "#fetch" do
-      before(:each) do
+    describe "#fetch" do
+      before do
         index2 = subject.instance_variable_get(:@index2)
         expect(index2).to receive(:save)
       end
@@ -48,7 +50,7 @@ describe RelatonBipm::DataFetcher do
       end
     end
 
-    context "#write_file" do
+    describe "#write_file" do
       let(:item) do
         item = double "item"
         hash = double "hash"
@@ -59,7 +61,7 @@ describe RelatonBipm::DataFetcher do
 
       let(:path) { "data/cgpm/meeting/1889-00.yaml" }
 
-      before :each do
+      before do
         expect(File).to receive(:write).with(path, :yaml, encoding: "UTF-8")
       end
 
@@ -83,7 +85,7 @@ describe RelatonBipm::DataFetcher do
       end
     end
 
-    context "#serialize" do
+    describe "#serialize" do
       it "xml" do
         subject.instance_variable_set(:@format, "xml")
         item = double "item"

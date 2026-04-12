@@ -34,10 +34,10 @@ module RelatonBipm
       ret[:title] &&= RelatonBib.array(ret[:title])
         .reduce(RelatonBib::TypedTitleStringCollection.new) do |m, t|
         m << if t.is_a? Hash
-                RelatonBib::TypedTitleString.new(**t)
-              else
-                RelatonBib::TypedTitleString.new(content: t)
-              end
+               RelatonBib::TypedTitleString.new(**t)
+             else
+               RelatonBib::TypedTitleString.new(content: t)
+             end
       end
     end
 
@@ -91,7 +91,7 @@ module RelatonBipm
 
     def committee_variants(cmt)
       RelatonBib.array(cmt[:variants]).each_with_object([]) do |v, a|
-        c = v[:content] || (ac = acronyms[cmt[:acronym]]) && ac[v[:language]]
+        c = v[:content] || ((ac = acronyms[cmt[:acronym]]) && ac[v[:language]])
         a << RelatonBib::LocalizedString.new(c, v[:language], v[:script]) if c
       end
     end

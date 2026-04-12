@@ -59,7 +59,8 @@ module RelatonBipm
         cm = eg.xpath("committee").map do |c|
           vars = variants c
           cnt = vars.any? ? vars : c.text
-          args = c.to_h.transform_keys(&:to_sym).select { |k, _| %i[language script locale].include?(k) }
+          args = c.to_h.transform_keys(&:to_sym).slice(:language, :script,
+                                                       :locale)
           Committee.new acronym: c[:acronym], content: cnt, **args
         end
         wg = eg.xpath("workgroup").map do |w|

@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require_relative "niso_jats_parser"
+
 module RelatonBipm
   module RawdataBipmMetrologia
     class Fetcher
@@ -31,8 +33,9 @@ module RelatonBipm
       def fetch_articles # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
         # aff = Affiliations.parse DIR
         Dir["#{DIR}/**/*.xml"].each do |path|
-          item = ArticleParser.parse path # , aff
-          file = "#{item.docidentifier.first.id.downcase.tr(' ', '-')}.#{@data_fetcher.ext}"
+          item = NisoJatsParser.parse path # , aff
+          file = "#{item.docidentifier.first.id.downcase.tr(' ',
+                                                            '-')}.#{@data_fetcher.ext}"
           out_path = File.join(@data_fetcher.output, file)
           key = Id.new.parse(item.docidentifier.first.id).to_hash
           @data_fetcher.index2.add_or_update key, out_path
@@ -44,7 +47,9 @@ module RelatonBipm
       # Fetch volumes from rawdata-bipm-metrologia and save to files
       #
       def fetch_volumes
-        Dir["#{DIR}/*"].map { |path| path.split("/").last }.uniq.each do |volume|
+        Dir["#{DIR}/*"].map do |path|
+          path.split("/").last
+        end.uniq.each do |volume|
           fetch_metrologia volume
         end
       end
@@ -100,7 +105,8 @@ module RelatonBipm
       # @return [Array<RelatonBib::DocumentIdentifier>] docidentifier
       #
       def docidentifier(id)
-        [RelatonBib::DocumentIdentifier.new(id: id, type: "BIPM", primary: true)]
+        [RelatonBib::DocumentIdentifier.new(id: id, type: "BIPM",
+                                            primary: true)]
       end
 
       #

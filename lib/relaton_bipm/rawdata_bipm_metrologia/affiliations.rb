@@ -42,7 +42,7 @@ module RelatonBipm
           text.include?("Author to whom any correspondence should be addressed")
 
         args = {}
-        institution = aff.at('institution')
+        institution = aff.at("institution")
         if institution
           name = institution.text
           return if name == "1005 Southover Lane"
@@ -50,10 +50,10 @@ module RelatonBipm
           args[:subdivision] = parse_division(aff)
           args[:contact] = parse_address(aff)
         else
-        #   div, name, city, country = aff.xpath("text()").text.strip.split(", ")
-        #   div, name = name, div if name.nil?
-        #   args[:subdivision] = [RelatonBib::LocalizedString.new(div)] if div
-        #   args[:contact] = [RelatonBib::Address.new(city: city, country: country)] if city && country
+          #   div, name, city, country = aff.xpath("text()").text.strip.split(", ")
+          #   div, name = name, div if name.nil?
+          #   args[:subdivision] = [RelatonBib::LocalizedString.new(div)] if div
+          #   args[:contact] = [RelatonBib::Address.new(city: city, country: country)] if city && country
           name = aff.text
         end
         args[:name] = [RelatonBib::LocalizedString.new(name)]
@@ -62,7 +62,9 @@ module RelatonBipm
       end
 
       def self.parse_division(aff)
-        div = aff.xpath("text()[following-sibling::institution]").text.gsub(/^\W*|\W*$/, "")
+        div = aff.xpath("text()[following-sibling::institution]").text.gsub(
+          /^\W*|\W*$/, ""
+        )
         return [] if div.empty?
 
         [RelatonBib::LocalizedString.new(div)]
@@ -70,9 +72,11 @@ module RelatonBipm
 
       def self.parse_address(aff)
         address = []
-        addr = aff.xpath("text()[preceding-sibling::institution]").text.gsub(/^\W*|\W*$/, "")
+        addr = aff.xpath("text()[preceding-sibling::institution]").text.gsub(
+          /^\W*|\W*$/, ""
+        )
         address << addr unless addr.empty?
-        country = aff.at('country')
+        country = aff.at("country")
         address << country.text if country && !country.text.empty?
         address = address.join(", ")
         return [] if address.empty?
@@ -92,7 +96,8 @@ module RelatonBipm
           # it can be name, country, city or name, city, country
           # so use formatted_address instead of city and country
           { name: RelatonBib::LocalizedString.new(elements[0]),
-            contact: RelatonBib::Address.new(formatted_address: elements[1, 2].join(", ")) }
+            contact: RelatonBib::Address.new(formatted_address: elements[1,
+                                                                         2].join(", ")) }
         end
       end
 
@@ -104,7 +109,9 @@ module RelatonBipm
       # @return [RelatonBib::Affiliation]
       #
       def find(text)
-        @affiliations.select { |a| text.include?(a.organization.name[0].content) }.sort.last
+        @affiliations.select do |a|
+          text.include?(a.organization.name[0].content)
+        end.max
       end
     end
   end

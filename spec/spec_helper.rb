@@ -1,7 +1,10 @@
 require "bundler/setup"
 
-Dir["./spec/support/**/*.rb"].sort.each { |f| require f }
-require "relaton_bipm"
+Dir["./spec/support/**/*.rb"].each { |f| require f }
+require_relative "../lib/relaton_bipm"
+
+require "rspec/matchers"
+require "canon"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

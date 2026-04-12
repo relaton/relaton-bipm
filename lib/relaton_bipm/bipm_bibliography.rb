@@ -20,7 +20,10 @@ module RelatonBipm
         Util.info "Found: `#{item.docidentifier[0].id}`", key: text
         item
       rescue Mechanize::ResponseCodeError => e
-        raise RelatonBib::RequestError, e.message unless e.response_code == "404"
+        unless e.response_code == "404"
+          raise RelatonBib::RequestError,
+                e.message
+        end
       end
 
       # @return [Mechanize]
@@ -50,7 +53,7 @@ module RelatonBipm
         rows = index.search { |r| ref_id == r[:id] }
         return unless rows.any?
 
-        row = rows.sort_by { |r| r[:id][:year] }.last
+        row = rows.max_by { |r| r[:id][:year] }
         url = "#{GH_ENDPOINT}#{row[:file]}"
         resp = Mechanize.new.get url
         return unless resp.code == "200"
@@ -63,7 +66,9 @@ module RelatonBipm
 
       def index
         Relaton::Index.find_or_create(
-          :bipm, url: "#{GH_ENDPOINT}index2.zip", file: INDEX_FILE, id_keys: %i[group type number year corr part append]
+          :bipm, url: "#{GH_ENDPOINT}index2.zip", file: INDEX_FILE, id_keys: %i[
+            group type number year corr part append
+          ]
         )
       end
 
