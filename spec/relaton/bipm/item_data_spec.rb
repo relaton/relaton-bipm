@@ -45,7 +45,7 @@ describe Relaton::Bipm::ItemData do
     it "renders YAML with notes" do
       yaml = subject.to_yaml(note: [{ content: "Additional Note", type: "additional" }])
       expect(yaml).to include("type: additional")
-      expect(yaml).to include("- content: Additional Note")
+      expect(yaml).to include("content: Additional Note")
     end
   end
 

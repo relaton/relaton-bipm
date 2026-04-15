@@ -10,7 +10,7 @@ module Relaton
         kg_h_c_deltanu kg_h m_c_deltanu m_c mol_NA s_deltanu
       ]
 
-      attribute :schema_version, method: :get_schema_version
+      attribute :schema_version, :string, method: :get_schema_version
       attribute :doctype, Doctype
       attribute :comment_period, CommentPeriod
       attribute :si_aspect, :string, values: SI_ASPECTS

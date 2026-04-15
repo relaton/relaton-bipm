@@ -27,7 +27,7 @@ contributor:
     - content: Publisher role
   organization:
     uri:
-      content: www.iso.org
+    - content: www.iso.org
     name:
     - content: International Organization for Standardization
     subdivision:
@@ -129,7 +129,7 @@ contributor:
     name:
     - content: BIPM
     subdivision:
-      name:
+    - name:
       - language: en
         script: Latn
         content: Consultative Committee for Units
@@ -172,7 +172,7 @@ copyright:
   owner:
   - organization:
       uri:
-        content: www.iso.org
+      - content: www.iso.org
       name:
       - content: International Organization for Standardization
       abbreviation:
@@ -259,7 +259,8 @@ extent:
 accesslocation:
 - accesslocation1
 - accesslocation2
-license: License
+license:
+- License
 classification:
 - content: value
   type: type
