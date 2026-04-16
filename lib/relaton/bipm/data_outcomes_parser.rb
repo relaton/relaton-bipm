@@ -437,7 +437,7 @@ module Relaton::Bipm
         did.content.sub!(regex) { "#{$1}-#{part}" }
         # did.instance_variable_set(:@id, id)
       end
-      hash[:ext].structuredidentifier.instance_variable_set :@part, part
+      hash[:ext].structuredidentifier.part = part
     end
 
     #
