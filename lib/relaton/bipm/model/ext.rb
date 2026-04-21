@@ -24,6 +24,18 @@ module Relaton
         map_element "structuredidentifier", to: :structuredidentifier
       end
 
+      key_value do
+        map "comment_period", to: :comment_period
+        map "doctype", to: :doctype
+        map "subdoctype", to: :subdoctype
+        map "ics", to: :ics
+        map "flavor", to: :flavor
+        map "schema_version", to: :schema_version, render_default: true
+        map "si_aspect", to: :si_aspect
+        map "structuredidentifier", to: :structuredidentifier
+        map "meeting_note", to: :meeting_note
+      end
+
       def get_schema_version
        Relaton.schema_versions["relaton-model-bipm"]
       end

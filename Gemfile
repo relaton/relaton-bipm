@@ -4,6 +4,7 @@ source "https://rubygems.org"
 gemspec
 
 gem "lutaml-model", github: "lutaml/lutaml-model", branch: "main"
+gem "relaton-bib", github: "relaton/relaton-bib", branch: "upd-lutaml-model-to-0-8-0"
 
 gem "byebug"
 gem "equivalent-xml", "~> 0.6"
