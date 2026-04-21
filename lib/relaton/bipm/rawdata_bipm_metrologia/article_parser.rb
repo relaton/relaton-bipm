@@ -291,7 +291,7 @@ module Relaton::Bipm
           next unless from
 
           owner = l.at("./copyright-statement").text.split(" & ").map do |c|
-            /(?<name>[A-z]+(?:\s[A-z]+)*)/ =~ c
+            /(?<name>\p{L}+(?:\s\p{L}+)*)/ =~ c
             org_name = Relaton::Bib::TypedLocalizedString.new(content: name, language: "en", script: "Latn")
             org = Relaton::Bib::Organization.new name: [org_name]
             Relaton::Bib::ContributionInfo.new(organization: org)
