@@ -21,35 +21,76 @@ module RelatonBipm
     #
     # Parse SI brochure and write them to YAML files
     #
-    def parse # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
-      # puts "Parsing SI brochure..."
-      # puts "Ls #{Dir['*']}"
-      # puts "Ls #{Dir['bipm-si-brochure/*']}"
-      # puts "Ls #{Dir['bipm-si-brochure/site/*']}"
-      # puts "Ls #{Dir['bipm-si-brochure/site/documents/*']}"
+    def parse
+      parse_rxl_documents
+      parse_collection_documents
+    end
+
+    #
+    # Parse per-document .rxl files (guides, MEPs, concise, FAQ, appendix 3).
+    #
+    def parse_rxl_documents
       Dir["bipm-si-brochure/_site/documents/*.rxl"].each do |f|
         puts "Parsing #{f}"
-        docstd = Nokogiri::XML File.read f
-        doc = docstd.at "/bibdata"
-        hash1 = RelatonBipm::XMLParser.from_xml(doc.to_xml).to_hash
-        fix_si_brochure_id hash1
-        basename = File.join @data_fetcher.output, File.basename(f).sub(/(?:-(?:en|fr))?\.rxl$/, "")
-        outfile = "#{basename}.#{@data_fetcher.ext}"
-        key = hash1["docnumber"] || basename
-        @data_fetcher.index2.add_or_update Id.new.parse(key).to_hash, outfile
-        hash = if File.exist? outfile
-                 warn_duplicate = false
-                 hash2 = YAML.load_file outfile
-                 fix_si_brochure_id hash2
-                 deep_merge hash1, hash2
-               else
-                 warn_duplicate = true
-                 hash1
-               end
-        item = RelatonBipm::BipmBibliographicItem.from_hash(**hash)
-        @data_fetcher.write_file outfile, item, warn_duplicate: warn_duplicate
-        puts "Saved to #{outfile}"
+        bibdata = Nokogiri::XML(File.read(f)).at("/bibdata")
+        basename = File.basename(f).sub(/(?:-(?:en|fr))?\.rxl$/, "")
+        process_bibdata bibdata, basename: basename
       end
+    end
+
+    #
+    # Parse the main SI Brochure, emitted by metanorma as a collection under
+    # _site/documents/brochure/ as semantic XML (no per-doc .rxl). English is
+    # processed first; French merges on top, producing a single combined
+    # data/si-brochure.yaml with both languages' docidentifiers and titles.
+    #
+    def parse_collection_documents
+      Dir["bipm-si-brochure/_site/documents/brochure/si-brochure-{en,fr}.xml"].each do |f|
+        puts "Parsing #{f}"
+        doc = Nokogiri::XML(File.read(f))
+        doc.remove_namespaces!
+        bibdata = doc.at_xpath("//bibdata[@type='standard']")
+        next unless bibdata
+
+        process_bibdata bibdata,
+                        basename: "si-brochure",
+                        index_key: { group: "SI", type: "Brochure" }
+      end
+    end
+
+    #
+    # Convert a <bibdata> node into a Relaton item, merging with any previously
+    # written YAML at the same path (en/fr two-pass merge), and update the
+    # index.
+    #
+    # @param [Nokogiri::XML::Node] bibdata
+    # @param [String] basename file basename (without extension) under the data dir
+    # @param [Hash, nil] index_key explicit index key; when nil, derived from docnumber
+    #
+    def process_bibdata(bibdata, basename:, index_key: nil) # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
+      hash1 = RelatonBipm::XMLParser.from_xml(bibdata.to_xml).to_hash
+      fix_si_brochure_id hash1
+      # Normalize through BibItem so shape matches a YAML-roundtripped hash
+      # (e.g. default format: "text/plain" on titles). Without this, deep_merge
+      # can't dedupe identical title entries between the two language passes.
+      hash1 = RelatonBipm::BipmBibliographicItem.from_hash(**hash1).to_hash
+
+      outfile = File.join(@data_fetcher.output, "#{basename}.#{@data_fetcher.ext}")
+      key = index_key || Id.new.parse(hash1["docnumber"] || basename).to_hash
+      @data_fetcher.index2.add_or_update key, outfile
+
+      hash = if File.exist? outfile
+               warn_duplicate = false
+               hash2 = YAML.load_file outfile
+               fix_si_brochure_id hash2
+               deep_merge hash1, hash2
+             else
+               warn_duplicate = true
+               hash1
+             end
+      item = RelatonBipm::BipmBibliographicItem.from_hash(**hash)
+      @data_fetcher.write_file outfile, item, warn_duplicate: warn_duplicate
+      puts "Saved to #{outfile}"
     end
 
     #

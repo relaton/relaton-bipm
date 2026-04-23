@@ -15,11 +15,14 @@ describe RelatonBipm::BipmSiBrochureParser do
 
     it "#parse_si_brochure" do
       allow(File).to receive(:exist?).and_call_original
-      expect(Dir).to receive(:[]).with("bipm-si-brochure/_site/documents/*.rxl")
+      allow(Dir).to receive(:[]).with("bipm-si-brochure/_site/documents/*.rxl")
         .and_return [
           "spec/fixtures/si_brochure/si-brochure-en.rxl",
           "spec/fixtures/si_brochure/si-brochure-fr.rxl",
         ]
+      allow(Dir).to receive(:[])
+        .with("bipm-si-brochure/_site/documents/brochure/si-brochure-{en,fr}.xml")
+        .and_return []
       expect(File).to receive(:exist?).with("data/si-brochure.yaml").and_return false, true
 
       expect(data_fetcher).to receive(:write_file) do |path, item, opt|
@@ -41,6 +44,41 @@ describe RelatonBipm::BipmSiBrochureParser do
 
       expect(index2).to receive(:add_or_update)
         .with({group: "SI", type: "Brochure", part: "1" }, "data/si-brochure.yaml").twice
+      subject.parse
+    end
+
+    it "#parse_collection_documents" do
+      allow(File).to receive(:exist?).and_call_original
+      allow(Dir).to receive(:[])
+        .with("bipm-si-brochure/_site/documents/*.rxl")
+        .and_return []
+      allow(Dir).to receive(:[])
+        .with("bipm-si-brochure/_site/documents/brochure/si-brochure-{en,fr}.xml")
+        .and_return [
+          "spec/fixtures/si_brochure/si-brochure-en.xml",
+          "spec/fixtures/si_brochure/si-brochure-fr.xml",
+        ]
+      expect(File).to receive(:exist?).with("data/si-brochure.yaml").and_return false, true
+
+      expect(data_fetcher).to receive(:write_file) do |path, item, opt|
+        expect(path).to eq "data/si-brochure.yaml"
+        p = if opt[:warn_duplicate]
+              "spec/fixtures/data/si-brochure_collection_en.yaml"
+            else
+              "spec/fixtures/data/si-brochure_collection.yaml"
+            end
+        hash = item.to_hash
+        File.write p, hash.to_yaml, encoding: "UTF-8" unless File.exist? p
+        yaml = YAML.load_file(p)
+        expect(hash).to eq yaml
+      end.twice
+
+      allow(YAML).to receive(:load_file).and_wrap_original do |m, path|
+        m.call path.sub(/^data\/si-brochure\.yaml/, "spec/fixtures/data/si-brochure_collection_en.yaml")
+      end
+
+      expect(index2).to receive(:add_or_update)
+        .with({ group: "SI", type: "Brochure" }, "data/si-brochure.yaml").twice
       subject.parse
     end
 

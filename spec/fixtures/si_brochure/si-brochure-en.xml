@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metanorma xmlns="https://www.metanorma.org/ns/standoc" type="semantic" version="2.8.2" schema-version="v2.1.5" flavor="bipm" document_suffix="si-brochure-en">
+<bibdata type="standard">
+<title language="en" type="title-main">The International System of Units</title>
+<title language="en" type="title-cover">The International System of Units (SI)</title>
+<title language="fr" type="title-main">Le Système international d’unités</title>
+<title language="fr" type="title-cover">Le Système international d’unités (SI)</title>
+<docidentifier primary="true" type="BIPM">BIPM SI Brochure 9e v3.01 (2019/2024, E)</docidentifier><docidentifier type="ISBN">978-92-822-2272-0</docidentifier><docnumber>SI Brochure 9e v3.01 (2019/2024, E)</docnumber><contributor><role type="author"/><organization>
+<name>Bureau International des Poids et Mesures</name>
+<abbreviation>BIPM</abbreviation></organization></contributor><contributor><role type="publisher"/><organization>
+<name>Bureau International des Poids et Mesures</name>
+<abbreviation>BIPM</abbreviation></organization></contributor><edition>9</edition><version><revision-date>2024-08-28</revision-date><draft>v3.01</draft></version><language>en</language><script>Latn</script><status><stage>in-force</stage></status><copyright><from>2024</from><owner><organization>
+<name>Bureau International des Poids et Mesures</name>
+<abbreviation>BIPM</abbreviation></organization></owner></copyright><ext><doctype>brochure</doctype><flavor>bipm</flavor><structuredidentifier><docnumber>SI Brochure 9e v3.01 (2019/2024, E)</docnumber></structuredidentifier><si-aspect>full</si-aspect></ext></bibdata>
+</metanorma>
