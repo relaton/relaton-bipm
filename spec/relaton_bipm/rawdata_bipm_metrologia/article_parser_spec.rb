@@ -304,6 +304,15 @@ describe RelatonBipm::RawdataBipmMetrologia::ArticleParser do
       it { expect(rels).to be_instance_of Array }
       it { expect(rels.size).to eq 2 }
       it { expect(rels[0]).to be_instance_of RelatonBib::DocumentRelation }
+      it "uses formattedref + docid instead of the article title" do
+        rels.each do |rel|
+          expect(rel.bibitem.formattedref).to be_instance_of RelatonBib::FormattedRef
+          expect(rel.bibitem.formattedref.content).to eq "Metrologia 12 3 273"
+          expect(rel.bibitem.docidentifier[0].id).to eq "Metrologia 12 3 273"
+          expect(rel.bibitem.docidentifier[0].primary).to be true
+          expect(rel.bibitem.title).to be_empty
+        end
+      end
     end
 
     context "parse_series" do

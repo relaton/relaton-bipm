@@ -48,12 +48,20 @@ module RelatonBipm
       # @return [Array<RelatonBib::DocumentIdentifier>] array of document identifiers
       #
       def parse_docid
-        pubid = "#{journal_title} #{volume_issue_article}"
         primary_id = create_docid pubid, "BIPM", true
         @meta.xpath("./article-id[@pub-id-type='doi']")
           .each_with_object([primary_id]) do |id, m|
           m << create_docid(id.text, id["pub-id-type"])
         end
+      end
+
+      #
+      # Build primary publication identifier string (e.g. "Metrologia 55 1 125")
+      #
+      # @return [String] pubid
+      #
+      def pubid
+        @pubid ||= "#{journal_title} #{volume_issue_article}"
       end
 
       #
@@ -309,7 +317,11 @@ module RelatonBipm
         dt = RelatonBib::BibliographicDate.new(type: type, on: date)
         carrier = type == "epub" ? "online" : "print"
         medium = RelatonBib::Medium.new carrier: carrier
-        BipmBibliographicItem.new title: parse_title, date: [dt], medium: medium
+        fref = RelatonBib::FormattedRef.new(content: pubid, language: "en", script: "Latn")
+        docid = [RelatonBib::DocumentIdentifier.new(id: pubid, type: "BIPM", primary: true)]
+        BipmBibliographicItem.new(
+          formattedref: fref, docid: docid, date: [dt], medium: medium,
+        )
       end
 
       #
