@@ -77,9 +77,9 @@ describe Relaton::Bipm::RawdataBipmMetrologia::Fetcher do
       docid = Relaton::Bib::Docidentifier.new(content: "Metrologia", type: "BIPM", primary: true)
       item = Relaton::Bipm::ItemData.new(docidentifier: [docid])
       # Expect parse to be called in sorted order: old first, then new
-      expect(Relaton::Bipm::RawdataBipmMetrologia::ArticleParser).to receive(:parse)
+      expect(Relaton::Bipm::RawdataBipmMetrologia::NisoJatsParser).to receive(:parse)
         .with(path_old, errors).ordered.and_return item
-      expect(Relaton::Bipm::RawdataBipmMetrologia::ArticleParser).to receive(:parse)
+      expect(Relaton::Bipm::RawdataBipmMetrologia::NisoJatsParser).to receive(:parse)
         .with(path_new, errors).ordered.and_return item
       expect(data_fetcher).to receive(:write_file).with("output/metrologia.yaml", item).twice
       expect(index).to receive(:add_or_update).with({ group: "Metrologia" }, "output/metrologia.yaml").twice

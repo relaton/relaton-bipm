@@ -21,11 +21,12 @@ language:
   - en
   - fr
 
-script: Latn
+script:
+  - Latn
 
 version:
-  revision_date: "2019-04-01"
-  draft: draft
+  - revision_date: "2019-04-01"
+    draft: draft
 
 note:
   - content: note
@@ -65,23 +66,23 @@ contributor:
         - name:
             - content: division
     role:
-      type: publisher
-      description:
-        content: Publisher role
+      - type: publisher
+        description:
+          - content: Publisher role
   - person:
       name:
         completename:
           content: A. Bierman
           language: en
       affiliation:
-        organization:
-          name:
-            content: IETF
-          abbreviation:
-            content: IETF
-          identifier:
-            type: uri
-            content: www.ietf.org
+        - organization:
+            name:
+              - content: IETF
+            abbreviation:
+              content: IETF
+            identifier:
+              - type: uri
+                content: www.ietf.org
       address:
         - street:
           - Street
@@ -92,7 +93,7 @@ contributor:
       phone:
         - content: "223322"
     role:
-      type: author
+      - type: author
   - organization:
       name:
         - content: BIPM
@@ -107,9 +108,9 @@ contributor:
       identifier:
         - type: workgroup
     role:
-      type: author
-      description:
-        content: committee
+      - type: author
+        description:
+          - content: committee
   - organization:
       name:
         - content: BIPM
@@ -125,31 +126,32 @@ contributor:
         - type: workgroup
           content: Workgroup
     role:
-      type: author
-      description:
-        content: committee
+      - type: author
+        description:
+          - content: committee
 
 copyright:
-  owner:
-    organization:
-      name:
-        - content: International Organization for Standardization
-      abbreviation:
-        content: ISO
-      uri:
-        - content: www.iso.org
-  from: "2014"
-  to: "2020"
-  scope: Scope
+  - owner:
+      - organization:
+          name:
+            - content: International Organization for Standardization
+          abbreviation:
+            content: ISO
+          uri:
+            - content: www.iso.org
+    from: "2014"
+    to: "2020"
+    scope: Scope
 
 source:
-  type: obp
-  content: http://www.bipm.org/cc/PARTNERS/Allowed/2017_October/2017-09-04-Draft-Agenda-NMI-Dir-Meeting-2017-v10.pdf
+  - type: obp
+    content: http://www.bipm.org/cc/PARTNERS/Allowed/2017_October/2017-09-04-Draft-Agenda-NMI-Dir-Meeting-2017-v10.pdf
 
 relation:
   - type: obsoletes
     bibitem:
-      formattedref: ISO 19115:2003
+      formattedref:
+        content: ISO 19115:2003
     locality_stack:
     - locality:
       - type: section
@@ -170,7 +172,8 @@ relation:
       content: Obsoleted by
     bibitem:
       type: standard
-      formattedref: ISO 19115:2003/Cor 1:2006
+      formattedref:
+        content: ISO 19115:2003/Cor 1:2006
 
 series:
   - type: main
@@ -189,7 +192,8 @@ series:
     number: serie1234
     partnumber: part5678
   - type: alt
-    formattedref: serieref
+    formattedref:
+      content: serieref
     title:
       - content: Series Title
   - type: alt
@@ -245,7 +249,8 @@ keyword:
   - vocab:
       content: Key Word
 
-license: License
+license:
+  - License
 
 ext:
   schema_version: v1.1.2
