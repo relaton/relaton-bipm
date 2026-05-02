@@ -307,6 +307,15 @@ describe Relaton::Bipm::RawdataBipmMetrologia::ArticleParser do
       it { expect(rels[0]).to be_instance_of Relaton::Bib::Relation }
       it { expect(rels[0].type).to eq "hasManifestation" }
       it { expect(rels[2].type).to eq "cites" }
+      it "uses formattedref + docidentifier instead of the article title on hasManifestation relations" do
+        rels.take(2).each do |rel|
+          expect(rel.bibitem.formattedref).to be_instance_of Relaton::Bib::Formattedref
+          expect(rel.bibitem.formattedref.content).to eq "Metrologia 12 3 273"
+          expect(rel.bibitem.docidentifier[0].content).to eq "Metrologia 12 3 273"
+          expect(rel.bibitem.docidentifier[0].primary).to be true
+          expect(rel.bibitem.title).to be_empty
+        end
+      end
     end
 
     context "parse_references" do

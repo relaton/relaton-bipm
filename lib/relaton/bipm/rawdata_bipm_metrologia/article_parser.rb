@@ -50,13 +50,21 @@ module Relaton::Bipm
       # @return [Array<Relaton::Bib::DocumentIdentifier>] array of document identifiers
       #
       def parse_docidentifier
-        pubid = "#{journal_title} #{volume_issue_article}"
         primary_id = create_docidentifier pubid, "BIPM", true
         result = @meta.xpath("./article-id[@pub-id-type='doi']").each_with_object([primary_id]) do |id, m|
           m << create_docidentifier(id.text, id["pub-id-type"])
         end
         @errors[:article_docidentifier] &&= result.empty?
         result
+      end
+
+      #
+      # Build primary publication identifier string (e.g. "Metrologia 55 1 125")
+      #
+      # @return [String] pubid
+      #
+      def pubid
+        @pubid ||= "#{journal_title} #{volume_issue_article}"
       end
 
       #
@@ -326,7 +334,7 @@ module Relaton::Bipm
         rels = dates do |d, t|
           Relaton::Bib::Relation.new(type: "hasManifestation", bibitem: bibitem(d, t))
         end
-        @errors[:article_relation] &&= refs.empty?
+        @errors[:article_relation] &&= rels.empty?
         rels + parse_references
       end
 
@@ -392,7 +400,9 @@ module Relaton::Bipm
         dt = Relaton::Bib::Date.new(type: type, at: date)
         carrier = type == "epub" ? "online" : "print"
         medium = Relaton::Bib::Medium.new carrier: carrier
-        ItemData.new title: parse_title, date: [dt], medium: medium
+        fref = Relaton::Bib::Formattedref.new(content: pubid)
+        docid = [create_docidentifier(pubid, "BIPM", true)]
+        ItemData.new(formattedref: fref, docidentifier: docid, date: [dt], medium: medium)
       end
 
       #
