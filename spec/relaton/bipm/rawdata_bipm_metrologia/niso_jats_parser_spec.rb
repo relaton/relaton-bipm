@@ -31,7 +31,10 @@ describe Relaton::Bipm::RawdataBipmMetrologia::NisoJatsParser do
 
     it "parse_title" do
       expect(subject.title[0]).to be_instance_of Relaton::Bib::Title
-      expect(subject.title[0].content.join).to include "Realization and validation"
+      expect(subject.title[0].content).to eq(
+        "Realization and validation of the detector-based absolute " \
+        "integrating sphere method for luminous-flux measurement at KRISS",
+      )
       expect(subject.title[0].script).to eq "Latn"
     end
 
@@ -146,6 +149,45 @@ describe Relaton::Bipm::RawdataBipmMetrologia::NisoJatsParser do
     end
   end
 
+  # Regression: relaton/relaton-data-bipm#38 — titles with inline markup were
+  # serialised as the literal stringified Array '["text", ", ", ...]' because
+  # niso-jats Title#content is a collection of text fragments around the
+  # inline children. Verify the parser now reconstructs marked-up strings
+  # for both titles and abstract paragraphs. Note that Relaton::Bib's
+  # sanitizer renames <italic> to <em> on the way into Title/Abstract.
+  context "preserves inline markup in mixed_content (issue 38)" do
+    let(:source) do
+      <<~XML
+        <article>
+          <front>
+            <article-meta>
+              <title-group>
+                <article-title>The CODATA 2017 values of <italic>h</italic>, <italic>e</italic>, <italic>k</italic>, and <italic>N</italic><sub>A</sub> for the revision of the SI</article-title>
+              </title-group>
+              <abstract><p>Result: <italic>x</italic><sub>0</sub> with precision.</p></abstract>
+            </article-meta>
+          </front>
+        </article>
+      XML
+    end
+    let(:parser) { described_class.new(doc, "55", "1", "L13") }
+
+    it "reconstructs the marked-up title as a String" do
+      title = parser.parse_title[0]
+      expect(title.content).to be_a(String)
+      expect(title.content).to eq(
+        "The CODATA 2017 values of <em>h</em>, <em>e</em>, <em>k</em>, " \
+        "and <em>N</em><sub>A</sub> for the revision of the SI",
+      )
+    end
+
+    it "keeps inline markup in abstract paragraphs" do
+      expect(parser.parse_abstract[0].content).to eq(
+        "<p>Result: <em>x</em><sub>0</sub> with precision.</p>",
+      )
+    end
+  end
+
   describe "#format_pub_date" do
     let(:parser) { described_class.new(double("doc"), "1", "1", "1") }
 
@@ -214,12 +256,12 @@ describe Relaton::Bipm::RawdataBipmMetrologia::NisoJatsParser do
 
     it "extracts text from mixed content with inline elements" do
       text = parser.send(:extract_paragraph_text, paragraph)
-      expect(text).to include("k\u00A0=\u00A02")
+      expect(text).to include("<italic>k</italic>\u00A0=\u00A02")
     end
 
     it "preserves text sequence from element_order" do
       text = parser.send(:extract_paragraph_text, paragraph)
-      expect(text).to match(/\(k\u00A0=\u00A02\)/)
+      expect(text).to match(%r{\(<italic>k</italic>\u00A0=\u00A02\)})
     end
   end
 end
