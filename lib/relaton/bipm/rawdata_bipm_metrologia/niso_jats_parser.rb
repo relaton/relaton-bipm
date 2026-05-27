@@ -42,11 +42,15 @@ module Relaton::Bipm
 
       # @return [Array<Relaton::Bib::Docidentifier>] array of document identifiers
       def parse_docidentifier
-        pubid = "#{@doc.journal_title} #{volume_issue_article}"
         ids = [create_docidentifier(pubid, "BIPM", true)]
         ids << create_docidentifier(@doc.doi, "doi") if @doc.doi
         @errors[:article_docidentifier] &&= ids.empty?
         ids
+      end
+
+      # @return [String] primary BIPM publication identifier
+      def pubid
+        @pubid ||= "#{@doc.journal_title} #{volume_issue_article}"
       end
 
       # @return [String] volume issue page
@@ -292,10 +296,10 @@ module Relaton::Bipm
           div = nil
           addr = div_addr[0] || ""
         else
-          # No institution: split the single text by comma
-          div_addr = (div_addr[0] || "").split(",").map(&:strip)
-          div = div_addr[0]
-          addr = div_addr[1..]&.join(", ") || ""
+          # No institution: the whole text is the organization name; no address split
+          joined = div_addr.join(", ")
+          div = joined.empty? ? nil : joined
+          addr = ""
         end
         [div, addr]
       end
@@ -326,7 +330,9 @@ module Relaton::Bipm
         dt = Relaton::Bib::Date.new(type: type, at: format_pub_date(pd))
         carrier = type == "epub" ? "online" : "print"
         medium = Relaton::Bib::Medium.new carrier: carrier
-        ItemData.new title: parse_title, date: [dt], medium: medium
+        fref = Relaton::Bib::Formattedref.new(content: pubid)
+        docid = [create_docidentifier(pubid, "BIPM", true)]
+        ItemData.new(formattedref: fref, docidentifier: docid, date: [dt], medium: medium)
       end
 
       def format_pub_date(pd)

@@ -245,6 +245,81 @@ describe Relaton::Bipm::RawdataBipmMetrologia::NisoJatsParser do
       expect(div).to be_nil
       expect(addr).to eq ""
     end
+
+    # Regression: niso-jats port (PR #70) split comma-separated text and
+    # discarded everything after the first piece. Full text must be preserved
+    # as the division when there is no <institution> child.
+    it "keeps the full comma-separated text as div when no institution is present" do
+      aff = Niso::Jats::Aff.new(
+        content: ["CSIRO Division of Applied Physics, National Measurement Laboratory, " \
+                  "PO Box 218, Lindfield, NSW 2070, Australia"],
+      )
+      div, addr = parser.send(:division_address, aff)
+      expect(div).to eq(
+        "CSIRO Division of Applied Physics, National Measurement Laboratory, " \
+        "PO Box 218, Lindfield, NSW 2070, Australia",
+      )
+      expect(addr).to eq ""
+    end
+  end
+
+  # Regression: niso-jats port lost the formattedref/docidentifier shape for
+  # hasManifestation bibitems (originally fixed for ArticleParser in 09c3885)
+  # and emitted a <title> instead, and dropped the full affiliation text when
+  # an <aff> had no <institution> child.
+  context "ported regressions from old ArticleParser" do
+    let(:source) do
+      <<~XML
+        <article>
+          <front>
+            <journal-meta>
+              <journal-title-group><journal-title>Metrologia</journal-title></journal-title-group>
+            </journal-meta>
+            <article-meta>
+              <article-id pub-id-type="doi">10.1088/0026-1394/29/6/001</article-id>
+              <title-group>
+                <article-title>Decade Designs for Weighings of Non-uniform Variance</article-title>
+              </title-group>
+              <contrib-group>
+                <contrib contrib-type="author">
+                  <name><surname>E C Morris</surname></name>
+                  <xref ref-type="aff" rid="aff1">1</xref>
+                </contrib>
+                <aff id="aff1"><label>1</label>CSIRO Division of Applied Physics, National Measurement Laboratory, PO Box 218, Lindfield, NSW 2070, Australia</aff>
+              </contrib-group>
+              <pub-date pub-type="ppub"><day>01</day><month>01</month><year>1993</year></pub-date>
+              <volume>29</volume>
+              <issue>6</issue>
+              <fpage>373</fpage>
+              <lpage>377</lpage>
+            </article-meta>
+          </front>
+        </article>
+      XML
+    end
+    subject { described_class.new(doc, "29", "6", "373").parse }
+
+    it "emits formattedref + docidentifier (not a title) in hasManifestation bibitem" do
+      bibitem = subject.relation[0].bibitem
+      expect(subject.relation[0].type).to eq "hasManifestation"
+      expect(bibitem.title).to be_empty
+      expect(bibitem.formattedref).to be_instance_of Relaton::Bib::Formattedref
+      expect(bibitem.formattedref.content).to eq "Metrologia 29 6 373"
+      expect(bibitem.docidentifier.size).to eq 1
+      expect(bibitem.docidentifier[0].type).to eq "BIPM"
+      expect(bibitem.docidentifier[0].primary).to be true
+      expect(bibitem.docidentifier[0].content).to eq "Metrologia 29 6 373"
+    end
+
+    it "keeps the full affiliation text as the organization name when no <institution> is present" do
+      aff = subject.contributor[0].person.affiliation[0]
+      expect(aff.organization.name[0].content).to eq(
+        "CSIRO Division of Applied Physics, National Measurement Laboratory, " \
+        "PO Box 218, Lindfield, NSW 2070, Australia",
+      )
+      expect(aff.organization.subdivision).to be_empty
+      expect(aff.organization.address).to be_empty
+    end
   end
 
   describe "#extract_paragraph_text" do
