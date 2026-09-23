@@ -34,7 +34,8 @@
   </copyright>
   <relation type="hasManifestation">
     <bibitem>
-      <title format="text/plain" language="en" script="Latn">Decade Designs for Weighings of Non-uniform Variance</title>
+      <formattedref format="text/plain" language="en" script="Latn">Metrologia 29 6 373</formattedref>
+      <docidentifier type="BIPM" primary="true">Metrologia 29 6 373</docidentifier>
       <date type="ppub">
         <on>1993-01-01</on>
       </date>
