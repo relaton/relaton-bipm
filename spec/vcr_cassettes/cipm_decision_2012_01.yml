@@ -12,7 +12,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - Mechanize/2.14.0 Ruby/3.4.7p58 (http://github.com/sparklemotion/mechanize/)
+      - Mechanize/2.14.1 Ruby/3.4.10p104 (http://github.com/sparklemotion/mechanize/)
       Accept-Language:
       - en-us,en;q=0.5
       Host:
@@ -29,7 +29,7 @@ http_interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '665'
+      - '662'
       Cache-Control:
       - max-age=300
       Content-Security-Policy:
@@ -37,7 +37,7 @@ http_interactions:
       Content-Type:
       - text/plain; charset=utf-8
       Etag:
-      - W/"65dd7ccb68362cd64bbb83bbd0cf1ff3fe1839ef80e666e5c23fc4d9d015ef65"
+      - W/"241371d28e5e5c3b81fdf27b3618aed3eafc12d4cd71e37e8b0caf877ac87dd6"
       Strict-Transport-Security:
       - max-age=31536000
       X-Content-Type-Options:
@@ -47,23 +47,25 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Github-Request-Id:
-      - 910E:2F3AE:387ECE:43B9C6:6A163A47
+      - '08C4:5803D:450F15:6CE8DF:6AB3EB9E'
+      X-Github-Edge-Region:
+      - iad
       Content-Encoding:
       - gzip
       Accept-Ranges:
       - bytes
       Date:
-      - Wed, 27 May 2026 00:44:57 GMT
+      - Wed, 23 Sep 2026 16:06:29 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-iad-kcgs7200157-IAD
+      - cache-pdk-kpdk2140070-PDK
       X-Cache:
       - HIT
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1779842697.483676,VS0,VE24
+      - S1790179589.386768,VS0,VE57
       Vary:
       - Authorization,Accept-Encoding
       Access-Control-Allow-Origin:
@@ -71,30 +73,30 @@ http_interactions:
       Cross-Origin-Resource-Policy:
       - cross-origin
       X-Fastly-Request-Id:
-      - 30953a1d4e5b3f0e95b862b4a3c85f559379c920
+      - 1dc084b02b1ff1af8a7f5455e2d2813f3415b1c7
       Expires:
-      - Wed, 27 May 2026 00:49:57 GMT
+      - Wed, 23 Sep 2026 16:11:29 GMT
       Source-Age:
       - '0'
     body:
       encoding: ASCII-8BIT
       base64_string: |
-        H4sIAAAAAAAAA7VW22rbQBB911fMW1voSlagoegxl0KgKXnrY1hJY3lA2hV7
-        sZv+Ub4jP9bZta3YsRTbkBqDtYz2nLNzZmYthEioLuD67uH+5vb6Vz7L84tZ
-        fpHYaoGdfFyisaRVAcs8/ZZeJu6pxwJ6oyvEmlRjE0euxSIR0ErVeNlwGFUC
-        YCtDvSvgp3RhWWnlUPH6BisKkJEyYz6Rw+dA+WUPY27ew3h5ngSx2pvqBEHr
-        k1TkpGOgXfSFc70tsmy1WqUl9V2qTZOhyirddeQcos0q4m/fRebHXMSMHVN/
-        JuHcnEM4fUJrqjEuI1dpQ27hS2/RbMIpM2YdOqm06WQWtIhaOim0dxxiHZ0k
-        tVbSIbpQAIIzs3kW0Yj0qWtPTMZ/18ZJPNRW64pqRqQ5oQmFMggI1QShDWCv
-        pLZyrzjMi95QJ81TAc54PL3wR8G/wu0Z+O82xQT+j4/Vv+3eyQSJVqvmY1p5
-        DPYEOZCdicoFoXxXcjFMVQAXWhwpm/Hny5bsAmvGkizlU3hJzC7F7PunJAg0
-        VHqnY20ZHaYjwNu9ISfc5lLR3zgPwjsA3tD6Yeegu1MhxpTscPvWG+/C502m
-        w2fAuuNfoyKhbOHKG5Qe9Bx+IzULZ0GqGu5RWg7YA4bo4zGGDSbtEdVooddU
-        W0AH3KoDvCxLg0vayQCcTRiK+jDP0ruFXu9n9rh/4NhJ7jBiR+3YzfRRDVGo
-        L2taxsrb7nvFmPBr9HiTnl1vBcNcm2nfJpw7xsXo5F6eT7Vv3MBRC48yb1M4
-        XJSDMwMa28xZEwF0A8aLCNe3cn3n8/XKg+1BGrIJ/nFFnDwH/2Ty9IID3PaR
-        KtkTUm9GStjJA7JyfNp6976IJfU6MeKcSP4B5VqpVUgJAAA=
-  recorded_at: Wed, 27 May 2026 00:44:57 GMT
+        H4sIAAAAAAAAA7VW22rbQBB911fMW1qoJCvQUPSYSyHQlLz1MayksTwg7Yq9
+        2E3/KN+RH+vs2lZkW4ptSIzBWkZ7ztk5M7OmKoeb+8eH27ub39ksyy5n2WVk
+        ygW24mmJ2pCSOSyz5HtyFdnnDnPotCoRK5K1iSzZBvMohkbI2omawygjAFNq
+        6mwOv4T1y1JJi5LXt1iShwyUKfPFGXzxlF93MOb6PYzXl0kQo5wuTxC0PklJ
+        VlgGGqIvrO1Mnqar1SopqGsTpesUZVqqtiVrEU1aEn+7NjA/ZXHI2DH1ZxLO
+        9TmE0yc0uhzj0mKV1GQXrnAG9SacMGPaohVS6VakXktcCSti5SyHWEcrSK6V
+        tIjWF0DMmdk8x8GI5LltTkzGp2vjJB5qq1RJFSPSnFD7QukF+GoC3wawU1Jb
+        udcc5kWnqRX6OQerHZ5e+KPg3+DuDPx3m2IC/+fH6t9272SC4kbJ+mNaeQz2
+        BDmQnonKBSFdW3AxTFUAF1oYKZvx54qGzAIrxhIs5cK/FM+u4tmPi8gL1FQ4
+        q0JtaeWnI8D+Xp8TbnMh6V+YB/4dAKdp/TA46HAqhJgULW7f2vPOf/Yy7T89
+        1j3/ahkIRQPXTqNwoObwB6leWANCVvCAwnDAHDAEH48xbDBph6hCA52iygBa
+        4Fbt4UVRaFzSIANwNqEv6sM8C2cXar2f2cP+nmOQ3H7EjtoxzPRRDUGoKypa
+        hsrb7nvDmPBr9HiTnt1sBcNc6WnfJpw7xsXoZF9fTrVv3MBRC48yb1PYX5S9
+        Mz0a28xZiz3oBowXAa5rxPrO5+uVB9uj0GQi/GvzMHkO/slkySUHuO0DVbQj
+        pNqMFL+TB2Rp+bTV8L4IJfU2McKciP4DVvPW/UQJAAA=
+  recorded_at: Wed, 23 Sep 2026 16:06:29 GMT
 - request:
     method: get
     uri: https://raw.githubusercontent.com/relaton/relaton-data-bipm/refs/heads/v2/data/cipm/meeting/decision/2022-111-10.yaml
@@ -107,7 +109,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - Mechanize/2.14.0 Ruby/3.4.7p58 (http://github.com/sparklemotion/mechanize/)
+      - Mechanize/2.14.1 Ruby/3.4.10p104 (http://github.com/sparklemotion/mechanize/)
       Accept-Language:
       - en-us,en;q=0.5
       Host:
@@ -124,7 +126,7 @@ http_interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '666'
+      - '663'
       Cache-Control:
       - max-age=300
       Content-Security-Policy:
@@ -132,7 +134,7 @@ http_interactions:
       Content-Type:
       - text/plain; charset=utf-8
       Etag:
-      - W/"fce2e80054b54c3bc091ce45c1c02eaff9f84701b69229dda354c44dd7c6156e"
+      - W/"174e1c45634f54e6c26e754468dd159772deca62539274a8353886b20e9930f6"
       Strict-Transport-Security:
       - max-age=31536000
       X-Content-Type-Options:
@@ -142,23 +144,25 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Github-Request-Id:
-      - 592C:1B2880:375F29:429B1C:6A163A46
+      - 9B84:3843BE:3EA1F:583B9:6AB3F904
+      X-Github-Edge-Region:
+      - iad
       Content-Encoding:
       - gzip
       Accept-Ranges:
       - bytes
       Date:
-      - Wed, 27 May 2026 00:44:57 GMT
+      - Wed, 23 Sep 2026 16:06:29 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-iad-kcgs7200076-IAD
+      - cache-iad-khef600073-IAD
       X-Cache:
-      - HIT
+      - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1779842698.799178,VS0,VE41
+      - S1790179590.705495,VS0,VE71
       Vary:
       - Authorization,Accept-Encoding
       Access-Control-Allow-Origin:
@@ -166,28 +170,28 @@ http_interactions:
       Cross-Origin-Resource-Policy:
       - cross-origin
       X-Fastly-Request-Id:
-      - 66e8c0e41453554eeaf1fd80062839ce1e5c6892
+      - 2b854d022fda0cffc4159359e1a005532addb788
       Expires:
-      - Wed, 27 May 2026 00:49:57 GMT
+      - Wed, 23 Sep 2026 16:11:29 GMT
       Source-Age:
       - '0'
     body:
       encoding: ASCII-8BIT
       base64_string: |
-        H4sIAAAAAAAAA7VWy27bMBC86yt4SwuUkq2iOeiYR4EATZFbjwElreUFRFLg
-        w276R/mO/FiXtK3IsRTbQCIYsIkVZ4a7s0tzzhOsC3Z993B/c3v9e07PLJ/l
-        eWKrJUjxuAJjUauCrebpj/QycU8dFKwzugKoUTU2cehaKBLOWqEaLxoKg0oY
-        s5XBzhXsl3BhWWnlQNH6BioMkJEzIz4+n7EvgfPrHsjCvAfy8jyNYrU31QmS
-        Nmep0AlHSEP4pXOdLbJsvV6nJXYy1abJQGWVlhKdA7BZhfTpZKR+zHnM2TH5
-        ZxIuzDmE0ye0phrjMmKdNuiWvvQWzDacEmMmwQmljRRZ0MJr4QTX3lGIdEiB
-        aqNEArhgAU6Z2f7mQV2ePsn2xGR8ujZK4qG2WldYEyIuEEwwSi8g2ImFTmD7
-        ntrpvaI4LTqDUpingjnj4XTvj6N/Y7dnELzbF1MEPz/2BLsWns4Rb7VqPqif
-        x3BPEcSyc3HJF8rLkjwxaQQyXBwt20HoyxbtEmoCE6TmIrzEZ5c8/36RBI0G
-        S+909JjRYU4y9nZvyAu1u1D4L86F8A5j3uDmx+Csw+kQY0pI2L31poDheZPt
-        8PRYd/RtVCQULbvyBoRnesH+ADZLZ5lQNbsHYSlgDxhiLY8xbDFxj6gGyzqN
-        tWXgGLVsDy/K0sAKBxlgZxMGZx/mWXi31Jv9xB739xyD5PajdrQcw0wf1RCF
-        +rLGVfTebt8rxkS9Ro83WbPrnWC20Ga6bhOVO8ZF6Ohenk8t33gBR0t4lHmX
-        wv7C7CvTo1GZKWs8gG7BaBHhulZs7n66Zmm6PQiDNoG/rojT5+A/zTzNKUB9
-        H6mSPSH1dqqEnTQlK0enrYf3RrTU68jYDIrkP8lRYmlUCQAA
-  recorded_at: Wed, 27 May 2026 00:44:57 GMT
+        H4sIAAAAAAAAA7VWy27bMBC86yv2lhaoJFtFc9AxjwIBmiK3HgNKWssLSKTA
+        h930j/Id+bEuaVuRYym2gUQwYBMrzgx3Z5emKofru4f7m9vr33N+ZtksyyJT
+        LrEVjyvUhpTMYTVPfiSXkX3qMIdOqxKxIlmbyJJtMI9iaISsnag5jDICMKWm
+        zubwS1i/LJW0KHl9gyV5yMCZMl88n8EXz/l1D2Sh3wN5eZ5GMcrp8gRJm7OU
+        ZIVlpCH80trO5Gm6Xq+Tgro2UbpOUaalaluyFtGkJfGnawP1YxaHnB2Tfybh
+        Qp9DOH1Co8sxLi3WSU126QpnUG/DCTOmLVohlW5F6rXElbAiVs5yiHW0guRG
+        SYtovQVizsz2d+zVZclT25yYjE/Xxkk81FapkipGpAWh9kbpBXg7ge8E2PfU
+        Tu8Vx3nRaWqFfsrBaoene38c/RvcnkHwbl9MEfz82BPsWng6R3GjZP1B/TyG
+        e4ogSM/FZV9I1xbsiUkjsOHCaNkOQlc0ZJZYMZhgNRf+pXh2GWffLyKvUVPh
+        rAoe08rPSYC3e31euN2FpH9hLvh3AJymzY/BWYfTIcSkaHH31psC+udNtv3T
+        Y93xt5aBUDRw5TQKB2oBf5DqpTUgZAX3KAwHzAFDqOUxhi0m7RFVaKBTVBlA
+        C9yyPbwoCo0rGmQAzib0zj7Ms3B2qTb7mT3s7zkGye1H7Wg5hpk+qiEIdUVF
+        q+C93b5XjIl6jR5vsmbXO8GwUHq6bhOVO8bF6GRfnk8t33gBR0t4lHmXwv7C
+        7CvTo3GZOWuxB92C8SLAdY3Y3P18zfJ0exCaTIR/bR6mz8F/mnmScYD7PlBF
+        e0Kq7VTxO3lKlpZPWw3vjWCp15GxGRTRf/GgHLhQCQAA
+  recorded_at: Wed, 23 Sep 2026 16:06:29 GMT
 recorded_with: VCR 6.4.0
