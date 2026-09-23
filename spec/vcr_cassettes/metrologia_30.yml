@@ -12,7 +12,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - Mechanize/2.14.0 Ruby/3.4.7p58 (http://github.com/sparklemotion/mechanize/)
+      - Mechanize/2.14.1 Ruby/3.4.10p104 (http://github.com/sparklemotion/mechanize/)
       Accept-Language:
       - en-us,en;q=0.5
       Host:
@@ -29,7 +29,7 @@ http_interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '284'
+      - '281'
       Cache-Control:
       - max-age=300
       Content-Security-Policy:
@@ -37,7 +37,7 @@ http_interactions:
       Content-Type:
       - text/plain; charset=utf-8
       Etag:
-      - W/"1c65e21e2313e3dfb56da29b08ee6f7ad0de9d4bccb551e8a39a533afcb6aabe"
+      - W/"2c5654f7a92e85cf987d6529867617c7280e888c50f014bf27ca5c5425301d34"
       Strict-Transport-Security:
       - max-age=31536000
       X-Content-Type-Options:
@@ -47,23 +47,25 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Github-Request-Id:
-      - 72F4:3C1D32:38851A:43C221:6A163A48
+      - 8702:34DEE:4A142E:73F10C:6AB3F906
+      X-Github-Edge-Region:
+      - iad
       Content-Encoding:
       - gzip
       Accept-Ranges:
       - bytes
       Date:
-      - Wed, 27 May 2026 00:44:58 GMT
+      - Wed, 23 Sep 2026 16:06:30 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-iad-kcgs7200120-IAD
+      - cache-iad-khef600034-IAD
       X-Cache:
-      - HIT
+      - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1779842699.716869,VS0,VE25
+      - S1790179591.776598,VS0,VE60
       Vary:
       - Authorization,Accept-Encoding
       Access-Control-Allow-Origin:
@@ -71,20 +73,20 @@ http_interactions:
       Cross-Origin-Resource-Policy:
       - cross-origin
       X-Fastly-Request-Id:
-      - 26f6bcf6a6c39e4991599ca2cdb00f34be843e1d
+      - 8690abebd004a71a6b9bc494540384e0d1bc5c46
       Expires:
-      - Wed, 27 May 2026 00:49:58 GMT
+      - Wed, 23 Sep 2026 16:11:30 GMT
       Source-Age:
       - '0'
     body:
       encoding: ASCII-8BIT
       base64_string: |
-        H4sIAAAAAAAAA73PS2rDMBAG4L1OoQv4Eb+gWnZXaGhvUBR57AzYkhiPDbl9
-        pTSU1DRQQ7FWkq359f1JkghslTwCkxtcj7rMxWTOMOqPBWhCZ5VcDmmdNoIv
-        HpTUxGgGEJ2jUTNDS9ApIaVxlsHyfZSMWW4mA0ok8mt8InN/+czsJ5Vl6Pxk
-        EKyBNGxTR322uGEeIcvzokkO5VOVhbTWGWzDIHYIFEMfvCpvrz2/vB/DwROO
-        mi5KMs0gBm37WfdXFNjQltBzPLxqtoJg0Bxrf5N9qPzWhZgTnpBhjG2lXPeP
-        63eNPFx/r+zx0yP/bWLVIq6fTf5NWGwWFjsLy83CcmdhtVlY7SysNwvrnYXN
-        ZmHzN+EnenSiuegEAAA=
-  recorded_at: Wed, 27 May 2026 00:44:58 GMT
+        H4sIAAAAAAAAA73PTWrDMBAF4L1OoQvE/zZUy+4KDe0NiiKPnQFbEuOxIbev
+        lIaSmgZqKNZKsjVP38NWySMwucH1qMtMTOYMo/5YgCZ0VsklT+qkEXzxoKQm
+        RjOA6ByNmhlagk4JKY2zDJbvo2TMcjMZUOIgv8YnMveXz8x+UmmKzk8GwRpI
+        wjZx1KeLG+YR0iwrmkNePlVpSGudwTYMYodAMfTBq/L22vPL+zEcPOGo6aIk
+        0wxi0LafdX9FgQ1tCT3Hw6tmKwgGzbH2N9mHym9diDnhCRnG2FbKdf+4ftfI
+        /Pp7ZY+fHvlvE6sWcf1s8m/CYrOw2FlYbhaWOwurzcJqZ2G9WVjvLGw2C5u/
+        CT8B1dGsXuQEAAA=
+  recorded_at: Wed, 23 Sep 2026 16:06:30 GMT
 recorded_with: VCR 6.4.0
